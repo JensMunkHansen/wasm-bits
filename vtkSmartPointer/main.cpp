@@ -37,7 +37,7 @@ public:
   static vtkCustomObject *New();
 
 protected:
-  vtkCustomObject(){vtkLog(INFO, << "Constructed " << vtkLogIdentifier(this))};
+  vtkCustomObject(){vtkLog(INFO, << "Constructed " << vtkLogIdentifier(this));};
   ~vtkCustomObject() {
     vtkLog(INFO, << "Destroyed " << vtkLogIdentifier(this));
   }

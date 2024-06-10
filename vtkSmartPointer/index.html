@@ -27,7 +27,7 @@
       logRefCounts(x);
     }
 
-    const instance = new Module.vtkCustomObject();
+    const instance = new wasmModule.vtkCustomObject();
     logRefCounts(instance); // JS=1,CPP=1
     myLongRunningProcess(instance.clone(), 5000);
     logRefCounts(instance);// JS=2,CPP=1
