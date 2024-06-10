@@ -35,17 +35,6 @@ add_custom_command(
       $<TARGET_FILE_DIR:main>
 )
 
-# add_custom_command( TARGET main POST_BUILD
-#   COMMAND node --expose-gc run.js
-#   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-
-
-# add_test(
-#   NAME trytest
-#   COMMAND node ${CMAKE_CURRENT_BINARY_DIR}/run.js
-#   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-
-
 add_test(NAME CheckLastChar
   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/check_last_char.sh node ${CMAKE_CURRENT_BINARY_DIR}/run.js
   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
