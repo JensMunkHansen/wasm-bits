@@ -38,10 +38,10 @@ async function main() {
         logRefCounts(instance); // JS=1, CPP=1
 
         // Execute the long-running process with different delays
-        await myLongRunningProcess(instance.clone(), 5000);
+        await myLongRunningProcess(instance.clone(), 500);
         logRefCounts(instance); // JS=2, CPP=1
 
-        await myLongRunningProcess(instance.clone(), 3000);
+        await myLongRunningProcess(instance.clone(), 300);
         logRefCounts(instance); // JS=3, CPP=1
 
     } catch (error) {
@@ -49,5 +49,11 @@ async function main() {
     }
 }
 
+const registry = new FinalizationRegistry(() => {});
+
+
+
 // Execute the main function
 main();
+
+new Promise(resolve => setTimeout(resolve, 30000));
