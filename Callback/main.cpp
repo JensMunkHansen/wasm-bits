@@ -1,8 +1,28 @@
 #include <vtkCallbackCommand.h>
 #include <vtkCommand.h>
 #include <vtkObjectFactory.h>
+#include <vtkSetGet.h>
+#include <vtkSmartPointer.h>
 #include <vtkNew.h>
 #include <iostream>
+
+class vtkCustomObject : public vtkObject {
+  vtkTypeMacro(vtkCustomObject, vtkObject);
+  void PrintSelf(ostream &os, vtkIndent indent) override {
+    Superclass::PrintSelf(os, indent);
+  }
+  static vtkCustomObject *New();
+
+protected:
+  vtkCustomObject() {
+  }
+  ~vtkCustomObject() = default;
+private:
+  vtkCustomObject(const vtkCustomObject&) = delete;
+  void operator=(const vtkCustomObject&) = delete;
+};
+
+vtkStandardNewMacro(vtkCustomObject);
 
 class vtkCaller : public vtkObject {
 public:
@@ -37,9 +57,12 @@ public:
   {
     std::cout << __FUNCTION__ << std::endl;
   }
+  vtkSmartPointer<vtkCustomObject> SomeData = nullptr;
+
 protected:
   vtkCustomCallbackCommand() = default;
   ~vtkCustomCallbackCommand() = default;
+
   
 private:
   vtkCustomCallbackCommand(const vtkCustomCallbackCommand&) = delete;
@@ -47,6 +70,7 @@ private:
 };
 
 vtkStandardNewMacro(vtkCustomCallbackCommand);
+
 
 void Callback(vtkObject* caller, unsigned long event, void* callData, void* clientData) {
   std::cout << __FUNCTION__ << " called\n";
@@ -61,8 +85,11 @@ int main(int argc, char* argv[]) {
   // Ugly void* for client data
   callback->SetClientData(nullptr);
 
+  vtkSmartPointer<vtkCustomObject> customObject = vtkSmartPointer<vtkCustomObject>::New();
+
+  // Members are smart-pointers
   vtkNew<vtkCustomCallbackCommand> customCallback;
-  
+  customCallback->SomeData = customObject;
   
   caller->AddObserver(vtkCaller::NewEvent, callback);
   caller->AddObserver(vtkCaller::NewEvent, customCallback);
