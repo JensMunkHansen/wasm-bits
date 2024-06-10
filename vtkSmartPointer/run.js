@@ -51,8 +51,6 @@ async function main() {
 
 const registry = new FinalizationRegistry(() => {});
 
-
-
 // Execute the main function
 main();
 

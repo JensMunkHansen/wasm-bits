@@ -48,6 +48,7 @@ protected:
   };
   ~vtkCustomObject() {
     vtkLog(INFO, << "Destroyed " << vtkLogIdentifier(this));
+    std::cout << "0" << std::endl;
     objectCount--;
   }
 
