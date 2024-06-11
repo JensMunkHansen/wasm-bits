@@ -23,9 +23,8 @@ class AWrapper : public emscripten::wrapper<A> {
 
 EMSCRIPTEN_BINDINGS(A) {
   emscripten::class_<A>("A")
-      .allow_subclass<AWrapper>("AWrapper")
+    .allow_subclass<AWrapper>("AWrapper")
     .function("invoke", emscripten::optional_override([](A& self) {
-	return self.A::invoke();
-      })
-	);
+      return self.A::invoke();
+    }));
 }
