@@ -20,15 +20,18 @@ async function main() {
         const wasmModule = await loadInheritWasmModule(options);
         console.log("Loaded Inherit wasm");
 
+	var k = new wasmModule.SecretData(27);
 	const A = wasmModule.A.extend("A", {
             invoke: () => {
 		console.log("Hello from JS");
             }
 	});
+	// TODO: How to handle a point in JS
 	console.log("Hello");
 
 	const a = new A();
 	a.invoke();
+	a.invokeWithArg(k);
     } catch (error) {
         console.error("An error occurred:", error);
     }
