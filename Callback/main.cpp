@@ -98,6 +98,8 @@ int main(int argc, char* argv[]) {
   
   caller->Delete();
 
+  vtkNew<vtkCustomObject> lifeTime;
+  vtkSmartPointer<vtkCustomObject> mySmartPointer(lifeTime.GetPointer());
   
   return 0;
 }
