@@ -14,9 +14,10 @@ if [ "$param" = "static" ]; then
     cmake --build build --target main
 elif [ "$param" = "wasm" ]; then
 (
-    rm -Rf build
+    #rm -Rf build
     source "$HOME/github/emsdk/emsdk_env.sh"
-    emcmake cmake -S. -Bbuild -DVTK_DIR=$HOME/github/VTKCMake/install/lib/cmake/vtk -DVTK_ENABLE_LOGGING=ON
+    #emcmake cmake -S. -Bbuild -DVTK_DIR=$HOME/github/VTKCMake/install/lib/cmake/vtk -DVTK_ENABLE_LOGGING=ON
+    emcmake cmake -S. -Bbuild -DVTK_DIR=$TSPKG_ROOT/ArtifactoryInstall/Wasm32/Release/lib/cmake/vtk -DVTK_ENABLE_LOGGING=ON
     cmake --build build --target main
 )
 else

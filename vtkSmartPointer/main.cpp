@@ -89,3 +89,4 @@ EMSCRIPTEN_BINDINGS(vtksmartptr_prototype) {
       .constructor(&MakeVTKSmartPtr<vtkCustomObject>)
       .class_function("ObjectCount", &vtkCustomObject::GetObjectCount);
 }
+

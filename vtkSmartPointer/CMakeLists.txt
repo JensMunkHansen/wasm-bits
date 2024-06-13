@@ -15,6 +15,7 @@ target_link_libraries(main PRIVATE VTK::CommonCore)
 target_link_options(main PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
+  "-sEXPORT_ES6=1"  
   "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
   "${emscripten_optimization_flags}")
 target_compile_options(main PRIVATE ${emscripten_optimization_flags})
@@ -39,3 +40,10 @@ add_test(NAME CheckLastChar
   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/check_last_char.sh node ${CMAKE_CURRENT_BINARY_DIR}/run.js
   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
   
+
+# import { setFlagsFromString } from 'v8';
+# import { runInNewContext } from 'vm';
+# 
+# setFlagsFromString('--expose_gc');
+# const gc = runInNewContext('gc'); // nocommit
+# gc();

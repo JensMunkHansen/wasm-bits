@@ -1,7 +1,15 @@
 // run.js
 
 // Import the function from wasmLoader.js
-const loadvtkSmartPointerWasmModule = require('./main');
+import { setFlagsFromString } from 'v8';
+import { runInNewContext } from 'vm';
+
+// Import the function from wasmLoader.js
+import loadvtkSmartPointerWasmModule from './main.js';
+
+
+
+console.log(loadvtkSmartPointerWasmModule);
 
 // Define the options object
 const options = {
@@ -49,9 +57,12 @@ async function main() {
     }
 }
 
-const registry = new FinalizationRegistry(() => {});
-
 // Execute the main function
-main();
+await main();
 
-new Promise(resolve => setTimeout(resolve, 30000));
+setFlagsFromString('--expose_gc');
+const gc = runInNewContext('gc'); // nocommit
+gc();
+
+
+// new Promise(resolve => setTimeout(resolve, 30000));
