@@ -45,11 +45,13 @@ protected:
   vtkCustomObject(){
     vtkLog(INFO, << "Constructed " << vtkLogIdentifier(this));
     objectCount++;
+    std::cout << "Constructed" << std::endl;
   };
   ~vtkCustomObject() {
     vtkLog(INFO, << "Destroyed " << vtkLogIdentifier(this));
     std::cout << "0" << std::endl;
     objectCount--;
+    std::cout << "Destroyed" << std::endl;
   }
 
 private:

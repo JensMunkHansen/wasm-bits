@@ -61,14 +61,16 @@ async function main() {
 // Execute the main function
 await main();
 
+// Run the garbage collector
 setFlagsFromString('--expose_gc');
-const gc = runInNewContext('gc'); // nocommit
+const gc = runInNewContext('gc');
 gc();
 
-var promise = new Promise(resolve => setTimeout(resolve, 1000));
-await promise;
-var nObjects = wasmModule.vtkCustomObject.ObjectCount()
-console.log(nObjects)
+// Wait a bit
+await new Promise(resolve => setTimeout(resolve, 1000));
 
+// Number of objects after garbage collection
+var nObjects = wasmModule.vtkCustomObject.ObjectCount();
 
-// new Promise(resolve => setTimeout(resolve, 30000));
+// Can be captured with $?
+process.exit(nObjects == 0 ? 0 : 1);
