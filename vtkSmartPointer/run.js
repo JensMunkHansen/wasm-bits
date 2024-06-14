@@ -22,12 +22,13 @@ const options = {
         console.error(text);
     }
 };
+var wasmModule
 
 // Main function to load and use the WASM module
 async function main() {
     try {
         // Load the WASM module
-        const wasmModule = await loadvtkSmartPointerWasmModule(options);
+        wasmModule = await loadvtkSmartPointerWasmModule(options);
         console.log("Loaded vtkSmartPointer wasm");
 
         // Function to log reference counts
@@ -63,6 +64,11 @@ await main();
 setFlagsFromString('--expose_gc');
 const gc = runInNewContext('gc'); // nocommit
 gc();
+
+var promise = new Promise(resolve => setTimeout(resolve, 1000));
+await promise;
+var nObjects = wasmModule.vtkCustomObject.ObjectCount()
+console.log(nObjects)
 
 
 // new Promise(resolve => setTimeout(resolve, 30000));
