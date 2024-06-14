@@ -61,6 +61,14 @@ add_custom_command(
       "$<TARGET_FILE_DIR:main>/main.wasm"
       "${CMAKE_CURRENT_SOURCE_DIR}")
 
+add_custom_command(
+  TARGET main
+  POST_BUILD
+  COMMAND
+    npm install
+  WORKING_DIRECTORY
+    ${CMAKE_CURRENT_BINARY_DIR})
+    
 add_test(NAME GarbageCollector_LeakVTKSmartPointer_ObjectsDeleted
   COMMAND
     npm run test
