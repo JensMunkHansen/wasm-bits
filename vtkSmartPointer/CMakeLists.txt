@@ -8,7 +8,7 @@ find_package(VTK
 COMPONENTS
   CommonCore
 )
-
+# https://gitlab.kitware.com/vtk/vtk/-/issues/19008
 add_executable(main main.cpp)
 set(emscripten_optimization_flags -g3 -O0)
 target_link_libraries(main PRIVATE VTK::CommonCore)
