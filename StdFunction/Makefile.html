@@ -15,7 +15,7 @@
             }
 
             // Convert the JS function to a function pointer
-            var funcPtr = addFunction(jsFunction, 'v');
+            var funcPtr = Module.addFunction(jsFunction, 'v');
 
             // Pass the function pointer to C++
             Module.ccall('set_function_pointer', null, ['number'], [funcPtr]);

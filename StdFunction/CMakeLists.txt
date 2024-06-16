@@ -10,12 +10,13 @@ set(emscripten_optimization_flags -g3 -O0)
 target_link_options(function_pointer PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
-  "-sEXPORT_ES6=1"  
+#  "-sEXPORT_ES6=1"  
   "-sEXPORT_NAME=loadStdFunctionWasmModule"
   "-sEXPORTED_FUNCTIONS=\"_set_function_pointer\", \"_call_stored_function\""
-  "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\""
+  "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\", \"addFunction\""
   "-sINCLUDE_FULL_LIBRARY=1"
   "-sALLOW_TABLE_GROWTH=1"
+  "-sDEFAULT_LIBRARY_FUNCS_TO_INCLUDE='$addFunction'"
   "${emscripten_optimization_flags}")
 target_compile_options(function_pointer PRIVATE ${emscripten_optimization_flags})
 
