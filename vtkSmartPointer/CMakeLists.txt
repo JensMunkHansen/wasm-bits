@@ -44,23 +44,6 @@ add_custom_command(
       $<TARGET_FILE_DIR:main>
 )
 
-# Copy output to current source dir
-add_custom_command(
-  TARGET main
-  POST_BUILD
-  COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "$<TARGET_FILE_DIR:main>/main.js"
-      "${CMAKE_CURRENT_SOURCE_DIR}")
-
-add_custom_command(
-  TARGET main
-  POST_BUILD
-  COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "$<TARGET_FILE_DIR:main>/main.wasm"
-      "${CMAKE_CURRENT_SOURCE_DIR}")
-
 add_custom_command(
   TARGET main
   POST_BUILD
