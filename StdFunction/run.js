@@ -1,5 +1,5 @@
 import loadStdFunctionWasmModule from './function_pointer.js';
-import addFunction from './function_pointer.js';
+// import addFunction from './function_pointer.js';
 
 const options = {
     print: function () {
@@ -26,7 +26,7 @@ async function main() {
     }
 
     // Convert the JS function to a function pointer
-    var funcPtr = addFunction(jsFunction, 'v');
+    var funcPtr = wasmModule.addFunction(jsFunction, 'v');
 
     // Pass the function pointer to C++
     wasmModule.ccall('set_function_pointer', null, ['number'], [funcPtr]);

@@ -10,7 +10,8 @@ set(emscripten_optimization_flags -g3 -O0)
 target_link_options(function_pointer PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
-#  "-sEXPORT_ES6=1"  
+#  "-sEXPORT_ES6=1" # Without this, the index.html works 
+#  "-sEXPORT_ES6=1" # With this the node run test works
   "-sEXPORT_NAME=loadStdFunctionWasmModule"
   "-sEXPORTED_FUNCTIONS=\"_set_function_pointer\", \"_call_stored_function\""
   "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\", \"addFunction\""
