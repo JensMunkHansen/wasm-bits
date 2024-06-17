@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script type="text/javascript" src="function_pointer.js"></script>
+  <script type="module">
+    var options = {
+      print: (function () {
+        return function (text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          console.info(text);
+        };
+      })(),
+      printErr: function (text) {
+        text = Array.prototype.slice.call(arguments).join(' ');
+        console.error(text);
+      },
+    };
+    let wasmModule = await loadStdFunctionWasmModule(options);
+    // Define the JavaScript function to pass
+    function jsFunction() {
+        console.log("JavaScript function called from C++!");
+    }
+
+    // Convert the JS function to a function pointer
+    var funcPtr = wasmModule.addFunction(jsFunction, 'v');
+
+    // Pass the function pointer to C++
+    wasmModule.ccall('set_function_pointer', null, ['number'], [funcPtr]);
+
+    // Later on, call the stored function from C++
+    wasmModule.ccall('call_stored_function', null, [], []);
+  </script>
+</body>
+</html>
