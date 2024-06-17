@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <script type="text/javascript" src="function_pointer.js"></script>
   <script type="module">
+    import loadStdFunctionWasmModule from './function_pointer.js';
     var options = {
       print: (function () {
         return function (text) {
@@ -15,6 +15,7 @@
         console.error(text);
       },
     };
+    
     let wasmModule = await loadStdFunctionWasmModule(options);
     // Define the JavaScript function to pass
     function jsFunction() {
