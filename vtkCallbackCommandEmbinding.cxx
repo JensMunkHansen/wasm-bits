@@ -1,0 +1,39 @@
+// JavaScript wrapper for vtkCallbackCommand with embind 
+//
+// This file was auto-generated using :
+/*
+node /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/bin/vtkWrapJavaScript.js \
+ @/home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/CMakeFiles/vtkCommonCore.js/vtkCommonCore.js.Release.args \
+ -o \
+ /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/CMakeFiles/vtkCommonCore.js/vtkCallbackCommandEmbinding.cxx \
+ /home/jmh/github/vtk/Common/Core/vtkCallbackCommand.h
+*/
+#include "vtkEmbindSmartPointerTrait.h"
+#include <emscripten.h>
+#include <string>
+#include "vtkVariant.h"
+#include "vtkObjectBase.h"
+#include "vtkObject.h"
+#include "vtkCallbackCommand.h"
+
+template<> void emscripten::internal::raw_destructor<vtkCallbackCommand>(vtkCallbackCommand * ptr){ ptr->Delete(); }
+EMSCRIPTEN_BINDINGS(vtkCallbackCommand_class) {
+  emscripten::class_<vtkCallbackCommand, emscripten::base<vtkCommand>>("vtkCallbackCommand")
+    .smart_ptr<vtkSmartPointer<vtkCallbackCommand>>("vtkSmartPointer<vtkCallbackCommand>")
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCallbackCommand>)
+    .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCallbackCommand::IsTypeOf( arg_0.c_str());}))
+    .function("IsA", emscripten::optional_override([](vtkCallbackCommand& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
+    .class_function("SafeDownCast", &vtkCallbackCommand::SafeDownCast, emscripten::allow_raw_pointers())
+    .function("NewInstance", &vtkCallbackCommand::NewInstance, emscripten::allow_raw_pointers())
+    .class_function("GetNumberOfGenerationsFromBaseType", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCallbackCommand::GetNumberOfGenerationsFromBaseType( arg_0.c_str());}))
+    .function("GetNumberOfGenerationsFromBase", emscripten::optional_override([](vtkCallbackCommand& self, const std::string & arg_0) -> int {  return self.GetNumberOfGenerationsFromBase( arg_0.c_str());}))
+    .function("Execute", emscripten::optional_override([](vtkCallbackCommand& self, vtkObject* arg_0, unsigned long arg_1, std::uintptr_t arg_2) -> void {  return self.Execute( arg_0, arg_1,reinterpret_cast<void*>(arg_2));}), emscripten::allow_raw_pointers())
+    .function("SetClientData", emscripten::optional_override([](vtkCallbackCommand& self, std::uintptr_t arg_0) -> void {  return self.SetClientData(reinterpret_cast<void*>(arg_0));}))
+    .function("GetClientData", emscripten::optional_override([](vtkCallbackCommand& self) -> std::uintptr_t {  return reinterpret_cast<std::uintptr_t>(self.GetClientData());}))
+    .function("SetCallback", emscripten::optional_override([](vtkCallbackCommand& self, emscripten::val arg_0) -> void {  return self.SetCallback( reinterpret_cast<void(*)( vtkObject*, unsigned long, void*, void*)>(emscripten::val::module_property("addFunction")(arg_0, std::string("viiii")).as<int>()));}))
+    .function("SetClientDataDeleteCallback", emscripten::optional_override([](vtkCallbackCommand& self, emscripten::val arg_0) -> void {  return self.SetClientDataDeleteCallback( reinterpret_cast<void(*)( void*)>(emscripten::val::module_property("addFunction")(arg_0, std::string("vi")).as<int>()));}))
+    .function("SetAbortFlagOnExecute", &vtkCallbackCommand::SetAbortFlagOnExecute)
+    .function("GetAbortFlagOnExecute", &vtkCallbackCommand::GetAbortFlagOnExecute)
+    .function("AbortFlagOnExecuteOn", &vtkCallbackCommand::AbortFlagOnExecuteOn)
+    .function("AbortFlagOnExecuteOff", &vtkCallbackCommand::AbortFlagOnExecuteOff);
+}
