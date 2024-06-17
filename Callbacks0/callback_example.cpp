@@ -28,6 +28,8 @@ void callJSFunction() {
         jsFunction();
     }
 }
+
+
 #else
 
 #include <emscripten/bind.h>
