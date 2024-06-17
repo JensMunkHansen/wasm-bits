@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script type="module">
+    import loadFunctionPointerWasmModule from './output.js';
+    var options = {
+      print: (function () {
+        return function (text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          console.info(text);
+        };
+      })(),
+      printErr: function (text) {
+        text = Array.prototype.slice.call(arguments).join(' ');
+        console.error(text);
+      },
+    };
+    
+    let wasmModule = await loadFunctionPointerWasmModule(options);
+
+    function myCallback(arg) {
+        console.log('Callback called with argument:', arg);
+        return arg * 2; // Example: return double the argument
+    }
+
+    // Pass the JavaScript callback to the C++ code
+    wasmModule.set_js_callback(myCallback);
+	  
+    // Trigger the callback from C++
+    wasmModule.trigger_callback(42);	  
+  </script>
+</body>
+</html>
