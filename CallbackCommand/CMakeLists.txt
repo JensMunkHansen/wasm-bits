@@ -17,6 +17,10 @@ target_link_options(main PRIVATE
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"  
   "-sEXPORT_NAME=loadvtkCallbackCommandWasmModule"
+  "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\", \"addFunction\""
+  "-sINCLUDE_FULL_LIBRARY=1"
+  "-sALLOW_TABLE_GROWTH=1"  
+  "-sDEFAULT_LIBRARY_FUNCS_TO_INCLUDE='$addFunction'"  
   "${emscripten_optimization_flags}")
 
 target_compile_options(main PRIVATE ${emscripten_optimization_flags})

@@ -34,14 +34,18 @@ async function main() {
 
         const callee = new wasmModule.vtkCalleeObject();
 
+	// Would be cool if we could inherit
 	let myCallback = new wasmModule.vtkCallbackCommand();
 
 	// TODO: Wrap also vtkCommand
 	myCallback.SetCallback((caller, evId, clientData, callData) => {
-	    console.debug(`myCallback => vtkObject*:${caller}`);
+	    console.debug(`myCallback => vtkObject*:${caller}, eventId:${wasmModule.vtkCommand.GetStringFromEventId(evId)},
+clientData:${clientData}, callData:${callData}`);
+	    // let realObject = wasmModule.vtkObject.SafeDownCast();
+	    // TODO: Make C++ function which do reinterpret_cast
 	});
-	caller.AddObserver('InteractionEvent', myCallback);
-	    
+	caller.AddObserver('InteractionEvent', myCallback, 0.0);
+	caller.TestInvokeEvent();    
 
     } catch (error) {
         console.error("An error occurred:", error);
