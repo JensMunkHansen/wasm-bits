@@ -36,11 +36,17 @@ async function main() {
 
 	// Would be cool if we could inherit
 	let myCallback = new wasmModule.vtkCallbackCommand();
+	// TODO: Convert object to intptr_t
+	// myCallback.SetClientData(callee);
 
 	// TODO: Wrap also vtkCommand
 	myCallback.SetCallback((caller, evId, clientData, callData) => {
 	    console.debug(`myCallback => vtkObject*:${caller}, eventId:${wasmModule.vtkCommand.GetStringFromEventId(evId)},
 clientData:${clientData}, callData:${callData}`);
+	    // TOODO: Figure out how to cast.
+	    let bum = wasmModule.vtkObject.IntToPointer(caller);
+	    console.debug("Hello");
+	    console.debug(bum.GetMTime());
 	    // let realObject = wasmModule.vtkObject.SafeDownCast();
 	    // TODO: Make C++ function which do reinterpret_cast
 	});
