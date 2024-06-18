@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Emscripten Callback Example</title>
-    <script src="callback_example.js"></script>
-</head>
 <body>
-    <script>
-        var Module = {
-            onRuntimeInitialized: function() {
-                // Define the JavaScript function to be passed
-                function jsCallback() {
-                    console.log("JavaScript function called from C++!");
-                }
-
-                // Wrap the JavaScript function as a WebAssembly function
-                var jsCallbackFuncPtr = Module.addFunction(jsCallback, 'v');
-
-                // Register the JavaScript function
-                Module._registerCallback(jsCallbackFuncPtr);
-
-                // Call the JavaScript function from C++
-                Module._callJSFunction();
-            }
+  <script type="module">
+    import loadStdFunctionWasmModule from './callback_example.js';
+    var options = {
+      print: (function () {
+        return function (text) {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          console.info(text);
         };
-    </script>
+      })(),
+      printErr: function (text) {
+        text = Array.prototype.slice.call(arguments).join(' ');
+        console.error(text);
+      },
+    };
+    
+    let wasmModule = await loadStdFunctionWasmModule(options);
+    // Define the JavaScript function to be passed
+
+    
+    function jsCallback() {
+        console.log("JavaScript function called from C++!");
+    }
+
+    // Wrap the JavaScript function as a WebAssembly function
+    var jsCallbackFuncPtr = wasmModule.addFunction(jsCallback, 'v');
+
+    // Register the JavaScript function
+    wasmModule._registerCallback(jsCallbackFuncPtr);
+
+    // Call the JavaScript function from C++
+    wasmModule._callJSFunction();
+
+  </script>
 </body>
 </html>

@@ -19,4 +19,8 @@ Each directory has a single `main.cpp` file or other `.cpp` files, a `CMakeLists
 13. [**Virtuals**](https://github.com/jspanchu/wasm-bits/tree/main/Virtuals) - Shows how to wrap (with embind) and implement C++ pure virtual classes in JavaScript
 14. [**vtkSmartPointer**](https://github.com/jspanchu/wasm-bits/tree/main/vtkSmartPointer) - Implements the `emscripten::smart_ptr_trait` for `vtkSmartPointer` and shows how C++ `vtkObject` instances can be automatically garbage collected from JavaScript.
 15. [**vtkWasmThreadedFilters**](https://github.com/jspanchu/wasm-bits/tree/main/vtkWasmThreadedFilters) - WIP
-FunctionPointers0
+
+
+StdFunction: C callback within embind
+FunctionPointers0: C++ callback using embind
+vtkSmartPointer:
