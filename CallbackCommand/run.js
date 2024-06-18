@@ -45,8 +45,10 @@ async function main() {
 clientData:${clientData}, callData:${callData}`);
 	    // TOODO: Figure out how to cast.
 	    let bum = wasmModule.vtkObject.IntToPointer(caller);
-	    console.debug("Hello");
+	    console.debug(bum.GetClassName());
 	    console.debug(bum.GetMTime());
+	    var k = bum.HelpMe();
+	    console.debug(k);
 	    // let realObject = wasmModule.vtkObject.SafeDownCast();
 	    // TODO: Make C++ function which do reinterpret_cast
 	});

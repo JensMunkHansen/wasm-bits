@@ -4,11 +4,15 @@
 #include "vtkLogger.h"
 #include "vtkNew.h"
 #include "vtkObject.h"
+#include "vtkObjectBase.h"
 #include "vtkObjectFactory.h"
 #include "vtkSmartPointer.h"
 
 #include "emscripten/bind.h"
-
+#include <emscripten.h>
+#include <string>
+#include "vtkVariant.h"
+#include "vtkIndent.h"
 
 class vtkCallerObject : public vtkObject
 {
@@ -23,6 +27,7 @@ class vtkCallerObject : public vtkObject
   void TestInvokeEvent() {
     this->InvokeEvent(vtkCommand::InteractionEvent);
   }
+  int  HelpMe() {return 42;}
   
   protected:
     vtkCallerObject()
@@ -261,9 +266,23 @@ EMSCRIPTEN_BINDINGS(vtkCommonCore_vtkCommand_0_2_constants) {
   }
 }
 
+EMSCRIPTEN_BINDINGS(vtkObjectBase_class) {
+  emscripten::class_<vtkObjectBase>("vtkObjectBase")
+    .smart_ptr<vtkSmartPointer<vtkObjectBase>>("vtkSmartPointer<vtkObjectBase>")
+    .constructor(&vtk::MakeVTKSmartPtr<vtkObjectBase>)
+    .function("GetClassName", emscripten::optional_override([](vtkObjectBase& self) -> std::string {  return self.GetClassName();}))
+    .function("GetObjectDescription", &vtkObjectBase::GetObjectDescription)
+    .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkObjectBase::IsTypeOf( arg_0.c_str());}))
+    .function("IsA", emscripten::optional_override([](vtkObjectBase& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
+    .class_function("GetNumberOfGenerationsFromBaseType", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkObjectBase::GetNumberOfGenerationsFromBaseType( arg_0.c_str());}))
+    .function("GetNumberOfGenerationsFromBase", emscripten::optional_override([](vtkObjectBase& self, const std::string & arg_0) -> int {  return self.GetNumberOfGenerationsFromBase( arg_0.c_str());}))
+    .function("InitializeObjectBase", &vtkObjectBase::InitializeObjectBase)
+    .function("UsesGarbageCollector", &vtkObjectBase::UsesGarbageCollector)
+    .function("GetReferenceCount", &vtkObjectBase::GetReferenceCount)
+    .function("SetReferenceCount", &vtkObjectBase::SetReferenceCount);
+}
 
 EMSCRIPTEN_BINDINGS(vtkObject_class) {
-  emscripten::class_<vtkObjectBase>("vtkObjectBase");
   emscripten::class_<vtkObject, emscripten::base<vtkObjectBase>>("vtkObject")
     .smart_ptr<vtkSmartPointer<vtkObject>>("vtkSmartPointer<vtkObject>")
     .constructor(&vtk::MakeVTKSmartPtr<vtkObject>)
@@ -375,5 +394,6 @@ EMSCRIPTEN_BINDINGS(vtkCaller_class)
       .smart_ptr<vtkSmartPointer<vtkCallerObject>>("vtkSmartPointer<vtkCallerObject>")
       .constructor(&vtk::MakeVTKSmartPtr<vtkCallerObject>)
       .function("TestInvokeEvent", &vtkCallerObject::TestInvokeEvent)
+      .function("HelpMe", &vtkCallerObject::HelpMe)
       .class_function("ObjectCount", &vtkCallerObject::GetObjectCount);
 }
