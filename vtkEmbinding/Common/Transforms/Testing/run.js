@@ -23,7 +23,8 @@ async function main() {
         wasmModule = await loadvtkTransformWasmModule(options);
 
 	let transform = new wasmModule.vtkTransform();
-
+	transform.RotateX(30);
+	let matrix = transform.GetMatrix()
     } catch (error) {
         console.error("An error occurred:", error);
     }
