@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMarchingCubes>(vtkI
 EMSCRIPTEN_BINDINGS(vtkImageMarchingCubes_class) {
   emscripten::class_<vtkImageMarchingCubes, emscripten::base<vtkPolyDataAlgorithm>>("vtkImageMarchingCubes")
     .smart_ptr<vtkSmartPointer<vtkImageMarchingCubes>>("vtkSmartPointer<vtkImageMarchingCubes>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMarchingCubes>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMarchingCubes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMarchingCubes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMarchingCubes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMarchingCubes::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOverlayPass>(vtkOverlayP
 EMSCRIPTEN_BINDINGS(vtkOverlayPass_class) {
   emscripten::class_<vtkOverlayPass, emscripten::base<vtkDefaultPass>>("vtkOverlayPass")
     .smart_ptr<vtkSmartPointer<vtkOverlayPass>>("vtkSmartPointer<vtkOverlayPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOverlayPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOverlayPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOverlayPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOverlayPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOverlayPass::SafeDownCast, emscripten::allow_raw_pointers())

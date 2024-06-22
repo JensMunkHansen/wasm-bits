@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDataToUniformGrid>(
 EMSCRIPTEN_BINDINGS(vtkImageDataToUniformGrid_class) {
   emscripten::class_<vtkImageDataToUniformGrid, emscripten::base<vtkDataObjectAlgorithm>>("vtkImageDataToUniformGrid")
     .smart_ptr<vtkSmartPointer<vtkImageDataToUniformGrid>>("vtkSmartPointer<vtkImageDataToUniformGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDataToUniformGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDataToUniformGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDataToUniformGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDataToUniformGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDataToUniformGrid::SafeDownCast, emscripten::allow_raw_pointers())

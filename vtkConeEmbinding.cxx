@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCone>(vtkCone * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkCone_class) {
   emscripten::class_<vtkCone, emscripten::base<vtkImplicitFunction>>("vtkCone")
     .smart_ptr<vtkSmartPointer<vtkCone>>("vtkSmartPointer<vtkCone>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCone>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCone>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCone::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCone& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCone::SafeDownCast, emscripten::allow_raw_pointers())

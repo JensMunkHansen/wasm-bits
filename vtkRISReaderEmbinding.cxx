@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRISReader>(vtkRISReader 
 EMSCRIPTEN_BINDINGS(vtkRISReader_class) {
   emscripten::class_<vtkRISReader, emscripten::base<vtkTableAlgorithm>>("vtkRISReader")
     .smart_ptr<vtkSmartPointer<vtkRISReader>>("vtkSmartPointer<vtkRISReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRISReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRISReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRISReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRISReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRISReader::SafeDownCast, emscripten::allow_raw_pointers())

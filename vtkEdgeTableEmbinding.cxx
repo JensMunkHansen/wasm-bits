@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkEdgeTable>(vtkEdgeTable 
 EMSCRIPTEN_BINDINGS(vtkEdgeTable_class) {
   emscripten::class_<vtkEdgeTable, emscripten::base<vtkObject>>("vtkEdgeTable")
     .smart_ptr<vtkSmartPointer<vtkEdgeTable>>("vtkSmartPointer<vtkEdgeTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEdgeTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEdgeTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEdgeTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEdgeTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEdgeTable::SafeDownCast, emscripten::allow_raw_pointers())

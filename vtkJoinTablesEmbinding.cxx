@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkJoinTables_class) {
   using JoinMode=vtkJoinTables::JoinMode;
   emscripten::class_<vtkJoinTables, emscripten::base<vtkTableAlgorithm>>("vtkJoinTables")
     .smart_ptr<vtkSmartPointer<vtkJoinTables>>("vtkSmartPointer<vtkJoinTables>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkJoinTables>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkJoinTables>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkJoinTables::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkJoinTables& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkJoinTables::SafeDownCast, emscripten::allow_raw_pointers())

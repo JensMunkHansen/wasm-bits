@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkConvexHull2D_class) {
   using HullShapes=vtkConvexHull2D::HullShapes;
   emscripten::class_<vtkConvexHull2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkConvexHull2D")
     .smart_ptr<vtkSmartPointer<vtkConvexHull2D>>("vtkSmartPointer<vtkConvexHull2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConvexHull2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConvexHull2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConvexHull2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConvexHull2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConvexHull2D::SafeDownCast, emscripten::allow_raw_pointers())

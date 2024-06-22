@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkClipPolyData>(vtkClipPol
 EMSCRIPTEN_BINDINGS(vtkClipPolyData_class) {
   emscripten::class_<vtkClipPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkClipPolyData")
     .smart_ptr<vtkSmartPointer<vtkClipPolyData>>("vtkSmartPointer<vtkClipPolyData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkClipPolyData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkClipPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClipPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClipPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClipPolyData::SafeDownCast, emscripten::allow_raw_pointers())

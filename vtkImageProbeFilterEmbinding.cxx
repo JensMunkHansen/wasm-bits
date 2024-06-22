@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageProbeFilter>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageProbeFilter_class) {
   emscripten::class_<vtkImageProbeFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkImageProbeFilter")
     .smart_ptr<vtkSmartPointer<vtkImageProbeFilter>>("vtkSmartPointer<vtkImageProbeFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageProbeFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageProbeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageProbeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageProbeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageProbeFilter::SafeDownCast, emscripten::allow_raw_pointers())

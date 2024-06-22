@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMemoryLimitImageDataStre
 EMSCRIPTEN_BINDINGS(vtkMemoryLimitImageDataStreamer_class) {
   emscripten::class_<vtkMemoryLimitImageDataStreamer, emscripten::base<vtkImageDataStreamer>>("vtkMemoryLimitImageDataStreamer")
     .smart_ptr<vtkSmartPointer<vtkMemoryLimitImageDataStreamer>>("vtkSmartPointer<vtkMemoryLimitImageDataStreamer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMemoryLimitImageDataStreamer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMemoryLimitImageDataStreamer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMemoryLimitImageDataStreamer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMemoryLimitImageDataStreamer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMemoryLimitImageDataStreamer::SafeDownCast, emscripten::allow_raw_pointers())

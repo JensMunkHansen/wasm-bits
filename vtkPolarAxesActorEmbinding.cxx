@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkPolarAxesActor_class) {
   using TitleLocation=vtkPolarAxesActor::TitleLocation;
   emscripten::class_<vtkPolarAxesActor, emscripten::base<vtkActor>>("vtkPolarAxesActor")
     .smart_ptr<vtkSmartPointer<vtkPolarAxesActor>>("vtkSmartPointer<vtkPolarAxesActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolarAxesActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolarAxesActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolarAxesActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolarAxesActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolarAxesActor::SafeDownCast, emscripten::allow_raw_pointers())

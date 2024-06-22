@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkBezierInterpolation>(vtk
 EMSCRIPTEN_BINDINGS(vtkBezierInterpolation_class) {
   emscripten::class_<vtkBezierInterpolation, emscripten::base<vtkHigherOrderInterpolation>>("vtkBezierInterpolation")
     .smart_ptr<vtkSmartPointer<vtkBezierInterpolation>>("vtkSmartPointer<vtkBezierInterpolation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBezierInterpolation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBezierInterpolation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBezierInterpolation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBezierInterpolation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBezierInterpolation::SafeDownCast, emscripten::allow_raw_pointers())

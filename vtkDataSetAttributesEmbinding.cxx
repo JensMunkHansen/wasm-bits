@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkDataSetAttributes_class) {
   using AttributeCopyOperations=vtkDataSetAttributes::AttributeCopyOperations;
   emscripten::class_<vtkDataSetAttributes, emscripten::base<vtkFieldData>>("vtkDataSetAttributes")
     .smart_ptr<vtkSmartPointer<vtkDataSetAttributes>>("vtkSmartPointer<vtkDataSetAttributes>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetAttributes>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetAttributes>)
     .class_function("ExtendedNew", &vtkDataSetAttributes::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetAttributes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetAttributes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEllipseArcSource>(vtkEll
 EMSCRIPTEN_BINDINGS(vtkEllipseArcSource_class) {
   emscripten::class_<vtkEllipseArcSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkEllipseArcSource")
     .smart_ptr<vtkSmartPointer<vtkEllipseArcSource>>("vtkSmartPointer<vtkEllipseArcSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEllipseArcSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEllipseArcSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEllipseArcSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEllipseArcSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEllipseArcSource::SafeDownCast, emscripten::allow_raw_pointers())

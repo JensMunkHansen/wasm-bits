@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkDiagonalMatrixSource_class) {
   using StorageType=vtkDiagonalMatrixSource::StorageType;
   emscripten::class_<vtkDiagonalMatrixSource, emscripten::base<vtkArrayDataAlgorithm>>("vtkDiagonalMatrixSource")
     .smart_ptr<vtkSmartPointer<vtkDiagonalMatrixSource>>("vtkSmartPointer<vtkDiagonalMatrixSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDiagonalMatrixSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDiagonalMatrixSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDiagonalMatrixSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDiagonalMatrixSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDiagonalMatrixSource::SafeDownCast, emscripten::allow_raw_pointers())

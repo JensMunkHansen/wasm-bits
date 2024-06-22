@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataMapper2D>(vtkPol
 EMSCRIPTEN_BINDINGS(vtkPolyDataMapper2D_class) {
   emscripten::class_<vtkPolyDataMapper2D, emscripten::base<vtkMapper2D>>("vtkPolyDataMapper2D")
     .smart_ptr<vtkSmartPointer<vtkPolyDataMapper2D>>("vtkSmartPointer<vtkPolyDataMapper2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataMapper2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataMapper2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataMapper2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataMapper2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataMapper2D::SafeDownCast, emscripten::allow_raw_pointers())

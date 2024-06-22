@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkSegYReader_class) {
   using VTKSegYVerticalCRS=vtkSegYReader::VTKSegYVerticalCRS;
   emscripten::class_<vtkSegYReader, emscripten::base<vtkDataSetAlgorithm>>("vtkSegYReader")
     .smart_ptr<vtkSmartPointer<vtkSegYReader>>("vtkSmartPointer<vtkSegYReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSegYReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSegYReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSegYReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSegYReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSegYReader::SafeDownCast, emscripten::allow_raw_pointers())

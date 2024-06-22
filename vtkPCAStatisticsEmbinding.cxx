@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkPCAStatistics_class) {
   using ProjectionType=vtkPCAStatistics::ProjectionType;
   emscripten::class_<vtkPCAStatistics, emscripten::base<vtkMultiCorrelativeStatistics>>("vtkPCAStatistics")
     .smart_ptr<vtkSmartPointer<vtkPCAStatistics>>("vtkSmartPointer<vtkPCAStatistics>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPCAStatistics>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPCAStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPCAStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPCAStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPCAStatistics::SafeDownCast, emscripten::allow_raw_pointers())

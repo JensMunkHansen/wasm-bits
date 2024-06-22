@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMaskBits>(vtkImageM
 EMSCRIPTEN_BINDINGS(vtkImageMaskBits_class) {
   emscripten::class_<vtkImageMaskBits, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageMaskBits")
     .smart_ptr<vtkSmartPointer<vtkImageMaskBits>>("vtkSmartPointer<vtkImageMaskBits>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMaskBits>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMaskBits>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMaskBits::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMaskBits& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMaskBits::SafeDownCast, emscripten::allow_raw_pointers())

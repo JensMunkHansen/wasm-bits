@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkEnsembleSource>(vtkEnsem
 EMSCRIPTEN_BINDINGS(vtkEnsembleSource_class) {
   emscripten::class_<vtkEnsembleSource, emscripten::base<vtkAlgorithm>>("vtkEnsembleSource")
     .smart_ptr<vtkSmartPointer<vtkEnsembleSource>>("vtkSmartPointer<vtkEnsembleSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEnsembleSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEnsembleSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEnsembleSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEnsembleSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEnsembleSource::SafeDownCast, emscripten::allow_raw_pointers())

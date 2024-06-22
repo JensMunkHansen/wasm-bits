@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractEdges>(vtkExtract
 EMSCRIPTEN_BINDINGS(vtkExtractEdges_class) {
   emscripten::class_<vtkExtractEdges, emscripten::base<vtkPolyDataAlgorithm>>("vtkExtractEdges")
     .smart_ptr<vtkSmartPointer<vtkExtractEdges>>("vtkSmartPointer<vtkExtractEdges>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractEdges>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractEdges>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractEdges::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractEdges& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractEdges::SafeDownCast, emscripten::allow_raw_pointers())

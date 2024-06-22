@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellCenters>(vtkCellCent
 EMSCRIPTEN_BINDINGS(vtkCellCenters_class) {
   emscripten::class_<vtkCellCenters, emscripten::base<vtkPolyDataAlgorithm>>("vtkCellCenters")
     .smart_ptr<vtkSmartPointer<vtkCellCenters>>("vtkSmartPointer<vtkCellCenters>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellCenters>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellCenters>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellCenters::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellCenters& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellCenters::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphWriter>(vtkGraphWri
 EMSCRIPTEN_BINDINGS(vtkGraphWriter_class) {
   emscripten::class_<vtkGraphWriter, emscripten::base<vtkDataWriter>>("vtkGraphWriter")
     .smart_ptr<vtkSmartPointer<vtkGraphWriter>>("vtkSmartPointer<vtkGraphWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphWriter::SafeDownCast, emscripten::allow_raw_pointers())

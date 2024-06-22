@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkMergeFields_class) {
   using FieldLocations=vtkMergeFields::FieldLocations;
   emscripten::class_<vtkMergeFields, emscripten::base<vtkDataSetAlgorithm>>("vtkMergeFields")
     .smart_ptr<vtkSmartPointer<vtkMergeFields>>("vtkSmartPointer<vtkMergeFields>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeFields>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeFields>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeFields::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeFields& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeFields::SafeDownCast, emscripten::allow_raw_pointers())

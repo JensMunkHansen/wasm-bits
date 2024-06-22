@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumeCollection>(vtkVol
 EMSCRIPTEN_BINDINGS(vtkVolumeCollection_class) {
   emscripten::class_<vtkVolumeCollection, emscripten::base<vtkPropCollection>>("vtkVolumeCollection")
     .smart_ptr<vtkSmartPointer<vtkVolumeCollection>>("vtkSmartPointer<vtkVolumeCollection>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumeCollection>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumeCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumeCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumeCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumeCollection::SafeDownCast, emscripten::allow_raw_pointers())

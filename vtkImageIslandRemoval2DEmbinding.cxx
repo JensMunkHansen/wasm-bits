@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageIslandRemoval2D>(vt
 EMSCRIPTEN_BINDINGS(vtkImageIslandRemoval2D_class) {
   emscripten::class_<vtkImageIslandRemoval2D, emscripten::base<vtkImageAlgorithm>>("vtkImageIslandRemoval2D")
     .smart_ptr<vtkSmartPointer<vtkImageIslandRemoval2D>>("vtkSmartPointer<vtkImageIslandRemoval2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageIslandRemoval2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageIslandRemoval2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageIslandRemoval2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageIslandRemoval2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageIslandRemoval2D::SafeDownCast, emscripten::allow_raw_pointers())

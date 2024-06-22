@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMersenneTwister>(vtkMers
 EMSCRIPTEN_BINDINGS(vtkMersenneTwister_class) {
   emscripten::class_<vtkMersenneTwister, emscripten::base<vtkRandomSequence>>("vtkMersenneTwister")
     .smart_ptr<vtkSmartPointer<vtkMersenneTwister>>("vtkSmartPointer<vtkMersenneTwister>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMersenneTwister>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMersenneTwister>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMersenneTwister::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMersenneTwister& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMersenneTwister::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLSkybox>(vtkOpenGLS
 EMSCRIPTEN_BINDINGS(vtkOpenGLSkybox_class) {
   emscripten::class_<vtkOpenGLSkybox, emscripten::base<vtkSkybox>>("vtkOpenGLSkybox")
     .smart_ptr<vtkSmartPointer<vtkOpenGLSkybox>>("vtkSmartPointer<vtkOpenGLSkybox>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLSkybox>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLSkybox>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLSkybox::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLSkybox& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLSkybox::SafeDownCast, emscripten::allow_raw_pointers())

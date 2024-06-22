@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractLevel>(vtkExtract
 EMSCRIPTEN_BINDINGS(vtkExtractLevel_class) {
   emscripten::class_<vtkExtractLevel, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkExtractLevel")
     .smart_ptr<vtkSmartPointer<vtkExtractLevel>>("vtkSmartPointer<vtkExtractLevel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractLevel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractLevel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractLevel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractLevel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractLevel::SafeDownCast, emscripten::allow_raw_pointers())

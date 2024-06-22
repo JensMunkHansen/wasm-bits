@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleUser>(vtk
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleUser_class) {
   emscripten::class_<vtkInteractorStyleUser, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleUser")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleUser>>("vtkSmartPointer<vtkInteractorStyleUser>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleUser>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleUser>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleUser::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleUser& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleUser::SafeDownCast, emscripten::allow_raw_pointers())

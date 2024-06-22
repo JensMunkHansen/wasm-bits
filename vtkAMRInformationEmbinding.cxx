@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRInformation>(vtkAMRIn
 EMSCRIPTEN_BINDINGS(vtkAMRInformation_class) {
   emscripten::class_<vtkAMRInformation, emscripten::base<vtkObject>>("vtkAMRInformation")
     .smart_ptr<vtkSmartPointer<vtkAMRInformation>>("vtkSmartPointer<vtkAMRInformation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRInformation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRInformation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRInformation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRInformation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRInformation::SafeDownCast, emscripten::allow_raw_pointers())

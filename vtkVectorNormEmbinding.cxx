@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkVectorNorm>(vtkVectorNor
 EMSCRIPTEN_BINDINGS(vtkVectorNorm_class) {
   emscripten::class_<vtkVectorNorm, emscripten::base<vtkDataSetAlgorithm>>("vtkVectorNorm")
     .smart_ptr<vtkSmartPointer<vtkVectorNorm>>("vtkSmartPointer<vtkVectorNorm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVectorNorm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVectorNorm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVectorNorm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVectorNorm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVectorNorm::SafeDownCast, emscripten::allow_raw_pointers())

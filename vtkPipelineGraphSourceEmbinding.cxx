@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkPipelineGraphSource>(vtk
 EMSCRIPTEN_BINDINGS(vtkPipelineGraphSource_class) {
   emscripten::class_<vtkPipelineGraphSource, emscripten::base<vtkDirectedGraphAlgorithm>>("vtkPipelineGraphSource")
     .smart_ptr<vtkSmartPointer<vtkPipelineGraphSource>>("vtkSmartPointer<vtkPipelineGraphSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPipelineGraphSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPipelineGraphSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPipelineGraphSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPipelineGraphSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPipelineGraphSource::SafeDownCast, emscripten::allow_raw_pointers())

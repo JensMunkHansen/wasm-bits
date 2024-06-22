@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimpleElevationFilter>(v
 EMSCRIPTEN_BINDINGS(vtkSimpleElevationFilter_class) {
   emscripten::class_<vtkSimpleElevationFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkSimpleElevationFilter")
     .smart_ptr<vtkSmartPointer<vtkSimpleElevationFilter>>("vtkSmartPointer<vtkSimpleElevationFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimpleElevationFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSimpleElevationFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimpleElevationFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimpleElevationFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimpleElevationFilter::SafeDownCast, emscripten::allow_raw_pointers())

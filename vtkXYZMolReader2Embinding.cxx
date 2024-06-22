@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXYZMolReader2>(vtkXYZMol
 EMSCRIPTEN_BINDINGS(vtkXYZMolReader2_class) {
   emscripten::class_<vtkXYZMolReader2, emscripten::base<vtkMoleculeAlgorithm>>("vtkXYZMolReader2")
     .smart_ptr<vtkSmartPointer<vtkXYZMolReader2>>("vtkSmartPointer<vtkXYZMolReader2>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXYZMolReader2>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXYZMolReader2>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXYZMolReader2::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXYZMolReader2& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXYZMolReader2::SafeDownCast, emscripten::allow_raw_pointers())

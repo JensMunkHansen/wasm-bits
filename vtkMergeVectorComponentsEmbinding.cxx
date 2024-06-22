@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeVectorComponents>(v
 EMSCRIPTEN_BINDINGS(vtkMergeVectorComponents_class) {
   emscripten::class_<vtkMergeVectorComponents, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkMergeVectorComponents")
     .smart_ptr<vtkSmartPointer<vtkMergeVectorComponents>>("vtkSmartPointer<vtkMergeVectorComponents>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeVectorComponents>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeVectorComponents>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeVectorComponents::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeVectorComponents& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeVectorComponents::SafeDownCast, emscripten::allow_raw_pointers())

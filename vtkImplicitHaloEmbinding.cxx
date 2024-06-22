@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitHalo>(vtkImplici
 EMSCRIPTEN_BINDINGS(vtkImplicitHalo_class) {
   emscripten::class_<vtkImplicitHalo, emscripten::base<vtkImplicitFunction>>("vtkImplicitHalo")
     .smart_ptr<vtkSmartPointer<vtkImplicitHalo>>("vtkSmartPointer<vtkImplicitHalo>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitHalo>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitHalo>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitHalo::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitHalo& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitHalo::SafeDownCast, emscripten::allow_raw_pointers())

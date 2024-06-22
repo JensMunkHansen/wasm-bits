@@ -42,7 +42,7 @@ EMSCRIPTEN_BINDINGS(vtkPolyDataEdgeConnectivityFilter_class) {
   using RegionGrowingType=vtkPolyDataEdgeConnectivityFilter::RegionGrowingType;
   emscripten::class_<vtkPolyDataEdgeConnectivityFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataEdgeConnectivityFilter")
     .smart_ptr<vtkSmartPointer<vtkPolyDataEdgeConnectivityFilter>>("vtkSmartPointer<vtkPolyDataEdgeConnectivityFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataEdgeConnectivityFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataEdgeConnectivityFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataEdgeConnectivityFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataEdgeConnectivityFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataEdgeConnectivityFilter::SafeDownCast, emscripten::allow_raw_pointers())

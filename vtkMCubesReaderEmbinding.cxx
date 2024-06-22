@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkMCubesReader>(vtkMCubesR
 EMSCRIPTEN_BINDINGS(vtkMCubesReader_class) {
   emscripten::class_<vtkMCubesReader, emscripten::base<vtkPolyDataAlgorithm>>("vtkMCubesReader")
     .smart_ptr<vtkSmartPointer<vtkMCubesReader>>("vtkSmartPointer<vtkMCubesReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMCubesReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMCubesReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMCubesReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMCubesReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMCubesReader::SafeDownCast, emscripten::allow_raw_pointers())

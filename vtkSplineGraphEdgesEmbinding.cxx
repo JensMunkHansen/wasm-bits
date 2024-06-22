@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplineGraphEdges>(vtkSpl
 EMSCRIPTEN_BINDINGS(vtkSplineGraphEdges_class) {
   emscripten::class_<vtkSplineGraphEdges, emscripten::base<vtkGraphAlgorithm>>("vtkSplineGraphEdges")
     .smart_ptr<vtkSmartPointer<vtkSplineGraphEdges>>("vtkSmartPointer<vtkSplineGraphEdges>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplineGraphEdges>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSplineGraphEdges>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplineGraphEdges::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplineGraphEdges& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplineGraphEdges::SafeDownCast, emscripten::allow_raw_pointers())

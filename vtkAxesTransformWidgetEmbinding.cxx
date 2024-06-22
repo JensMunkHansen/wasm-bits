@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkAxesTransformWidget>(vtk
 EMSCRIPTEN_BINDINGS(vtkAxesTransformWidget_class) {
   emscripten::class_<vtkAxesTransformWidget, emscripten::base<vtkAbstractWidget>>("vtkAxesTransformWidget")
     .smart_ptr<vtkSmartPointer<vtkAxesTransformWidget>>("vtkSmartPointer<vtkAxesTransformWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxesTransformWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAxesTransformWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxesTransformWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxesTransformWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxesTransformWidget::SafeDownCast, emscripten::allow_raw_pointers())

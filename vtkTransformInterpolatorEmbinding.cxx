@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransformInterpolator>(v
 EMSCRIPTEN_BINDINGS(vtkTransformInterpolator_class) {
   emscripten::class_<vtkTransformInterpolator, emscripten::base<vtkObject>>("vtkTransformInterpolator")
     .smart_ptr<vtkSmartPointer<vtkTransformInterpolator>>("vtkSmartPointer<vtkTransformInterpolator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransformInterpolator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransformInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransformInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransformInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransformInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

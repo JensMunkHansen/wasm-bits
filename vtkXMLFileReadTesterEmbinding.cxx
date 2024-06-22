@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLFileReadTester>(vtkXM
 EMSCRIPTEN_BINDINGS(vtkXMLFileReadTester_class) {
   emscripten::class_<vtkXMLFileReadTester, emscripten::base<vtkXMLParser>>("vtkXMLFileReadTester")
     .smart_ptr<vtkSmartPointer<vtkXMLFileReadTester>>("vtkSmartPointer<vtkXMLFileReadTester>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLFileReadTester>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLFileReadTester>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLFileReadTester::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLFileReadTester& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLFileReadTester::SafeDownCast, emscripten::allow_raw_pointers())

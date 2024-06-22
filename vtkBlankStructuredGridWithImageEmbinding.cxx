@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkBlankStructuredGridWithI
 EMSCRIPTEN_BINDINGS(vtkBlankStructuredGridWithImage_class) {
   emscripten::class_<vtkBlankStructuredGridWithImage, emscripten::base<vtkStructuredGridAlgorithm>>("vtkBlankStructuredGridWithImage")
     .smart_ptr<vtkSmartPointer<vtkBlankStructuredGridWithImage>>("vtkSmartPointer<vtkBlankStructuredGridWithImage>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBlankStructuredGridWithImage>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBlankStructuredGridWithImage>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBlankStructuredGridWithImage::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBlankStructuredGridWithImage& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBlankStructuredGridWithImage::SafeDownCast, emscripten::allow_raw_pointers())

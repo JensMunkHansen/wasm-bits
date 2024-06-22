@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalBoxDataSetAl
 EMSCRIPTEN_BINDINGS(vtkHierarchicalBoxDataSetAlgorithm_class) {
   emscripten::class_<vtkHierarchicalBoxDataSetAlgorithm, emscripten::base<vtkAlgorithm>>("vtkHierarchicalBoxDataSetAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalBoxDataSetAlgorithm>>("vtkSmartPointer<vtkHierarchicalBoxDataSetAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalBoxDataSetAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalBoxDataSetAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalBoxDataSetAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalBoxDataSetAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalBoxDataSetAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

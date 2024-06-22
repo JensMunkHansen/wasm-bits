@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExplicitStructuredGridCr
 EMSCRIPTEN_BINDINGS(vtkExplicitStructuredGridCrop_class) {
   emscripten::class_<vtkExplicitStructuredGridCrop, emscripten::base<vtkExplicitStructuredGridAlgorithm>>("vtkExplicitStructuredGridCrop")
     .smart_ptr<vtkSmartPointer<vtkExplicitStructuredGridCrop>>("vtkSmartPointer<vtkExplicitStructuredGridCrop>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExplicitStructuredGridCrop>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExplicitStructuredGridCrop>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExplicitStructuredGridCrop::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExplicitStructuredGridCrop& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExplicitStructuredGridCrop::SafeDownCast, emscripten::allow_raw_pointers())

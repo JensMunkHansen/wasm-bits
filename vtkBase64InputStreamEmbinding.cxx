@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBase64InputStream>(vtkBa
 EMSCRIPTEN_BINDINGS(vtkBase64InputStream_class) {
   emscripten::class_<vtkBase64InputStream, emscripten::base<vtkInputStream>>("vtkBase64InputStream")
     .smart_ptr<vtkSmartPointer<vtkBase64InputStream>>("vtkSmartPointer<vtkBase64InputStream>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBase64InputStream>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBase64InputStream>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBase64InputStream::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBase64InputStream& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBase64InputStream::SafeDownCast, emscripten::allow_raw_pointers())

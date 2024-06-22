@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkBSPIntersections>(vtkBSP
 EMSCRIPTEN_BINDINGS(vtkBSPIntersections_class) {
   emscripten::class_<vtkBSPIntersections, emscripten::base<vtkObject>>("vtkBSPIntersections")
     .smart_ptr<vtkSmartPointer<vtkBSPIntersections>>("vtkSmartPointer<vtkBSPIntersections>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBSPIntersections>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBSPIntersections>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBSPIntersections::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBSPIntersections& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBSPIntersections::SafeDownCast, emscripten::allow_raw_pointers())

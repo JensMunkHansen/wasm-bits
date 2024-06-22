@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtentSplitter>(vtkExten
 EMSCRIPTEN_BINDINGS(vtkExtentSplitter_class) {
   emscripten::class_<vtkExtentSplitter, emscripten::base<vtkObject>>("vtkExtentSplitter")
     .smart_ptr<vtkSmartPointer<vtkExtentSplitter>>("vtkSmartPointer<vtkExtentSplitter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtentSplitter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtentSplitter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtentSplitter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtentSplitter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtentSplitter::SafeDownCast, emscripten::allow_raw_pointers())

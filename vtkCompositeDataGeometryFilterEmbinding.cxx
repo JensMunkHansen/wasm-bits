@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeDataGeometryFil
 EMSCRIPTEN_BINDINGS(vtkCompositeDataGeometryFilter_class) {
   emscripten::class_<vtkCompositeDataGeometryFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkCompositeDataGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkCompositeDataGeometryFilter>>("vtkSmartPointer<vtkCompositeDataGeometryFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeDataGeometryFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeDataGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeDataGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeDataGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeDataGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOctreeImageToPointSetFil
 EMSCRIPTEN_BINDINGS(vtkOctreeImageToPointSetFilter_class) {
   emscripten::class_<vtkOctreeImageToPointSetFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkOctreeImageToPointSetFilter")
     .smart_ptr<vtkSmartPointer<vtkOctreeImageToPointSetFilter>>("vtkSmartPointer<vtkOctreeImageToPointSetFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOctreeImageToPointSetFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOctreeImageToPointSetFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOctreeImageToPointSetFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOctreeImageToPointSetFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOctreeImageToPointSetFilter::SafeDownCast, emscripten::allow_raw_pointers())

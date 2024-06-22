@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCPExodusIIElementBlockIm
 EMSCRIPTEN_BINDINGS(vtkCPExodusIIElementBlockImpl_class) {
   emscripten::class_<vtkCPExodusIIElementBlockImpl, emscripten::base<vtkObject>>("vtkCPExodusIIElementBlockImpl")
     .smart_ptr<vtkSmartPointer<vtkCPExodusIIElementBlockImpl>>("vtkSmartPointer<vtkCPExodusIIElementBlockImpl>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCPExodusIIElementBlockImpl>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCPExodusIIElementBlockImpl>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCPExodusIIElementBlockImpl::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCPExodusIIElementBlockImpl& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCPExodusIIElementBlockImpl::SafeDownCast, emscripten::allow_raw_pointers())
@@ -47,7 +47,7 @@ template<> void emscripten::internal::raw_destructor<vtkCPExodusIIElementBlock>(
 EMSCRIPTEN_BINDINGS(vtkCPExodusIIElementBlock_class) {
   emscripten::class_<vtkCPExodusIIElementBlock, emscripten::base<vtkUnstructuredGridBase>>("vtkCPExodusIIElementBlock")
     .smart_ptr<vtkSmartPointer<vtkCPExodusIIElementBlock>>("vtkSmartPointer<vtkCPExodusIIElementBlock>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCPExodusIIElementBlock>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCPExodusIIElementBlock>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCPExodusIIElementBlock::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCPExodusIIElementBlock& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCPExodusIIElementBlock::SafeDownCast, emscripten::allow_raw_pointers())

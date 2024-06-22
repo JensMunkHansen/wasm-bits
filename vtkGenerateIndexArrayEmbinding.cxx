@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenerateIndexArray>(vtkG
 EMSCRIPTEN_BINDINGS(vtkGenerateIndexArray_class) {
   emscripten::class_<vtkGenerateIndexArray, emscripten::base<vtkDataObjectAlgorithm>>("vtkGenerateIndexArray")
     .smart_ptr<vtkSmartPointer<vtkGenerateIndexArray>>("vtkSmartPointer<vtkGenerateIndexArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenerateIndexArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenerateIndexArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenerateIndexArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenerateIndexArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenerateIndexArray::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLProjectedTetrahedr
 EMSCRIPTEN_BINDINGS(vtkOpenGLProjectedTetrahedraMapper_class) {
   emscripten::class_<vtkOpenGLProjectedTetrahedraMapper, emscripten::base<vtkProjectedTetrahedraMapper>>("vtkOpenGLProjectedTetrahedraMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLProjectedTetrahedraMapper>>("vtkSmartPointer<vtkOpenGLProjectedTetrahedraMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLProjectedTetrahedraMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLProjectedTetrahedraMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLProjectedTetrahedraMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLProjectedTetrahedraMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLProjectedTetrahedraMapper::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkMutableGraphHelper>(vtkM
 EMSCRIPTEN_BINDINGS(vtkMutableGraphHelper_class) {
   emscripten::class_<vtkMutableGraphHelper, emscripten::base<vtkObject>>("vtkMutableGraphHelper")
     .smart_ptr<vtkSmartPointer<vtkMutableGraphHelper>>("vtkSmartPointer<vtkMutableGraphHelper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMutableGraphHelper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMutableGraphHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMutableGraphHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMutableGraphHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMutableGraphHelper::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHoverWidget>(vtkHoverWid
 EMSCRIPTEN_BINDINGS(vtkHoverWidget_class) {
   emscripten::class_<vtkHoverWidget, emscripten::base<vtkAbstractWidget>>("vtkHoverWidget")
     .smart_ptr<vtkSmartPointer<vtkHoverWidget>>("vtkSmartPointer<vtkHoverWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHoverWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHoverWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHoverWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHoverWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHoverWidget::SafeDownCast, emscripten::allow_raw_pointers())

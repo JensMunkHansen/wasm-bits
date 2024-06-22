@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractSelectedArraysOve
 EMSCRIPTEN_BINDINGS(vtkExtractSelectedArraysOverTime_class) {
   emscripten::class_<vtkExtractSelectedArraysOverTime, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkExtractSelectedArraysOverTime")
     .smart_ptr<vtkSmartPointer<vtkExtractSelectedArraysOverTime>>("vtkSmartPointer<vtkExtractSelectedArraysOverTime>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractSelectedArraysOverTime>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractSelectedArraysOverTime>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractSelectedArraysOverTime::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractSelectedArraysOverTime& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractSelectedArraysOverTime::SafeDownCast, emscripten::allow_raw_pointers())

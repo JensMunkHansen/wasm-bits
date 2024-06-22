@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkConeLayoutStrategy>(vtkC
 EMSCRIPTEN_BINDINGS(vtkConeLayoutStrategy_class) {
   emscripten::class_<vtkConeLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkConeLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkConeLayoutStrategy>>("vtkSmartPointer<vtkConeLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConeLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConeLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConeLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConeLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConeLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

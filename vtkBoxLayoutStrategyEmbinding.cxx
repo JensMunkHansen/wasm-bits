@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkBoxLayoutStrategy>(vtkBo
 EMSCRIPTEN_BINDINGS(vtkBoxLayoutStrategy_class) {
   emscripten::class_<vtkBoxLayoutStrategy, emscripten::base<vtkTreeMapLayoutStrategy>>("vtkBoxLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkBoxLayoutStrategy>>("vtkSmartPointer<vtkBoxLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBoxLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBoxLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBoxLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBoxLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBoxLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

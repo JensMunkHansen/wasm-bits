@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataSetAlgorithm>(vtkDat
 EMSCRIPTEN_BINDINGS(vtkDataSetAlgorithm_class) {
   emscripten::class_<vtkDataSetAlgorithm, emscripten::base<vtkAlgorithm>>("vtkDataSetAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkDataSetAlgorithm>>("vtkSmartPointer<vtkDataSetAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataSetAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

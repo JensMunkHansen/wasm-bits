@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkWebGPUActor_class) {
   using DirectionalMaskEnum=vtkWebGPUActor::DirectionalMaskEnum;
   emscripten::class_<vtkWebGPUActor, emscripten::base<vtkActor>>("vtkWebGPUActor")
     .smart_ptr<vtkSmartPointer<vtkWebGPUActor>>("vtkSmartPointer<vtkWebGPUActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUActor::SafeDownCast, emscripten::allow_raw_pointers())

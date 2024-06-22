@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHoudiniPolyDataWriter>(v
 EMSCRIPTEN_BINDINGS(vtkHoudiniPolyDataWriter_class) {
   emscripten::class_<vtkHoudiniPolyDataWriter, emscripten::base<vtkWriter>>("vtkHoudiniPolyDataWriter")
     .smart_ptr<vtkSmartPointer<vtkHoudiniPolyDataWriter>>("vtkSmartPointer<vtkHoudiniPolyDataWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHoudiniPolyDataWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHoudiniPolyDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHoudiniPolyDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHoudiniPolyDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHoudiniPolyDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

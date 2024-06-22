@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiBlockDataSet>(vtkMu
 EMSCRIPTEN_BINDINGS(vtkMultiBlockDataSet_class) {
   emscripten::class_<vtkMultiBlockDataSet, emscripten::base<vtkDataObjectTree>>("vtkMultiBlockDataSet")
     .smart_ptr<vtkSmartPointer<vtkMultiBlockDataSet>>("vtkSmartPointer<vtkMultiBlockDataSet>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiBlockDataSet>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiBlockDataSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiBlockDataSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiBlockDataSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiBlockDataSet::SafeDownCast, emscripten::allow_raw_pointers())

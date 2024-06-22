@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeGraphs>(vtkMergeGra
 EMSCRIPTEN_BINDINGS(vtkMergeGraphs_class) {
   emscripten::class_<vtkMergeGraphs, emscripten::base<vtkGraphAlgorithm>>("vtkMergeGraphs")
     .smart_ptr<vtkSmartPointer<vtkMergeGraphs>>("vtkSmartPointer<vtkMergeGraphs>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeGraphs>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeGraphs>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeGraphs::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeGraphs& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeGraphs::SafeDownCast, emscripten::allow_raw_pointers())

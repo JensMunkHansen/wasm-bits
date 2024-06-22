@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricPluckerConoid>
 EMSCRIPTEN_BINDINGS(vtkParametricPluckerConoid_class) {
   emscripten::class_<vtkParametricPluckerConoid, emscripten::base<vtkParametricFunction>>("vtkParametricPluckerConoid")
     .smart_ptr<vtkSmartPointer<vtkParametricPluckerConoid>>("vtkSmartPointer<vtkParametricPluckerConoid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricPluckerConoid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricPluckerConoid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricPluckerConoid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricPluckerConoid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricPluckerConoid::SafeDownCast, emscripten::allow_raw_pointers())

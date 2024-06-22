@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericEdgeTable>(vtkGen
 EMSCRIPTEN_BINDINGS(vtkGenericEdgeTable_class) {
   emscripten::class_<vtkGenericEdgeTable, emscripten::base<vtkObject>>("vtkGenericEdgeTable")
     .smart_ptr<vtkSmartPointer<vtkGenericEdgeTable>>("vtkSmartPointer<vtkGenericEdgeTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericEdgeTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericEdgeTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericEdgeTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericEdgeTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericEdgeTable::SafeDownCast, emscripten::allow_raw_pointers())

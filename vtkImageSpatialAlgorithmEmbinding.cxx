@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSpatialAlgorithm>(v
 EMSCRIPTEN_BINDINGS(vtkImageSpatialAlgorithm_class) {
   emscripten::class_<vtkImageSpatialAlgorithm, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageSpatialAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkImageSpatialAlgorithm>>("vtkSmartPointer<vtkImageSpatialAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSpatialAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSpatialAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSpatialAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSpatialAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSpatialAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkRandomPool>(vtkRandomPoo
 EMSCRIPTEN_BINDINGS(vtkRandomPool_class) {
   emscripten::class_<vtkRandomPool, emscripten::base<vtkObject>>("vtkRandomPool")
     .smart_ptr<vtkSmartPointer<vtkRandomPool>>("vtkSmartPointer<vtkRandomPool>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRandomPool>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRandomPool>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRandomPool::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRandomPool& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRandomPool::SafeDownCast, emscripten::allow_raw_pointers())

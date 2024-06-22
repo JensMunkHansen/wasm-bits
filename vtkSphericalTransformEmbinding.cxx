@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphericalTransform>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSphericalTransform_class) {
   emscripten::class_<vtkSphericalTransform, emscripten::base<vtkWarpTransform>>("vtkSphericalTransform")
     .smart_ptr<vtkSmartPointer<vtkSphericalTransform>>("vtkSmartPointer<vtkSphericalTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphericalTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphericalTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphericalTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphericalTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphericalTransform::SafeDownCast, emscripten::allow_raw_pointers())

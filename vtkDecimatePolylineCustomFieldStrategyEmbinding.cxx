@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDecimatePolylineCustomFi
 EMSCRIPTEN_BINDINGS(vtkDecimatePolylineCustomFieldStrategy_class) {
   emscripten::class_<vtkDecimatePolylineCustomFieldStrategy, emscripten::base<vtkDecimatePolylineStrategy>>("vtkDecimatePolylineCustomFieldStrategy")
     .smart_ptr<vtkSmartPointer<vtkDecimatePolylineCustomFieldStrategy>>("vtkSmartPointer<vtkDecimatePolylineCustomFieldStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDecimatePolylineCustomFieldStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDecimatePolylineCustomFieldStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDecimatePolylineCustomFieldStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDecimatePolylineCustomFieldStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDecimatePolylineCustomFieldStrategy::SafeDownCast, emscripten::allow_raw_pointers())

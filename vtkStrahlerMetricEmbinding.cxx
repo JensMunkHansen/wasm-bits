@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStrahlerMetric>(vtkStrah
 EMSCRIPTEN_BINDINGS(vtkStrahlerMetric_class) {
   emscripten::class_<vtkStrahlerMetric, emscripten::base<vtkTreeAlgorithm>>("vtkStrahlerMetric")
     .smart_ptr<vtkSmartPointer<vtkStrahlerMetric>>("vtkSmartPointer<vtkStrahlerMetric>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStrahlerMetric>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStrahlerMetric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStrahlerMetric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStrahlerMetric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStrahlerMetric::SafeDownCast, emscripten::allow_raw_pointers())

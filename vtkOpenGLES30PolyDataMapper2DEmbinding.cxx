@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLES30PolyDataMapper2D_class) {
   using PrimitiveTypes=vtkOpenGLES30PolyDataMapper2D::PrimitiveTypes;
   emscripten::class_<vtkOpenGLES30PolyDataMapper2D, emscripten::base<vtkOpenGLPolyDataMapper2D>>("vtkOpenGLES30PolyDataMapper2D")
     .smart_ptr<vtkSmartPointer<vtkOpenGLES30PolyDataMapper2D>>("vtkSmartPointer<vtkOpenGLES30PolyDataMapper2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLES30PolyDataMapper2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLES30PolyDataMapper2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLES30PolyDataMapper2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLES30PolyDataMapper2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLES30PolyDataMapper2D::SafeDownCast, emscripten::allow_raw_pointers())

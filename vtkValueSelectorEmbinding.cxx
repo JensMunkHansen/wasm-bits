@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkValueSelector>(vtkValueS
 EMSCRIPTEN_BINDINGS(vtkValueSelector_class) {
   emscripten::class_<vtkValueSelector, emscripten::base<vtkSelector>>("vtkValueSelector")
     .smart_ptr<vtkSmartPointer<vtkValueSelector>>("vtkSmartPointer<vtkValueSelector>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkValueSelector>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkValueSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkValueSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkValueSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkValueSelector::SafeDownCast, emscripten::allow_raw_pointers())

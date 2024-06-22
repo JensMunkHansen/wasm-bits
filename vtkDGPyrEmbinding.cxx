@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGPyr>(vtkDGPyr * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkDGPyr_class) {
   emscripten::class_<vtkDGPyr, emscripten::base<vtkDGCell>>("vtkDGPyr")
     .smart_ptr<vtkSmartPointer<vtkDGPyr>>("vtkSmartPointer<vtkDGPyr>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGPyr>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDGPyr>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGPyr::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGPyr& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGPyr::SafeDownCast, emscripten::allow_raw_pointers())

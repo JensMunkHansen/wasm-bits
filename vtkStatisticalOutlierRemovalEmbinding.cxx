@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkStatisticalOutlierRemova
 EMSCRIPTEN_BINDINGS(vtkStatisticalOutlierRemoval_class) {
   emscripten::class_<vtkStatisticalOutlierRemoval, emscripten::base<vtkPointCloudFilter>>("vtkStatisticalOutlierRemoval")
     .smart_ptr<vtkSmartPointer<vtkStatisticalOutlierRemoval>>("vtkSmartPointer<vtkStatisticalOutlierRemoval>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStatisticalOutlierRemoval>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStatisticalOutlierRemoval>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStatisticalOutlierRemoval::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStatisticalOutlierRemoval& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStatisticalOutlierRemoval::SafeDownCast, emscripten::allow_raw_pointers())

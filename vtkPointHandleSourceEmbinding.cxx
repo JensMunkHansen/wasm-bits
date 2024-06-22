@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointHandleSource>(vtkPo
 EMSCRIPTEN_BINDINGS(vtkPointHandleSource_class) {
   emscripten::class_<vtkPointHandleSource, emscripten::base<vtkHandleSource>>("vtkPointHandleSource")
     .smart_ptr<vtkSmartPointer<vtkPointHandleSource>>("vtkSmartPointer<vtkPointHandleSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointHandleSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointHandleSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointHandleSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointHandleSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointHandleSource::SafeDownCast, emscripten::allow_raw_pointers())

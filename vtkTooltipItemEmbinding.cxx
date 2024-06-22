@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkTooltipItem>(vtkTooltipI
 EMSCRIPTEN_BINDINGS(vtkTooltipItem_class) {
   emscripten::class_<vtkTooltipItem, emscripten::base<vtkContextItem>>("vtkTooltipItem")
     .smart_ptr<vtkSmartPointer<vtkTooltipItem>>("vtkSmartPointer<vtkTooltipItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTooltipItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTooltipItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTooltipItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTooltipItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTooltipItem::SafeDownCast, emscripten::allow_raw_pointers())

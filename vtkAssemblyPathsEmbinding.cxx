@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAssemblyPaths>(vtkAssemb
 EMSCRIPTEN_BINDINGS(vtkAssemblyPaths_class) {
   emscripten::class_<vtkAssemblyPaths, emscripten::base<vtkCollection>>("vtkAssemblyPaths")
     .smart_ptr<vtkSmartPointer<vtkAssemblyPaths>>("vtkSmartPointer<vtkAssemblyPaths>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAssemblyPaths>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAssemblyPaths>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAssemblyPaths::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAssemblyPaths& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAssemblyPaths::SafeDownCast, emscripten::allow_raw_pointers())

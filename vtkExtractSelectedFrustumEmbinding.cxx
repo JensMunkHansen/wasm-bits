@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractSelectedFrustum>(
 EMSCRIPTEN_BINDINGS(vtkExtractSelectedFrustum_class) {
   emscripten::class_<vtkExtractSelectedFrustum, emscripten::base<vtkExtractSelectionBase>>("vtkExtractSelectedFrustum")
     .smart_ptr<vtkSmartPointer<vtkExtractSelectedFrustum>>("vtkSmartPointer<vtkExtractSelectedFrustum>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractSelectedFrustum>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractSelectedFrustum>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractSelectedFrustum::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractSelectedFrustum& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractSelectedFrustum::SafeDownCast, emscripten::allow_raw_pointers())

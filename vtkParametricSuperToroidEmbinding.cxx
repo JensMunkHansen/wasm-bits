@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricSuperToroid>(v
 EMSCRIPTEN_BINDINGS(vtkParametricSuperToroid_class) {
   emscripten::class_<vtkParametricSuperToroid, emscripten::base<vtkParametricFunction>>("vtkParametricSuperToroid")
     .smart_ptr<vtkSmartPointer<vtkParametricSuperToroid>>("vtkSmartPointer<vtkParametricSuperToroid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricSuperToroid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricSuperToroid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricSuperToroid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricSuperToroid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricSuperToroid::SafeDownCast, emscripten::allow_raw_pointers())

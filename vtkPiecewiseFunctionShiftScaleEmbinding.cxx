@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPiecewiseFunctionShiftSc
 EMSCRIPTEN_BINDINGS(vtkPiecewiseFunctionShiftScale_class) {
   emscripten::class_<vtkPiecewiseFunctionShiftScale, emscripten::base<vtkPiecewiseFunctionAlgorithm>>("vtkPiecewiseFunctionShiftScale")
     .smart_ptr<vtkSmartPointer<vtkPiecewiseFunctionShiftScale>>("vtkSmartPointer<vtkPiecewiseFunctionShiftScale>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPiecewiseFunctionShiftScale>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPiecewiseFunctionShiftScale>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPiecewiseFunctionShiftScale::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPiecewiseFunctionShiftScale& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPiecewiseFunctionShiftScale::SafeDownCast, emscripten::allow_raw_pointers())

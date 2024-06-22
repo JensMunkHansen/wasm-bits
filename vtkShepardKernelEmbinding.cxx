@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkShepardKernel>(vtkShepar
 EMSCRIPTEN_BINDINGS(vtkShepardKernel_class) {
   emscripten::class_<vtkShepardKernel, emscripten::base<vtkGeneralizedKernel>>("vtkShepardKernel")
     .smart_ptr<vtkSmartPointer<vtkShepardKernel>>("vtkSmartPointer<vtkShepardKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkShepardKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkShepardKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShepardKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShepardKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShepardKernel::SafeDownCast, emscripten::allow_raw_pointers())

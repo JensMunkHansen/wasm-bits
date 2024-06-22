@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDecimatePolylineFilter>(
 EMSCRIPTEN_BINDINGS(vtkDecimatePolylineFilter_class) {
   emscripten::class_<vtkDecimatePolylineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkDecimatePolylineFilter")
     .smart_ptr<vtkSmartPointer<vtkDecimatePolylineFilter>>("vtkSmartPointer<vtkDecimatePolylineFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDecimatePolylineFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDecimatePolylineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDecimatePolylineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDecimatePolylineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDecimatePolylineFilter::SafeDownCast, emscripten::allow_raw_pointers())

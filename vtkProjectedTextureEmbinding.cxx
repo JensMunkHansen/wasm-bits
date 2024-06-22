@@ -31,7 +31,7 @@ template<> void emscripten::internal::raw_destructor<vtkProjectedTexture>(vtkPro
 EMSCRIPTEN_BINDINGS(vtkProjectedTexture_class) {
   emscripten::class_<vtkProjectedTexture, emscripten::base<vtkDataSetAlgorithm>>("vtkProjectedTexture")
     .smart_ptr<vtkSmartPointer<vtkProjectedTexture>>("vtkSmartPointer<vtkProjectedTexture>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProjectedTexture>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProjectedTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProjectedTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProjectedTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProjectedTexture::SafeDownCast, emscripten::allow_raw_pointers())

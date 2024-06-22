@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkIncrementalOctreePointLo
 EMSCRIPTEN_BINDINGS(vtkIncrementalOctreePointLocator_class) {
   emscripten::class_<vtkIncrementalOctreePointLocator, emscripten::base<vtkIncrementalPointLocator>>("vtkIncrementalOctreePointLocator")
     .smart_ptr<vtkSmartPointer<vtkIncrementalOctreePointLocator>>("vtkSmartPointer<vtkIncrementalOctreePointLocator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIncrementalOctreePointLocator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIncrementalOctreePointLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIncrementalOctreePointLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIncrementalOctreePointLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIncrementalOctreePointLocator::SafeDownCast, emscripten::allow_raw_pointers())

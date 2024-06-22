@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkMagnifierRepresentation_class) {
   using InteractionStateType=vtkMagnifierRepresentation::InteractionStateType;
   emscripten::class_<vtkMagnifierRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkMagnifierRepresentation")
     .smart_ptr<vtkSmartPointer<vtkMagnifierRepresentation>>("vtkSmartPointer<vtkMagnifierRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMagnifierRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMagnifierRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMagnifierRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMagnifierRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMagnifierRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkInteractorEventRecorder_class) {
   using vtkEventDataType=vtkInteractorEventRecorder::vtkEventDataType;
   emscripten::class_<vtkInteractorEventRecorder, emscripten::base<vtkInteractorObserver>>("vtkInteractorEventRecorder")
     .smart_ptr<vtkSmartPointer<vtkInteractorEventRecorder>>("vtkSmartPointer<vtkInteractorEventRecorder>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorEventRecorder>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorEventRecorder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorEventRecorder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorEventRecorder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorEventRecorder::SafeDownCast, emscripten::allow_raw_pointers())

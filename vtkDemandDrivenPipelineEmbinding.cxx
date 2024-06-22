@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkDemandDrivenPipeline>(vt
 EMSCRIPTEN_BINDINGS(vtkDemandDrivenPipeline_class) {
   emscripten::class_<vtkDemandDrivenPipeline, emscripten::base<vtkExecutive>>("vtkDemandDrivenPipeline")
     .smart_ptr<vtkSmartPointer<vtkDemandDrivenPipeline>>("vtkSmartPointer<vtkDemandDrivenPipeline>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDemandDrivenPipeline>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDemandDrivenPipeline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDemandDrivenPipeline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDemandDrivenPipeline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDemandDrivenPipeline::SafeDownCast, emscripten::allow_raw_pointers())

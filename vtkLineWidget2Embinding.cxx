@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkLineWidget2>(vtkLineWidg
 EMSCRIPTEN_BINDINGS(vtkLineWidget2_class) {
   emscripten::class_<vtkLineWidget2, emscripten::base<vtkAbstractWidget>>("vtkLineWidget2")
     .smart_ptr<vtkSmartPointer<vtkLineWidget2>>("vtkSmartPointer<vtkLineWidget2>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLineWidget2>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLineWidget2>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLineWidget2::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLineWidget2& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLineWidget2::SafeDownCast, emscripten::allow_raw_pointers())

@@ -39,7 +39,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGridConnectivi
 EMSCRIPTEN_BINDINGS(vtkStructuredGridConnectivity_class) {
   emscripten::class_<vtkStructuredGridConnectivity, emscripten::base<vtkAbstractGridConnectivity>>("vtkStructuredGridConnectivity")
     .smart_ptr<vtkSmartPointer<vtkStructuredGridConnectivity>>("vtkSmartPointer<vtkStructuredGridConnectivity>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGridConnectivity>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGridConnectivity>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGridConnectivity::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGridConnectivity& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredGridConnectivity::SafeDownCast, emscripten::allow_raw_pointers())

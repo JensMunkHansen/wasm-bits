@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkVoronoiKernel>(vtkVorono
 EMSCRIPTEN_BINDINGS(vtkVoronoiKernel_class) {
   emscripten::class_<vtkVoronoiKernel, emscripten::base<vtkInterpolationKernel>>("vtkVoronoiKernel")
     .smart_ptr<vtkSmartPointer<vtkVoronoiKernel>>("vtkSmartPointer<vtkVoronoiKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVoronoiKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVoronoiKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVoronoiKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVoronoiKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVoronoiKernel::SafeDownCast, emscripten::allow_raw_pointers())

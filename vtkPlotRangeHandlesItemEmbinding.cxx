@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkPlotRangeHandlesItem_class) {
   using Orientation=vtkPlotRangeHandlesItem::Orientation;
   emscripten::class_<vtkPlotRangeHandlesItem, emscripten::base<vtkPlot>>("vtkPlotRangeHandlesItem")
     .smart_ptr<vtkSmartPointer<vtkPlotRangeHandlesItem>>("vtkSmartPointer<vtkPlotRangeHandlesItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotRangeHandlesItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotRangeHandlesItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotRangeHandlesItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotRangeHandlesItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotRangeHandlesItem::SafeDownCast, emscripten::allow_raw_pointers())

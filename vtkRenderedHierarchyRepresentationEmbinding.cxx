@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderedHierarchyReprese
 EMSCRIPTEN_BINDINGS(vtkRenderedHierarchyRepresentation_class) {
   emscripten::class_<vtkRenderedHierarchyRepresentation, emscripten::base<vtkRenderedGraphRepresentation>>("vtkRenderedHierarchyRepresentation")
     .smart_ptr<vtkSmartPointer<vtkRenderedHierarchyRepresentation>>("vtkSmartPointer<vtkRenderedHierarchyRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderedHierarchyRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderedHierarchyRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderedHierarchyRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderedHierarchyRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderedHierarchyRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

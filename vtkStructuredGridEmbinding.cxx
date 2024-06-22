@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGrid>(vtkStruc
 EMSCRIPTEN_BINDINGS(vtkStructuredGrid_class) {
   emscripten::class_<vtkStructuredGrid, emscripten::base<vtkPointSet>>("vtkStructuredGrid")
     .smart_ptr<vtkSmartPointer<vtkStructuredGrid>>("vtkSmartPointer<vtkStructuredGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGrid>)
     .class_function("ExtendedNew", &vtkStructuredGrid::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

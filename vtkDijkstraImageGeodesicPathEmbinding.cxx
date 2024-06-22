@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDijkstraImageGeodesicPat
 EMSCRIPTEN_BINDINGS(vtkDijkstraImageGeodesicPath_class) {
   emscripten::class_<vtkDijkstraImageGeodesicPath, emscripten::base<vtkDijkstraGraphGeodesicPath>>("vtkDijkstraImageGeodesicPath")
     .smart_ptr<vtkSmartPointer<vtkDijkstraImageGeodesicPath>>("vtkSmartPointer<vtkDijkstraImageGeodesicPath>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDijkstraImageGeodesicPath>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDijkstraImageGeodesicPath>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDijkstraImageGeodesicPath::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDijkstraImageGeodesicPath& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDijkstraImageGeodesicPath::SafeDownCast, emscripten::allow_raw_pointers())

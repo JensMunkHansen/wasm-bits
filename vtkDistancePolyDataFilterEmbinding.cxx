@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDistancePolyDataFilter>(
 EMSCRIPTEN_BINDINGS(vtkDistancePolyDataFilter_class) {
   emscripten::class_<vtkDistancePolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkDistancePolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkDistancePolyDataFilter>>("vtkSmartPointer<vtkDistancePolyDataFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDistancePolyDataFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDistancePolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDistancePolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDistancePolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDistancePolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

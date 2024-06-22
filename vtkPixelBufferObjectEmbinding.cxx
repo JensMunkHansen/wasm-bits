@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkPixelBufferObject_class) {
   using BufferType=vtkPixelBufferObject::BufferType;
   emscripten::class_<vtkPixelBufferObject, emscripten::base<vtkObject>>("vtkPixelBufferObject")
     .smart_ptr<vtkSmartPointer<vtkPixelBufferObject>>("vtkSmartPointer<vtkPixelBufferObject>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPixelBufferObject>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPixelBufferObject>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPixelBufferObject::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPixelBufferObject& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPixelBufferObject::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSectorSource>(vtkSectorS
 EMSCRIPTEN_BINDINGS(vtkSectorSource_class) {
   emscripten::class_<vtkSectorSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkSectorSource")
     .smart_ptr<vtkSmartPointer<vtkSectorSource>>("vtkSmartPointer<vtkSectorSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSectorSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSectorSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSectorSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSectorSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSectorSource::SafeDownCast, emscripten::allow_raw_pointers())

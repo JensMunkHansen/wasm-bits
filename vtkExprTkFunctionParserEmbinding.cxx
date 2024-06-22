@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExprTkFunctionParser>(vt
 EMSCRIPTEN_BINDINGS(vtkExprTkFunctionParser_class) {
   emscripten::class_<vtkExprTkFunctionParser, emscripten::base<vtkObject>>("vtkExprTkFunctionParser")
     .smart_ptr<vtkSmartPointer<vtkExprTkFunctionParser>>("vtkSmartPointer<vtkExprTkFunctionParser>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExprTkFunctionParser>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExprTkFunctionParser>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExprTkFunctionParser::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExprTkFunctionParser& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExprTkFunctionParser::SafeDownCast, emscripten::allow_raw_pointers())

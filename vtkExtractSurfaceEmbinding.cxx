@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractSurface>(vtkExtra
 EMSCRIPTEN_BINDINGS(vtkExtractSurface_class) {
   emscripten::class_<vtkExtractSurface, emscripten::base<vtkPolyDataAlgorithm>>("vtkExtractSurface")
     .smart_ptr<vtkSmartPointer<vtkExtractSurface>>("vtkSmartPointer<vtkExtractSurface>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractSurface>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractSurface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractSurface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractSurface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractSurface::SafeDownCast, emscripten::allow_raw_pointers())

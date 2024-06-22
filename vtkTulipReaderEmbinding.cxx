@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTulipReader>(vtkTulipRea
 EMSCRIPTEN_BINDINGS(vtkTulipReader_class) {
   emscripten::class_<vtkTulipReader, emscripten::base<vtkUndirectedGraphAlgorithm>>("vtkTulipReader")
     .smart_ptr<vtkSmartPointer<vtkTulipReader>>("vtkSmartPointer<vtkTulipReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTulipReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTulipReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTulipReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTulipReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTulipReader::SafeDownCast, emscripten::allow_raw_pointers())

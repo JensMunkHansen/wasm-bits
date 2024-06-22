@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCleanUnstructuredGridCel
 EMSCRIPTEN_BINDINGS(vtkCleanUnstructuredGridCells_class) {
   emscripten::class_<vtkCleanUnstructuredGridCells, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkCleanUnstructuredGridCells")
     .smart_ptr<vtkSmartPointer<vtkCleanUnstructuredGridCells>>("vtkSmartPointer<vtkCleanUnstructuredGridCells>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCleanUnstructuredGridCells>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCleanUnstructuredGridCells>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCleanUnstructuredGridCells::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCleanUnstructuredGridCells& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCleanUnstructuredGridCells::SafeDownCast, emscripten::allow_raw_pointers())

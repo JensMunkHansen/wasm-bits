@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkConvertSelectionDomain>(
 EMSCRIPTEN_BINDINGS(vtkConvertSelectionDomain_class) {
   emscripten::class_<vtkConvertSelectionDomain, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkConvertSelectionDomain")
     .smart_ptr<vtkSmartPointer<vtkConvertSelectionDomain>>("vtkSmartPointer<vtkConvertSelectionDomain>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConvertSelectionDomain>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConvertSelectionDomain>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConvertSelectionDomain::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConvertSelectionDomain& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConvertSelectionDomain::SafeDownCast, emscripten::allow_raw_pointers())

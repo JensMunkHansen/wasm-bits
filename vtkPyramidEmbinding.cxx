@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkPyramid>(vtkPyramid * pt
 EMSCRIPTEN_BINDINGS(vtkPyramid_class) {
   emscripten::class_<vtkPyramid, emscripten::base<vtkCell3D>>("vtkPyramid")
     .smart_ptr<vtkSmartPointer<vtkPyramid>>("vtkSmartPointer<vtkPyramid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPyramid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPyramid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPyramid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPyramid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPyramid::SafeDownCast, emscripten::allow_raw_pointers())

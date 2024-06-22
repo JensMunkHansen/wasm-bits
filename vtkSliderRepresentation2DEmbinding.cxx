@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkSliderRepresentation2D>(
 EMSCRIPTEN_BINDINGS(vtkSliderRepresentation2D_class) {
   emscripten::class_<vtkSliderRepresentation2D, emscripten::base<vtkSliderRepresentation>>("vtkSliderRepresentation2D")
     .smart_ptr<vtkSmartPointer<vtkSliderRepresentation2D>>("vtkSmartPointer<vtkSliderRepresentation2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSliderRepresentation2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSliderRepresentation2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSliderRepresentation2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSliderRepresentation2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSliderRepresentation2D::SafeDownCast, emscripten::allow_raw_pointers())

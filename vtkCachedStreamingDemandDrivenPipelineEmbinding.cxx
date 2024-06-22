@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCachedStreamingDemandDri
 EMSCRIPTEN_BINDINGS(vtkCachedStreamingDemandDrivenPipeline_class) {
   emscripten::class_<vtkCachedStreamingDemandDrivenPipeline, emscripten::base<vtkStreamingDemandDrivenPipeline>>("vtkCachedStreamingDemandDrivenPipeline")
     .smart_ptr<vtkSmartPointer<vtkCachedStreamingDemandDrivenPipeline>>("vtkSmartPointer<vtkCachedStreamingDemandDrivenPipeline>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCachedStreamingDemandDrivenPipeline>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCachedStreamingDemandDrivenPipeline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCachedStreamingDemandDrivenPipeline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCachedStreamingDemandDrivenPipeline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCachedStreamingDemandDrivenPipeline::SafeDownCast, emscripten::allow_raw_pointers())

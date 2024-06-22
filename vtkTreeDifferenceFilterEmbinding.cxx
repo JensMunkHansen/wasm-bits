@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeDifferenceFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkTreeDifferenceFilter_class) {
   emscripten::class_<vtkTreeDifferenceFilter, emscripten::base<vtkGraphAlgorithm>>("vtkTreeDifferenceFilter")
     .smart_ptr<vtkSmartPointer<vtkTreeDifferenceFilter>>("vtkSmartPointer<vtkTreeDifferenceFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeDifferenceFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeDifferenceFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeDifferenceFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeDifferenceFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeDifferenceFilter::SafeDownCast, emscripten::allow_raw_pointers())

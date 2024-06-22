@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeTetra>(vtkLagran
 EMSCRIPTEN_BINDINGS(vtkLagrangeTetra_class) {
   emscripten::class_<vtkLagrangeTetra, emscripten::base<vtkHigherOrderTetra>>("vtkLagrangeTetra")
     .smart_ptr<vtkSmartPointer<vtkLagrangeTetra>>("vtkSmartPointer<vtkLagrangeTetra>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeTetra>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeTetra>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeTetra::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeTetra& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeTetra::SafeDownCast, emscripten::allow_raw_pointers())

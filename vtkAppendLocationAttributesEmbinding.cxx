@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendLocationAttributes
 EMSCRIPTEN_BINDINGS(vtkAppendLocationAttributes_class) {
   emscripten::class_<vtkAppendLocationAttributes, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkAppendLocationAttributes")
     .smart_ptr<vtkSmartPointer<vtkAppendLocationAttributes>>("vtkSmartPointer<vtkAppendLocationAttributes>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendLocationAttributes>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendLocationAttributes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendLocationAttributes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendLocationAttributes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendLocationAttributes::SafeDownCast, emscripten::allow_raw_pointers())

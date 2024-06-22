@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFast2DLayoutStrategy>(vt
 EMSCRIPTEN_BINDINGS(vtkFast2DLayoutStrategy_class) {
   emscripten::class_<vtkFast2DLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkFast2DLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkFast2DLayoutStrategy>>("vtkSmartPointer<vtkFast2DLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFast2DLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFast2DLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFast2DLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFast2DLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFast2DLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

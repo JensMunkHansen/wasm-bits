@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeQuadrilateral>(v
 EMSCRIPTEN_BINDINGS(vtkLagrangeQuadrilateral_class) {
   emscripten::class_<vtkLagrangeQuadrilateral, emscripten::base<vtkHigherOrderQuadrilateral>>("vtkLagrangeQuadrilateral")
     .smart_ptr<vtkSmartPointer<vtkLagrangeQuadrilateral>>("vtkSmartPointer<vtkLagrangeQuadrilateral>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeQuadrilateral>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeQuadrilateral>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeQuadrilateral::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeQuadrilateral& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeQuadrilateral::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgrammableDataObjectSo
 EMSCRIPTEN_BINDINGS(vtkProgrammableDataObjectSource_class) {
   emscripten::class_<vtkProgrammableDataObjectSource, emscripten::base<vtkDataObjectAlgorithm>>("vtkProgrammableDataObjectSource")
     .smart_ptr<vtkSmartPointer<vtkProgrammableDataObjectSource>>("vtkSmartPointer<vtkProgrammableDataObjectSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgrammableDataObjectSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProgrammableDataObjectSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgrammableDataObjectSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgrammableDataObjectSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgrammableDataObjectSource::SafeDownCast, emscripten::allow_raw_pointers())

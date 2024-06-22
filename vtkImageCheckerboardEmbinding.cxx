@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCheckerboard>(vtkIm
 EMSCRIPTEN_BINDINGS(vtkImageCheckerboard_class) {
   emscripten::class_<vtkImageCheckerboard, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageCheckerboard")
     .smart_ptr<vtkSmartPointer<vtkImageCheckerboard>>("vtkSmartPointer<vtkImageCheckerboard>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCheckerboard>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCheckerboard>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCheckerboard::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCheckerboard& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCheckerboard::SafeDownCast, emscripten::allow_raw_pointers())

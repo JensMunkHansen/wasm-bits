@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMoleculeToLinesFilter>(v
 EMSCRIPTEN_BINDINGS(vtkMoleculeToLinesFilter_class) {
   emscripten::class_<vtkMoleculeToLinesFilter, emscripten::base<vtkMoleculeToPolyDataFilter>>("vtkMoleculeToLinesFilter")
     .smart_ptr<vtkSmartPointer<vtkMoleculeToLinesFilter>>("vtkSmartPointer<vtkMoleculeToLinesFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMoleculeToLinesFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMoleculeToLinesFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMoleculeToLinesFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMoleculeToLinesFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMoleculeToLinesFilter::SafeDownCast, emscripten::allow_raw_pointers())

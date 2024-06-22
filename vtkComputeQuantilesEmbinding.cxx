@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkComputeQuantiles>(vtkCom
 EMSCRIPTEN_BINDINGS(vtkComputeQuantiles_class) {
   emscripten::class_<vtkComputeQuantiles, emscripten::base<vtkTableAlgorithm>>("vtkComputeQuantiles")
     .smart_ptr<vtkSmartPointer<vtkComputeQuantiles>>("vtkSmartPointer<vtkComputeQuantiles>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkComputeQuantiles>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkComputeQuantiles>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkComputeQuantiles::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkComputeQuantiles& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkComputeQuantiles::SafeDownCast, emscripten::allow_raw_pointers())

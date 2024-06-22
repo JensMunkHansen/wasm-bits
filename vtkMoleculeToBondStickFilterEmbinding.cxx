@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMoleculeToBondStickFilte
 EMSCRIPTEN_BINDINGS(vtkMoleculeToBondStickFilter_class) {
   emscripten::class_<vtkMoleculeToBondStickFilter, emscripten::base<vtkMoleculeToPolyDataFilter>>("vtkMoleculeToBondStickFilter")
     .smart_ptr<vtkSmartPointer<vtkMoleculeToBondStickFilter>>("vtkSmartPointer<vtkMoleculeToBondStickFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMoleculeToBondStickFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMoleculeToBondStickFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMoleculeToBondStickFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMoleculeToBondStickFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMoleculeToBondStickFilter::SafeDownCast, emscripten::allow_raw_pointers())

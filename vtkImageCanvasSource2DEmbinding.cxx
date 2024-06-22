@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCanvasSource2D>(vtk
 EMSCRIPTEN_BINDINGS(vtkImageCanvasSource2D_class) {
   emscripten::class_<vtkImageCanvasSource2D, emscripten::base<vtkImageAlgorithm>>("vtkImageCanvasSource2D")
     .smart_ptr<vtkSmartPointer<vtkImageCanvasSource2D>>("vtkSmartPointer<vtkImageCanvasSource2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCanvasSource2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCanvasSource2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCanvasSource2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCanvasSource2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCanvasSource2D::SafeDownCast, emscripten::allow_raw_pointers())

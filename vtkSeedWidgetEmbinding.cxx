@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkSeedWidget>(vtkSeedWidge
 EMSCRIPTEN_BINDINGS(vtkSeedWidget_class) {
   emscripten::class_<vtkSeedWidget, emscripten::base<vtkAbstractWidget>>("vtkSeedWidget")
     .smart_ptr<vtkSmartPointer<vtkSeedWidget>>("vtkSmartPointer<vtkSeedWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSeedWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSeedWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSeedWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSeedWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSeedWidget::SafeDownCast, emscripten::allow_raw_pointers())

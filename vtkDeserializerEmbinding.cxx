@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDeserializer>(vtkDeseria
 EMSCRIPTEN_BINDINGS(vtkDeserializer_class) {
   emscripten::class_<vtkDeserializer, emscripten::base<vtkObject>>("vtkDeserializer")
     .smart_ptr<vtkSmartPointer<vtkDeserializer>>("vtkSmartPointer<vtkDeserializer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDeserializer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDeserializer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDeserializer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDeserializer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDeserializer::SafeDownCast, emscripten::allow_raw_pointers())

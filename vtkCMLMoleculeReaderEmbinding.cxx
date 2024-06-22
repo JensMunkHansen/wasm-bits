@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCMLMoleculeReader>(vtkCM
 EMSCRIPTEN_BINDINGS(vtkCMLMoleculeReader_class) {
   emscripten::class_<vtkCMLMoleculeReader, emscripten::base<vtkMoleculeAlgorithm>>("vtkCMLMoleculeReader")
     .smart_ptr<vtkSmartPointer<vtkCMLMoleculeReader>>("vtkSmartPointer<vtkCMLMoleculeReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCMLMoleculeReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCMLMoleculeReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCMLMoleculeReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCMLMoleculeReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCMLMoleculeReader::SafeDownCast, emscripten::allow_raw_pointers())

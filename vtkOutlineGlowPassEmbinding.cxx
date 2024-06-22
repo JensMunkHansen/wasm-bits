@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOutlineGlowPass>(vtkOutl
 EMSCRIPTEN_BINDINGS(vtkOutlineGlowPass_class) {
   emscripten::class_<vtkOutlineGlowPass, emscripten::base<vtkImageProcessingPass>>("vtkOutlineGlowPass")
     .smart_ptr<vtkSmartPointer<vtkOutlineGlowPass>>("vtkSmartPointer<vtkOutlineGlowPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOutlineGlowPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOutlineGlowPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOutlineGlowPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOutlineGlowPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOutlineGlowPass::SafeDownCast, emscripten::allow_raw_pointers())

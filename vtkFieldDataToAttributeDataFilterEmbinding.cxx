@@ -39,7 +39,7 @@ template<> void emscripten::internal::raw_destructor<vtkFieldDataToAttributeData
 EMSCRIPTEN_BINDINGS(vtkFieldDataToAttributeDataFilter_class) {
   emscripten::class_<vtkFieldDataToAttributeDataFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkFieldDataToAttributeDataFilter")
     .smart_ptr<vtkSmartPointer<vtkFieldDataToAttributeDataFilter>>("vtkSmartPointer<vtkFieldDataToAttributeDataFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFieldDataToAttributeDataFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFieldDataToAttributeDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFieldDataToAttributeDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFieldDataToAttributeDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFieldDataToAttributeDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

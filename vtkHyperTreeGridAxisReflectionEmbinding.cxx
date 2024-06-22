@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkHyperTreeGridAxisReflection_class) {
   using AxisReflectionPlane=vtkHyperTreeGridAxisReflection::AxisReflectionPlane;
   emscripten::class_<vtkHyperTreeGridAxisReflection, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridAxisReflection")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridAxisReflection>>("vtkSmartPointer<vtkHyperTreeGridAxisReflection>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridAxisReflection>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridAxisReflection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridAxisReflection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridAxisReflection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridAxisReflection::SafeDownCast, emscripten::allow_raw_pointers())

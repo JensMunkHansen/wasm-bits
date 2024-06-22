@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLFXAAPass>(vtkOpenG
 EMSCRIPTEN_BINDINGS(vtkOpenGLFXAAPass_class) {
   emscripten::class_<vtkOpenGLFXAAPass, emscripten::base<vtkImageProcessingPass>>("vtkOpenGLFXAAPass")
     .smart_ptr<vtkSmartPointer<vtkOpenGLFXAAPass>>("vtkSmartPointer<vtkOpenGLFXAAPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLFXAAPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLFXAAPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLFXAAPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLFXAAPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLFXAAPass::SafeDownCast, emscripten::allow_raw_pointers())

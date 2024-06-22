@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAVSucdReader>(vtkAVSucdR
 EMSCRIPTEN_BINDINGS(vtkAVSucdReader_class) {
   emscripten::class_<vtkAVSucdReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkAVSucdReader")
     .smart_ptr<vtkSmartPointer<vtkAVSucdReader>>("vtkSmartPointer<vtkAVSucdReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAVSucdReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAVSucdReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAVSucdReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAVSucdReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAVSucdReader::SafeDownCast, emscripten::allow_raw_pointers())

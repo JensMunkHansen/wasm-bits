@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPassThroughEdgeStrategy>
 EMSCRIPTEN_BINDINGS(vtkPassThroughEdgeStrategy_class) {
   emscripten::class_<vtkPassThroughEdgeStrategy, emscripten::base<vtkEdgeLayoutStrategy>>("vtkPassThroughEdgeStrategy")
     .smart_ptr<vtkSmartPointer<vtkPassThroughEdgeStrategy>>("vtkSmartPointer<vtkPassThroughEdgeStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPassThroughEdgeStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPassThroughEdgeStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPassThroughEdgeStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPassThroughEdgeStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPassThroughEdgeStrategy::SafeDownCast, emscripten::allow_raw_pointers())

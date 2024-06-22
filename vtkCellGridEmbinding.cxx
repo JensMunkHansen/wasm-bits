@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGrid>(vtkCellGrid * 
 EMSCRIPTEN_BINDINGS(vtkCellGrid_class) {
   emscripten::class_<vtkCellGrid, emscripten::base<vtkDataObject>>("vtkCellGrid")
     .smart_ptr<vtkSmartPointer<vtkCellGrid>>("vtkSmartPointer<vtkCellGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGrid::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkShrinkFilter>(vtkShrinkF
 EMSCRIPTEN_BINDINGS(vtkShrinkFilter_class) {
   emscripten::class_<vtkShrinkFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkShrinkFilter")
     .smart_ptr<vtkSmartPointer<vtkShrinkFilter>>("vtkSmartPointer<vtkShrinkFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkShrinkFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkShrinkFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShrinkFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShrinkFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShrinkFilter::SafeDownCast, emscripten::allow_raw_pointers())

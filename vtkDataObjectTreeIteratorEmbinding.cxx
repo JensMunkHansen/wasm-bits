@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataObjectTreeIterator>(
 EMSCRIPTEN_BINDINGS(vtkDataObjectTreeIterator_class) {
   emscripten::class_<vtkDataObjectTreeIterator, emscripten::base<vtkCompositeDataIterator>>("vtkDataObjectTreeIterator")
     .smart_ptr<vtkSmartPointer<vtkDataObjectTreeIterator>>("vtkSmartPointer<vtkDataObjectTreeIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataObjectTreeIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataObjectTreeIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataObjectTreeIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataObjectTreeIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataObjectTreeIterator::SafeDownCast, emscripten::allow_raw_pointers())

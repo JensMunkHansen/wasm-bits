@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractRectilinearGrid>(
 EMSCRIPTEN_BINDINGS(vtkExtractRectilinearGrid_class) {
   emscripten::class_<vtkExtractRectilinearGrid, emscripten::base<vtkRectilinearGridAlgorithm>>("vtkExtractRectilinearGrid")
     .smart_ptr<vtkSmartPointer<vtkExtractRectilinearGrid>>("vtkSmartPointer<vtkExtractRectilinearGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractRectilinearGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractRectilinearGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractRectilinearGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractRectilinearGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractRectilinearGrid::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkApplyColors>(vtkApplyCol
 EMSCRIPTEN_BINDINGS(vtkApplyColors_class) {
   emscripten::class_<vtkApplyColors, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkApplyColors")
     .smart_ptr<vtkSmartPointer<vtkApplyColors>>("vtkSmartPointer<vtkApplyColors>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkApplyColors>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkApplyColors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkApplyColors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkApplyColors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkApplyColors::SafeDownCast, emscripten::allow_raw_pointers())

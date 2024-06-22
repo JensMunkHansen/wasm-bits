@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageWeightedSum>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageWeightedSum_class) {
   emscripten::class_<vtkImageWeightedSum, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageWeightedSum")
     .smart_ptr<vtkSmartPointer<vtkImageWeightedSum>>("vtkSmartPointer<vtkImageWeightedSum>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageWeightedSum>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageWeightedSum>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageWeightedSum::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageWeightedSum& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageWeightedSum::SafeDownCast, emscripten::allow_raw_pointers())

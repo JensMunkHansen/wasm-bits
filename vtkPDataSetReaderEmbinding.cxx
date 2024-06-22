@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPDataSetReader>(vtkPData
 EMSCRIPTEN_BINDINGS(vtkPDataSetReader_class) {
   emscripten::class_<vtkPDataSetReader, emscripten::base<vtkDataSetAlgorithm>>("vtkPDataSetReader")
     .smart_ptr<vtkSmartPointer<vtkPDataSetReader>>("vtkSmartPointer<vtkPDataSetReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPDataSetReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPDataSetReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPDataSetReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPDataSetReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPDataSetReader::SafeDownCast, emscripten::allow_raw_pointers())

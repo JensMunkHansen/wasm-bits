@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLFileOutputWindow>(vtk
 EMSCRIPTEN_BINDINGS(vtkXMLFileOutputWindow_class) {
   emscripten::class_<vtkXMLFileOutputWindow, emscripten::base<vtkFileOutputWindow>>("vtkXMLFileOutputWindow")
     .smart_ptr<vtkSmartPointer<vtkXMLFileOutputWindow>>("vtkSmartPointer<vtkXMLFileOutputWindow>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLFileOutputWindow>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLFileOutputWindow>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLFileOutputWindow::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLFileOutputWindow& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLFileOutputWindow::SafeDownCast, emscripten::allow_raw_pointers())

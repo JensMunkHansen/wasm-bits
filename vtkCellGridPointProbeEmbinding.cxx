@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridPointProbe>(vtkC
 EMSCRIPTEN_BINDINGS(vtkCellGridPointProbe_class) {
   emscripten::class_<vtkCellGridPointProbe, emscripten::base<vtkPolyDataAlgorithm>>("vtkCellGridPointProbe")
     .smart_ptr<vtkSmartPointer<vtkCellGridPointProbe>>("vtkSmartPointer<vtkCellGridPointProbe>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridPointProbe>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridPointProbe>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridPointProbe::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridPointProbe& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridPointProbe::SafeDownCast, emscripten::allow_raw_pointers())

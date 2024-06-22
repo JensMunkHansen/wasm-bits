@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkConeSource>(vtkConeSourc
 EMSCRIPTEN_BINDINGS(vtkConeSource_class) {
   emscripten::class_<vtkConeSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkConeSource")
     .smart_ptr<vtkSmartPointer<vtkConeSource>>("vtkSmartPointer<vtkConeSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConeSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConeSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConeSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConeSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConeSource::SafeDownCast, emscripten::allow_raw_pointers())

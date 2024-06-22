@@ -37,7 +37,7 @@ EMSCRIPTEN_BINDINGS(vtkPointDensityFilter_class) {
   using FunctionClass=vtkPointDensityFilter::FunctionClass;
   emscripten::class_<vtkPointDensityFilter, emscripten::base<vtkImageAlgorithm>>("vtkPointDensityFilter")
     .smart_ptr<vtkSmartPointer<vtkPointDensityFilter>>("vtkSmartPointer<vtkPointDensityFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointDensityFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointDensityFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointDensityFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointDensityFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointDensityFilter::SafeDownCast, emscripten::allow_raw_pointers())

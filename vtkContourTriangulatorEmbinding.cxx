@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkContourTriangulator>(vtk
 EMSCRIPTEN_BINDINGS(vtkContourTriangulator_class) {
   emscripten::class_<vtkContourTriangulator, emscripten::base<vtkPolyDataAlgorithm>>("vtkContourTriangulator")
     .smart_ptr<vtkSmartPointer<vtkContourTriangulator>>("vtkSmartPointer<vtkContourTriangulator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkContourTriangulator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkContourTriangulator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContourTriangulator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContourTriangulator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContourTriangulator::SafeDownCast, emscripten::allow_raw_pointers())

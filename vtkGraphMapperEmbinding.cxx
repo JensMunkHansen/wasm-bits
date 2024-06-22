@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphMapper>(vtkGraphMap
 EMSCRIPTEN_BINDINGS(vtkGraphMapper_class) {
   emscripten::class_<vtkGraphMapper, emscripten::base<vtkMapper>>("vtkGraphMapper")
     .smart_ptr<vtkSmartPointer<vtkGraphMapper>>("vtkSmartPointer<vtkGraphMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphMapper::SafeDownCast, emscripten::allow_raw_pointers())

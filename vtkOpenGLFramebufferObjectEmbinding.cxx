@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLFramebufferObject>
 EMSCRIPTEN_BINDINGS(vtkOpenGLFramebufferObject_class) {
   emscripten::class_<vtkOpenGLFramebufferObject, emscripten::base<vtkFrameBufferObjectBase>>("vtkOpenGLFramebufferObject")
     .smart_ptr<vtkSmartPointer<vtkOpenGLFramebufferObject>>("vtkSmartPointer<vtkOpenGLFramebufferObject>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLFramebufferObject>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLFramebufferObject>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLFramebufferObject::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLFramebufferObject& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLFramebufferObject::SafeDownCast, emscripten::allow_raw_pointers())

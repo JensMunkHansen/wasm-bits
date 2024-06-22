@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkLegendScaleActor_class) {
   using AttributeLocation=vtkLegendScaleActor::AttributeLocation;
   emscripten::class_<vtkLegendScaleActor, emscripten::base<vtkProp>>("vtkLegendScaleActor")
     .smart_ptr<vtkSmartPointer<vtkLegendScaleActor>>("vtkSmartPointer<vtkLegendScaleActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLegendScaleActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLegendScaleActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLegendScaleActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLegendScaleActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLegendScaleActor::SafeDownCast, emscripten::allow_raw_pointers())

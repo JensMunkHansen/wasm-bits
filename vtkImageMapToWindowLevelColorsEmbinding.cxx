@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMapToWindowLevelCol
 EMSCRIPTEN_BINDINGS(vtkImageMapToWindowLevelColors_class) {
   emscripten::class_<vtkImageMapToWindowLevelColors, emscripten::base<vtkImageMapToColors>>("vtkImageMapToWindowLevelColors")
     .smart_ptr<vtkSmartPointer<vtkImageMapToWindowLevelColors>>("vtkSmartPointer<vtkImageMapToWindowLevelColors>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMapToWindowLevelColors>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMapToWindowLevelColors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMapToWindowLevelColors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMapToWindowLevelColors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMapToWindowLevelColors::SafeDownCast, emscripten::allow_raw_pointers())

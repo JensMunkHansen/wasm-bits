@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkFollower>(vtkFollower * 
 EMSCRIPTEN_BINDINGS(vtkFollower_class) {
   emscripten::class_<vtkFollower, emscripten::base<vtkActor>>("vtkFollower")
     .smart_ptr<vtkSmartPointer<vtkFollower>>("vtkSmartPointer<vtkFollower>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFollower>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFollower>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFollower::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFollower& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFollower::SafeDownCast, emscripten::allow_raw_pointers())

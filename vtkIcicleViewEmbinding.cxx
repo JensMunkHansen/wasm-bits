@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkIcicleView>(vtkIcicleVie
 EMSCRIPTEN_BINDINGS(vtkIcicleView_class) {
   emscripten::class_<vtkIcicleView, emscripten::base<vtkTreeAreaView>>("vtkIcicleView")
     .smart_ptr<vtkSmartPointer<vtkIcicleView>>("vtkSmartPointer<vtkIcicleView>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIcicleView>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIcicleView>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIcicleView::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIcicleView& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIcicleView::SafeDownCast, emscripten::allow_raw_pointers())

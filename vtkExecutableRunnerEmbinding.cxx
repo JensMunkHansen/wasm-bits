@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExecutableRunner>(vtkExe
 EMSCRIPTEN_BINDINGS(vtkExecutableRunner_class) {
   emscripten::class_<vtkExecutableRunner, emscripten::base<vtkObject>>("vtkExecutableRunner")
     .smart_ptr<vtkSmartPointer<vtkExecutableRunner>>("vtkSmartPointer<vtkExecutableRunner>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExecutableRunner>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExecutableRunner>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExecutableRunner::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExecutableRunner& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExecutableRunner::SafeDownCast, emscripten::allow_raw_pointers())

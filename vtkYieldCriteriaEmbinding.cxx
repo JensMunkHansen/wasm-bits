@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkYieldCriteria_class) {
   using Criterion=vtkYieldCriteria::Criterion;
   emscripten::class_<vtkYieldCriteria, emscripten::base<vtkDataSetAlgorithm>>("vtkYieldCriteria")
     .smart_ptr<vtkSmartPointer<vtkYieldCriteria>>("vtkSmartPointer<vtkYieldCriteria>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkYieldCriteria>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkYieldCriteria>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkYieldCriteria::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkYieldCriteria& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkYieldCriteria::SafeDownCast, emscripten::allow_raw_pointers())

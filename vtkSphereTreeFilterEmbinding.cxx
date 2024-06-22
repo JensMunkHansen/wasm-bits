@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphereTreeFilter>(vtkSph
 EMSCRIPTEN_BINDINGS(vtkSphereTreeFilter_class) {
   emscripten::class_<vtkSphereTreeFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkSphereTreeFilter")
     .smart_ptr<vtkSmartPointer<vtkSphereTreeFilter>>("vtkSmartPointer<vtkSphereTreeFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphereTreeFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphereTreeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphereTreeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphereTreeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphereTreeFilter::SafeDownCast, emscripten::allow_raw_pointers())

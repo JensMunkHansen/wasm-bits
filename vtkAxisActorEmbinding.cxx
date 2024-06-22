@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkAxisActor_class) {
   using AlignLocation=vtkAxisActor::AlignLocation;
   emscripten::class_<vtkAxisActor, emscripten::base<vtkActor>>("vtkAxisActor")
     .smart_ptr<vtkSmartPointer<vtkAxisActor>>("vtkSmartPointer<vtkAxisActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxisActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAxisActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxisActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxisActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxisActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkCleanUnstructuredGrid_class) {
   using DataWeighingType=vtkCleanUnstructuredGrid::DataWeighingType;
   emscripten::class_<vtkCleanUnstructuredGrid, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkCleanUnstructuredGrid")
     .smart_ptr<vtkSmartPointer<vtkCleanUnstructuredGrid>>("vtkSmartPointer<vtkCleanUnstructuredGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCleanUnstructuredGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCleanUnstructuredGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCleanUnstructuredGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCleanUnstructuredGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCleanUnstructuredGrid::SafeDownCast, emscripten::allow_raw_pointers())

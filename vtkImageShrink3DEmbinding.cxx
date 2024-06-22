@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageShrink3D>(vtkImageS
 EMSCRIPTEN_BINDINGS(vtkImageShrink3D_class) {
   emscripten::class_<vtkImageShrink3D, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageShrink3D")
     .smart_ptr<vtkSmartPointer<vtkImageShrink3D>>("vtkSmartPointer<vtkImageShrink3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageShrink3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageShrink3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageShrink3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageShrink3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageShrink3D::SafeDownCast, emscripten::allow_raw_pointers())

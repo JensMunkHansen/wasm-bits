@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphReader>(vtkGraphRea
 EMSCRIPTEN_BINDINGS(vtkGraphReader_class) {
   emscripten::class_<vtkGraphReader, emscripten::base<vtkDataReader>>("vtkGraphReader")
     .smart_ptr<vtkSmartPointer<vtkGraphReader>>("vtkSmartPointer<vtkGraphReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphReader::SafeDownCast, emscripten::allow_raw_pointers())

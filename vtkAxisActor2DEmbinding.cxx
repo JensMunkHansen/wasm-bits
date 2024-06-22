@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkAxisActor2D_class) {
   using LabelMax=vtkAxisActor2D::LabelMax;
   emscripten::class_<vtkAxisActor2D, emscripten::base<vtkActor2D>>("vtkAxisActor2D")
     .smart_ptr<vtkSmartPointer<vtkAxisActor2D>>("vtkSmartPointer<vtkAxisActor2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxisActor2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAxisActor2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxisActor2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxisActor2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxisActor2D::SafeDownCast, emscripten::allow_raw_pointers())

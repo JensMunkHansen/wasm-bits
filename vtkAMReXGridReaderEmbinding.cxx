@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMReXGridReader>(vtkAMRe
 EMSCRIPTEN_BINDINGS(vtkAMReXGridReader_class) {
   emscripten::class_<vtkAMReXGridReader, emscripten::base<vtkAMRBaseReader>>("vtkAMReXGridReader")
     .smart_ptr<vtkSmartPointer<vtkAMReXGridReader>>("vtkSmartPointer<vtkAMReXGridReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMReXGridReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAMReXGridReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMReXGridReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMReXGridReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMReXGridReader::SafeDownCast, emscripten::allow_raw_pointers())

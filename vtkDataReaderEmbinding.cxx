@@ -46,7 +46,7 @@ EMSCRIPTEN_BINDINGS(vtkDataReader_class) {
   using FieldType=vtkDataReader::FieldType;
   emscripten::class_<vtkDataReader, emscripten::base<vtkSimpleReader>>("vtkDataReader")
     .smart_ptr<vtkSmartPointer<vtkDataReader>>("vtkSmartPointer<vtkDataReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataReader::SafeDownCast, emscripten::allow_raw_pointers())

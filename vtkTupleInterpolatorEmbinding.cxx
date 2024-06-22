@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTupleInterpolator>(vtkTu
 EMSCRIPTEN_BINDINGS(vtkTupleInterpolator_class) {
   emscripten::class_<vtkTupleInterpolator, emscripten::base<vtkObject>>("vtkTupleInterpolator")
     .smart_ptr<vtkSmartPointer<vtkTupleInterpolator>>("vtkSmartPointer<vtkTupleInterpolator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTupleInterpolator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTupleInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTupleInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTupleInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTupleInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

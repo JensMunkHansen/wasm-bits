@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLLabeledContourMapp
 EMSCRIPTEN_BINDINGS(vtkOpenGLLabeledContourMapper_class) {
   emscripten::class_<vtkOpenGLLabeledContourMapper, emscripten::base<vtkLabeledContourMapper>>("vtkOpenGLLabeledContourMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLLabeledContourMapper>>("vtkSmartPointer<vtkOpenGLLabeledContourMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLLabeledContourMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLLabeledContourMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLLabeledContourMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLLabeledContourMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLLabeledContourMapper::SafeDownCast, emscripten::allow_raw_pointers())

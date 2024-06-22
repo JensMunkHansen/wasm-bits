@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGridGeometryFi
 EMSCRIPTEN_BINDINGS(vtkStructuredGridGeometryFilter_class) {
   emscripten::class_<vtkStructuredGridGeometryFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkStructuredGridGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkStructuredGridGeometryFilter>>("vtkSmartPointer<vtkStructuredGridGeometryFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGridGeometryFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGridGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGridGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGridGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredGridGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

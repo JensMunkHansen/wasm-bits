@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFacetWriter>(vtkFacetWri
 EMSCRIPTEN_BINDINGS(vtkFacetWriter_class) {
   emscripten::class_<vtkFacetWriter, emscripten::base<vtkPolyDataAlgorithm>>("vtkFacetWriter")
     .smart_ptr<vtkSmartPointer<vtkFacetWriter>>("vtkSmartPointer<vtkFacetWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFacetWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFacetWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFacetWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFacetWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFacetWriter::SafeDownCast, emscripten::allow_raw_pointers())

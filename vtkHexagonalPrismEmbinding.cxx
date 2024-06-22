@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkHexagonalPrism>(vtkHexag
 EMSCRIPTEN_BINDINGS(vtkHexagonalPrism_class) {
   emscripten::class_<vtkHexagonalPrism, emscripten::base<vtkCell3D>>("vtkHexagonalPrism")
     .smart_ptr<vtkSmartPointer<vtkHexagonalPrism>>("vtkSmartPointer<vtkHexagonalPrism>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHexagonalPrism>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHexagonalPrism>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHexagonalPrism::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHexagonalPrism& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHexagonalPrism::SafeDownCast, emscripten::allow_raw_pointers())

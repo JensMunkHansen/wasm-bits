@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMapperNode>(vtkMapperNod
 EMSCRIPTEN_BINDINGS(vtkMapperNode_class) {
   emscripten::class_<vtkMapperNode, emscripten::base<vtkViewNode>>("vtkMapperNode")
     .smart_ptr<vtkSmartPointer<vtkMapperNode>>("vtkSmartPointer<vtkMapperNode>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMapperNode>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMapperNode>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMapperNode::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMapperNode& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMapperNode::SafeDownCast, emscripten::allow_raw_pointers())

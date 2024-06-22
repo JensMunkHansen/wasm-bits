@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageQuantizeRGBToIndex>
 EMSCRIPTEN_BINDINGS(vtkImageQuantizeRGBToIndex_class) {
   emscripten::class_<vtkImageQuantizeRGBToIndex, emscripten::base<vtkImageAlgorithm>>("vtkImageQuantizeRGBToIndex")
     .smart_ptr<vtkSmartPointer<vtkImageQuantizeRGBToIndex>>("vtkSmartPointer<vtkImageQuantizeRGBToIndex>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageQuantizeRGBToIndex>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageQuantizeRGBToIndex>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageQuantizeRGBToIndex::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageQuantizeRGBToIndex& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageQuantizeRGBToIndex::SafeDownCast, emscripten::allow_raw_pointers())

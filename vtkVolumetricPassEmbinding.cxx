@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumetricPass>(vtkVolum
 EMSCRIPTEN_BINDINGS(vtkVolumetricPass_class) {
   emscripten::class_<vtkVolumetricPass, emscripten::base<vtkDefaultPass>>("vtkVolumetricPass")
     .smart_ptr<vtkSmartPointer<vtkVolumetricPass>>("vtkSmartPointer<vtkVolumetricPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumetricPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumetricPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumetricPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumetricPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumetricPass::SafeDownCast, emscripten::allow_raw_pointers())

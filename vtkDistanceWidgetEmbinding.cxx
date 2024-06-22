@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDistanceWidget>(vtkDista
 EMSCRIPTEN_BINDINGS(vtkDistanceWidget_class) {
   emscripten::class_<vtkDistanceWidget, emscripten::base<vtkAbstractWidget>>("vtkDistanceWidget")
     .smart_ptr<vtkSmartPointer<vtkDistanceWidget>>("vtkSmartPointer<vtkDistanceWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDistanceWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDistanceWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDistanceWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDistanceWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDistanceWidget::SafeDownCast, emscripten::allow_raw_pointers())

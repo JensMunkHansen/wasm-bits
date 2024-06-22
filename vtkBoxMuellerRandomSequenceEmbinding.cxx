@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkBoxMuellerRandomSequence
 EMSCRIPTEN_BINDINGS(vtkBoxMuellerRandomSequence_class) {
   emscripten::class_<vtkBoxMuellerRandomSequence, emscripten::base<vtkGaussianRandomSequence>>("vtkBoxMuellerRandomSequence")
     .smart_ptr<vtkSmartPointer<vtkBoxMuellerRandomSequence>>("vtkSmartPointer<vtkBoxMuellerRandomSequence>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBoxMuellerRandomSequence>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBoxMuellerRandomSequence>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBoxMuellerRandomSequence::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBoxMuellerRandomSequence& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBoxMuellerRandomSequence::SafeDownCast, emscripten::allow_raw_pointers())

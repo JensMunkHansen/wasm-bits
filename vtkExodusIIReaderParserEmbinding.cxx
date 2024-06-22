@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExodusIIReaderParser>(vt
 EMSCRIPTEN_BINDINGS(vtkExodusIIReaderParser_class) {
   emscripten::class_<vtkExodusIIReaderParser, emscripten::base<vtkXMLParser>>("vtkExodusIIReaderParser")
     .smart_ptr<vtkSmartPointer<vtkExodusIIReaderParser>>("vtkSmartPointer<vtkExodusIIReaderParser>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExodusIIReaderParser>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExodusIIReaderParser>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExodusIIReaderParser::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExodusIIReaderParser& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExodusIIReaderParser::SafeDownCast, emscripten::allow_raw_pointers())

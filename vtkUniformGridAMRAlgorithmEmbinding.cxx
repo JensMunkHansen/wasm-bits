@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkUniformGridAMRAlgorithm>
 EMSCRIPTEN_BINDINGS(vtkUniformGridAMRAlgorithm_class) {
   emscripten::class_<vtkUniformGridAMRAlgorithm, emscripten::base<vtkAlgorithm>>("vtkUniformGridAMRAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkUniformGridAMRAlgorithm>>("vtkSmartPointer<vtkUniformGridAMRAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUniformGridAMRAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUniformGridAMRAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUniformGridAMRAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUniformGridAMRAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUniformGridAMRAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

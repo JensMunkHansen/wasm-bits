@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkOBBTree>(vtkOBBTree * pt
 EMSCRIPTEN_BINDINGS(vtkOBBTree_class) {
   emscripten::class_<vtkOBBTree, emscripten::base<vtkAbstractCellLocator>>("vtkOBBTree")
     .smart_ptr<vtkSmartPointer<vtkOBBTree>>("vtkSmartPointer<vtkOBBTree>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOBBTree>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOBBTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOBBTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOBBTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOBBTree::SafeDownCast, emscripten::allow_raw_pointers())

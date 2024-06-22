@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMREnzoReader>(vtkAMREnz
 EMSCRIPTEN_BINDINGS(vtkAMREnzoReader_class) {
   emscripten::class_<vtkAMREnzoReader, emscripten::base<vtkAMRBaseReader>>("vtkAMREnzoReader")
     .smart_ptr<vtkSmartPointer<vtkAMREnzoReader>>("vtkSmartPointer<vtkAMREnzoReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMREnzoReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAMREnzoReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMREnzoReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMREnzoReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMREnzoReader::SafeDownCast, emscripten::allow_raw_pointers())

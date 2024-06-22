@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkRectilinearWipeRepresentation_class) {
   using InteractionStateType=vtkRectilinearWipeRepresentation::InteractionStateType;
   emscripten::class_<vtkRectilinearWipeRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkRectilinearWipeRepresentation")
     .smart_ptr<vtkSmartPointer<vtkRectilinearWipeRepresentation>>("vtkSmartPointer<vtkRectilinearWipeRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearWipeRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearWipeRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearWipeRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearWipeRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearWipeRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

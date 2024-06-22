@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMirrorPad>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageMirrorPad_class) {
   emscripten::class_<vtkImageMirrorPad, emscripten::base<vtkImagePadFilter>>("vtkImageMirrorPad")
     .smart_ptr<vtkSmartPointer<vtkImageMirrorPad>>("vtkSmartPointer<vtkImageMirrorPad>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMirrorPad>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMirrorPad>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMirrorPad::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMirrorPad& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMirrorPad::SafeDownCast, emscripten::allow_raw_pointers())

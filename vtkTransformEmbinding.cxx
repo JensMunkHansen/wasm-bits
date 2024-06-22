@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransform>(vtkTransform 
 EMSCRIPTEN_BINDINGS(vtkTransform_class) {
   emscripten::class_<vtkTransform, emscripten::base<vtkLinearTransform>>("vtkTransform")
     .smart_ptr<vtkSmartPointer<vtkTransform>>("vtkSmartPointer<vtkTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransform::SafeDownCast, emscripten::allow_raw_pointers())

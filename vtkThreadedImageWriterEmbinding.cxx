@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkThreadedImageWriter>(vtk
 EMSCRIPTEN_BINDINGS(vtkThreadedImageWriter_class) {
   emscripten::class_<vtkThreadedImageWriter, emscripten::base<vtkObject>>("vtkThreadedImageWriter")
     .smart_ptr<vtkSmartPointer<vtkThreadedImageWriter>>("vtkSmartPointer<vtkThreadedImageWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkThreadedImageWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkThreadedImageWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThreadedImageWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThreadedImageWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThreadedImageWriter::SafeDownCast, emscripten::allow_raw_pointers())

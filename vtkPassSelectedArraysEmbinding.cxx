@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPassSelectedArrays>(vtkP
 EMSCRIPTEN_BINDINGS(vtkPassSelectedArrays_class) {
   emscripten::class_<vtkPassSelectedArrays, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkPassSelectedArrays")
     .smart_ptr<vtkSmartPointer<vtkPassSelectedArrays>>("vtkSmartPointer<vtkPassSelectedArrays>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPassSelectedArrays>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPassSelectedArrays>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPassSelectedArrays::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPassSelectedArrays& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPassSelectedArrays::SafeDownCast, emscripten::allow_raw_pointers())

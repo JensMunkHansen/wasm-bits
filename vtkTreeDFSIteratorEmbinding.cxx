@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkTreeDFSIterator_class) {
   using ModeType=vtkTreeDFSIterator::ModeType;
   emscripten::class_<vtkTreeDFSIterator, emscripten::base<vtkTreeIterator>>("vtkTreeDFSIterator")
     .smart_ptr<vtkSmartPointer<vtkTreeDFSIterator>>("vtkSmartPointer<vtkTreeDFSIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeDFSIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeDFSIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeDFSIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeDFSIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeDFSIterator::SafeDownCast, emscripten::allow_raw_pointers())

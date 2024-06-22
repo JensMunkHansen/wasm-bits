@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLImageSliceMapper>(
 EMSCRIPTEN_BINDINGS(vtkOpenGLImageSliceMapper_class) {
   emscripten::class_<vtkOpenGLImageSliceMapper, emscripten::base<vtkImageSliceMapper>>("vtkOpenGLImageSliceMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLImageSliceMapper>>("vtkSmartPointer<vtkOpenGLImageSliceMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLImageSliceMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLImageSliceMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLImageSliceMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLImageSliceMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLImageSliceMapper::SafeDownCast, emscripten::allow_raw_pointers())

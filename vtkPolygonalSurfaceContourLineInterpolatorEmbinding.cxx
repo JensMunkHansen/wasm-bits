@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolygonalSurfaceContourL
 EMSCRIPTEN_BINDINGS(vtkPolygonalSurfaceContourLineInterpolator_class) {
   emscripten::class_<vtkPolygonalSurfaceContourLineInterpolator, emscripten::base<vtkPolyDataContourLineInterpolator>>("vtkPolygonalSurfaceContourLineInterpolator")
     .smart_ptr<vtkSmartPointer<vtkPolygonalSurfaceContourLineInterpolator>>("vtkSmartPointer<vtkPolygonalSurfaceContourLineInterpolator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolygonalSurfaceContourLineInterpolator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolygonalSurfaceContourLineInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolygonalSurfaceContourLineInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolygonalSurfaceContourLineInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolygonalSurfaceContourLineInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

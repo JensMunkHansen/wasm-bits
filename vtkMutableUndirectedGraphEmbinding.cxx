@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMutableUndirectedGraph>(
 EMSCRIPTEN_BINDINGS(vtkMutableUndirectedGraph_class) {
   emscripten::class_<vtkMutableUndirectedGraph, emscripten::base<vtkUndirectedGraph>>("vtkMutableUndirectedGraph")
     .smart_ptr<vtkSmartPointer<vtkMutableUndirectedGraph>>("vtkSmartPointer<vtkMutableUndirectedGraph>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMutableUndirectedGraph>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMutableUndirectedGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMutableUndirectedGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMutableUndirectedGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMutableUndirectedGraph::SafeDownCast, emscripten::allow_raw_pointers())

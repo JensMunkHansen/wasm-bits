@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDecimatePro>(vtkDecimate
 EMSCRIPTEN_BINDINGS(vtkDecimatePro_class) {
   emscripten::class_<vtkDecimatePro, emscripten::base<vtkPolyDataAlgorithm>>("vtkDecimatePro")
     .smart_ptr<vtkSmartPointer<vtkDecimatePro>>("vtkSmartPointer<vtkDecimatePro>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDecimatePro>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDecimatePro>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDecimatePro::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDecimatePro& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDecimatePro::SafeDownCast, emscripten::allow_raw_pointers())

@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkCurvatures>(vtkCurvature
 EMSCRIPTEN_BINDINGS(vtkCurvatures_class) {
   emscripten::class_<vtkCurvatures, emscripten::base<vtkPolyDataAlgorithm>>("vtkCurvatures")
     .smart_ptr<vtkSmartPointer<vtkCurvatures>>("vtkSmartPointer<vtkCurvatures>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCurvatures>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCurvatures>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCurvatures::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCurvatures& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCurvatures::SafeDownCast, emscripten::allow_raw_pointers())

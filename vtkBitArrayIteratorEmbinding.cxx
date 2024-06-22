@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkBitArrayIterator>(vtkBit
 EMSCRIPTEN_BINDINGS(vtkBitArrayIterator_class) {
   emscripten::class_<vtkBitArrayIterator, emscripten::base<vtkArrayIterator>>("vtkBitArrayIterator")
     .smart_ptr<vtkSmartPointer<vtkBitArrayIterator>>("vtkSmartPointer<vtkBitArrayIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBitArrayIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBitArrayIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBitArrayIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBitArrayIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBitArrayIterator::SafeDownCast, emscripten::allow_raw_pointers())

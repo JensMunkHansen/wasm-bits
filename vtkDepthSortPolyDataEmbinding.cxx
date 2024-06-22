@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkDepthSortPolyData_class) {
   using SortMode=vtkDepthSortPolyData::SortMode;
   emscripten::class_<vtkDepthSortPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkDepthSortPolyData")
     .smart_ptr<vtkSmartPointer<vtkDepthSortPolyData>>("vtkSmartPointer<vtkDepthSortPolyData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDepthSortPolyData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDepthSortPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDepthSortPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDepthSortPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDepthSortPolyData::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkParallelCoordinatesRepresentation_class) {
   using InputPorts=vtkParallelCoordinatesRepresentation::InputPorts;
   emscripten::class_<vtkParallelCoordinatesRepresentation, emscripten::base<vtkRenderedRepresentation>>("vtkParallelCoordinatesRepresentation")
     .smart_ptr<vtkSmartPointer<vtkParallelCoordinatesRepresentation>>("vtkSmartPointer<vtkParallelCoordinatesRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelCoordinatesRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelCoordinatesRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelCoordinatesRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelCoordinatesRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelCoordinatesRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

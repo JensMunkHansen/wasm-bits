@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridVolumeZS
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridVolumeZSweepMapper_class) {
   emscripten::class_<vtkUnstructuredGridVolumeZSweepMapper, emscripten::base<vtkUnstructuredGridVolumeMapper>>("vtkUnstructuredGridVolumeZSweepMapper")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridVolumeZSweepMapper>>("vtkSmartPointer<vtkUnstructuredGridVolumeZSweepMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridVolumeZSweepMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridVolumeZSweepMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridVolumeZSweepMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridVolumeZSweepMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridVolumeZSweepMapper::SafeDownCast, emscripten::allow_raw_pointers())

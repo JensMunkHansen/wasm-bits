@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLPolyDataMapper_class) {
   using PrimitiveTypes=vtkOpenGLPolyDataMapper::PrimitiveTypes;
   emscripten::class_<vtkOpenGLPolyDataMapper, emscripten::base<vtkPolyDataMapper>>("vtkOpenGLPolyDataMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLPolyDataMapper>>("vtkSmartPointer<vtkOpenGLPolyDataMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLPolyDataMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLPolyDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLPolyDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLPolyDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLPolyDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

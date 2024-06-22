@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplineRepresentation>(vt
 EMSCRIPTEN_BINDINGS(vtkSplineRepresentation_class) {
   emscripten::class_<vtkSplineRepresentation, emscripten::base<vtkAbstractSplineRepresentation>>("vtkSplineRepresentation")
     .smart_ptr<vtkSmartPointer<vtkSplineRepresentation>>("vtkSmartPointer<vtkSplineRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplineRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSplineRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplineRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplineRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplineRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

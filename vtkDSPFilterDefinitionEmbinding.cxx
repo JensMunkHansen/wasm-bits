@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDSPFilterDefinition>(vtk
 EMSCRIPTEN_BINDINGS(vtkDSPFilterDefinition_class) {
   emscripten::class_<vtkDSPFilterDefinition, emscripten::base<vtkObject>>("vtkDSPFilterDefinition")
     .smart_ptr<vtkSmartPointer<vtkDSPFilterDefinition>>("vtkSmartPointer<vtkDSPFilterDefinition>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDSPFilterDefinition>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDSPFilterDefinition>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDSPFilterDefinition::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDSPFilterDefinition& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDSPFilterDefinition::SafeDownCast, emscripten::allow_raw_pointers())

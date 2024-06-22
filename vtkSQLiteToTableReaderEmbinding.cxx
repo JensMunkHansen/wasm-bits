@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSQLiteToTableReader>(vtk
 EMSCRIPTEN_BINDINGS(vtkSQLiteToTableReader_class) {
   emscripten::class_<vtkSQLiteToTableReader, emscripten::base<vtkDatabaseToTableReader>>("vtkSQLiteToTableReader")
     .smart_ptr<vtkSmartPointer<vtkSQLiteToTableReader>>("vtkSmartPointer<vtkSQLiteToTableReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSQLiteToTableReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSQLiteToTableReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSQLiteToTableReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSQLiteToTableReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSQLiteToTableReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkScalarBarRepresentation>
 EMSCRIPTEN_BINDINGS(vtkScalarBarRepresentation_class) {
   emscripten::class_<vtkScalarBarRepresentation, emscripten::base<vtkBorderRepresentation>>("vtkScalarBarRepresentation")
     .smart_ptr<vtkSmartPointer<vtkScalarBarRepresentation>>("vtkSmartPointer<vtkScalarBarRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkScalarBarRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkScalarBarRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScalarBarRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScalarBarRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScalarBarRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

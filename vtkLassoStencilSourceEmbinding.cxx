@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkLassoStencilSource>(vtkL
 EMSCRIPTEN_BINDINGS(vtkLassoStencilSource_class) {
   emscripten::class_<vtkLassoStencilSource, emscripten::base<vtkImageStencilSource>>("vtkLassoStencilSource")
     .smart_ptr<vtkSmartPointer<vtkLassoStencilSource>>("vtkSmartPointer<vtkLassoStencilSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLassoStencilSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLassoStencilSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLassoStencilSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLassoStencilSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLassoStencilSource::SafeDownCast, emscripten::allow_raw_pointers())

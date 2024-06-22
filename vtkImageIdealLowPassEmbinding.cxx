@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageIdealLowPass>(vtkIm
 EMSCRIPTEN_BINDINGS(vtkImageIdealLowPass_class) {
   emscripten::class_<vtkImageIdealLowPass, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageIdealLowPass")
     .smart_ptr<vtkSmartPointer<vtkImageIdealLowPass>>("vtkSmartPointer<vtkImageIdealLowPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageIdealLowPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageIdealLowPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageIdealLowPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageIdealLowPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageIdealLowPass::SafeDownCast, emscripten::allow_raw_pointers())

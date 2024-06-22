@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSPHQuarticKernel>(vtkSPH
 EMSCRIPTEN_BINDINGS(vtkSPHQuarticKernel_class) {
   emscripten::class_<vtkSPHQuarticKernel, emscripten::base<vtkSPHKernel>>("vtkSPHQuarticKernel")
     .smart_ptr<vtkSmartPointer<vtkSPHQuarticKernel>>("vtkSmartPointer<vtkSPHQuarticKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSPHQuarticKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSPHQuarticKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSPHQuarticKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSPHQuarticKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSPHQuarticKernel::SafeDownCast, emscripten::allow_raw_pointers())

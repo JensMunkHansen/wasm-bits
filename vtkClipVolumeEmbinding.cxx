@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkClipVolume>(vtkClipVolum
 EMSCRIPTEN_BINDINGS(vtkClipVolume_class) {
   emscripten::class_<vtkClipVolume, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkClipVolume")
     .smart_ptr<vtkSmartPointer<vtkClipVolume>>("vtkSmartPointer<vtkClipVolume>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkClipVolume>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkClipVolume>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClipVolume::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClipVolume& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClipVolume::SafeDownCast, emscripten::allow_raw_pointers())

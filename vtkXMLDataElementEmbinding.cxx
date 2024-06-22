@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLDataElement>(vtkXMLDa
 EMSCRIPTEN_BINDINGS(vtkXMLDataElement_class) {
   emscripten::class_<vtkXMLDataElement, emscripten::base<vtkObject>>("vtkXMLDataElement")
     .smart_ptr<vtkSmartPointer<vtkXMLDataElement>>("vtkSmartPointer<vtkXMLDataElement>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLDataElement>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLDataElement>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLDataElement::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLDataElement& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLDataElement::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDEMReader>(vtkDEMReader 
 EMSCRIPTEN_BINDINGS(vtkDEMReader_class) {
   emscripten::class_<vtkDEMReader, emscripten::base<vtkImageAlgorithm>>("vtkDEMReader")
     .smart_ptr<vtkSmartPointer<vtkDEMReader>>("vtkSmartPointer<vtkDEMReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDEMReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDEMReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDEMReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDEMReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDEMReader::SafeDownCast, emscripten::allow_raw_pointers())

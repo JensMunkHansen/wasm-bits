@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDataToPointSet>(vtk
 EMSCRIPTEN_BINDINGS(vtkImageDataToPointSet_class) {
   emscripten::class_<vtkImageDataToPointSet, emscripten::base<vtkStructuredGridAlgorithm>>("vtkImageDataToPointSet")
     .smart_ptr<vtkSmartPointer<vtkImageDataToPointSet>>("vtkSmartPointer<vtkImageDataToPointSet>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDataToPointSet>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDataToPointSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDataToPointSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDataToPointSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDataToPointSet::SafeDownCast, emscripten::allow_raw_pointers())

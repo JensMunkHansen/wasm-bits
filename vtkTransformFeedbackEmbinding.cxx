@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkTransformFeedback_class) {
   using VaryingRole=vtkTransformFeedback::VaryingRole;
   emscripten::class_<vtkTransformFeedback, emscripten::base<vtkObject>>("vtkTransformFeedback")
     .smart_ptr<vtkSmartPointer<vtkTransformFeedback>>("vtkSmartPointer<vtkTransformFeedback>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransformFeedback>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransformFeedback>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransformFeedback::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransformFeedback& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransformFeedback::SafeDownCast, emscripten::allow_raw_pointers())

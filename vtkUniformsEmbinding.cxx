@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkUniforms_class) {
   using TupleType=vtkUniforms::TupleType;
   emscripten::class_<vtkUniforms, emscripten::base<vtkObject>>("vtkUniforms")
     .smart_ptr<vtkSmartPointer<vtkUniforms>>("vtkSmartPointer<vtkUniforms>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUniforms>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUniforms>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUniforms::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUniforms& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUniforms::SafeDownCast, emscripten::allow_raw_pointers())

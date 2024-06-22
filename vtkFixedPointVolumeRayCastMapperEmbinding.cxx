@@ -49,7 +49,7 @@ template<> void emscripten::internal::raw_destructor<vtkFixedPointVolumeRayCastM
 EMSCRIPTEN_BINDINGS(vtkFixedPointVolumeRayCastMapper_class) {
   emscripten::class_<vtkFixedPointVolumeRayCastMapper, emscripten::base<vtkVolumeMapper>>("vtkFixedPointVolumeRayCastMapper")
     .smart_ptr<vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>>("vtkSmartPointer<vtkFixedPointVolumeRayCastMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFixedPointVolumeRayCastMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFixedPointVolumeRayCastMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFixedPointVolumeRayCastMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFixedPointVolumeRayCastMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFixedPointVolumeRayCastMapper::SafeDownCast, emscripten::allow_raw_pointers())

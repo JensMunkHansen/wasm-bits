@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleTerrain>(
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleTerrain_class) {
   emscripten::class_<vtkInteractorStyleTerrain, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleTerrain")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleTerrain>>("vtkSmartPointer<vtkInteractorStyleTerrain>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleTerrain>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleTerrain>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleTerrain::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleTerrain& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleTerrain::SafeDownCast, emscripten::allow_raw_pointers())

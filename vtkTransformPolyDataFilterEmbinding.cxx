@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransformPolyDataFilter>
 EMSCRIPTEN_BINDINGS(vtkTransformPolyDataFilter_class) {
   emscripten::class_<vtkTransformPolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkTransformPolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkTransformPolyDataFilter>>("vtkSmartPointer<vtkTransformPolyDataFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransformPolyDataFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransformPolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransformPolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransformPolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransformPolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

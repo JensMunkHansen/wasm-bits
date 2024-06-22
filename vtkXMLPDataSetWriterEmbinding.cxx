@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPDataSetWriter>(vtkXM
 EMSCRIPTEN_BINDINGS(vtkXMLPDataSetWriter_class) {
   emscripten::class_<vtkXMLPDataSetWriter, emscripten::base<vtkXMLPDataWriter>>("vtkXMLPDataSetWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLPDataSetWriter>>("vtkSmartPointer<vtkXMLPDataSetWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPDataSetWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPDataSetWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPDataSetWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPDataSetWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPDataSetWriter::SafeDownCast, emscripten::allow_raw_pointers())

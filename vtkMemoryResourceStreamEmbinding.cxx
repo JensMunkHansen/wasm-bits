@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMemoryResourceStream>(vt
 EMSCRIPTEN_BINDINGS(vtkMemoryResourceStream_class) {
   emscripten::class_<vtkMemoryResourceStream, emscripten::base<vtkResourceStream>>("vtkMemoryResourceStream")
     .smart_ptr<vtkSmartPointer<vtkMemoryResourceStream>>("vtkSmartPointer<vtkMemoryResourceStream>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMemoryResourceStream>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMemoryResourceStream>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMemoryResourceStream::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMemoryResourceStream& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMemoryResourceStream::SafeDownCast, emscripten::allow_raw_pointers())

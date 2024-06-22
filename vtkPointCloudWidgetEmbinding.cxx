@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointCloudWidget>(vtkPoi
 EMSCRIPTEN_BINDINGS(vtkPointCloudWidget_class) {
   emscripten::class_<vtkPointCloudWidget, emscripten::base<vtkAbstractWidget>>("vtkPointCloudWidget")
     .smart_ptr<vtkSmartPointer<vtkPointCloudWidget>>("vtkSmartPointer<vtkPointCloudWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointCloudWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointCloudWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointCloudWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointCloudWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointCloudWidget::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWindowLevelLookupTable>(
 EMSCRIPTEN_BINDINGS(vtkWindowLevelLookupTable_class) {
   emscripten::class_<vtkWindowLevelLookupTable, emscripten::base<vtkLookupTable>>("vtkWindowLevelLookupTable")
     .smart_ptr<vtkSmartPointer<vtkWindowLevelLookupTable>>("vtkSmartPointer<vtkWindowLevelLookupTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWindowLevelLookupTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWindowLevelLookupTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWindowLevelLookupTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWindowLevelLookupTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWindowLevelLookupTable::SafeDownCast, emscripten::allow_raw_pointers())

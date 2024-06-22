@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkLoopSubdivisionFilter>(v
 EMSCRIPTEN_BINDINGS(vtkLoopSubdivisionFilter_class) {
   emscripten::class_<vtkLoopSubdivisionFilter, emscripten::base<vtkApproximatingSubdivisionFilter>>("vtkLoopSubdivisionFilter")
     .smart_ptr<vtkSmartPointer<vtkLoopSubdivisionFilter>>("vtkSmartPointer<vtkLoopSubdivisionFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLoopSubdivisionFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLoopSubdivisionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLoopSubdivisionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLoopSubdivisionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLoopSubdivisionFilter::SafeDownCast, emscripten::allow_raw_pointers())

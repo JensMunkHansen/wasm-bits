@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPiecewiseFunctionAlgorit
 EMSCRIPTEN_BINDINGS(vtkPiecewiseFunctionAlgorithm_class) {
   emscripten::class_<vtkPiecewiseFunctionAlgorithm, emscripten::base<vtkAlgorithm>>("vtkPiecewiseFunctionAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkPiecewiseFunctionAlgorithm>>("vtkSmartPointer<vtkPiecewiseFunctionAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPiecewiseFunctionAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPiecewiseFunctionAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPiecewiseFunctionAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPiecewiseFunctionAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPiecewiseFunctionAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

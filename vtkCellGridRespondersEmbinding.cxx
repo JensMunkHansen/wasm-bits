@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridResponders>(vtkC
 EMSCRIPTEN_BINDINGS(vtkCellGridResponders_class) {
   emscripten::class_<vtkCellGridResponders, emscripten::base<vtkObject>>("vtkCellGridResponders")
     .smart_ptr<vtkSmartPointer<vtkCellGridResponders>>("vtkSmartPointer<vtkCellGridResponders>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridResponders>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridResponders>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridResponders::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridResponders& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridResponders::SafeDownCast, emscripten::allow_raw_pointers())

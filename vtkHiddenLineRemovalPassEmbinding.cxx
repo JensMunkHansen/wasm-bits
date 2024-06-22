@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkHiddenLineRemovalPass>(v
 EMSCRIPTEN_BINDINGS(vtkHiddenLineRemovalPass_class) {
   emscripten::class_<vtkHiddenLineRemovalPass, emscripten::base<vtkOpenGLRenderPass>>("vtkHiddenLineRemovalPass")
     .smart_ptr<vtkSmartPointer<vtkHiddenLineRemovalPass>>("vtkSmartPointer<vtkHiddenLineRemovalPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHiddenLineRemovalPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHiddenLineRemovalPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHiddenLineRemovalPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHiddenLineRemovalPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHiddenLineRemovalPass::SafeDownCast, emscripten::allow_raw_pointers())

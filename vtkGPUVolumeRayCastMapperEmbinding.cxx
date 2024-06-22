@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkGPUVolumeRayCastMapper_class) {
   using TFRangeType=vtkGPUVolumeRayCastMapper::TFRangeType;
   emscripten::class_<vtkGPUVolumeRayCastMapper, emscripten::base<vtkVolumeMapper>>("vtkGPUVolumeRayCastMapper")
     .smart_ptr<vtkSmartPointer<vtkGPUVolumeRayCastMapper>>("vtkSmartPointer<vtkGPUVolumeRayCastMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGPUVolumeRayCastMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGPUVolumeRayCastMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGPUVolumeRayCastMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGPUVolumeRayCastMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGPUVolumeRayCastMapper::SafeDownCast, emscripten::allow_raw_pointers())

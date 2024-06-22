@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLHyperTreeGridWriter>(
 EMSCRIPTEN_BINDINGS(vtkXMLHyperTreeGridWriter_class) {
   emscripten::class_<vtkXMLHyperTreeGridWriter, emscripten::base<vtkXMLWriter>>("vtkXMLHyperTreeGridWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLHyperTreeGridWriter>>("vtkSmartPointer<vtkXMLHyperTreeGridWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLHyperTreeGridWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLHyperTreeGridWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLHyperTreeGridWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLHyperTreeGridWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLHyperTreeGridWriter::SafeDownCast, emscripten::allow_raw_pointers())

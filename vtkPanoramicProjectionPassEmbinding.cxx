@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPanoramicProjectionPass>
 EMSCRIPTEN_BINDINGS(vtkPanoramicProjectionPass_class) {
   emscripten::class_<vtkPanoramicProjectionPass, emscripten::base<vtkImageProcessingPass>>("vtkPanoramicProjectionPass")
     .smart_ptr<vtkSmartPointer<vtkPanoramicProjectionPass>>("vtkSmartPointer<vtkPanoramicProjectionPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPanoramicProjectionPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPanoramicProjectionPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPanoramicProjectionPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPanoramicProjectionPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPanoramicProjectionPass::SafeDownCast, emscripten::allow_raw_pointers())

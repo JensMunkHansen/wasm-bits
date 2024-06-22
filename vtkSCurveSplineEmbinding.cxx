@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSCurveSpline>(vtkSCurveS
 EMSCRIPTEN_BINDINGS(vtkSCurveSpline_class) {
   emscripten::class_<vtkSCurveSpline, emscripten::base<vtkSpline>>("vtkSCurveSpline")
     .smart_ptr<vtkSmartPointer<vtkSCurveSpline>>("vtkSmartPointer<vtkSCurveSpline>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSCurveSpline>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSCurveSpline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSCurveSpline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSCurveSpline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSCurveSpline::SafeDownCast, emscripten::allow_raw_pointers())

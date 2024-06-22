@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkQuaternionInterpolator_class) {
   using vtkQuaternionInterpolationSearchMethod=vtkQuaternionInterpolator::vtkQuaternionInterpolationSearchMethod;
   emscripten::class_<vtkQuaternionInterpolator, emscripten::base<vtkObject>>("vtkQuaternionInterpolator")
     .smart_ptr<vtkSmartPointer<vtkQuaternionInterpolator>>("vtkSmartPointer<vtkQuaternionInterpolator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuaternionInterpolator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkQuaternionInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuaternionInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuaternionInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuaternionInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkToConstantArrayStrategy>
 EMSCRIPTEN_BINDINGS(vtkToConstantArrayStrategy_class) {
   emscripten::class_<vtkToConstantArrayStrategy, emscripten::base<vtkToImplicitStrategy>>("vtkToConstantArrayStrategy")
     .smart_ptr<vtkSmartPointer<vtkToConstantArrayStrategy>>("vtkSmartPointer<vtkToConstantArrayStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkToConstantArrayStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkToConstantArrayStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkToConstantArrayStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkToConstantArrayStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkToConstantArrayStrategy::SafeDownCast, emscripten::allow_raw_pointers())

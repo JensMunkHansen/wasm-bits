@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellTreeLocator>(vtkCell
 EMSCRIPTEN_BINDINGS(vtkCellTreeLocator_class) {
   emscripten::class_<vtkCellTreeLocator, emscripten::base<vtkAbstractCellLocator>>("vtkCellTreeLocator")
     .smart_ptr<vtkSmartPointer<vtkCellTreeLocator>>("vtkSmartPointer<vtkCellTreeLocator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellTreeLocator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellTreeLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellTreeLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellTreeLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellTreeLocator::SafeDownCast, emscripten::allow_raw_pointers())

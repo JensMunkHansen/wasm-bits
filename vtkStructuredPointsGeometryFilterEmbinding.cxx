@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredPointsGeometry
 EMSCRIPTEN_BINDINGS(vtkStructuredPointsGeometryFilter_class) {
   emscripten::class_<vtkStructuredPointsGeometryFilter, emscripten::base<vtkImageDataGeometryFilter>>("vtkStructuredPointsGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkStructuredPointsGeometryFilter>>("vtkSmartPointer<vtkStructuredPointsGeometryFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredPointsGeometryFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredPointsGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredPointsGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredPointsGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredPointsGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

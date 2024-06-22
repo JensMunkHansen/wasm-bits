@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkReferenceCount>(vtkRefer
 EMSCRIPTEN_BINDINGS(vtkReferenceCount_class) {
   emscripten::class_<vtkReferenceCount, emscripten::base<vtkObject>>("vtkReferenceCount")
     .smart_ptr<vtkSmartPointer<vtkReferenceCount>>("vtkSmartPointer<vtkReferenceCount>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkReferenceCount>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkReferenceCount>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkReferenceCount::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkReferenceCount& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkReferenceCount::SafeDownCast, emscripten::allow_raw_pointers())

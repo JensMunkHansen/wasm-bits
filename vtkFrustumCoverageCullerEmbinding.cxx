@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkFrustumCoverageCuller>(v
 EMSCRIPTEN_BINDINGS(vtkFrustumCoverageCuller_class) {
   emscripten::class_<vtkFrustumCoverageCuller, emscripten::base<vtkCuller>>("vtkFrustumCoverageCuller")
     .smart_ptr<vtkSmartPointer<vtkFrustumCoverageCuller>>("vtkSmartPointer<vtkFrustumCoverageCuller>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFrustumCoverageCuller>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFrustumCoverageCuller>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFrustumCoverageCuller::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFrustumCoverageCuller& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFrustumCoverageCuller::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTimeRange>(vtkTimeRange 
 EMSCRIPTEN_BINDINGS(vtkTimeRange_class) {
   emscripten::class_<vtkTimeRange, emscripten::base<vtkExecutionRange>>("vtkTimeRange")
     .smart_ptr<vtkSmartPointer<vtkTimeRange>>("vtkSmartPointer<vtkTimeRange>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTimeRange>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTimeRange>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTimeRange::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTimeRange& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTimeRange::SafeDownCast, emscripten::allow_raw_pointers())

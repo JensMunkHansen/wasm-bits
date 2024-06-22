@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkModifiedBSPTree>(vtkModi
 EMSCRIPTEN_BINDINGS(vtkModifiedBSPTree_class) {
   emscripten::class_<vtkModifiedBSPTree, emscripten::base<vtkAbstractCellLocator>>("vtkModifiedBSPTree")
     .smart_ptr<vtkSmartPointer<vtkModifiedBSPTree>>("vtkSmartPointer<vtkModifiedBSPTree>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkModifiedBSPTree>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkModifiedBSPTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkModifiedBSPTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkModifiedBSPTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkModifiedBSPTree::SafeDownCast, emscripten::allow_raw_pointers())

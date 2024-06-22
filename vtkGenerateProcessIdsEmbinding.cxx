@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenerateProcessIds>(vtkG
 EMSCRIPTEN_BINDINGS(vtkGenerateProcessIds_class) {
   emscripten::class_<vtkGenerateProcessIds, emscripten::base<vtkDataSetAlgorithm>>("vtkGenerateProcessIds")
     .smart_ptr<vtkSmartPointer<vtkGenerateProcessIds>>("vtkSmartPointer<vtkGenerateProcessIds>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenerateProcessIds>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenerateProcessIds>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenerateProcessIds::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenerateProcessIds& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenerateProcessIds::SafeDownCast, emscripten::allow_raw_pointers())

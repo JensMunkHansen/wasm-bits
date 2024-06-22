@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRandomAttributeGenerator
 EMSCRIPTEN_BINDINGS(vtkRandomAttributeGenerator_class) {
   emscripten::class_<vtkRandomAttributeGenerator, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkRandomAttributeGenerator")
     .smart_ptr<vtkSmartPointer<vtkRandomAttributeGenerator>>("vtkSmartPointer<vtkRandomAttributeGenerator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRandomAttributeGenerator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRandomAttributeGenerator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRandomAttributeGenerator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRandomAttributeGenerator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRandomAttributeGenerator::SafeDownCast, emscripten::allow_raw_pointers())

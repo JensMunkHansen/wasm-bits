@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkGLSLModCamera>(vtkGLSLMo
 EMSCRIPTEN_BINDINGS(vtkGLSLModCamera_class) {
   emscripten::class_<vtkGLSLModCamera, emscripten::base<vtkGLSLModifierBase>>("vtkGLSLModCamera")
     .smart_ptr<vtkSmartPointer<vtkGLSLModCamera>>("vtkSmartPointer<vtkGLSLModCamera>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGLSLModCamera>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGLSLModCamera>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGLSLModCamera::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGLSLModCamera& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGLSLModCamera::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalBoxDataSet>(
 EMSCRIPTEN_BINDINGS(vtkHierarchicalBoxDataSet_class) {
   emscripten::class_<vtkHierarchicalBoxDataSet, emscripten::base<vtkOverlappingAMR>>("vtkHierarchicalBoxDataSet")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalBoxDataSet>>("vtkSmartPointer<vtkHierarchicalBoxDataSet>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalBoxDataSet>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalBoxDataSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalBoxDataSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalBoxDataSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalBoxDataSet::SafeDownCast, emscripten::allow_raw_pointers())

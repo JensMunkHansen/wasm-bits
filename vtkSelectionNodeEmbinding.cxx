@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkSelectionNode_class) {
   using SelectionField=vtkSelectionNode::SelectionField;
   emscripten::class_<vtkSelectionNode, emscripten::base<vtkObject>>("vtkSelectionNode")
     .smart_ptr<vtkSmartPointer<vtkSelectionNode>>("vtkSmartPointer<vtkSelectionNode>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSelectionNode>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSelectionNode>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSelectionNode::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSelectionNode& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSelectionNode::SafeDownCast, emscripten::allow_raw_pointers())

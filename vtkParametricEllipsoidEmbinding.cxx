@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricEllipsoid>(vtk
 EMSCRIPTEN_BINDINGS(vtkParametricEllipsoid_class) {
   emscripten::class_<vtkParametricEllipsoid, emscripten::base<vtkParametricFunction>>("vtkParametricEllipsoid")
     .smart_ptr<vtkSmartPointer<vtkParametricEllipsoid>>("vtkSmartPointer<vtkParametricEllipsoid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricEllipsoid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricEllipsoid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricEllipsoid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricEllipsoid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricEllipsoid::SafeDownCast, emscripten::allow_raw_pointers())

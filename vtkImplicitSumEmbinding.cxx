@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitSum>(vtkImplicit
 EMSCRIPTEN_BINDINGS(vtkImplicitSum_class) {
   emscripten::class_<vtkImplicitSum, emscripten::base<vtkImplicitFunction>>("vtkImplicitSum")
     .smart_ptr<vtkSmartPointer<vtkImplicitSum>>("vtkSmartPointer<vtkImplicitSum>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitSum>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitSum>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitSum::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitSum& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitSum::SafeDownCast, emscripten::allow_raw_pointers())

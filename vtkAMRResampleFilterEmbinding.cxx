@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRResampleFilter>(vtkAM
 EMSCRIPTEN_BINDINGS(vtkAMRResampleFilter_class) {
   emscripten::class_<vtkAMRResampleFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkAMRResampleFilter")
     .smart_ptr<vtkSmartPointer<vtkAMRResampleFilter>>("vtkSmartPointer<vtkAMRResampleFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRResampleFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRResampleFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRResampleFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRResampleFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRResampleFilter::SafeDownCast, emscripten::allow_raw_pointers())

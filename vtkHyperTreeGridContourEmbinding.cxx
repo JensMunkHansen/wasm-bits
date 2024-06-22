@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkHyperTreeGridContour_class) {
   using CellStrategy3D=vtkHyperTreeGridContour::CellStrategy3D;
   emscripten::class_<vtkHyperTreeGridContour, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridContour")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridContour>>("vtkSmartPointer<vtkHyperTreeGridContour>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridContour>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridContour>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridContour::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridContour& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridContour::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAmoebaMinimizer>(vtkAmoe
 EMSCRIPTEN_BINDINGS(vtkAmoebaMinimizer_class) {
   emscripten::class_<vtkAmoebaMinimizer, emscripten::base<vtkObject>>("vtkAmoebaMinimizer")
     .smart_ptr<vtkSmartPointer<vtkAmoebaMinimizer>>("vtkSmartPointer<vtkAmoebaMinimizer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAmoebaMinimizer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAmoebaMinimizer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAmoebaMinimizer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAmoebaMinimizer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAmoebaMinimizer::SafeDownCast, emscripten::allow_raw_pointers())

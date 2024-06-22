@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageTranslateExtent>(vt
 EMSCRIPTEN_BINDINGS(vtkImageTranslateExtent_class) {
   emscripten::class_<vtkImageTranslateExtent, emscripten::base<vtkImageAlgorithm>>("vtkImageTranslateExtent")
     .smart_ptr<vtkSmartPointer<vtkImageTranslateExtent>>("vtkSmartPointer<vtkImageTranslateExtent>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageTranslateExtent>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageTranslateExtent>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageTranslateExtent::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageTranslateExtent& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageTranslateExtent::SafeDownCast, emscripten::allow_raw_pointers())

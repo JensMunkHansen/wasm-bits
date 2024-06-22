@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSSIM>(vtkImageSSIM 
 EMSCRIPTEN_BINDINGS(vtkImageSSIM_class) {
   emscripten::class_<vtkImageSSIM, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageSSIM")
     .smart_ptr<vtkSmartPointer<vtkImageSSIM>>("vtkSmartPointer<vtkImageSSIM>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSSIM>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSSIM>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSSIM::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSSIM& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSSIM::SafeDownCast, emscripten::allow_raw_pointers())

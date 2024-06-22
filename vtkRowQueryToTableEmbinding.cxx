@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRowQueryToTable>(vtkRowQ
 EMSCRIPTEN_BINDINGS(vtkRowQueryToTable_class) {
   emscripten::class_<vtkRowQueryToTable, emscripten::base<vtkTableAlgorithm>>("vtkRowQueryToTable")
     .smart_ptr<vtkSmartPointer<vtkRowQueryToTable>>("vtkSmartPointer<vtkRowQueryToTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRowQueryToTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRowQueryToTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRowQueryToTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRowQueryToTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRowQueryToTable::SafeDownCast, emscripten::allow_raw_pointers())

@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkParticleReader>(vtkParti
 EMSCRIPTEN_BINDINGS(vtkParticleReader_class) {
   emscripten::class_<vtkParticleReader, emscripten::base<vtkPolyDataAlgorithm>>("vtkParticleReader")
     .smart_ptr<vtkSmartPointer<vtkParticleReader>>("vtkSmartPointer<vtkParticleReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParticleReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParticleReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParticleReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParticleReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParticleReader::SafeDownCast, emscripten::allow_raw_pointers())

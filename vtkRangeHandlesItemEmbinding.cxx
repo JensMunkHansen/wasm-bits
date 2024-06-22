@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkRangeHandlesItem>(vtkRan
 EMSCRIPTEN_BINDINGS(vtkRangeHandlesItem_class) {
   emscripten::class_<vtkRangeHandlesItem, emscripten::base<vtkPlotRangeHandlesItem>>("vtkRangeHandlesItem")
     .smart_ptr<vtkSmartPointer<vtkRangeHandlesItem>>("vtkSmartPointer<vtkRangeHandlesItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRangeHandlesItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRangeHandlesItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRangeHandlesItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRangeHandlesItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRangeHandlesItem::SafeDownCast, emscripten::allow_raw_pointers())

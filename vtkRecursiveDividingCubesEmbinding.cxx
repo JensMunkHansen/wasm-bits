@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRecursiveDividingCubes>(
 EMSCRIPTEN_BINDINGS(vtkRecursiveDividingCubes_class) {
   emscripten::class_<vtkRecursiveDividingCubes, emscripten::base<vtkPolyDataAlgorithm>>("vtkRecursiveDividingCubes")
     .smart_ptr<vtkSmartPointer<vtkRecursiveDividingCubes>>("vtkSmartPointer<vtkRecursiveDividingCubes>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRecursiveDividingCubes>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRecursiveDividingCubes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRecursiveDividingCubes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRecursiveDividingCubes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRecursiveDividingCubes::SafeDownCast, emscripten::allow_raw_pointers())

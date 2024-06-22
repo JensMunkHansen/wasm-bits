@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimpleBondPerceiver>(vtk
 EMSCRIPTEN_BINDINGS(vtkSimpleBondPerceiver_class) {
   emscripten::class_<vtkSimpleBondPerceiver, emscripten::base<vtkMoleculeAlgorithm>>("vtkSimpleBondPerceiver")
     .smart_ptr<vtkSmartPointer<vtkSimpleBondPerceiver>>("vtkSmartPointer<vtkSimpleBondPerceiver>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimpleBondPerceiver>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSimpleBondPerceiver>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimpleBondPerceiver::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimpleBondPerceiver& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimpleBondPerceiver::SafeDownCast, emscripten::allow_raw_pointers())

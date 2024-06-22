@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkInEdgeIterator>(vtkInEdg
 EMSCRIPTEN_BINDINGS(vtkInEdgeIterator_class) {
   emscripten::class_<vtkInEdgeIterator, emscripten::base<vtkObject>>("vtkInEdgeIterator")
     .smart_ptr<vtkSmartPointer<vtkInEdgeIterator>>("vtkSmartPointer<vtkInEdgeIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInEdgeIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInEdgeIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInEdgeIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInEdgeIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInEdgeIterator::SafeDownCast, emscripten::allow_raw_pointers())

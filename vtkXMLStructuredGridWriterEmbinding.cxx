@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLStructuredGridWriter>
 EMSCRIPTEN_BINDINGS(vtkXMLStructuredGridWriter_class) {
   emscripten::class_<vtkXMLStructuredGridWriter, emscripten::base<vtkXMLStructuredDataWriter>>("vtkXMLStructuredGridWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLStructuredGridWriter>>("vtkSmartPointer<vtkXMLStructuredGridWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLStructuredGridWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLStructuredGridWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLStructuredGridWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLStructuredGridWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLStructuredGridWriter::SafeDownCast, emscripten::allow_raw_pointers())

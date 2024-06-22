@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkCornerAnnotation_class) {
   using TextPosition=vtkCornerAnnotation::TextPosition;
   emscripten::class_<vtkCornerAnnotation, emscripten::base<vtkActor2D>>("vtkCornerAnnotation")
     .smart_ptr<vtkSmartPointer<vtkCornerAnnotation>>("vtkSmartPointer<vtkCornerAnnotation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCornerAnnotation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCornerAnnotation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCornerAnnotation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCornerAnnotation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCornerAnnotation::SafeDownCast, emscripten::allow_raw_pointers())

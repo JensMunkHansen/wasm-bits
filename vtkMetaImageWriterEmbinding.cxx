@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMetaImageWriter>(vtkMeta
 EMSCRIPTEN_BINDINGS(vtkMetaImageWriter_class) {
   emscripten::class_<vtkMetaImageWriter, emscripten::base<vtkImageWriter>>("vtkMetaImageWriter")
     .smart_ptr<vtkSmartPointer<vtkMetaImageWriter>>("vtkSmartPointer<vtkMetaImageWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMetaImageWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMetaImageWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMetaImageWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMetaImageWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMetaImageWriter::SafeDownCast, emscripten::allow_raw_pointers())

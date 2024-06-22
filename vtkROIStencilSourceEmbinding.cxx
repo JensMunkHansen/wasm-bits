@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkROIStencilSource>(vtkROI
 EMSCRIPTEN_BINDINGS(vtkROIStencilSource_class) {
   emscripten::class_<vtkROIStencilSource, emscripten::base<vtkImageStencilSource>>("vtkROIStencilSource")
     .smart_ptr<vtkSmartPointer<vtkROIStencilSource>>("vtkSmartPointer<vtkROIStencilSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkROIStencilSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkROIStencilSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkROIStencilSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkROIStencilSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkROIStencilSource::SafeDownCast, emscripten::allow_raw_pointers())

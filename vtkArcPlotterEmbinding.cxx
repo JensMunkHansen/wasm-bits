@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkArcPlotter>(vtkArcPlotte
 EMSCRIPTEN_BINDINGS(vtkArcPlotter_class) {
   emscripten::class_<vtkArcPlotter, emscripten::base<vtkPolyDataAlgorithm>>("vtkArcPlotter")
     .smart_ptr<vtkSmartPointer<vtkArcPlotter>>("vtkSmartPointer<vtkArcPlotter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkArcPlotter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkArcPlotter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArcPlotter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArcPlotter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArcPlotter::SafeDownCast, emscripten::allow_raw_pointers())

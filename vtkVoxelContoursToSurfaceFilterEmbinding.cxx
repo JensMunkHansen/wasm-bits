@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVoxelContoursToSurfaceFi
 EMSCRIPTEN_BINDINGS(vtkVoxelContoursToSurfaceFilter_class) {
   emscripten::class_<vtkVoxelContoursToSurfaceFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkVoxelContoursToSurfaceFilter")
     .smart_ptr<vtkSmartPointer<vtkVoxelContoursToSurfaceFilter>>("vtkSmartPointer<vtkVoxelContoursToSurfaceFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVoxelContoursToSurfaceFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVoxelContoursToSurfaceFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVoxelContoursToSurfaceFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVoxelContoursToSurfaceFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVoxelContoursToSurfaceFilter::SafeDownCast, emscripten::allow_raw_pointers())

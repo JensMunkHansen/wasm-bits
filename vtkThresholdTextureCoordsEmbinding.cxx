@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkThresholdTextureCoords>(
 EMSCRIPTEN_BINDINGS(vtkThresholdTextureCoords_class) {
   emscripten::class_<vtkThresholdTextureCoords, emscripten::base<vtkDataSetAlgorithm>>("vtkThresholdTextureCoords")
     .smart_ptr<vtkSmartPointer<vtkThresholdTextureCoords>>("vtkSmartPointer<vtkThresholdTextureCoords>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkThresholdTextureCoords>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkThresholdTextureCoords>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThresholdTextureCoords::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThresholdTextureCoords& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThresholdTextureCoords::SafeDownCast, emscripten::allow_raw_pointers())

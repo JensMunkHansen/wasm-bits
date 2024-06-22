@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkLabelHierarchyAlgorithm>
 EMSCRIPTEN_BINDINGS(vtkLabelHierarchyAlgorithm_class) {
   emscripten::class_<vtkLabelHierarchyAlgorithm, emscripten::base<vtkAlgorithm>>("vtkLabelHierarchyAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkLabelHierarchyAlgorithm>>("vtkSmartPointer<vtkLabelHierarchyAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabelHierarchyAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLabelHierarchyAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabelHierarchyAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabelHierarchyAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabelHierarchyAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

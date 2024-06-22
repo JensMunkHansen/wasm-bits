@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageFourierCenter>(vtkI
 EMSCRIPTEN_BINDINGS(vtkImageFourierCenter_class) {
   emscripten::class_<vtkImageFourierCenter, emscripten::base<vtkImageDecomposeFilter>>("vtkImageFourierCenter")
     .smart_ptr<vtkSmartPointer<vtkImageFourierCenter>>("vtkSmartPointer<vtkImageFourierCenter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageFourierCenter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageFourierCenter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageFourierCenter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageFourierCenter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageFourierCenter::SafeDownCast, emscripten::allow_raw_pointers())

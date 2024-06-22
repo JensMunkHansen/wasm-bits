@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplitByCellScalarFilter>
 EMSCRIPTEN_BINDINGS(vtkSplitByCellScalarFilter_class) {
   emscripten::class_<vtkSplitByCellScalarFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkSplitByCellScalarFilter")
     .smart_ptr<vtkSmartPointer<vtkSplitByCellScalarFilter>>("vtkSmartPointer<vtkSplitByCellScalarFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplitByCellScalarFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSplitByCellScalarFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplitByCellScalarFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplitByCellScalarFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplitByCellScalarFilter::SafeDownCast, emscripten::allow_raw_pointers())

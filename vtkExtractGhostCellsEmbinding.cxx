@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractGhostCells>(vtkEx
 EMSCRIPTEN_BINDINGS(vtkExtractGhostCells_class) {
   emscripten::class_<vtkExtractGhostCells, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkExtractGhostCells")
     .smart_ptr<vtkSmartPointer<vtkExtractGhostCells>>("vtkSmartPointer<vtkExtractGhostCells>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractGhostCells>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractGhostCells>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractGhostCells::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractGhostCells& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractGhostCells::SafeDownCast, emscripten::allow_raw_pointers())

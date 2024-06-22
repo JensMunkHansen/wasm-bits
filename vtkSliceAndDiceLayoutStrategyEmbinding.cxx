@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSliceAndDiceLayoutStrate
 EMSCRIPTEN_BINDINGS(vtkSliceAndDiceLayoutStrategy_class) {
   emscripten::class_<vtkSliceAndDiceLayoutStrategy, emscripten::base<vtkTreeMapLayoutStrategy>>("vtkSliceAndDiceLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkSliceAndDiceLayoutStrategy>>("vtkSmartPointer<vtkSliceAndDiceLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSliceAndDiceLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSliceAndDiceLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSliceAndDiceLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSliceAndDiceLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSliceAndDiceLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

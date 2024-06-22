@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkLandmarkTransform>(vtkLa
 EMSCRIPTEN_BINDINGS(vtkLandmarkTransform_class) {
   emscripten::class_<vtkLandmarkTransform, emscripten::base<vtkLinearTransform>>("vtkLandmarkTransform")
     .smart_ptr<vtkSmartPointer<vtkLandmarkTransform>>("vtkSmartPointer<vtkLandmarkTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLandmarkTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLandmarkTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLandmarkTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLandmarkTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLandmarkTransform::SafeDownCast, emscripten::allow_raw_pointers())

@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkComputeHistogram2DOutliers_class) {
   using OutputPorts=vtkComputeHistogram2DOutliers::OutputPorts;
   emscripten::class_<vtkComputeHistogram2DOutliers, emscripten::base<vtkSelectionAlgorithm>>("vtkComputeHistogram2DOutliers")
     .smart_ptr<vtkSmartPointer<vtkComputeHistogram2DOutliers>>("vtkSmartPointer<vtkComputeHistogram2DOutliers>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkComputeHistogram2DOutliers>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkComputeHistogram2DOutliers>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkComputeHistogram2DOutliers::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkComputeHistogram2DOutliers& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkComputeHistogram2DOutliers::SafeDownCast, emscripten::allow_raw_pointers())

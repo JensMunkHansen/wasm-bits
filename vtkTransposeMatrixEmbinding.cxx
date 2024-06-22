@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransposeMatrix>(vtkTran
 EMSCRIPTEN_BINDINGS(vtkTransposeMatrix_class) {
   emscripten::class_<vtkTransposeMatrix, emscripten::base<vtkArrayDataAlgorithm>>("vtkTransposeMatrix")
     .smart_ptr<vtkSmartPointer<vtkTransposeMatrix>>("vtkSmartPointer<vtkTransposeMatrix>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransposeMatrix>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransposeMatrix>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransposeMatrix::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransposeMatrix& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransposeMatrix::SafeDownCast, emscripten::allow_raw_pointers())

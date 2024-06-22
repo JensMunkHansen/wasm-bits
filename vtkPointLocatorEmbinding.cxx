@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointLocator>(vtkPointLo
 EMSCRIPTEN_BINDINGS(vtkPointLocator_class) {
   emscripten::class_<vtkPointLocator, emscripten::base<vtkIncrementalPointLocator>>("vtkPointLocator")
     .smart_ptr<vtkSmartPointer<vtkPointLocator>>("vtkSmartPointer<vtkPointLocator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointLocator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointLocator::SafeDownCast, emscripten::allow_raw_pointers())

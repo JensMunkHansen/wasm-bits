@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMatrix4x4>(vtkMatrix4x4 
 EMSCRIPTEN_BINDINGS(vtkMatrix4x4_class) {
   emscripten::class_<vtkMatrix4x4, emscripten::base<vtkObject>>("vtkMatrix4x4")
     .smart_ptr<vtkSmartPointer<vtkMatrix4x4>>("vtkSmartPointer<vtkMatrix4x4>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMatrix4x4>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMatrix4x4>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMatrix4x4::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMatrix4x4& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMatrix4x4::SafeDownCast, emscripten::allow_raw_pointers())

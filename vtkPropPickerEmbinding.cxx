@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPropPicker>(vtkPropPicke
 EMSCRIPTEN_BINDINGS(vtkPropPicker_class) {
   emscripten::class_<vtkPropPicker, emscripten::base<vtkAbstractPropPicker>>("vtkPropPicker")
     .smart_ptr<vtkSmartPointer<vtkPropPicker>>("vtkSmartPointer<vtkPropPicker>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPropPicker>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPropPicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPropPicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPropPicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPropPicker::SafeDownCast, emscripten::allow_raw_pointers())

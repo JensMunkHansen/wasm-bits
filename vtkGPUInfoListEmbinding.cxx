@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGPUInfoList>(vtkGPUInfoL
 EMSCRIPTEN_BINDINGS(vtkGPUInfoList_class) {
   emscripten::class_<vtkGPUInfoList, emscripten::base<vtkObject>>("vtkGPUInfoList")
     .smart_ptr<vtkSmartPointer<vtkGPUInfoList>>("vtkSmartPointer<vtkGPUInfoList>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGPUInfoList>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGPUInfoList>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGPUInfoList::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGPUInfoList& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGPUInfoList::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkNetCDFPOPReader>(vtkNetC
 EMSCRIPTEN_BINDINGS(vtkNetCDFPOPReader_class) {
   emscripten::class_<vtkNetCDFPOPReader, emscripten::base<vtkRectilinearGridAlgorithm>>("vtkNetCDFPOPReader")
     .smart_ptr<vtkSmartPointer<vtkNetCDFPOPReader>>("vtkSmartPointer<vtkNetCDFPOPReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkNetCDFPOPReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkNetCDFPOPReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNetCDFPOPReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNetCDFPOPReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNetCDFPOPReader::SafeDownCast, emscripten::allow_raw_pointers())

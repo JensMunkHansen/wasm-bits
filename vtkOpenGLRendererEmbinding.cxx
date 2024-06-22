@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLRenderer_class) {
   using LightingComplexityEnum=vtkOpenGLRenderer::LightingComplexityEnum;
   emscripten::class_<vtkOpenGLRenderer, emscripten::base<vtkRenderer>>("vtkOpenGLRenderer")
     .smart_ptr<vtkSmartPointer<vtkOpenGLRenderer>>("vtkSmartPointer<vtkOpenGLRenderer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLRenderer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLRenderer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLRenderer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLRenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLRenderer::SafeDownCast, emscripten::allow_raw_pointers())

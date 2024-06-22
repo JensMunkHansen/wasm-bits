@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtk3DLinearGridCrinkleExtra
 EMSCRIPTEN_BINDINGS(vtk3DLinearGridCrinkleExtractor_class) {
   emscripten::class_<vtk3DLinearGridCrinkleExtractor, emscripten::base<vtkDataObjectAlgorithm>>("vtk3DLinearGridCrinkleExtractor")
     .smart_ptr<vtkSmartPointer<vtk3DLinearGridCrinkleExtractor>>("vtkSmartPointer<vtk3DLinearGridCrinkleExtractor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtk3DLinearGridCrinkleExtractor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtk3DLinearGridCrinkleExtractor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtk3DLinearGridCrinkleExtractor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtk3DLinearGridCrinkleExtractor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtk3DLinearGridCrinkleExtractor::SafeDownCast, emscripten::allow_raw_pointers())

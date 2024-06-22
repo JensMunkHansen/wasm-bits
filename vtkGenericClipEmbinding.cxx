@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericClip>(vtkGenericC
 EMSCRIPTEN_BINDINGS(vtkGenericClip_class) {
   emscripten::class_<vtkGenericClip, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkGenericClip")
     .smart_ptr<vtkSmartPointer<vtkGenericClip>>("vtkSmartPointer<vtkGenericClip>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericClip>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericClip>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericClip::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericClip& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericClip::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRemoveDuplicatePolys>(vt
 EMSCRIPTEN_BINDINGS(vtkRemoveDuplicatePolys_class) {
   emscripten::class_<vtkRemoveDuplicatePolys, emscripten::base<vtkPolyDataAlgorithm>>("vtkRemoveDuplicatePolys")
     .smart_ptr<vtkSmartPointer<vtkRemoveDuplicatePolys>>("vtkSmartPointer<vtkRemoveDuplicatePolys>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRemoveDuplicatePolys>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRemoveDuplicatePolys>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRemoveDuplicatePolys::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRemoveDuplicatePolys& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRemoveDuplicatePolys::SafeDownCast, emscripten::allow_raw_pointers())

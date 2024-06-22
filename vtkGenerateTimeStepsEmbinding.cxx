@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenerateTimeSteps>(vtkGe
 EMSCRIPTEN_BINDINGS(vtkGenerateTimeSteps_class) {
   emscripten::class_<vtkGenerateTimeSteps, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkGenerateTimeSteps")
     .smart_ptr<vtkSmartPointer<vtkGenerateTimeSteps>>("vtkSmartPointer<vtkGenerateTimeSteps>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenerateTimeSteps>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenerateTimeSteps>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenerateTimeSteps::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenerateTimeSteps& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenerateTimeSteps::SafeDownCast, emscripten::allow_raw_pointers())

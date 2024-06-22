@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkProjectPointsToPlane_class) {
   using PlaneProjectionType=vtkProjectPointsToPlane::PlaneProjectionType;
   emscripten::class_<vtkProjectPointsToPlane, emscripten::base<vtkPointSetAlgorithm>>("vtkProjectPointsToPlane")
     .smart_ptr<vtkSmartPointer<vtkProjectPointsToPlane>>("vtkSmartPointer<vtkProjectPointsToPlane>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProjectPointsToPlane>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProjectPointsToPlane>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProjectPointsToPlane::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProjectPointsToPlane& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProjectPointsToPlane::SafeDownCast, emscripten::allow_raw_pointers())

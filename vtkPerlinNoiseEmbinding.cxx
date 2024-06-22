@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPerlinNoise>(vtkPerlinNo
 EMSCRIPTEN_BINDINGS(vtkPerlinNoise_class) {
   emscripten::class_<vtkPerlinNoise, emscripten::base<vtkImplicitFunction>>("vtkPerlinNoise")
     .smart_ptr<vtkSmartPointer<vtkPerlinNoise>>("vtkSmartPointer<vtkPerlinNoise>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPerlinNoise>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPerlinNoise>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPerlinNoise::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPerlinNoise& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPerlinNoise::SafeDownCast, emscripten::allow_raw_pointers())

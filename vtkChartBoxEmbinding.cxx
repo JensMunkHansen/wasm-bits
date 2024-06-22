@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkChartBox>(vtkChartBox * 
 EMSCRIPTEN_BINDINGS(vtkChartBox_class) {
   emscripten::class_<vtkChartBox, emscripten::base<vtkChart>>("vtkChartBox")
     .smart_ptr<vtkSmartPointer<vtkChartBox>>("vtkSmartPointer<vtkChartBox>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkChartBox>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkChartBox>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkChartBox::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkChartBox& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkChartBox::SafeDownCast, emscripten::allow_raw_pointers())

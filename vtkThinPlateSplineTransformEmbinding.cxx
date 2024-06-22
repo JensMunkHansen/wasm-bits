@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkThinPlateSplineTransform
 EMSCRIPTEN_BINDINGS(vtkThinPlateSplineTransform_class) {
   emscripten::class_<vtkThinPlateSplineTransform, emscripten::base<vtkWarpTransform>>("vtkThinPlateSplineTransform")
     .smart_ptr<vtkSmartPointer<vtkThinPlateSplineTransform>>("vtkSmartPointer<vtkThinPlateSplineTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkThinPlateSplineTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkThinPlateSplineTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThinPlateSplineTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThinPlateSplineTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThinPlateSplineTransform::SafeDownCast, emscripten::allow_raw_pointers())

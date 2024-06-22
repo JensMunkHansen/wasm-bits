@@ -47,7 +47,7 @@ EMSCRIPTEN_BINDINGS(vtkGLTFDocumentLoader_class) {
   using ComponentType=vtkGLTFDocumentLoader::ComponentType;
   emscripten::class_<vtkGLTFDocumentLoader, emscripten::base<vtkObject>>("vtkGLTFDocumentLoader")
     .smart_ptr<vtkSmartPointer<vtkGLTFDocumentLoader>>("vtkSmartPointer<vtkGLTFDocumentLoader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGLTFDocumentLoader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGLTFDocumentLoader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGLTFDocumentLoader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGLTFDocumentLoader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGLTFDocumentLoader::SafeDownCast, emscripten::allow_raw_pointers())

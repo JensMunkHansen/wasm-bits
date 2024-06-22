@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkFiberSurface_class) {
   using ClipVertexType=vtkFiberSurface::ClipVertexType;
   emscripten::class_<vtkFiberSurface, emscripten::base<vtkPolyDataAlgorithm>>("vtkFiberSurface")
     .smart_ptr<vtkSmartPointer<vtkFiberSurface>>("vtkSmartPointer<vtkFiberSurface>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFiberSurface>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFiberSurface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFiberSurface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFiberSurface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFiberSurface::SafeDownCast, emscripten::allow_raw_pointers())

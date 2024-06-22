@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLGPUVolumeRayCastMapper_class) {
   using Passes=vtkOpenGLGPUVolumeRayCastMapper::Passes;
   emscripten::class_<vtkOpenGLGPUVolumeRayCastMapper, emscripten::base<vtkGPUVolumeRayCastMapper>>("vtkOpenGLGPUVolumeRayCastMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLGPUVolumeRayCastMapper>>("vtkSmartPointer<vtkOpenGLGPUVolumeRayCastMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLGPUVolumeRayCastMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLGPUVolumeRayCastMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLGPUVolumeRayCastMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLGPUVolumeRayCastMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLGPUVolumeRayCastMapper::SafeDownCast, emscripten::allow_raw_pointers())

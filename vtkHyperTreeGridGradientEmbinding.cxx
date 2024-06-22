@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkHyperTreeGridGradient_class) {
   using ComputeMode=vtkHyperTreeGridGradient::ComputeMode;
   emscripten::class_<vtkHyperTreeGridGradient, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridGradient")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridGradient>>("vtkSmartPointer<vtkHyperTreeGridGradient>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridGradient>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridGradient>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridGradient::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridGradient& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridGradient::SafeDownCast, emscripten::allow_raw_pointers())

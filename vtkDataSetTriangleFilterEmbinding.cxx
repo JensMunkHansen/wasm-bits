@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataSetTriangleFilter>(v
 EMSCRIPTEN_BINDINGS(vtkDataSetTriangleFilter_class) {
   emscripten::class_<vtkDataSetTriangleFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkDataSetTriangleFilter")
     .smart_ptr<vtkSmartPointer<vtkDataSetTriangleFilter>>("vtkSmartPointer<vtkDataSetTriangleFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetTriangleFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetTriangleFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetTriangleFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetTriangleFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataSetTriangleFilter::SafeDownCast, emscripten::allow_raw_pointers())

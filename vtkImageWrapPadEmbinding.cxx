@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageWrapPad>(vtkImageWr
 EMSCRIPTEN_BINDINGS(vtkImageWrapPad_class) {
   emscripten::class_<vtkImageWrapPad, emscripten::base<vtkImagePadFilter>>("vtkImageWrapPad")
     .smart_ptr<vtkSmartPointer<vtkImageWrapPad>>("vtkSmartPointer<vtkImageWrapPad>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageWrapPad>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageWrapPad>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageWrapPad::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageWrapPad& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageWrapPad::SafeDownCast, emscripten::allow_raw_pointers())

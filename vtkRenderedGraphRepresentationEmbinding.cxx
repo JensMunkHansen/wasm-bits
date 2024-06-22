@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderedGraphRepresentat
 EMSCRIPTEN_BINDINGS(vtkRenderedGraphRepresentation_class) {
   emscripten::class_<vtkRenderedGraphRepresentation, emscripten::base<vtkRenderedRepresentation>>("vtkRenderedGraphRepresentation")
     .smart_ptr<vtkSmartPointer<vtkRenderedGraphRepresentation>>("vtkSmartPointer<vtkRenderedGraphRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderedGraphRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderedGraphRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderedGraphRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderedGraphRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderedGraphRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

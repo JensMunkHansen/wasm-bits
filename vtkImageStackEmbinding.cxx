@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageStack>(vtkImageStac
 EMSCRIPTEN_BINDINGS(vtkImageStack_class) {
   emscripten::class_<vtkImageStack, emscripten::base<vtkImageSlice>>("vtkImageStack")
     .smart_ptr<vtkSmartPointer<vtkImageStack>>("vtkSmartPointer<vtkImageStack>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageStack>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageStack>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageStack::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageStack& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageStack::SafeDownCast, emscripten::allow_raw_pointers())

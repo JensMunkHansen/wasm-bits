@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridWriter>(vtkCellG
 EMSCRIPTEN_BINDINGS(vtkCellGridWriter_class) {
   emscripten::class_<vtkCellGridWriter, emscripten::base<vtkWriter>>("vtkCellGridWriter")
     .smart_ptr<vtkSmartPointer<vtkCellGridWriter>>("vtkSmartPointer<vtkCellGridWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridWriter::SafeDownCast, emscripten::allow_raw_pointers())

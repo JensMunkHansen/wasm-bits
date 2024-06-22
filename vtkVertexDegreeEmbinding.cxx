@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVertexDegree>(vtkVertexD
 EMSCRIPTEN_BINDINGS(vtkVertexDegree_class) {
   emscripten::class_<vtkVertexDegree, emscripten::base<vtkGraphAlgorithm>>("vtkVertexDegree")
     .smart_ptr<vtkSmartPointer<vtkVertexDegree>>("vtkSmartPointer<vtkVertexDegree>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVertexDegree>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVertexDegree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVertexDegree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVertexDegree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVertexDegree::SafeDownCast, emscripten::allow_raw_pointers())

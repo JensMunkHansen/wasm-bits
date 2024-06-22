@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkWendlandQuinticKernel>(v
 EMSCRIPTEN_BINDINGS(vtkWendlandQuinticKernel_class) {
   emscripten::class_<vtkWendlandQuinticKernel, emscripten::base<vtkSPHKernel>>("vtkWendlandQuinticKernel")
     .smart_ptr<vtkSmartPointer<vtkWendlandQuinticKernel>>("vtkSmartPointer<vtkWendlandQuinticKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWendlandQuinticKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWendlandQuinticKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWendlandQuinticKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWendlandQuinticKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWendlandQuinticKernel::SafeDownCast, emscripten::allow_raw_pointers())

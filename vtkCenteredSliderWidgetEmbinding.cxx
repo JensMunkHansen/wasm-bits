@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCenteredSliderWidget>(vt
 EMSCRIPTEN_BINDINGS(vtkCenteredSliderWidget_class) {
   emscripten::class_<vtkCenteredSliderWidget, emscripten::base<vtkAbstractWidget>>("vtkCenteredSliderWidget")
     .smart_ptr<vtkSmartPointer<vtkCenteredSliderWidget>>("vtkSmartPointer<vtkCenteredSliderWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCenteredSliderWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCenteredSliderWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCenteredSliderWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCenteredSliderWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCenteredSliderWidget::SafeDownCast, emscripten::allow_raw_pointers())

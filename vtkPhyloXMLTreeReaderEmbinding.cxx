@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPhyloXMLTreeReader>(vtkP
 EMSCRIPTEN_BINDINGS(vtkPhyloXMLTreeReader_class) {
   emscripten::class_<vtkPhyloXMLTreeReader, emscripten::base<vtkXMLReader>>("vtkPhyloXMLTreeReader")
     .smart_ptr<vtkSmartPointer<vtkPhyloXMLTreeReader>>("vtkSmartPointer<vtkPhyloXMLTreeReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPhyloXMLTreeReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPhyloXMLTreeReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPhyloXMLTreeReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPhyloXMLTreeReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPhyloXMLTreeReader::SafeDownCast, emscripten::allow_raw_pointers())

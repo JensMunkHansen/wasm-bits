@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOutlineCornerSource>(vtk
 EMSCRIPTEN_BINDINGS(vtkOutlineCornerSource_class) {
   emscripten::class_<vtkOutlineCornerSource, emscripten::base<vtkOutlineSource>>("vtkOutlineCornerSource")
     .smart_ptr<vtkSmartPointer<vtkOutlineCornerSource>>("vtkSmartPointer<vtkOutlineCornerSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOutlineCornerSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOutlineCornerSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOutlineCornerSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOutlineCornerSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOutlineCornerSource::SafeDownCast, emscripten::allow_raw_pointers())

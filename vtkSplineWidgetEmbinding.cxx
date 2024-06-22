@@ -40,7 +40,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplineWidget>(vtkSplineW
 EMSCRIPTEN_BINDINGS(vtkSplineWidget_class) {
   emscripten::class_<vtkSplineWidget, emscripten::base<vtk3DWidget>>("vtkSplineWidget")
     .smart_ptr<vtkSmartPointer<vtkSplineWidget>>("vtkSmartPointer<vtkSplineWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplineWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSplineWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplineWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplineWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplineWidget::SafeDownCast, emscripten::allow_raw_pointers())

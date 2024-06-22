@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGTri>(vtkDGTri * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkDGTri_class) {
   emscripten::class_<vtkDGTri, emscripten::base<vtkDeRhamCell>>("vtkDGTri")
     .smart_ptr<vtkSmartPointer<vtkDGTri>>("vtkSmartPointer<vtkDGTri>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGTri>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDGTri>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGTri::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGTri& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGTri::SafeDownCast, emscripten::allow_raw_pointers())

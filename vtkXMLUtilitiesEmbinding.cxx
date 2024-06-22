@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLUtilities>(vtkXMLUtil
 EMSCRIPTEN_BINDINGS(vtkXMLUtilities_class) {
   emscripten::class_<vtkXMLUtilities, emscripten::base<vtkObject>>("vtkXMLUtilities")
     .smart_ptr<vtkSmartPointer<vtkXMLUtilities>>("vtkSmartPointer<vtkXMLUtilities>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLUtilities>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLUtilities>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLUtilities::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLUtilities& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLUtilities::SafeDownCast, emscripten::allow_raw_pointers())

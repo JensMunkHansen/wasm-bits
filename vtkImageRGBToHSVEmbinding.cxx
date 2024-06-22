@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageRGBToHSV>(vtkImageR
 EMSCRIPTEN_BINDINGS(vtkImageRGBToHSV_class) {
   emscripten::class_<vtkImageRGBToHSV, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageRGBToHSV")
     .smart_ptr<vtkSmartPointer<vtkImageRGBToHSV>>("vtkSmartPointer<vtkImageRGBToHSV>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageRGBToHSV>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageRGBToHSV>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageRGBToHSV::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageRGBToHSV& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageRGBToHSV::SafeDownCast, emscripten::allow_raw_pointers())

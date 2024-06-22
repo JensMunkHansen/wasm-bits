@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSLACReader>(vtkSLACReade
 EMSCRIPTEN_BINDINGS(vtkSLACReader_class) {
   emscripten::class_<vtkSLACReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkSLACReader")
     .smart_ptr<vtkSmartPointer<vtkSLACReader>>("vtkSmartPointer<vtkSLACReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSLACReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSLACReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSLACReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSLACReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSLACReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleImage>(vt
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleImage_class) {
   emscripten::class_<vtkInteractorStyleImage, emscripten::base<vtkInteractorStyleTrackballCamera>>("vtkInteractorStyleImage")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleImage>>("vtkSmartPointer<vtkInteractorStyleImage>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleImage>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleImage>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleImage::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleImage& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleImage::SafeDownCast, emscripten::allow_raw_pointers())

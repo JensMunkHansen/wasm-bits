@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkLabelHierarchyCompositeI
 EMSCRIPTEN_BINDINGS(vtkLabelHierarchyCompositeIterator_class) {
   emscripten::class_<vtkLabelHierarchyCompositeIterator, emscripten::base<vtkLabelHierarchyIterator>>("vtkLabelHierarchyCompositeIterator")
     .smart_ptr<vtkSmartPointer<vtkLabelHierarchyCompositeIterator>>("vtkSmartPointer<vtkLabelHierarchyCompositeIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabelHierarchyCompositeIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLabelHierarchyCompositeIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabelHierarchyCompositeIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabelHierarchyCompositeIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabelHierarchyCompositeIterator::SafeDownCast, emscripten::allow_raw_pointers())

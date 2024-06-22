@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkEqualizerContextItem>(vt
 EMSCRIPTEN_BINDINGS(vtkEqualizerContextItem_class) {
   emscripten::class_<vtkEqualizerContextItem, emscripten::base<vtkContextItem>>("vtkEqualizerContextItem")
     .smart_ptr<vtkSmartPointer<vtkEqualizerContextItem>>("vtkSmartPointer<vtkEqualizerContextItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEqualizerContextItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEqualizerContextItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEqualizerContextItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEqualizerContextItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEqualizerContextItem::SafeDownCast, emscripten::allow_raw_pointers())

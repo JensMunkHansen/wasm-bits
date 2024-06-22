@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransmitStructuredGridPi
 EMSCRIPTEN_BINDINGS(vtkTransmitStructuredGridPiece_class) {
   emscripten::class_<vtkTransmitStructuredGridPiece, emscripten::base<vtkTransmitStructuredDataPiece>>("vtkTransmitStructuredGridPiece")
     .smart_ptr<vtkSmartPointer<vtkTransmitStructuredGridPiece>>("vtkSmartPointer<vtkTransmitStructuredGridPiece>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransmitStructuredGridPiece>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransmitStructuredGridPiece>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransmitStructuredGridPiece::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransmitStructuredGridPiece& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransmitStructuredGridPiece::SafeDownCast, emscripten::allow_raw_pointers())

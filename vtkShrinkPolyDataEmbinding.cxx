@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkShrinkPolyData>(vtkShrin
 EMSCRIPTEN_BINDINGS(vtkShrinkPolyData_class) {
   emscripten::class_<vtkShrinkPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkShrinkPolyData")
     .smart_ptr<vtkSmartPointer<vtkShrinkPolyData>>("vtkSmartPointer<vtkShrinkPolyData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkShrinkPolyData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkShrinkPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShrinkPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShrinkPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShrinkPolyData::SafeDownCast, emscripten::allow_raw_pointers())

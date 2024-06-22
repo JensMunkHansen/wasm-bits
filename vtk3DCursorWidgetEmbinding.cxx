@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtk3DCursorWidget>(vtk3DCur
 EMSCRIPTEN_BINDINGS(vtk3DCursorWidget_class) {
   emscripten::class_<vtk3DCursorWidget, emscripten::base<vtkAbstractWidget>>("vtk3DCursorWidget")
     .smart_ptr<vtkSmartPointer<vtk3DCursorWidget>>("vtkSmartPointer<vtk3DCursorWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtk3DCursorWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtk3DCursorWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtk3DCursorWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtk3DCursorWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtk3DCursorWidget::SafeDownCast, emscripten::allow_raw_pointers())

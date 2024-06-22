@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkMathTextUtilities>(vtkMa
 EMSCRIPTEN_BINDINGS(vtkMathTextUtilities_class) {
   emscripten::class_<vtkMathTextUtilities, emscripten::base<vtkObject>>("vtkMathTextUtilities")
     .smart_ptr<vtkSmartPointer<vtkMathTextUtilities>>("vtkSmartPointer<vtkMathTextUtilities>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMathTextUtilities>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMathTextUtilities>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMathTextUtilities::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMathTextUtilities& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMathTextUtilities::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageIdealHighPass>(vtkI
 EMSCRIPTEN_BINDINGS(vtkImageIdealHighPass_class) {
   emscripten::class_<vtkImageIdealHighPass, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageIdealHighPass")
     .smart_ptr<vtkSmartPointer<vtkImageIdealHighPass>>("vtkSmartPointer<vtkImageIdealHighPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageIdealHighPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageIdealHighPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageIdealHighPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageIdealHighPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageIdealHighPass::SafeDownCast, emscripten::allow_raw_pointers())

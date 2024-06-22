@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPartitionedDataSetWri
 EMSCRIPTEN_BINDINGS(vtkXMLPartitionedDataSetWriter_class) {
   emscripten::class_<vtkXMLPartitionedDataSetWriter, emscripten::base<vtkXMLWriter2>>("vtkXMLPartitionedDataSetWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLPartitionedDataSetWriter>>("vtkSmartPointer<vtkXMLPartitionedDataSetWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPartitionedDataSetWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPartitionedDataSetWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPartitionedDataSetWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPartitionedDataSetWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPartitionedDataSetWriter::SafeDownCast, emscripten::allow_raw_pointers())

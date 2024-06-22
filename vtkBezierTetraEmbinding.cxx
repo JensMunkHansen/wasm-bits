@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkBezierTetra>(vtkBezierTe
 EMSCRIPTEN_BINDINGS(vtkBezierTetra_class) {
   emscripten::class_<vtkBezierTetra, emscripten::base<vtkHigherOrderTetra>>("vtkBezierTetra")
     .smart_ptr<vtkSmartPointer<vtkBezierTetra>>("vtkSmartPointer<vtkBezierTetra>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBezierTetra>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBezierTetra>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBezierTetra::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBezierTetra& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBezierTetra::SafeDownCast, emscripten::allow_raw_pointers())

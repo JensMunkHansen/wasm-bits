@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFitImplicitFunction>(vtk
 EMSCRIPTEN_BINDINGS(vtkFitImplicitFunction_class) {
   emscripten::class_<vtkFitImplicitFunction, emscripten::base<vtkPointCloudFilter>>("vtkFitImplicitFunction")
     .smart_ptr<vtkSmartPointer<vtkFitImplicitFunction>>("vtkSmartPointer<vtkFitImplicitFunction>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFitImplicitFunction>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFitImplicitFunction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFitImplicitFunction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFitImplicitFunction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFitImplicitFunction::SafeDownCast, emscripten::allow_raw_pointers())

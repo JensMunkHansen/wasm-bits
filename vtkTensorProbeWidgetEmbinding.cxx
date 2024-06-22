@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTensorProbeWidget>(vtkTe
 EMSCRIPTEN_BINDINGS(vtkTensorProbeWidget_class) {
   emscripten::class_<vtkTensorProbeWidget, emscripten::base<vtkAbstractWidget>>("vtkTensorProbeWidget")
     .smart_ptr<vtkSmartPointer<vtkTensorProbeWidget>>("vtkSmartPointer<vtkTensorProbeWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTensorProbeWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTensorProbeWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTensorProbeWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTensorProbeWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTensorProbeWidget::SafeDownCast, emscripten::allow_raw_pointers())

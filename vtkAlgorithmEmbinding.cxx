@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkAlgorithm_class) {
   using DesiredOutputPrecision=vtkAlgorithm::DesiredOutputPrecision;
   emscripten::class_<vtkAlgorithm, emscripten::base<vtkObject>>("vtkAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkAlgorithm>>("vtkSmartPointer<vtkAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

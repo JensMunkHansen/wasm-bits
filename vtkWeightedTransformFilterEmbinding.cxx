@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkWeightedTransformFilter>
 EMSCRIPTEN_BINDINGS(vtkWeightedTransformFilter_class) {
   emscripten::class_<vtkWeightedTransformFilter, emscripten::base<vtkPointSetAlgorithm>>("vtkWeightedTransformFilter")
     .smart_ptr<vtkSmartPointer<vtkWeightedTransformFilter>>("vtkSmartPointer<vtkWeightedTransformFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWeightedTransformFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWeightedTransformFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWeightedTransformFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWeightedTransformFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWeightedTransformFilter::SafeDownCast, emscripten::allow_raw_pointers())

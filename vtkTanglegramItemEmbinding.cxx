@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkTanglegramItem>(vtkTangl
 EMSCRIPTEN_BINDINGS(vtkTanglegramItem_class) {
   emscripten::class_<vtkTanglegramItem, emscripten::base<vtkContextItem>>("vtkTanglegramItem")
     .smart_ptr<vtkSmartPointer<vtkTanglegramItem>>("vtkSmartPointer<vtkTanglegramItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTanglegramItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTanglegramItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTanglegramItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTanglegramItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTanglegramItem::SafeDownCast, emscripten::allow_raw_pointers())

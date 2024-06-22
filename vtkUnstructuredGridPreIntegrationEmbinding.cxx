@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridPreInteg
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridPreIntegration_class) {
   emscripten::class_<vtkUnstructuredGridPreIntegration, emscripten::base<vtkUnstructuredGridVolumeRayIntegrator>>("vtkUnstructuredGridPreIntegration")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridPreIntegration>>("vtkSmartPointer<vtkUnstructuredGridPreIntegration>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridPreIntegration>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridPreIntegration>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridPreIntegration::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridPreIntegration& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridPreIntegration::SafeDownCast, emscripten::allow_raw_pointers())

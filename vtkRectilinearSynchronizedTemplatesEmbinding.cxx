@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearSynchronizedT
 EMSCRIPTEN_BINDINGS(vtkRectilinearSynchronizedTemplates_class) {
   emscripten::class_<vtkRectilinearSynchronizedTemplates, emscripten::base<vtkPolyDataAlgorithm>>("vtkRectilinearSynchronizedTemplates")
     .smart_ptr<vtkSmartPointer<vtkRectilinearSynchronizedTemplates>>("vtkSmartPointer<vtkRectilinearSynchronizedTemplates>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearSynchronizedTemplates>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearSynchronizedTemplates>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearSynchronizedTemplates::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearSynchronizedTemplates& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearSynchronizedTemplates::SafeDownCast, emscripten::allow_raw_pointers())

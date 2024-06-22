@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSurfaceNets2D>(vtkSurfac
 EMSCRIPTEN_BINDINGS(vtkSurfaceNets2D_class) {
   emscripten::class_<vtkSurfaceNets2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkSurfaceNets2D")
     .smart_ptr<vtkSmartPointer<vtkSurfaceNets2D>>("vtkSmartPointer<vtkSurfaceNets2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSurfaceNets2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSurfaceNets2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSurfaceNets2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSurfaceNets2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSurfaceNets2D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkTriQuadraticHexahedron>(
 EMSCRIPTEN_BINDINGS(vtkTriQuadraticHexahedron_class) {
   emscripten::class_<vtkTriQuadraticHexahedron, emscripten::base<vtkNonLinearCell>>("vtkTriQuadraticHexahedron")
     .smart_ptr<vtkSmartPointer<vtkTriQuadraticHexahedron>>("vtkSmartPointer<vtkTriQuadraticHexahedron>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTriQuadraticHexahedron>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTriQuadraticHexahedron>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTriQuadraticHexahedron::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTriQuadraticHexahedron& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTriQuadraticHexahedron::SafeDownCast, emscripten::allow_raw_pointers())

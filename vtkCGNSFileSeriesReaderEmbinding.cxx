@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkCGNSFileSeriesReader>(vt
 EMSCRIPTEN_BINDINGS(vtkCGNSFileSeriesReader_class) {
   emscripten::class_<vtkCGNSFileSeriesReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkCGNSFileSeriesReader")
     .smart_ptr<vtkSmartPointer<vtkCGNSFileSeriesReader>>("vtkSmartPointer<vtkCGNSFileSeriesReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCGNSFileSeriesReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCGNSFileSeriesReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCGNSFileSeriesReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCGNSFileSeriesReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCGNSFileSeriesReader::SafeDownCast, emscripten::allow_raw_pointers())

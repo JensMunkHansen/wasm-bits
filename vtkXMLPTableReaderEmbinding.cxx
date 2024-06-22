@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPTableReader>(vtkXMLP
 EMSCRIPTEN_BINDINGS(vtkXMLPTableReader_class) {
   emscripten::class_<vtkXMLPTableReader, emscripten::base<vtkXMLPDataObjectReader>>("vtkXMLPTableReader")
     .smart_ptr<vtkSmartPointer<vtkXMLPTableReader>>("vtkSmartPointer<vtkXMLPTableReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPTableReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPTableReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPTableReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPTableReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPTableReader::SafeDownCast, emscripten::allow_raw_pointers())

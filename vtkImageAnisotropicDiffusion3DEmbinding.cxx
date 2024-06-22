@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageAnisotropicDiffusio
 EMSCRIPTEN_BINDINGS(vtkImageAnisotropicDiffusion3D_class) {
   emscripten::class_<vtkImageAnisotropicDiffusion3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageAnisotropicDiffusion3D")
     .smart_ptr<vtkSmartPointer<vtkImageAnisotropicDiffusion3D>>("vtkSmartPointer<vtkImageAnisotropicDiffusion3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageAnisotropicDiffusion3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageAnisotropicDiffusion3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageAnisotropicDiffusion3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageAnisotropicDiffusion3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageAnisotropicDiffusion3D::SafeDownCast, emscripten::allow_raw_pointers())

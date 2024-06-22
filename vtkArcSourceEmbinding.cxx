@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkArcSource>(vtkArcSource 
 EMSCRIPTEN_BINDINGS(vtkArcSource_class) {
   emscripten::class_<vtkArcSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkArcSource")
     .smart_ptr<vtkSmartPointer<vtkArcSource>>("vtkSmartPointer<vtkArcSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkArcSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkArcSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArcSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArcSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArcSource::SafeDownCast, emscripten::allow_raw_pointers())

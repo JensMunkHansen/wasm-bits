@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAssignCoordinatesLayoutS
 EMSCRIPTEN_BINDINGS(vtkAssignCoordinatesLayoutStrategy_class) {
   emscripten::class_<vtkAssignCoordinatesLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkAssignCoordinatesLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkAssignCoordinatesLayoutStrategy>>("vtkSmartPointer<vtkAssignCoordinatesLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAssignCoordinatesLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAssignCoordinatesLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAssignCoordinatesLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAssignCoordinatesLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAssignCoordinatesLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

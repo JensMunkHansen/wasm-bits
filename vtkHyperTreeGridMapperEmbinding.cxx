@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridMapper>(vtk
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridMapper_class) {
   emscripten::class_<vtkHyperTreeGridMapper, emscripten::base<vtkMapper>>("vtkHyperTreeGridMapper")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridMapper>>("vtkSmartPointer<vtkHyperTreeGridMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridMapper::SafeDownCast, emscripten::allow_raw_pointers())

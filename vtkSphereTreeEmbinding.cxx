@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphereTree>(vtkSphereTre
 EMSCRIPTEN_BINDINGS(vtkSphereTree_class) {
   emscripten::class_<vtkSphereTree, emscripten::base<vtkObject>>("vtkSphereTree")
     .smart_ptr<vtkSmartPointer<vtkSphereTree>>("vtkSmartPointer<vtkSphereTree>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphereTree>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphereTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphereTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphereTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphereTree::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageEllipsoidSource>(vt
 EMSCRIPTEN_BINDINGS(vtkImageEllipsoidSource_class) {
   emscripten::class_<vtkImageEllipsoidSource, emscripten::base<vtkImageAlgorithm>>("vtkImageEllipsoidSource")
     .smart_ptr<vtkSmartPointer<vtkImageEllipsoidSource>>("vtkSmartPointer<vtkImageEllipsoidSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageEllipsoidSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageEllipsoidSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageEllipsoidSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageEllipsoidSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageEllipsoidSource::SafeDownCast, emscripten::allow_raw_pointers())

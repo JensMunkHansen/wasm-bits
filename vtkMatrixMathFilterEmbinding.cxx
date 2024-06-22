@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMatrixMathFilter>(vtkMat
 EMSCRIPTEN_BINDINGS(vtkMatrixMathFilter_class) {
   emscripten::class_<vtkMatrixMathFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkMatrixMathFilter")
     .smart_ptr<vtkSmartPointer<vtkMatrixMathFilter>>("vtkSmartPointer<vtkMatrixMathFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMatrixMathFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMatrixMathFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMatrixMathFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMatrixMathFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMatrixMathFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkBooleanOperationPolyDataFilter_class) {
   using OperationType=vtkBooleanOperationPolyDataFilter::OperationType;
   emscripten::class_<vtkBooleanOperationPolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkBooleanOperationPolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkBooleanOperationPolyDataFilter>>("vtkSmartPointer<vtkBooleanOperationPolyDataFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBooleanOperationPolyDataFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBooleanOperationPolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBooleanOperationPolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBooleanOperationPolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBooleanOperationPolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

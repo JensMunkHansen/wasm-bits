@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataTransferHelper>(vtkD
 EMSCRIPTEN_BINDINGS(vtkDataTransferHelper_class) {
   emscripten::class_<vtkDataTransferHelper, emscripten::base<vtkObject>>("vtkDataTransferHelper")
     .smart_ptr<vtkSmartPointer<vtkDataTransferHelper>>("vtkSmartPointer<vtkDataTransferHelper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataTransferHelper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataTransferHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataTransferHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataTransferHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataTransferHelper::SafeDownCast, emscripten::allow_raw_pointers())

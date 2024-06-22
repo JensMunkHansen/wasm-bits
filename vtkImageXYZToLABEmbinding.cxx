@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageXYZToLAB>(vtkImageX
 EMSCRIPTEN_BINDINGS(vtkImageXYZToLAB_class) {
   emscripten::class_<vtkImageXYZToLAB, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageXYZToLAB")
     .smart_ptr<vtkSmartPointer<vtkImageXYZToLAB>>("vtkSmartPointer<vtkImageXYZToLAB>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageXYZToLAB>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageXYZToLAB>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageXYZToLAB::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageXYZToLAB& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageXYZToLAB::SafeDownCast, emscripten::allow_raw_pointers())

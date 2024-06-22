@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStreamSurface>(vtkStream
 EMSCRIPTEN_BINDINGS(vtkStreamSurface_class) {
   emscripten::class_<vtkStreamSurface, emscripten::base<vtkStreamTracer>>("vtkStreamSurface")
     .smart_ptr<vtkSmartPointer<vtkStreamSurface>>("vtkSmartPointer<vtkStreamSurface>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreamSurface>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStreamSurface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreamSurface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreamSurface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreamSurface::SafeDownCast, emscripten::allow_raw_pointers())

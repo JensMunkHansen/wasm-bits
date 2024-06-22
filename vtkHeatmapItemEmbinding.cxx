@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkHeatmapItem>(vtkHeatmapI
 EMSCRIPTEN_BINDINGS(vtkHeatmapItem_class) {
   emscripten::class_<vtkHeatmapItem, emscripten::base<vtkContextItem>>("vtkHeatmapItem")
     .smart_ptr<vtkSmartPointer<vtkHeatmapItem>>("vtkSmartPointer<vtkHeatmapItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHeatmapItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHeatmapItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHeatmapItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHeatmapItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHeatmapItem::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkChartParallelCoordinates
 EMSCRIPTEN_BINDINGS(vtkChartParallelCoordinates_class) {
   emscripten::class_<vtkChartParallelCoordinates, emscripten::base<vtkChart>>("vtkChartParallelCoordinates")
     .smart_ptr<vtkSmartPointer<vtkChartParallelCoordinates>>("vtkSmartPointer<vtkChartParallelCoordinates>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkChartParallelCoordinates>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkChartParallelCoordinates>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkChartParallelCoordinates::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkChartParallelCoordinates& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkChartParallelCoordinates::SafeDownCast, emscripten::allow_raw_pointers())

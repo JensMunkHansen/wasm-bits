@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPentagonalPrism>(vtkPent
 EMSCRIPTEN_BINDINGS(vtkPentagonalPrism_class) {
   emscripten::class_<vtkPentagonalPrism, emscripten::base<vtkCell3D>>("vtkPentagonalPrism")
     .smart_ptr<vtkSmartPointer<vtkPentagonalPrism>>("vtkSmartPointer<vtkPentagonalPrism>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPentagonalPrism>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPentagonalPrism>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPentagonalPrism::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPentagonalPrism& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPentagonalPrism::SafeDownCast, emscripten::allow_raw_pointers())

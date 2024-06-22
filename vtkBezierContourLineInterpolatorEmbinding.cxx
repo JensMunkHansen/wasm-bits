@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkBezierContourLineInterpo
 EMSCRIPTEN_BINDINGS(vtkBezierContourLineInterpolator_class) {
   emscripten::class_<vtkBezierContourLineInterpolator, emscripten::base<vtkContourLineInterpolator>>("vtkBezierContourLineInterpolator")
     .smart_ptr<vtkSmartPointer<vtkBezierContourLineInterpolator>>("vtkSmartPointer<vtkBezierContourLineInterpolator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBezierContourLineInterpolator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBezierContourLineInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBezierContourLineInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBezierContourLineInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBezierContourLineInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

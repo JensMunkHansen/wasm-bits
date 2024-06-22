@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageBSplineCoefficients
 EMSCRIPTEN_BINDINGS(vtkImageBSplineCoefficients_class) {
   emscripten::class_<vtkImageBSplineCoefficients, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageBSplineCoefficients")
     .smart_ptr<vtkSmartPointer<vtkImageBSplineCoefficients>>("vtkSmartPointer<vtkImageBSplineCoefficients>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageBSplineCoefficients>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageBSplineCoefficients>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageBSplineCoefficients::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageBSplineCoefficients& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageBSplineCoefficients::SafeDownCast, emscripten::allow_raw_pointers())

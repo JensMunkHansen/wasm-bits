@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkNetCDFCAMReader>(vtkNetC
 EMSCRIPTEN_BINDINGS(vtkNetCDFCAMReader_class) {
   emscripten::class_<vtkNetCDFCAMReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkNetCDFCAMReader")
     .smart_ptr<vtkSmartPointer<vtkNetCDFCAMReader>>("vtkSmartPointer<vtkNetCDFCAMReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkNetCDFCAMReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkNetCDFCAMReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNetCDFCAMReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNetCDFCAMReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNetCDFCAMReader::SafeDownCast, emscripten::allow_raw_pointers())

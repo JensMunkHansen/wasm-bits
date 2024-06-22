@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLTableWriter>(vtkXMLTa
 EMSCRIPTEN_BINDINGS(vtkXMLTableWriter_class) {
   emscripten::class_<vtkXMLTableWriter, emscripten::base<vtkXMLWriter>>("vtkXMLTableWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLTableWriter>>("vtkSmartPointer<vtkXMLTableWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLTableWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLTableWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLTableWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLTableWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLTableWriter::SafeDownCast, emscripten::allow_raw_pointers())

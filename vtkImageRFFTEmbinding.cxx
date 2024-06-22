@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageRFFT>(vtkImageRFFT 
 EMSCRIPTEN_BINDINGS(vtkImageRFFT_class) {
   emscripten::class_<vtkImageRFFT, emscripten::base<vtkImageFourierFilter>>("vtkImageRFFT")
     .smart_ptr<vtkSmartPointer<vtkImageRFFT>>("vtkSmartPointer<vtkImageRFFT>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageRFFT>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageRFFT>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageRFFT::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageRFFT& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageRFFT::SafeDownCast, emscripten::allow_raw_pointers())

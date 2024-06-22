@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDecimatePolylineAngleStr
 EMSCRIPTEN_BINDINGS(vtkDecimatePolylineAngleStrategy_class) {
   emscripten::class_<vtkDecimatePolylineAngleStrategy, emscripten::base<vtkDecimatePolylineStrategy>>("vtkDecimatePolylineAngleStrategy")
     .smart_ptr<vtkSmartPointer<vtkDecimatePolylineAngleStrategy>>("vtkSmartPointer<vtkDecimatePolylineAngleStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDecimatePolylineAngleStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDecimatePolylineAngleStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDecimatePolylineAngleStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDecimatePolylineAngleStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDecimatePolylineAngleStrategy::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRemoveUnusedPoints>(vtkR
 EMSCRIPTEN_BINDINGS(vtkRemoveUnusedPoints_class) {
   emscripten::class_<vtkRemoveUnusedPoints, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkRemoveUnusedPoints")
     .smart_ptr<vtkSmartPointer<vtkRemoveUnusedPoints>>("vtkSmartPointer<vtkRemoveUnusedPoints>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRemoveUnusedPoints>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRemoveUnusedPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRemoveUnusedPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRemoveUnusedPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRemoveUnusedPoints::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkReverseSense>(vtkReverse
 EMSCRIPTEN_BINDINGS(vtkReverseSense_class) {
   emscripten::class_<vtkReverseSense, emscripten::base<vtkPolyDataAlgorithm>>("vtkReverseSense")
     .smart_ptr<vtkSmartPointer<vtkReverseSense>>("vtkSmartPointer<vtkReverseSense>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkReverseSense>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkReverseSense>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkReverseSense::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkReverseSense& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkReverseSense::SafeDownCast, emscripten::allow_raw_pointers())

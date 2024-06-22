@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAdaptiveSubdivisionFilte
 EMSCRIPTEN_BINDINGS(vtkAdaptiveSubdivisionFilter_class) {
   emscripten::class_<vtkAdaptiveSubdivisionFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkAdaptiveSubdivisionFilter")
     .smart_ptr<vtkSmartPointer<vtkAdaptiveSubdivisionFilter>>("vtkSmartPointer<vtkAdaptiveSubdivisionFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAdaptiveSubdivisionFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAdaptiveSubdivisionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAdaptiveSubdivisionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAdaptiveSubdivisionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAdaptiveSubdivisionFilter::SafeDownCast, emscripten::allow_raw_pointers())

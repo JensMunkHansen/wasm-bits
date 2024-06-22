@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkKdTree>(vtkKdTree * ptr)
 EMSCRIPTEN_BINDINGS(vtkKdTree_class) {
   emscripten::class_<vtkKdTree, emscripten::base<vtkLocator>>("vtkKdTree")
     .smart_ptr<vtkSmartPointer<vtkKdTree>>("vtkSmartPointer<vtkKdTree>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkKdTree>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkKdTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkKdTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkKdTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkKdTree::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkWidgetEventTranslator>(v
 EMSCRIPTEN_BINDINGS(vtkWidgetEventTranslator_class) {
   emscripten::class_<vtkWidgetEventTranslator, emscripten::base<vtkObject>>("vtkWidgetEventTranslator")
     .smart_ptr<vtkSmartPointer<vtkWidgetEventTranslator>>("vtkSmartPointer<vtkWidgetEventTranslator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWidgetEventTranslator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWidgetEventTranslator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWidgetEventTranslator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWidgetEventTranslator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWidgetEventTranslator::SafeDownCast, emscripten::allow_raw_pointers())

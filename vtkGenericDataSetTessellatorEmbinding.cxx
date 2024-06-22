@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericDataSetTessellato
 EMSCRIPTEN_BINDINGS(vtkGenericDataSetTessellator_class) {
   emscripten::class_<vtkGenericDataSetTessellator, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkGenericDataSetTessellator")
     .smart_ptr<vtkSmartPointer<vtkGenericDataSetTessellator>>("vtkSmartPointer<vtkGenericDataSetTessellator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericDataSetTessellator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericDataSetTessellator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericDataSetTessellator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericDataSetTessellator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericDataSetTessellator::SafeDownCast, emscripten::allow_raw_pointers())

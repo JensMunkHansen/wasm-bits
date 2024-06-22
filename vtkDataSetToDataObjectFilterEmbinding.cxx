@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataSetToDataObjectFilte
 EMSCRIPTEN_BINDINGS(vtkDataSetToDataObjectFilter_class) {
   emscripten::class_<vtkDataSetToDataObjectFilter, emscripten::base<vtkDataObjectAlgorithm>>("vtkDataSetToDataObjectFilter")
     .smart_ptr<vtkSmartPointer<vtkDataSetToDataObjectFilter>>("vtkSmartPointer<vtkDataSetToDataObjectFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetToDataObjectFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetToDataObjectFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetToDataObjectFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetToDataObjectFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataSetToDataObjectFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkBrush_class) {
   using TextureProperty=vtkBrush::TextureProperty;
   emscripten::class_<vtkBrush, emscripten::base<vtkObject>>("vtkBrush")
     .smart_ptr<vtkSmartPointer<vtkBrush>>("vtkSmartPointer<vtkBrush>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBrush>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBrush>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBrush::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBrush& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBrush::SafeDownCast, emscripten::allow_raw_pointers())

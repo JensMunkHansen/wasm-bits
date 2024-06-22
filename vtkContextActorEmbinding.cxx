@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkContextActor>(vtkContext
 EMSCRIPTEN_BINDINGS(vtkContextActor_class) {
   emscripten::class_<vtkContextActor, emscripten::base<vtkProp>>("vtkContextActor")
     .smart_ptr<vtkSmartPointer<vtkContextActor>>("vtkSmartPointer<vtkContextActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkContextActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextActor::SafeDownCast, emscripten::allow_raw_pointers())

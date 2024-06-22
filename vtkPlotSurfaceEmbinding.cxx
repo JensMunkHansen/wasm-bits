@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotSurface>(vtkPlotSurf
 EMSCRIPTEN_BINDINGS(vtkPlotSurface_class) {
   emscripten::class_<vtkPlotSurface, emscripten::base<vtkPlot3D>>("vtkPlotSurface")
     .smart_ptr<vtkSmartPointer<vtkPlotSurface>>("vtkSmartPointer<vtkPlotSurface>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotSurface>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotSurface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotSurface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotSurface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotSurface::SafeDownCast, emscripten::allow_raw_pointers())

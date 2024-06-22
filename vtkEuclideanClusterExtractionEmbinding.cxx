@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkEuclideanClusterExtracti
 EMSCRIPTEN_BINDINGS(vtkEuclideanClusterExtraction_class) {
   emscripten::class_<vtkEuclideanClusterExtraction, emscripten::base<vtkPolyDataAlgorithm>>("vtkEuclideanClusterExtraction")
     .smart_ptr<vtkSmartPointer<vtkEuclideanClusterExtraction>>("vtkSmartPointer<vtkEuclideanClusterExtraction>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEuclideanClusterExtraction>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEuclideanClusterExtraction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEuclideanClusterExtraction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEuclideanClusterExtraction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEuclideanClusterExtraction::SafeDownCast, emscripten::allow_raw_pointers())

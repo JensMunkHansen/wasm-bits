@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkShaderProperty>(vtkShade
 EMSCRIPTEN_BINDINGS(vtkShaderProperty_class) {
   emscripten::class_<vtkShaderProperty, emscripten::base<vtkObject>>("vtkShaderProperty")
     .smart_ptr<vtkSmartPointer<vtkShaderProperty>>("vtkSmartPointer<vtkShaderProperty>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkShaderProperty>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkShaderProperty>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShaderProperty::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShaderProperty& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShaderProperty::SafeDownCast, emscripten::allow_raw_pointers())

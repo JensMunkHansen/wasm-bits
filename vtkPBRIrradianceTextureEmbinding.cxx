@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPBRIrradianceTexture>(vt
 EMSCRIPTEN_BINDINGS(vtkPBRIrradianceTexture_class) {
   emscripten::class_<vtkPBRIrradianceTexture, emscripten::base<vtkOpenGLTexture>>("vtkPBRIrradianceTexture")
     .smart_ptr<vtkSmartPointer<vtkPBRIrradianceTexture>>("vtkSmartPointer<vtkPBRIrradianceTexture>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPBRIrradianceTexture>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPBRIrradianceTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPBRIrradianceTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPBRIrradianceTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPBRIrradianceTexture::SafeDownCast, emscripten::allow_raw_pointers())

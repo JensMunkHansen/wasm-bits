@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVertexGlyphFilter>(vtkVe
 EMSCRIPTEN_BINDINGS(vtkVertexGlyphFilter_class) {
   emscripten::class_<vtkVertexGlyphFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkVertexGlyphFilter")
     .smart_ptr<vtkSmartPointer<vtkVertexGlyphFilter>>("vtkSmartPointer<vtkVertexGlyphFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVertexGlyphFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVertexGlyphFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVertexGlyphFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVertexGlyphFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVertexGlyphFilter::SafeDownCast, emscripten::allow_raw_pointers())

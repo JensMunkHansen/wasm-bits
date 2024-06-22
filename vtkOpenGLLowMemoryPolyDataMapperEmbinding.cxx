@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLLowMemoryPolyDataM
 EMSCRIPTEN_BINDINGS(vtkOpenGLLowMemoryPolyDataMapper_class) {
   emscripten::class_<vtkOpenGLLowMemoryPolyDataMapper, emscripten::base<vtkPolyDataMapper>>("vtkOpenGLLowMemoryPolyDataMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLLowMemoryPolyDataMapper>>("vtkSmartPointer<vtkOpenGLLowMemoryPolyDataMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLLowMemoryPolyDataMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLLowMemoryPolyDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLLowMemoryPolyDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLLowMemoryPolyDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLLowMemoryPolyDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

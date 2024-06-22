@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPOVExporter>(vtkPOVExpor
 EMSCRIPTEN_BINDINGS(vtkPOVExporter_class) {
   emscripten::class_<vtkPOVExporter, emscripten::base<vtkExporter>>("vtkPOVExporter")
     .smart_ptr<vtkSmartPointer<vtkPOVExporter>>("vtkSmartPointer<vtkPOVExporter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPOVExporter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPOVExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPOVExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPOVExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPOVExporter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkShadowMapPass>(vtkShadow
 EMSCRIPTEN_BINDINGS(vtkShadowMapPass_class) {
   emscripten::class_<vtkShadowMapPass, emscripten::base<vtkOpenGLRenderPass>>("vtkShadowMapPass")
     .smart_ptr<vtkSmartPointer<vtkShadowMapPass>>("vtkSmartPointer<vtkShadowMapPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkShadowMapPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkShadowMapPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShadowMapPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShadowMapPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShadowMapPass::SafeDownCast, emscripten::allow_raw_pointers())

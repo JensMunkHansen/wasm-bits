@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkClipConvexPolyData>(vtkC
 EMSCRIPTEN_BINDINGS(vtkClipConvexPolyData_class) {
   emscripten::class_<vtkClipConvexPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkClipConvexPolyData")
     .smart_ptr<vtkSmartPointer<vtkClipConvexPolyData>>("vtkSmartPointer<vtkClipConvexPolyData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkClipConvexPolyData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkClipConvexPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClipConvexPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClipConvexPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClipConvexPolyData::SafeDownCast, emscripten::allow_raw_pointers())

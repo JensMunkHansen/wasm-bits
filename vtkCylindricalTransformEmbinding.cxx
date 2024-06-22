@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCylindricalTransform>(vt
 EMSCRIPTEN_BINDINGS(vtkCylindricalTransform_class) {
   emscripten::class_<vtkCylindricalTransform, emscripten::base<vtkWarpTransform>>("vtkCylindricalTransform")
     .smart_ptr<vtkSmartPointer<vtkCylindricalTransform>>("vtkSmartPointer<vtkCylindricalTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCylindricalTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCylindricalTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCylindricalTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCylindricalTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCylindricalTransform::SafeDownCast, emscripten::allow_raw_pointers())

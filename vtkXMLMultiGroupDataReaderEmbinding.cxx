@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLMultiGroupDataReader>
 EMSCRIPTEN_BINDINGS(vtkXMLMultiGroupDataReader_class) {
   emscripten::class_<vtkXMLMultiGroupDataReader, emscripten::base<vtkXMLMultiBlockDataReader>>("vtkXMLMultiGroupDataReader")
     .smart_ptr<vtkSmartPointer<vtkXMLMultiGroupDataReader>>("vtkSmartPointer<vtkXMLMultiGroupDataReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLMultiGroupDataReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLMultiGroupDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLMultiGroupDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLMultiGroupDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLMultiGroupDataReader::SafeDownCast, emscripten::allow_raw_pointers())

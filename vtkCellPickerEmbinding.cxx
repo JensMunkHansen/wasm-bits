@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellPicker>(vtkCellPicke
 EMSCRIPTEN_BINDINGS(vtkCellPicker_class) {
   emscripten::class_<vtkCellPicker, emscripten::base<vtkPicker>>("vtkCellPicker")
     .smart_ptr<vtkSmartPointer<vtkCellPicker>>("vtkSmartPointer<vtkCellPicker>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellPicker>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellPicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellPicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellPicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellPicker::SafeDownCast, emscripten::allow_raw_pointers())

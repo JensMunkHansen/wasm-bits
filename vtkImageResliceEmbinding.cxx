@@ -39,7 +39,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageReslice>(vtkImageRe
 EMSCRIPTEN_BINDINGS(vtkImageReslice_class) {
   emscripten::class_<vtkImageReslice, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageReslice")
     .smart_ptr<vtkSmartPointer<vtkImageReslice>>("vtkSmartPointer<vtkImageReslice>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageReslice>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageReslice>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageReslice::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageReslice& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageReslice::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageStencilData>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageStencilData_class) {
   emscripten::class_<vtkImageStencilData, emscripten::base<vtkDataObject>>("vtkImageStencilData")
     .smart_ptr<vtkSmartPointer<vtkImageStencilData>>("vtkSmartPointer<vtkImageStencilData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageStencilData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageStencilData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageStencilData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageStencilData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageStencilData::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkClosedSurfacePointPlacer
 EMSCRIPTEN_BINDINGS(vtkClosedSurfacePointPlacer_class) {
   emscripten::class_<vtkClosedSurfacePointPlacer, emscripten::base<vtkPointPlacer>>("vtkClosedSurfacePointPlacer")
     .smart_ptr<vtkSmartPointer<vtkClosedSurfacePointPlacer>>("vtkSmartPointer<vtkClosedSurfacePointPlacer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkClosedSurfacePointPlacer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkClosedSurfacePointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClosedSurfacePointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClosedSurfacePointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClosedSurfacePointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

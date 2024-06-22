@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkUTF16TextCodec>(vtkUTF16
 EMSCRIPTEN_BINDINGS(vtkUTF16TextCodec_class) {
   emscripten::class_<vtkUTF16TextCodec, emscripten::base<vtkTextCodec>>("vtkUTF16TextCodec")
     .smart_ptr<vtkSmartPointer<vtkUTF16TextCodec>>("vtkSmartPointer<vtkUTF16TextCodec>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUTF16TextCodec>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUTF16TextCodec>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUTF16TextCodec::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUTF16TextCodec& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUTF16TextCodec::SafeDownCast, emscripten::allow_raw_pointers())

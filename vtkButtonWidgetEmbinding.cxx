@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkButtonWidget>(vtkButtonW
 EMSCRIPTEN_BINDINGS(vtkButtonWidget_class) {
   emscripten::class_<vtkButtonWidget, emscripten::base<vtkAbstractWidget>>("vtkButtonWidget")
     .smart_ptr<vtkSmartPointer<vtkButtonWidget>>("vtkSmartPointer<vtkButtonWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkButtonWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkButtonWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkButtonWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkButtonWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkButtonWidget::SafeDownCast, emscripten::allow_raw_pointers())

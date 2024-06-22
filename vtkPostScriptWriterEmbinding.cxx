@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPostScriptWriter>(vtkPos
 EMSCRIPTEN_BINDINGS(vtkPostScriptWriter_class) {
   emscripten::class_<vtkPostScriptWriter, emscripten::base<vtkImageWriter>>("vtkPostScriptWriter")
     .smart_ptr<vtkSmartPointer<vtkPostScriptWriter>>("vtkSmartPointer<vtkPostScriptWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPostScriptWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPostScriptWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPostScriptWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPostScriptWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPostScriptWriter::SafeDownCast, emscripten::allow_raw_pointers())

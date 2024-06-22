@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkWebGPUPolyDataMapper_class) {
   using CellDataAttributes=vtkWebGPUPolyDataMapper::CellDataAttributes;
   emscripten::class_<vtkWebGPUPolyDataMapper, emscripten::base<vtkPolyDataMapper>>("vtkWebGPUPolyDataMapper")
     .smart_ptr<vtkSmartPointer<vtkWebGPUPolyDataMapper>>("vtkSmartPointer<vtkWebGPUPolyDataMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUPolyDataMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUPolyDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUPolyDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUPolyDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUPolyDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

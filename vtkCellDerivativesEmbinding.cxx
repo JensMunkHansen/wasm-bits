@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellDerivatives>(vtkCell
 EMSCRIPTEN_BINDINGS(vtkCellDerivatives_class) {
   emscripten::class_<vtkCellDerivatives, emscripten::base<vtkDataSetAlgorithm>>("vtkCellDerivatives")
     .smart_ptr<vtkSmartPointer<vtkCellDerivatives>>("vtkSmartPointer<vtkCellDerivatives>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellDerivatives>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellDerivatives>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellDerivatives::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellDerivatives& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellDerivatives::SafeDownCast, emscripten::allow_raw_pointers())

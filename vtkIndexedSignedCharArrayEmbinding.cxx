@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkIndexedSignedCharArray>(
 EMSCRIPTEN_BINDINGS(vtkIndexedSignedCharArray_class) {
   emscripten::class_<vtkIndexedSignedCharArray, emscripten::base<vtkDataArray>>("vtkIndexedSignedCharArray")
     .smart_ptr<vtkSmartPointer<vtkIndexedSignedCharArray>>("vtkSmartPointer<vtkIndexedSignedCharArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIndexedSignedCharArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIndexedSignedCharArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIndexedSignedCharArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIndexedSignedCharArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIndexedSignedCharArray::SafeDownCast, emscripten::allow_raw_pointers())

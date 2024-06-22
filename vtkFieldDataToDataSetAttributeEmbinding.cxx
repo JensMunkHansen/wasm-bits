@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFieldDataToDataSetAttrib
 EMSCRIPTEN_BINDINGS(vtkFieldDataToDataSetAttribute_class) {
   emscripten::class_<vtkFieldDataToDataSetAttribute, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkFieldDataToDataSetAttribute")
     .smart_ptr<vtkSmartPointer<vtkFieldDataToDataSetAttribute>>("vtkSmartPointer<vtkFieldDataToDataSetAttribute>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFieldDataToDataSetAttribute>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFieldDataToDataSetAttribute>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFieldDataToDataSetAttribute::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFieldDataToDataSetAttribute& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFieldDataToDataSetAttribute::SafeDownCast, emscripten::allow_raw_pointers())

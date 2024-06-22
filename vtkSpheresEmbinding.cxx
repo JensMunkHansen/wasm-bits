@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpheres>(vtkSpheres * pt
 EMSCRIPTEN_BINDINGS(vtkSpheres_class) {
   emscripten::class_<vtkSpheres, emscripten::base<vtkImplicitFunction>>("vtkSpheres")
     .smart_ptr<vtkSmartPointer<vtkSpheres>>("vtkSmartPointer<vtkSpheres>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpheres>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSpheres>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpheres::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpheres& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpheres::SafeDownCast, emscripten::allow_raw_pointers())

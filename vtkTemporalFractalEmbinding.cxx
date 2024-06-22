@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalFractal>(vtkTemp
 EMSCRIPTEN_BINDINGS(vtkTemporalFractal_class) {
   emscripten::class_<vtkTemporalFractal, emscripten::base<vtkAlgorithm>>("vtkTemporalFractal")
     .smart_ptr<vtkSmartPointer<vtkTemporalFractal>>("vtkSmartPointer<vtkTemporalFractal>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalFractal>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalFractal>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalFractal::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalFractal& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalFractal::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGroupLeafVertices>(vtkGr
 EMSCRIPTEN_BINDINGS(vtkGroupLeafVertices_class) {
   emscripten::class_<vtkGroupLeafVertices, emscripten::base<vtkTreeAlgorithm>>("vtkGroupLeafVertices")
     .smart_ptr<vtkSmartPointer<vtkGroupLeafVertices>>("vtkSmartPointer<vtkGroupLeafVertices>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGroupLeafVertices>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGroupLeafVertices>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGroupLeafVertices::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGroupLeafVertices& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGroupLeafVertices::SafeDownCast, emscripten::allow_raw_pointers())

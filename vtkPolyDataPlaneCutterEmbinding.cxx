@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataPlaneCutter>(vtk
 EMSCRIPTEN_BINDINGS(vtkPolyDataPlaneCutter_class) {
   emscripten::class_<vtkPolyDataPlaneCutter, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataPlaneCutter")
     .smart_ptr<vtkSmartPointer<vtkPolyDataPlaneCutter>>("vtkSmartPointer<vtkPolyDataPlaneCutter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataPlaneCutter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataPlaneCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataPlaneCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataPlaneCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataPlaneCutter::SafeDownCast, emscripten::allow_raw_pointers())

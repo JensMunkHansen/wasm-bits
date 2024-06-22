@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextureMapToPlane>(vtkTe
 EMSCRIPTEN_BINDINGS(vtkTextureMapToPlane_class) {
   emscripten::class_<vtkTextureMapToPlane, emscripten::base<vtkDataSetAlgorithm>>("vtkTextureMapToPlane")
     .smart_ptr<vtkSmartPointer<vtkTextureMapToPlane>>("vtkSmartPointer<vtkTextureMapToPlane>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextureMapToPlane>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTextureMapToPlane>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextureMapToPlane::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextureMapToPlane& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextureMapToPlane::SafeDownCast, emscripten::allow_raw_pointers())

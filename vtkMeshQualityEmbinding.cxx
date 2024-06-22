@@ -64,7 +64,7 @@ EMSCRIPTEN_BINDINGS(vtkMeshQuality_class) {
   using QualityMeasureTypes=vtkMeshQuality::QualityMeasureTypes;
   emscripten::class_<vtkMeshQuality, emscripten::base<vtkDataSetAlgorithm>>("vtkMeshQuality")
     .smart_ptr<vtkSmartPointer<vtkMeshQuality>>("vtkSmartPointer<vtkMeshQuality>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMeshQuality>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMeshQuality>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMeshQuality::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMeshQuality& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMeshQuality::SafeDownCast, emscripten::allow_raw_pointers())

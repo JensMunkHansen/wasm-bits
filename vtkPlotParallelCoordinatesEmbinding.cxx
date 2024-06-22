@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotParallelCoordinates>
 EMSCRIPTEN_BINDINGS(vtkPlotParallelCoordinates_class) {
   emscripten::class_<vtkPlotParallelCoordinates, emscripten::base<vtkPlot>>("vtkPlotParallelCoordinates")
     .smart_ptr<vtkSmartPointer<vtkPlotParallelCoordinates>>("vtkSmartPointer<vtkPlotParallelCoordinates>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotParallelCoordinates>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotParallelCoordinates>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotParallelCoordinates::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotParallelCoordinates& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotParallelCoordinates::SafeDownCast, emscripten::allow_raw_pointers())

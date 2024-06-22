@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericContourFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkGenericContourFilter_class) {
   emscripten::class_<vtkGenericContourFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGenericContourFilter")
     .smart_ptr<vtkSmartPointer<vtkGenericContourFilter>>("vtkSmartPointer<vtkGenericContourFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericContourFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericContourFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericContourFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericContourFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericContourFilter::SafeDownCast, emscripten::allow_raw_pointers())

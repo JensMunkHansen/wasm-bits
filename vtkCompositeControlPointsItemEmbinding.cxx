@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkCompositeControlPointsItem_class) {
   using PointsFunctionType=vtkCompositeControlPointsItem::PointsFunctionType;
   emscripten::class_<vtkCompositeControlPointsItem, emscripten::base<vtkColorTransferControlPointsItem>>("vtkCompositeControlPointsItem")
     .smart_ptr<vtkSmartPointer<vtkCompositeControlPointsItem>>("vtkSmartPointer<vtkCompositeControlPointsItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeControlPointsItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeControlPointsItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeControlPointsItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeControlPointsItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeControlPointsItem::SafeDownCast, emscripten::allow_raw_pointers())

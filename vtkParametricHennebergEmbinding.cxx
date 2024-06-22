@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricHenneberg>(vtk
 EMSCRIPTEN_BINDINGS(vtkParametricHenneberg_class) {
   emscripten::class_<vtkParametricHenneberg, emscripten::base<vtkParametricFunction>>("vtkParametricHenneberg")
     .smart_ptr<vtkSmartPointer<vtkParametricHenneberg>>("vtkSmartPointer<vtkParametricHenneberg>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricHenneberg>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricHenneberg>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricHenneberg::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricHenneberg& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricHenneberg::SafeDownCast, emscripten::allow_raw_pointers())

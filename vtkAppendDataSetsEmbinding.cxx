@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendDataSets>(vtkAppen
 EMSCRIPTEN_BINDINGS(vtkAppendDataSets_class) {
   emscripten::class_<vtkAppendDataSets, emscripten::base<vtkPointSetAlgorithm>>("vtkAppendDataSets")
     .smart_ptr<vtkSmartPointer<vtkAppendDataSets>>("vtkSmartPointer<vtkAppendDataSets>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendDataSets>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendDataSets>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendDataSets::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendDataSets& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendDataSets::SafeDownCast, emscripten::allow_raw_pointers())

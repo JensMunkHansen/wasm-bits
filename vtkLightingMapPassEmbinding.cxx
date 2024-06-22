@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkLightingMapPass_class) {
   using RenderMode=vtkLightingMapPass::RenderMode;
   emscripten::class_<vtkLightingMapPass, emscripten::base<vtkDefaultPass>>("vtkLightingMapPass")
     .smart_ptr<vtkSmartPointer<vtkLightingMapPass>>("vtkSmartPointer<vtkLightingMapPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLightingMapPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLightingMapPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLightingMapPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLightingMapPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLightingMapPass::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkArchiver>(vtkArchiver * 
 EMSCRIPTEN_BINDINGS(vtkArchiver_class) {
   emscripten::class_<vtkArchiver, emscripten::base<vtkObject>>("vtkArchiver")
     .smart_ptr<vtkSmartPointer<vtkArchiver>>("vtkSmartPointer<vtkArchiver>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkArchiver>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkArchiver>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArchiver::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArchiver& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArchiver::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLBufferObject_class) {
   using ObjectUsage=vtkOpenGLBufferObject::ObjectUsage;
   emscripten::class_<vtkOpenGLBufferObject, emscripten::base<vtkObject>>("vtkOpenGLBufferObject")
     .smart_ptr<vtkSmartPointer<vtkOpenGLBufferObject>>("vtkSmartPointer<vtkOpenGLBufferObject>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLBufferObject>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLBufferObject>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLBufferObject::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLBufferObject& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLBufferObject::SafeDownCast, emscripten::allow_raw_pointers())

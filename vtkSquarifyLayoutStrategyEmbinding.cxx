@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSquarifyLayoutStrategy>(
 EMSCRIPTEN_BINDINGS(vtkSquarifyLayoutStrategy_class) {
   emscripten::class_<vtkSquarifyLayoutStrategy, emscripten::base<vtkTreeMapLayoutStrategy>>("vtkSquarifyLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkSquarifyLayoutStrategy>>("vtkSmartPointer<vtkSquarifyLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSquarifyLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSquarifyLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSquarifyLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSquarifyLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSquarifyLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

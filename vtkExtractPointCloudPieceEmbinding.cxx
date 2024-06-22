@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractPointCloudPiece>(
 EMSCRIPTEN_BINDINGS(vtkExtractPointCloudPiece_class) {
   emscripten::class_<vtkExtractPointCloudPiece, emscripten::base<vtkPolyDataAlgorithm>>("vtkExtractPointCloudPiece")
     .smart_ptr<vtkSmartPointer<vtkExtractPointCloudPiece>>("vtkSmartPointer<vtkExtractPointCloudPiece>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractPointCloudPiece>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractPointCloudPiece>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractPointCloudPiece::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractPointCloudPiece& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractPointCloudPiece::SafeDownCast, emscripten::allow_raw_pointers())

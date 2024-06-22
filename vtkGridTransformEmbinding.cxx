@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkGridTransform>(vtkGridTr
 EMSCRIPTEN_BINDINGS(vtkGridTransform_class) {
   emscripten::class_<vtkGridTransform, emscripten::base<vtkWarpTransform>>("vtkGridTransform")
     .smart_ptr<vtkSmartPointer<vtkGridTransform>>("vtkSmartPointer<vtkGridTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGridTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGridTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGridTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGridTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGridTransform::SafeDownCast, emscripten::allow_raw_pointers())

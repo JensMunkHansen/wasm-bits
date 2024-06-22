@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadricDecimation>(vtkQu
 EMSCRIPTEN_BINDINGS(vtkQuadricDecimation_class) {
   emscripten::class_<vtkQuadricDecimation, emscripten::base<vtkPolyDataAlgorithm>>("vtkQuadricDecimation")
     .smart_ptr<vtkSmartPointer<vtkQuadricDecimation>>("vtkSmartPointer<vtkQuadricDecimation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadricDecimation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadricDecimation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadricDecimation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadricDecimation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadricDecimation::SafeDownCast, emscripten::allow_raw_pointers())

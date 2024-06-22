@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAdjacentVertexIterator>(
 EMSCRIPTEN_BINDINGS(vtkAdjacentVertexIterator_class) {
   emscripten::class_<vtkAdjacentVertexIterator, emscripten::base<vtkObject>>("vtkAdjacentVertexIterator")
     .smart_ptr<vtkSmartPointer<vtkAdjacentVertexIterator>>("vtkSmartPointer<vtkAdjacentVertexIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAdjacentVertexIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAdjacentVertexIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAdjacentVertexIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAdjacentVertexIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAdjacentVertexIterator::SafeDownCast, emscripten::allow_raw_pointers())

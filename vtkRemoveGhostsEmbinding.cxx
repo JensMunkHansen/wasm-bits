@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRemoveGhosts>(vtkRemoveG
 EMSCRIPTEN_BINDINGS(vtkRemoveGhosts_class) {
   emscripten::class_<vtkRemoveGhosts, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkRemoveGhosts")
     .smart_ptr<vtkSmartPointer<vtkRemoveGhosts>>("vtkSmartPointer<vtkRemoveGhosts>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRemoveGhosts>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRemoveGhosts>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRemoveGhosts::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRemoveGhosts& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRemoveGhosts::SafeDownCast, emscripten::allow_raw_pointers())

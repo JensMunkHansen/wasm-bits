@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPerturbCoincidentVertice
 EMSCRIPTEN_BINDINGS(vtkPerturbCoincidentVertices_class) {
   emscripten::class_<vtkPerturbCoincidentVertices, emscripten::base<vtkGraphAlgorithm>>("vtkPerturbCoincidentVertices")
     .smart_ptr<vtkSmartPointer<vtkPerturbCoincidentVertices>>("vtkSmartPointer<vtkPerturbCoincidentVertices>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPerturbCoincidentVertices>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPerturbCoincidentVertices>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPerturbCoincidentVertices::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPerturbCoincidentVertices& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPerturbCoincidentVertices::SafeDownCast, emscripten::allow_raw_pointers())

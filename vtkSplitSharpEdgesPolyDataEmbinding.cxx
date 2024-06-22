@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplitSharpEdgesPolyData>
 EMSCRIPTEN_BINDINGS(vtkSplitSharpEdgesPolyData_class) {
   emscripten::class_<vtkSplitSharpEdgesPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkSplitSharpEdgesPolyData")
     .smart_ptr<vtkSmartPointer<vtkSplitSharpEdgesPolyData>>("vtkSmartPointer<vtkSplitSharpEdgesPolyData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplitSharpEdgesPolyData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSplitSharpEdgesPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplitSharpEdgesPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplitSharpEdgesPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplitSharpEdgesPolyData::SafeDownCast, emscripten::allow_raw_pointers())

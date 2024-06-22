@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPOutlineCornerFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkPOutlineCornerFilter_class) {
   emscripten::class_<vtkPOutlineCornerFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkPOutlineCornerFilter")
     .smart_ptr<vtkSmartPointer<vtkPOutlineCornerFilter>>("vtkSmartPointer<vtkPOutlineCornerFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPOutlineCornerFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPOutlineCornerFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPOutlineCornerFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPOutlineCornerFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPOutlineCornerFilter::SafeDownCast, emscripten::allow_raw_pointers())

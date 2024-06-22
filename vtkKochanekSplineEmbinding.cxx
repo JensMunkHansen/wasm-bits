@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkKochanekSpline>(vtkKocha
 EMSCRIPTEN_BINDINGS(vtkKochanekSpline_class) {
   emscripten::class_<vtkKochanekSpline, emscripten::base<vtkSpline>>("vtkKochanekSpline")
     .smart_ptr<vtkSmartPointer<vtkKochanekSpline>>("vtkSmartPointer<vtkKochanekSpline>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkKochanekSpline>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkKochanekSpline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkKochanekSpline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkKochanekSpline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkKochanekSpline::SafeDownCast, emscripten::allow_raw_pointers())

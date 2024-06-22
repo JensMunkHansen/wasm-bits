@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLImageAlgorithmHelp
 EMSCRIPTEN_BINDINGS(vtkOpenGLImageAlgorithmHelper_class) {
   emscripten::class_<vtkOpenGLImageAlgorithmHelper, emscripten::base<vtkObject>>("vtkOpenGLImageAlgorithmHelper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLImageAlgorithmHelper>>("vtkSmartPointer<vtkOpenGLImageAlgorithmHelper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLImageAlgorithmHelper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLImageAlgorithmHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLImageAlgorithmHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLImageAlgorithmHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLImageAlgorithmHelper::SafeDownCast, emscripten::allow_raw_pointers())

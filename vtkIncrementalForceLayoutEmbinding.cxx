@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkIncrementalForceLayout>(
 EMSCRIPTEN_BINDINGS(vtkIncrementalForceLayout_class) {
   emscripten::class_<vtkIncrementalForceLayout, emscripten::base<vtkObject>>("vtkIncrementalForceLayout")
     .smart_ptr<vtkSmartPointer<vtkIncrementalForceLayout>>("vtkSmartPointer<vtkIncrementalForceLayout>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIncrementalForceLayout>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIncrementalForceLayout>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIncrementalForceLayout::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIncrementalForceLayout& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIncrementalForceLayout::SafeDownCast, emscripten::allow_raw_pointers())

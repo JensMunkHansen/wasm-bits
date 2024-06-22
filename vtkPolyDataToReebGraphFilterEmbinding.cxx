@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataToReebGraphFilte
 EMSCRIPTEN_BINDINGS(vtkPolyDataToReebGraphFilter_class) {
   emscripten::class_<vtkPolyDataToReebGraphFilter, emscripten::base<vtkDirectedGraphAlgorithm>>("vtkPolyDataToReebGraphFilter")
     .smart_ptr<vtkSmartPointer<vtkPolyDataToReebGraphFilter>>("vtkSmartPointer<vtkPolyDataToReebGraphFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataToReebGraphFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataToReebGraphFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataToReebGraphFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataToReebGraphFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataToReebGraphFilter::SafeDownCast, emscripten::allow_raw_pointers())

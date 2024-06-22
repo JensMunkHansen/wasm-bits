@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkBorderRepresentation_class) {
   using InteractionStateType=vtkBorderRepresentation::InteractionStateType;
   emscripten::class_<vtkBorderRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkBorderRepresentation")
     .smart_ptr<vtkSmartPointer<vtkBorderRepresentation>>("vtkSmartPointer<vtkBorderRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBorderRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBorderRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBorderRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBorderRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBorderRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

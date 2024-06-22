@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPHierarchicalBoxDataW
 EMSCRIPTEN_BINDINGS(vtkXMLPHierarchicalBoxDataWriter_class) {
   emscripten::class_<vtkXMLPHierarchicalBoxDataWriter, emscripten::base<vtkXMLPUniformGridAMRWriter>>("vtkXMLPHierarchicalBoxDataWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLPHierarchicalBoxDataWriter>>("vtkSmartPointer<vtkXMLPHierarchicalBoxDataWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPHierarchicalBoxDataWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPHierarchicalBoxDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPHierarchicalBoxDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPHierarchicalBoxDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPHierarchicalBoxDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

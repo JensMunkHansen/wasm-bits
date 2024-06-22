@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkBlockSelector>(vtkBlockS
 EMSCRIPTEN_BINDINGS(vtkBlockSelector_class) {
   emscripten::class_<vtkBlockSelector, emscripten::base<vtkSelector>>("vtkBlockSelector")
     .smart_ptr<vtkSmartPointer<vtkBlockSelector>>("vtkSmartPointer<vtkBlockSelector>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBlockSelector>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBlockSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBlockSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBlockSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBlockSelector::SafeDownCast, emscripten::allow_raw_pointers())

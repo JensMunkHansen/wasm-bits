@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkReflectionFilter_class) {
   using ReflectionPlane=vtkReflectionFilter::ReflectionPlane;
   emscripten::class_<vtkReflectionFilter, emscripten::base<vtkDataObjectAlgorithm>>("vtkReflectionFilter")
     .smart_ptr<vtkSmartPointer<vtkReflectionFilter>>("vtkSmartPointer<vtkReflectionFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkReflectionFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkReflectionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkReflectionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkReflectionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkReflectionFilter::SafeDownCast, emscripten::allow_raw_pointers())

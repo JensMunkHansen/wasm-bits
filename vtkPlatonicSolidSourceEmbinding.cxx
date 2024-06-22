@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlatonicSolidSource>(vtk
 EMSCRIPTEN_BINDINGS(vtkPlatonicSolidSource_class) {
   emscripten::class_<vtkPlatonicSolidSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkPlatonicSolidSource")
     .smart_ptr<vtkSmartPointer<vtkPlatonicSolidSource>>("vtkSmartPointer<vtkPlatonicSolidSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlatonicSolidSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlatonicSolidSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlatonicSolidSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlatonicSolidSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlatonicSolidSource::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkMaskPoints_class) {
   using DistributionType=vtkMaskPoints::DistributionType;
   emscripten::class_<vtkMaskPoints, emscripten::base<vtkPolyDataAlgorithm>>("vtkMaskPoints")
     .smart_ptr<vtkSmartPointer<vtkMaskPoints>>("vtkSmartPointer<vtkMaskPoints>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMaskPoints>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMaskPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMaskPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMaskPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMaskPoints::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnsignedLongLongArray>(v
 EMSCRIPTEN_BINDINGS(vtkUnsignedLongLongArray_class) {
   emscripten::class_<vtkUnsignedLongLongArray, emscripten::base<vtkDataArray>>("vtkUnsignedLongLongArray")
     .smart_ptr<vtkSmartPointer<vtkUnsignedLongLongArray>>("vtkSmartPointer<vtkUnsignedLongLongArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnsignedLongLongArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUnsignedLongLongArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnsignedLongLongArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnsignedLongLongArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnsignedLongLongArray::SafeDownCast, emscripten::allow_raw_pointers())

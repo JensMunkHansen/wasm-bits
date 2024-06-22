@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCacheFilter>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageCacheFilter_class) {
   emscripten::class_<vtkImageCacheFilter, emscripten::base<vtkImageAlgorithm>>("vtkImageCacheFilter")
     .smart_ptr<vtkSmartPointer<vtkImageCacheFilter>>("vtkSmartPointer<vtkImageCacheFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCacheFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCacheFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCacheFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCacheFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCacheFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkSliderRepresentation3D>(
 EMSCRIPTEN_BINDINGS(vtkSliderRepresentation3D_class) {
   emscripten::class_<vtkSliderRepresentation3D, emscripten::base<vtkSliderRepresentation>>("vtkSliderRepresentation3D")
     .smart_ptr<vtkSmartPointer<vtkSliderRepresentation3D>>("vtkSmartPointer<vtkSliderRepresentation3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSliderRepresentation3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSliderRepresentation3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSliderRepresentation3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSliderRepresentation3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSliderRepresentation3D::SafeDownCast, emscripten::allow_raw_pointers())

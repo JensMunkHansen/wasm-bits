@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRDataSetCache>(vtkAMRD
 EMSCRIPTEN_BINDINGS(vtkAMRDataSetCache_class) {
   emscripten::class_<vtkAMRDataSetCache, emscripten::base<vtkObject>>("vtkAMRDataSetCache")
     .smart_ptr<vtkSmartPointer<vtkAMRDataSetCache>>("vtkSmartPointer<vtkAMRDataSetCache>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRDataSetCache>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRDataSetCache>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRDataSetCache::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRDataSetCache& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRDataSetCache::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCirclePackLayout>(vtkCir
 EMSCRIPTEN_BINDINGS(vtkCirclePackLayout_class) {
   emscripten::class_<vtkCirclePackLayout, emscripten::base<vtkTreeAlgorithm>>("vtkCirclePackLayout")
     .smart_ptr<vtkSmartPointer<vtkCirclePackLayout>>("vtkSmartPointer<vtkCirclePackLayout>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCirclePackLayout>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCirclePackLayout>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCirclePackLayout::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCirclePackLayout& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCirclePackLayout::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAngleWidget>(vtkAngleWid
 EMSCRIPTEN_BINDINGS(vtkAngleWidget_class) {
   emscripten::class_<vtkAngleWidget, emscripten::base<vtkAbstractWidget>>("vtkAngleWidget")
     .smart_ptr<vtkSmartPointer<vtkAngleWidget>>("vtkSmartPointer<vtkAngleWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAngleWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAngleWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAngleWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAngleWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAngleWidget::SafeDownCast, emscripten::allow_raw_pointers())

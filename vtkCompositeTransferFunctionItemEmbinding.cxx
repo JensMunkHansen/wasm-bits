@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeTransferFunctio
 EMSCRIPTEN_BINDINGS(vtkCompositeTransferFunctionItem_class) {
   emscripten::class_<vtkCompositeTransferFunctionItem, emscripten::base<vtkColorTransferFunctionItem>>("vtkCompositeTransferFunctionItem")
     .smart_ptr<vtkSmartPointer<vtkCompositeTransferFunctionItem>>("vtkSmartPointer<vtkCompositeTransferFunctionItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeTransferFunctionItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeTransferFunctionItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeTransferFunctionItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeTransferFunctionItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeTransferFunctionItem::SafeDownCast, emscripten::allow_raw_pointers())

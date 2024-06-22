@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebAssemblyWebGPURenderW
 EMSCRIPTEN_BINDINGS(vtkWebAssemblyWebGPURenderWindow_class) {
   emscripten::class_<vtkWebAssemblyWebGPURenderWindow, emscripten::base<vtkWebGPURenderWindow>>("vtkWebAssemblyWebGPURenderWindow")
     .smart_ptr<vtkSmartPointer<vtkWebAssemblyWebGPURenderWindow>>("vtkSmartPointer<vtkWebAssemblyWebGPURenderWindow>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebAssemblyWebGPURenderWindow>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWebAssemblyWebGPURenderWindow>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebAssemblyWebGPURenderWindow::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebAssemblyWebGPURenderWindow& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebAssemblyWebGPURenderWindow::SafeDownCast, emscripten::allow_raw_pointers())

@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkCubeAxesActor_class) {
   using GridVisibility=vtkCubeAxesActor::GridVisibility;
   emscripten::class_<vtkCubeAxesActor, emscripten::base<vtkActor>>("vtkCubeAxesActor")
     .smart_ptr<vtkSmartPointer<vtkCubeAxesActor>>("vtkSmartPointer<vtkCubeAxesActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCubeAxesActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCubeAxesActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCubeAxesActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCubeAxesActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCubeAxesActor::SafeDownCast, emscripten::allow_raw_pointers())

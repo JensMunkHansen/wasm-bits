@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPDFExporter>(vtkPDFExpor
 EMSCRIPTEN_BINDINGS(vtkPDFExporter_class) {
   emscripten::class_<vtkPDFExporter, emscripten::base<vtkExporter>>("vtkPDFExporter")
     .smart_ptr<vtkSmartPointer<vtkPDFExporter>>("vtkSmartPointer<vtkPDFExporter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPDFExporter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPDFExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPDFExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPDFExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPDFExporter::SafeDownCast, emscripten::allow_raw_pointers())

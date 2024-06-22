@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOrientationWidget>(vtkOr
 EMSCRIPTEN_BINDINGS(vtkOrientationWidget_class) {
   emscripten::class_<vtkOrientationWidget, emscripten::base<vtkAbstractWidget>>("vtkOrientationWidget")
     .smart_ptr<vtkSmartPointer<vtkOrientationWidget>>("vtkSmartPointer<vtkOrientationWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrientationWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOrientationWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrientationWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrientationWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrientationWidget::SafeDownCast, emscripten::allow_raw_pointers())

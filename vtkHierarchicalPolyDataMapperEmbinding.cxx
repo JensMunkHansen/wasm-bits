@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalPolyDataMapp
 EMSCRIPTEN_BINDINGS(vtkHierarchicalPolyDataMapper_class) {
   emscripten::class_<vtkHierarchicalPolyDataMapper, emscripten::base<vtkCompositePolyDataMapper>>("vtkHierarchicalPolyDataMapper")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalPolyDataMapper>>("vtkSmartPointer<vtkHierarchicalPolyDataMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalPolyDataMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalPolyDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalPolyDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalPolyDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalPolyDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSSAAPass>(vtkSSAAPass * 
 EMSCRIPTEN_BINDINGS(vtkSSAAPass_class) {
   emscripten::class_<vtkSSAAPass, emscripten::base<vtkRenderPass>>("vtkSSAAPass")
     .smart_ptr<vtkSmartPointer<vtkSSAAPass>>("vtkSmartPointer<vtkSSAAPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSSAAPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSSAAPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSSAAPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSSAAPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSSAAPass::SafeDownCast, emscripten::allow_raw_pointers())

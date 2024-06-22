@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextCodecFactory>(vtkTex
 EMSCRIPTEN_BINDINGS(vtkTextCodecFactory_class) {
   emscripten::class_<vtkTextCodecFactory, emscripten::base<vtkObject>>("vtkTextCodecFactory")
     .smart_ptr<vtkSmartPointer<vtkTextCodecFactory>>("vtkSmartPointer<vtkTextCodecFactory>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextCodecFactory>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTextCodecFactory>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextCodecFactory::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextCodecFactory& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextCodecFactory::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageToAMR>(vtkImageToAM
 EMSCRIPTEN_BINDINGS(vtkImageToAMR_class) {
   emscripten::class_<vtkImageToAMR, emscripten::base<vtkOverlappingAMRAlgorithm>>("vtkImageToAMR")
     .smart_ptr<vtkSmartPointer<vtkImageToAMR>>("vtkSmartPointer<vtkImageToAMR>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageToAMR>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageToAMR>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageToAMR::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageToAMR& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageToAMR::SafeDownCast, emscripten::allow_raw_pointers())

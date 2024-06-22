@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRandomLayoutStrategy>(vt
 EMSCRIPTEN_BINDINGS(vtkRandomLayoutStrategy_class) {
   emscripten::class_<vtkRandomLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkRandomLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkRandomLayoutStrategy>>("vtkSmartPointer<vtkRandomLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRandomLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRandomLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRandomLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRandomLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRandomLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

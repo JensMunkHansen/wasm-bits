@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotGrid>(vtkPlotGrid * 
 EMSCRIPTEN_BINDINGS(vtkPlotGrid_class) {
   emscripten::class_<vtkPlotGrid, emscripten::base<vtkContextItem>>("vtkPlotGrid")
     .smart_ptr<vtkSmartPointer<vtkPlotGrid>>("vtkSmartPointer<vtkPlotGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotGrid::SafeDownCast, emscripten::allow_raw_pointers())

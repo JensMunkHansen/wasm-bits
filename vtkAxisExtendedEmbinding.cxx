@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAxisExtended>(vtkAxisExt
 EMSCRIPTEN_BINDINGS(vtkAxisExtended_class) {
   emscripten::class_<vtkAxisExtended, emscripten::base<vtkObject>>("vtkAxisExtended")
     .smart_ptr<vtkSmartPointer<vtkAxisExtended>>("vtkSmartPointer<vtkAxisExtended>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxisExtended>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAxisExtended>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxisExtended::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxisExtended& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxisExtended::SafeDownCast, emscripten::allow_raw_pointers())

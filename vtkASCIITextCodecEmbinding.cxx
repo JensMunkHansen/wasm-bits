@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkASCIITextCodec>(vtkASCII
 EMSCRIPTEN_BINDINGS(vtkASCIITextCodec_class) {
   emscripten::class_<vtkASCIITextCodec, emscripten::base<vtkTextCodec>>("vtkASCIITextCodec")
     .smart_ptr<vtkSmartPointer<vtkASCIITextCodec>>("vtkSmartPointer<vtkASCIITextCodec>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkASCIITextCodec>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkASCIITextCodec>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkASCIITextCodec::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkASCIITextCodec& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkASCIITextCodec::SafeDownCast, emscripten::allow_raw_pointers())

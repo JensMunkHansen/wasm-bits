@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVortexCore>(vtkVortexCor
 EMSCRIPTEN_BINDINGS(vtkVortexCore_class) {
   emscripten::class_<vtkVortexCore, emscripten::base<vtkPolyDataAlgorithm>>("vtkVortexCore")
     .smart_ptr<vtkSmartPointer<vtkVortexCore>>("vtkSmartPointer<vtkVortexCore>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVortexCore>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVortexCore>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVortexCore::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVortexCore& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVortexCore::SafeDownCast, emscripten::allow_raw_pointers())

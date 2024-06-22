@@ -39,7 +39,7 @@ template<> void emscripten::internal::raw_destructor<vtkBrokenLineWidget>(vtkBro
 EMSCRIPTEN_BINDINGS(vtkBrokenLineWidget_class) {
   emscripten::class_<vtkBrokenLineWidget, emscripten::base<vtk3DWidget>>("vtkBrokenLineWidget")
     .smart_ptr<vtkSmartPointer<vtkBrokenLineWidget>>("vtkSmartPointer<vtkBrokenLineWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBrokenLineWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBrokenLineWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBrokenLineWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBrokenLineWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBrokenLineWidget::SafeDownCast, emscripten::allow_raw_pointers())

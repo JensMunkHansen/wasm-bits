@@ -36,7 +36,7 @@ EMSCRIPTEN_BINDINGS(vtkContextDevice2D_class) {
   using TextureProperty=vtkContextDevice2D::TextureProperty;
   emscripten::class_<vtkContextDevice2D, emscripten::base<vtkObject>>("vtkContextDevice2D")
     .smart_ptr<vtkSmartPointer<vtkContextDevice2D>>("vtkSmartPointer<vtkContextDevice2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextDevice2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkContextDevice2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextDevice2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextDevice2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextDevice2D::SafeDownCast, emscripten::allow_raw_pointers())

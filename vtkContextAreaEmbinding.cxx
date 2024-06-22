@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkContextArea_class) {
   using DrawAreaResizeBehaviorType=vtkContextArea::DrawAreaResizeBehaviorType;
   emscripten::class_<vtkContextArea, emscripten::base<vtkAbstractContextItem>>("vtkContextArea")
     .smart_ptr<vtkSmartPointer<vtkContextArea>>("vtkSmartPointer<vtkContextArea>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextArea>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkContextArea>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextArea::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextArea& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextArea::SafeDownCast, emscripten::allow_raw_pointers())

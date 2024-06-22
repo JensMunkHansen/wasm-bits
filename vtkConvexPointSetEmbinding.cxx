@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkConvexPointSet>(vtkConve
 EMSCRIPTEN_BINDINGS(vtkConvexPointSet_class) {
   emscripten::class_<vtkConvexPointSet, emscripten::base<vtkCell3D>>("vtkConvexPointSet")
     .smart_ptr<vtkSmartPointer<vtkConvexPointSet>>("vtkSmartPointer<vtkConvexPointSet>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConvexPointSet>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConvexPointSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConvexPointSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConvexPointSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConvexPointSet::SafeDownCast, emscripten::allow_raw_pointers())

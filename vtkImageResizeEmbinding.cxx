@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageResize>(vtkImageRes
 EMSCRIPTEN_BINDINGS(vtkImageResize_class) {
   emscripten::class_<vtkImageResize, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageResize")
     .smart_ptr<vtkSmartPointer<vtkImageResize>>("vtkSmartPointer<vtkImageResize>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageResize>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageResize>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageResize::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageResize& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageResize::SafeDownCast, emscripten::allow_raw_pointers())

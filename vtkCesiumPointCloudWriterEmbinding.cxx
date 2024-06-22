@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCesiumPointCloudWriter>(
 EMSCRIPTEN_BINDINGS(vtkCesiumPointCloudWriter_class) {
   emscripten::class_<vtkCesiumPointCloudWriter, emscripten::base<vtkWriter>>("vtkCesiumPointCloudWriter")
     .smart_ptr<vtkSmartPointer<vtkCesiumPointCloudWriter>>("vtkSmartPointer<vtkCesiumPointCloudWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCesiumPointCloudWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCesiumPointCloudWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCesiumPointCloudWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCesiumPointCloudWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCesiumPointCloudWriter::SafeDownCast, emscripten::allow_raw_pointers())

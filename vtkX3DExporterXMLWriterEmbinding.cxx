@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkX3DExporterXMLWriter>(vt
 EMSCRIPTEN_BINDINGS(vtkX3DExporterXMLWriter_class) {
   emscripten::class_<vtkX3DExporterXMLWriter, emscripten::base<vtkX3DExporterWriter>>("vtkX3DExporterXMLWriter")
     .smart_ptr<vtkSmartPointer<vtkX3DExporterXMLWriter>>("vtkSmartPointer<vtkX3DExporterXMLWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkX3DExporterXMLWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkX3DExporterXMLWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkX3DExporterXMLWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkX3DExporterXMLWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkX3DExporterXMLWriter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageToStructuredPoints>
 EMSCRIPTEN_BINDINGS(vtkImageToStructuredPoints_class) {
   emscripten::class_<vtkImageToStructuredPoints, emscripten::base<vtkImageAlgorithm>>("vtkImageToStructuredPoints")
     .smart_ptr<vtkSmartPointer<vtkImageToStructuredPoints>>("vtkSmartPointer<vtkImageToStructuredPoints>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageToStructuredPoints>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageToStructuredPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageToStructuredPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageToStructuredPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageToStructuredPoints::SafeDownCast, emscripten::allow_raw_pointers())

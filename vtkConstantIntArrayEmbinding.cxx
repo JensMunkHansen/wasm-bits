@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkConstantIntArray>(vtkCon
 EMSCRIPTEN_BINDINGS(vtkConstantIntArray_class) {
   emscripten::class_<vtkConstantIntArray, emscripten::base<vtkDataArray>>("vtkConstantIntArray")
     .smart_ptr<vtkSmartPointer<vtkConstantIntArray>>("vtkSmartPointer<vtkConstantIntArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConstantIntArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConstantIntArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConstantIntArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConstantIntArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConstantIntArray::SafeDownCast, emscripten::allow_raw_pointers())

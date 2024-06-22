@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataTangents>(vtkPol
 EMSCRIPTEN_BINDINGS(vtkPolyDataTangents_class) {
   emscripten::class_<vtkPolyDataTangents, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataTangents")
     .smart_ptr<vtkSmartPointer<vtkPolyDataTangents>>("vtkSmartPointer<vtkPolyDataTangents>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataTangents>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataTangents>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataTangents::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataTangents& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataTangents::SafeDownCast, emscripten::allow_raw_pointers())

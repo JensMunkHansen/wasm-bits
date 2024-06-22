@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkUncertaintyTubeFilter>(v
 EMSCRIPTEN_BINDINGS(vtkUncertaintyTubeFilter_class) {
   emscripten::class_<vtkUncertaintyTubeFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkUncertaintyTubeFilter")
     .smart_ptr<vtkSmartPointer<vtkUncertaintyTubeFilter>>("vtkSmartPointer<vtkUncertaintyTubeFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUncertaintyTubeFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUncertaintyTubeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUncertaintyTubeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUncertaintyTubeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUncertaintyTubeFilter::SafeDownCast, emscripten::allow_raw_pointers())

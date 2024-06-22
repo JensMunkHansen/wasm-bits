@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVASPTessellationReader>(
 EMSCRIPTEN_BINDINGS(vtkVASPTessellationReader_class) {
   emscripten::class_<vtkVASPTessellationReader, emscripten::base<vtkMoleculeAlgorithm>>("vtkVASPTessellationReader")
     .smart_ptr<vtkSmartPointer<vtkVASPTessellationReader>>("vtkSmartPointer<vtkVASPTessellationReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVASPTessellationReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVASPTessellationReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVASPTessellationReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVASPTessellationReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVASPTessellationReader::SafeDownCast, emscripten::allow_raw_pointers())

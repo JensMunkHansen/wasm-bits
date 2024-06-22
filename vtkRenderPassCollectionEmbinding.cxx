@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderPassCollection>(vt
 EMSCRIPTEN_BINDINGS(vtkRenderPassCollection_class) {
   emscripten::class_<vtkRenderPassCollection, emscripten::base<vtkCollection>>("vtkRenderPassCollection")
     .smart_ptr<vtkSmartPointer<vtkRenderPassCollection>>("vtkSmartPointer<vtkRenderPassCollection>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderPassCollection>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderPassCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderPassCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderPassCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderPassCollection::SafeDownCast, emscripten::allow_raw_pointers())

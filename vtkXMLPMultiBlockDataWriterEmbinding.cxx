@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPMultiBlockDataWriter
 EMSCRIPTEN_BINDINGS(vtkXMLPMultiBlockDataWriter_class) {
   emscripten::class_<vtkXMLPMultiBlockDataWriter, emscripten::base<vtkXMLMultiBlockDataWriter>>("vtkXMLPMultiBlockDataWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLPMultiBlockDataWriter>>("vtkSmartPointer<vtkXMLPMultiBlockDataWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPMultiBlockDataWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPMultiBlockDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPMultiBlockDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPMultiBlockDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPMultiBlockDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

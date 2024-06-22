@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMarchingSquares>(vtkMarc
 EMSCRIPTEN_BINDINGS(vtkMarchingSquares_class) {
   emscripten::class_<vtkMarchingSquares, emscripten::base<vtkPolyDataAlgorithm>>("vtkMarchingSquares")
     .smart_ptr<vtkSmartPointer<vtkMarchingSquares>>("vtkSmartPointer<vtkMarchingSquares>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMarchingSquares>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMarchingSquares>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMarchingSquares::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMarchingSquares& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMarchingSquares::SafeDownCast, emscripten::allow_raw_pointers())

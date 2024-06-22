@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMapArrayValues>(vtkMapAr
 EMSCRIPTEN_BINDINGS(vtkMapArrayValues_class) {
   emscripten::class_<vtkMapArrayValues, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkMapArrayValues")
     .smart_ptr<vtkSmartPointer<vtkMapArrayValues>>("vtkSmartPointer<vtkMapArrayValues>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMapArrayValues>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMapArrayValues>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMapArrayValues::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMapArrayValues& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMapArrayValues::SafeDownCast, emscripten::allow_raw_pointers())

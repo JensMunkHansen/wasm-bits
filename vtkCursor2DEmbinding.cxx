@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCursor2D>(vtkCursor2D * 
 EMSCRIPTEN_BINDINGS(vtkCursor2D_class) {
   emscripten::class_<vtkCursor2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkCursor2D")
     .smart_ptr<vtkSmartPointer<vtkCursor2D>>("vtkSmartPointer<vtkCursor2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCursor2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCursor2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCursor2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCursor2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCursor2D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBinnedDecimation>(vtkBin
 EMSCRIPTEN_BINDINGS(vtkBinnedDecimation_class) {
   emscripten::class_<vtkBinnedDecimation, emscripten::base<vtkPolyDataAlgorithm>>("vtkBinnedDecimation")
     .smart_ptr<vtkSmartPointer<vtkBinnedDecimation>>("vtkSmartPointer<vtkBinnedDecimation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBinnedDecimation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBinnedDecimation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBinnedDecimation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBinnedDecimation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBinnedDecimation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkConstrained2DLayoutStrat
 EMSCRIPTEN_BINDINGS(vtkConstrained2DLayoutStrategy_class) {
   emscripten::class_<vtkConstrained2DLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkConstrained2DLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkConstrained2DLayoutStrategy>>("vtkSmartPointer<vtkConstrained2DLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConstrained2DLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConstrained2DLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConstrained2DLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConstrained2DLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConstrained2DLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

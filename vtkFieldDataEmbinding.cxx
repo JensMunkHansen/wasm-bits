@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkFieldData>(vtkFieldData 
 EMSCRIPTEN_BINDINGS(vtkFieldData_class) {
   emscripten::class_<vtkFieldData, emscripten::base<vtkObject>>("vtkFieldData")
     .smart_ptr<vtkSmartPointer<vtkFieldData>>("vtkSmartPointer<vtkFieldData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFieldData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFieldData>)
     .class_function("ExtendedNew", &vtkFieldData::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFieldData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFieldData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVideoSource>(vtkVideoSou
 EMSCRIPTEN_BINDINGS(vtkVideoSource_class) {
   emscripten::class_<vtkVideoSource, emscripten::base<vtkImageAlgorithm>>("vtkVideoSource")
     .smart_ptr<vtkSmartPointer<vtkVideoSource>>("vtkSmartPointer<vtkVideoSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVideoSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVideoSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVideoSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVideoSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVideoSource::SafeDownCast, emscripten::allow_raw_pointers())

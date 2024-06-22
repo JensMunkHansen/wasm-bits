@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolygonalHandleRepresent
 EMSCRIPTEN_BINDINGS(vtkPolygonalHandleRepresentation3D_class) {
   emscripten::class_<vtkPolygonalHandleRepresentation3D, emscripten::base<vtkAbstractPolygonalHandleRepresentation3D>>("vtkPolygonalHandleRepresentation3D")
     .smart_ptr<vtkSmartPointer<vtkPolygonalHandleRepresentation3D>>("vtkSmartPointer<vtkPolygonalHandleRepresentation3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolygonalHandleRepresentation3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPolygonalHandleRepresentation3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolygonalHandleRepresentation3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolygonalHandleRepresentation3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolygonalHandleRepresentation3D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellArrayIterator>(vtkCe
 EMSCRIPTEN_BINDINGS(vtkCellArrayIterator_class) {
   emscripten::class_<vtkCellArrayIterator, emscripten::base<vtkObject>>("vtkCellArrayIterator")
     .smart_ptr<vtkSmartPointer<vtkCellArrayIterator>>("vtkSmartPointer<vtkCellArrayIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellArrayIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellArrayIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellArrayIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellArrayIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellArrayIterator::SafeDownCast, emscripten::allow_raw_pointers())

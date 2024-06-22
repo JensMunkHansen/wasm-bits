@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphereHandleRepresentati
 EMSCRIPTEN_BINDINGS(vtkSphereHandleRepresentation_class) {
   emscripten::class_<vtkSphereHandleRepresentation, emscripten::base<vtkHandleRepresentation>>("vtkSphereHandleRepresentation")
     .smart_ptr<vtkSmartPointer<vtkSphereHandleRepresentation>>("vtkSmartPointer<vtkSphereHandleRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphereHandleRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphereHandleRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphereHandleRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphereHandleRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphereHandleRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

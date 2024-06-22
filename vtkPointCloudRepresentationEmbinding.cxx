@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkPointCloudRepresentation_class) {
   using PickingModeType=vtkPointCloudRepresentation::PickingModeType;
   emscripten::class_<vtkPointCloudRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkPointCloudRepresentation")
     .smart_ptr<vtkSmartPointer<vtkPointCloudRepresentation>>("vtkSmartPointer<vtkPointCloudRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointCloudRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointCloudRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointCloudRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointCloudRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointCloudRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

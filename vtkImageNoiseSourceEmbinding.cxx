@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageNoiseSource>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageNoiseSource_class) {
   emscripten::class_<vtkImageNoiseSource, emscripten::base<vtkImageAlgorithm>>("vtkImageNoiseSource")
     .smart_ptr<vtkSmartPointer<vtkImageNoiseSource>>("vtkSmartPointer<vtkImageNoiseSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageNoiseSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageNoiseSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageNoiseSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageNoiseSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageNoiseSource::SafeDownCast, emscripten::allow_raw_pointers())

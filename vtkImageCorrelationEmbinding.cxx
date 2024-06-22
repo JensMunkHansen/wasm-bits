@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCorrelation>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageCorrelation_class) {
   emscripten::class_<vtkImageCorrelation, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageCorrelation")
     .smart_ptr<vtkSmartPointer<vtkImageCorrelation>>("vtkSmartPointer<vtkImageCorrelation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCorrelation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCorrelation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCorrelation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCorrelation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCorrelation::SafeDownCast, emscripten::allow_raw_pointers())

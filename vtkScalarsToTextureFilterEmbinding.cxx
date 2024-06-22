@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkScalarsToTextureFilter>(
 EMSCRIPTEN_BINDINGS(vtkScalarsToTextureFilter_class) {
   emscripten::class_<vtkScalarsToTextureFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkScalarsToTextureFilter")
     .smart_ptr<vtkSmartPointer<vtkScalarsToTextureFilter>>("vtkSmartPointer<vtkScalarsToTextureFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkScalarsToTextureFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkScalarsToTextureFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScalarsToTextureFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScalarsToTextureFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScalarsToTextureFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCardinalSpline>(vtkCardi
 EMSCRIPTEN_BINDINGS(vtkCardinalSpline_class) {
   emscripten::class_<vtkCardinalSpline, emscripten::base<vtkSpline>>("vtkCardinalSpline")
     .smart_ptr<vtkSmartPointer<vtkCardinalSpline>>("vtkSmartPointer<vtkCardinalSpline>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCardinalSpline>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCardinalSpline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCardinalSpline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCardinalSpline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCardinalSpline::SafeDownCast, emscripten::allow_raw_pointers())

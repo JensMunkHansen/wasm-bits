@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendSelection>(vtkAppe
 EMSCRIPTEN_BINDINGS(vtkAppendSelection_class) {
   emscripten::class_<vtkAppendSelection, emscripten::base<vtkSelectionAlgorithm>>("vtkAppendSelection")
     .smart_ptr<vtkSmartPointer<vtkAppendSelection>>("vtkSmartPointer<vtkAppendSelection>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendSelection>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendSelection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendSelection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendSelection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendSelection::SafeDownCast, emscripten::allow_raw_pointers())

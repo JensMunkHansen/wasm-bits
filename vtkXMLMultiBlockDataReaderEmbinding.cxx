@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLMultiBlockDataReader>
 EMSCRIPTEN_BINDINGS(vtkXMLMultiBlockDataReader_class) {
   emscripten::class_<vtkXMLMultiBlockDataReader, emscripten::base<vtkXMLCompositeDataReader>>("vtkXMLMultiBlockDataReader")
     .smart_ptr<vtkSmartPointer<vtkXMLMultiBlockDataReader>>("vtkSmartPointer<vtkXMLMultiBlockDataReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLMultiBlockDataReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLMultiBlockDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLMultiBlockDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLMultiBlockDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLMultiBlockDataReader::SafeDownCast, emscripten::allow_raw_pointers())

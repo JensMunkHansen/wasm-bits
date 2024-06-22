@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadratureSchemeDefiniti
 EMSCRIPTEN_BINDINGS(vtkQuadratureSchemeDefinition_class) {
   emscripten::class_<vtkQuadratureSchemeDefinition, emscripten::base<vtkObject>>("vtkQuadratureSchemeDefinition")
     .smart_ptr<vtkSmartPointer<vtkQuadratureSchemeDefinition>>("vtkSmartPointer<vtkQuadratureSchemeDefinition>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadratureSchemeDefinition>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadratureSchemeDefinition>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadratureSchemeDefinition::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadratureSchemeDefinition& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadratureSchemeDefinition::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMatricizeArray>(vtkMatri
 EMSCRIPTEN_BINDINGS(vtkMatricizeArray_class) {
   emscripten::class_<vtkMatricizeArray, emscripten::base<vtkArrayDataAlgorithm>>("vtkMatricizeArray")
     .smart_ptr<vtkSmartPointer<vtkMatricizeArray>>("vtkSmartPointer<vtkMatricizeArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMatricizeArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMatricizeArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMatricizeArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMatricizeArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMatricizeArray::SafeDownCast, emscripten::allow_raw_pointers())

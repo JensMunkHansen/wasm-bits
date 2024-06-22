@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDescriptiveStatistics>(v
 EMSCRIPTEN_BINDINGS(vtkDescriptiveStatistics_class) {
   emscripten::class_<vtkDescriptiveStatistics, emscripten::base<vtkStatisticsAlgorithm>>("vtkDescriptiveStatistics")
     .smart_ptr<vtkSmartPointer<vtkDescriptiveStatistics>>("vtkSmartPointer<vtkDescriptiveStatistics>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDescriptiveStatistics>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDescriptiveStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDescriptiveStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDescriptiveStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDescriptiveStatistics::SafeDownCast, emscripten::allow_raw_pointers())

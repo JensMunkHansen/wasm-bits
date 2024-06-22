@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkPairwiseExtractHistogram2D_class) {
   using OutputIndices=vtkPairwiseExtractHistogram2D::OutputIndices;
   emscripten::class_<vtkPairwiseExtractHistogram2D, emscripten::base<vtkStatisticsAlgorithm>>("vtkPairwiseExtractHistogram2D")
     .smart_ptr<vtkSmartPointer<vtkPairwiseExtractHistogram2D>>("vtkSmartPointer<vtkPairwiseExtractHistogram2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPairwiseExtractHistogram2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPairwiseExtractHistogram2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPairwiseExtractHistogram2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPairwiseExtractHistogram2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPairwiseExtractHistogram2D::SafeDownCast, emscripten::allow_raw_pointers())

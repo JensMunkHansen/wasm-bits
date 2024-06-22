@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOOGLExporter>(vtkOOGLExp
 EMSCRIPTEN_BINDINGS(vtkOOGLExporter_class) {
   emscripten::class_<vtkOOGLExporter, emscripten::base<vtkExporter>>("vtkOOGLExporter")
     .smart_ptr<vtkSmartPointer<vtkOOGLExporter>>("vtkSmartPointer<vtkOOGLExporter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOOGLExporter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOOGLExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOOGLExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOOGLExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOOGLExporter::SafeDownCast, emscripten::allow_raw_pointers())

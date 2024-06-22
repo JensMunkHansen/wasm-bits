@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageHybridMedian2D>(vtk
 EMSCRIPTEN_BINDINGS(vtkImageHybridMedian2D_class) {
   emscripten::class_<vtkImageHybridMedian2D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageHybridMedian2D")
     .smart_ptr<vtkSmartPointer<vtkImageHybridMedian2D>>("vtkSmartPointer<vtkImageHybridMedian2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageHybridMedian2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageHybridMedian2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageHybridMedian2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageHybridMedian2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageHybridMedian2D::SafeDownCast, emscripten::allow_raw_pointers())

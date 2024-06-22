@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkDelaunay2D>(vtkDelaunay2
 EMSCRIPTEN_BINDINGS(vtkDelaunay2D_class) {
   emscripten::class_<vtkDelaunay2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkDelaunay2D")
     .smart_ptr<vtkSmartPointer<vtkDelaunay2D>>("vtkSmartPointer<vtkDelaunay2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDelaunay2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDelaunay2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDelaunay2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDelaunay2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDelaunay2D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkOrientationMarkerWidget>
 EMSCRIPTEN_BINDINGS(vtkOrientationMarkerWidget_class) {
   emscripten::class_<vtkOrientationMarkerWidget, emscripten::base<vtkInteractorObserver>>("vtkOrientationMarkerWidget")
     .smart_ptr<vtkSmartPointer<vtkOrientationMarkerWidget>>("vtkSmartPointer<vtkOrientationMarkerWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrientationMarkerWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOrientationMarkerWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrientationMarkerWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrientationMarkerWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrientationMarkerWidget::SafeDownCast, emscripten::allow_raw_pointers())

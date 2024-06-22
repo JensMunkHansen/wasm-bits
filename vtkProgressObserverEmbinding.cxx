@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgressObserver>(vtkPro
 EMSCRIPTEN_BINDINGS(vtkProgressObserver_class) {
   emscripten::class_<vtkProgressObserver, emscripten::base<vtkObject>>("vtkProgressObserver")
     .smart_ptr<vtkSmartPointer<vtkProgressObserver>>("vtkSmartPointer<vtkProgressObserver>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgressObserver>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProgressObserver>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgressObserver::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgressObserver& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgressObserver::SafeDownCast, emscripten::allow_raw_pointers())

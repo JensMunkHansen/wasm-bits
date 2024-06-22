@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkTexturedButtonRepresenta
 EMSCRIPTEN_BINDINGS(vtkTexturedButtonRepresentation2D_class) {
   emscripten::class_<vtkTexturedButtonRepresentation2D, emscripten::base<vtkButtonRepresentation>>("vtkTexturedButtonRepresentation2D")
     .smart_ptr<vtkSmartPointer<vtkTexturedButtonRepresentation2D>>("vtkSmartPointer<vtkTexturedButtonRepresentation2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTexturedButtonRepresentation2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTexturedButtonRepresentation2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTexturedButtonRepresentation2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTexturedButtonRepresentation2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTexturedButtonRepresentation2D::SafeDownCast, emscripten::allow_raw_pointers())

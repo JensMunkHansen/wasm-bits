@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitBoolean>(vtkImpl
 EMSCRIPTEN_BINDINGS(vtkImplicitBoolean_class) {
   emscripten::class_<vtkImplicitBoolean, emscripten::base<vtkImplicitFunction>>("vtkImplicitBoolean")
     .smart_ptr<vtkSmartPointer<vtkImplicitBoolean>>("vtkSmartPointer<vtkImplicitBoolean>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitBoolean>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitBoolean>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitBoolean::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitBoolean& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitBoolean::SafeDownCast, emscripten::allow_raw_pointers())

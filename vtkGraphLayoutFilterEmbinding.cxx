@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphLayoutFilter>(vtkGr
 EMSCRIPTEN_BINDINGS(vtkGraphLayoutFilter_class) {
   emscripten::class_<vtkGraphLayoutFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGraphLayoutFilter")
     .smart_ptr<vtkSmartPointer<vtkGraphLayoutFilter>>("vtkSmartPointer<vtkGraphLayoutFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphLayoutFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphLayoutFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphLayoutFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphLayoutFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphLayoutFilter::SafeDownCast, emscripten::allow_raw_pointers())

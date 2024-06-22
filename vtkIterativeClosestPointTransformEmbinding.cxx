@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkIterativeClosestPointTra
 EMSCRIPTEN_BINDINGS(vtkIterativeClosestPointTransform_class) {
   emscripten::class_<vtkIterativeClosestPointTransform, emscripten::base<vtkLinearTransform>>("vtkIterativeClosestPointTransform")
     .smart_ptr<vtkSmartPointer<vtkIterativeClosestPointTransform>>("vtkSmartPointer<vtkIterativeClosestPointTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIterativeClosestPointTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIterativeClosestPointTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIterativeClosestPointTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIterativeClosestPointTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIterativeClosestPointTransform::SafeDownCast, emscripten::allow_raw_pointers())

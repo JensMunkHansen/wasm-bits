@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkResliceImageViewer>(vtkR
 EMSCRIPTEN_BINDINGS(vtkResliceImageViewer_class) {
   emscripten::class_<vtkResliceImageViewer, emscripten::base<vtkImageViewer2>>("vtkResliceImageViewer")
     .smart_ptr<vtkSmartPointer<vtkResliceImageViewer>>("vtkSmartPointer<vtkResliceImageViewer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkResliceImageViewer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkResliceImageViewer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkResliceImageViewer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkResliceImageViewer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkResliceImageViewer::SafeDownCast, emscripten::allow_raw_pointers())

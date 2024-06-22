@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkHausdorffDistancePointSetFilter_class) {
   using DistanceMethod=vtkHausdorffDistancePointSetFilter::DistanceMethod;
   emscripten::class_<vtkHausdorffDistancePointSetFilter, emscripten::base<vtkPointSetAlgorithm>>("vtkHausdorffDistancePointSetFilter")
     .smart_ptr<vtkSmartPointer<vtkHausdorffDistancePointSetFilter>>("vtkSmartPointer<vtkHausdorffDistancePointSetFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHausdorffDistancePointSetFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHausdorffDistancePointSetFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHausdorffDistancePointSetFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHausdorffDistancePointSetFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHausdorffDistancePointSetFilter::SafeDownCast, emscripten::allow_raw_pointers())

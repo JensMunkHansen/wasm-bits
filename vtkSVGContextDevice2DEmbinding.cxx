@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkSVGContextDevice2D>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSVGContextDevice2D_class) {
   emscripten::class_<vtkSVGContextDevice2D, emscripten::base<vtkContextDevice2D>>("vtkSVGContextDevice2D")
     .smart_ptr<vtkSmartPointer<vtkSVGContextDevice2D>>("vtkSmartPointer<vtkSVGContextDevice2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSVGContextDevice2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSVGContextDevice2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSVGContextDevice2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSVGContextDevice2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSVGContextDevice2D::SafeDownCast, emscripten::allow_raw_pointers())

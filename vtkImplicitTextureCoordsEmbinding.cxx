@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitTextureCoords>(v
 EMSCRIPTEN_BINDINGS(vtkImplicitTextureCoords_class) {
   emscripten::class_<vtkImplicitTextureCoords, emscripten::base<vtkDataSetAlgorithm>>("vtkImplicitTextureCoords")
     .smart_ptr<vtkSmartPointer<vtkImplicitTextureCoords>>("vtkSmartPointer<vtkImplicitTextureCoords>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitTextureCoords>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitTextureCoords>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitTextureCoords::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitTextureCoords& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitTextureCoords::SafeDownCast, emscripten::allow_raw_pointers())

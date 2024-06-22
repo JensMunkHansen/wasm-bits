@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVtkJSViewNodeFactory>(vt
 EMSCRIPTEN_BINDINGS(vtkVtkJSViewNodeFactory_class) {
   emscripten::class_<vtkVtkJSViewNodeFactory, emscripten::base<vtkViewNodeFactory>>("vtkVtkJSViewNodeFactory")
     .smart_ptr<vtkSmartPointer<vtkVtkJSViewNodeFactory>>("vtkSmartPointer<vtkVtkJSViewNodeFactory>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVtkJSViewNodeFactory>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVtkJSViewNodeFactory>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVtkJSViewNodeFactory::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVtkJSViewNodeFactory& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVtkJSViewNodeFactory::SafeDownCast, emscripten::allow_raw_pointers())

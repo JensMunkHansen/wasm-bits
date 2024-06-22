@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericCutter>(vtkGeneri
 EMSCRIPTEN_BINDINGS(vtkGenericCutter_class) {
   emscripten::class_<vtkGenericCutter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGenericCutter")
     .smart_ptr<vtkSmartPointer<vtkGenericCutter>>("vtkSmartPointer<vtkGenericCutter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericCutter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericCutter::SafeDownCast, emscripten::allow_raw_pointers())

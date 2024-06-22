@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkTriQuadraticPyramid>(vtk
 EMSCRIPTEN_BINDINGS(vtkTriQuadraticPyramid_class) {
   emscripten::class_<vtkTriQuadraticPyramid, emscripten::base<vtkNonLinearCell>>("vtkTriQuadraticPyramid")
     .smart_ptr<vtkSmartPointer<vtkTriQuadraticPyramid>>("vtkSmartPointer<vtkTriQuadraticPyramid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTriQuadraticPyramid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTriQuadraticPyramid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTriQuadraticPyramid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTriQuadraticPyramid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTriQuadraticPyramid::SafeDownCast, emscripten::allow_raw_pointers())

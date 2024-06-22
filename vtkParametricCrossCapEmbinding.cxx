@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricCrossCap>(vtkP
 EMSCRIPTEN_BINDINGS(vtkParametricCrossCap_class) {
   emscripten::class_<vtkParametricCrossCap, emscripten::base<vtkParametricFunction>>("vtkParametricCrossCap")
     .smart_ptr<vtkSmartPointer<vtkParametricCrossCap>>("vtkSmartPointer<vtkParametricCrossCap>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricCrossCap>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricCrossCap>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricCrossCap::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricCrossCap& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricCrossCap::SafeDownCast, emscripten::allow_raw_pointers())

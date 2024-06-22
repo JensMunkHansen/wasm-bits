@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkThresholdTable>(vtkThres
 EMSCRIPTEN_BINDINGS(vtkThresholdTable_class) {
   emscripten::class_<vtkThresholdTable, emscripten::base<vtkTableAlgorithm>>("vtkThresholdTable")
     .smart_ptr<vtkSmartPointer<vtkThresholdTable>>("vtkSmartPointer<vtkThresholdTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkThresholdTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkThresholdTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThresholdTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThresholdTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThresholdTable::SafeDownCast, emscripten::allow_raw_pointers())

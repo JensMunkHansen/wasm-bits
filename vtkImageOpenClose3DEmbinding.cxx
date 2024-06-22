@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageOpenClose3D>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageOpenClose3D_class) {
   emscripten::class_<vtkImageOpenClose3D, emscripten::base<vtkImageAlgorithm>>("vtkImageOpenClose3D")
     .smart_ptr<vtkSmartPointer<vtkImageOpenClose3D>>("vtkSmartPointer<vtkImageOpenClose3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageOpenClose3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageOpenClose3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageOpenClose3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageOpenClose3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageOpenClose3D::SafeDownCast, emscripten::allow_raw_pointers())

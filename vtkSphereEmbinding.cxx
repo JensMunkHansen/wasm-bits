@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphere>(vtkSphere * ptr)
 EMSCRIPTEN_BINDINGS(vtkSphere_class) {
   emscripten::class_<vtkSphere, emscripten::base<vtkImplicitFunction>>("vtkSphere")
     .smart_ptr<vtkSmartPointer<vtkSphere>>("vtkSmartPointer<vtkSphere>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphere>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphere>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphere::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphere& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphere::SafeDownCast, emscripten::allow_raw_pointers())

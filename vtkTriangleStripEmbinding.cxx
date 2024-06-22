@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkTriangleStrip>(vtkTriang
 EMSCRIPTEN_BINDINGS(vtkTriangleStrip_class) {
   emscripten::class_<vtkTriangleStrip, emscripten::base<vtkCell>>("vtkTriangleStrip")
     .smart_ptr<vtkSmartPointer<vtkTriangleStrip>>("vtkSmartPointer<vtkTriangleStrip>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTriangleStrip>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTriangleStrip>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTriangleStrip::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTriangleStrip& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTriangleStrip::SafeDownCast, emscripten::allow_raw_pointers())

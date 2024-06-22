@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointData>(vtkPointData 
 EMSCRIPTEN_BINDINGS(vtkPointData_class) {
   emscripten::class_<vtkPointData, emscripten::base<vtkDataSetAttributes>>("vtkPointData")
     .smart_ptr<vtkSmartPointer<vtkPointData>>("vtkSmartPointer<vtkPointData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointData>)
     .class_function("ExtendedNew", &vtkPointData::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

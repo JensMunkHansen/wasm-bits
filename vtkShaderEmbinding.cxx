@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkShader_class) {
   using Type=vtkShader::Type;
   emscripten::class_<vtkShader, emscripten::base<vtkObject>>("vtkShader")
     .smart_ptr<vtkSmartPointer<vtkShader>>("vtkSmartPointer<vtkShader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkShader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkShader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShader::SafeDownCast, emscripten::allow_raw_pointers())

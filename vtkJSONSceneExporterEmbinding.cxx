@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkJSONSceneExporter>(vtkJS
 EMSCRIPTEN_BINDINGS(vtkJSONSceneExporter_class) {
   emscripten::class_<vtkJSONSceneExporter, emscripten::base<vtkExporter>>("vtkJSONSceneExporter")
     .smart_ptr<vtkSmartPointer<vtkJSONSceneExporter>>("vtkSmartPointer<vtkJSONSceneExporter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkJSONSceneExporter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkJSONSceneExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkJSONSceneExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkJSONSceneExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkJSONSceneExporter::SafeDownCast, emscripten::allow_raw_pointers())

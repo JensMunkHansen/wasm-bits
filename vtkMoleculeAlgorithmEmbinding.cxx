@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMoleculeAlgorithm>(vtkMo
 EMSCRIPTEN_BINDINGS(vtkMoleculeAlgorithm_class) {
   emscripten::class_<vtkMoleculeAlgorithm, emscripten::base<vtkAlgorithm>>("vtkMoleculeAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkMoleculeAlgorithm>>("vtkSmartPointer<vtkMoleculeAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMoleculeAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMoleculeAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMoleculeAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMoleculeAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMoleculeAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

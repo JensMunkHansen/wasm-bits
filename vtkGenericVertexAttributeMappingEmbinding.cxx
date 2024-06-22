@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericVertexAttributeMa
 EMSCRIPTEN_BINDINGS(vtkGenericVertexAttributeMapping_class) {
   emscripten::class_<vtkGenericVertexAttributeMapping, emscripten::base<vtkObject>>("vtkGenericVertexAttributeMapping")
     .smart_ptr<vtkSmartPointer<vtkGenericVertexAttributeMapping>>("vtkSmartPointer<vtkGenericVertexAttributeMapping>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericVertexAttributeMapping>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericVertexAttributeMapping>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericVertexAttributeMapping::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericVertexAttributeMapping& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericVertexAttributeMapping::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointSetCellIterator>(vt
 EMSCRIPTEN_BINDINGS(vtkPointSetCellIterator_class) {
   emscripten::class_<vtkPointSetCellIterator, emscripten::base<vtkCellIterator>>("vtkPointSetCellIterator")
     .smart_ptr<vtkSmartPointer<vtkPointSetCellIterator>>("vtkSmartPointer<vtkPointSetCellIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointSetCellIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointSetCellIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointSetCellIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointSetCellIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointSetCellIterator::SafeDownCast, emscripten::allow_raw_pointers())

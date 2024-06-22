@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCallbackCommand>(vtkCall
 EMSCRIPTEN_BINDINGS(vtkCallbackCommand_class) {
   emscripten::class_<vtkCallbackCommand, emscripten::base<vtkCommand>>("vtkCallbackCommand")
     .smart_ptr<vtkSmartPointer<vtkCallbackCommand>>("vtkSmartPointer<vtkCallbackCommand>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCallbackCommand>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCallbackCommand>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCallbackCommand::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCallbackCommand& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCallbackCommand::SafeDownCast, emscripten::allow_raw_pointers())

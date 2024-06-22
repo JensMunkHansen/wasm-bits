@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSkybox>(vtkSkybox * ptr)
 EMSCRIPTEN_BINDINGS(vtkSkybox_class) {
   emscripten::class_<vtkSkybox, emscripten::base<vtkActor>>("vtkSkybox")
     .smart_ptr<vtkSmartPointer<vtkSkybox>>("vtkSmartPointer<vtkSkybox>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSkybox>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSkybox>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSkybox::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSkybox& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSkybox::SafeDownCast, emscripten::allow_raw_pointers())

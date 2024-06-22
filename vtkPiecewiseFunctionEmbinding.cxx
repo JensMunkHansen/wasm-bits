@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkPiecewiseFunction_class) {
   using SearchMethod=vtkPiecewiseFunction::SearchMethod;
   emscripten::class_<vtkPiecewiseFunction, emscripten::base<vtkDataObject>>("vtkPiecewiseFunction")
     .smart_ptr<vtkSmartPointer<vtkPiecewiseFunction>>("vtkSmartPointer<vtkPiecewiseFunction>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPiecewiseFunction>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPiecewiseFunction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPiecewiseFunction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPiecewiseFunction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPiecewiseFunction::SafeDownCast, emscripten::allow_raw_pointers())

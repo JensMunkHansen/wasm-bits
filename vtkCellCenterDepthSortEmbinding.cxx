@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellCenterDepthSort>(vtk
 EMSCRIPTEN_BINDINGS(vtkCellCenterDepthSort_class) {
   emscripten::class_<vtkCellCenterDepthSort, emscripten::base<vtkVisibilitySort>>("vtkCellCenterDepthSort")
     .smart_ptr<vtkSmartPointer<vtkCellCenterDepthSort>>("vtkSmartPointer<vtkCellCenterDepthSort>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellCenterDepthSort>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellCenterDepthSort>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellCenterDepthSort::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellCenterDepthSort& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellCenterDepthSort::SafeDownCast, emscripten::allow_raw_pointers())

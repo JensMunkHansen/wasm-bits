@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEnSightMasterServerReade
 EMSCRIPTEN_BINDINGS(vtkEnSightMasterServerReader_class) {
   emscripten::class_<vtkEnSightMasterServerReader, emscripten::base<vtkGenericEnSightReader>>("vtkEnSightMasterServerReader")
     .smart_ptr<vtkSmartPointer<vtkEnSightMasterServerReader>>("vtkSmartPointer<vtkEnSightMasterServerReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEnSightMasterServerReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEnSightMasterServerReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEnSightMasterServerReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEnSightMasterServerReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEnSightMasterServerReader::SafeDownCast, emscripten::allow_raw_pointers())

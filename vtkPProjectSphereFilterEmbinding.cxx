@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPProjectSphereFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkPProjectSphereFilter_class) {
   emscripten::class_<vtkPProjectSphereFilter, emscripten::base<vtkProjectSphereFilter>>("vtkPProjectSphereFilter")
     .smart_ptr<vtkSmartPointer<vtkPProjectSphereFilter>>("vtkSmartPointer<vtkPProjectSphereFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPProjectSphereFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPProjectSphereFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPProjectSphereFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPProjectSphereFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPProjectSphereFilter::SafeDownCast, emscripten::allow_raw_pointers())

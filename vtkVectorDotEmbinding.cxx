@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVectorDot>(vtkVectorDot 
 EMSCRIPTEN_BINDINGS(vtkVectorDot_class) {
   emscripten::class_<vtkVectorDot, emscripten::base<vtkDataSetAlgorithm>>("vtkVectorDot")
     .smart_ptr<vtkSmartPointer<vtkVectorDot>>("vtkSmartPointer<vtkVectorDot>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVectorDot>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVectorDot>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVectorDot::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVectorDot& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVectorDot::SafeDownCast, emscripten::allow_raw_pointers())

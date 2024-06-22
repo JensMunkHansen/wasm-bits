@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkBivariateLinearTableThreshold_class) {
   using OutputPorts=vtkBivariateLinearTableThreshold::OutputPorts;
   emscripten::class_<vtkBivariateLinearTableThreshold, emscripten::base<vtkTableAlgorithm>>("vtkBivariateLinearTableThreshold")
     .smart_ptr<vtkSmartPointer<vtkBivariateLinearTableThreshold>>("vtkSmartPointer<vtkBivariateLinearTableThreshold>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBivariateLinearTableThreshold>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBivariateLinearTableThreshold>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBivariateLinearTableThreshold::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBivariateLinearTableThreshold& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBivariateLinearTableThreshold::SafeDownCast, emscripten::allow_raw_pointers())

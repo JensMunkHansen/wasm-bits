@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredPointsWriter>(
 EMSCRIPTEN_BINDINGS(vtkStructuredPointsWriter_class) {
   emscripten::class_<vtkStructuredPointsWriter, emscripten::base<vtkDataWriter>>("vtkStructuredPointsWriter")
     .smart_ptr<vtkSmartPointer<vtkStructuredPointsWriter>>("vtkSmartPointer<vtkStructuredPointsWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredPointsWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredPointsWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredPointsWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredPointsWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredPointsWriter::SafeDownCast, emscripten::allow_raw_pointers())

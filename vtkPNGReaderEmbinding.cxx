@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPNGReader>(vtkPNGReader 
 EMSCRIPTEN_BINDINGS(vtkPNGReader_class) {
   emscripten::class_<vtkPNGReader, emscripten::base<vtkImageReader2>>("vtkPNGReader")
     .smart_ptr<vtkSmartPointer<vtkPNGReader>>("vtkSmartPointer<vtkPNGReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPNGReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPNGReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPNGReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPNGReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPNGReader::SafeDownCast, emscripten::allow_raw_pointers())

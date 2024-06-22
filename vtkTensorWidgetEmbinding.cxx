@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkTensorWidget>(vtkTensorW
 EMSCRIPTEN_BINDINGS(vtkTensorWidget_class) {
   emscripten::class_<vtkTensorWidget, emscripten::base<vtkAbstractWidget>>("vtkTensorWidget")
     .smart_ptr<vtkSmartPointer<vtkTensorWidget>>("vtkSmartPointer<vtkTensorWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTensorWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTensorWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTensorWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTensorWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTensorWidget::SafeDownCast, emscripten::allow_raw_pointers())

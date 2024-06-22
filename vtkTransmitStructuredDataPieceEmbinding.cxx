@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransmitStructuredDataPi
 EMSCRIPTEN_BINDINGS(vtkTransmitStructuredDataPiece_class) {
   emscripten::class_<vtkTransmitStructuredDataPiece, emscripten::base<vtkDataSetAlgorithm>>("vtkTransmitStructuredDataPiece")
     .smart_ptr<vtkSmartPointer<vtkTransmitStructuredDataPiece>>("vtkSmartPointer<vtkTransmitStructuredDataPiece>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransmitStructuredDataPiece>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransmitStructuredDataPiece>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransmitStructuredDataPiece::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransmitStructuredDataPiece& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransmitStructuredDataPiece::SafeDownCast, emscripten::allow_raw_pointers())

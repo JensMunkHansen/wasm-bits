@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWordCloud>(vtkWordCloud 
 EMSCRIPTEN_BINDINGS(vtkWordCloud_class) {
   emscripten::class_<vtkWordCloud, emscripten::base<vtkImageAlgorithm>>("vtkWordCloud")
     .smart_ptr<vtkSmartPointer<vtkWordCloud>>("vtkSmartPointer<vtkWordCloud>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWordCloud>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWordCloud>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWordCloud::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWordCloud& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWordCloud::SafeDownCast, emscripten::allow_raw_pointers())

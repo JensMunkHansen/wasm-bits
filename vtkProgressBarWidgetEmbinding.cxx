@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgressBarWidget>(vtkPr
 EMSCRIPTEN_BINDINGS(vtkProgressBarWidget_class) {
   emscripten::class_<vtkProgressBarWidget, emscripten::base<vtkBorderWidget>>("vtkProgressBarWidget")
     .smart_ptr<vtkSmartPointer<vtkProgressBarWidget>>("vtkSmartPointer<vtkProgressBarWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgressBarWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProgressBarWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgressBarWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgressBarWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgressBarWidget::SafeDownCast, emscripten::allow_raw_pointers())

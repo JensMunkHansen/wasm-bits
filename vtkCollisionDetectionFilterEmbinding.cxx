@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkCollisionDetectionFilter_class) {
   using CollisionModes=vtkCollisionDetectionFilter::CollisionModes;
   emscripten::class_<vtkCollisionDetectionFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkCollisionDetectionFilter")
     .smart_ptr<vtkSmartPointer<vtkCollisionDetectionFilter>>("vtkSmartPointer<vtkCollisionDetectionFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCollisionDetectionFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCollisionDetectionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCollisionDetectionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCollisionDetectionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCollisionDetectionFilter::SafeDownCast, emscripten::allow_raw_pointers())

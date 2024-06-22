@@ -38,7 +38,7 @@ EMSCRIPTEN_BINDINGS(vtkConnectivityFilter_class) {
   using RegionIdAssignment=vtkConnectivityFilter::RegionIdAssignment;
   emscripten::class_<vtkConnectivityFilter, emscripten::base<vtkPointSetAlgorithm>>("vtkConnectivityFilter")
     .smart_ptr<vtkSmartPointer<vtkConnectivityFilter>>("vtkSmartPointer<vtkConnectivityFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkConnectivityFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkConnectivityFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConnectivityFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConnectivityFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConnectivityFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPieceRequestFilter>(vtkP
 EMSCRIPTEN_BINDINGS(vtkPieceRequestFilter_class) {
   emscripten::class_<vtkPieceRequestFilter, emscripten::base<vtkAlgorithm>>("vtkPieceRequestFilter")
     .smart_ptr<vtkSmartPointer<vtkPieceRequestFilter>>("vtkSmartPointer<vtkPieceRequestFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPieceRequestFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPieceRequestFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPieceRequestFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPieceRequestFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPieceRequestFilter::SafeDownCast, emscripten::allow_raw_pointers())

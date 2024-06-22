@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageAppendComponents>(v
 EMSCRIPTEN_BINDINGS(vtkImageAppendComponents_class) {
   emscripten::class_<vtkImageAppendComponents, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageAppendComponents")
     .smart_ptr<vtkSmartPointer<vtkImageAppendComponents>>("vtkSmartPointer<vtkImageAppendComponents>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageAppendComponents>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageAppendComponents>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageAppendComponents::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageAppendComponents& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageAppendComponents::SafeDownCast, emscripten::allow_raw_pointers())

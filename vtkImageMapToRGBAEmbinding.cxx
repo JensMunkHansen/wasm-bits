@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMapToRGBA>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageMapToRGBA_class) {
   emscripten::class_<vtkImageMapToRGBA, emscripten::base<vtkImageMapToColors>>("vtkImageMapToRGBA")
     .smart_ptr<vtkSmartPointer<vtkImageMapToRGBA>>("vtkSmartPointer<vtkImageMapToRGBA>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMapToRGBA>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMapToRGBA>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMapToRGBA::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMapToRGBA& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMapToRGBA::SafeDownCast, emscripten::allow_raw_pointers())

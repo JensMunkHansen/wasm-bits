@@ -38,7 +38,7 @@ EMSCRIPTEN_BINDINGS(vtkThreshold_class) {
   using ThresholdType=vtkThreshold::ThresholdType;
   emscripten::class_<vtkThreshold, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkThreshold")
     .smart_ptr<vtkSmartPointer<vtkThreshold>>("vtkSmartPointer<vtkThreshold>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkThreshold>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkThreshold>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThreshold::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThreshold& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThreshold::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCollapseVerticesByArray>
 EMSCRIPTEN_BINDINGS(vtkCollapseVerticesByArray_class) {
   emscripten::class_<vtkCollapseVerticesByArray, emscripten::base<vtkGraphAlgorithm>>("vtkCollapseVerticesByArray")
     .smart_ptr<vtkSmartPointer<vtkCollapseVerticesByArray>>("vtkSmartPointer<vtkCollapseVerticesByArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCollapseVerticesByArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCollapseVerticesByArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCollapseVerticesByArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCollapseVerticesByArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCollapseVerticesByArray::SafeDownCast, emscripten::allow_raw_pointers())

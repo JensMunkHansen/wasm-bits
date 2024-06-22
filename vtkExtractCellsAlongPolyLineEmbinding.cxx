@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractCellsAlongPolyLin
 EMSCRIPTEN_BINDINGS(vtkExtractCellsAlongPolyLine_class) {
   emscripten::class_<vtkExtractCellsAlongPolyLine, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkExtractCellsAlongPolyLine")
     .smart_ptr<vtkSmartPointer<vtkExtractCellsAlongPolyLine>>("vtkSmartPointer<vtkExtractCellsAlongPolyLine>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractCellsAlongPolyLine>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractCellsAlongPolyLine>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractCellsAlongPolyLine::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractCellsAlongPolyLine& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractCellsAlongPolyLine::SafeDownCast, emscripten::allow_raw_pointers())

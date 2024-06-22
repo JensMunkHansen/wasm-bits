@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitSelectionLoop>(v
 EMSCRIPTEN_BINDINGS(vtkImplicitSelectionLoop_class) {
   emscripten::class_<vtkImplicitSelectionLoop, emscripten::base<vtkImplicitFunction>>("vtkImplicitSelectionLoop")
     .smart_ptr<vtkSmartPointer<vtkImplicitSelectionLoop>>("vtkSmartPointer<vtkImplicitSelectionLoop>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitSelectionLoop>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitSelectionLoop>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitSelectionLoop::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitSelectionLoop& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitSelectionLoop::SafeDownCast, emscripten::allow_raw_pointers())

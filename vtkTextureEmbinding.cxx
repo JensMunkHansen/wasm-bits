@@ -42,7 +42,7 @@ EMSCRIPTEN_BINDINGS(vtkTexture_class) {
   using VTKTextureBlendingMode=vtkTexture::VTKTextureBlendingMode;
   emscripten::class_<vtkTexture, emscripten::base<vtkImageAlgorithm>>("vtkTexture")
     .smart_ptr<vtkSmartPointer<vtkTexture>>("vtkSmartPointer<vtkTexture>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTexture>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTexture::SafeDownCast, emscripten::allow_raw_pointers())

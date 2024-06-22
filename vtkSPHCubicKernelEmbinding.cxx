@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSPHCubicKernel>(vtkSPHCu
 EMSCRIPTEN_BINDINGS(vtkSPHCubicKernel_class) {
   emscripten::class_<vtkSPHCubicKernel, emscripten::base<vtkSPHKernel>>("vtkSPHCubicKernel")
     .smart_ptr<vtkSmartPointer<vtkSPHCubicKernel>>("vtkSmartPointer<vtkSPHCubicKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSPHCubicKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSPHCubicKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSPHCubicKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSPHCubicKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSPHCubicKernel::SafeDownCast, emscripten::allow_raw_pointers())

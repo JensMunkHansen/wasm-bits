@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageEuclideanDistance>(
 EMSCRIPTEN_BINDINGS(vtkImageEuclideanDistance_class) {
   emscripten::class_<vtkImageEuclideanDistance, emscripten::base<vtkImageDecomposeFilter>>("vtkImageEuclideanDistance")
     .smart_ptr<vtkSmartPointer<vtkImageEuclideanDistance>>("vtkSmartPointer<vtkImageEuclideanDistance>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageEuclideanDistance>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageEuclideanDistance>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageEuclideanDistance::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageEuclideanDistance& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageEuclideanDistance::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDataStreamer>(vtkIm
 EMSCRIPTEN_BINDINGS(vtkImageDataStreamer_class) {
   emscripten::class_<vtkImageDataStreamer, emscripten::base<vtkImageAlgorithm>>("vtkImageDataStreamer")
     .smart_ptr<vtkSmartPointer<vtkImageDataStreamer>>("vtkSmartPointer<vtkImageDataStreamer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDataStreamer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDataStreamer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDataStreamer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDataStreamer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDataStreamer::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPPolyDataReader>(vtkX
 EMSCRIPTEN_BINDINGS(vtkXMLPPolyDataReader_class) {
   emscripten::class_<vtkXMLPPolyDataReader, emscripten::base<vtkXMLPUnstructuredDataReader>>("vtkXMLPPolyDataReader")
     .smart_ptr<vtkSmartPointer<vtkXMLPPolyDataReader>>("vtkSmartPointer<vtkXMLPPolyDataReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPPolyDataReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPPolyDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPPolyDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPPolyDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPPolyDataReader::SafeDownCast, emscripten::allow_raw_pointers())

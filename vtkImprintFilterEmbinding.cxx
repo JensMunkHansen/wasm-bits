@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkImprintFilter_class) {
   using DebugOutput=vtkImprintFilter::DebugOutput;
   emscripten::class_<vtkImprintFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkImprintFilter")
     .smart_ptr<vtkSmartPointer<vtkImprintFilter>>("vtkSmartPointer<vtkImprintFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImprintFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImprintFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImprintFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImprintFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImprintFilter::SafeDownCast, emscripten::allow_raw_pointers())

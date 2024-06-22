@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredAMRGridConnect
 EMSCRIPTEN_BINDINGS(vtkStructuredAMRGridConnectivity_class) {
   emscripten::class_<vtkStructuredAMRGridConnectivity, emscripten::base<vtkAbstractGridConnectivity>>("vtkStructuredAMRGridConnectivity")
     .smart_ptr<vtkSmartPointer<vtkStructuredAMRGridConnectivity>>("vtkSmartPointer<vtkStructuredAMRGridConnectivity>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredAMRGridConnectivity>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredAMRGridConnectivity>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredAMRGridConnectivity::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredAMRGridConnectivity& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredAMRGridConnectivity::SafeDownCast, emscripten::allow_raw_pointers())

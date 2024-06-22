@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuad>(vtkQuad * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkQuad_class) {
   emscripten::class_<vtkQuad, emscripten::base<vtkCell>>("vtkQuad")
     .smart_ptr<vtkSmartPointer<vtkQuad>>("vtkSmartPointer<vtkQuad>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuad>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkQuad>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuad::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuad& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuad::SafeDownCast, emscripten::allow_raw_pointers())

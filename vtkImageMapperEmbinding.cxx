@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMapper>(vtkImageMap
 EMSCRIPTEN_BINDINGS(vtkImageMapper_class) {
   emscripten::class_<vtkImageMapper, emscripten::base<vtkMapper2D>>("vtkImageMapper")
     .smart_ptr<vtkSmartPointer<vtkImageMapper>>("vtkSmartPointer<vtkImageMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMapper::SafeDownCast, emscripten::allow_raw_pointers())

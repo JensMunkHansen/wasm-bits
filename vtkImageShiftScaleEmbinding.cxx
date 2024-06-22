@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageShiftScale>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageShiftScale_class) {
   emscripten::class_<vtkImageShiftScale, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageShiftScale")
     .smart_ptr<vtkSmartPointer<vtkImageShiftScale>>("vtkSmartPointer<vtkImageShiftScale>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageShiftScale>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageShiftScale>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageShiftScale::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageShiftScale& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageShiftScale::SafeDownCast, emscripten::allow_raw_pointers())

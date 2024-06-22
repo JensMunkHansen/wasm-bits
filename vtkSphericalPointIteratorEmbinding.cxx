@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkSphericalPointIterator_class) {
   using SortType=vtkSphericalPointIterator::SortType;
   emscripten::class_<vtkSphericalPointIterator, emscripten::base<vtkObject>>("vtkSphericalPointIterator")
     .smart_ptr<vtkSmartPointer<vtkSphericalPointIterator>>("vtkSmartPointer<vtkSphericalPointIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphericalPointIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphericalPointIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphericalPointIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphericalPointIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphericalPointIterator::SafeDownCast, emscripten::allow_raw_pointers())

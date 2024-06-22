@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiCorrelativeStatisti
 EMSCRIPTEN_BINDINGS(vtkMultiCorrelativeStatistics_class) {
   emscripten::class_<vtkMultiCorrelativeStatistics, emscripten::base<vtkStatisticsAlgorithm>>("vtkMultiCorrelativeStatistics")
     .smart_ptr<vtkSmartPointer<vtkMultiCorrelativeStatistics>>("vtkSmartPointer<vtkMultiCorrelativeStatistics>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiCorrelativeStatistics>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiCorrelativeStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiCorrelativeStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiCorrelativeStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiCorrelativeStatistics::SafeDownCast, emscripten::allow_raw_pointers())

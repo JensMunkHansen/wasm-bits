@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimpleScalarTree>(vtkSim
 EMSCRIPTEN_BINDINGS(vtkSimpleScalarTree_class) {
   emscripten::class_<vtkSimpleScalarTree, emscripten::base<vtkScalarTree>>("vtkSimpleScalarTree")
     .smart_ptr<vtkSmartPointer<vtkSimpleScalarTree>>("vtkSmartPointer<vtkSimpleScalarTree>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimpleScalarTree>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSimpleScalarTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimpleScalarTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimpleScalarTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimpleScalarTree::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMCubesWriter>(vtkMCubesW
 EMSCRIPTEN_BINDINGS(vtkMCubesWriter_class) {
   emscripten::class_<vtkMCubesWriter, emscripten::base<vtkWriter>>("vtkMCubesWriter")
     .smart_ptr<vtkSmartPointer<vtkMCubesWriter>>("vtkSmartPointer<vtkMCubesWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMCubesWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMCubesWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMCubesWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMCubesWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMCubesWriter::SafeDownCast, emscripten::allow_raw_pointers())

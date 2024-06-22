@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkChacoGraphReader>(vtkCha
 EMSCRIPTEN_BINDINGS(vtkChacoGraphReader_class) {
   emscripten::class_<vtkChacoGraphReader, emscripten::base<vtkUndirectedGraphAlgorithm>>("vtkChacoGraphReader")
     .smart_ptr<vtkSmartPointer<vtkChacoGraphReader>>("vtkSmartPointer<vtkChacoGraphReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkChacoGraphReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkChacoGraphReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkChacoGraphReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkChacoGraphReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkChacoGraphReader::SafeDownCast, emscripten::allow_raw_pointers())

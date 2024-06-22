@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPMaskPoints>(vtkPMaskPoi
 EMSCRIPTEN_BINDINGS(vtkPMaskPoints_class) {
   emscripten::class_<vtkPMaskPoints, emscripten::base<vtkMaskPoints>>("vtkPMaskPoints")
     .smart_ptr<vtkSmartPointer<vtkPMaskPoints>>("vtkSmartPointer<vtkPMaskPoints>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPMaskPoints>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPMaskPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPMaskPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPMaskPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPMaskPoints::SafeDownCast, emscripten::allow_raw_pointers())

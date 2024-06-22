@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkParametricFunctionSource_class) {
   using SCALAR_MODE=vtkParametricFunctionSource::SCALAR_MODE;
   emscripten::class_<vtkParametricFunctionSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkParametricFunctionSource")
     .smart_ptr<vtkSmartPointer<vtkParametricFunctionSource>>("vtkSmartPointer<vtkParametricFunctionSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricFunctionSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricFunctionSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricFunctionSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricFunctionSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricFunctionSource::SafeDownCast, emscripten::allow_raw_pointers())

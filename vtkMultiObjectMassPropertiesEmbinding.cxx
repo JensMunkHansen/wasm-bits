@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiObjectMassPropertie
 EMSCRIPTEN_BINDINGS(vtkMultiObjectMassProperties_class) {
   emscripten::class_<vtkMultiObjectMassProperties, emscripten::base<vtkPolyDataAlgorithm>>("vtkMultiObjectMassProperties")
     .smart_ptr<vtkSmartPointer<vtkMultiObjectMassProperties>>("vtkSmartPointer<vtkMultiObjectMassProperties>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiObjectMassProperties>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiObjectMassProperties>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiObjectMassProperties::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiObjectMassProperties& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiObjectMassProperties::SafeDownCast, emscripten::allow_raw_pointers())

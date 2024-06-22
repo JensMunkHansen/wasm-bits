@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkIOSSReader_class) {
   using EntityType=vtkIOSSReader::EntityType;
   emscripten::class_<vtkIOSSReader, emscripten::base<vtkReaderAlgorithm>>("vtkIOSSReader")
     .smart_ptr<vtkSmartPointer<vtkIOSSReader>>("vtkSmartPointer<vtkIOSSReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIOSSReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIOSSReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIOSSReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIOSSReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIOSSReader::SafeDownCast, emscripten::allow_raw_pointers())

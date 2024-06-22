@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRFlashParticlesReader>
 EMSCRIPTEN_BINDINGS(vtkAMRFlashParticlesReader_class) {
   emscripten::class_<vtkAMRFlashParticlesReader, emscripten::base<vtkAMRBaseParticlesReader>>("vtkAMRFlashParticlesReader")
     .smart_ptr<vtkSmartPointer<vtkAMRFlashParticlesReader>>("vtkSmartPointer<vtkAMRFlashParticlesReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRFlashParticlesReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRFlashParticlesReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRFlashParticlesReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRFlashParticlesReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRFlashParticlesReader::SafeDownCast, emscripten::allow_raw_pointers())

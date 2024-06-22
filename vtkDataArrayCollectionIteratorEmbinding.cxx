@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataArrayCollectionItera
 EMSCRIPTEN_BINDINGS(vtkDataArrayCollectionIterator_class) {
   emscripten::class_<vtkDataArrayCollectionIterator, emscripten::base<vtkCollectionIterator>>("vtkDataArrayCollectionIterator")
     .smart_ptr<vtkSmartPointer<vtkDataArrayCollectionIterator>>("vtkSmartPointer<vtkDataArrayCollectionIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataArrayCollectionIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataArrayCollectionIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataArrayCollectionIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataArrayCollectionIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataArrayCollectionIterator::SafeDownCast, emscripten::allow_raw_pointers())

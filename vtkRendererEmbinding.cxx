@@ -42,7 +42,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderer>(vtkRenderer * 
 EMSCRIPTEN_BINDINGS(vtkRenderer_class) {
   emscripten::class_<vtkRenderer, emscripten::base<vtkViewport>>("vtkRenderer")
     .smart_ptr<vtkSmartPointer<vtkRenderer>>("vtkSmartPointer<vtkRenderer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderer::SafeDownCast, emscripten::allow_raw_pointers())

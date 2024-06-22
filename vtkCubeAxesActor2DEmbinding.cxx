@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkCubeAxesActor2D>(vtkCube
 EMSCRIPTEN_BINDINGS(vtkCubeAxesActor2D_class) {
   emscripten::class_<vtkCubeAxesActor2D, emscripten::base<vtkActor2D>>("vtkCubeAxesActor2D")
     .smart_ptr<vtkSmartPointer<vtkCubeAxesActor2D>>("vtkSmartPointer<vtkCubeAxesActor2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCubeAxesActor2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCubeAxesActor2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCubeAxesActor2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCubeAxesActor2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCubeAxesActor2D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkEquirectangularToCubeMap
 EMSCRIPTEN_BINDINGS(vtkEquirectangularToCubeMapTexture_class) {
   emscripten::class_<vtkEquirectangularToCubeMapTexture, emscripten::base<vtkOpenGLTexture>>("vtkEquirectangularToCubeMapTexture")
     .smart_ptr<vtkSmartPointer<vtkEquirectangularToCubeMapTexture>>("vtkSmartPointer<vtkEquirectangularToCubeMapTexture>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEquirectangularToCubeMapTexture>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEquirectangularToCubeMapTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEquirectangularToCubeMapTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEquirectangularToCubeMapTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEquirectangularToCubeMapTexture::SafeDownCast, emscripten::allow_raw_pointers())

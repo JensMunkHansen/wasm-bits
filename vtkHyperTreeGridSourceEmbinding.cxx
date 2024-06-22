@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridSource>(vtk
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridSource_class) {
   emscripten::class_<vtkHyperTreeGridSource, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridSource")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridSource>>("vtkSmartPointer<vtkHyperTreeGridSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridSource::SafeDownCast, emscripten::allow_raw_pointers())

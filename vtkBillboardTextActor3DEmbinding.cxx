@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkBillboardTextActor3D>(vt
 EMSCRIPTEN_BINDINGS(vtkBillboardTextActor3D_class) {
   emscripten::class_<vtkBillboardTextActor3D, emscripten::base<vtkProp3D>>("vtkBillboardTextActor3D")
     .smart_ptr<vtkSmartPointer<vtkBillboardTextActor3D>>("vtkSmartPointer<vtkBillboardTextActor3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBillboardTextActor3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBillboardTextActor3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBillboardTextActor3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBillboardTextActor3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBillboardTextActor3D::SafeDownCast, emscripten::allow_raw_pointers())

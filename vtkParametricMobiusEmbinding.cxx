@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricMobius>(vtkPar
 EMSCRIPTEN_BINDINGS(vtkParametricMobius_class) {
   emscripten::class_<vtkParametricMobius, emscripten::base<vtkParametricFunction>>("vtkParametricMobius")
     .smart_ptr<vtkSmartPointer<vtkParametricMobius>>("vtkSmartPointer<vtkParametricMobius>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricMobius>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricMobius>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricMobius::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricMobius& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricMobius::SafeDownCast, emscripten::allow_raw_pointers())

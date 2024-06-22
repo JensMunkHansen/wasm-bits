@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractCTHPart>(vtkExtra
 EMSCRIPTEN_BINDINGS(vtkExtractCTHPart_class) {
   emscripten::class_<vtkExtractCTHPart, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkExtractCTHPart")
     .smart_ptr<vtkSmartPointer<vtkExtractCTHPart>>("vtkSmartPointer<vtkExtractCTHPart>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractCTHPart>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractCTHPart>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractCTHPart::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractCTHPart& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractCTHPart::SafeDownCast, emscripten::allow_raw_pointers())

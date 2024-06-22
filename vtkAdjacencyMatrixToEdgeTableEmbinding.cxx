@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAdjacencyMatrixToEdgeTab
 EMSCRIPTEN_BINDINGS(vtkAdjacencyMatrixToEdgeTable_class) {
   emscripten::class_<vtkAdjacencyMatrixToEdgeTable, emscripten::base<vtkTableAlgorithm>>("vtkAdjacencyMatrixToEdgeTable")
     .smart_ptr<vtkSmartPointer<vtkAdjacencyMatrixToEdgeTable>>("vtkSmartPointer<vtkAdjacencyMatrixToEdgeTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAdjacencyMatrixToEdgeTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAdjacencyMatrixToEdgeTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAdjacencyMatrixToEdgeTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAdjacencyMatrixToEdgeTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAdjacencyMatrixToEdgeTable::SafeDownCast, emscripten::allow_raw_pointers())

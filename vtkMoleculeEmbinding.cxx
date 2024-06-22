@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkMolecule>(vtkMolecule * 
 EMSCRIPTEN_BINDINGS(vtkMolecule_class) {
   emscripten::class_<vtkMolecule, emscripten::base<vtkUndirectedGraph>>("vtkMolecule")
     .smart_ptr<vtkSmartPointer<vtkMolecule>>("vtkSmartPointer<vtkMolecule>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMolecule>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMolecule>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMolecule::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMolecule& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMolecule::SafeDownCast, emscripten::allow_raw_pointers())

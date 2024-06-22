@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleAreaSelec
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleAreaSelectHover_class) {
   emscripten::class_<vtkInteractorStyleAreaSelectHover, emscripten::base<vtkInteractorStyleRubberBand2D>>("vtkInteractorStyleAreaSelectHover")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleAreaSelectHover>>("vtkSmartPointer<vtkInteractorStyleAreaSelectHover>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleAreaSelectHover>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleAreaSelectHover>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleAreaSelectHover::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleAreaSelectHover& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleAreaSelectHover::SafeDownCast, emscripten::allow_raw_pointers())

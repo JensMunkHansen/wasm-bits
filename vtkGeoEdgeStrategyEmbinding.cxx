@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGeoEdgeStrategy>(vtkGeoE
 EMSCRIPTEN_BINDINGS(vtkGeoEdgeStrategy_class) {
   emscripten::class_<vtkGeoEdgeStrategy, emscripten::base<vtkEdgeLayoutStrategy>>("vtkGeoEdgeStrategy")
     .smart_ptr<vtkSmartPointer<vtkGeoEdgeStrategy>>("vtkSmartPointer<vtkGeoEdgeStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGeoEdgeStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGeoEdgeStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGeoEdgeStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGeoEdgeStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGeoEdgeStrategy::SafeDownCast, emscripten::allow_raw_pointers())

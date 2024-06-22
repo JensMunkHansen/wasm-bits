@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridGenerateGlo
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridGenerateGlobalIds_class) {
   emscripten::class_<vtkHyperTreeGridGenerateGlobalIds, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkHyperTreeGridGenerateGlobalIds")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridGenerateGlobalIds>>("vtkSmartPointer<vtkHyperTreeGridGenerateGlobalIds>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridGenerateGlobalIds>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridGenerateGlobalIds>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridGenerateGlobalIds::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridGenerateGlobalIds& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridGenerateGlobalIds::SafeDownCast, emscripten::allow_raw_pointers())

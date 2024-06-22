@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalBinningFilte
 EMSCRIPTEN_BINDINGS(vtkHierarchicalBinningFilter_class) {
   emscripten::class_<vtkHierarchicalBinningFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkHierarchicalBinningFilter")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalBinningFilter>>("vtkSmartPointer<vtkHierarchicalBinningFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalBinningFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalBinningFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalBinningFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalBinningFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalBinningFilter::SafeDownCast, emscripten::allow_raw_pointers())

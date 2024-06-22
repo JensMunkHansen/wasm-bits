@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridOutlineFilt
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridOutlineFilter_class) {
   emscripten::class_<vtkHyperTreeGridOutlineFilter, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridOutlineFilter")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridOutlineFilter>>("vtkSmartPointer<vtkHyperTreeGridOutlineFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridOutlineFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridOutlineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridOutlineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridOutlineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridOutlineFilter::SafeDownCast, emscripten::allow_raw_pointers())

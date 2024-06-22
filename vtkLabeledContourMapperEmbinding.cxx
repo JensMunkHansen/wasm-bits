@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkLabeledContourMapper>(vt
 EMSCRIPTEN_BINDINGS(vtkLabeledContourMapper_class) {
   emscripten::class_<vtkLabeledContourMapper, emscripten::base<vtkMapper>>("vtkLabeledContourMapper")
     .smart_ptr<vtkSmartPointer<vtkLabeledContourMapper>>("vtkSmartPointer<vtkLabeledContourMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabeledContourMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLabeledContourMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabeledContourMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabeledContourMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabeledContourMapper::SafeDownCast, emscripten::allow_raw_pointers())

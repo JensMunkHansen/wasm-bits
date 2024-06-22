@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLInstanceCulling>(v
 EMSCRIPTEN_BINDINGS(vtkOpenGLInstanceCulling_class) {
   emscripten::class_<vtkOpenGLInstanceCulling, emscripten::base<vtkObject>>("vtkOpenGLInstanceCulling")
     .smart_ptr<vtkSmartPointer<vtkOpenGLInstanceCulling>>("vtkSmartPointer<vtkOpenGLInstanceCulling>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLInstanceCulling>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLInstanceCulling>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLInstanceCulling::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLInstanceCulling& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLInstanceCulling::SafeDownCast, emscripten::allow_raw_pointers())

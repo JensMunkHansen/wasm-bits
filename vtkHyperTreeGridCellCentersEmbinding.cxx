@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridCellCenters
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridCellCenters_class) {
   emscripten::class_<vtkHyperTreeGridCellCenters, emscripten::base<vtkCellCenters>>("vtkHyperTreeGridCellCenters")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridCellCenters>>("vtkSmartPointer<vtkHyperTreeGridCellCenters>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridCellCenters>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridCellCenters>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridCellCenters::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridCellCenters& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridCellCenters::SafeDownCast, emscripten::allow_raw_pointers())

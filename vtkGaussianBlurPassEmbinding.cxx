@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkGaussianBlurPass>(vtkGau
 EMSCRIPTEN_BINDINGS(vtkGaussianBlurPass_class) {
   emscripten::class_<vtkGaussianBlurPass, emscripten::base<vtkImageProcessingPass>>("vtkGaussianBlurPass")
     .smart_ptr<vtkSmartPointer<vtkGaussianBlurPass>>("vtkSmartPointer<vtkGaussianBlurPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGaussianBlurPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGaussianBlurPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGaussianBlurPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGaussianBlurPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGaussianBlurPass::SafeDownCast, emscripten::allow_raw_pointers())

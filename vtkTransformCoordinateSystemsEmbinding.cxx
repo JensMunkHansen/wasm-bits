@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransformCoordinateSyste
 EMSCRIPTEN_BINDINGS(vtkTransformCoordinateSystems_class) {
   emscripten::class_<vtkTransformCoordinateSystems, emscripten::base<vtkPointSetAlgorithm>>("vtkTransformCoordinateSystems")
     .smart_ptr<vtkSmartPointer<vtkTransformCoordinateSystems>>("vtkSmartPointer<vtkTransformCoordinateSystems>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransformCoordinateSystems>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransformCoordinateSystems>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransformCoordinateSystems::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransformCoordinateSystems& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransformCoordinateSystems::SafeDownCast, emscripten::allow_raw_pointers())

@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkFFT_class) {
   using SpectralMode=vtkFFT::SpectralMode;
   emscripten::class_<vtkFFT, emscripten::base<vtkObject>>("vtkFFT")
     .smart_ptr<vtkSmartPointer<vtkFFT>>("vtkSmartPointer<vtkFFT>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFFT>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFFT>)
     .class_function("FftFreq", &vtkFFT::FftFreq)
     .class_function("RFftFreq", &vtkFFT::RFftFreq)
     .class_function("HanningGenerator", &vtkFFT::HanningGenerator)

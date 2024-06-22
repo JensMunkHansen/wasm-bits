@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgressBarRepresentatio
 EMSCRIPTEN_BINDINGS(vtkProgressBarRepresentation_class) {
   emscripten::class_<vtkProgressBarRepresentation, emscripten::base<vtkBorderRepresentation>>("vtkProgressBarRepresentation")
     .smart_ptr<vtkSmartPointer<vtkProgressBarRepresentation>>("vtkSmartPointer<vtkProgressBarRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgressBarRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProgressBarRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgressBarRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgressBarRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgressBarRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

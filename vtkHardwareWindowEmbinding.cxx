@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHardwareWindow>(vtkHardw
 EMSCRIPTEN_BINDINGS(vtkHardwareWindow_class) {
   emscripten::class_<vtkHardwareWindow, emscripten::base<vtkWindow>>("vtkHardwareWindow")
     .smart_ptr<vtkSmartPointer<vtkHardwareWindow>>("vtkSmartPointer<vtkHardwareWindow>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHardwareWindow>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHardwareWindow>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHardwareWindow::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHardwareWindow& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHardwareWindow::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDelimitedTextReader>(vtk
 EMSCRIPTEN_BINDINGS(vtkDelimitedTextReader_class) {
   emscripten::class_<vtkDelimitedTextReader, emscripten::base<vtkTableAlgorithm>>("vtkDelimitedTextReader")
     .smart_ptr<vtkSmartPointer<vtkDelimitedTextReader>>("vtkSmartPointer<vtkDelimitedTextReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDelimitedTextReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDelimitedTextReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDelimitedTextReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDelimitedTextReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDelimitedTextReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericCell>(vtkGenericC
 EMSCRIPTEN_BINDINGS(vtkGenericCell_class) {
   emscripten::class_<vtkGenericCell, emscripten::base<vtkCell>>("vtkGenericCell")
     .smart_ptr<vtkSmartPointer<vtkGenericCell>>("vtkSmartPointer<vtkGenericCell>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericCell>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericCell>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericCell::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericCell& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericCell::SafeDownCast, emscripten::allow_raw_pointers())

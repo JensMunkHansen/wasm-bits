@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositePolyDataMapper>
 EMSCRIPTEN_BINDINGS(vtkCompositePolyDataMapper_class) {
   emscripten::class_<vtkCompositePolyDataMapper, emscripten::base<vtkPolyDataMapper>>("vtkCompositePolyDataMapper")
     .smart_ptr<vtkSmartPointer<vtkCompositePolyDataMapper>>("vtkSmartPointer<vtkCompositePolyDataMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositePolyDataMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositePolyDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositePolyDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositePolyDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositePolyDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

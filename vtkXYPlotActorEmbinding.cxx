@@ -52,7 +52,7 @@ EMSCRIPTEN_BINDINGS(vtkXYPlotActor_class) {
   using Alignment=vtkXYPlotActor::Alignment;
   emscripten::class_<vtkXYPlotActor, emscripten::base<vtkActor2D>>("vtkXYPlotActor")
     .smart_ptr<vtkSmartPointer<vtkXYPlotActor>>("vtkSmartPointer<vtkXYPlotActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkXYPlotActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkXYPlotActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXYPlotActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXYPlotActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXYPlotActor::SafeDownCast, emscripten::allow_raw_pointers())

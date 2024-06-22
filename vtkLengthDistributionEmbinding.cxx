@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkLengthDistribution>(vtkL
 EMSCRIPTEN_BINDINGS(vtkLengthDistribution_class) {
   emscripten::class_<vtkLengthDistribution, emscripten::base<vtkTableAlgorithm>>("vtkLengthDistribution")
     .smart_ptr<vtkSmartPointer<vtkLengthDistribution>>("vtkSmartPointer<vtkLengthDistribution>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLengthDistribution>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLengthDistribution>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLengthDistribution::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLengthDistribution& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLengthDistribution::SafeDownCast, emscripten::allow_raw_pointers())

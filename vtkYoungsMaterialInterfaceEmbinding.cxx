@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkYoungsMaterialInterface>
 EMSCRIPTEN_BINDINGS(vtkYoungsMaterialInterface_class) {
   emscripten::class_<vtkYoungsMaterialInterface, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkYoungsMaterialInterface")
     .smart_ptr<vtkSmartPointer<vtkYoungsMaterialInterface>>("vtkSmartPointer<vtkYoungsMaterialInterface>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkYoungsMaterialInterface>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkYoungsMaterialInterface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkYoungsMaterialInterface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkYoungsMaterialInterface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkYoungsMaterialInterface::SafeDownCast, emscripten::allow_raw_pointers())

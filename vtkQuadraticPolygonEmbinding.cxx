@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadraticPolygon>(vtkQua
 EMSCRIPTEN_BINDINGS(vtkQuadraticPolygon_class) {
   emscripten::class_<vtkQuadraticPolygon, emscripten::base<vtkNonLinearCell>>("vtkQuadraticPolygon")
     .smart_ptr<vtkSmartPointer<vtkQuadraticPolygon>>("vtkSmartPointer<vtkQuadraticPolygon>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadraticPolygon>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadraticPolygon>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadraticPolygon::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadraticPolygon& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadraticPolygon::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFLUENTReader>(vtkFLUENTR
 EMSCRIPTEN_BINDINGS(vtkFLUENTReader_class) {
   emscripten::class_<vtkFLUENTReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkFLUENTReader")
     .smart_ptr<vtkSmartPointer<vtkFLUENTReader>>("vtkSmartPointer<vtkFLUENTReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFLUENTReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFLUENTReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFLUENTReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFLUENTReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFLUENTReader::SafeDownCast, emscripten::allow_raw_pointers())

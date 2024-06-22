@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumeRayCastSpaceLeapin
 EMSCRIPTEN_BINDINGS(vtkVolumeRayCastSpaceLeapingImageFilter_class) {
   emscripten::class_<vtkVolumeRayCastSpaceLeapingImageFilter, emscripten::base<vtkThreadedImageAlgorithm>>("vtkVolumeRayCastSpaceLeapingImageFilter")
     .smart_ptr<vtkSmartPointer<vtkVolumeRayCastSpaceLeapingImageFilter>>("vtkSmartPointer<vtkVolumeRayCastSpaceLeapingImageFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumeRayCastSpaceLeapingImageFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumeRayCastSpaceLeapingImageFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumeRayCastSpaceLeapingImageFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumeRayCastSpaceLeapingImageFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumeRayCastSpaceLeapingImageFilter::SafeDownCast, emscripten::allow_raw_pointers())

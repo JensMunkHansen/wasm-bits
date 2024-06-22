@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalDataLevelFil
 EMSCRIPTEN_BINDINGS(vtkHierarchicalDataLevelFilter_class) {
   emscripten::class_<vtkHierarchicalDataLevelFilter, emscripten::base<vtkLevelIdScalars>>("vtkHierarchicalDataLevelFilter")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalDataLevelFilter>>("vtkSmartPointer<vtkHierarchicalDataLevelFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalDataLevelFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalDataLevelFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalDataLevelFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalDataLevelFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalDataLevelFilter::SafeDownCast, emscripten::allow_raw_pointers())

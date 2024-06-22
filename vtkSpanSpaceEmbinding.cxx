@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpanSpace>(vtkSpanSpace 
 EMSCRIPTEN_BINDINGS(vtkSpanSpace_class) {
   emscripten::class_<vtkSpanSpace, emscripten::base<vtkScalarTree>>("vtkSpanSpace")
     .smart_ptr<vtkSmartPointer<vtkSpanSpace>>("vtkSmartPointer<vtkSpanSpace>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpanSpace>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSpanSpace>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpanSpace::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpanSpace& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpanSpace::SafeDownCast, emscripten::allow_raw_pointers())

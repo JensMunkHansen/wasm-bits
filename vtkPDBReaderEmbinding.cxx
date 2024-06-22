@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPDBReader>(vtkPDBReader 
 EMSCRIPTEN_BINDINGS(vtkPDBReader_class) {
   emscripten::class_<vtkPDBReader, emscripten::base<vtkMoleculeReaderBase>>("vtkPDBReader")
     .smart_ptr<vtkSmartPointer<vtkPDBReader>>("vtkSmartPointer<vtkPDBReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPDBReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPDBReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPDBReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPDBReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPDBReader::SafeDownCast, emscripten::allow_raw_pointers())

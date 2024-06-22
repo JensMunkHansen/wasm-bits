@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkActorCollection>(vtkActo
 EMSCRIPTEN_BINDINGS(vtkActorCollection_class) {
   emscripten::class_<vtkActorCollection, emscripten::base<vtkPropCollection>>("vtkActorCollection")
     .smart_ptr<vtkSmartPointer<vtkActorCollection>>("vtkSmartPointer<vtkActorCollection>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkActorCollection>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkActorCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkActorCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkActorCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkActorCollection::SafeDownCast, emscripten::allow_raw_pointers())

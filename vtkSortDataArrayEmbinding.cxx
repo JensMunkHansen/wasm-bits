@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSortDataArray>(vtkSortDa
 EMSCRIPTEN_BINDINGS(vtkSortDataArray_class) {
   emscripten::class_<vtkSortDataArray, emscripten::base<vtkObject>>("vtkSortDataArray")
     .smart_ptr<vtkSmartPointer<vtkSortDataArray>>("vtkSmartPointer<vtkSortDataArray>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSortDataArray>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSortDataArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSortDataArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSortDataArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSortDataArray::SafeDownCast, emscripten::allow_raw_pointers())

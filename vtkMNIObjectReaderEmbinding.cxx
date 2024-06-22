@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMNIObjectReader>(vtkMNIO
 EMSCRIPTEN_BINDINGS(vtkMNIObjectReader_class) {
   emscripten::class_<vtkMNIObjectReader, emscripten::base<vtkPolyDataAlgorithm>>("vtkMNIObjectReader")
     .smart_ptr<vtkSmartPointer<vtkMNIObjectReader>>("vtkSmartPointer<vtkMNIObjectReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMNIObjectReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMNIObjectReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMNIObjectReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMNIObjectReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMNIObjectReader::SafeDownCast, emscripten::allow_raw_pointers())

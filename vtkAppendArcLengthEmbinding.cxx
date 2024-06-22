@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendArcLength>(vtkAppe
 EMSCRIPTEN_BINDINGS(vtkAppendArcLength_class) {
   emscripten::class_<vtkAppendArcLength, emscripten::base<vtkPolyDataAlgorithm>>("vtkAppendArcLength")
     .smart_ptr<vtkSmartPointer<vtkAppendArcLength>>("vtkSmartPointer<vtkAppendArcLength>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendArcLength>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendArcLength>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendArcLength::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendArcLength& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendArcLength::SafeDownCast, emscripten::allow_raw_pointers())

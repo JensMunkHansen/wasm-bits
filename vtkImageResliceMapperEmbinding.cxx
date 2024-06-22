@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageResliceMapper>(vtkI
 EMSCRIPTEN_BINDINGS(vtkImageResliceMapper_class) {
   emscripten::class_<vtkImageResliceMapper, emscripten::base<vtkImageMapper3D>>("vtkImageResliceMapper")
     .smart_ptr<vtkSmartPointer<vtkImageResliceMapper>>("vtkSmartPointer<vtkImageResliceMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageResliceMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageResliceMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageResliceMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageResliceMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageResliceMapper::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLFXAAFilter>(vtkOpe
 EMSCRIPTEN_BINDINGS(vtkOpenGLFXAAFilter_class) {
   emscripten::class_<vtkOpenGLFXAAFilter, emscripten::base<vtkObject>>("vtkOpenGLFXAAFilter")
     .smart_ptr<vtkSmartPointer<vtkOpenGLFXAAFilter>>("vtkSmartPointer<vtkOpenGLFXAAFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLFXAAFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLFXAAFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLFXAAFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLFXAAFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLFXAAFilter::SafeDownCast, emscripten::allow_raw_pointers())

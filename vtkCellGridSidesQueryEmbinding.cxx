@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkCellGridSidesQuery_class) {
   using SelectionMode=vtkCellGridSidesQuery::SelectionMode;
   emscripten::class_<vtkCellGridSidesQuery, emscripten::base<vtkCellGridQuery>>("vtkCellGridSidesQuery")
     .smart_ptr<vtkSmartPointer<vtkCellGridSidesQuery>>("vtkSmartPointer<vtkCellGridSidesQuery>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridSidesQuery>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridSidesQuery>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridSidesQuery::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridSidesQuery& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridSidesQuery::SafeDownCast, emscripten::allow_raw_pointers())

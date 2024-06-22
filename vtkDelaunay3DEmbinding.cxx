@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkDelaunay3D>(vtkDelaunay3
 EMSCRIPTEN_BINDINGS(vtkDelaunay3D_class) {
   emscripten::class_<vtkDelaunay3D, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkDelaunay3D")
     .smart_ptr<vtkSmartPointer<vtkDelaunay3D>>("vtkSmartPointer<vtkDelaunay3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDelaunay3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDelaunay3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDelaunay3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDelaunay3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDelaunay3D::SafeDownCast, emscripten::allow_raw_pointers())

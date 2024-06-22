@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtk3DCursorRepresentation_class) {
   using CursorShape=vtk3DCursorRepresentation::CursorShape;
   emscripten::class_<vtk3DCursorRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtk3DCursorRepresentation")
     .smart_ptr<vtkSmartPointer<vtk3DCursorRepresentation>>("vtkSmartPointer<vtk3DCursorRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtk3DCursorRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtk3DCursorRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtk3DCursorRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtk3DCursorRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtk3DCursorRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

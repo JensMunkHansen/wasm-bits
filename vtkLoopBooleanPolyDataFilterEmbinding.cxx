@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkLoopBooleanPolyDataFilter_class) {
   using NoIntersectionOutputType=vtkLoopBooleanPolyDataFilter::NoIntersectionOutputType;
   emscripten::class_<vtkLoopBooleanPolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkLoopBooleanPolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkLoopBooleanPolyDataFilter>>("vtkSmartPointer<vtkLoopBooleanPolyDataFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLoopBooleanPolyDataFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLoopBooleanPolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLoopBooleanPolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLoopBooleanPolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLoopBooleanPolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageViewer2>(vtkImageVi
 EMSCRIPTEN_BINDINGS(vtkImageViewer2_class) {
   emscripten::class_<vtkImageViewer2, emscripten::base<vtkObject>>("vtkImageViewer2")
     .smart_ptr<vtkSmartPointer<vtkImageViewer2>>("vtkSmartPointer<vtkImageViewer2>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageViewer2>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageViewer2>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageViewer2::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageViewer2& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageViewer2::SafeDownCast, emscripten::allow_raw_pointers())

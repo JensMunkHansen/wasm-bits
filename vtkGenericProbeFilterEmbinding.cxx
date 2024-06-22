@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericProbeFilter>(vtkG
 EMSCRIPTEN_BINDINGS(vtkGenericProbeFilter_class) {
   emscripten::class_<vtkGenericProbeFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkGenericProbeFilter")
     .smart_ptr<vtkSmartPointer<vtkGenericProbeFilter>>("vtkSmartPointer<vtkGenericProbeFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericProbeFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericProbeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericProbeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericProbeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericProbeFilter::SafeDownCast, emscripten::allow_raw_pointers())

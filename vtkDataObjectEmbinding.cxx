@@ -51,7 +51,7 @@ EMSCRIPTEN_BINDINGS(vtkDataObject_class) {
   using FieldOperations=vtkDataObject::FieldOperations;
   emscripten::class_<vtkDataObject, emscripten::base<vtkObject>>("vtkDataObject")
     .smart_ptr<vtkSmartPointer<vtkDataObject>>("vtkSmartPointer<vtkDataObject>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataObject>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDataObject>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataObject::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataObject& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataObject::SafeDownCast, emscripten::allow_raw_pointers())

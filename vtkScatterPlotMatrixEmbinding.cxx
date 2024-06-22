@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkScatterPlotMatrix>(vtkSc
 EMSCRIPTEN_BINDINGS(vtkScatterPlotMatrix_class) {
   emscripten::class_<vtkScatterPlotMatrix, emscripten::base<vtkChartMatrix>>("vtkScatterPlotMatrix")
     .smart_ptr<vtkSmartPointer<vtkScatterPlotMatrix>>("vtkSmartPointer<vtkScatterPlotMatrix>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkScatterPlotMatrix>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkScatterPlotMatrix>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScatterPlotMatrix::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScatterPlotMatrix& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScatterPlotMatrix::SafeDownCast, emscripten::allow_raw_pointers())

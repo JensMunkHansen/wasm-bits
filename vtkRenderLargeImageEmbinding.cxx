@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderLargeImage>(vtkRen
 EMSCRIPTEN_BINDINGS(vtkRenderLargeImage_class) {
   emscripten::class_<vtkRenderLargeImage, emscripten::base<vtkAlgorithm>>("vtkRenderLargeImage")
     .smart_ptr<vtkSmartPointer<vtkRenderLargeImage>>("vtkSmartPointer<vtkRenderLargeImage>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderLargeImage>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderLargeImage>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderLargeImage::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderLargeImage& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderLargeImage::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkWidgetCallbackMapper>(vt
 EMSCRIPTEN_BINDINGS(vtkWidgetCallbackMapper_class) {
   emscripten::class_<vtkWidgetCallbackMapper, emscripten::base<vtkObject>>("vtkWidgetCallbackMapper")
     .smart_ptr<vtkSmartPointer<vtkWidgetCallbackMapper>>("vtkSmartPointer<vtkWidgetCallbackMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWidgetCallbackMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWidgetCallbackMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWidgetCallbackMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWidgetCallbackMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWidgetCallbackMapper::SafeDownCast, emscripten::allow_raw_pointers())

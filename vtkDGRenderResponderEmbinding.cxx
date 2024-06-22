@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkDGRenderResponder_class) {
   using ScalarVisualizationOverrideType=vtkDGRenderResponder::ScalarVisualizationOverrideType;
   emscripten::class_<vtkDGRenderResponder, emscripten::base<vtkCellGridResponder<vtkCellGridRenderRequest>>>("vtkDGRenderResponder")
     .smart_ptr<vtkSmartPointer<vtkDGRenderResponder>>("vtkSmartPointer<vtkDGRenderResponder>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGRenderResponder>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDGRenderResponder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGRenderResponder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGRenderResponder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGRenderResponder::SafeDownCast, emscripten::allow_raw_pointers())

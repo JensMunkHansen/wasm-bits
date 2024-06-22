@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkProStarReader_class) {
   using shapeType=vtkProStarReader::shapeType;
   emscripten::class_<vtkProStarReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkProStarReader")
     .smart_ptr<vtkSmartPointer<vtkProStarReader>>("vtkSmartPointer<vtkProStarReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProStarReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProStarReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProStarReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProStarReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProStarReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFastSplatter>(vtkFastSpl
 EMSCRIPTEN_BINDINGS(vtkFastSplatter_class) {
   emscripten::class_<vtkFastSplatter, emscripten::base<vtkImageAlgorithm>>("vtkFastSplatter")
     .smart_ptr<vtkSmartPointer<vtkFastSplatter>>("vtkSmartPointer<vtkFastSplatter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFastSplatter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFastSplatter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFastSplatter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFastSplatter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFastSplatter::SafeDownCast, emscripten::allow_raw_pointers())

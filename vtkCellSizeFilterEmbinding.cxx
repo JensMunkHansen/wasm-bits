@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellSizeFilter>(vtkCellS
 EMSCRIPTEN_BINDINGS(vtkCellSizeFilter_class) {
   emscripten::class_<vtkCellSizeFilter, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkCellSizeFilter")
     .smart_ptr<vtkSmartPointer<vtkCellSizeFilter>>("vtkSmartPointer<vtkCellSizeFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellSizeFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellSizeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellSizeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellSizeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellSizeFilter::SafeDownCast, emscripten::allow_raw_pointers())

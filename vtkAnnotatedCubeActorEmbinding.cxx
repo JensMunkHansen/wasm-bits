@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkAnnotatedCubeActor>(vtkA
 EMSCRIPTEN_BINDINGS(vtkAnnotatedCubeActor_class) {
   emscripten::class_<vtkAnnotatedCubeActor, emscripten::base<vtkProp3D>>("vtkAnnotatedCubeActor")
     .smart_ptr<vtkSmartPointer<vtkAnnotatedCubeActor>>("vtkSmartPointer<vtkAnnotatedCubeActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnnotatedCubeActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAnnotatedCubeActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnnotatedCubeActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnnotatedCubeActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnnotatedCubeActor::SafeDownCast, emscripten::allow_raw_pointers())

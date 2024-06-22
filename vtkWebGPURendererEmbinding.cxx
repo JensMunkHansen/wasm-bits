@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkWebGPURenderer_class) {
   using LightingComplexityEnum=vtkWebGPURenderer::LightingComplexityEnum;
   emscripten::class_<vtkWebGPURenderer, emscripten::base<vtkRenderer>>("vtkWebGPURenderer")
     .smart_ptr<vtkSmartPointer<vtkWebGPURenderer>>("vtkSmartPointer<vtkWebGPURenderer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPURenderer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPURenderer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPURenderer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPURenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPURenderer::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkProbabilisticVoronoiKern
 EMSCRIPTEN_BINDINGS(vtkProbabilisticVoronoiKernel_class) {
   emscripten::class_<vtkProbabilisticVoronoiKernel, emscripten::base<vtkGeneralizedKernel>>("vtkProbabilisticVoronoiKernel")
     .smart_ptr<vtkSmartPointer<vtkProbabilisticVoronoiKernel>>("vtkSmartPointer<vtkProbabilisticVoronoiKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProbabilisticVoronoiKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProbabilisticVoronoiKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProbabilisticVoronoiKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProbabilisticVoronoiKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProbabilisticVoronoiKernel::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkLabeledContourPolyDataIt
 EMSCRIPTEN_BINDINGS(vtkLabeledContourPolyDataItem_class) {
   emscripten::class_<vtkLabeledContourPolyDataItem, emscripten::base<vtkPolyDataItem>>("vtkLabeledContourPolyDataItem")
     .smart_ptr<vtkSmartPointer<vtkLabeledContourPolyDataItem>>("vtkSmartPointer<vtkLabeledContourPolyDataItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabeledContourPolyDataItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLabeledContourPolyDataItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabeledContourPolyDataItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabeledContourPolyDataItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabeledContourPolyDataItem::SafeDownCast, emscripten::allow_raw_pointers())

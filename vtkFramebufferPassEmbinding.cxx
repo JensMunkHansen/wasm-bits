@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkFramebufferPass>(vtkFram
 EMSCRIPTEN_BINDINGS(vtkFramebufferPass_class) {
   emscripten::class_<vtkFramebufferPass, emscripten::base<vtkDepthImageProcessingPass>>("vtkFramebufferPass")
     .smart_ptr<vtkSmartPointer<vtkFramebufferPass>>("vtkSmartPointer<vtkFramebufferPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFramebufferPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFramebufferPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFramebufferPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFramebufferPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFramebufferPass::SafeDownCast, emscripten::allow_raw_pointers())

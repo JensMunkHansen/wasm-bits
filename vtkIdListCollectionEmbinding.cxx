@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkIdListCollection>(vtkIdL
 EMSCRIPTEN_BINDINGS(vtkIdListCollection_class) {
   emscripten::class_<vtkIdListCollection, emscripten::base<vtkCollection>>("vtkIdListCollection")
     .smart_ptr<vtkSmartPointer<vtkIdListCollection>>("vtkSmartPointer<vtkIdListCollection>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIdListCollection>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIdListCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIdListCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIdListCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIdListCollection::SafeDownCast, emscripten::allow_raw_pointers())

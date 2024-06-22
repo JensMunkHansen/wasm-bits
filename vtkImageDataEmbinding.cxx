@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageData>(vtkImageData 
 EMSCRIPTEN_BINDINGS(vtkImageData_class) {
   emscripten::class_<vtkImageData, emscripten::base<vtkDataSet>>("vtkImageData")
     .smart_ptr<vtkSmartPointer<vtkImageData>>("vtkSmartPointer<vtkImageData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageData>)
     .class_function("ExtendedNew", &vtkImageData::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

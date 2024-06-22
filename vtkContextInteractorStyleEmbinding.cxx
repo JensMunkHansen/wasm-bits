@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkContextInteractorStyle>(
 EMSCRIPTEN_BINDINGS(vtkContextInteractorStyle_class) {
   emscripten::class_<vtkContextInteractorStyle, emscripten::base<vtkInteractorStyle>>("vtkContextInteractorStyle")
     .smart_ptr<vtkSmartPointer<vtkContextInteractorStyle>>("vtkSmartPointer<vtkContextInteractorStyle>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextInteractorStyle>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkContextInteractorStyle>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextInteractorStyle::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextInteractorStyle& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextInteractorStyle::SafeDownCast, emscripten::allow_raw_pointers())

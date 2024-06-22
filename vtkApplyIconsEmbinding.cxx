@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkApplyIcons>(vtkApplyIcon
 EMSCRIPTEN_BINDINGS(vtkApplyIcons_class) {
   emscripten::class_<vtkApplyIcons, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkApplyIcons")
     .smart_ptr<vtkSmartPointer<vtkApplyIcons>>("vtkSmartPointer<vtkApplyIcons>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkApplyIcons>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkApplyIcons>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkApplyIcons::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkApplyIcons& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkApplyIcons::SafeDownCast, emscripten::allow_raw_pointers())

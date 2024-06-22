@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkChacoReader>(vtkChacoRea
 EMSCRIPTEN_BINDINGS(vtkChacoReader_class) {
   emscripten::class_<vtkChacoReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkChacoReader")
     .smart_ptr<vtkSmartPointer<vtkChacoReader>>("vtkSmartPointer<vtkChacoReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkChacoReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkChacoReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkChacoReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkChacoReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkChacoReader::SafeDownCast, emscripten::allow_raw_pointers())

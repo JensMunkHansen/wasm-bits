@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimplePointsReader>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSimplePointsReader_class) {
   emscripten::class_<vtkSimplePointsReader, emscripten::base<vtkPolyDataAlgorithm>>("vtkSimplePointsReader")
     .smart_ptr<vtkSmartPointer<vtkSimplePointsReader>>("vtkSmartPointer<vtkSimplePointsReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimplePointsReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSimplePointsReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimplePointsReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimplePointsReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimplePointsReader::SafeDownCast, emscripten::allow_raw_pointers())

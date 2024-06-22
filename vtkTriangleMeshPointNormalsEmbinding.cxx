@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTriangleMeshPointNormals
 EMSCRIPTEN_BINDINGS(vtkTriangleMeshPointNormals_class) {
   emscripten::class_<vtkTriangleMeshPointNormals, emscripten::base<vtkPolyDataAlgorithm>>("vtkTriangleMeshPointNormals")
     .smart_ptr<vtkSmartPointer<vtkTriangleMeshPointNormals>>("vtkSmartPointer<vtkTriangleMeshPointNormals>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTriangleMeshPointNormals>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTriangleMeshPointNormals>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTriangleMeshPointNormals::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTriangleMeshPointNormals& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTriangleMeshPointNormals::SafeDownCast, emscripten::allow_raw_pointers())

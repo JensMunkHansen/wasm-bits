@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDistanceToCamera>(vtkDis
 EMSCRIPTEN_BINDINGS(vtkDistanceToCamera_class) {
   emscripten::class_<vtkDistanceToCamera, emscripten::base<vtkPointSetAlgorithm>>("vtkDistanceToCamera")
     .smart_ptr<vtkSmartPointer<vtkDistanceToCamera>>("vtkSmartPointer<vtkDistanceToCamera>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDistanceToCamera>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDistanceToCamera>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDistanceToCamera::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDistanceToCamera& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDistanceToCamera::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericImageInterpolator
 EMSCRIPTEN_BINDINGS(vtkGenericImageInterpolator_class) {
   emscripten::class_<vtkGenericImageInterpolator, emscripten::base<vtkImageInterpolator>>("vtkGenericImageInterpolator")
     .smart_ptr<vtkSmartPointer<vtkGenericImageInterpolator>>("vtkSmartPointer<vtkGenericImageInterpolator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericImageInterpolator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericImageInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericImageInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericImageInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericImageInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

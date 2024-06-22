@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGeoMath>(vtkGeoMath * pt
 EMSCRIPTEN_BINDINGS(vtkGeoMath_class) {
   emscripten::class_<vtkGeoMath, emscripten::base<vtkObject>>("vtkGeoMath")
     .smart_ptr<vtkSmartPointer<vtkGeoMath>>("vtkSmartPointer<vtkGeoMath>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGeoMath>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGeoMath>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGeoMath::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGeoMath& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGeoMath::SafeDownCast, emscripten::allow_raw_pointers())

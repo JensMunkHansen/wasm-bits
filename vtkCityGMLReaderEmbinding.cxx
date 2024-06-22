@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCityGMLReader>(vtkCityGM
 EMSCRIPTEN_BINDINGS(vtkCityGMLReader_class) {
   emscripten::class_<vtkCityGMLReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkCityGMLReader")
     .smart_ptr<vtkSmartPointer<vtkCityGMLReader>>("vtkSmartPointer<vtkCityGMLReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCityGMLReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCityGMLReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCityGMLReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCityGMLReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCityGMLReader::SafeDownCast, emscripten::allow_raw_pointers())

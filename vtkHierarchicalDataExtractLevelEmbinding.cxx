@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalDataExtractL
 EMSCRIPTEN_BINDINGS(vtkHierarchicalDataExtractLevel_class) {
   emscripten::class_<vtkHierarchicalDataExtractLevel, emscripten::base<vtkExtractLevel>>("vtkHierarchicalDataExtractLevel")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalDataExtractLevel>>("vtkSmartPointer<vtkHierarchicalDataExtractLevel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalDataExtractLevel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalDataExtractLevel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalDataExtractLevel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalDataExtractLevel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalDataExtractLevel::SafeDownCast, emscripten::allow_raw_pointers())

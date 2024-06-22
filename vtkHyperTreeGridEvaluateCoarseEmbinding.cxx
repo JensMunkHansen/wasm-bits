@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridEvaluateCoa
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridEvaluateCoarse_class) {
   emscripten::class_<vtkHyperTreeGridEvaluateCoarse, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridEvaluateCoarse")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridEvaluateCoarse>>("vtkSmartPointer<vtkHyperTreeGridEvaluateCoarse>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridEvaluateCoarse>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridEvaluateCoarse>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridEvaluateCoarse::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridEvaluateCoarse& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridEvaluateCoarse::SafeDownCast, emscripten::allow_raw_pointers())

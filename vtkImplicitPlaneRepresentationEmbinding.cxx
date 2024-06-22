@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkImplicitPlaneRepresentation_class) {
   using InteractionStateType=vtkImplicitPlaneRepresentation::InteractionStateType;
   emscripten::class_<vtkImplicitPlaneRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkImplicitPlaneRepresentation")
     .smart_ptr<vtkSmartPointer<vtkImplicitPlaneRepresentation>>("vtkSmartPointer<vtkImplicitPlaneRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitPlaneRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitPlaneRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitPlaneRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitPlaneRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitPlaneRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkTensorGlyph>(vtkTensorGl
 EMSCRIPTEN_BINDINGS(vtkTensorGlyph_class) {
   emscripten::class_<vtkTensorGlyph, emscripten::base<vtkPolyDataAlgorithm>>("vtkTensorGlyph")
     .smart_ptr<vtkSmartPointer<vtkTensorGlyph>>("vtkSmartPointer<vtkTensorGlyph>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTensorGlyph>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTensorGlyph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTensorGlyph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTensorGlyph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTensorGlyph::SafeDownCast, emscripten::allow_raw_pointers())

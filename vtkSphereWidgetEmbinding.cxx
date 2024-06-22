@@ -37,7 +37,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphereWidget>(vtkSphereW
 EMSCRIPTEN_BINDINGS(vtkSphereWidget_class) {
   emscripten::class_<vtkSphereWidget, emscripten::base<vtk3DWidget>>("vtkSphereWidget")
     .smart_ptr<vtkSmartPointer<vtkSphereWidget>>("vtkSmartPointer<vtkSphereWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphereWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphereWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphereWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphereWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphereWidget::SafeDownCast, emscripten::allow_raw_pointers())

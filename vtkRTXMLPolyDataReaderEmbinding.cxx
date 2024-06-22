@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRTXMLPolyDataReader>(vtk
 EMSCRIPTEN_BINDINGS(vtkRTXMLPolyDataReader_class) {
   emscripten::class_<vtkRTXMLPolyDataReader, emscripten::base<vtkXMLPolyDataReader>>("vtkRTXMLPolyDataReader")
     .smart_ptr<vtkSmartPointer<vtkRTXMLPolyDataReader>>("vtkSmartPointer<vtkRTXMLPolyDataReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRTXMLPolyDataReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRTXMLPolyDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRTXMLPolyDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRTXMLPolyDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRTXMLPolyDataReader::SafeDownCast, emscripten::allow_raw_pointers())

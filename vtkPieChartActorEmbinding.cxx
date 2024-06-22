@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkPieChartActor>(vtkPieCha
 EMSCRIPTEN_BINDINGS(vtkPieChartActor_class) {
   emscripten::class_<vtkPieChartActor, emscripten::base<vtkActor2D>>("vtkPieChartActor")
     .smart_ptr<vtkSmartPointer<vtkPieChartActor>>("vtkSmartPointer<vtkPieChartActor>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPieChartActor>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPieChartActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPieChartActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPieChartActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPieChartActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDecimatePolylineDistance
 EMSCRIPTEN_BINDINGS(vtkDecimatePolylineDistanceStrategy_class) {
   emscripten::class_<vtkDecimatePolylineDistanceStrategy, emscripten::base<vtkDecimatePolylineStrategy>>("vtkDecimatePolylineDistanceStrategy")
     .smart_ptr<vtkSmartPointer<vtkDecimatePolylineDistanceStrategy>>("vtkSmartPointer<vtkDecimatePolylineDistanceStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDecimatePolylineDistanceStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDecimatePolylineDistanceStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDecimatePolylineDistanceStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDecimatePolylineDistanceStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDecimatePolylineDistanceStrategy::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkDirectedGraphAlgorithm>(
 EMSCRIPTEN_BINDINGS(vtkDirectedGraphAlgorithm_class) {
   emscripten::class_<vtkDirectedGraphAlgorithm, emscripten::base<vtkAlgorithm>>("vtkDirectedGraphAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkDirectedGraphAlgorithm>>("vtkSmartPointer<vtkDirectedGraphAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDirectedGraphAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDirectedGraphAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDirectedGraphAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDirectedGraphAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDirectedGraphAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

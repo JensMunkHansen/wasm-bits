@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSubPixelPositionEdgels>(
 EMSCRIPTEN_BINDINGS(vtkSubPixelPositionEdgels_class) {
   emscripten::class_<vtkSubPixelPositionEdgels, emscripten::base<vtkPolyDataAlgorithm>>("vtkSubPixelPositionEdgels")
     .smart_ptr<vtkSmartPointer<vtkSubPixelPositionEdgels>>("vtkSmartPointer<vtkSubPixelPositionEdgels>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSubPixelPositionEdgels>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSubPixelPositionEdgels>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSubPixelPositionEdgels::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSubPixelPositionEdgels& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSubPixelPositionEdgels::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTriangularTexture>(vtkTr
 EMSCRIPTEN_BINDINGS(vtkTriangularTexture_class) {
   emscripten::class_<vtkTriangularTexture, emscripten::base<vtkImageAlgorithm>>("vtkTriangularTexture")
     .smart_ptr<vtkSmartPointer<vtkTriangularTexture>>("vtkSmartPointer<vtkTriangularTexture>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTriangularTexture>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTriangularTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTriangularTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTriangularTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTriangularTexture::SafeDownCast, emscripten::allow_raw_pointers())

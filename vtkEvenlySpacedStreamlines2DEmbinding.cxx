@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkEvenlySpacedStreamlines2
 EMSCRIPTEN_BINDINGS(vtkEvenlySpacedStreamlines2D_class) {
   emscripten::class_<vtkEvenlySpacedStreamlines2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkEvenlySpacedStreamlines2D")
     .smart_ptr<vtkSmartPointer<vtkEvenlySpacedStreamlines2D>>("vtkSmartPointer<vtkEvenlySpacedStreamlines2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEvenlySpacedStreamlines2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEvenlySpacedStreamlines2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEvenlySpacedStreamlines2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEvenlySpacedStreamlines2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEvenlySpacedStreamlines2D::SafeDownCast, emscripten::allow_raw_pointers())

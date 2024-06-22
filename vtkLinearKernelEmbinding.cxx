@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinearKernel>(vtkLinearK
 EMSCRIPTEN_BINDINGS(vtkLinearKernel_class) {
   emscripten::class_<vtkLinearKernel, emscripten::base<vtkGeneralizedKernel>>("vtkLinearKernel")
     .smart_ptr<vtkSmartPointer<vtkLinearKernel>>("vtkSmartPointer<vtkLinearKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinearKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLinearKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinearKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinearKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinearKernel::SafeDownCast, emscripten::allow_raw_pointers())

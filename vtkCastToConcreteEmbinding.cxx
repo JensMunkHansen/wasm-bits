@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCastToConcrete>(vtkCastT
 EMSCRIPTEN_BINDINGS(vtkCastToConcrete_class) {
   emscripten::class_<vtkCastToConcrete, emscripten::base<vtkDataSetAlgorithm>>("vtkCastToConcrete")
     .smart_ptr<vtkSmartPointer<vtkCastToConcrete>>("vtkSmartPointer<vtkCastToConcrete>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCastToConcrete>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCastToConcrete>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCastToConcrete::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCastToConcrete& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCastToConcrete::SafeDownCast, emscripten::allow_raw_pointers())

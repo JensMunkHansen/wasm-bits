@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkForEach>(vtkForEach * pt
 EMSCRIPTEN_BINDINGS(vtkForEach_class) {
   emscripten::class_<vtkForEach, emscripten::base<vtkDataObjectAlgorithm>>("vtkForEach")
     .smart_ptr<vtkSmartPointer<vtkForEach>>("vtkSmartPointer<vtkForEach>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkForEach>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkForEach>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkForEach::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkForEach& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkForEach::SafeDownCast, emscripten::allow_raw_pointers())

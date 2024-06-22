@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFiniteDifferenceGradient
 EMSCRIPTEN_BINDINGS(vtkFiniteDifferenceGradientEstimator_class) {
   emscripten::class_<vtkFiniteDifferenceGradientEstimator, emscripten::base<vtkEncodedGradientEstimator>>("vtkFiniteDifferenceGradientEstimator")
     .smart_ptr<vtkSmartPointer<vtkFiniteDifferenceGradientEstimator>>("vtkSmartPointer<vtkFiniteDifferenceGradientEstimator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFiniteDifferenceGradientEstimator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFiniteDifferenceGradientEstimator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFiniteDifferenceGradientEstimator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFiniteDifferenceGradientEstimator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFiniteDifferenceGradientEstimator::SafeDownCast, emscripten::allow_raw_pointers())

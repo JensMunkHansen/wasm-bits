@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRemoveIsolatedVertices>(
 EMSCRIPTEN_BINDINGS(vtkRemoveIsolatedVertices_class) {
   emscripten::class_<vtkRemoveIsolatedVertices, emscripten::base<vtkGraphAlgorithm>>("vtkRemoveIsolatedVertices")
     .smart_ptr<vtkSmartPointer<vtkRemoveIsolatedVertices>>("vtkSmartPointer<vtkRemoveIsolatedVertices>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRemoveIsolatedVertices>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRemoveIsolatedVertices>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRemoveIsolatedVertices::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRemoveIsolatedVertices& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRemoveIsolatedVertices::SafeDownCast, emscripten::allow_raw_pointers())

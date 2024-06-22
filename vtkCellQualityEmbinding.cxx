@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellQuality>(vtkCellQual
 EMSCRIPTEN_BINDINGS(vtkCellQuality_class) {
   emscripten::class_<vtkCellQuality, emscripten::base<vtkDataSetAlgorithm>>("vtkCellQuality")
     .smart_ptr<vtkSmartPointer<vtkCellQuality>>("vtkSmartPointer<vtkCellQuality>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellQuality>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCellQuality>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellQuality::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellQuality& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellQuality::SafeDownCast, emscripten::allow_raw_pointers())

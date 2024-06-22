@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkExtractHistogram2D_class) {
   using OutputIndices=vtkExtractHistogram2D::OutputIndices;
   emscripten::class_<vtkExtractHistogram2D, emscripten::base<vtkStatisticsAlgorithm>>("vtkExtractHistogram2D")
     .smart_ptr<vtkSmartPointer<vtkExtractHistogram2D>>("vtkSmartPointer<vtkExtractHistogram2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractHistogram2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractHistogram2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractHistogram2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractHistogram2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractHistogram2D::SafeDownCast, emscripten::allow_raw_pointers())

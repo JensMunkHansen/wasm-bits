@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlane>(vtkPlane * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkPlane_class) {
   emscripten::class_<vtkPlane, emscripten::base<vtkImplicitFunction>>("vtkPlane")
     .smart_ptr<vtkSmartPointer<vtkPlane>>("vtkSmartPointer<vtkPlane>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlane>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlane>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlane::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlane& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlane::SafeDownCast, emscripten::allow_raw_pointers())

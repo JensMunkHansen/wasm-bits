@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkOutlineFilter_class) {
   using CompositeOutlineStyle=vtkOutlineFilter::CompositeOutlineStyle;
   emscripten::class_<vtkOutlineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkOutlineFilter")
     .smart_ptr<vtkSmartPointer<vtkOutlineFilter>>("vtkSmartPointer<vtkOutlineFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOutlineFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOutlineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOutlineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOutlineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOutlineFilter::SafeDownCast, emscripten::allow_raw_pointers())

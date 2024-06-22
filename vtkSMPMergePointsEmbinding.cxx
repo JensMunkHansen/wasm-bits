@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSMPMergePoints>(vtkSMPMe
 EMSCRIPTEN_BINDINGS(vtkSMPMergePoints_class) {
   emscripten::class_<vtkSMPMergePoints, emscripten::base<vtkMergePoints>>("vtkSMPMergePoints")
     .smart_ptr<vtkSmartPointer<vtkSMPMergePoints>>("vtkSmartPointer<vtkSMPMergePoints>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSMPMergePoints>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSMPMergePoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSMPMergePoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSMPMergePoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSMPMergePoints::SafeDownCast, emscripten::allow_raw_pointers())

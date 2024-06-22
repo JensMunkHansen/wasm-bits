@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPUComputePipeline>(v
 EMSCRIPTEN_BINDINGS(vtkWebGPUComputePipeline_class) {
   emscripten::class_<vtkWebGPUComputePipeline, emscripten::base<vtkObject>>("vtkWebGPUComputePipeline")
     .smart_ptr<vtkSmartPointer<vtkWebGPUComputePipeline>>("vtkSmartPointer<vtkWebGPUComputePipeline>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUComputePipeline>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUComputePipeline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUComputePipeline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUComputePipeline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUComputePipeline::SafeDownCast, emscripten::allow_raw_pointers())

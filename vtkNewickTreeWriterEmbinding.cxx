@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkNewickTreeWriter>(vtkNew
 EMSCRIPTEN_BINDINGS(vtkNewickTreeWriter_class) {
   emscripten::class_<vtkNewickTreeWriter, emscripten::base<vtkDataWriter>>("vtkNewickTreeWriter")
     .smart_ptr<vtkSmartPointer<vtkNewickTreeWriter>>("vtkSmartPointer<vtkNewickTreeWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkNewickTreeWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkNewickTreeWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNewickTreeWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNewickTreeWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNewickTreeWriter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkUniformGridAMRDataIterat
 EMSCRIPTEN_BINDINGS(vtkUniformGridAMRDataIterator_class) {
   emscripten::class_<vtkUniformGridAMRDataIterator, emscripten::base<vtkCompositeDataIterator>>("vtkUniformGridAMRDataIterator")
     .smart_ptr<vtkSmartPointer<vtkUniformGridAMRDataIterator>>("vtkSmartPointer<vtkUniformGridAMRDataIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUniformGridAMRDataIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUniformGridAMRDataIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUniformGridAMRDataIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUniformGridAMRDataIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUniformGridAMRDataIterator::SafeDownCast, emscripten::allow_raw_pointers())

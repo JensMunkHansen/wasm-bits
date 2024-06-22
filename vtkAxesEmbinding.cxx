@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAxes>(vtkAxes * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkAxes_class) {
   emscripten::class_<vtkAxes, emscripten::base<vtkPolyDataAlgorithm>>("vtkAxes")
     .smart_ptr<vtkSmartPointer<vtkAxes>>("vtkSmartPointer<vtkAxes>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxes>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAxes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxes::SafeDownCast, emscripten::allow_raw_pointers())

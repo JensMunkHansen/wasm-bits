@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendCompositeDataLeave
 EMSCRIPTEN_BINDINGS(vtkAppendCompositeDataLeaves_class) {
   emscripten::class_<vtkAppendCompositeDataLeaves, emscripten::base<vtkCompositeDataSetAlgorithm>>("vtkAppendCompositeDataLeaves")
     .smart_ptr<vtkSmartPointer<vtkAppendCompositeDataLeaves>>("vtkSmartPointer<vtkAppendCompositeDataLeaves>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendCompositeDataLeaves>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendCompositeDataLeaves>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendCompositeDataLeaves::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendCompositeDataLeaves& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendCompositeDataLeaves::SafeDownCast, emscripten::allow_raw_pointers())

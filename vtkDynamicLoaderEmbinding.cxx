@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDynamicLoader>(vtkDynami
 EMSCRIPTEN_BINDINGS(vtkDynamicLoader_class) {
   emscripten::class_<vtkDynamicLoader, emscripten::base<vtkObject>>("vtkDynamicLoader")
     .smart_ptr<vtkSmartPointer<vtkDynamicLoader>>("vtkSmartPointer<vtkDynamicLoader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDynamicLoader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDynamicLoader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDynamicLoader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDynamicLoader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDynamicLoader::SafeDownCast, emscripten::allow_raw_pointers())

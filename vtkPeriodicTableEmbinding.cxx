@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkPeriodicTable>(vtkPeriod
 EMSCRIPTEN_BINDINGS(vtkPeriodicTable_class) {
   emscripten::class_<vtkPeriodicTable, emscripten::base<vtkObject>>("vtkPeriodicTable")
     .smart_ptr<vtkSmartPointer<vtkPeriodicTable>>("vtkSmartPointer<vtkPeriodicTable>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPeriodicTable>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPeriodicTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPeriodicTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPeriodicTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPeriodicTable::SafeDownCast, emscripten::allow_raw_pointers())

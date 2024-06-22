@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkGaussianKernel>(vtkGauss
 EMSCRIPTEN_BINDINGS(vtkGaussianKernel_class) {
   emscripten::class_<vtkGaussianKernel, emscripten::base<vtkGeneralizedKernel>>("vtkGaussianKernel")
     .smart_ptr<vtkSmartPointer<vtkGaussianKernel>>("vtkSmartPointer<vtkGaussianKernel>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGaussianKernel>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGaussianKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGaussianKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGaussianKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGaussianKernel::SafeDownCast, emscripten::allow_raw_pointers())

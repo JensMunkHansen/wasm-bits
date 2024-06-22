@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkLODProp3D>(vtkLODProp3D 
 EMSCRIPTEN_BINDINGS(vtkLODProp3D_class) {
   emscripten::class_<vtkLODProp3D, emscripten::base<vtkProp3D>>("vtkLODProp3D")
     .smart_ptr<vtkSmartPointer<vtkLODProp3D>>("vtkSmartPointer<vtkLODProp3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLODProp3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLODProp3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLODProp3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLODProp3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLODProp3D::SafeDownCast, emscripten::allow_raw_pointers())

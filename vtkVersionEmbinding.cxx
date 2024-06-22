@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVersion>(vtkVersion * pt
 EMSCRIPTEN_BINDINGS(vtkVersion_class) {
   emscripten::class_<vtkVersion, emscripten::base<vtkObject>>("vtkVersion")
     .smart_ptr<vtkSmartPointer<vtkVersion>>("vtkSmartPointer<vtkVersion>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVersion>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVersion>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVersion::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVersion& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVersion::SafeDownCast, emscripten::allow_raw_pointers())

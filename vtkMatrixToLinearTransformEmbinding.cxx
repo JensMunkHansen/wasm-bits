@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMatrixToLinearTransform>
 EMSCRIPTEN_BINDINGS(vtkMatrixToLinearTransform_class) {
   emscripten::class_<vtkMatrixToLinearTransform, emscripten::base<vtkLinearTransform>>("vtkMatrixToLinearTransform")
     .smart_ptr<vtkSmartPointer<vtkMatrixToLinearTransform>>("vtkSmartPointer<vtkMatrixToLinearTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMatrixToLinearTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMatrixToLinearTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMatrixToLinearTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMatrixToLinearTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMatrixToLinearTransform::SafeDownCast, emscripten::allow_raw_pointers())

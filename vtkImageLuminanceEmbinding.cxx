@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageLuminance>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageLuminance_class) {
   emscripten::class_<vtkImageLuminance, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageLuminance")
     .smart_ptr<vtkSmartPointer<vtkImageLuminance>>("vtkSmartPointer<vtkImageLuminance>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageLuminance>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageLuminance>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageLuminance::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageLuminance& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageLuminance::SafeDownCast, emscripten::allow_raw_pointers())

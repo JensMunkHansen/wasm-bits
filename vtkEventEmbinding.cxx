@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkEvent_class) {
   using EventModifiers=vtkEvent::EventModifiers;
   emscripten::class_<vtkEvent, emscripten::base<vtkObject>>("vtkEvent")
     .smart_ptr<vtkSmartPointer<vtkEvent>>("vtkSmartPointer<vtkEvent>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEvent>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEvent>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEvent::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEvent& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEvent::SafeDownCast, emscripten::allow_raw_pointers())

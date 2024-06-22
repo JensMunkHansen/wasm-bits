@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkCaptionRepresentation>(v
 EMSCRIPTEN_BINDINGS(vtkCaptionRepresentation_class) {
   emscripten::class_<vtkCaptionRepresentation, emscripten::base<vtkBorderRepresentation>>("vtkCaptionRepresentation")
     .smart_ptr<vtkSmartPointer<vtkCaptionRepresentation>>("vtkSmartPointer<vtkCaptionRepresentation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCaptionRepresentation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCaptionRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCaptionRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCaptionRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCaptionRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

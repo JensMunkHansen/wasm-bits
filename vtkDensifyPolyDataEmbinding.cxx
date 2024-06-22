@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDensifyPolyData>(vtkDens
 EMSCRIPTEN_BINDINGS(vtkDensifyPolyData_class) {
   emscripten::class_<vtkDensifyPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkDensifyPolyData")
     .smart_ptr<vtkSmartPointer<vtkDensifyPolyData>>("vtkSmartPointer<vtkDensifyPolyData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDensifyPolyData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDensifyPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDensifyPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDensifyPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDensifyPolyData::SafeDownCast, emscripten::allow_raw_pointers())

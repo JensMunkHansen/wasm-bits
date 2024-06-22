@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGrid>(vtkUns
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGrid_class) {
   emscripten::class_<vtkUnstructuredGrid, emscripten::base<vtkUnstructuredGridBase>>("vtkUnstructuredGrid")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGrid>>("vtkSmartPointer<vtkUnstructuredGrid>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGrid>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGrid>)
     .class_function("ExtendedNew", &vtkUnstructuredGrid::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

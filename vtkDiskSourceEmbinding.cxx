@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDiskSource>(vtkDiskSourc
 EMSCRIPTEN_BINDINGS(vtkDiskSource_class) {
   emscripten::class_<vtkDiskSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkDiskSource")
     .smart_ptr<vtkSmartPointer<vtkDiskSource>>("vtkSmartPointer<vtkDiskSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDiskSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDiskSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDiskSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDiskSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDiskSource::SafeDownCast, emscripten::allow_raw_pointers())

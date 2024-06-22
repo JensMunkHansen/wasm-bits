@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEdgeCenters>(vtkEdgeCent
 EMSCRIPTEN_BINDINGS(vtkEdgeCenters_class) {
   emscripten::class_<vtkEdgeCenters, emscripten::base<vtkPolyDataAlgorithm>>("vtkEdgeCenters")
     .smart_ptr<vtkSmartPointer<vtkEdgeCenters>>("vtkSmartPointer<vtkEdgeCenters>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkEdgeCenters>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkEdgeCenters>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEdgeCenters::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEdgeCenters& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEdgeCenters::SafeDownCast, emscripten::allow_raw_pointers())

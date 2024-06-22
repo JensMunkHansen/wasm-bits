@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRIBExporter>(vtkRIBExpor
 EMSCRIPTEN_BINDINGS(vtkRIBExporter_class) {
   emscripten::class_<vtkRIBExporter, emscripten::base<vtkExporter>>("vtkRIBExporter")
     .smart_ptr<vtkSmartPointer<vtkRIBExporter>>("vtkSmartPointer<vtkRIBExporter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRIBExporter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRIBExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRIBExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRIBExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRIBExporter::SafeDownCast, emscripten::allow_raw_pointers())

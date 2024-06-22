@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeCellGridReader>
 EMSCRIPTEN_BINDINGS(vtkCompositeCellGridReader_class) {
   emscripten::class_<vtkCompositeCellGridReader, emscripten::base<vtkReaderAlgorithm>>("vtkCompositeCellGridReader")
     .smart_ptr<vtkSmartPointer<vtkCompositeCellGridReader>>("vtkSmartPointer<vtkCompositeCellGridReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeCellGridReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeCellGridReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeCellGridReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeCellGridReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeCellGridReader::SafeDownCast, emscripten::allow_raw_pointers())

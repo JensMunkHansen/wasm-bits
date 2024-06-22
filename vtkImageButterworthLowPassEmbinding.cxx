@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageButterworthLowPass>
 EMSCRIPTEN_BINDINGS(vtkImageButterworthLowPass_class) {
   emscripten::class_<vtkImageButterworthLowPass, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageButterworthLowPass")
     .smart_ptr<vtkSmartPointer<vtkImageButterworthLowPass>>("vtkSmartPointer<vtkImageButterworthLowPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageButterworthLowPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageButterworthLowPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageButterworthLowPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageButterworthLowPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageButterworthLowPass::SafeDownCast, emscripten::allow_raw_pointers())

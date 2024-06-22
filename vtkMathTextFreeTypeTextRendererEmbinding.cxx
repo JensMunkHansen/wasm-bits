@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMathTextFreeTypeTextRend
 EMSCRIPTEN_BINDINGS(vtkMathTextFreeTypeTextRenderer_class) {
   emscripten::class_<vtkMathTextFreeTypeTextRenderer, emscripten::base<vtkTextRenderer>>("vtkMathTextFreeTypeTextRenderer")
     .smart_ptr<vtkSmartPointer<vtkMathTextFreeTypeTextRenderer>>("vtkSmartPointer<vtkMathTextFreeTypeTextRenderer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMathTextFreeTypeTextRenderer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMathTextFreeTypeTextRenderer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMathTextFreeTypeTextRenderer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMathTextFreeTypeTextRenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMathTextFreeTypeTextRenderer::SafeDownCast, emscripten::allow_raw_pointers())

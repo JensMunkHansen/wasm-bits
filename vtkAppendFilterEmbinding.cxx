@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendFilter>(vtkAppendF
 EMSCRIPTEN_BINDINGS(vtkAppendFilter_class) {
   emscripten::class_<vtkAppendFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkAppendFilter")
     .smart_ptr<vtkSmartPointer<vtkAppendFilter>>("vtkSmartPointer<vtkAppendFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendFilter::SafeDownCast, emscripten::allow_raw_pointers())

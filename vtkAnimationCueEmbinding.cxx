@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkAnimationCue_class) {
   using PlayDirection=vtkAnimationCue::PlayDirection;
   emscripten::class_<vtkAnimationCue, emscripten::base<vtkObject>>("vtkAnimationCue")
     .smart_ptr<vtkSmartPointer<vtkAnimationCue>>("vtkSmartPointer<vtkAnimationCue>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnimationCue>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAnimationCue>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnimationCue::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnimationCue& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnimationCue::SafeDownCast, emscripten::allow_raw_pointers())

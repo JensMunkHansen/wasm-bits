@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSlabReslice>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageSlabReslice_class) {
   emscripten::class_<vtkImageSlabReslice, emscripten::base<vtkImageReslice>>("vtkImageSlabReslice")
     .smart_ptr<vtkSmartPointer<vtkImageSlabReslice>>("vtkSmartPointer<vtkImageSlabReslice>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSlabReslice>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSlabReslice>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSlabReslice::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSlabReslice& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSlabReslice::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleMultiTouc
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleMultiTouchCamera_class) {
   emscripten::class_<vtkInteractorStyleMultiTouchCamera, emscripten::base<vtkInteractorStyleTrackballCamera>>("vtkInteractorStyleMultiTouchCamera")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleMultiTouchCamera>>("vtkSmartPointer<vtkInteractorStyleMultiTouchCamera>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleMultiTouchCamera>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleMultiTouchCamera>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleMultiTouchCamera::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleMultiTouchCamera& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleMultiTouchCamera::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkFitToHeightMapFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkFitToHeightMapFilter_class) {
   emscripten::class_<vtkFitToHeightMapFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkFitToHeightMapFilter")
     .smart_ptr<vtkSmartPointer<vtkFitToHeightMapFilter>>("vtkSmartPointer<vtkFitToHeightMapFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFitToHeightMapFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFitToHeightMapFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFitToHeightMapFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFitToHeightMapFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFitToHeightMapFilter::SafeDownCast, emscripten::allow_raw_pointers())

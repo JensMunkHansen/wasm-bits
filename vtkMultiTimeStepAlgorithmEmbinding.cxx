@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiTimeStepAlgorithm>(
 EMSCRIPTEN_BINDINGS(vtkMultiTimeStepAlgorithm_class) {
   emscripten::class_<vtkMultiTimeStepAlgorithm, emscripten::base<vtkAlgorithm>>("vtkMultiTimeStepAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkMultiTimeStepAlgorithm>>("vtkSmartPointer<vtkMultiTimeStepAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiTimeStepAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiTimeStepAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiTimeStepAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiTimeStepAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiTimeStepAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

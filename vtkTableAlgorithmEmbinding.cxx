@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkTableAlgorithm>(vtkTable
 EMSCRIPTEN_BINDINGS(vtkTableAlgorithm_class) {
   emscripten::class_<vtkTableAlgorithm, emscripten::base<vtkAlgorithm>>("vtkTableAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkTableAlgorithm>>("vtkSmartPointer<vtkTableAlgorithm>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTableAlgorithm>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTableAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTableAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTableAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTableAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

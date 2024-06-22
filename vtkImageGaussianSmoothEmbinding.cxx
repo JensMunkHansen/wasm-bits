@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageGaussianSmooth>(vtk
 EMSCRIPTEN_BINDINGS(vtkImageGaussianSmooth_class) {
   emscripten::class_<vtkImageGaussianSmooth, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageGaussianSmooth")
     .smart_ptr<vtkSmartPointer<vtkImageGaussianSmooth>>("vtkSmartPointer<vtkImageGaussianSmooth>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageGaussianSmooth>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageGaussianSmooth>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageGaussianSmooth::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageGaussianSmooth& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageGaussianSmooth::SafeDownCast, emscripten::allow_raw_pointers())

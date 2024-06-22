@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageConvolve>(vtkImageC
 EMSCRIPTEN_BINDINGS(vtkImageConvolve_class) {
   emscripten::class_<vtkImageConvolve, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageConvolve")
     .smart_ptr<vtkSmartPointer<vtkImageConvolve>>("vtkSmartPointer<vtkImageConvolve>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageConvolve>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageConvolve>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageConvolve::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageConvolve& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageConvolve::SafeDownCast, emscripten::allow_raw_pointers())

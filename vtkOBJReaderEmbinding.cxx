@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOBJReader>(vtkOBJReader 
 EMSCRIPTEN_BINDINGS(vtkOBJReader_class) {
   emscripten::class_<vtkOBJReader, emscripten::base<vtkAbstractPolyDataReader>>("vtkOBJReader")
     .smart_ptr<vtkSmartPointer<vtkOBJReader>>("vtkSmartPointer<vtkOBJReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOBJReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOBJReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOBJReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOBJReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOBJReader::SafeDownCast, emscripten::allow_raw_pointers())

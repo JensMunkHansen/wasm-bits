@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkIOSSCellGridReader>(vtkI
 EMSCRIPTEN_BINDINGS(vtkIOSSCellGridReader_class) {
   emscripten::class_<vtkIOSSCellGridReader, emscripten::base<vtkIOSSReader>>("vtkIOSSCellGridReader")
     .smart_ptr<vtkSmartPointer<vtkIOSSCellGridReader>>("vtkSmartPointer<vtkIOSSCellGridReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkIOSSCellGridReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkIOSSCellGridReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIOSSCellGridReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIOSSCellGridReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIOSSCellGridReader::SafeDownCast, emscripten::allow_raw_pointers())

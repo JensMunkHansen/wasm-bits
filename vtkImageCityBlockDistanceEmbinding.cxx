@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCityBlockDistance>(
 EMSCRIPTEN_BINDINGS(vtkImageCityBlockDistance_class) {
   emscripten::class_<vtkImageCityBlockDistance, emscripten::base<vtkImageDecomposeFilter>>("vtkImageCityBlockDistance")
     .smart_ptr<vtkSmartPointer<vtkImageCityBlockDistance>>("vtkSmartPointer<vtkImageCityBlockDistance>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCityBlockDistance>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCityBlockDistance>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCityBlockDistance::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCityBlockDistance& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCityBlockDistance::SafeDownCast, emscripten::allow_raw_pointers())

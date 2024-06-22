@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMNITagPointReader>(vtkMN
 EMSCRIPTEN_BINDINGS(vtkMNITagPointReader_class) {
   emscripten::class_<vtkMNITagPointReader, emscripten::base<vtkPolyDataAlgorithm>>("vtkMNITagPointReader")
     .smart_ptr<vtkSmartPointer<vtkMNITagPointReader>>("vtkSmartPointer<vtkMNITagPointReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMNITagPointReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMNITagPointReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMNITagPointReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMNITagPointReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMNITagPointReader::SafeDownCast, emscripten::allow_raw_pointers())

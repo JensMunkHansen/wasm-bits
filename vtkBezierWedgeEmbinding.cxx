@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkBezierWedge>(vtkBezierWe
 EMSCRIPTEN_BINDINGS(vtkBezierWedge_class) {
   emscripten::class_<vtkBezierWedge, emscripten::base<vtkHigherOrderWedge>>("vtkBezierWedge")
     .smart_ptr<vtkSmartPointer<vtkBezierWedge>>("vtkSmartPointer<vtkBezierWedge>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBezierWedge>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBezierWedge>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBezierWedge::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBezierWedge& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBezierWedge::SafeDownCast, emscripten::allow_raw_pointers())

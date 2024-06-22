@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeDataReader>(vtk
 EMSCRIPTEN_BINDINGS(vtkCompositeDataReader_class) {
   emscripten::class_<vtkCompositeDataReader, emscripten::base<vtkDataReader>>("vtkCompositeDataReader")
     .smart_ptr<vtkSmartPointer<vtkCompositeDataReader>>("vtkSmartPointer<vtkCompositeDataReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeDataReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeDataReader::SafeDownCast, emscripten::allow_raw_pointers())

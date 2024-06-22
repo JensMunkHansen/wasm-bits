@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkPOpenFOAMReader_class) {
   using caseType=vtkPOpenFOAMReader::caseType;
   emscripten::class_<vtkPOpenFOAMReader, emscripten::base<vtkOpenFOAMReader>>("vtkPOpenFOAMReader")
     .smart_ptr<vtkSmartPointer<vtkPOpenFOAMReader>>("vtkSmartPointer<vtkPOpenFOAMReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPOpenFOAMReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPOpenFOAMReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPOpenFOAMReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPOpenFOAMReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPOpenFOAMReader::SafeDownCast, emscripten::allow_raw_pointers())

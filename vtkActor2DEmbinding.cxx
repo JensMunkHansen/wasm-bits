@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkActor2D>(vtkActor2D * pt
 EMSCRIPTEN_BINDINGS(vtkActor2D_class) {
   emscripten::class_<vtkActor2D, emscripten::base<vtkProp>>("vtkActor2D")
     .smart_ptr<vtkSmartPointer<vtkActor2D>>("vtkSmartPointer<vtkActor2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkActor2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkActor2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkActor2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkActor2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkActor2D::SafeDownCast, emscripten::allow_raw_pointers())

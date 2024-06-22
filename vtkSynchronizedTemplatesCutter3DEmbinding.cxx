@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSynchronizedTemplatesCut
 EMSCRIPTEN_BINDINGS(vtkSynchronizedTemplatesCutter3D_class) {
   emscripten::class_<vtkSynchronizedTemplatesCutter3D, emscripten::base<vtkSynchronizedTemplates3D>>("vtkSynchronizedTemplatesCutter3D")
     .smart_ptr<vtkSmartPointer<vtkSynchronizedTemplatesCutter3D>>("vtkSmartPointer<vtkSynchronizedTemplatesCutter3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSynchronizedTemplatesCutter3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSynchronizedTemplatesCutter3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSynchronizedTemplatesCutter3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSynchronizedTemplatesCutter3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSynchronizedTemplatesCutter3D::SafeDownCast, emscripten::allow_raw_pointers())

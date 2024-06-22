@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCoordinateFrameWidget>(v
 EMSCRIPTEN_BINDINGS(vtkCoordinateFrameWidget_class) {
   emscripten::class_<vtkCoordinateFrameWidget, emscripten::base<vtkAbstractWidget>>("vtkCoordinateFrameWidget")
     .smart_ptr<vtkSmartPointer<vtkCoordinateFrameWidget>>("vtkSmartPointer<vtkCoordinateFrameWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCoordinateFrameWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCoordinateFrameWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCoordinateFrameWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCoordinateFrameWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCoordinateFrameWidget::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLUniforms>(vtkOpenG
 EMSCRIPTEN_BINDINGS(vtkOpenGLUniforms_class) {
   emscripten::class_<vtkOpenGLUniforms, emscripten::base<vtkUniforms>>("vtkOpenGLUniforms")
     .smart_ptr<vtkSmartPointer<vtkOpenGLUniforms>>("vtkSmartPointer<vtkOpenGLUniforms>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLUniforms>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLUniforms>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLUniforms::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLUniforms& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLUniforms::SafeDownCast, emscripten::allow_raw_pointers())

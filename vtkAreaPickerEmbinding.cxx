@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkAreaPicker>(vtkAreaPicke
 EMSCRIPTEN_BINDINGS(vtkAreaPicker_class) {
   emscripten::class_<vtkAreaPicker, emscripten::base<vtkAbstractPropPicker>>("vtkAreaPicker")
     .smart_ptr<vtkSmartPointer<vtkAreaPicker>>("vtkSmartPointer<vtkAreaPicker>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAreaPicker>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAreaPicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAreaPicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAreaPicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAreaPicker::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkSelectionSource_class) {
   using FieldTypeOptions=vtkSelectionSource::FieldTypeOptions;
   emscripten::class_<vtkSelectionSource, emscripten::base<vtkSelectionAlgorithm>>("vtkSelectionSource")
     .smart_ptr<vtkSmartPointer<vtkSelectionSource>>("vtkSmartPointer<vtkSelectionSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSelectionSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSelectionSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSelectionSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSelectionSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSelectionSource::SafeDownCast, emscripten::allow_raw_pointers())

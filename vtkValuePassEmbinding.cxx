@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkValuePass_class) {
   using Mode=vtkValuePass::Mode;
   emscripten::class_<vtkValuePass, emscripten::base<vtkOpenGLRenderPass>>("vtkValuePass")
     .smart_ptr<vtkSmartPointer<vtkValuePass>>("vtkSmartPointer<vtkValuePass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkValuePass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkValuePass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkValuePass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkValuePass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkValuePass::SafeDownCast, emscripten::allow_raw_pointers())

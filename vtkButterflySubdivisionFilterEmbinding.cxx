@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkButterflySubdivisionFilt
 EMSCRIPTEN_BINDINGS(vtkButterflySubdivisionFilter_class) {
   emscripten::class_<vtkButterflySubdivisionFilter, emscripten::base<vtkInterpolatingSubdivisionFilter>>("vtkButterflySubdivisionFilter")
     .smart_ptr<vtkSmartPointer<vtkButterflySubdivisionFilter>>("vtkSmartPointer<vtkButterflySubdivisionFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkButterflySubdivisionFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkButterflySubdivisionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkButterflySubdivisionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkButterflySubdivisionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkButterflySubdivisionFilter::SafeDownCast, emscripten::allow_raw_pointers())

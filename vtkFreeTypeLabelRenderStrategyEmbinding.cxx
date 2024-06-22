@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkFreeTypeLabelRenderStrat
 EMSCRIPTEN_BINDINGS(vtkFreeTypeLabelRenderStrategy_class) {
   emscripten::class_<vtkFreeTypeLabelRenderStrategy, emscripten::base<vtkLabelRenderStrategy>>("vtkFreeTypeLabelRenderStrategy")
     .smart_ptr<vtkSmartPointer<vtkFreeTypeLabelRenderStrategy>>("vtkSmartPointer<vtkFreeTypeLabelRenderStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFreeTypeLabelRenderStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFreeTypeLabelRenderStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFreeTypeLabelRenderStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFreeTypeLabelRenderStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFreeTypeLabelRenderStrategy::SafeDownCast, emscripten::allow_raw_pointers())

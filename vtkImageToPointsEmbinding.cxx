@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageToPoints>(vtkImageT
 EMSCRIPTEN_BINDINGS(vtkImageToPoints_class) {
   emscripten::class_<vtkImageToPoints, emscripten::base<vtkPolyDataAlgorithm>>("vtkImageToPoints")
     .smart_ptr<vtkSmartPointer<vtkImageToPoints>>("vtkSmartPointer<vtkImageToPoints>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageToPoints>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageToPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageToPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageToPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageToPoints::SafeDownCast, emscripten::allow_raw_pointers())

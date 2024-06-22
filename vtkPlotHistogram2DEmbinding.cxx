@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotHistogram2D>(vtkPlot
 EMSCRIPTEN_BINDINGS(vtkPlotHistogram2D_class) {
   emscripten::class_<vtkPlotHistogram2D, emscripten::base<vtkPlot>>("vtkPlotHistogram2D")
     .smart_ptr<vtkSmartPointer<vtkPlotHistogram2D>>("vtkSmartPointer<vtkPlotHistogram2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotHistogram2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotHistogram2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotHistogram2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotHistogram2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotHistogram2D::SafeDownCast, emscripten::allow_raw_pointers())

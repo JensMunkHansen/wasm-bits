@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphereSource>(vtkSphereS
 EMSCRIPTEN_BINDINGS(vtkSphereSource_class) {
   emscripten::class_<vtkSphereSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkSphereSource")
     .smart_ptr<vtkSmartPointer<vtkSphereSource>>("vtkSmartPointer<vtkSphereSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphereSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSphereSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphereSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphereSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphereSource::SafeDownCast, emscripten::allow_raw_pointers())

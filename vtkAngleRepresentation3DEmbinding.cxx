@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkAngleRepresentation3D>(v
 EMSCRIPTEN_BINDINGS(vtkAngleRepresentation3D_class) {
   emscripten::class_<vtkAngleRepresentation3D, emscripten::base<vtkAngleRepresentation>>("vtkAngleRepresentation3D")
     .smart_ptr<vtkSmartPointer<vtkAngleRepresentation3D>>("vtkSmartPointer<vtkAngleRepresentation3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkAngleRepresentation3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkAngleRepresentation3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAngleRepresentation3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAngleRepresentation3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAngleRepresentation3D::SafeDownCast, emscripten::allow_raw_pointers())

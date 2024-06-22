@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkProteinRibbonFilter>(vtk
 EMSCRIPTEN_BINDINGS(vtkProteinRibbonFilter_class) {
   emscripten::class_<vtkProteinRibbonFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkProteinRibbonFilter")
     .smart_ptr<vtkSmartPointer<vtkProteinRibbonFilter>>("vtkSmartPointer<vtkProteinRibbonFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkProteinRibbonFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkProteinRibbonFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProteinRibbonFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProteinRibbonFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProteinRibbonFilter::SafeDownCast, emscripten::allow_raw_pointers())

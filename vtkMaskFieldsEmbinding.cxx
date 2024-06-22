@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkMaskFields_class) {
   using FieldLocation=vtkMaskFields::FieldLocation;
   emscripten::class_<vtkMaskFields, emscripten::base<vtkDataSetAlgorithm>>("vtkMaskFields")
     .smart_ptr<vtkSmartPointer<vtkMaskFields>>("vtkSmartPointer<vtkMaskFields>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMaskFields>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMaskFields>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMaskFields::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMaskFields& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMaskFields::SafeDownCast, emscripten::allow_raw_pointers())

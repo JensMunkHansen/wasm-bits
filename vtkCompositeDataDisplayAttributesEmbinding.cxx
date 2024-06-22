@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeDataDisplayAttr
 EMSCRIPTEN_BINDINGS(vtkCompositeDataDisplayAttributes_class) {
   emscripten::class_<vtkCompositeDataDisplayAttributes, emscripten::base<vtkObject>>("vtkCompositeDataDisplayAttributes")
     .smart_ptr<vtkSmartPointer<vtkCompositeDataDisplayAttributes>>("vtkSmartPointer<vtkCompositeDataDisplayAttributes>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeDataDisplayAttributes>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeDataDisplayAttributes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeDataDisplayAttributes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeDataDisplayAttributes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeDataDisplayAttributes::SafeDownCast, emscripten::allow_raw_pointers())

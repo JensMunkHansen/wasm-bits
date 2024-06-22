@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeArrays>(vtkMergeArr
 EMSCRIPTEN_BINDINGS(vtkMergeArrays_class) {
   emscripten::class_<vtkMergeArrays, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkMergeArrays")
     .smart_ptr<vtkSmartPointer<vtkMergeArrays>>("vtkSmartPointer<vtkMergeArrays>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeArrays>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeArrays>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeArrays::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeArrays& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeArrays::SafeDownCast, emscripten::allow_raw_pointers())

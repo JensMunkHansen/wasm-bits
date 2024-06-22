@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOggTheoraWriter>(vtkOggT
 EMSCRIPTEN_BINDINGS(vtkOggTheoraWriter_class) {
   emscripten::class_<vtkOggTheoraWriter, emscripten::base<vtkGenericMovieWriter>>("vtkOggTheoraWriter")
     .smart_ptr<vtkSmartPointer<vtkOggTheoraWriter>>("vtkSmartPointer<vtkOggTheoraWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOggTheoraWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOggTheoraWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOggTheoraWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOggTheoraWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOggTheoraWriter::SafeDownCast, emscripten::allow_raw_pointers())

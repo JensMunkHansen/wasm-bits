@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLHyperTreeGridMappe
 EMSCRIPTEN_BINDINGS(vtkOpenGLHyperTreeGridMapper_class) {
   emscripten::class_<vtkOpenGLHyperTreeGridMapper, emscripten::base<vtkHyperTreeGridMapper>>("vtkOpenGLHyperTreeGridMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLHyperTreeGridMapper>>("vtkSmartPointer<vtkOpenGLHyperTreeGridMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLHyperTreeGridMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLHyperTreeGridMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLHyperTreeGridMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLHyperTreeGridMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLHyperTreeGridMapper::SafeDownCast, emscripten::allow_raw_pointers())

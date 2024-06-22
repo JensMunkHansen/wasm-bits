@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumeContourSpectrumFil
 EMSCRIPTEN_BINDINGS(vtkVolumeContourSpectrumFilter_class) {
   emscripten::class_<vtkVolumeContourSpectrumFilter, emscripten::base<vtkDataObjectAlgorithm>>("vtkVolumeContourSpectrumFilter")
     .smart_ptr<vtkSmartPointer<vtkVolumeContourSpectrumFilter>>("vtkSmartPointer<vtkVolumeContourSpectrumFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumeContourSpectrumFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumeContourSpectrumFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumeContourSpectrumFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumeContourSpectrumFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumeContourSpectrumFilter::SafeDownCast, emscripten::allow_raw_pointers())

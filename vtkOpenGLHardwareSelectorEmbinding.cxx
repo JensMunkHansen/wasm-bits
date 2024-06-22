@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLHardwareSelector>(
 EMSCRIPTEN_BINDINGS(vtkOpenGLHardwareSelector_class) {
   emscripten::class_<vtkOpenGLHardwareSelector, emscripten::base<vtkHardwareSelector>>("vtkOpenGLHardwareSelector")
     .smart_ptr<vtkSmartPointer<vtkOpenGLHardwareSelector>>("vtkSmartPointer<vtkOpenGLHardwareSelector>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLHardwareSelector>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLHardwareSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLHardwareSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLHardwareSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLHardwareSelector::SafeDownCast, emscripten::allow_raw_pointers())

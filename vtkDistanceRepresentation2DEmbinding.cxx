@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkDistanceRepresentation2D
 EMSCRIPTEN_BINDINGS(vtkDistanceRepresentation2D_class) {
   emscripten::class_<vtkDistanceRepresentation2D, emscripten::base<vtkDistanceRepresentation>>("vtkDistanceRepresentation2D")
     .smart_ptr<vtkSmartPointer<vtkDistanceRepresentation2D>>("vtkSmartPointer<vtkDistanceRepresentation2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDistanceRepresentation2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDistanceRepresentation2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDistanceRepresentation2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDistanceRepresentation2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDistanceRepresentation2D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCast>(vtkImageCast 
 EMSCRIPTEN_BINDINGS(vtkImageCast_class) {
   emscripten::class_<vtkImageCast, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageCast")
     .smart_ptr<vtkSmartPointer<vtkImageCast>>("vtkSmartPointer<vtkImageCast>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCast>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCast>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCast::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCast& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCast::SafeDownCast, emscripten::allow_raw_pointers())

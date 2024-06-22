@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericGeometryFilter>(v
 EMSCRIPTEN_BINDINGS(vtkGenericGeometryFilter_class) {
   emscripten::class_<vtkGenericGeometryFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGenericGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkGenericGeometryFilter>>("vtkSmartPointer<vtkGenericGeometryFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericGeometryFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCirclePackFrontChainLayo
 EMSCRIPTEN_BINDINGS(vtkCirclePackFrontChainLayoutStrategy_class) {
   emscripten::class_<vtkCirclePackFrontChainLayoutStrategy, emscripten::base<vtkCirclePackLayoutStrategy>>("vtkCirclePackFrontChainLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkCirclePackFrontChainLayoutStrategy>>("vtkSmartPointer<vtkCirclePackFrontChainLayoutStrategy>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCirclePackFrontChainLayoutStrategy>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCirclePackFrontChainLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCirclePackFrontChainLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCirclePackFrontChainLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCirclePackFrontChainLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

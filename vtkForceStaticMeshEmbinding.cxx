@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkForceStaticMesh>(vtkForc
 EMSCRIPTEN_BINDINGS(vtkForceStaticMesh_class) {
   emscripten::class_<vtkForceStaticMesh, emscripten::base<vtkPassThrough>>("vtkForceStaticMesh")
     .smart_ptr<vtkSmartPointer<vtkForceStaticMesh>>("vtkSmartPointer<vtkForceStaticMesh>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkForceStaticMesh>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkForceStaticMesh>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkForceStaticMesh::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkForceStaticMesh& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkForceStaticMesh::SafeDownCast, emscripten::allow_raw_pointers())

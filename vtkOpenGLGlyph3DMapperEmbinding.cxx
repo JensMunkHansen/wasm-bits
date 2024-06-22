@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLGlyph3DMapper>(vtk
 EMSCRIPTEN_BINDINGS(vtkOpenGLGlyph3DMapper_class) {
   emscripten::class_<vtkOpenGLGlyph3DMapper, emscripten::base<vtkGlyph3DMapper>>("vtkOpenGLGlyph3DMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLGlyph3DMapper>>("vtkSmartPointer<vtkOpenGLGlyph3DMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLGlyph3DMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLGlyph3DMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLGlyph3DMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLGlyph3DMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLGlyph3DMapper::SafeDownCast, emscripten::allow_raw_pointers())

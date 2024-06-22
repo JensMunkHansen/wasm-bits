@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTimeSourceExample>(vtkTi
 EMSCRIPTEN_BINDINGS(vtkTimeSourceExample_class) {
   emscripten::class_<vtkTimeSourceExample, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkTimeSourceExample")
     .smart_ptr<vtkSmartPointer<vtkTimeSourceExample>>("vtkSmartPointer<vtkTimeSourceExample>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTimeSourceExample>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTimeSourceExample>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTimeSourceExample::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTimeSourceExample& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTimeSourceExample::SafeDownCast, emscripten::allow_raw_pointers())

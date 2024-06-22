@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkArrayDataWriter>(vtkArra
 EMSCRIPTEN_BINDINGS(vtkArrayDataWriter_class) {
   emscripten::class_<vtkArrayDataWriter, emscripten::base<vtkWriter>>("vtkArrayDataWriter")
     .smart_ptr<vtkSmartPointer<vtkArrayDataWriter>>("vtkSmartPointer<vtkArrayDataWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkArrayDataWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkArrayDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArrayDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArrayDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArrayDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlaybackWidget>(vtkPlayb
 EMSCRIPTEN_BINDINGS(vtkPlaybackWidget_class) {
   emscripten::class_<vtkPlaybackWidget, emscripten::base<vtkBorderWidget>>("vtkPlaybackWidget")
     .smart_ptr<vtkSmartPointer<vtkPlaybackWidget>>("vtkSmartPointer<vtkPlaybackWidget>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlaybackWidget>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPlaybackWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlaybackWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlaybackWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlaybackWidget::SafeDownCast, emscripten::allow_raw_pointers())

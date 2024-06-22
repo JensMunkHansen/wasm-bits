@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointDataToCellData>(vtk
 EMSCRIPTEN_BINDINGS(vtkPointDataToCellData_class) {
   emscripten::class_<vtkPointDataToCellData, emscripten::base<vtkDataSetAlgorithm>>("vtkPointDataToCellData")
     .smart_ptr<vtkSmartPointer<vtkPointDataToCellData>>("vtkSmartPointer<vtkPointDataToCellData>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointDataToCellData>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPointDataToCellData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointDataToCellData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointDataToCellData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointDataToCellData::SafeDownCast, emscripten::allow_raw_pointers())

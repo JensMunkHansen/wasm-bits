@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkGradientFilter_class) {
   using ReplacementValueEnum=vtkGradientFilter::ReplacementValueEnum;
   emscripten::class_<vtkGradientFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkGradientFilter")
     .smart_ptr<vtkSmartPointer<vtkGradientFilter>>("vtkSmartPointer<vtkGradientFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGradientFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGradientFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGradientFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGradientFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGradientFilter::SafeDownCast, emscripten::allow_raw_pointers())

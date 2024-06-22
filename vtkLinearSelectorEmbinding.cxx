@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinearSelector>(vtkLinea
 EMSCRIPTEN_BINDINGS(vtkLinearSelector_class) {
   emscripten::class_<vtkLinearSelector, emscripten::base<vtkSelectionAlgorithm>>("vtkLinearSelector")
     .smart_ptr<vtkSmartPointer<vtkLinearSelector>>("vtkSmartPointer<vtkLinearSelector>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinearSelector>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLinearSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinearSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinearSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinearSelector::SafeDownCast, emscripten::allow_raw_pointers())

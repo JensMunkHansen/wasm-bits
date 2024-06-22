@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkWindowToImageFilter>(vtk
 EMSCRIPTEN_BINDINGS(vtkWindowToImageFilter_class) {
   emscripten::class_<vtkWindowToImageFilter, emscripten::base<vtkAlgorithm>>("vtkWindowToImageFilter")
     .smart_ptr<vtkSmartPointer<vtkWindowToImageFilter>>("vtkSmartPointer<vtkWindowToImageFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkWindowToImageFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkWindowToImageFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWindowToImageFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWindowToImageFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWindowToImageFilter::SafeDownCast, emscripten::allow_raw_pointers())

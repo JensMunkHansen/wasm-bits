@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageActorPointPlacer>(v
 EMSCRIPTEN_BINDINGS(vtkImageActorPointPlacer_class) {
   emscripten::class_<vtkImageActorPointPlacer, emscripten::base<vtkPointPlacer>>("vtkImageActorPointPlacer")
     .smart_ptr<vtkSmartPointer<vtkImageActorPointPlacer>>("vtkSmartPointer<vtkImageActorPointPlacer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageActorPointPlacer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageActorPointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageActorPointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageActorPointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageActorPointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

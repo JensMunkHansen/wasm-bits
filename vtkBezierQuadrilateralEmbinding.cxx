@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkBezierQuadrilateral>(vtk
 EMSCRIPTEN_BINDINGS(vtkBezierQuadrilateral_class) {
   emscripten::class_<vtkBezierQuadrilateral, emscripten::base<vtkHigherOrderQuadrilateral>>("vtkBezierQuadrilateral")
     .smart_ptr<vtkSmartPointer<vtkBezierQuadrilateral>>("vtkSmartPointer<vtkBezierQuadrilateral>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkBezierQuadrilateral>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkBezierQuadrilateral>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBezierQuadrilateral::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBezierQuadrilateral& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBezierQuadrilateral::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMarchingContourFilter>(v
 EMSCRIPTEN_BINDINGS(vtkMarchingContourFilter_class) {
   emscripten::class_<vtkMarchingContourFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkMarchingContourFilter")
     .smart_ptr<vtkSmartPointer<vtkMarchingContourFilter>>("vtkSmartPointer<vtkMarchingContourFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMarchingContourFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMarchingContourFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMarchingContourFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMarchingContourFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMarchingContourFilter::SafeDownCast, emscripten::allow_raw_pointers())

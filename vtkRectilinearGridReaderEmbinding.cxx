@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearGridReader>(v
 EMSCRIPTEN_BINDINGS(vtkRectilinearGridReader_class) {
   emscripten::class_<vtkRectilinearGridReader, emscripten::base<vtkDataReader>>("vtkRectilinearGridReader")
     .smart_ptr<vtkSmartPointer<vtkRectilinearGridReader>>("vtkSmartPointer<vtkRectilinearGridReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearGridReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearGridReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearGridReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearGridReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearGridReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkViewDependentErrorMetric
 EMSCRIPTEN_BINDINGS(vtkViewDependentErrorMetric_class) {
   emscripten::class_<vtkViewDependentErrorMetric, emscripten::base<vtkGenericSubdivisionErrorMetric>>("vtkViewDependentErrorMetric")
     .smart_ptr<vtkSmartPointer<vtkViewDependentErrorMetric>>("vtkSmartPointer<vtkViewDependentErrorMetric>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkViewDependentErrorMetric>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkViewDependentErrorMetric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkViewDependentErrorMetric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkViewDependentErrorMetric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkViewDependentErrorMetric::SafeDownCast, emscripten::allow_raw_pointers())

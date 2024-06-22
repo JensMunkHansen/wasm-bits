@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTubeBender>(vtkTubeBende
 EMSCRIPTEN_BINDINGS(vtkTubeBender_class) {
   emscripten::class_<vtkTubeBender, emscripten::base<vtkPolyDataAlgorithm>>("vtkTubeBender")
     .smart_ptr<vtkSmartPointer<vtkTubeBender>>("vtkSmartPointer<vtkTubeBender>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTubeBender>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTubeBender>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTubeBender::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTubeBender& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTubeBender::SafeDownCast, emscripten::allow_raw_pointers())

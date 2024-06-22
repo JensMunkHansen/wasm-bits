@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkNetCDFReader>(vtkNetCDFR
 EMSCRIPTEN_BINDINGS(vtkNetCDFReader_class) {
   emscripten::class_<vtkNetCDFReader, emscripten::base<vtkDataObjectAlgorithm>>("vtkNetCDFReader")
     .smart_ptr<vtkSmartPointer<vtkNetCDFReader>>("vtkSmartPointer<vtkNetCDFReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkNetCDFReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkNetCDFReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNetCDFReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNetCDFReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNetCDFReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFixedPointRayCastImage>(
 EMSCRIPTEN_BINDINGS(vtkFixedPointRayCastImage_class) {
   emscripten::class_<vtkFixedPointRayCastImage, emscripten::base<vtkObject>>("vtkFixedPointRayCastImage")
     .smart_ptr<vtkSmartPointer<vtkFixedPointRayCastImage>>("vtkSmartPointer<vtkFixedPointRayCastImage>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFixedPointRayCastImage>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFixedPointRayCastImage>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFixedPointRayCastImage::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFixedPointRayCastImage& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFixedPointRayCastImage::SafeDownCast, emscripten::allow_raw_pointers())

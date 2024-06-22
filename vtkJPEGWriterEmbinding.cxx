@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkJPEGWriter>(vtkJPEGWrite
 EMSCRIPTEN_BINDINGS(vtkJPEGWriter_class) {
   emscripten::class_<vtkJPEGWriter, emscripten::base<vtkImageWriter>>("vtkJPEGWriter")
     .smart_ptr<vtkSmartPointer<vtkJPEGWriter>>("vtkSmartPointer<vtkJPEGWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkJPEGWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkJPEGWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkJPEGWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkJPEGWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkJPEGWriter::SafeDownCast, emscripten::allow_raw_pointers())

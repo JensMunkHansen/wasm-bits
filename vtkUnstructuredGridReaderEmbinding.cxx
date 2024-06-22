@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridReader>(
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridReader_class) {
   emscripten::class_<vtkUnstructuredGridReader, emscripten::base<vtkDataReader>>("vtkUnstructuredGridReader")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridReader>>("vtkSmartPointer<vtkUnstructuredGridReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridReader::SafeDownCast, emscripten::allow_raw_pointers())

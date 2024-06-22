@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnsignedDistance>(vtkUns
 EMSCRIPTEN_BINDINGS(vtkUnsignedDistance_class) {
   emscripten::class_<vtkUnsignedDistance, emscripten::base<vtkImageAlgorithm>>("vtkUnsignedDistance")
     .smart_ptr<vtkSmartPointer<vtkUnsignedDistance>>("vtkSmartPointer<vtkUnsignedDistance>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnsignedDistance>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkUnsignedDistance>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnsignedDistance::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnsignedDistance& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnsignedDistance::SafeDownCast, emscripten::allow_raw_pointers())

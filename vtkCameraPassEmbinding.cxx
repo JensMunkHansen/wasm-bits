@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCameraPass>(vtkCameraPas
 EMSCRIPTEN_BINDINGS(vtkCameraPass_class) {
   emscripten::class_<vtkCameraPass, emscripten::base<vtkRenderPass>>("vtkCameraPass")
     .smart_ptr<vtkSmartPointer<vtkCameraPass>>("vtkSmartPointer<vtkCameraPass>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkCameraPass>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkCameraPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCameraPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCameraPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCameraPass::SafeDownCast, emscripten::allow_raw_pointers())

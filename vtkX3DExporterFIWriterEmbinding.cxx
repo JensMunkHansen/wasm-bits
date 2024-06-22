@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkX3DExporterFIWriter>(vtk
 EMSCRIPTEN_BINDINGS(vtkX3DExporterFIWriter_class) {
   emscripten::class_<vtkX3DExporterFIWriter, emscripten::base<vtkX3DExporterWriter>>("vtkX3DExporterFIWriter")
     .smart_ptr<vtkSmartPointer<vtkX3DExporterFIWriter>>("vtkSmartPointer<vtkX3DExporterFIWriter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkX3DExporterFIWriter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkX3DExporterFIWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkX3DExporterFIWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkX3DExporterFIWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkX3DExporterFIWriter::SafeDownCast, emscripten::allow_raw_pointers())

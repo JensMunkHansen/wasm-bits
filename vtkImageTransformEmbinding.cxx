@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageTransform>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageTransform_class) {
   emscripten::class_<vtkImageTransform, emscripten::base<vtkObject>>("vtkImageTransform")
     .smart_ptr<vtkSmartPointer<vtkImageTransform>>("vtkSmartPointer<vtkImageTransform>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageTransform>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageTransform::SafeDownCast, emscripten::allow_raw_pointers())

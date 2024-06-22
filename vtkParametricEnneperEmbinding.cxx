@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricEnneper>(vtkPa
 EMSCRIPTEN_BINDINGS(vtkParametricEnneper_class) {
   emscripten::class_<vtkParametricEnneper, emscripten::base<vtkParametricFunction>>("vtkParametricEnneper")
     .smart_ptr<vtkSmartPointer<vtkParametricEnneper>>("vtkSmartPointer<vtkParametricEnneper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricEnneper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricEnneper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricEnneper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricEnneper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricEnneper::SafeDownCast, emscripten::allow_raw_pointers())

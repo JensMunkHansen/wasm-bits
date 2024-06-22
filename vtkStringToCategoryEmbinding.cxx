@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkStringToCategory>(vtkStr
 EMSCRIPTEN_BINDINGS(vtkStringToCategory_class) {
   emscripten::class_<vtkStringToCategory, emscripten::base<vtkDataObjectAlgorithm>>("vtkStringToCategory")
     .smart_ptr<vtkSmartPointer<vtkStringToCategory>>("vtkSmartPointer<vtkStringToCategory>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStringToCategory>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStringToCategory>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStringToCategory::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStringToCategory& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStringToCategory::SafeDownCast, emscripten::allow_raw_pointers())

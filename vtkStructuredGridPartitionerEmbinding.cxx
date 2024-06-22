@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGridPartitione
 EMSCRIPTEN_BINDINGS(vtkStructuredGridPartitioner_class) {
   emscripten::class_<vtkStructuredGridPartitioner, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkStructuredGridPartitioner")
     .smart_ptr<vtkSmartPointer<vtkStructuredGridPartitioner>>("vtkSmartPointer<vtkStructuredGridPartitioner>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGridPartitioner>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGridPartitioner>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGridPartitioner::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGridPartitioner& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredGridPartitioner::SafeDownCast, emscripten::allow_raw_pointers())

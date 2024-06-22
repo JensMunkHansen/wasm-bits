@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageResliceToColors>(vt
 EMSCRIPTEN_BINDINGS(vtkImageResliceToColors_class) {
   emscripten::class_<vtkImageResliceToColors, emscripten::base<vtkImageReslice>>("vtkImageResliceToColors")
     .smart_ptr<vtkSmartPointer<vtkImageResliceToColors>>("vtkSmartPointer<vtkImageResliceToColors>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageResliceToColors>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageResliceToColors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageResliceToColors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageResliceToColors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageResliceToColors::SafeDownCast, emscripten::allow_raw_pointers())

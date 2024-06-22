@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimpleCellTessellator>(v
 EMSCRIPTEN_BINDINGS(vtkSimpleCellTessellator_class) {
   emscripten::class_<vtkSimpleCellTessellator, emscripten::base<vtkGenericCellTessellator>>("vtkSimpleCellTessellator")
     .smart_ptr<vtkSmartPointer<vtkSimpleCellTessellator>>("vtkSmartPointer<vtkSimpleCellTessellator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimpleCellTessellator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSimpleCellTessellator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimpleCellTessellator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimpleCellTessellator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimpleCellTessellator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageThresholdConnectivi
 EMSCRIPTEN_BINDINGS(vtkImageThresholdConnectivity_class) {
   emscripten::class_<vtkImageThresholdConnectivity, emscripten::base<vtkImageAlgorithm>>("vtkImageThresholdConnectivity")
     .smart_ptr<vtkSmartPointer<vtkImageThresholdConnectivity>>("vtkSmartPointer<vtkImageThresholdConnectivity>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageThresholdConnectivity>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageThresholdConnectivity>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageThresholdConnectivity::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageThresholdConnectivity& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageThresholdConnectivity::SafeDownCast, emscripten::allow_raw_pointers())

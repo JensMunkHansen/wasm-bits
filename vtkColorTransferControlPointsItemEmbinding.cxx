@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkColorTransferControlPoin
 EMSCRIPTEN_BINDINGS(vtkColorTransferControlPointsItem_class) {
   emscripten::class_<vtkColorTransferControlPointsItem, emscripten::base<vtkControlPointsItem>>("vtkColorTransferControlPointsItem")
     .smart_ptr<vtkSmartPointer<vtkColorTransferControlPointsItem>>("vtkSmartPointer<vtkColorTransferControlPointsItem>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkColorTransferControlPointsItem>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkColorTransferControlPointsItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkColorTransferControlPointsItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkColorTransferControlPointsItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkColorTransferControlPointsItem::SafeDownCast, emscripten::allow_raw_pointers())

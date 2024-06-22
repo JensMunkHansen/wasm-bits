@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTDxInteractorStyleCamera
 EMSCRIPTEN_BINDINGS(vtkTDxInteractorStyleCamera_class) {
   emscripten::class_<vtkTDxInteractorStyleCamera, emscripten::base<vtkTDxInteractorStyle>>("vtkTDxInteractorStyleCamera")
     .smart_ptr<vtkSmartPointer<vtkTDxInteractorStyleCamera>>("vtkSmartPointer<vtkTDxInteractorStyleCamera>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTDxInteractorStyleCamera>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTDxInteractorStyleCamera>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTDxInteractorStyleCamera::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTDxInteractorStyleCamera& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTDxInteractorStyleCamera::SafeDownCast, emscripten::allow_raw_pointers())

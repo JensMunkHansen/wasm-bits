@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeBFSIterator>(vtkTree
 EMSCRIPTEN_BINDINGS(vtkTreeBFSIterator_class) {
   emscripten::class_<vtkTreeBFSIterator, emscripten::base<vtkTreeIterator>>("vtkTreeBFSIterator")
     .smart_ptr<vtkSmartPointer<vtkTreeBFSIterator>>("vtkSmartPointer<vtkTreeBFSIterator>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeBFSIterator>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeBFSIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeBFSIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeBFSIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeBFSIterator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSQLiteQuery>(vtkSQLiteQu
 EMSCRIPTEN_BINDINGS(vtkSQLiteQuery_class) {
   emscripten::class_<vtkSQLiteQuery, emscripten::base<vtkSQLQuery>>("vtkSQLiteQuery")
     .smart_ptr<vtkSmartPointer<vtkSQLiteQuery>>("vtkSmartPointer<vtkSQLiteQuery>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkSQLiteQuery>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkSQLiteQuery>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSQLiteQuery::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSQLiteQuery& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSQLiteQuery::SafeDownCast, emscripten::allow_raw_pointers())

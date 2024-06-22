@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFlyingEdges3D>(vtkFlying
 EMSCRIPTEN_BINDINGS(vtkFlyingEdges3D_class) {
   emscripten::class_<vtkFlyingEdges3D, emscripten::base<vtkPolyDataAlgorithm>>("vtkFlyingEdges3D")
     .smart_ptr<vtkSmartPointer<vtkFlyingEdges3D>>("vtkSmartPointer<vtkFlyingEdges3D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkFlyingEdges3D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkFlyingEdges3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFlyingEdges3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFlyingEdges3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFlyingEdges3D::SafeDownCast, emscripten::allow_raw_pointers())

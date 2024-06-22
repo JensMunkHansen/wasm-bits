@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkVtkJSSceneGraphSerialize
 EMSCRIPTEN_BINDINGS(vtkVtkJSSceneGraphSerializer_class) {
   emscripten::class_<vtkVtkJSSceneGraphSerializer, emscripten::base<vtkObject>>("vtkVtkJSSceneGraphSerializer")
     .smart_ptr<vtkSmartPointer<vtkVtkJSSceneGraphSerializer>>("vtkSmartPointer<vtkVtkJSSceneGraphSerializer>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVtkJSSceneGraphSerializer>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVtkJSSceneGraphSerializer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVtkJSSceneGraphSerializer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVtkJSSceneGraphSerializer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVtkJSSceneGraphSerializer::SafeDownCast, emscripten::allow_raw_pointers())

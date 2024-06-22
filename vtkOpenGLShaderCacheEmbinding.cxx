@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLShaderCache>(vtkOp
 EMSCRIPTEN_BINDINGS(vtkOpenGLShaderCache_class) {
   emscripten::class_<vtkOpenGLShaderCache, emscripten::base<vtkObject>>("vtkOpenGLShaderCache")
     .smart_ptr<vtkSmartPointer<vtkOpenGLShaderCache>>("vtkSmartPointer<vtkOpenGLShaderCache>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLShaderCache>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLShaderCache>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLShaderCache::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLShaderCache& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLShaderCache::SafeDownCast, emscripten::allow_raw_pointers())

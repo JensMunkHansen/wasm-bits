@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPoints2D>(vtkPoints2D * 
 EMSCRIPTEN_BINDINGS(vtkPoints2D_class) {
   emscripten::class_<vtkPoints2D, emscripten::base<vtkObject>>("vtkPoints2D")
     .smart_ptr<vtkSmartPointer<vtkPoints2D>>("vtkSmartPointer<vtkPoints2D>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkPoints2D>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkPoints2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPoints2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPoints2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPoints2D::SafeDownCast, emscripten::allow_raw_pointers())

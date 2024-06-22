@@ -46,7 +46,7 @@ EMSCRIPTEN_BINDINGS(vtkLabeledDataMapper_class) {
   using Coordinates=vtkLabeledDataMapper::Coordinates;
   emscripten::class_<vtkLabeledDataMapper, emscripten::base<vtkMapper2D>>("vtkLabeledDataMapper")
     .smart_ptr<vtkSmartPointer<vtkLabeledDataMapper>>("vtkSmartPointer<vtkLabeledDataMapper>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabeledDataMapper>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkLabeledDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabeledDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabeledDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabeledDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

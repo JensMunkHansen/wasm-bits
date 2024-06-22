@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumeOutlineSource>(vtk
 EMSCRIPTEN_BINDINGS(vtkVolumeOutlineSource_class) {
   emscripten::class_<vtkVolumeOutlineSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkVolumeOutlineSource")
     .smart_ptr<vtkSmartPointer<vtkVolumeOutlineSource>>("vtkSmartPointer<vtkVolumeOutlineSource>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumeOutlineSource>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumeOutlineSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumeOutlineSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumeOutlineSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumeOutlineSource::SafeDownCast, emscripten::allow_raw_pointers())

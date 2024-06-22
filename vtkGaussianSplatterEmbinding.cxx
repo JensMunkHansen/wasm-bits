@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkGaussianSplatter>(vtkGau
 EMSCRIPTEN_BINDINGS(vtkGaussianSplatter_class) {
   emscripten::class_<vtkGaussianSplatter, emscripten::base<vtkImageAlgorithm>>("vtkGaussianSplatter")
     .smart_ptr<vtkSmartPointer<vtkGaussianSplatter>>("vtkSmartPointer<vtkGaussianSplatter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGaussianSplatter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGaussianSplatter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGaussianSplatter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGaussianSplatter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGaussianSplatter::SafeDownCast, emscripten::allow_raw_pointers())

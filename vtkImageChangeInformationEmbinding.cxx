@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageChangeInformation>(
 EMSCRIPTEN_BINDINGS(vtkImageChangeInformation_class) {
   emscripten::class_<vtkImageChangeInformation, emscripten::base<vtkImageAlgorithm>>("vtkImageChangeInformation")
     .smart_ptr<vtkSmartPointer<vtkImageChangeInformation>>("vtkSmartPointer<vtkImageChangeInformation>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageChangeInformation>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkImageChangeInformation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageChangeInformation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageChangeInformation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageChangeInformation::SafeDownCast, emscripten::allow_raw_pointers())

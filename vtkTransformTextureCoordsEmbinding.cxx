@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransformTextureCoords>(
 EMSCRIPTEN_BINDINGS(vtkTransformTextureCoords_class) {
   emscripten::class_<vtkTransformTextureCoords, emscripten::base<vtkDataSetAlgorithm>>("vtkTransformTextureCoords")
     .smart_ptr<vtkSmartPointer<vtkTransformTextureCoords>>("vtkSmartPointer<vtkTransformTextureCoords>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransformTextureCoords>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkTransformTextureCoords>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransformTextureCoords::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransformTextureCoords& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransformTextureCoords::SafeDownCast, emscripten::allow_raw_pointers())

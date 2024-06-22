@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDirectedAcyclicGraph>(vt
 EMSCRIPTEN_BINDINGS(vtkDirectedAcyclicGraph_class) {
   emscripten::class_<vtkDirectedAcyclicGraph, emscripten::base<vtkDirectedGraph>>("vtkDirectedAcyclicGraph")
     .smart_ptr<vtkSmartPointer<vtkDirectedAcyclicGraph>>("vtkSmartPointer<vtkDirectedAcyclicGraph>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkDirectedAcyclicGraph>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDirectedAcyclicGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDirectedAcyclicGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDirectedAcyclicGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDirectedAcyclicGraph::SafeDownCast, emscripten::allow_raw_pointers())

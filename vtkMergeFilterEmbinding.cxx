@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeFilter>(vtkMergeFil
 EMSCRIPTEN_BINDINGS(vtkMergeFilter_class) {
   emscripten::class_<vtkMergeFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkMergeFilter")
     .smart_ptr<vtkSmartPointer<vtkMergeFilter>>("vtkSmartPointer<vtkMergeFilter>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeFilter>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeFilter::SafeDownCast, emscripten::allow_raw_pointers())

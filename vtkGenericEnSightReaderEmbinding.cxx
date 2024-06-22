@@ -40,7 +40,7 @@ EMSCRIPTEN_BINDINGS(vtkGenericEnSightReader_class) {
   using FileTypes=vtkGenericEnSightReader::FileTypes;
   emscripten::class_<vtkGenericEnSightReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkGenericEnSightReader")
     .smart_ptr<vtkSmartPointer<vtkGenericEnSightReader>>("vtkSmartPointer<vtkGenericEnSightReader>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericEnSightReader>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericEnSightReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericEnSightReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericEnSightReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericEnSightReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkGLSLModPixelDebugger>(vt
 EMSCRIPTEN_BINDINGS(vtkGLSLModPixelDebugger_class) {
   emscripten::class_<vtkGLSLModPixelDebugger, emscripten::base<vtkGLSLModifierBase>>("vtkGLSLModPixelDebugger")
     .smart_ptr<vtkSmartPointer<vtkGLSLModPixelDebugger>>("vtkSmartPointer<vtkGLSLModPixelDebugger>")
-    .constructor(&vtk::MakeAvtkSmartPointer<vtkGLSLModPixelDebugger>)
+    .constructor(&vtk::MakeVTKSmartPtr<vtkGLSLModPixelDebugger>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGLSLModPixelDebugger::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGLSLModPixelDebugger& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGLSLModPixelDebugger::SafeDownCast, emscripten::allow_raw_pointers())
