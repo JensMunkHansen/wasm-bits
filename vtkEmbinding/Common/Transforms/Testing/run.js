@@ -16,19 +16,24 @@ const options = {
 };
 var wasmModule
 
-var testElement;
+var rotElement;
+var transElement;
 // Main function to load and use the WASM module
 async function main() {
     try {
         // Load the WASM module
         wasmModule = await loadvtkTransformWasmModule(options);
 
-	let transform = new wasmModule.vtkTransform();
-	transform.RotateX(60);
-	let matrix = transform.GetMatrix();
-	// Rotate 60 degrees, element should be 0.5.
-	testElement = matrix.GetElement(1,1);
-	console.log(testElement);
+	let transform0 = new wasmModule.vtkTransform();
+	transform0.RotateX(60);
+	let transform1 = new wasmModule.vtkTransform();
+	transform1.Translate(1,2,3);
+	// Concatenate the two transforms
+	transform0.Concatenate(transform1);
+	let matrix = transform0.GetMatrix();
+	rotElement = matrix.GetElement(1,1);
+	// The x-coordinate is untouched, so it should be 1.0
+	transElement = matrix.GetElement(0,3);
     } catch (error) {
         console.error("An error occurred:", error);
     }
@@ -37,7 +42,7 @@ async function main() {
 // Execute the main function
 await main();
 
-process.exit(Math.abs(testElement -0.5) < 0.001 ? 0 : 1);
+process.exit((Math.abs(rotElement -0.5) < 0.001) && (transElement == 1.0) ? 0 : 1);
 
 
 
