@@ -1,5 +1,7 @@
 target_sources(${TARGET_LIBRARY_NAME}
   PUBLIC
+  vtkAlgorithmEmbinding.cxx
+  vtkDataObjectAlgorithmEmbinding.cxx
   vtkPolyDataAlgorithmEmbinding.cxx
 )
 

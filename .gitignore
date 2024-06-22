@@ -3,4 +3,6 @@
 */.clangd
 */compile_commands.json
 */*wasm
-*/main.js
+*/main.js*~
+/**/*~
+/**/#*
