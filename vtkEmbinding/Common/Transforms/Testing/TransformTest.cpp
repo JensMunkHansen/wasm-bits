@@ -1,3 +1,5 @@
+// Empty file
+#if 0
 #include "vtkLogger.h"
 #include "vtkNew.h"
 #include "vtkObject.h"
@@ -49,3 +51,4 @@ EMSCRIPTEN_BINDINGS(vtksmartptr_prototype) {
       .class_function("ObjectCount", &vtkCustomObject::GetObjectCount);
 }
 
+#endif
