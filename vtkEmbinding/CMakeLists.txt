@@ -10,6 +10,8 @@ COMPONENTS
   CommonCore
 )
 
+set(ENABLE_THREADING ON)
+
 set(TARGET_LIBRARY_NAME vtkEmbinding)
 add_library(${TARGET_LIBRARY_NAME} vtkEmbindSmartPointerTraits.h)
 
@@ -22,8 +24,17 @@ target_include_directories(${TARGET_LIBRARY_NAME}
 
 # Selected content that we need from hierarchy
 add_subdirectory(Common)
-add_subdirectory(Filters)
-add_subdirectory(Interaction)
+# TODO: Needed for data input/output
+#add_subdirectory(Filters)
+# TODO: Needed for observers on widgets
+#add_subdirectory(Interaction)
 
-# Testing
-add_subdirectory(Common/Core/Testing)
+if (ENABLE_THREADING)
+  target_link_libraries(${TARGET_LIBRARY_NAME} PUBLIC pthread)
+endif()
+    
+if (BUILD_TESTING)
+  # Testing
+  add_subdirectory(Common/Core/Testing)
+#  add_subdirectory(Common/Transforms/Testing)
+endif()
