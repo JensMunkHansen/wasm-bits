@@ -24,10 +24,14 @@ target_include_directories(${TARGET_LIBRARY_NAME}
 
 # Selected content that we need from hierarchy
 add_subdirectory(Common)
+
 # TODO: Needed for data input/output
 #add_subdirectory(Filters)
+
 # TODO: Needed for observers on widgets
-#add_subdirectory(Interaction)
+add_subdirectory(Rendering)
+
+add_subdirectory(Interaction)
 
 if (ENABLE_THREADING)
   target_link_libraries(${TARGET_LIBRARY_NAME} PUBLIC pthread)

@@ -18,6 +18,7 @@ target_link_options(SmartPointerTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"
+#  "-sMAX_WEBGL_VERSION=2"
   "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
   "${emscripten_optimization_flags}")
 

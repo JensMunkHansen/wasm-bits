@@ -1,0 +1,228 @@
+// JavaScript wrapper for vtkRenderer with embind 
+//
+// This file was auto-generated using :
+/*
+node /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/bin/vtkWrapJavaScript.js \
+ @/home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/CMakeFiles/vtkRenderingCore.js/vtkRenderingCore.js.Release.args \
+ -o \
+ /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/CMakeFiles/vtkRenderingCore.js/vtkRendererEmbinding.cxx \
+ /home/jmh/github/vtk/Rendering/Core/vtkRenderer.h
+*/
+#include "vtkEmbindSmartPointerTrait.h"
+#include <emscripten.h>
+#include <string>
+#include "vtkVariant.h"
+#include "vtkObjectBase.h"
+#include "vtkIndent.h"
+#include "vtkProp.h"
+#include "vtkLight.h"
+#include "vtkLightCollection.h"
+#include "vtkVolumeCollection.h"
+#include "vtkActorCollection.h"
+#include "vtkCamera.h"
+#include "vtkPropCollection.h"
+#include "vtkCuller.h"
+#include "vtkCullerCollection.h"
+#include "vtkFrameBufferObjectBase.h"
+#include "vtkVector.h"
+#include "vtkRect.h"
+#include "vtkRenderWindow.h"
+#include "vtkWindow.h"
+#include "vtkAssemblyPath.h"
+#include "vtkSmartPointer.h"
+#include "vtkRendererDelegate.h"
+#include "vtkHardwareSelector.h"
+#include "vtkTexture.h"
+#include "vtkFXAAOptions.h"
+#include "vtkRenderPass.h"
+#include "vtkInformation.h"
+#include "vtkRenderer.h"
+
+template<> void emscripten::internal::raw_destructor<vtkRenderer>(vtkRenderer * ptr){ ptr->Delete(); }
+EMSCRIPTEN_BINDINGS(vtkRenderer_class) {
+  emscripten::class_<vtkRenderer, emscripten::base<vtkViewport>>("vtkRenderer")
+    .smart_ptr<vtkSmartPointer<vtkRenderer>>("vtkSmartPointer<vtkRenderer>")
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderer>)
+    .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderer::IsTypeOf( arg_0.c_str());}))
+    .function("IsA", emscripten::optional_override([](vtkRenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
+    .class_function("SafeDownCast", &vtkRenderer::SafeDownCast, emscripten::allow_raw_pointers())
+    .function("NewInstance", &vtkRenderer::NewInstance, emscripten::allow_raw_pointers())
+    .class_function("GetNumberOfGenerationsFromBaseType", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderer::GetNumberOfGenerationsFromBaseType( arg_0.c_str());}))
+    .function("GetNumberOfGenerationsFromBase", emscripten::optional_override([](vtkRenderer& self, const std::string & arg_0) -> int {  return self.GetNumberOfGenerationsFromBase( arg_0.c_str());}))
+    .function("AddActor", &vtkRenderer::AddActor, emscripten::allow_raw_pointers())
+    .function("AddVolume", &vtkRenderer::AddVolume, emscripten::allow_raw_pointers())
+    .function("RemoveActor", &vtkRenderer::RemoveActor, emscripten::allow_raw_pointers())
+    .function("RemoveVolume", &vtkRenderer::RemoveVolume, emscripten::allow_raw_pointers())
+    .function("AddLight", &vtkRenderer::AddLight, emscripten::allow_raw_pointers())
+    .function("RemoveLight", &vtkRenderer::RemoveLight, emscripten::allow_raw_pointers())
+    .function("RemoveAllLights", &vtkRenderer::RemoveAllLights)
+    .function("GetLights", &vtkRenderer::GetLights, emscripten::allow_raw_pointers())
+    .function("SetLightCollection", &vtkRenderer::SetLightCollection, emscripten::allow_raw_pointers())
+    .function("CreateLight", &vtkRenderer::CreateLight)
+    .function("MakeLight", &vtkRenderer::MakeLight, emscripten::allow_raw_pointers())
+    .function("GetTwoSidedLighting", &vtkRenderer::GetTwoSidedLighting)
+    .function("SetTwoSidedLighting", &vtkRenderer::SetTwoSidedLighting)
+    .function("TwoSidedLightingOn", &vtkRenderer::TwoSidedLightingOn)
+    .function("TwoSidedLightingOff", &vtkRenderer::TwoSidedLightingOff)
+    .function("SetLightFollowCamera", &vtkRenderer::SetLightFollowCamera)
+    .function("GetLightFollowCamera", &vtkRenderer::GetLightFollowCamera)
+    .function("LightFollowCameraOn", &vtkRenderer::LightFollowCameraOn)
+    .function("LightFollowCameraOff", &vtkRenderer::LightFollowCameraOff)
+    .function("GetAutomaticLightCreation", &vtkRenderer::GetAutomaticLightCreation)
+    .function("SetAutomaticLightCreation", &vtkRenderer::SetAutomaticLightCreation)
+    .function("AutomaticLightCreationOn", &vtkRenderer::AutomaticLightCreationOn)
+    .function("AutomaticLightCreationOff", &vtkRenderer::AutomaticLightCreationOff)
+    .function("UpdateLightsGeometryToFollowCamera", &vtkRenderer::UpdateLightsGeometryToFollowCamera)
+    .function("GetVolumes", &vtkRenderer::GetVolumes, emscripten::allow_raw_pointers())
+    .function("GetActors", &vtkRenderer::GetActors, emscripten::allow_raw_pointers())
+    .function("SetActiveCamera", &vtkRenderer::SetActiveCamera, emscripten::allow_raw_pointers())
+    .function("GetActiveCamera", &vtkRenderer::GetActiveCamera, emscripten::allow_raw_pointers())
+    .function("MakeCamera", &vtkRenderer::MakeCamera, emscripten::allow_raw_pointers())
+    .function("SetErase", &vtkRenderer::SetErase)
+    .function("GetErase", &vtkRenderer::GetErase)
+    .function("EraseOn", &vtkRenderer::EraseOn)
+    .function("EraseOff", &vtkRenderer::EraseOff)
+    .function("SetDraw", &vtkRenderer::SetDraw)
+    .function("GetDraw", &vtkRenderer::GetDraw)
+    .function("DrawOn", &vtkRenderer::DrawOn)
+    .function("DrawOff", &vtkRenderer::DrawOff)
+    .function("CaptureGL2PSSpecialProp", &vtkRenderer::CaptureGL2PSSpecialProp, emscripten::allow_raw_pointers())
+    .function("SetGL2PSSpecialPropCollection", &vtkRenderer::SetGL2PSSpecialPropCollection, emscripten::allow_raw_pointers())
+    .function("AddCuller", &vtkRenderer::AddCuller, emscripten::allow_raw_pointers())
+    .function("RemoveCuller", &vtkRenderer::RemoveCuller, emscripten::allow_raw_pointers())
+    .function("GetCullers", &vtkRenderer::GetCullers, emscripten::allow_raw_pointers())
+    .function("SetAmbient", emscripten::select_overload<void(vtkRenderer&, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2) -> void { return self.SetAmbient( arg_0, arg_1, arg_2); }))
+    .function("SetAllocatedRenderTime", &vtkRenderer::SetAllocatedRenderTime)
+    .function("GetAllocatedRenderTime", &vtkRenderer::GetAllocatedRenderTime)
+    .function("GetTimeFactor", &vtkRenderer::GetTimeFactor)
+    .function("Render", &vtkRenderer::Render)
+    .function("DeviceRender", &vtkRenderer::DeviceRender)
+    .function("DeviceRenderOpaqueGeometry", &vtkRenderer::DeviceRenderOpaqueGeometry, emscripten::allow_raw_pointers())
+    .function("DeviceRenderTranslucentPolygonalGeometry", &vtkRenderer::DeviceRenderTranslucentPolygonalGeometry, emscripten::allow_raw_pointers())
+    .function("ClearLights", &vtkRenderer::ClearLights)
+    .function("Clear", &vtkRenderer::Clear)
+    .function("VisibleActorCount", &vtkRenderer::VisibleActorCount)
+    .function("VisibleVolumeCount", &vtkRenderer::VisibleVolumeCount)
+    .function("ResetCameraClippingRange", emscripten::select_overload<void(vtkRenderer&)>([](vtkRenderer& self) -> void { return self.ResetCameraClippingRange(); }))
+    .function("ResetCameraClippingRange", emscripten::select_overload<void(vtkRenderer&, double, double, double, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2, double arg_3, double arg_4, double arg_5) -> void { return self.ResetCameraClippingRange( arg_0, arg_1, arg_2, arg_3, arg_4, arg_5); }))
+    .function("SetNearClippingPlaneTolerance", &vtkRenderer::SetNearClippingPlaneTolerance)
+    .function("GetNearClippingPlaneToleranceMinValue", &vtkRenderer::GetNearClippingPlaneToleranceMinValue)
+    .function("GetNearClippingPlaneToleranceMaxValue", &vtkRenderer::GetNearClippingPlaneToleranceMaxValue)
+    .function("GetNearClippingPlaneTolerance", &vtkRenderer::GetNearClippingPlaneTolerance)
+    .function("SetClippingRangeExpansion", &vtkRenderer::SetClippingRangeExpansion)
+    .function("GetClippingRangeExpansionMinValue", &vtkRenderer::GetClippingRangeExpansionMinValue)
+    .function("GetClippingRangeExpansionMaxValue", &vtkRenderer::GetClippingRangeExpansionMaxValue)
+    .function("GetClippingRangeExpansion", &vtkRenderer::GetClippingRangeExpansion)
+    .function("ResetCamera", emscripten::select_overload<void(vtkRenderer&)>([](vtkRenderer& self) -> void { return self.ResetCamera(); }))
+    .function("ResetCamera", emscripten::select_overload<void(vtkRenderer&, double, double, double, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2, double arg_3, double arg_4, double arg_5) -> void { return self.ResetCamera( arg_0, arg_1, arg_2, arg_3, arg_4, arg_5); }))
+    .function("ResetCameraScreenSpace", emscripten::select_overload<void(vtkRenderer&, double)>([](vtkRenderer& self, double arg_0) -> void { return self.ResetCameraScreenSpace( arg_0); }))
+    .function("ResetCameraScreenSpace", emscripten::select_overload<void(vtkRenderer&, double, double, double, double, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2, double arg_3, double arg_4, double arg_5, double arg_6) -> void { return self.ResetCameraScreenSpace( arg_0, arg_1, arg_2, arg_3, arg_4, arg_5, arg_6); }))
+    .function("DisplayToWorld", emscripten::select_overload<vtkVector3d(vtkRenderer&, const vtkVector3d&)>([](vtkRenderer& self, const vtkVector3d& arg_0) -> vtkVector3d { return self.DisplayToWorld( arg_0); }))
+    .function("DisplayToWorld", emscripten::select_overload<void(vtkRenderer&)>([](vtkRenderer& self) -> void { return self.DisplayToWorld(); }))
+    .function("ZoomToBoxUsingViewAngle", &vtkRenderer::ZoomToBoxUsingViewAngle)
+    .function("SetRenderWindow", &vtkRenderer::SetRenderWindow, emscripten::allow_raw_pointers())
+    .function("GetRenderWindow", &vtkRenderer::GetRenderWindow, emscripten::allow_raw_pointers())
+    .function("GetVTKWindow", &vtkRenderer::GetVTKWindow, emscripten::allow_raw_pointers())
+    .function("SetBackingStore", &vtkRenderer::SetBackingStore)
+    .function("GetBackingStore", &vtkRenderer::GetBackingStore)
+    .function("BackingStoreOn", &vtkRenderer::BackingStoreOn)
+    .function("BackingStoreOff", &vtkRenderer::BackingStoreOff)
+    .function("SetInteractive", &vtkRenderer::SetInteractive)
+    .function("GetInteractive", &vtkRenderer::GetInteractive)
+    .function("InteractiveOn", &vtkRenderer::InteractiveOn)
+    .function("InteractiveOff", &vtkRenderer::InteractiveOff)
+    .function("SetLayer", &vtkRenderer::SetLayer)
+    .function("GetLayer", &vtkRenderer::GetLayer)
+    .function("GetPreserveColorBuffer", &vtkRenderer::GetPreserveColorBuffer)
+    .function("SetPreserveColorBuffer", &vtkRenderer::SetPreserveColorBuffer)
+    .function("PreserveColorBufferOn", &vtkRenderer::PreserveColorBufferOn)
+    .function("PreserveColorBufferOff", &vtkRenderer::PreserveColorBufferOff)
+    .function("SetPreserveDepthBuffer", &vtkRenderer::SetPreserveDepthBuffer)
+    .function("GetPreserveDepthBuffer", &vtkRenderer::GetPreserveDepthBuffer)
+    .function("PreserveDepthBufferOn", &vtkRenderer::PreserveDepthBufferOn)
+    .function("PreserveDepthBufferOff", &vtkRenderer::PreserveDepthBufferOff)
+    .function("Transparent", &vtkRenderer::Transparent)
+    .function("WorldToView", emscripten::select_overload<void(vtkRenderer&)>([](vtkRenderer& self) -> void { return self.WorldToView(); }))
+    .function("ViewToWorld", emscripten::select_overload<void(vtkRenderer&)>([](vtkRenderer& self) -> void { return self.ViewToWorld(); }))
+    .function("GetZ", &vtkRenderer::GetZ)
+    .function("GetMTime", &vtkRenderer::GetMTime)
+    .function("GetLastRenderTimeInSeconds", &vtkRenderer::GetLastRenderTimeInSeconds)
+    .function("GetNumberOfPropsRendered", &vtkRenderer::GetNumberOfPropsRendered)
+    .function("PickProp", emscripten::select_overload<vtkAssemblyPath*(vtkRenderer&, double, double)>([](vtkRenderer& self, double arg_0, double arg_1) -> vtkAssemblyPath* { return self.PickProp( arg_0, arg_1); }), emscripten::allow_raw_pointers())
+    .function("PickProp", emscripten::select_overload<vtkAssemblyPath*(vtkRenderer&, double, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2, double arg_3) -> vtkAssemblyPath* { return self.PickProp( arg_0, arg_1, arg_2, arg_3); }), emscripten::allow_raw_pointers())
+    .function("PickProp", emscripten::select_overload<vtkAssemblyPath*(vtkRenderer&, double, double, int, vtkSmartPointer<vtkSelection>)>([](vtkRenderer& self, double arg_0, double arg_1, int arg_2, vtkSmartPointer<vtkSelection> arg_3) -> vtkAssemblyPath* { return self.PickProp( arg_0, arg_1, arg_2, arg_3); }), emscripten::allow_raw_pointers())
+    .function("PickProp", emscripten::select_overload<vtkAssemblyPath*(vtkRenderer&, double, double, double, double, int, vtkSmartPointer<vtkSelection>)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2, double arg_3, int arg_4, vtkSmartPointer<vtkSelection> arg_5) -> vtkAssemblyPath* { return self.PickProp( arg_0, arg_1, arg_2, arg_3, arg_4, arg_5); }), emscripten::allow_raw_pointers())
+    .function("StereoMidpoint", &vtkRenderer::StereoMidpoint)
+    .function("GetTiledAspectRatio", &vtkRenderer::GetTiledAspectRatio)
+    .function("IsActiveCameraCreated", &vtkRenderer::IsActiveCameraCreated)
+    .function("SetUseDepthPeeling", &vtkRenderer::SetUseDepthPeeling)
+    .function("GetUseDepthPeeling", &vtkRenderer::GetUseDepthPeeling)
+    .function("UseDepthPeelingOn", &vtkRenderer::UseDepthPeelingOn)
+    .function("UseDepthPeelingOff", &vtkRenderer::UseDepthPeelingOff)
+    .function("SetUseDepthPeelingForVolumes", &vtkRenderer::SetUseDepthPeelingForVolumes)
+    .function("GetUseDepthPeelingForVolumes", &vtkRenderer::GetUseDepthPeelingForVolumes)
+    .function("UseDepthPeelingForVolumesOn", &vtkRenderer::UseDepthPeelingForVolumesOn)
+    .function("UseDepthPeelingForVolumesOff", &vtkRenderer::UseDepthPeelingForVolumesOff)
+    .function("SetOcclusionRatio", &vtkRenderer::SetOcclusionRatio)
+    .function("GetOcclusionRatioMinValue", &vtkRenderer::GetOcclusionRatioMinValue)
+    .function("GetOcclusionRatioMaxValue", &vtkRenderer::GetOcclusionRatioMaxValue)
+    .function("GetOcclusionRatio", &vtkRenderer::GetOcclusionRatio)
+    .function("SetMaximumNumberOfPeels", &vtkRenderer::SetMaximumNumberOfPeels)
+    .function("GetMaximumNumberOfPeels", &vtkRenderer::GetMaximumNumberOfPeels)
+    .function("GetLastRenderingUsedDepthPeeling", &vtkRenderer::GetLastRenderingUsedDepthPeeling)
+    .function("SetUseSSAO", &vtkRenderer::SetUseSSAO)
+    .function("GetUseSSAO", &vtkRenderer::GetUseSSAO)
+    .function("UseSSAOOn", &vtkRenderer::UseSSAOOn)
+    .function("UseSSAOOff", &vtkRenderer::UseSSAOOff)
+    .function("SetSSAORadius", &vtkRenderer::SetSSAORadius)
+    .function("GetSSAORadius", &vtkRenderer::GetSSAORadius)
+    .function("SetSSAOBias", &vtkRenderer::SetSSAOBias)
+    .function("GetSSAOBias", &vtkRenderer::GetSSAOBias)
+    .function("SetSSAOKernelSize", &vtkRenderer::SetSSAOKernelSize)
+    .function("GetSSAOKernelSize", &vtkRenderer::GetSSAOKernelSize)
+    .function("SetSSAOBlur", &vtkRenderer::SetSSAOBlur)
+    .function("GetSSAOBlur", &vtkRenderer::GetSSAOBlur)
+    .function("SSAOBlurOn", &vtkRenderer::SSAOBlurOn)
+    .function("SSAOBlurOff", &vtkRenderer::SSAOBlurOff)
+    .function("SetDelegate", &vtkRenderer::SetDelegate, emscripten::allow_raw_pointers())
+    .function("GetDelegate", &vtkRenderer::GetDelegate, emscripten::allow_raw_pointers())
+    .function("GetSelector", &vtkRenderer::GetSelector, emscripten::allow_raw_pointers())
+    .function("SetLeftBackgroundTexture", &vtkRenderer::SetLeftBackgroundTexture, emscripten::allow_raw_pointers())
+    .function("GetLeftBackgroundTexture", &vtkRenderer::GetLeftBackgroundTexture, emscripten::allow_raw_pointers())
+    .function("SetBackgroundTexture", &vtkRenderer::SetBackgroundTexture, emscripten::allow_raw_pointers())
+    .function("GetBackgroundTexture", &vtkRenderer::GetBackgroundTexture, emscripten::allow_raw_pointers())
+    .function("SetRightBackgroundTexture", &vtkRenderer::SetRightBackgroundTexture, emscripten::allow_raw_pointers())
+    .function("GetRightBackgroundTexture", &vtkRenderer::GetRightBackgroundTexture, emscripten::allow_raw_pointers())
+    .function("SetTexturedBackground", &vtkRenderer::SetTexturedBackground)
+    .function("GetTexturedBackground", &vtkRenderer::GetTexturedBackground)
+    .function("TexturedBackgroundOn", &vtkRenderer::TexturedBackgroundOn)
+    .function("TexturedBackgroundOff", &vtkRenderer::TexturedBackgroundOff)
+    .function("ReleaseGraphicsResources", &vtkRenderer::ReleaseGraphicsResources, emscripten::allow_raw_pointers())
+    .function("SetUseFXAA", &vtkRenderer::SetUseFXAA)
+    .function("GetUseFXAA", &vtkRenderer::GetUseFXAA)
+    .function("UseFXAAOn", &vtkRenderer::UseFXAAOn)
+    .function("UseFXAAOff", &vtkRenderer::UseFXAAOff)
+    .function("GetFXAAOptions", &vtkRenderer::GetFXAAOptions, emscripten::allow_raw_pointers())
+    .function("SetFXAAOptions", &vtkRenderer::SetFXAAOptions, emscripten::allow_raw_pointers())
+    .function("SetUseShadows", &vtkRenderer::SetUseShadows)
+    .function("GetUseShadows", &vtkRenderer::GetUseShadows)
+    .function("UseShadowsOn", &vtkRenderer::UseShadowsOn)
+    .function("UseShadowsOff", &vtkRenderer::UseShadowsOff)
+    .function("SetUseHiddenLineRemoval", &vtkRenderer::SetUseHiddenLineRemoval)
+    .function("GetUseHiddenLineRemoval", &vtkRenderer::GetUseHiddenLineRemoval)
+    .function("UseHiddenLineRemovalOn", &vtkRenderer::UseHiddenLineRemovalOn)
+    .function("UseHiddenLineRemovalOff", &vtkRenderer::UseHiddenLineRemovalOff)
+    .function("SetPass", &vtkRenderer::SetPass, emscripten::allow_raw_pointers())
+    .function("GetPass", &vtkRenderer::GetPass, emscripten::allow_raw_pointers())
+    .function("GetInformation", &vtkRenderer::GetInformation, emscripten::allow_raw_pointers())
+    .function("SetInformation", &vtkRenderer::SetInformation, emscripten::allow_raw_pointers())
+    .function("SetUseImageBasedLighting", &vtkRenderer::SetUseImageBasedLighting)
+    .function("GetUseImageBasedLighting", &vtkRenderer::GetUseImageBasedLighting)
+    .function("UseImageBasedLightingOn", &vtkRenderer::UseImageBasedLightingOn)
+    .function("UseImageBasedLightingOff", &vtkRenderer::UseImageBasedLightingOff)
+    .function("GetEnvironmentTexture", &vtkRenderer::GetEnvironmentTexture, emscripten::allow_raw_pointers())
+    .function("SetEnvironmentTextureProperty", &vtkRenderer::SetEnvironmentTextureProperty, emscripten::allow_raw_pointers())
+    .function("SetEnvironmentTexture", &vtkRenderer::SetEnvironmentTexture, emscripten::allow_raw_pointers())
+    .function("SetEnvironmentUp", emscripten::select_overload<void(vtkRenderer&, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2) -> void { return self.SetEnvironmentUp( arg_0, arg_1, arg_2); }))
+    .function("SetEnvironmentRight", emscripten::select_overload<void(vtkRenderer&, double, double, double)>([](vtkRenderer& self, double arg_0, double arg_1, double arg_2) -> void { return self.SetEnvironmentRight( arg_0, arg_1, arg_2); }));
+}

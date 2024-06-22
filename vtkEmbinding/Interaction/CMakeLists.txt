@@ -1,2 +1,1 @@
-# Not working yet
-# add_subdirectory(Widgets)
+add_subdirectory(Widgets)
