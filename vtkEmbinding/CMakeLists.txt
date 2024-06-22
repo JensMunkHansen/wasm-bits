@@ -33,7 +33,7 @@ add_subdirectory(Filters)
 # add_subdirectory(Interaction)
     
 if (BUILD_TESTING)
-  # Testing
+  # Testing - consider joining all tests
   add_subdirectory(Common/Core/Testing)
   add_subdirectory(Common/Transforms/Testing)
   add_subdirectory(Filters/Core/Testing)

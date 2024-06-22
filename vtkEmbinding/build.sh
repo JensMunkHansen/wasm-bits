@@ -7,5 +7,5 @@
     else
 	emcmake cmake -S. -Bbuild -DVTK_DIR=/home/jmh/github/VTKCMake/install/lib/cmake/vtk -DVTK_ENABLE_LOGGING=ON -DBUILD_TESTING=ON
     fi
-    cmake --build build 
+    cmake --build build -j 16
 )

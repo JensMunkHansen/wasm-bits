@@ -6,5 +6,5 @@ target_sources(${TARGET_LIBRARY_NAME}
   vtkAlgorithmOutputEmbinding.cxx
 )
 
-target_link_libraries(${TARGET_LIBRARY_NAME} PRIVATE VTK::CommonExecutionModel)
+target_link_libraries(${TARGET_LIBRARY_NAME} PRIVATE VTK::CommonCore VTK::CommonDataModel VTK::CommonExecutionModel)
 
