@@ -6,3 +6,5 @@ add_subdirectory(ExecutionModel)
 add_subdirectory(Math)
 # Pipelined transform
 add_subdirectory(Transforms)
+
+add_subdirectory(DataModel)
