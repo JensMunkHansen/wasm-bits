@@ -20,6 +20,7 @@ target_link_options(TransformTest PRIVATE
   "-sEXPORT_ES6=1"  
   "-sEXPORT_NAME=loadvtkTransformWasmModule"
   "${emscripten_optimization_flags}")
+target_link_libraries(TransformTest PUBLIC VTK::CommonCore VTK::CommonTransforms)
 
 target_compile_options(TransformTest PRIVATE ${emscripten_optimization_flags})
 

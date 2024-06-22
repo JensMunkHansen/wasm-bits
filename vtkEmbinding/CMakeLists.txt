@@ -36,5 +36,5 @@ endif()
 if (BUILD_TESTING)
   # Testing
   add_subdirectory(Common/Core/Testing)
-#  add_subdirectory(Common/Transforms/Testing)
+  add_subdirectory(Common/Transforms/Testing)
 endif()
