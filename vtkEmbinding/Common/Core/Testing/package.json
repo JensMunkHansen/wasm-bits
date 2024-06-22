@@ -8,7 +8,7 @@
   "version": "1.0.0",
   "main": "run.js",
   "scripts": {
-    "test": "node runSmartPointerTest.js"
+    "test": "node run_SmartPointerTest.js"
   },
   "author": "",
   "license": "ISC",
