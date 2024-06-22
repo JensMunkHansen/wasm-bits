@@ -17,11 +17,12 @@ target_link_libraries(SmartPointerTest PUBLIC vtkEmbinding)
 target_link_options(SmartPointerTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
-  "-sEXPORT_ES6=1"  
+  "-sEXPORT_ES6=1"
   "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
   "${emscripten_optimization_flags}")
 
 target_compile_options(SmartPointerTest PRIVATE ${emscripten_optimization_flags})
+target_link_libraries(SmartPointerTest PUBLIC pthread)
 
 
 add_executable(CallbackTest CallbackTest.cpp)

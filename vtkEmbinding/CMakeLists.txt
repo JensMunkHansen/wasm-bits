@@ -10,7 +10,7 @@ COMPONENTS
   CommonCore
 )
 
-set(ENABLE_THREADING ON)
+set(ENABLE_THREADING OFF)
 
 set(TARGET_LIBRARY_NAME vtkEmbinding)
 add_library(${TARGET_LIBRARY_NAME} vtkEmbindSmartPointerTraits.h)
