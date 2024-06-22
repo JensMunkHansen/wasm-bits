@@ -43,7 +43,7 @@ add_custom_command(
   TARGET main
   COMMAND
     ${CMAKE_COMMAND} -E copy_if_different
-      "${CMAKE_CURRENT_SOURCE_DIR}/run.js"
+      "${CMAKE_CURRENT_SOURCE_DIR}/run_PlaneCutSphere.js"
       $<TARGET_FILE_DIR:main>
 )
 
@@ -55,7 +55,7 @@ add_custom_command(
   WORKING_DIRECTORY
     ${CMAKE_CURRENT_BINARY_DIR})
     
-add_test(NAME CutASphere
+add_test(NAME PlaneCutter_CutSphere_OutputAvailable
   COMMAND
     npm run test
   WORKING_DIRECTORY

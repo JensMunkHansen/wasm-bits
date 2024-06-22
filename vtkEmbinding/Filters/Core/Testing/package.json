@@ -6,9 +6,9 @@
   },
   "name": "build",
   "version": "1.0.0",
-  "main": "run.js",
+  "main": "run_PlaneCutSphere.js",
    "scripts": {
-    "test": "node run.js"
+       "test": "node run_PlaneCutSphere.js"
   },
   "author": "",
   "license": "ISC",
