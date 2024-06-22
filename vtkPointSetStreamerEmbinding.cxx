@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointSetStreamer>(vtkPoi
 EMSCRIPTEN_BINDINGS(vtkPointSetStreamer_class) {
   emscripten::class_<vtkPointSetStreamer, emscripten::base<vtkPolyDataAlgorithm>>("vtkPointSetStreamer")
     .smart_ptr<vtkSmartPointer<vtkPointSetStreamer>>("vtkSmartPointer<vtkPointSetStreamer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointSetStreamer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointSetStreamer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointSetStreamer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointSetStreamer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointSetStreamer::SafeDownCast, emscripten::allow_raw_pointers())

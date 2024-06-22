@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkArrayRenderer_class) {
   using ElementShape=vtkArrayRenderer::ElementShape;
   emscripten::class_<vtkArrayRenderer, emscripten::base<vtkMapper>>("vtkArrayRenderer")
     .smart_ptr<vtkSmartPointer<vtkArrayRenderer>>("vtkSmartPointer<vtkArrayRenderer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkArrayRenderer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkArrayRenderer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArrayRenderer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArrayRenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArrayRenderer::SafeDownCast, emscripten::allow_raw_pointers())

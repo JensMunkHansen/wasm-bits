@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkCompassRepresentation_class) {
   using InteractionStateType=vtkCompassRepresentation::InteractionStateType;
   emscripten::class_<vtkCompassRepresentation, emscripten::base<vtkContinuousValueWidgetRepresentation>>("vtkCompassRepresentation")
     .smart_ptr<vtkSmartPointer<vtkCompassRepresentation>>("vtkSmartPointer<vtkCompassRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompassRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompassRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompassRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompassRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompassRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

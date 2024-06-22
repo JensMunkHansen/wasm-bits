@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkStreamingStatistics_class) {
   using OutputIndices=vtkStreamingStatistics::OutputIndices;
   emscripten::class_<vtkStreamingStatistics, emscripten::base<vtkTableAlgorithm>>("vtkStreamingStatistics")
     .smart_ptr<vtkSmartPointer<vtkStreamingStatistics>>("vtkSmartPointer<vtkStreamingStatistics>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStreamingStatistics>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreamingStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreamingStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreamingStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreamingStatistics::SafeDownCast, emscripten::allow_raw_pointers())

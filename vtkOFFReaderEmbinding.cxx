@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOFFReader>(vtkOFFReader 
 EMSCRIPTEN_BINDINGS(vtkOFFReader_class) {
   emscripten::class_<vtkOFFReader, emscripten::base<vtkAbstractPolyDataReader>>("vtkOFFReader")
     .smart_ptr<vtkSmartPointer<vtkOFFReader>>("vtkSmartPointer<vtkOFFReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOFFReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOFFReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOFFReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOFFReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOFFReader::SafeDownCast, emscripten::allow_raw_pointers())

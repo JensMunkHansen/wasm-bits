@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSliceCubes>(vtkSliceCube
 EMSCRIPTEN_BINDINGS(vtkSliceCubes_class) {
   emscripten::class_<vtkSliceCubes, emscripten::base<vtkObject>>("vtkSliceCubes")
     .smart_ptr<vtkSmartPointer<vtkSliceCubes>>("vtkSmartPointer<vtkSliceCubes>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSliceCubes>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSliceCubes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSliceCubes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSliceCubes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSliceCubes::SafeDownCast, emscripten::allow_raw_pointers())

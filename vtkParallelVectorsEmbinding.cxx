@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParallelVectors>(vtkPara
 EMSCRIPTEN_BINDINGS(vtkParallelVectors_class) {
   emscripten::class_<vtkParallelVectors, emscripten::base<vtkPolyDataAlgorithm>>("vtkParallelVectors")
     .smart_ptr<vtkSmartPointer<vtkParallelVectors>>("vtkSmartPointer<vtkParallelVectors>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelVectors>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelVectors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelVectors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelVectors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelVectors::SafeDownCast, emscripten::allow_raw_pointers())

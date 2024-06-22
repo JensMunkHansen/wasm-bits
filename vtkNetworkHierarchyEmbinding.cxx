@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkNetworkHierarchy>(vtkNet
 EMSCRIPTEN_BINDINGS(vtkNetworkHierarchy_class) {
   emscripten::class_<vtkNetworkHierarchy, emscripten::base<vtkTreeAlgorithm>>("vtkNetworkHierarchy")
     .smart_ptr<vtkSmartPointer<vtkNetworkHierarchy>>("vtkSmartPointer<vtkNetworkHierarchy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNetworkHierarchy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNetworkHierarchy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNetworkHierarchy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNetworkHierarchy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNetworkHierarchy::SafeDownCast, emscripten::allow_raw_pointers())

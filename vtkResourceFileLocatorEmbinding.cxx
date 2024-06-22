@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkResourceFileLocator>(vtk
 EMSCRIPTEN_BINDINGS(vtkResourceFileLocator_class) {
   emscripten::class_<vtkResourceFileLocator, emscripten::base<vtkObject>>("vtkResourceFileLocator")
     .smart_ptr<vtkSmartPointer<vtkResourceFileLocator>>("vtkSmartPointer<vtkResourceFileLocator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkResourceFileLocator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkResourceFileLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkResourceFileLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkResourceFileLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkResourceFileLocator::SafeDownCast, emscripten::allow_raw_pointers())

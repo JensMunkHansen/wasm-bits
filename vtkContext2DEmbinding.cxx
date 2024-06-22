@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkContext2D>(vtkContext2D 
 EMSCRIPTEN_BINDINGS(vtkContext2D_class) {
   emscripten::class_<vtkContext2D, emscripten::base<vtkObject>>("vtkContext2D")
     .smart_ptr<vtkSmartPointer<vtkContext2D>>("vtkSmartPointer<vtkContext2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContext2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContext2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContext2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContext2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContext2D::SafeDownCast, emscripten::allow_raw_pointers())

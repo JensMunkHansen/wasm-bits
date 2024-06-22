@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkHardwarePicker>(vtkHardw
 EMSCRIPTEN_BINDINGS(vtkHardwarePicker_class) {
   emscripten::class_<vtkHardwarePicker, emscripten::base<vtkAbstractPropPicker>>("vtkHardwarePicker")
     .smart_ptr<vtkSmartPointer<vtkHardwarePicker>>("vtkSmartPointer<vtkHardwarePicker>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHardwarePicker>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHardwarePicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHardwarePicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHardwarePicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHardwarePicker::SafeDownCast, emscripten::allow_raw_pointers())

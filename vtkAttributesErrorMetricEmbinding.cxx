@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAttributesErrorMetric>(v
 EMSCRIPTEN_BINDINGS(vtkAttributesErrorMetric_class) {
   emscripten::class_<vtkAttributesErrorMetric, emscripten::base<vtkGenericSubdivisionErrorMetric>>("vtkAttributesErrorMetric")
     .smart_ptr<vtkSmartPointer<vtkAttributesErrorMetric>>("vtkSmartPointer<vtkAttributesErrorMetric>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAttributesErrorMetric>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAttributesErrorMetric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAttributesErrorMetric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAttributesErrorMetric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAttributesErrorMetric::SafeDownCast, emscripten::allow_raw_pointers())

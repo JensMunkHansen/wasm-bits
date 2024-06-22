@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointSetAlgorithm>(vtkPo
 EMSCRIPTEN_BINDINGS(vtkPointSetAlgorithm_class) {
   emscripten::class_<vtkPointSetAlgorithm, emscripten::base<vtkAlgorithm>>("vtkPointSetAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkPointSetAlgorithm>>("vtkSmartPointer<vtkPointSetAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointSetAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointSetAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointSetAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointSetAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointSetAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

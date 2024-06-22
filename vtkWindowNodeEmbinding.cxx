@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkWindowNode>(vtkWindowNod
 EMSCRIPTEN_BINDINGS(vtkWindowNode_class) {
   emscripten::class_<vtkWindowNode, emscripten::base<vtkViewNode>>("vtkWindowNode")
     .smart_ptr<vtkSmartPointer<vtkWindowNode>>("vtkSmartPointer<vtkWindowNode>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWindowNode>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWindowNode>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWindowNode::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWindowNode& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWindowNode::SafeDownCast, emscripten::allow_raw_pointers())

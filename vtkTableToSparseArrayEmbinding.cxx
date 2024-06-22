@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTableToSparseArray>(vtkT
 EMSCRIPTEN_BINDINGS(vtkTableToSparseArray_class) {
   emscripten::class_<vtkTableToSparseArray, emscripten::base<vtkArrayDataAlgorithm>>("vtkTableToSparseArray")
     .smart_ptr<vtkSmartPointer<vtkTableToSparseArray>>("vtkSmartPointer<vtkTableToSparseArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTableToSparseArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTableToSparseArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTableToSparseArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTableToSparseArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTableToSparseArray::SafeDownCast, emscripten::allow_raw_pointers())

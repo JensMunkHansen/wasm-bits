@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkLabeledTreeMapDataMapper
 EMSCRIPTEN_BINDINGS(vtkLabeledTreeMapDataMapper_class) {
   emscripten::class_<vtkLabeledTreeMapDataMapper, emscripten::base<vtkLabeledDataMapper>>("vtkLabeledTreeMapDataMapper")
     .smart_ptr<vtkSmartPointer<vtkLabeledTreeMapDataMapper>>("vtkSmartPointer<vtkLabeledTreeMapDataMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLabeledTreeMapDataMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabeledTreeMapDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabeledTreeMapDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabeledTreeMapDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabeledTreeMapDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

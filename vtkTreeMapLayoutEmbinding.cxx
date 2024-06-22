@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeMapLayout>(vtkTreeMa
 EMSCRIPTEN_BINDINGS(vtkTreeMapLayout_class) {
   emscripten::class_<vtkTreeMapLayout, emscripten::base<vtkTreeAlgorithm>>("vtkTreeMapLayout")
     .smart_ptr<vtkSmartPointer<vtkTreeMapLayout>>("vtkSmartPointer<vtkTreeMapLayout>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeMapLayout>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeMapLayout>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeMapLayout::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeMapLayout& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeMapLayout::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageContinuousErode3D>(
 EMSCRIPTEN_BINDINGS(vtkImageContinuousErode3D_class) {
   emscripten::class_<vtkImageContinuousErode3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageContinuousErode3D")
     .smart_ptr<vtkSmartPointer<vtkImageContinuousErode3D>>("vtkSmartPointer<vtkImageContinuousErode3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageContinuousErode3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageContinuousErode3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageContinuousErode3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageContinuousErode3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageContinuousErode3D::SafeDownCast, emscripten::allow_raw_pointers())

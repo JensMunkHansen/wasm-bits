@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkViewUpdater>(vtkViewUpda
 EMSCRIPTEN_BINDINGS(vtkViewUpdater_class) {
   emscripten::class_<vtkViewUpdater, emscripten::base<vtkObject>>("vtkViewUpdater")
     .smart_ptr<vtkSmartPointer<vtkViewUpdater>>("vtkSmartPointer<vtkViewUpdater>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkViewUpdater>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkViewUpdater>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkViewUpdater::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkViewUpdater& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkViewUpdater::SafeDownCast, emscripten::allow_raw_pointers())

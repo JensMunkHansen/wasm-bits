@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkGAMBITReader>(vtkGAMBITR
 EMSCRIPTEN_BINDINGS(vtkGAMBITReader_class) {
   emscripten::class_<vtkGAMBITReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkGAMBITReader")
     .smart_ptr<vtkSmartPointer<vtkGAMBITReader>>("vtkSmartPointer<vtkGAMBITReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGAMBITReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGAMBITReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGAMBITReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGAMBITReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGAMBITReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimplePointsWriter>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSimplePointsWriter_class) {
   emscripten::class_<vtkSimplePointsWriter, emscripten::base<vtkDataSetWriter>>("vtkSimplePointsWriter")
     .smart_ptr<vtkSmartPointer<vtkSimplePointsWriter>>("vtkSmartPointer<vtkSimplePointsWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSimplePointsWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimplePointsWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimplePointsWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimplePointsWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimplePointsWriter::SafeDownCast, emscripten::allow_raw_pointers())

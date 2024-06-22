@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphericalDirectionEncode
 EMSCRIPTEN_BINDINGS(vtkSphericalDirectionEncoder_class) {
   emscripten::class_<vtkSphericalDirectionEncoder, emscripten::base<vtkDirectionEncoder>>("vtkSphericalDirectionEncoder")
     .smart_ptr<vtkSmartPointer<vtkSphericalDirectionEncoder>>("vtkSmartPointer<vtkSphericalDirectionEncoder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSphericalDirectionEncoder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphericalDirectionEncoder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphericalDirectionEncoder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphericalDirectionEncoder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphericalDirectionEncoder::SafeDownCast, emscripten::allow_raw_pointers())

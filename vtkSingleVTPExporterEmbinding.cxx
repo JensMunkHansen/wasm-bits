@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSingleVTPExporter>(vtkSi
 EMSCRIPTEN_BINDINGS(vtkSingleVTPExporter_class) {
   emscripten::class_<vtkSingleVTPExporter, emscripten::base<vtkExporter>>("vtkSingleVTPExporter")
     .smart_ptr<vtkSmartPointer<vtkSingleVTPExporter>>("vtkSmartPointer<vtkSingleVTPExporter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSingleVTPExporter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSingleVTPExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSingleVTPExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSingleVTPExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSingleVTPExporter::SafeDownCast, emscripten::allow_raw_pointers())

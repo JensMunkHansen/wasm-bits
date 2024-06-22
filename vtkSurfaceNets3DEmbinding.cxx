@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkSurfaceNets3D_class) {
   using TriangulationType=vtkSurfaceNets3D::TriangulationType;
   emscripten::class_<vtkSurfaceNets3D, emscripten::base<vtkPolyDataAlgorithm>>("vtkSurfaceNets3D")
     .smart_ptr<vtkSmartPointer<vtkSurfaceNets3D>>("vtkSmartPointer<vtkSurfaceNets3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSurfaceNets3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSurfaceNets3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSurfaceNets3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSurfaceNets3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSurfaceNets3D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericAttributeCollecti
 EMSCRIPTEN_BINDINGS(vtkGenericAttributeCollection_class) {
   emscripten::class_<vtkGenericAttributeCollection, emscripten::base<vtkObject>>("vtkGenericAttributeCollection")
     .smart_ptr<vtkSmartPointer<vtkGenericAttributeCollection>>("vtkSmartPointer<vtkGenericAttributeCollection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericAttributeCollection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericAttributeCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericAttributeCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericAttributeCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericAttributeCollection::SafeDownCast, emscripten::allow_raw_pointers())

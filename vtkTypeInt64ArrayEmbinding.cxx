@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTypeInt64Array>(vtkTypeI
 EMSCRIPTEN_BINDINGS(vtkTypeInt64Array_class) {
   emscripten::class_<vtkTypeInt64Array, emscripten::base<vtkLongLongArray>>("vtkTypeInt64Array")
     .smart_ptr<vtkSmartPointer<vtkTypeInt64Array>>("vtkSmartPointer<vtkTypeInt64Array>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTypeInt64Array>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTypeInt64Array>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTypeInt64Array::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTypeInt64Array& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTypeInt64Array::SafeDownCast, emscripten::allow_raw_pointers())

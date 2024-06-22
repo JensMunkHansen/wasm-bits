@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkJSONDataSetWriter>(vtkJS
 EMSCRIPTEN_BINDINGS(vtkJSONDataSetWriter_class) {
   emscripten::class_<vtkJSONDataSetWriter, emscripten::base<vtkWriter>>("vtkJSONDataSetWriter")
     .smart_ptr<vtkSmartPointer<vtkJSONDataSetWriter>>("vtkSmartPointer<vtkJSONDataSetWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkJSONDataSetWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkJSONDataSetWriter>)
     .function("GetValidString", emscripten::optional_override([](vtkJSONDataSetWriter& self, const std::string & arg_0) -> std::string {  return self.GetValidString( arg_0.c_str());}))
     .function("WriteArrayContents", emscripten::optional_override([](vtkJSONDataSetWriter& self, vtkDataArray* arg_0, const std::string & arg_1) -> bool {  return self.WriteArrayContents( arg_0, arg_1.c_str());}), emscripten::allow_raw_pointers())
     .class_function("WriteArrayAsRAW", emscripten::optional_override([]( vtkDataArray* arg_0, const std::string & arg_1) -> bool {  return vtkJSONDataSetWriter::WriteArrayAsRAW( arg_0, arg_1.c_str());}), emscripten::allow_raw_pointers())

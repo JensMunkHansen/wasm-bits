@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTrivialConsumer>(vtkTriv
 EMSCRIPTEN_BINDINGS(vtkTrivialConsumer_class) {
   emscripten::class_<vtkTrivialConsumer, emscripten::base<vtkAlgorithm>>("vtkTrivialConsumer")
     .smart_ptr<vtkSmartPointer<vtkTrivialConsumer>>("vtkSmartPointer<vtkTrivialConsumer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTrivialConsumer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTrivialConsumer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTrivialConsumer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTrivialConsumer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTrivialConsumer::SafeDownCast, emscripten::allow_raw_pointers())

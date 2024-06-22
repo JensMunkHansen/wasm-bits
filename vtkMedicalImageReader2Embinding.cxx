@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMedicalImageReader2>(vtk
 EMSCRIPTEN_BINDINGS(vtkMedicalImageReader2_class) {
   emscripten::class_<vtkMedicalImageReader2, emscripten::base<vtkImageReader2>>("vtkMedicalImageReader2")
     .smart_ptr<vtkSmartPointer<vtkMedicalImageReader2>>("vtkSmartPointer<vtkMedicalImageReader2>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMedicalImageReader2>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMedicalImageReader2>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMedicalImageReader2::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMedicalImageReader2& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMedicalImageReader2::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadraturePointsGenerato
 EMSCRIPTEN_BINDINGS(vtkQuadraturePointsGenerator_class) {
   emscripten::class_<vtkQuadraturePointsGenerator, emscripten::base<vtkDataSetAlgorithm>>("vtkQuadraturePointsGenerator")
     .smart_ptr<vtkSmartPointer<vtkQuadraturePointsGenerator>>("vtkSmartPointer<vtkQuadraturePointsGenerator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadraturePointsGenerator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadraturePointsGenerator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadraturePointsGenerator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadraturePointsGenerator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadraturePointsGenerator::SafeDownCast, emscripten::allow_raw_pointers())

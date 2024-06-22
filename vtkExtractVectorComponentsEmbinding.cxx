@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractVectorComponents>
 EMSCRIPTEN_BINDINGS(vtkExtractVectorComponents_class) {
   emscripten::class_<vtkExtractVectorComponents, emscripten::base<vtkDataSetAlgorithm>>("vtkExtractVectorComponents")
     .smart_ptr<vtkSmartPointer<vtkExtractVectorComponents>>("vtkSmartPointer<vtkExtractVectorComponents>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractVectorComponents>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractVectorComponents>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractVectorComponents::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractVectorComponents& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractVectorComponents::SafeDownCast, emscripten::allow_raw_pointers())

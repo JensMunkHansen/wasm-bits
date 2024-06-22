@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpaquePass>(vtkOpaquePas
 EMSCRIPTEN_BINDINGS(vtkOpaquePass_class) {
   emscripten::class_<vtkOpaquePass, emscripten::base<vtkDefaultPass>>("vtkOpaquePass")
     .smart_ptr<vtkSmartPointer<vtkOpaquePass>>("vtkSmartPointer<vtkOpaquePass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpaquePass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpaquePass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpaquePass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpaquePass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpaquePass::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGridOutlineFil
 EMSCRIPTEN_BINDINGS(vtkStructuredGridOutlineFilter_class) {
   emscripten::class_<vtkStructuredGridOutlineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkStructuredGridOutlineFilter")
     .smart_ptr<vtkSmartPointer<vtkStructuredGridOutlineFilter>>("vtkSmartPointer<vtkStructuredGridOutlineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGridOutlineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGridOutlineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGridOutlineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGridOutlineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredGridOutlineFilter::SafeDownCast, emscripten::allow_raw_pointers())

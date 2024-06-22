@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkGaussianCubeReader2>(vtk
 EMSCRIPTEN_BINDINGS(vtkGaussianCubeReader2_class) {
   emscripten::class_<vtkGaussianCubeReader2, emscripten::base<vtkMoleculeAlgorithm>>("vtkGaussianCubeReader2")
     .smart_ptr<vtkSmartPointer<vtkGaussianCubeReader2>>("vtkSmartPointer<vtkGaussianCubeReader2>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGaussianCubeReader2>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGaussianCubeReader2>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGaussianCubeReader2::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGaussianCubeReader2& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGaussianCubeReader2::SafeDownCast, emscripten::allow_raw_pointers())

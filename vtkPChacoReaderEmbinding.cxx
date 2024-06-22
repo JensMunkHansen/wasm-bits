@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPChacoReader>(vtkPChacoR
 EMSCRIPTEN_BINDINGS(vtkPChacoReader_class) {
   emscripten::class_<vtkPChacoReader, emscripten::base<vtkChacoReader>>("vtkPChacoReader")
     .smart_ptr<vtkSmartPointer<vtkPChacoReader>>("vtkSmartPointer<vtkPChacoReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPChacoReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPChacoReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPChacoReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPChacoReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPChacoReader::SafeDownCast, emscripten::allow_raw_pointers())

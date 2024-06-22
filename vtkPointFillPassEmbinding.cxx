@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointFillPass>(vtkPointF
 EMSCRIPTEN_BINDINGS(vtkPointFillPass_class) {
   emscripten::class_<vtkPointFillPass, emscripten::base<vtkDepthImageProcessingPass>>("vtkPointFillPass")
     .smart_ptr<vtkSmartPointer<vtkPointFillPass>>("vtkSmartPointer<vtkPointFillPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointFillPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointFillPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointFillPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointFillPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointFillPass::SafeDownCast, emscripten::allow_raw_pointers())

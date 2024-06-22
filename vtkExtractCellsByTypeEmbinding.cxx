@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractCellsByType>(vtkE
 EMSCRIPTEN_BINDINGS(vtkExtractCellsByType_class) {
   emscripten::class_<vtkExtractCellsByType, emscripten::base<vtkDataSetAlgorithm>>("vtkExtractCellsByType")
     .smart_ptr<vtkSmartPointer<vtkExtractCellsByType>>("vtkSmartPointer<vtkExtractCellsByType>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractCellsByType>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractCellsByType>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractCellsByType::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractCellsByType& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractCellsByType::SafeDownCast, emscripten::allow_raw_pointers())

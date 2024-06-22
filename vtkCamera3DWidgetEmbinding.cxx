@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCamera3DWidget>(vtkCamer
 EMSCRIPTEN_BINDINGS(vtkCamera3DWidget_class) {
   emscripten::class_<vtkCamera3DWidget, emscripten::base<vtkAbstractWidget>>("vtkCamera3DWidget")
     .smart_ptr<vtkSmartPointer<vtkCamera3DWidget>>("vtkSmartPointer<vtkCamera3DWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCamera3DWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCamera3DWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCamera3DWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCamera3DWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCamera3DWidget::SafeDownCast, emscripten::allow_raw_pointers())

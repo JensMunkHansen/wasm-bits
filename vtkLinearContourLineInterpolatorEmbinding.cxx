@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinearContourLineInterpo
 EMSCRIPTEN_BINDINGS(vtkLinearContourLineInterpolator_class) {
   emscripten::class_<vtkLinearContourLineInterpolator, emscripten::base<vtkContourLineInterpolator>>("vtkLinearContourLineInterpolator")
     .smart_ptr<vtkSmartPointer<vtkLinearContourLineInterpolator>>("vtkSmartPointer<vtkLinearContourLineInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLinearContourLineInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinearContourLineInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinearContourLineInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinearContourLineInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinearContourLineInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

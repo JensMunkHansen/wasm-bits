@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCosmicTreeLayoutStrategy
 EMSCRIPTEN_BINDINGS(vtkCosmicTreeLayoutStrategy_class) {
   emscripten::class_<vtkCosmicTreeLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkCosmicTreeLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkCosmicTreeLayoutStrategy>>("vtkSmartPointer<vtkCosmicTreeLayoutStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCosmicTreeLayoutStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCosmicTreeLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCosmicTreeLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCosmicTreeLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCosmicTreeLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

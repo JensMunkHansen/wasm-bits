@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkInformationIterator>(vtk
 EMSCRIPTEN_BINDINGS(vtkInformationIterator_class) {
   emscripten::class_<vtkInformationIterator, emscripten::base<vtkObject>>("vtkInformationIterator")
     .smart_ptr<vtkSmartPointer<vtkInformationIterator>>("vtkSmartPointer<vtkInformationIterator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInformationIterator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInformationIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInformationIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInformationIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInformationIterator::SafeDownCast, emscripten::allow_raw_pointers())

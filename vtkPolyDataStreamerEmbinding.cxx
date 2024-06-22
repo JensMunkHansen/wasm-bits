@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataStreamer>(vtkPol
 EMSCRIPTEN_BINDINGS(vtkPolyDataStreamer_class) {
   emscripten::class_<vtkPolyDataStreamer, emscripten::base<vtkStreamerBase>>("vtkPolyDataStreamer")
     .smart_ptr<vtkSmartPointer<vtkPolyDataStreamer>>("vtkSmartPointer<vtkPolyDataStreamer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataStreamer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataStreamer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataStreamer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataStreamer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataStreamer::SafeDownCast, emscripten::allow_raw_pointers())

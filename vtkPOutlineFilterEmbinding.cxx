@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPOutlineFilter>(vtkPOutl
 EMSCRIPTEN_BINDINGS(vtkPOutlineFilter_class) {
   emscripten::class_<vtkPOutlineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkPOutlineFilter")
     .smart_ptr<vtkSmartPointer<vtkPOutlineFilter>>("vtkSmartPointer<vtkPOutlineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPOutlineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPOutlineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPOutlineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPOutlineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPOutlineFilter::SafeDownCast, emscripten::allow_raw_pointers())

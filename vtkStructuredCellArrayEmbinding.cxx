@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredCellArray>(vtk
 EMSCRIPTEN_BINDINGS(vtkStructuredCellArray_class) {
   emscripten::class_<vtkStructuredCellArray, emscripten::base<vtkAbstractCellArray>>("vtkStructuredCellArray")
     .smart_ptr<vtkSmartPointer<vtkStructuredCellArray>>("vtkSmartPointer<vtkStructuredCellArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredCellArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredCellArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredCellArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredCellArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredCellArray::SafeDownCast, emscripten::allow_raw_pointers())

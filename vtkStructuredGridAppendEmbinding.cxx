@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGridAppend>(vt
 EMSCRIPTEN_BINDINGS(vtkStructuredGridAppend_class) {
   emscripten::class_<vtkStructuredGridAppend, emscripten::base<vtkStructuredGridAlgorithm>>("vtkStructuredGridAppend")
     .smart_ptr<vtkSmartPointer<vtkStructuredGridAppend>>("vtkSmartPointer<vtkStructuredGridAppend>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGridAppend>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGridAppend>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGridAppend::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGridAppend& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredGridAppend::SafeDownCast, emscripten::allow_raw_pointers())

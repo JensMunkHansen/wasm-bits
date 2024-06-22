@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkDijkstraImageContourLine
 EMSCRIPTEN_BINDINGS(vtkDijkstraImageContourLineInterpolator_class) {
   emscripten::class_<vtkDijkstraImageContourLineInterpolator, emscripten::base<vtkContourLineInterpolator>>("vtkDijkstraImageContourLineInterpolator")
     .smart_ptr<vtkSmartPointer<vtkDijkstraImageContourLineInterpolator>>("vtkSmartPointer<vtkDijkstraImageContourLineInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDijkstraImageContourLineInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDijkstraImageContourLineInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDijkstraImageContourLineInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDijkstraImageContourLineInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDijkstraImageContourLineInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

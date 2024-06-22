@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkZLibDataCompressor>(vtkZ
 EMSCRIPTEN_BINDINGS(vtkZLibDataCompressor_class) {
   emscripten::class_<vtkZLibDataCompressor, emscripten::base<vtkDataCompressor>>("vtkZLibDataCompressor")
     .smart_ptr<vtkSmartPointer<vtkZLibDataCompressor>>("vtkSmartPointer<vtkZLibDataCompressor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkZLibDataCompressor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkZLibDataCompressor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkZLibDataCompressor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkZLibDataCompressor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkZLibDataCompressor::SafeDownCast, emscripten::allow_raw_pointers())

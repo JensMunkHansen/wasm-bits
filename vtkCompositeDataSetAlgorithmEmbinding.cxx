@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeDataSetAlgorith
 EMSCRIPTEN_BINDINGS(vtkCompositeDataSetAlgorithm_class) {
   emscripten::class_<vtkCompositeDataSetAlgorithm, emscripten::base<vtkAlgorithm>>("vtkCompositeDataSetAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkCompositeDataSetAlgorithm>>("vtkSmartPointer<vtkCompositeDataSetAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeDataSetAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeDataSetAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeDataSetAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeDataSetAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeDataSetAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

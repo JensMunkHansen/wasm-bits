@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotStacked>(vtkPlotStac
 EMSCRIPTEN_BINDINGS(vtkPlotStacked_class) {
   emscripten::class_<vtkPlotStacked, emscripten::base<vtkPlot>>("vtkPlotStacked")
     .smart_ptr<vtkSmartPointer<vtkPlotStacked>>("vtkSmartPointer<vtkPlotStacked>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotStacked>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotStacked>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotStacked::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotStacked& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotStacked::SafeDownCast, emscripten::allow_raw_pointers())

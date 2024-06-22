@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCameraInterpolator>(vtkC
 EMSCRIPTEN_BINDINGS(vtkCameraInterpolator_class) {
   emscripten::class_<vtkCameraInterpolator, emscripten::base<vtkObject>>("vtkCameraInterpolator")
     .smart_ptr<vtkSmartPointer<vtkCameraInterpolator>>("vtkSmartPointer<vtkCameraInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCameraInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCameraInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCameraInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCameraInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCameraInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMassProperties>(vtkMassP
 EMSCRIPTEN_BINDINGS(vtkMassProperties_class) {
   emscripten::class_<vtkMassProperties, emscripten::base<vtkPolyDataAlgorithm>>("vtkMassProperties")
     .smart_ptr<vtkSmartPointer<vtkMassProperties>>("vtkSmartPointer<vtkMassProperties>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMassProperties>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMassProperties>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMassProperties::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMassProperties& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMassProperties::SafeDownCast, emscripten::allow_raw_pointers())

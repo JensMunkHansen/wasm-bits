@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkJSONImageWriter>(vtkJSON
 EMSCRIPTEN_BINDINGS(vtkJSONImageWriter_class) {
   emscripten::class_<vtkJSONImageWriter, emscripten::base<vtkImageAlgorithm>>("vtkJSONImageWriter")
     .smart_ptr<vtkSmartPointer<vtkJSONImageWriter>>("vtkSmartPointer<vtkJSONImageWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkJSONImageWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkJSONImageWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkJSONImageWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkJSONImageWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkJSONImageWriter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOverlappingAMRAlgorithm>
 EMSCRIPTEN_BINDINGS(vtkOverlappingAMRAlgorithm_class) {
   emscripten::class_<vtkOverlappingAMRAlgorithm, emscripten::base<vtkUniformGridAMRAlgorithm>>("vtkOverlappingAMRAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkOverlappingAMRAlgorithm>>("vtkSmartPointer<vtkOverlappingAMRAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOverlappingAMRAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOverlappingAMRAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOverlappingAMRAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOverlappingAMRAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOverlappingAMRAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

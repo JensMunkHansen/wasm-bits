@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGElevationResponder>(vt
 EMSCRIPTEN_BINDINGS(vtkDGElevationResponder_class) {
   emscripten::class_<vtkDGElevationResponder, emscripten::base<vtkCellGridResponder<vtkCellGridElevationQuery>>>("vtkDGElevationResponder")
     .smart_ptr<vtkSmartPointer<vtkDGElevationResponder>>("vtkSmartPointer<vtkDGElevationResponder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDGElevationResponder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGElevationResponder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGElevationResponder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGElevationResponder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGElevationResponder::SafeDownCast, emscripten::allow_raw_pointers())

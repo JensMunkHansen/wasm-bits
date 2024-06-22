@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkEllipsoidTensorProbeRepr
 EMSCRIPTEN_BINDINGS(vtkEllipsoidTensorProbeRepresentation_class) {
   emscripten::class_<vtkEllipsoidTensorProbeRepresentation, emscripten::base<vtkTensorProbeRepresentation>>("vtkEllipsoidTensorProbeRepresentation")
     .smart_ptr<vtkSmartPointer<vtkEllipsoidTensorProbeRepresentation>>("vtkSmartPointer<vtkEllipsoidTensorProbeRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEllipsoidTensorProbeRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEllipsoidTensorProbeRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEllipsoidTensorProbeRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEllipsoidTensorProbeRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEllipsoidTensorProbeRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

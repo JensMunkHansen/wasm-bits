@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAffineIntArray>(vtkAffin
 EMSCRIPTEN_BINDINGS(vtkAffineIntArray_class) {
   emscripten::class_<vtkAffineIntArray, emscripten::base<vtkDataArray>>("vtkAffineIntArray")
     .smart_ptr<vtkSmartPointer<vtkAffineIntArray>>("vtkSmartPointer<vtkAffineIntArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAffineIntArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAffineIntArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAffineIntArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAffineIntArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAffineIntArray::SafeDownCast, emscripten::allow_raw_pointers())

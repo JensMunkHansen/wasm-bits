@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkContextScene_class) {
   using SelectionModifier=vtkContextScene::SelectionModifier;
   emscripten::class_<vtkContextScene, emscripten::base<vtkObject>>("vtkContextScene")
     .smart_ptr<vtkSmartPointer<vtkContextScene>>("vtkSmartPointer<vtkContextScene>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContextScene>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextScene>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextScene::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextScene& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextScene::SafeDownCast, emscripten::allow_raw_pointers())

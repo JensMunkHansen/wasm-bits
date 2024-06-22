@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkHyperTreeGridThreshold_class) {
   using MemoryStrategyChoice=vtkHyperTreeGridThreshold::MemoryStrategyChoice;
   emscripten::class_<vtkHyperTreeGridThreshold, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridThreshold")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridThreshold>>("vtkSmartPointer<vtkHyperTreeGridThreshold>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridThreshold>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridThreshold>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridThreshold::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridThreshold& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridThreshold::SafeDownCast, emscripten::allow_raw_pointers())

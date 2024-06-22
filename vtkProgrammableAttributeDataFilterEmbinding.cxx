@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgrammableAttributeDat
 EMSCRIPTEN_BINDINGS(vtkProgrammableAttributeDataFilter_class) {
   emscripten::class_<vtkProgrammableAttributeDataFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkProgrammableAttributeDataFilter")
     .smart_ptr<vtkSmartPointer<vtkProgrammableAttributeDataFilter>>("vtkSmartPointer<vtkProgrammableAttributeDataFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProgrammableAttributeDataFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgrammableAttributeDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgrammableAttributeDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgrammableAttributeDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgrammableAttributeDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

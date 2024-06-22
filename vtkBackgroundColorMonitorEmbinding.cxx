@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkBackgroundColorMonitor>(
 EMSCRIPTEN_BINDINGS(vtkBackgroundColorMonitor_class) {
   emscripten::class_<vtkBackgroundColorMonitor, emscripten::base<vtkObject>>("vtkBackgroundColorMonitor")
     .smart_ptr<vtkSmartPointer<vtkBackgroundColorMonitor>>("vtkSmartPointer<vtkBackgroundColorMonitor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBackgroundColorMonitor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBackgroundColorMonitor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBackgroundColorMonitor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBackgroundColorMonitor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBackgroundColorMonitor::SafeDownCast, emscripten::allow_raw_pointers())

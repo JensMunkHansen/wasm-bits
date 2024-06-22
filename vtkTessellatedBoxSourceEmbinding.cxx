@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTessellatedBoxSource>(vt
 EMSCRIPTEN_BINDINGS(vtkTessellatedBoxSource_class) {
   emscripten::class_<vtkTessellatedBoxSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkTessellatedBoxSource")
     .smart_ptr<vtkSmartPointer<vtkTessellatedBoxSource>>("vtkSmartPointer<vtkTessellatedBoxSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTessellatedBoxSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTessellatedBoxSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTessellatedBoxSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTessellatedBoxSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTessellatedBoxSource::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkStringToNumeric>(vtkStri
 EMSCRIPTEN_BINDINGS(vtkStringToNumeric_class) {
   emscripten::class_<vtkStringToNumeric, emscripten::base<vtkDataObjectAlgorithm>>("vtkStringToNumeric")
     .smart_ptr<vtkSmartPointer<vtkStringToNumeric>>("vtkSmartPointer<vtkStringToNumeric>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStringToNumeric>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStringToNumeric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStringToNumeric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStringToNumeric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStringToNumeric::SafeDownCast, emscripten::allow_raw_pointers())

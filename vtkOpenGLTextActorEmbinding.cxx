@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLTextActor>(vtkOpen
 EMSCRIPTEN_BINDINGS(vtkOpenGLTextActor_class) {
   emscripten::class_<vtkOpenGLTextActor, emscripten::base<vtkTextActor>>("vtkOpenGLTextActor")
     .smart_ptr<vtkSmartPointer<vtkOpenGLTextActor>>("vtkSmartPointer<vtkOpenGLTextActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLTextActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLTextActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLTextActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLTextActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLTextActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkCellDataToPointData_class) {
   using ContributingCellEnum=vtkCellDataToPointData::ContributingCellEnum;
   emscripten::class_<vtkCellDataToPointData, emscripten::base<vtkDataSetAlgorithm>>("vtkCellDataToPointData")
     .smart_ptr<vtkSmartPointer<vtkCellDataToPointData>>("vtkSmartPointer<vtkCellDataToPointData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellDataToPointData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellDataToPointData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellDataToPointData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellDataToPointData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellDataToPointData::SafeDownCast, emscripten::allow_raw_pointers())

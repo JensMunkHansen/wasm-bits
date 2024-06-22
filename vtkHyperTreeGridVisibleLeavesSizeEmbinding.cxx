@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridVisibleLeav
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridVisibleLeavesSize_class) {
   emscripten::class_<vtkHyperTreeGridVisibleLeavesSize, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridVisibleLeavesSize")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridVisibleLeavesSize>>("vtkSmartPointer<vtkHyperTreeGridVisibleLeavesSize>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridVisibleLeavesSize>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridVisibleLeavesSize>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridVisibleLeavesSize::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridVisibleLeavesSize& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridVisibleLeavesSize::SafeDownCast, emscripten::allow_raw_pointers())

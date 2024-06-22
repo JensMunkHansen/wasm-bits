@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMotionFXCFGReader>(vtkMo
 EMSCRIPTEN_BINDINGS(vtkMotionFXCFGReader_class) {
   emscripten::class_<vtkMotionFXCFGReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkMotionFXCFGReader")
     .smart_ptr<vtkSmartPointer<vtkMotionFXCFGReader>>("vtkSmartPointer<vtkMotionFXCFGReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMotionFXCFGReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMotionFXCFGReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMotionFXCFGReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMotionFXCFGReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMotionFXCFGReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageGridSource>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageGridSource_class) {
   emscripten::class_<vtkImageGridSource, emscripten::base<vtkImageAlgorithm>>("vtkImageGridSource")
     .smart_ptr<vtkSmartPointer<vtkImageGridSource>>("vtkSmartPointer<vtkImageGridSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageGridSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageGridSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageGridSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageGridSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageGridSource::SafeDownCast, emscripten::allow_raw_pointers())

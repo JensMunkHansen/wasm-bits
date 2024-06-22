@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageToStructuredGrid>(v
 EMSCRIPTEN_BINDINGS(vtkImageToStructuredGrid_class) {
   emscripten::class_<vtkImageToStructuredGrid, emscripten::base<vtkStructuredGridAlgorithm>>("vtkImageToStructuredGrid")
     .smart_ptr<vtkSmartPointer<vtkImageToStructuredGrid>>("vtkSmartPointer<vtkImageToStructuredGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageToStructuredGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageToStructuredGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageToStructuredGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageToStructuredGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageToStructuredGrid::SafeDownCast, emscripten::allow_raw_pointers())

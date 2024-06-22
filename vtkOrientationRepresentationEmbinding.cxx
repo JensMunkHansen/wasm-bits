@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkOrientationRepresentation_class) {
   using Axis=vtkOrientationRepresentation::Axis;
   emscripten::class_<vtkOrientationRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkOrientationRepresentation")
     .smart_ptr<vtkSmartPointer<vtkOrientationRepresentation>>("vtkSmartPointer<vtkOrientationRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOrientationRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrientationRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrientationRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrientationRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrientationRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

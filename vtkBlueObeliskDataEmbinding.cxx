@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkBlueObeliskData>(vtkBlue
 EMSCRIPTEN_BINDINGS(vtkBlueObeliskData_class) {
   emscripten::class_<vtkBlueObeliskData, emscripten::base<vtkObject>>("vtkBlueObeliskData")
     .smart_ptr<vtkSmartPointer<vtkBlueObeliskData>>("vtkSmartPointer<vtkBlueObeliskData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBlueObeliskData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBlueObeliskData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBlueObeliskData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBlueObeliskData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBlueObeliskData::SafeDownCast, emscripten::allow_raw_pointers())

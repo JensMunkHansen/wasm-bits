@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeAreaView>(vtkTreeAre
 EMSCRIPTEN_BINDINGS(vtkTreeAreaView_class) {
   emscripten::class_<vtkTreeAreaView, emscripten::base<vtkRenderView>>("vtkTreeAreaView")
     .smart_ptr<vtkSmartPointer<vtkTreeAreaView>>("vtkSmartPointer<vtkTreeAreaView>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeAreaView>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeAreaView>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeAreaView::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeAreaView& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeAreaView::SafeDownCast, emscripten::allow_raw_pointers())

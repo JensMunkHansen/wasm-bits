@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkParallelCoordinatesInter
 EMSCRIPTEN_BINDINGS(vtkParallelCoordinatesInteractorStyle_class) {
   emscripten::class_<vtkParallelCoordinatesInteractorStyle, emscripten::base<vtkInteractorStyleTrackballCamera>>("vtkParallelCoordinatesInteractorStyle")
     .smart_ptr<vtkSmartPointer<vtkParallelCoordinatesInteractorStyle>>("vtkSmartPointer<vtkParallelCoordinatesInteractorStyle>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelCoordinatesInteractorStyle>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelCoordinatesInteractorStyle>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelCoordinatesInteractorStyle::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelCoordinatesInteractorStyle& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelCoordinatesInteractorStyle::SafeDownCast, emscripten::allow_raw_pointers())

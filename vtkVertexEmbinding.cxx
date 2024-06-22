@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkVertex>(vtkVertex * ptr)
 EMSCRIPTEN_BINDINGS(vtkVertex_class) {
   emscripten::class_<vtkVertex, emscripten::base<vtkCell>>("vtkVertex")
     .smart_ptr<vtkSmartPointer<vtkVertex>>("vtkSmartPointer<vtkVertex>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVertex>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVertex>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVertex::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVertex& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVertex::SafeDownCast, emscripten::allow_raw_pointers())

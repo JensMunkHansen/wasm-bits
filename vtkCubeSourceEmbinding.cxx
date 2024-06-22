@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCubeSource>(vtkCubeSourc
 EMSCRIPTEN_BINDINGS(vtkCubeSource_class) {
   emscripten::class_<vtkCubeSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkCubeSource")
     .smart_ptr<vtkSmartPointer<vtkCubeSource>>("vtkSmartPointer<vtkCubeSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCubeSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCubeSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCubeSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCubeSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCubeSource::SafeDownCast, emscripten::allow_raw_pointers())

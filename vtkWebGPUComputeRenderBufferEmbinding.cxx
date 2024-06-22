@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPUComputeRenderBuffe
 EMSCRIPTEN_BINDINGS(vtkWebGPUComputeRenderBuffer_class) {
   emscripten::class_<vtkWebGPUComputeRenderBuffer, emscripten::base<vtkWebGPUComputeBuffer>>("vtkWebGPUComputeRenderBuffer")
     .smart_ptr<vtkSmartPointer<vtkWebGPUComputeRenderBuffer>>("vtkSmartPointer<vtkWebGPUComputeRenderBuffer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUComputeRenderBuffer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUComputeRenderBuffer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUComputeRenderBuffer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUComputeRenderBuffer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUComputeRenderBuffer::SafeDownCast, emscripten::allow_raw_pointers())

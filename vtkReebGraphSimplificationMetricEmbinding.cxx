@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkReebGraphSimplificationM
 EMSCRIPTEN_BINDINGS(vtkReebGraphSimplificationMetric_class) {
   emscripten::class_<vtkReebGraphSimplificationMetric, emscripten::base<vtkObject>>("vtkReebGraphSimplificationMetric")
     .smart_ptr<vtkSmartPointer<vtkReebGraphSimplificationMetric>>("vtkSmartPointer<vtkReebGraphSimplificationMetric>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkReebGraphSimplificationMetric>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkReebGraphSimplificationMetric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkReebGraphSimplificationMetric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkReebGraphSimplificationMetric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkReebGraphSimplificationMetric::SafeDownCast, emscripten::allow_raw_pointers())

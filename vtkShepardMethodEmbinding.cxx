@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkShepardMethod>(vtkShepar
 EMSCRIPTEN_BINDINGS(vtkShepardMethod_class) {
   emscripten::class_<vtkShepardMethod, emscripten::base<vtkImageAlgorithm>>("vtkShepardMethod")
     .smart_ptr<vtkSmartPointer<vtkShepardMethod>>("vtkSmartPointer<vtkShepardMethod>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkShepardMethod>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkShepardMethod>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShepardMethod::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShepardMethod& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShepardMethod::SafeDownCast, emscripten::allow_raw_pointers())

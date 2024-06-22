@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkLegendBoxActor>(vtkLegen
 EMSCRIPTEN_BINDINGS(vtkLegendBoxActor_class) {
   emscripten::class_<vtkLegendBoxActor, emscripten::base<vtkActor2D>>("vtkLegendBoxActor")
     .smart_ptr<vtkSmartPointer<vtkLegendBoxActor>>("vtkSmartPointer<vtkLegendBoxActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLegendBoxActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLegendBoxActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLegendBoxActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLegendBoxActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLegendBoxActor::SafeDownCast, emscripten::allow_raw_pointers())

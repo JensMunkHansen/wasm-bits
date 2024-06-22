@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMFIXReader>(vtkMFIXReade
 EMSCRIPTEN_BINDINGS(vtkMFIXReader_class) {
   emscripten::class_<vtkMFIXReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkMFIXReader")
     .smart_ptr<vtkSmartPointer<vtkMFIXReader>>("vtkSmartPointer<vtkMFIXReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMFIXReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMFIXReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMFIXReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMFIXReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMFIXReader::SafeDownCast, emscripten::allow_raw_pointers())

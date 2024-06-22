@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSurfaceReconstructionFil
 EMSCRIPTEN_BINDINGS(vtkSurfaceReconstructionFilter_class) {
   emscripten::class_<vtkSurfaceReconstructionFilter, emscripten::base<vtkImageAlgorithm>>("vtkSurfaceReconstructionFilter")
     .smart_ptr<vtkSmartPointer<vtkSurfaceReconstructionFilter>>("vtkSmartPointer<vtkSurfaceReconstructionFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSurfaceReconstructionFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSurfaceReconstructionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSurfaceReconstructionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSurfaceReconstructionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSurfaceReconstructionFilter::SafeDownCast, emscripten::allow_raw_pointers())

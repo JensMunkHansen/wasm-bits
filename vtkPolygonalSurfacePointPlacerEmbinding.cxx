@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolygonalSurfacePointPla
 EMSCRIPTEN_BINDINGS(vtkPolygonalSurfacePointPlacer_class) {
   emscripten::class_<vtkPolygonalSurfacePointPlacer, emscripten::base<vtkPolyDataPointPlacer>>("vtkPolygonalSurfacePointPlacer")
     .smart_ptr<vtkSmartPointer<vtkPolygonalSurfacePointPlacer>>("vtkSmartPointer<vtkPolygonalSurfacePointPlacer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolygonalSurfacePointPlacer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolygonalSurfacePointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolygonalSurfacePointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolygonalSurfacePointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolygonalSurfacePointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

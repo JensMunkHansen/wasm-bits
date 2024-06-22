@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractEnclosedPoints>(v
 EMSCRIPTEN_BINDINGS(vtkExtractEnclosedPoints_class) {
   emscripten::class_<vtkExtractEnclosedPoints, emscripten::base<vtkPointCloudFilter>>("vtkExtractEnclosedPoints")
     .smart_ptr<vtkSmartPointer<vtkExtractEnclosedPoints>>("vtkSmartPointer<vtkExtractEnclosedPoints>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractEnclosedPoints>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractEnclosedPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractEnclosedPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractEnclosedPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractEnclosedPoints::SafeDownCast, emscripten::allow_raw_pointers())

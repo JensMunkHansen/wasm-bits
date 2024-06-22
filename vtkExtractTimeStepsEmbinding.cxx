@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractTimeSteps>(vtkExt
 EMSCRIPTEN_BINDINGS(vtkExtractTimeSteps_class) {
   emscripten::class_<vtkExtractTimeSteps, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkExtractTimeSteps")
     .smart_ptr<vtkSmartPointer<vtkExtractTimeSteps>>("vtkSmartPointer<vtkExtractTimeSteps>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractTimeSteps>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractTimeSteps>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractTimeSteps::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractTimeSteps& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractTimeSteps::SafeDownCast, emscripten::allow_raw_pointers())

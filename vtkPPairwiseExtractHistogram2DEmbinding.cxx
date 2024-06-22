@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPPairwiseExtractHistogra
 EMSCRIPTEN_BINDINGS(vtkPPairwiseExtractHistogram2D_class) {
   emscripten::class_<vtkPPairwiseExtractHistogram2D, emscripten::base<vtkPairwiseExtractHistogram2D>>("vtkPPairwiseExtractHistogram2D")
     .smart_ptr<vtkSmartPointer<vtkPPairwiseExtractHistogram2D>>("vtkSmartPointer<vtkPPairwiseExtractHistogram2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPPairwiseExtractHistogram2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPPairwiseExtractHistogram2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPPairwiseExtractHistogram2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPPairwiseExtractHistogram2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPPairwiseExtractHistogram2D::SafeDownCast, emscripten::allow_raw_pointers())

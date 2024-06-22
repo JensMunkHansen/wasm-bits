@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkTemporalInterpolatedVelocityField_class) {
   using MeshOverTimeTypes=vtkTemporalInterpolatedVelocityField::MeshOverTimeTypes;
   emscripten::class_<vtkTemporalInterpolatedVelocityField, emscripten::base<vtkFunctionSet>>("vtkTemporalInterpolatedVelocityField")
     .smart_ptr<vtkSmartPointer<vtkTemporalInterpolatedVelocityField>>("vtkSmartPointer<vtkTemporalInterpolatedVelocityField>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalInterpolatedVelocityField>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalInterpolatedVelocityField>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalInterpolatedVelocityField::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalInterpolatedVelocityField& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalInterpolatedVelocityField::SafeDownCast, emscripten::allow_raw_pointers())

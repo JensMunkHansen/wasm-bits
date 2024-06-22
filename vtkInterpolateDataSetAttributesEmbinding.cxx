@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkInterpolateDataSetAttrib
 EMSCRIPTEN_BINDINGS(vtkInterpolateDataSetAttributes_class) {
   emscripten::class_<vtkInterpolateDataSetAttributes, emscripten::base<vtkDataSetAlgorithm>>("vtkInterpolateDataSetAttributes")
     .smart_ptr<vtkSmartPointer<vtkInterpolateDataSetAttributes>>("vtkSmartPointer<vtkInterpolateDataSetAttributes>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInterpolateDataSetAttributes>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInterpolateDataSetAttributes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInterpolateDataSetAttributes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInterpolateDataSetAttributes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInterpolateDataSetAttributes::SafeDownCast, emscripten::allow_raw_pointers())

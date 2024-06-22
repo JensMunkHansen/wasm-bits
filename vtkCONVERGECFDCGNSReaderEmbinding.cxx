@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCONVERGECFDCGNSReader>(v
 EMSCRIPTEN_BINDINGS(vtkCONVERGECFDCGNSReader_class) {
   emscripten::class_<vtkCONVERGECFDCGNSReader, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkCONVERGECFDCGNSReader")
     .smart_ptr<vtkSmartPointer<vtkCONVERGECFDCGNSReader>>("vtkSmartPointer<vtkCONVERGECFDCGNSReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCONVERGECFDCGNSReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCONVERGECFDCGNSReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCONVERGECFDCGNSReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCONVERGECFDCGNSReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCONVERGECFDCGNSReader::SafeDownCast, emscripten::allow_raw_pointers())

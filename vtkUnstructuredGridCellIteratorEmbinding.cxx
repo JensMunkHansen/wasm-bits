@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridCellIter
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridCellIterator_class) {
   emscripten::class_<vtkUnstructuredGridCellIterator, emscripten::base<vtkCellIterator>>("vtkUnstructuredGridCellIterator")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridCellIterator>>("vtkSmartPointer<vtkUnstructuredGridCellIterator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridCellIterator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridCellIterator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridCellIterator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridCellIterator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridCellIterator::SafeDownCast, emscripten::allow_raw_pointers())

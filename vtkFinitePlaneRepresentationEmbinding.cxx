@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkFinitePlaneRepresentation_class) {
   using InteractionStateType=vtkFinitePlaneRepresentation::InteractionStateType;
   emscripten::class_<vtkFinitePlaneRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkFinitePlaneRepresentation")
     .smart_ptr<vtkSmartPointer<vtkFinitePlaneRepresentation>>("vtkSmartPointer<vtkFinitePlaneRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFinitePlaneRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFinitePlaneRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFinitePlaneRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFinitePlaneRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFinitePlaneRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

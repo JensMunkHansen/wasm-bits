@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCircularLayoutStrategy>(
 EMSCRIPTEN_BINDINGS(vtkCircularLayoutStrategy_class) {
   emscripten::class_<vtkCircularLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkCircularLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkCircularLayoutStrategy>>("vtkSmartPointer<vtkCircularLayoutStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCircularLayoutStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCircularLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCircularLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCircularLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCircularLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

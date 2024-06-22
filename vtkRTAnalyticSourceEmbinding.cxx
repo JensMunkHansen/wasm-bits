@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRTAnalyticSource>(vtkRTA
 EMSCRIPTEN_BINDINGS(vtkRTAnalyticSource_class) {
   emscripten::class_<vtkRTAnalyticSource, emscripten::base<vtkImageAlgorithm>>("vtkRTAnalyticSource")
     .smart_ptr<vtkSmartPointer<vtkRTAnalyticSource>>("vtkSmartPointer<vtkRTAnalyticSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRTAnalyticSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRTAnalyticSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRTAnalyticSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRTAnalyticSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRTAnalyticSource::SafeDownCast, emscripten::allow_raw_pointers())

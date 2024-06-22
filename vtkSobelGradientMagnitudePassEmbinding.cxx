@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSobelGradientMagnitudePa
 EMSCRIPTEN_BINDINGS(vtkSobelGradientMagnitudePass_class) {
   emscripten::class_<vtkSobelGradientMagnitudePass, emscripten::base<vtkImageProcessingPass>>("vtkSobelGradientMagnitudePass")
     .smart_ptr<vtkSmartPointer<vtkSobelGradientMagnitudePass>>("vtkSmartPointer<vtkSobelGradientMagnitudePass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSobelGradientMagnitudePass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSobelGradientMagnitudePass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSobelGradientMagnitudePass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSobelGradientMagnitudePass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSobelGradientMagnitudePass::SafeDownCast, emscripten::allow_raw_pointers())

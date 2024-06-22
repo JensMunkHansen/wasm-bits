@@ -41,7 +41,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGrid>(vtkHyperT
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGrid_class) {
   emscripten::class_<vtkHyperTreeGrid, emscripten::base<vtkDataObject>>("vtkHyperTreeGrid")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGrid>>("vtkSmartPointer<vtkHyperTreeGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGrid>)
     .class_function("LEVELS", &vtkHyperTreeGrid::LEVELS, emscripten::allow_raw_pointers())
     .class_function("DIMENSION", &vtkHyperTreeGrid::DIMENSION, emscripten::allow_raw_pointers())
     .class_function("ORIENTATION", &vtkHyperTreeGrid::ORIENTATION, emscripten::allow_raw_pointers())

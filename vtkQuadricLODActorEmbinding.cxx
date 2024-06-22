@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkQuadricLODActor_class) {
   using PropTypeEnum=vtkQuadricLODActor::PropTypeEnum;
   emscripten::class_<vtkQuadricLODActor, emscripten::base<vtkActor>>("vtkQuadricLODActor")
     .smart_ptr<vtkSmartPointer<vtkQuadricLODActor>>("vtkSmartPointer<vtkQuadricLODActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadricLODActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadricLODActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadricLODActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadricLODActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadricLODActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRIBProperty>(vtkRIBPrope
 EMSCRIPTEN_BINDINGS(vtkRIBProperty_class) {
   emscripten::class_<vtkRIBProperty, emscripten::base<vtkProperty>>("vtkRIBProperty")
     .smart_ptr<vtkSmartPointer<vtkRIBProperty>>("vtkSmartPointer<vtkRIBProperty>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRIBProperty>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRIBProperty>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRIBProperty::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRIBProperty& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRIBProperty::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkPCANormalEstimation_class) {
   using Style=vtkPCANormalEstimation::Style;
   emscripten::class_<vtkPCANormalEstimation, emscripten::base<vtkPolyDataAlgorithm>>("vtkPCANormalEstimation")
     .smart_ptr<vtkSmartPointer<vtkPCANormalEstimation>>("vtkSmartPointer<vtkPCANormalEstimation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPCANormalEstimation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPCANormalEstimation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPCANormalEstimation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPCANormalEstimation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPCANormalEstimation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkMeanValueCoordinatesInte
 EMSCRIPTEN_BINDINGS(vtkMeanValueCoordinatesInterpolator_class) {
   emscripten::class_<vtkMeanValueCoordinatesInterpolator, emscripten::base<vtkObject>>("vtkMeanValueCoordinatesInterpolator")
     .smart_ptr<vtkSmartPointer<vtkMeanValueCoordinatesInterpolator>>("vtkSmartPointer<vtkMeanValueCoordinatesInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMeanValueCoordinatesInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMeanValueCoordinatesInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMeanValueCoordinatesInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMeanValueCoordinatesInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMeanValueCoordinatesInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

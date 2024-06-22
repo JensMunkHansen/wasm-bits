@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMatrixToHomogeneousTrans
 EMSCRIPTEN_BINDINGS(vtkMatrixToHomogeneousTransform_class) {
   emscripten::class_<vtkMatrixToHomogeneousTransform, emscripten::base<vtkHomogeneousTransform>>("vtkMatrixToHomogeneousTransform")
     .smart_ptr<vtkSmartPointer<vtkMatrixToHomogeneousTransform>>("vtkSmartPointer<vtkMatrixToHomogeneousTransform>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMatrixToHomogeneousTransform>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMatrixToHomogeneousTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMatrixToHomogeneousTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMatrixToHomogeneousTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMatrixToHomogeneousTransform::SafeDownCast, emscripten::allow_raw_pointers())

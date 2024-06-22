@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleJoystickA
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleJoystickActor_class) {
   emscripten::class_<vtkInteractorStyleJoystickActor, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleJoystickActor")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleJoystickActor>>("vtkSmartPointer<vtkInteractorStyleJoystickActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleJoystickActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleJoystickActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleJoystickActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleJoystickActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleJoystickActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkHighestDensityRegionsSta
 EMSCRIPTEN_BINDINGS(vtkHighestDensityRegionsStatistics_class) {
   emscripten::class_<vtkHighestDensityRegionsStatistics, emscripten::base<vtkStatisticsAlgorithm>>("vtkHighestDensityRegionsStatistics")
     .smart_ptr<vtkSmartPointer<vtkHighestDensityRegionsStatistics>>("vtkSmartPointer<vtkHighestDensityRegionsStatistics>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHighestDensityRegionsStatistics>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHighestDensityRegionsStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHighestDensityRegionsStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHighestDensityRegionsStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHighestDensityRegionsStatistics::SafeDownCast, emscripten::allow_raw_pointers())

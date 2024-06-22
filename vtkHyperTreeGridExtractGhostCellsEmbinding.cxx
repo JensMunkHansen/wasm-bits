@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridExtractGhos
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridExtractGhostCells_class) {
   emscripten::class_<vtkHyperTreeGridExtractGhostCells, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridExtractGhostCells")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridExtractGhostCells>>("vtkSmartPointer<vtkHyperTreeGridExtractGhostCells>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridExtractGhostCells>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridExtractGhostCells>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridExtractGhostCells::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridExtractGhostCells& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridExtractGhostCells::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRandomGraphSource>(vtkRa
 EMSCRIPTEN_BINDINGS(vtkRandomGraphSource_class) {
   emscripten::class_<vtkRandomGraphSource, emscripten::base<vtkGraphAlgorithm>>("vtkRandomGraphSource")
     .smart_ptr<vtkSmartPointer<vtkRandomGraphSource>>("vtkSmartPointer<vtkRandomGraphSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRandomGraphSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRandomGraphSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRandomGraphSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRandomGraphSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRandomGraphSource::SafeDownCast, emscripten::allow_raw_pointers())

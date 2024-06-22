@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLGlyph3DHelper>(vtk
 EMSCRIPTEN_BINDINGS(vtkOpenGLGlyph3DHelper_class) {
   emscripten::class_<vtkOpenGLGlyph3DHelper, emscripten::base<vtkOpenGLPolyDataMapper>>("vtkOpenGLGlyph3DHelper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLGlyph3DHelper>>("vtkSmartPointer<vtkOpenGLGlyph3DHelper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLGlyph3DHelper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLGlyph3DHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLGlyph3DHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLGlyph3DHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLGlyph3DHelper::SafeDownCast, emscripten::allow_raw_pointers())

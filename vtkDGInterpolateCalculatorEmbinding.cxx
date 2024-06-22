@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGInterpolateCalculator>
 EMSCRIPTEN_BINDINGS(vtkDGInterpolateCalculator_class) {
   emscripten::class_<vtkDGInterpolateCalculator, emscripten::base<vtkInterpolateCalculator>>("vtkDGInterpolateCalculator")
     .smart_ptr<vtkSmartPointer<vtkDGInterpolateCalculator>>("vtkSmartPointer<vtkDGInterpolateCalculator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDGInterpolateCalculator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGInterpolateCalculator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGInterpolateCalculator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGInterpolateCalculator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGInterpolateCalculator::SafeDownCast, emscripten::allow_raw_pointers())

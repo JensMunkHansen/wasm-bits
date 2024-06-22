@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDataGeometryFilter>
 EMSCRIPTEN_BINDINGS(vtkImageDataGeometryFilter_class) {
   emscripten::class_<vtkImageDataGeometryFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkImageDataGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkImageDataGeometryFilter>>("vtkSmartPointer<vtkImageDataGeometryFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDataGeometryFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDataGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDataGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDataGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDataGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

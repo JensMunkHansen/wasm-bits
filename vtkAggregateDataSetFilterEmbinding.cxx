@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAggregateDataSetFilter>(
 EMSCRIPTEN_BINDINGS(vtkAggregateDataSetFilter_class) {
   emscripten::class_<vtkAggregateDataSetFilter, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkAggregateDataSetFilter")
     .smart_ptr<vtkSmartPointer<vtkAggregateDataSetFilter>>("vtkSmartPointer<vtkAggregateDataSetFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAggregateDataSetFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAggregateDataSetFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAggregateDataSetFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAggregateDataSetFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAggregateDataSetFilter::SafeDownCast, emscripten::allow_raw_pointers())

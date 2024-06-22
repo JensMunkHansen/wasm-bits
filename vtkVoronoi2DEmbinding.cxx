@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkVoronoi2D_class) {
   using ProjectionPlaneStrategy=vtkVoronoi2D::ProjectionPlaneStrategy;
   emscripten::class_<vtkVoronoi2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkVoronoi2D")
     .smart_ptr<vtkSmartPointer<vtkVoronoi2D>>("vtkSmartPointer<vtkVoronoi2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVoronoi2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVoronoi2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVoronoi2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVoronoi2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVoronoi2D::SafeDownCast, emscripten::allow_raw_pointers())

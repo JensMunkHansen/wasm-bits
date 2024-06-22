@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkBiQuadraticTriangle>(vtk
 EMSCRIPTEN_BINDINGS(vtkBiQuadraticTriangle_class) {
   emscripten::class_<vtkBiQuadraticTriangle, emscripten::base<vtkNonLinearCell>>("vtkBiQuadraticTriangle")
     .smart_ptr<vtkSmartPointer<vtkBiQuadraticTriangle>>("vtkSmartPointer<vtkBiQuadraticTriangle>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBiQuadraticTriangle>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBiQuadraticTriangle>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBiQuadraticTriangle::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBiQuadraticTriangle& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBiQuadraticTriangle::SafeDownCast, emscripten::allow_raw_pointers())

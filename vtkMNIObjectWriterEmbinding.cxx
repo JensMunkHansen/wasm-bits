@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMNIObjectWriter>(vtkMNIO
 EMSCRIPTEN_BINDINGS(vtkMNIObjectWriter_class) {
   emscripten::class_<vtkMNIObjectWriter, emscripten::base<vtkWriter>>("vtkMNIObjectWriter")
     .smart_ptr<vtkSmartPointer<vtkMNIObjectWriter>>("vtkSmartPointer<vtkMNIObjectWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMNIObjectWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMNIObjectWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMNIObjectWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMNIObjectWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMNIObjectWriter::SafeDownCast, emscripten::allow_raw_pointers())

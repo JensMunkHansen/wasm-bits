@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageExtractComponents>(
 EMSCRIPTEN_BINDINGS(vtkImageExtractComponents_class) {
   emscripten::class_<vtkImageExtractComponents, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageExtractComponents")
     .smart_ptr<vtkSmartPointer<vtkImageExtractComponents>>("vtkSmartPointer<vtkImageExtractComponents>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageExtractComponents>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageExtractComponents>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageExtractComponents::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageExtractComponents& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageExtractComponents::SafeDownCast, emscripten::allow_raw_pointers())

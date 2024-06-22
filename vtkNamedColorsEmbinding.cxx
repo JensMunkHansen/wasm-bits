@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkNamedColors>(vtkNamedCol
 EMSCRIPTEN_BINDINGS(vtkNamedColors_class) {
   emscripten::class_<vtkNamedColors, emscripten::base<vtkObject>>("vtkNamedColors")
     .smart_ptr<vtkSmartPointer<vtkNamedColors>>("vtkSmartPointer<vtkNamedColors>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNamedColors>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNamedColors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNamedColors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNamedColors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNamedColors::SafeDownCast, emscripten::allow_raw_pointers())

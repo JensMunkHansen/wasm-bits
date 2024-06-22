@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkEDLShading>(vtkEDLShadin
 EMSCRIPTEN_BINDINGS(vtkEDLShading_class) {
   emscripten::class_<vtkEDLShading, emscripten::base<vtkDepthImageProcessingPass>>("vtkEDLShading")
     .smart_ptr<vtkSmartPointer<vtkEDLShading>>("vtkSmartPointer<vtkEDLShading>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEDLShading>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEDLShading>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEDLShading::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEDLShading& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEDLShading::SafeDownCast, emscripten::allow_raw_pointers())

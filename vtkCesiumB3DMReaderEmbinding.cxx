@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCesiumB3DMReader>(vtkCes
 EMSCRIPTEN_BINDINGS(vtkCesiumB3DMReader_class) {
   emscripten::class_<vtkCesiumB3DMReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkCesiumB3DMReader")
     .smart_ptr<vtkSmartPointer<vtkCesiumB3DMReader>>("vtkSmartPointer<vtkCesiumB3DMReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCesiumB3DMReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCesiumB3DMReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCesiumB3DMReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCesiumB3DMReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCesiumB3DMReader::SafeDownCast, emscripten::allow_raw_pointers())

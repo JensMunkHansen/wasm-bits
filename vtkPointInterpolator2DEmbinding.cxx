@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointInterpolator2D>(vtk
 EMSCRIPTEN_BINDINGS(vtkPointInterpolator2D_class) {
   emscripten::class_<vtkPointInterpolator2D, emscripten::base<vtkPointInterpolator>>("vtkPointInterpolator2D")
     .smart_ptr<vtkSmartPointer<vtkPointInterpolator2D>>("vtkSmartPointer<vtkPointInterpolator2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointInterpolator2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointInterpolator2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointInterpolator2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointInterpolator2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointInterpolator2D::SafeDownCast, emscripten::allow_raw_pointers())

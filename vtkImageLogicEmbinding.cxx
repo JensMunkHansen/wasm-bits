@@ -37,7 +37,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageLogic>(vtkImageLogi
 EMSCRIPTEN_BINDINGS(vtkImageLogic_class) {
   emscripten::class_<vtkImageLogic, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageLogic")
     .smart_ptr<vtkSmartPointer<vtkImageLogic>>("vtkSmartPointer<vtkImageLogic>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageLogic>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageLogic>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageLogic::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageLogic& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageLogic::SafeDownCast, emscripten::allow_raw_pointers())

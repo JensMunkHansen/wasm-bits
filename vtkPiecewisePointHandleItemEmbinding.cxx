@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkPiecewisePointHandleItem
 EMSCRIPTEN_BINDINGS(vtkPiecewisePointHandleItem_class) {
   emscripten::class_<vtkPiecewisePointHandleItem, emscripten::base<vtkContextItem>>("vtkPiecewisePointHandleItem")
     .smart_ptr<vtkSmartPointer<vtkPiecewisePointHandleItem>>("vtkSmartPointer<vtkPiecewisePointHandleItem>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPiecewisePointHandleItem>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPiecewisePointHandleItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPiecewisePointHandleItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPiecewisePointHandleItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPiecewisePointHandleItem::SafeDownCast, emscripten::allow_raw_pointers())

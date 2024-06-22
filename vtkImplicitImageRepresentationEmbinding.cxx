@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitImageRepresentat
 EMSCRIPTEN_BINDINGS(vtkImplicitImageRepresentation_class) {
   emscripten::class_<vtkImplicitImageRepresentation, emscripten::base<vtkImplicitPlaneRepresentation>>("vtkImplicitImageRepresentation")
     .smart_ptr<vtkSmartPointer<vtkImplicitImageRepresentation>>("vtkSmartPointer<vtkImplicitImageRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitImageRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitImageRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitImageRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitImageRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitImageRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

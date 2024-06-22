@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkMagnifierWidget>(vtkMagn
 EMSCRIPTEN_BINDINGS(vtkMagnifierWidget_class) {
   emscripten::class_<vtkMagnifierWidget, emscripten::base<vtkAbstractWidget>>("vtkMagnifierWidget")
     .smart_ptr<vtkSmartPointer<vtkMagnifierWidget>>("vtkSmartPointer<vtkMagnifierWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMagnifierWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMagnifierWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMagnifierWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMagnifierWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMagnifierWidget::SafeDownCast, emscripten::allow_raw_pointers())

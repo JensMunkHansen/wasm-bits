@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataAssemblyUtilities>(v
 EMSCRIPTEN_BINDINGS(vtkDataAssemblyUtilities_class) {
   emscripten::class_<vtkDataAssemblyUtilities, emscripten::base<vtkObject>>("vtkDataAssemblyUtilities")
     .smart_ptr<vtkSmartPointer<vtkDataAssemblyUtilities>>("vtkSmartPointer<vtkDataAssemblyUtilities>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataAssemblyUtilities>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataAssemblyUtilities>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataAssemblyUtilities::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataAssemblyUtilities& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataAssemblyUtilities::SafeDownCast, emscripten::allow_raw_pointers())

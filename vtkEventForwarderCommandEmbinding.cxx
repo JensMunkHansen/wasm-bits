@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEventForwarderCommand>(v
 EMSCRIPTEN_BINDINGS(vtkEventForwarderCommand_class) {
   emscripten::class_<vtkEventForwarderCommand, emscripten::base<vtkCommand>>("vtkEventForwarderCommand")
     .smart_ptr<vtkSmartPointer<vtkEventForwarderCommand>>("vtkSmartPointer<vtkEventForwarderCommand>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEventForwarderCommand>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEventForwarderCommand>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEventForwarderCommand::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEventForwarderCommand& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEventForwarderCommand::SafeDownCast, emscripten::allow_raw_pointers())

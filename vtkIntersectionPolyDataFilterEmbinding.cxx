@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkIntersectionPolyDataFilt
 EMSCRIPTEN_BINDINGS(vtkIntersectionPolyDataFilter_class) {
   emscripten::class_<vtkIntersectionPolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkIntersectionPolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkIntersectionPolyDataFilter>>("vtkSmartPointer<vtkIntersectionPolyDataFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkIntersectionPolyDataFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkIntersectionPolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIntersectionPolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIntersectionPolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIntersectionPolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

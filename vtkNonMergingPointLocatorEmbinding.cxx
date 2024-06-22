@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkNonMergingPointLocator>(
 EMSCRIPTEN_BINDINGS(vtkNonMergingPointLocator_class) {
   emscripten::class_<vtkNonMergingPointLocator, emscripten::base<vtkPointLocator>>("vtkNonMergingPointLocator")
     .smart_ptr<vtkSmartPointer<vtkNonMergingPointLocator>>("vtkSmartPointer<vtkNonMergingPointLocator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNonMergingPointLocator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNonMergingPointLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNonMergingPointLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNonMergingPointLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNonMergingPointLocator::SafeDownCast, emscripten::allow_raw_pointers())

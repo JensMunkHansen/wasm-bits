@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextureObject>(vtkTextur
 EMSCRIPTEN_BINDINGS(vtkTextureObject_class) {
   emscripten::class_<vtkTextureObject, emscripten::base<vtkObject>>("vtkTextureObject")
     .smart_ptr<vtkSmartPointer<vtkTextureObject>>("vtkSmartPointer<vtkTextureObject>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextureObject>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextureObject>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextureObject::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextureObject& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextureObject::SafeDownCast, emscripten::allow_raw_pointers())

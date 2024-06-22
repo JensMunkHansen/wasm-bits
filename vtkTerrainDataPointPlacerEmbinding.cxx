@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkTerrainDataPointPlacer>(
 EMSCRIPTEN_BINDINGS(vtkTerrainDataPointPlacer_class) {
   emscripten::class_<vtkTerrainDataPointPlacer, emscripten::base<vtkPointPlacer>>("vtkTerrainDataPointPlacer")
     .smart_ptr<vtkSmartPointer<vtkTerrainDataPointPlacer>>("vtkSmartPointer<vtkTerrainDataPointPlacer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTerrainDataPointPlacer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTerrainDataPointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTerrainDataPointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTerrainDataPointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTerrainDataPointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkCGNSReader_class) {
   using DataArrayLocation=vtkCGNSReader::DataArrayLocation;
   emscripten::class_<vtkCGNSReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkCGNSReader")
     .smart_ptr<vtkSmartPointer<vtkCGNSReader>>("vtkSmartPointer<vtkCGNSReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCGNSReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCGNSReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCGNSReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCGNSReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCGNSReader::SafeDownCast, emscripten::allow_raw_pointers())

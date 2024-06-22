@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridLinearRa
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridLinearRayIntegrator_class) {
   emscripten::class_<vtkUnstructuredGridLinearRayIntegrator, emscripten::base<vtkUnstructuredGridVolumeRayIntegrator>>("vtkUnstructuredGridLinearRayIntegrator")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridLinearRayIntegrator>>("vtkSmartPointer<vtkUnstructuredGridLinearRayIntegrator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridLinearRayIntegrator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridLinearRayIntegrator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridLinearRayIntegrator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridLinearRayIntegrator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridLinearRayIntegrator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkMoleculeMapper>(vtkMolec
 EMSCRIPTEN_BINDINGS(vtkMoleculeMapper_class) {
   emscripten::class_<vtkMoleculeMapper, emscripten::base<vtkMapper>>("vtkMoleculeMapper")
     .smart_ptr<vtkSmartPointer<vtkMoleculeMapper>>("vtkSmartPointer<vtkMoleculeMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMoleculeMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMoleculeMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMoleculeMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMoleculeMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMoleculeMapper::SafeDownCast, emscripten::allow_raw_pointers())

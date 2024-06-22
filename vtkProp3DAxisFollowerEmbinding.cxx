@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkProp3DAxisFollower>(vtkP
 EMSCRIPTEN_BINDINGS(vtkProp3DAxisFollower_class) {
   emscripten::class_<vtkProp3DAxisFollower, emscripten::base<vtkProp3DFollower>>("vtkProp3DAxisFollower")
     .smart_ptr<vtkSmartPointer<vtkProp3DAxisFollower>>("vtkSmartPointer<vtkProp3DAxisFollower>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProp3DAxisFollower>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProp3DAxisFollower>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProp3DAxisFollower::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProp3DAxisFollower& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProp3DAxisFollower::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkLabelSizeCalculator>(vtk
 EMSCRIPTEN_BINDINGS(vtkLabelSizeCalculator_class) {
   emscripten::class_<vtkLabelSizeCalculator, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkLabelSizeCalculator")
     .smart_ptr<vtkSmartPointer<vtkLabelSizeCalculator>>("vtkSmartPointer<vtkLabelSizeCalculator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLabelSizeCalculator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabelSizeCalculator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabelSizeCalculator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabelSizeCalculator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabelSizeCalculator::SafeDownCast, emscripten::allow_raw_pointers())

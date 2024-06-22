@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkChartMatrix_class) {
   using StretchType=vtkChartMatrix::StretchType;
   emscripten::class_<vtkChartMatrix, emscripten::base<vtkAbstractContextItem>>("vtkChartMatrix")
     .smart_ptr<vtkSmartPointer<vtkChartMatrix>>("vtkSmartPointer<vtkChartMatrix>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkChartMatrix>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkChartMatrix>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkChartMatrix::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkChartMatrix& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkChartMatrix::SafeDownCast, emscripten::allow_raw_pointers())

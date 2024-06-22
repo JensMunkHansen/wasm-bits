@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkCookieCutter_class) {
   using PointInterpolationType=vtkCookieCutter::PointInterpolationType;
   emscripten::class_<vtkCookieCutter, emscripten::base<vtkPolyDataAlgorithm>>("vtkCookieCutter")
     .smart_ptr<vtkSmartPointer<vtkCookieCutter>>("vtkSmartPointer<vtkCookieCutter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCookieCutter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCookieCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCookieCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCookieCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCookieCutter::SafeDownCast, emscripten::allow_raw_pointers())

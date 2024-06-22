@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadricClustering>(vtkQu
 EMSCRIPTEN_BINDINGS(vtkQuadricClustering_class) {
   emscripten::class_<vtkQuadricClustering, emscripten::base<vtkPolyDataAlgorithm>>("vtkQuadricClustering")
     .smart_ptr<vtkSmartPointer<vtkQuadricClustering>>("vtkSmartPointer<vtkQuadricClustering>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadricClustering>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadricClustering>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadricClustering::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadricClustering& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadricClustering::SafeDownCast, emscripten::allow_raw_pointers())

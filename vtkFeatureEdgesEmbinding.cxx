@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFeatureEdges>(vtkFeature
 EMSCRIPTEN_BINDINGS(vtkFeatureEdges_class) {
   emscripten::class_<vtkFeatureEdges, emscripten::base<vtkPolyDataAlgorithm>>("vtkFeatureEdges")
     .smart_ptr<vtkSmartPointer<vtkFeatureEdges>>("vtkSmartPointer<vtkFeatureEdges>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFeatureEdges>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFeatureEdges>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFeatureEdges::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFeatureEdges& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFeatureEdges::SafeDownCast, emscripten::allow_raw_pointers())

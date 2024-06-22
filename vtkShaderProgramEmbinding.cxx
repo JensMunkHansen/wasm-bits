@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkShaderProgram_class) {
   using UniformGroups=vtkShaderProgram::UniformGroups;
   emscripten::class_<vtkShaderProgram, emscripten::base<vtkObject>>("vtkShaderProgram")
     .smart_ptr<vtkSmartPointer<vtkShaderProgram>>("vtkSmartPointer<vtkShaderProgram>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkShaderProgram>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkShaderProgram>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShaderProgram::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShaderProgram& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShaderProgram::SafeDownCast, emscripten::allow_raw_pointers())

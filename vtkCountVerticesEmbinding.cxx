@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCountVertices>(vtkCountV
 EMSCRIPTEN_BINDINGS(vtkCountVertices_class) {
   emscripten::class_<vtkCountVertices, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkCountVertices")
     .smart_ptr<vtkSmartPointer<vtkCountVertices>>("vtkSmartPointer<vtkCountVertices>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCountVertices>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCountVertices>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCountVertices::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCountVertices& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCountVertices::SafeDownCast, emscripten::allow_raw_pointers())

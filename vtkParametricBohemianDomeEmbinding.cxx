@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricBohemianDome>(
 EMSCRIPTEN_BINDINGS(vtkParametricBohemianDome_class) {
   emscripten::class_<vtkParametricBohemianDome, emscripten::base<vtkParametricFunction>>("vtkParametricBohemianDome")
     .smart_ptr<vtkSmartPointer<vtkParametricBohemianDome>>("vtkSmartPointer<vtkParametricBohemianDome>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricBohemianDome>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricBohemianDome>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricBohemianDome::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricBohemianDome& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricBohemianDome::SafeDownCast, emscripten::allow_raw_pointers())

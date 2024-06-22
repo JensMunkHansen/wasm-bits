@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkConvertSelection>(vtkCon
 EMSCRIPTEN_BINDINGS(vtkConvertSelection_class) {
   emscripten::class_<vtkConvertSelection, emscripten::base<vtkSelectionAlgorithm>>("vtkConvertSelection")
     .smart_ptr<vtkSmartPointer<vtkConvertSelection>>("vtkSmartPointer<vtkConvertSelection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkConvertSelection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkConvertSelection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConvertSelection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConvertSelection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConvertSelection::SafeDownCast, emscripten::allow_raw_pointers())

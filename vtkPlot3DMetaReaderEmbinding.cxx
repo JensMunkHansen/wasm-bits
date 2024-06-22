@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlot3DMetaReader>(vtkPlo
 EMSCRIPTEN_BINDINGS(vtkPlot3DMetaReader_class) {
   emscripten::class_<vtkPlot3DMetaReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkPlot3DMetaReader")
     .smart_ptr<vtkSmartPointer<vtkPlot3DMetaReader>>("vtkSmartPointer<vtkPlot3DMetaReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPlot3DMetaReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlot3DMetaReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlot3DMetaReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlot3DMetaReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlot3DMetaReader::SafeDownCast, emscripten::allow_raw_pointers())

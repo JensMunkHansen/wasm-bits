@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuantizePolyDataPoints>(
 EMSCRIPTEN_BINDINGS(vtkQuantizePolyDataPoints_class) {
   emscripten::class_<vtkQuantizePolyDataPoints, emscripten::base<vtkCleanPolyData>>("vtkQuantizePolyDataPoints")
     .smart_ptr<vtkSmartPointer<vtkQuantizePolyDataPoints>>("vtkSmartPointer<vtkQuantizePolyDataPoints>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuantizePolyDataPoints>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuantizePolyDataPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuantizePolyDataPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuantizePolyDataPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuantizePolyDataPoints::SafeDownCast, emscripten::allow_raw_pointers())

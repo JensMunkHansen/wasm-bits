@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStreamGraph>(vtkStreamGr
 EMSCRIPTEN_BINDINGS(vtkStreamGraph_class) {
   emscripten::class_<vtkStreamGraph, emscripten::base<vtkGraphAlgorithm>>("vtkStreamGraph")
     .smart_ptr<vtkSmartPointer<vtkStreamGraph>>("vtkSmartPointer<vtkStreamGraph>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStreamGraph>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreamGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreamGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreamGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreamGraph::SafeDownCast, emscripten::allow_raw_pointers())

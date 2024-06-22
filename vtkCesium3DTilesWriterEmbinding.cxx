@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCesium3DTilesWriter>(vtk
 EMSCRIPTEN_BINDINGS(vtkCesium3DTilesWriter_class) {
   emscripten::class_<vtkCesium3DTilesWriter, emscripten::base<vtkWriter>>("vtkCesium3DTilesWriter")
     .smart_ptr<vtkSmartPointer<vtkCesium3DTilesWriter>>("vtkSmartPointer<vtkCesium3DTilesWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCesium3DTilesWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCesium3DTilesWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCesium3DTilesWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCesium3DTilesWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCesium3DTilesWriter::SafeDownCast, emscripten::allow_raw_pointers())

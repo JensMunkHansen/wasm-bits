@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkConstrainedPointHandleRe
 EMSCRIPTEN_BINDINGS(vtkConstrainedPointHandleRepresentation_class) {
   emscripten::class_<vtkConstrainedPointHandleRepresentation, emscripten::base<vtkHandleRepresentation>>("vtkConstrainedPointHandleRepresentation")
     .smart_ptr<vtkSmartPointer<vtkConstrainedPointHandleRepresentation>>("vtkSmartPointer<vtkConstrainedPointHandleRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkConstrainedPointHandleRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkConstrainedPointHandleRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConstrainedPointHandleRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConstrainedPointHandleRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConstrainedPointHandleRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkDataAssembly_class) {
   using TraversalOrder=vtkDataAssembly::TraversalOrder;
   emscripten::class_<vtkDataAssembly, emscripten::base<vtkObject>>("vtkDataAssembly")
     .smart_ptr<vtkSmartPointer<vtkDataAssembly>>("vtkSmartPointer<vtkDataAssembly>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataAssembly>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataAssembly>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataAssembly::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataAssembly& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataAssembly::SafeDownCast, emscripten::allow_raw_pointers())

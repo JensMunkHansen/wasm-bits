@@ -36,7 +36,7 @@ EMSCRIPTEN_BINDINGS(vtkLabelHierarchy_class) {
   using IteratorType=vtkLabelHierarchy::IteratorType;
   emscripten::class_<vtkLabelHierarchy, emscripten::base<vtkPointSet>>("vtkLabelHierarchy")
     .smart_ptr<vtkSmartPointer<vtkLabelHierarchy>>("vtkSmartPointer<vtkLabelHierarchy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLabelHierarchy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabelHierarchy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabelHierarchy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabelHierarchy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabelHierarchy::SafeDownCast, emscripten::allow_raw_pointers())

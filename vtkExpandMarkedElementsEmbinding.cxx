@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExpandMarkedElements>(vt
 EMSCRIPTEN_BINDINGS(vtkExpandMarkedElements_class) {
   emscripten::class_<vtkExpandMarkedElements, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkExpandMarkedElements")
     .smart_ptr<vtkSmartPointer<vtkExpandMarkedElements>>("vtkSmartPointer<vtkExpandMarkedElements>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExpandMarkedElements>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExpandMarkedElements>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExpandMarkedElements::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExpandMarkedElements& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExpandMarkedElements::SafeDownCast, emscripten::allow_raw_pointers())

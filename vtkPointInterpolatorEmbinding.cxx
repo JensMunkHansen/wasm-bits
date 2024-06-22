@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkPointInterpolator_class) {
   using Strategy=vtkPointInterpolator::Strategy;
   emscripten::class_<vtkPointInterpolator, emscripten::base<vtkDataSetAlgorithm>>("vtkPointInterpolator")
     .smart_ptr<vtkSmartPointer<vtkPointInterpolator>>("vtkSmartPointer<vtkPointInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

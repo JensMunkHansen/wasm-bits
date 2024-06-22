@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAlgorithmOutput>(vtkAlgo
 EMSCRIPTEN_BINDINGS(vtkAlgorithmOutput_class) {
   emscripten::class_<vtkAlgorithmOutput, emscripten::base<vtkObject>>("vtkAlgorithmOutput")
     .smart_ptr<vtkSmartPointer<vtkAlgorithmOutput>>("vtkSmartPointer<vtkAlgorithmOutput>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAlgorithmOutput>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAlgorithmOutput>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAlgorithmOutput::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAlgorithmOutput& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAlgorithmOutput::SafeDownCast, emscripten::allow_raw_pointers())

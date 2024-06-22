@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkColorSeries_class) {
   using LUTMode=vtkColorSeries::LUTMode;
   emscripten::class_<vtkColorSeries, emscripten::base<vtkObject>>("vtkColorSeries")
     .smart_ptr<vtkSmartPointer<vtkColorSeries>>("vtkSmartPointer<vtkColorSeries>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkColorSeries>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkColorSeries>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkColorSeries::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkColorSeries& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkColorSeries::SafeDownCast, emscripten::allow_raw_pointers())

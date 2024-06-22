@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkKMeansDistanceFunctor>(v
 EMSCRIPTEN_BINDINGS(vtkKMeansDistanceFunctor_class) {
   emscripten::class_<vtkKMeansDistanceFunctor, emscripten::base<vtkObject>>("vtkKMeansDistanceFunctor")
     .smart_ptr<vtkSmartPointer<vtkKMeansDistanceFunctor>>("vtkSmartPointer<vtkKMeansDistanceFunctor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkKMeansDistanceFunctor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkKMeansDistanceFunctor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkKMeansDistanceFunctor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkKMeansDistanceFunctor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkKMeansDistanceFunctor::SafeDownCast, emscripten::allow_raw_pointers())

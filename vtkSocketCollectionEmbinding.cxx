@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSocketCollection>(vtkSoc
 EMSCRIPTEN_BINDINGS(vtkSocketCollection_class) {
   emscripten::class_<vtkSocketCollection, emscripten::base<vtkCollection>>("vtkSocketCollection")
     .smart_ptr<vtkSmartPointer<vtkSocketCollection>>("vtkSmartPointer<vtkSocketCollection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSocketCollection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSocketCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSocketCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSocketCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSocketCollection::SafeDownCast, emscripten::allow_raw_pointers())

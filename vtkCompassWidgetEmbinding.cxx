@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompassWidget>(vtkCompas
 EMSCRIPTEN_BINDINGS(vtkCompassWidget_class) {
   emscripten::class_<vtkCompassWidget, emscripten::base<vtkAbstractWidget>>("vtkCompassWidget")
     .smart_ptr<vtkSmartPointer<vtkCompassWidget>>("vtkSmartPointer<vtkCompassWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompassWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompassWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompassWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompassWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompassWidget::SafeDownCast, emscripten::allow_raw_pointers())

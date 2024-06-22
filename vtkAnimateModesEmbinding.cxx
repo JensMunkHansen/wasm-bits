@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAnimateModes>(vtkAnimate
 EMSCRIPTEN_BINDINGS(vtkAnimateModes_class) {
   emscripten::class_<vtkAnimateModes, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkAnimateModes")
     .smart_ptr<vtkSmartPointer<vtkAnimateModes>>("vtkSmartPointer<vtkAnimateModes>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAnimateModes>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnimateModes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnimateModes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnimateModes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnimateModes::SafeDownCast, emscripten::allow_raw_pointers())

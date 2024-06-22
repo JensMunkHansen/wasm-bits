@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEnSight6Reader>(vtkEnSig
 EMSCRIPTEN_BINDINGS(vtkEnSight6Reader_class) {
   emscripten::class_<vtkEnSight6Reader, emscripten::base<vtkEnSightReader>>("vtkEnSight6Reader")
     .smart_ptr<vtkSmartPointer<vtkEnSight6Reader>>("vtkSmartPointer<vtkEnSight6Reader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEnSight6Reader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEnSight6Reader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEnSight6Reader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEnSight6Reader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEnSight6Reader::SafeDownCast, emscripten::allow_raw_pointers())

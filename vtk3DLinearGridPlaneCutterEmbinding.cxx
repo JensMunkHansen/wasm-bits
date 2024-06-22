@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtk3DLinearGridPlaneCutter>
 EMSCRIPTEN_BINDINGS(vtk3DLinearGridPlaneCutter_class) {
   emscripten::class_<vtk3DLinearGridPlaneCutter, emscripten::base<vtkDataObjectAlgorithm>>("vtk3DLinearGridPlaneCutter")
     .smart_ptr<vtkSmartPointer<vtk3DLinearGridPlaneCutter>>("vtkSmartPointer<vtk3DLinearGridPlaneCutter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtk3DLinearGridPlaneCutter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtk3DLinearGridPlaneCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtk3DLinearGridPlaneCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtk3DLinearGridPlaneCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtk3DLinearGridPlaneCutter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -39,7 +39,7 @@ EMSCRIPTEN_BINDINGS(vtkMath_class) {
   using ConvolutionMode=vtkMath::ConvolutionMode;
   emscripten::class_<vtkMath, emscripten::base<vtkObject>>("vtkMath")
     .smart_ptr<vtkSmartPointer<vtkMath>>("vtkSmartPointer<vtkMath>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMath>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMath>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMath::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMath& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMath::SafeDownCast, emscripten::allow_raw_pointers())

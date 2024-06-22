@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkCellGridEvaluator_class) {
   using Phases=vtkCellGridEvaluator::Phases;
   emscripten::class_<vtkCellGridEvaluator, emscripten::base<vtkCellGridQuery>>("vtkCellGridEvaluator")
     .smart_ptr<vtkSmartPointer<vtkCellGridEvaluator>>("vtkSmartPointer<vtkCellGridEvaluator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridEvaluator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridEvaluator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridEvaluator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridEvaluator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridEvaluator::SafeDownCast, emscripten::allow_raw_pointers())

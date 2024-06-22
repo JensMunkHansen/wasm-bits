@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkBSPCuts>(vtkBSPCuts * pt
 EMSCRIPTEN_BINDINGS(vtkBSPCuts_class) {
   emscripten::class_<vtkBSPCuts, emscripten::base<vtkDataObject>>("vtkBSPCuts")
     .smart_ptr<vtkSmartPointer<vtkBSPCuts>>("vtkSmartPointer<vtkBSPCuts>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBSPCuts>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBSPCuts>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBSPCuts::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBSPCuts& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBSPCuts::SafeDownCast, emscripten::allow_raw_pointers())

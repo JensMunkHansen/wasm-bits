@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiBlockDataGroupFilte
 EMSCRIPTEN_BINDINGS(vtkMultiBlockDataGroupFilter_class) {
   emscripten::class_<vtkMultiBlockDataGroupFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkMultiBlockDataGroupFilter")
     .smart_ptr<vtkSmartPointer<vtkMultiBlockDataGroupFilter>>("vtkSmartPointer<vtkMultiBlockDataGroupFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiBlockDataGroupFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiBlockDataGroupFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiBlockDataGroupFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiBlockDataGroupFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiBlockDataGroupFilter::SafeDownCast, emscripten::allow_raw_pointers())

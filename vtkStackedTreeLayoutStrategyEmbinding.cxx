@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkStackedTreeLayoutStrateg
 EMSCRIPTEN_BINDINGS(vtkStackedTreeLayoutStrategy_class) {
   emscripten::class_<vtkStackedTreeLayoutStrategy, emscripten::base<vtkAreaLayoutStrategy>>("vtkStackedTreeLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkStackedTreeLayoutStrategy>>("vtkSmartPointer<vtkStackedTreeLayoutStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStackedTreeLayoutStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStackedTreeLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStackedTreeLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStackedTreeLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStackedTreeLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

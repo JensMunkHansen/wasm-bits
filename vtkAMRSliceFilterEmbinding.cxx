@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkAMRSliceFilter_class) {
   using NormalTag=vtkAMRSliceFilter::NormalTag;
   emscripten::class_<vtkAMRSliceFilter, emscripten::base<vtkOverlappingAMRAlgorithm>>("vtkAMRSliceFilter")
     .smart_ptr<vtkSmartPointer<vtkAMRSliceFilter>>("vtkSmartPointer<vtkAMRSliceFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRSliceFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRSliceFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRSliceFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRSliceFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRSliceFilter::SafeDownCast, emscripten::allow_raw_pointers())

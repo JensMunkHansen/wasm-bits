@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPartitionBalancer>(vtkPa
 EMSCRIPTEN_BINDINGS(vtkPartitionBalancer_class) {
   emscripten::class_<vtkPartitionBalancer, emscripten::base<vtkPartitionedDataSetAlgorithm>>("vtkPartitionBalancer")
     .smart_ptr<vtkSmartPointer<vtkPartitionBalancer>>("vtkSmartPointer<vtkPartitionBalancer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPartitionBalancer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPartitionBalancer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPartitionBalancer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPartitionBalancer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPartitionBalancer::SafeDownCast, emscripten::allow_raw_pointers())

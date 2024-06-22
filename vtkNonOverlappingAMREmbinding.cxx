@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkNonOverlappingAMR>(vtkNo
 EMSCRIPTEN_BINDINGS(vtkNonOverlappingAMR_class) {
   emscripten::class_<vtkNonOverlappingAMR, emscripten::base<vtkUniformGridAMR>>("vtkNonOverlappingAMR")
     .smart_ptr<vtkSmartPointer<vtkNonOverlappingAMR>>("vtkSmartPointer<vtkNonOverlappingAMR>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNonOverlappingAMR>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNonOverlappingAMR>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNonOverlappingAMR::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNonOverlappingAMR& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNonOverlappingAMR::SafeDownCast, emscripten::allow_raw_pointers())

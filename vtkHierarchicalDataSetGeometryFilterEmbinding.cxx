@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalDataSetGeome
 EMSCRIPTEN_BINDINGS(vtkHierarchicalDataSetGeometryFilter_class) {
   emscripten::class_<vtkHierarchicalDataSetGeometryFilter, emscripten::base<vtkCompositeDataGeometryFilter>>("vtkHierarchicalDataSetGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalDataSetGeometryFilter>>("vtkSmartPointer<vtkHierarchicalDataSetGeometryFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalDataSetGeometryFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalDataSetGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalDataSetGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalDataSetGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalDataSetGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBoundaryMeshQuality>(vtk
 EMSCRIPTEN_BINDINGS(vtkBoundaryMeshQuality_class) {
   emscripten::class_<vtkBoundaryMeshQuality, emscripten::base<vtkPolyDataAlgorithm>>("vtkBoundaryMeshQuality")
     .smart_ptr<vtkSmartPointer<vtkBoundaryMeshQuality>>("vtkSmartPointer<vtkBoundaryMeshQuality>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBoundaryMeshQuality>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBoundaryMeshQuality>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBoundaryMeshQuality::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBoundaryMeshQuality& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBoundaryMeshQuality::SafeDownCast, emscripten::allow_raw_pointers())

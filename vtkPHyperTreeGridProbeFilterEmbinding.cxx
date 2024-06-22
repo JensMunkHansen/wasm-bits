@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPHyperTreeGridProbeFilte
 EMSCRIPTEN_BINDINGS(vtkPHyperTreeGridProbeFilter_class) {
   emscripten::class_<vtkPHyperTreeGridProbeFilter, emscripten::base<vtkHyperTreeGridProbeFilter>>("vtkPHyperTreeGridProbeFilter")
     .smart_ptr<vtkSmartPointer<vtkPHyperTreeGridProbeFilter>>("vtkSmartPointer<vtkPHyperTreeGridProbeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPHyperTreeGridProbeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPHyperTreeGridProbeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPHyperTreeGridProbeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPHyperTreeGridProbeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPHyperTreeGridProbeFilter::SafeDownCast, emscripten::allow_raw_pointers())

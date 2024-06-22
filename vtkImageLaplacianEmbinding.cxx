@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageLaplacian>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageLaplacian_class) {
   emscripten::class_<vtkImageLaplacian, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageLaplacian")
     .smart_ptr<vtkSmartPointer<vtkImageLaplacian>>("vtkSmartPointer<vtkImageLaplacian>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageLaplacian>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageLaplacian>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageLaplacian::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageLaplacian& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageLaplacian::SafeDownCast, emscripten::allow_raw_pointers())

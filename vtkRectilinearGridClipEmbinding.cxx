@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearGridClip>(vtk
 EMSCRIPTEN_BINDINGS(vtkRectilinearGridClip_class) {
   emscripten::class_<vtkRectilinearGridClip, emscripten::base<vtkRectilinearGridAlgorithm>>("vtkRectilinearGridClip")
     .smart_ptr<vtkSmartPointer<vtkRectilinearGridClip>>("vtkSmartPointer<vtkRectilinearGridClip>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearGridClip>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearGridClip>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearGridClip::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearGridClip& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearGridClip::SafeDownCast, emscripten::allow_raw_pointers())

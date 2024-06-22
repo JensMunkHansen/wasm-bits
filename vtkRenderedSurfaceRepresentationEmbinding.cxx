@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderedSurfaceRepresent
 EMSCRIPTEN_BINDINGS(vtkRenderedSurfaceRepresentation_class) {
   emscripten::class_<vtkRenderedSurfaceRepresentation, emscripten::base<vtkRenderedRepresentation>>("vtkRenderedSurfaceRepresentation")
     .smart_ptr<vtkSmartPointer<vtkRenderedSurfaceRepresentation>>("vtkSmartPointer<vtkRenderedSurfaceRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderedSurfaceRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderedSurfaceRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderedSurfaceRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderedSurfaceRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderedSurfaceRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

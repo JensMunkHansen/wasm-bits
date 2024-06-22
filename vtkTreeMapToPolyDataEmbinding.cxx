@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeMapToPolyData>(vtkTr
 EMSCRIPTEN_BINDINGS(vtkTreeMapToPolyData_class) {
   emscripten::class_<vtkTreeMapToPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkTreeMapToPolyData")
     .smart_ptr<vtkSmartPointer<vtkTreeMapToPolyData>>("vtkSmartPointer<vtkTreeMapToPolyData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeMapToPolyData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeMapToPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeMapToPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeMapToPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeMapToPolyData::SafeDownCast, emscripten::allow_raw_pointers())

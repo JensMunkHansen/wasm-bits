@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkWebGPUComputeBuffer_class) {
   using BufferDataType=vtkWebGPUComputeBuffer::BufferDataType;
   emscripten::class_<vtkWebGPUComputeBuffer, emscripten::base<vtkObject>>("vtkWebGPUComputeBuffer")
     .smart_ptr<vtkSmartPointer<vtkWebGPUComputeBuffer>>("vtkSmartPointer<vtkWebGPUComputeBuffer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUComputeBuffer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUComputeBuffer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUComputeBuffer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUComputeBuffer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUComputeBuffer::SafeDownCast, emscripten::allow_raw_pointers())

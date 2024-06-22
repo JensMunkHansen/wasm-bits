@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDICOMImageReader>(vtkDIC
 EMSCRIPTEN_BINDINGS(vtkDICOMImageReader_class) {
   emscripten::class_<vtkDICOMImageReader, emscripten::base<vtkImageReader2>>("vtkDICOMImageReader")
     .smart_ptr<vtkSmartPointer<vtkDICOMImageReader>>("vtkSmartPointer<vtkDICOMImageReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDICOMImageReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDICOMImageReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDICOMImageReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDICOMImageReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDICOMImageReader::SafeDownCast, emscripten::allow_raw_pointers())

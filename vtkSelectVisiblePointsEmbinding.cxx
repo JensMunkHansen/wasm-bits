@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSelectVisiblePoints>(vtk
 EMSCRIPTEN_BINDINGS(vtkSelectVisiblePoints_class) {
   emscripten::class_<vtkSelectVisiblePoints, emscripten::base<vtkPolyDataAlgorithm>>("vtkSelectVisiblePoints")
     .smart_ptr<vtkSmartPointer<vtkSelectVisiblePoints>>("vtkSmartPointer<vtkSelectVisiblePoints>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSelectVisiblePoints>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSelectVisiblePoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSelectVisiblePoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSelectVisiblePoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSelectVisiblePoints::SafeDownCast, emscripten::allow_raw_pointers())

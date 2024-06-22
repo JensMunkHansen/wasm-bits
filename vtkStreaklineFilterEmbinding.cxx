@@ -19,7 +19,7 @@ template<> void emscripten::internal::raw_destructor<vtkStreaklineFilter>(vtkStr
 EMSCRIPTEN_BINDINGS(vtkStreaklineFilter_class) {
   emscripten::class_<vtkStreaklineFilter, emscripten::base<vtkParticleTracerBase>>("vtkStreaklineFilter")
     .smart_ptr<vtkSmartPointer<vtkStreaklineFilter>>("vtkSmartPointer<vtkStreaklineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStreaklineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreaklineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreaklineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreaklineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreaklineFilter::SafeDownCast, emscripten::allow_raw_pointers())

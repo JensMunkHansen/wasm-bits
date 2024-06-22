@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointOccupancyFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkPointOccupancyFilter_class) {
   emscripten::class_<vtkPointOccupancyFilter, emscripten::base<vtkImageAlgorithm>>("vtkPointOccupancyFilter")
     .smart_ptr<vtkSmartPointer<vtkPointOccupancyFilter>>("vtkSmartPointer<vtkPointOccupancyFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointOccupancyFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointOccupancyFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointOccupancyFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointOccupancyFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointOccupancyFilter::SafeDownCast, emscripten::allow_raw_pointers())

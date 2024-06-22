@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGarbageCollector>(vtkGar
 EMSCRIPTEN_BINDINGS(vtkGarbageCollector_class) {
   emscripten::class_<vtkGarbageCollector, emscripten::base<vtkObject>>("vtkGarbageCollector")
     .smart_ptr<vtkSmartPointer<vtkGarbageCollector>>("vtkSmartPointer<vtkGarbageCollector>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGarbageCollector>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGarbageCollector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGarbageCollector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGarbageCollector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGarbageCollector::SafeDownCast, emscripten::allow_raw_pointers())

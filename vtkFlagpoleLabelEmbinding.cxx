@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkFlagpoleLabel>(vtkFlagpo
 EMSCRIPTEN_BINDINGS(vtkFlagpoleLabel_class) {
   emscripten::class_<vtkFlagpoleLabel, emscripten::base<vtkActor>>("vtkFlagpoleLabel")
     .smart_ptr<vtkSmartPointer<vtkFlagpoleLabel>>("vtkSmartPointer<vtkFlagpoleLabel>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFlagpoleLabel>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFlagpoleLabel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFlagpoleLabel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFlagpoleLabel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFlagpoleLabel::SafeDownCast, emscripten::allow_raw_pointers())

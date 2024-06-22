@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextSource>(vtkTextSourc
 EMSCRIPTEN_BINDINGS(vtkTextSource_class) {
   emscripten::class_<vtkTextSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkTextSource")
     .smart_ptr<vtkSmartPointer<vtkTextSource>>("vtkSmartPointer<vtkTextSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextSource::SafeDownCast, emscripten::allow_raw_pointers())

@@ -40,7 +40,7 @@ template<> void emscripten::internal::raw_destructor<vtkIconGlyphFilter>(vtkIcon
 EMSCRIPTEN_BINDINGS(vtkIconGlyphFilter_class) {
   emscripten::class_<vtkIconGlyphFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkIconGlyphFilter")
     .smart_ptr<vtkSmartPointer<vtkIconGlyphFilter>>("vtkSmartPointer<vtkIconGlyphFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkIconGlyphFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkIconGlyphFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIconGlyphFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIconGlyphFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIconGlyphFilter::SafeDownCast, emscripten::allow_raw_pointers())

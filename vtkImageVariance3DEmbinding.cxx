@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageVariance3D>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageVariance3D_class) {
   emscripten::class_<vtkImageVariance3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageVariance3D")
     .smart_ptr<vtkSmartPointer<vtkImageVariance3D>>("vtkSmartPointer<vtkImageVariance3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageVariance3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageVariance3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageVariance3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageVariance3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageVariance3D::SafeDownCast, emscripten::allow_raw_pointers())

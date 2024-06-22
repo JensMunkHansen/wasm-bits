@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalPathLineFilter>(
 EMSCRIPTEN_BINDINGS(vtkTemporalPathLineFilter_class) {
   emscripten::class_<vtkTemporalPathLineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkTemporalPathLineFilter")
     .smart_ptr<vtkSmartPointer<vtkTemporalPathLineFilter>>("vtkSmartPointer<vtkTemporalPathLineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalPathLineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalPathLineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalPathLineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalPathLineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalPathLineFilter::SafeDownCast, emscripten::allow_raw_pointers())

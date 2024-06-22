@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeWedge>(vtkLagran
 EMSCRIPTEN_BINDINGS(vtkLagrangeWedge_class) {
   emscripten::class_<vtkLagrangeWedge, emscripten::base<vtkHigherOrderWedge>>("vtkLagrangeWedge")
     .smart_ptr<vtkSmartPointer<vtkLagrangeWedge>>("vtkSmartPointer<vtkLagrangeWedge>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeWedge>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeWedge>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeWedge::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeWedge& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeWedge::SafeDownCast, emscripten::allow_raw_pointers())

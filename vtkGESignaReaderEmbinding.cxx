@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGESignaReader>(vtkGESign
 EMSCRIPTEN_BINDINGS(vtkGESignaReader_class) {
   emscripten::class_<vtkGESignaReader, emscripten::base<vtkMedicalImageReader2>>("vtkGESignaReader")
     .smart_ptr<vtkSmartPointer<vtkGESignaReader>>("vtkSmartPointer<vtkGESignaReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGESignaReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGESignaReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGESignaReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGESignaReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGESignaReader::SafeDownCast, emscripten::allow_raw_pointers())

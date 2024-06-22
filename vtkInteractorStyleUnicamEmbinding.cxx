@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleUnicam>(v
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleUnicam_class) {
   emscripten::class_<vtkInteractorStyleUnicam, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleUnicam")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleUnicam>>("vtkSmartPointer<vtkInteractorStyleUnicam>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleUnicam>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleUnicam>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleUnicam::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleUnicam& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleUnicam::SafeDownCast, emscripten::allow_raw_pointers())

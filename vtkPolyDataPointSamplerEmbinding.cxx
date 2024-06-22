@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataPointSampler>(vt
 EMSCRIPTEN_BINDINGS(vtkPolyDataPointSampler_class) {
   emscripten::class_<vtkPolyDataPointSampler, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataPointSampler")
     .smart_ptr<vtkSmartPointer<vtkPolyDataPointSampler>>("vtkSmartPointer<vtkPolyDataPointSampler>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataPointSampler>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataPointSampler>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataPointSampler::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataPointSampler& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataPointSampler::SafeDownCast, emscripten::allow_raw_pointers())

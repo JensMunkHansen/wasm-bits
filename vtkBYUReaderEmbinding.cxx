@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBYUReader>(vtkBYUReader 
 EMSCRIPTEN_BINDINGS(vtkBYUReader_class) {
   emscripten::class_<vtkBYUReader, emscripten::base<vtkPolyDataAlgorithm>>("vtkBYUReader")
     .smart_ptr<vtkSmartPointer<vtkBYUReader>>("vtkSmartPointer<vtkBYUReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBYUReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBYUReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBYUReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBYUReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBYUReader::SafeDownCast, emscripten::allow_raw_pointers())

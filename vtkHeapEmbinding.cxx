@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHeap>(vtkHeap * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkHeap_class) {
   emscripten::class_<vtkHeap, emscripten::base<vtkObject>>("vtkHeap")
     .smart_ptr<vtkSmartPointer<vtkHeap>>("vtkSmartPointer<vtkHeap>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHeap>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHeap>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHeap::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHeap& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHeap::SafeDownCast, emscripten::allow_raw_pointers())

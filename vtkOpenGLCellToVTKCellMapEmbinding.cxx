@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLCellToVTKCellMap>(
 EMSCRIPTEN_BINDINGS(vtkOpenGLCellToVTKCellMap_class) {
   emscripten::class_<vtkOpenGLCellToVTKCellMap, emscripten::base<vtkObject>>("vtkOpenGLCellToVTKCellMap")
     .smart_ptr<vtkSmartPointer<vtkOpenGLCellToVTKCellMap>>("vtkSmartPointer<vtkOpenGLCellToVTKCellMap>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLCellToVTKCellMap>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLCellToVTKCellMap>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLCellToVTKCellMap::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLCellToVTKCellMap& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLCellToVTKCellMap::SafeDownCast, emscripten::allow_raw_pointers())

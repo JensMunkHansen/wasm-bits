@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEqualizerFilter>(vtkEqua
 EMSCRIPTEN_BINDINGS(vtkEqualizerFilter_class) {
   emscripten::class_<vtkEqualizerFilter, emscripten::base<vtkTableAlgorithm>>("vtkEqualizerFilter")
     .smart_ptr<vtkSmartPointer<vtkEqualizerFilter>>("vtkSmartPointer<vtkEqualizerFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEqualizerFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEqualizerFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEqualizerFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEqualizerFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEqualizerFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkClipDataSet>(vtkClipData
 EMSCRIPTEN_BINDINGS(vtkClipDataSet_class) {
   emscripten::class_<vtkClipDataSet, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkClipDataSet")
     .smart_ptr<vtkSmartPointer<vtkClipDataSet>>("vtkSmartPointer<vtkClipDataSet>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkClipDataSet>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkClipDataSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClipDataSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClipDataSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClipDataSet::SafeDownCast, emscripten::allow_raw_pointers())

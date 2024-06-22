@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkScenePicker>(vtkScenePic
 EMSCRIPTEN_BINDINGS(vtkScenePicker_class) {
   emscripten::class_<vtkScenePicker, emscripten::base<vtkObject>>("vtkScenePicker")
     .smart_ptr<vtkSmartPointer<vtkScenePicker>>("vtkSmartPointer<vtkScenePicker>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkScenePicker>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkScenePicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScenePicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScenePicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScenePicker::SafeDownCast, emscripten::allow_raw_pointers())

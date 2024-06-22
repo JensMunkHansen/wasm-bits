@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLGenericDataObjectRead
 EMSCRIPTEN_BINDINGS(vtkXMLGenericDataObjectReader_class) {
   emscripten::class_<vtkXMLGenericDataObjectReader, emscripten::base<vtkXMLDataReader>>("vtkXMLGenericDataObjectReader")
     .smart_ptr<vtkSmartPointer<vtkXMLGenericDataObjectReader>>("vtkSmartPointer<vtkXMLGenericDataObjectReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLGenericDataObjectReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLGenericDataObjectReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLGenericDataObjectReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLGenericDataObjectReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLGenericDataObjectReader::SafeDownCast, emscripten::allow_raw_pointers())

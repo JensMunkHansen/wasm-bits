@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeCurve>(vtkLagran
 EMSCRIPTEN_BINDINGS(vtkLagrangeCurve_class) {
   emscripten::class_<vtkLagrangeCurve, emscripten::base<vtkHigherOrderCurve>>("vtkLagrangeCurve")
     .smart_ptr<vtkSmartPointer<vtkLagrangeCurve>>("vtkSmartPointer<vtkLagrangeCurve>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeCurve>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeCurve>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeCurve::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeCurve& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeCurve::SafeDownCast, emscripten::allow_raw_pointers())

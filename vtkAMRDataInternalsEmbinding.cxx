@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRDataInternals>(vtkAMR
 EMSCRIPTEN_BINDINGS(vtkAMRDataInternals_class) {
   emscripten::class_<vtkAMRDataInternals, emscripten::base<vtkObject>>("vtkAMRDataInternals")
     .smart_ptr<vtkSmartPointer<vtkAMRDataInternals>>("vtkSmartPointer<vtkAMRDataInternals>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRDataInternals>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRDataInternals>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRDataInternals::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRDataInternals& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRDataInternals::SafeDownCast, emscripten::allow_raw_pointers())

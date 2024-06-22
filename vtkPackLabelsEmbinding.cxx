@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkPackLabels_class) {
   using DefaultScalarType=vtkPackLabels::DefaultScalarType;
   emscripten::class_<vtkPackLabels, emscripten::base<vtkDataSetAlgorithm>>("vtkPackLabels")
     .smart_ptr<vtkSmartPointer<vtkPackLabels>>("vtkSmartPointer<vtkPackLabels>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPackLabels>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPackLabels>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPackLabels::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPackLabels& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPackLabels::SafeDownCast, emscripten::allow_raw_pointers())

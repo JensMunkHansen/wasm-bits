@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTIFFReader>(vtkTIFFReade
 EMSCRIPTEN_BINDINGS(vtkTIFFReader_class) {
   emscripten::class_<vtkTIFFReader, emscripten::base<vtkImageReader2>>("vtkTIFFReader")
     .smart_ptr<vtkSmartPointer<vtkTIFFReader>>("vtkSmartPointer<vtkTIFFReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTIFFReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTIFFReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTIFFReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTIFFReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTIFFReader::SafeDownCast, emscripten::allow_raw_pointers())

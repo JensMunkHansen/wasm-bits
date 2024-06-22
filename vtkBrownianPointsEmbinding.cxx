@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBrownianPoints>(vtkBrown
 EMSCRIPTEN_BINDINGS(vtkBrownianPoints_class) {
   emscripten::class_<vtkBrownianPoints, emscripten::base<vtkDataSetAlgorithm>>("vtkBrownianPoints")
     .smart_ptr<vtkSmartPointer<vtkBrownianPoints>>("vtkSmartPointer<vtkBrownianPoints>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBrownianPoints>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBrownianPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBrownianPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBrownianPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBrownianPoints::SafeDownCast, emscripten::allow_raw_pointers())

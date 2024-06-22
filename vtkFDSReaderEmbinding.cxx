@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkFDSReader>(vtkFDSReader 
 EMSCRIPTEN_BINDINGS(vtkFDSReader_class) {
   emscripten::class_<vtkFDSReader, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkFDSReader")
     .smart_ptr<vtkSmartPointer<vtkFDSReader>>("vtkSmartPointer<vtkFDSReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFDSReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFDSReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFDSReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFDSReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFDSReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRGaussianPulseSource>(
 EMSCRIPTEN_BINDINGS(vtkAMRGaussianPulseSource_class) {
   emscripten::class_<vtkAMRGaussianPulseSource, emscripten::base<vtkOverlappingAMRAlgorithm>>("vtkAMRGaussianPulseSource")
     .smart_ptr<vtkSmartPointer<vtkAMRGaussianPulseSource>>("vtkSmartPointer<vtkAMRGaussianPulseSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRGaussianPulseSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRGaussianPulseSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRGaussianPulseSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRGaussianPulseSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRGaussianPulseSource::SafeDownCast, emscripten::allow_raw_pointers())

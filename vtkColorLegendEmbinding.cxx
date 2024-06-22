@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkColorLegend>(vtkColorLeg
 EMSCRIPTEN_BINDINGS(vtkColorLegend_class) {
   emscripten::class_<vtkColorLegend, emscripten::base<vtkChartLegend>>("vtkColorLegend")
     .smart_ptr<vtkSmartPointer<vtkColorLegend>>("vtkSmartPointer<vtkColorLegend>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkColorLegend>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkColorLegend>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkColorLegend::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkColorLegend& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkColorLegend::SafeDownCast, emscripten::allow_raw_pointers())

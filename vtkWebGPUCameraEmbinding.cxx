@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPUCamera>(vtkWebGPUC
 EMSCRIPTEN_BINDINGS(vtkWebGPUCamera_class) {
   emscripten::class_<vtkWebGPUCamera, emscripten::base<vtkCamera>>("vtkWebGPUCamera")
     .smart_ptr<vtkSmartPointer<vtkWebGPUCamera>>("vtkSmartPointer<vtkWebGPUCamera>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUCamera>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUCamera>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUCamera::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUCamera& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUCamera::SafeDownCast, emscripten::allow_raw_pointers())

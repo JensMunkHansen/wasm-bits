@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXGMLReader>(vtkXGMLReade
 EMSCRIPTEN_BINDINGS(vtkXGMLReader_class) {
   emscripten::class_<vtkXGMLReader, emscripten::base<vtkUndirectedGraphAlgorithm>>("vtkXGMLReader")
     .smart_ptr<vtkSmartPointer<vtkXGMLReader>>("vtkSmartPointer<vtkXGMLReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXGMLReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXGMLReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXGMLReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXGMLReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXGMLReader::SafeDownCast, emscripten::allow_raw_pointers())

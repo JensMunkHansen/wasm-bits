@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalShiftScale>(vtkT
 EMSCRIPTEN_BINDINGS(vtkTemporalShiftScale_class) {
   emscripten::class_<vtkTemporalShiftScale, emscripten::base<vtkAlgorithm>>("vtkTemporalShiftScale")
     .smart_ptr<vtkSmartPointer<vtkTemporalShiftScale>>("vtkSmartPointer<vtkTemporalShiftScale>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalShiftScale>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalShiftScale>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalShiftScale::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalShiftScale& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalShiftScale::SafeDownCast, emscripten::allow_raw_pointers())

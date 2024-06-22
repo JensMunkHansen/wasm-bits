@@ -40,7 +40,7 @@ EMSCRIPTEN_BINDINGS(vtkCameraOrientationRepresentation_class) {
   using AnchorType=vtkCameraOrientationRepresentation::AnchorType;
   emscripten::class_<vtkCameraOrientationRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkCameraOrientationRepresentation")
     .smart_ptr<vtkSmartPointer<vtkCameraOrientationRepresentation>>("vtkSmartPointer<vtkCameraOrientationRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCameraOrientationRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCameraOrientationRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCameraOrientationRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCameraOrientationRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCameraOrientationRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

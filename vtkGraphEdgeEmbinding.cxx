@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphEdge>(vtkGraphEdge 
 EMSCRIPTEN_BINDINGS(vtkGraphEdge_class) {
   emscripten::class_<vtkGraphEdge, emscripten::base<vtkObject>>("vtkGraphEdge")
     .smart_ptr<vtkSmartPointer<vtkGraphEdge>>("vtkSmartPointer<vtkGraphEdge>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphEdge>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphEdge>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphEdge::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphEdge& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphEdge::SafeDownCast, emscripten::allow_raw_pointers())

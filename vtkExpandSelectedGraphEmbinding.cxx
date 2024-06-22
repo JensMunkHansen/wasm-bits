@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExpandSelectedGraph>(vtk
 EMSCRIPTEN_BINDINGS(vtkExpandSelectedGraph_class) {
   emscripten::class_<vtkExpandSelectedGraph, emscripten::base<vtkSelectionAlgorithm>>("vtkExpandSelectedGraph")
     .smart_ptr<vtkSmartPointer<vtkExpandSelectedGraph>>("vtkSmartPointer<vtkExpandSelectedGraph>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExpandSelectedGraph>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExpandSelectedGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExpandSelectedGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExpandSelectedGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExpandSelectedGraph::SafeDownCast, emscripten::allow_raw_pointers())

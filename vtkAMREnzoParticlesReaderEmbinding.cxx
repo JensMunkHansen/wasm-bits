@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMREnzoParticlesReader>(
 EMSCRIPTEN_BINDINGS(vtkAMREnzoParticlesReader_class) {
   emscripten::class_<vtkAMREnzoParticlesReader, emscripten::base<vtkAMRBaseParticlesReader>>("vtkAMREnzoParticlesReader")
     .smart_ptr<vtkSmartPointer<vtkAMREnzoParticlesReader>>("vtkSmartPointer<vtkAMREnzoParticlesReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMREnzoParticlesReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMREnzoParticlesReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMREnzoParticlesReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMREnzoParticlesReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMREnzoParticlesReader::SafeDownCast, emscripten::allow_raw_pointers())

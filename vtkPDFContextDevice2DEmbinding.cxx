@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkPDFContextDevice2D>(vtkP
 EMSCRIPTEN_BINDINGS(vtkPDFContextDevice2D_class) {
   emscripten::class_<vtkPDFContextDevice2D, emscripten::base<vtkContextDevice2D>>("vtkPDFContextDevice2D")
     .smart_ptr<vtkSmartPointer<vtkPDFContextDevice2D>>("vtkSmartPointer<vtkPDFContextDevice2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPDFContextDevice2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPDFContextDevice2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPDFContextDevice2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPDFContextDevice2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPDFContextDevice2D::SafeDownCast, emscripten::allow_raw_pointers())

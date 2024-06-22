@@ -39,7 +39,7 @@ template<> void emscripten::internal::raw_destructor<vtkColorTransferFunction>(v
 EMSCRIPTEN_BINDINGS(vtkColorTransferFunction_class) {
   emscripten::class_<vtkColorTransferFunction, emscripten::base<vtkScalarsToColors>>("vtkColorTransferFunction")
     .smart_ptr<vtkSmartPointer<vtkColorTransferFunction>>("vtkSmartPointer<vtkColorTransferFunction>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkColorTransferFunction>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkColorTransferFunction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkColorTransferFunction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkColorTransferFunction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkColorTransferFunction::SafeDownCast, emscripten::allow_raw_pointers())

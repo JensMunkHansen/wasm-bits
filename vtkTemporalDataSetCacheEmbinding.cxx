@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalDataSetCache>(vt
 EMSCRIPTEN_BINDINGS(vtkTemporalDataSetCache_class) {
   emscripten::class_<vtkTemporalDataSetCache, emscripten::base<vtkAlgorithm>>("vtkTemporalDataSetCache")
     .smart_ptr<vtkSmartPointer<vtkTemporalDataSetCache>>("vtkSmartPointer<vtkTemporalDataSetCache>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalDataSetCache>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalDataSetCache>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalDataSetCache::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalDataSetCache& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalDataSetCache::SafeDownCast, emscripten::allow_raw_pointers())

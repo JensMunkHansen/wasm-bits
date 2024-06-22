@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkAssignAttribute_class) {
   using AttributeLocation=vtkAssignAttribute::AttributeLocation;
   emscripten::class_<vtkAssignAttribute, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkAssignAttribute")
     .smart_ptr<vtkSmartPointer<vtkAssignAttribute>>("vtkSmartPointer<vtkAssignAttribute>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAssignAttribute>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAssignAttribute>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAssignAttribute::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAssignAttribute& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAssignAttribute::SafeDownCast, emscripten::allow_raw_pointers())

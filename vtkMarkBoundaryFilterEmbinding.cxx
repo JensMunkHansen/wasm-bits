@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMarkBoundaryFilter>(vtkM
 EMSCRIPTEN_BINDINGS(vtkMarkBoundaryFilter_class) {
   emscripten::class_<vtkMarkBoundaryFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkMarkBoundaryFilter")
     .smart_ptr<vtkSmartPointer<vtkMarkBoundaryFilter>>("vtkSmartPointer<vtkMarkBoundaryFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMarkBoundaryFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMarkBoundaryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMarkBoundaryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMarkBoundaryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMarkBoundaryFilter::SafeDownCast, emscripten::allow_raw_pointers())

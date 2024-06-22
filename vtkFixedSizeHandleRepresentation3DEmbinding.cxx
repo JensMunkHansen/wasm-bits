@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFixedSizeHandleRepresent
 EMSCRIPTEN_BINDINGS(vtkFixedSizeHandleRepresentation3D_class) {
   emscripten::class_<vtkFixedSizeHandleRepresentation3D, emscripten::base<vtkPolygonalHandleRepresentation3D>>("vtkFixedSizeHandleRepresentation3D")
     .smart_ptr<vtkSmartPointer<vtkFixedSizeHandleRepresentation3D>>("vtkSmartPointer<vtkFixedSizeHandleRepresentation3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFixedSizeHandleRepresentation3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFixedSizeHandleRepresentation3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFixedSizeHandleRepresentation3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFixedSizeHandleRepresentation3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFixedSizeHandleRepresentation3D::SafeDownCast, emscripten::allow_raw_pointers())

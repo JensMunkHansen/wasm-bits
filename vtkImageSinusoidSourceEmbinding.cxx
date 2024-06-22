@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSinusoidSource>(vtk
 EMSCRIPTEN_BINDINGS(vtkImageSinusoidSource_class) {
   emscripten::class_<vtkImageSinusoidSource, emscripten::base<vtkImageAlgorithm>>("vtkImageSinusoidSource")
     .smart_ptr<vtkSmartPointer<vtkImageSinusoidSource>>("vtkSmartPointer<vtkImageSinusoidSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSinusoidSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSinusoidSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSinusoidSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSinusoidSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSinusoidSource::SafeDownCast, emscripten::allow_raw_pointers())

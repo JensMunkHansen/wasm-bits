@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkClipClosedSurface>(vtkCl
 EMSCRIPTEN_BINDINGS(vtkClipClosedSurface_class) {
   emscripten::class_<vtkClipClosedSurface, emscripten::base<vtkPolyDataAlgorithm>>("vtkClipClosedSurface")
     .smart_ptr<vtkSmartPointer<vtkClipClosedSurface>>("vtkSmartPointer<vtkClipClosedSurface>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkClipClosedSurface>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkClipClosedSurface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClipClosedSurface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClipClosedSurface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClipClosedSurface::SafeDownCast, emscripten::allow_raw_pointers())

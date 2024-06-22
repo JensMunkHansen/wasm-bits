@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkProjectedTetrahedraMappe
 EMSCRIPTEN_BINDINGS(vtkProjectedTetrahedraMapper_class) {
   emscripten::class_<vtkProjectedTetrahedraMapper, emscripten::base<vtkUnstructuredGridVolumeMapper>>("vtkProjectedTetrahedraMapper")
     .smart_ptr<vtkSmartPointer<vtkProjectedTetrahedraMapper>>("vtkSmartPointer<vtkProjectedTetrahedraMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProjectedTetrahedraMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProjectedTetrahedraMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProjectedTetrahedraMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProjectedTetrahedraMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProjectedTetrahedraMapper::SafeDownCast, emscripten::allow_raw_pointers())

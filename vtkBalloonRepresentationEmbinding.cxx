@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkBalloonRepresentation_class) {
   using InteractionStateType=vtkBalloonRepresentation::InteractionStateType;
   emscripten::class_<vtkBalloonRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkBalloonRepresentation")
     .smart_ptr<vtkSmartPointer<vtkBalloonRepresentation>>("vtkSmartPointer<vtkBalloonRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBalloonRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBalloonRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBalloonRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBalloonRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBalloonRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

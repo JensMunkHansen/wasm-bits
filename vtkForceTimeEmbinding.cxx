@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkForceTime>(vtkForceTime 
 EMSCRIPTEN_BINDINGS(vtkForceTime_class) {
   emscripten::class_<vtkForceTime, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkForceTime")
     .smart_ptr<vtkSmartPointer<vtkForceTime>>("vtkSmartPointer<vtkForceTime>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkForceTime>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkForceTime>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkForceTime::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkForceTime& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkForceTime::SafeDownCast, emscripten::allow_raw_pointers())

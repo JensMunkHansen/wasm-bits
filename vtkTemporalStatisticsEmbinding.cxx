@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalStatistics>(vtkT
 EMSCRIPTEN_BINDINGS(vtkTemporalStatistics_class) {
   emscripten::class_<vtkTemporalStatistics, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkTemporalStatistics")
     .smart_ptr<vtkSmartPointer<vtkTemporalStatistics>>("vtkSmartPointer<vtkTemporalStatistics>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalStatistics>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalStatistics::SafeDownCast, emscripten::allow_raw_pointers())

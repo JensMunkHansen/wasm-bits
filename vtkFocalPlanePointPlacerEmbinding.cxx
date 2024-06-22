@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFocalPlanePointPlacer>(v
 EMSCRIPTEN_BINDINGS(vtkFocalPlanePointPlacer_class) {
   emscripten::class_<vtkFocalPlanePointPlacer, emscripten::base<vtkPointPlacer>>("vtkFocalPlanePointPlacer")
     .smart_ptr<vtkSmartPointer<vtkFocalPlanePointPlacer>>("vtkSmartPointer<vtkFocalPlanePointPlacer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFocalPlanePointPlacer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFocalPlanePointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFocalPlanePointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFocalPlanePointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFocalPlanePointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

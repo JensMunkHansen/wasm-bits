@@ -38,7 +38,7 @@ template<> void emscripten::internal::raw_destructor<vtkTubeFilter>(vtkTubeFilte
 EMSCRIPTEN_BINDINGS(vtkTubeFilter_class) {
   emscripten::class_<vtkTubeFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkTubeFilter")
     .smart_ptr<vtkSmartPointer<vtkTubeFilter>>("vtkSmartPointer<vtkTubeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTubeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTubeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTubeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTubeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTubeFilter::SafeDownCast, emscripten::allow_raw_pointers())

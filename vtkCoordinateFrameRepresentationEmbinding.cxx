@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkCoordinateFrameRepresentation_class) {
   using InteractionStateType=vtkCoordinateFrameRepresentation::InteractionStateType;
   emscripten::class_<vtkCoordinateFrameRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkCoordinateFrameRepresentation")
     .smart_ptr<vtkSmartPointer<vtkCoordinateFrameRepresentation>>("vtkSmartPointer<vtkCoordinateFrameRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCoordinateFrameRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCoordinateFrameRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCoordinateFrameRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCoordinateFrameRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCoordinateFrameRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

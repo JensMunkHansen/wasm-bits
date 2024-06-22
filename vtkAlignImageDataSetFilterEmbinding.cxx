@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAlignImageDataSetFilter>
 EMSCRIPTEN_BINDINGS(vtkAlignImageDataSetFilter_class) {
   emscripten::class_<vtkAlignImageDataSetFilter, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkAlignImageDataSetFilter")
     .smart_ptr<vtkSmartPointer<vtkAlignImageDataSetFilter>>("vtkSmartPointer<vtkAlignImageDataSetFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAlignImageDataSetFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAlignImageDataSetFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAlignImageDataSetFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAlignImageDataSetFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAlignImageDataSetFilter::SafeDownCast, emscripten::allow_raw_pointers())

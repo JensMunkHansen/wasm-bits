@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMedian3D>(vtkImageM
 EMSCRIPTEN_BINDINGS(vtkImageMedian3D_class) {
   emscripten::class_<vtkImageMedian3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageMedian3D")
     .smart_ptr<vtkSmartPointer<vtkImageMedian3D>>("vtkSmartPointer<vtkImageMedian3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMedian3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMedian3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMedian3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMedian3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMedian3D::SafeDownCast, emscripten::allow_raw_pointers())

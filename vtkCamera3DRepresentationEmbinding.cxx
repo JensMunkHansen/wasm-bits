@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkCamera3DRepresentation>(
 EMSCRIPTEN_BINDINGS(vtkCamera3DRepresentation_class) {
   emscripten::class_<vtkCamera3DRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkCamera3DRepresentation")
     .smart_ptr<vtkSmartPointer<vtkCamera3DRepresentation>>("vtkSmartPointer<vtkCamera3DRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCamera3DRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCamera3DRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCamera3DRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCamera3DRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCamera3DRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

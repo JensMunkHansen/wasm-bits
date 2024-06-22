@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkEllipsoidalGaussianKerne
 EMSCRIPTEN_BINDINGS(vtkEllipsoidalGaussianKernel_class) {
   emscripten::class_<vtkEllipsoidalGaussianKernel, emscripten::base<vtkGeneralizedKernel>>("vtkEllipsoidalGaussianKernel")
     .smart_ptr<vtkSmartPointer<vtkEllipsoidalGaussianKernel>>("vtkSmartPointer<vtkEllipsoidalGaussianKernel>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEllipsoidalGaussianKernel>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEllipsoidalGaussianKernel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEllipsoidalGaussianKernel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEllipsoidalGaussianKernel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEllipsoidalGaussianKernel::SafeDownCast, emscripten::allow_raw_pointers())

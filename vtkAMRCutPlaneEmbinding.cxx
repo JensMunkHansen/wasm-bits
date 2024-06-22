@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRCutPlane>(vtkAMRCutPl
 EMSCRIPTEN_BINDINGS(vtkAMRCutPlane_class) {
   emscripten::class_<vtkAMRCutPlane, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkAMRCutPlane")
     .smart_ptr<vtkSmartPointer<vtkAMRCutPlane>>("vtkSmartPointer<vtkAMRCutPlane>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRCutPlane>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRCutPlane>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRCutPlane::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRCutPlane& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRCutPlane::SafeDownCast, emscripten::allow_raw_pointers())

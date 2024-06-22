@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkCategoryLegend>(vtkCateg
 EMSCRIPTEN_BINDINGS(vtkCategoryLegend_class) {
   emscripten::class_<vtkCategoryLegend, emscripten::base<vtkChartLegend>>("vtkCategoryLegend")
     .smart_ptr<vtkSmartPointer<vtkCategoryLegend>>("vtkSmartPointer<vtkCategoryLegend>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCategoryLegend>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCategoryLegend>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCategoryLegend::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCategoryLegend& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCategoryLegend::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCPExodusIIInSituReader>(
 EMSCRIPTEN_BINDINGS(vtkCPExodusIIInSituReader_class) {
   emscripten::class_<vtkCPExodusIIInSituReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkCPExodusIIInSituReader")
     .smart_ptr<vtkSmartPointer<vtkCPExodusIIInSituReader>>("vtkSmartPointer<vtkCPExodusIIInSituReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCPExodusIIInSituReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCPExodusIIInSituReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCPExodusIIInSituReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCPExodusIIInSituReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCPExodusIIInSituReader::SafeDownCast, emscripten::allow_raw_pointers())

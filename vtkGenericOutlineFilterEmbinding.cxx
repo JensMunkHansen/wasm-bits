@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericOutlineFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkGenericOutlineFilter_class) {
   emscripten::class_<vtkGenericOutlineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGenericOutlineFilter")
     .smart_ptr<vtkSmartPointer<vtkGenericOutlineFilter>>("vtkSmartPointer<vtkGenericOutlineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericOutlineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericOutlineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericOutlineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericOutlineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericOutlineFilter::SafeDownCast, emscripten::allow_raw_pointers())

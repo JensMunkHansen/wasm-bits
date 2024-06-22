@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphWeightEuclideanDist
 EMSCRIPTEN_BINDINGS(vtkGraphWeightEuclideanDistanceFilter_class) {
   emscripten::class_<vtkGraphWeightEuclideanDistanceFilter, emscripten::base<vtkGraphWeightFilter>>("vtkGraphWeightEuclideanDistanceFilter")
     .smart_ptr<vtkSmartPointer<vtkGraphWeightEuclideanDistanceFilter>>("vtkSmartPointer<vtkGraphWeightEuclideanDistanceFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphWeightEuclideanDistanceFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphWeightEuclideanDistanceFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphWeightEuclideanDistanceFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphWeightEuclideanDistanceFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphWeightEuclideanDistanceFilter::SafeDownCast, emscripten::allow_raw_pointers())

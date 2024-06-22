@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGlobFileNames>(vtkGlobFi
 EMSCRIPTEN_BINDINGS(vtkGlobFileNames_class) {
   emscripten::class_<vtkGlobFileNames, emscripten::base<vtkObject>>("vtkGlobFileNames")
     .smart_ptr<vtkSmartPointer<vtkGlobFileNames>>("vtkSmartPointer<vtkGlobFileNames>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGlobFileNames>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGlobFileNames>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGlobFileNames::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGlobFileNames& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGlobFileNames::SafeDownCast, emscripten::allow_raw_pointers())

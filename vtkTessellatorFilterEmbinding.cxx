@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkTessellatorFilter>(vtkTe
 EMSCRIPTEN_BINDINGS(vtkTessellatorFilter_class) {
   emscripten::class_<vtkTessellatorFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkTessellatorFilter")
     .smart_ptr<vtkSmartPointer<vtkTessellatorFilter>>("vtkSmartPointer<vtkTessellatorFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTessellatorFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTessellatorFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTessellatorFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTessellatorFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTessellatorFilter::SafeDownCast, emscripten::allow_raw_pointers())

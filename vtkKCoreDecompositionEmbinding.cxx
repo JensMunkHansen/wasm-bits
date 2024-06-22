@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkKCoreDecomposition>(vtkK
 EMSCRIPTEN_BINDINGS(vtkKCoreDecomposition_class) {
   emscripten::class_<vtkKCoreDecomposition, emscripten::base<vtkGraphAlgorithm>>("vtkKCoreDecomposition")
     .smart_ptr<vtkSmartPointer<vtkKCoreDecomposition>>("vtkSmartPointer<vtkKCoreDecomposition>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkKCoreDecomposition>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkKCoreDecomposition>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkKCoreDecomposition::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkKCoreDecomposition& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkKCoreDecomposition::SafeDownCast, emscripten::allow_raw_pointers())

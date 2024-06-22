@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimpleMotionBlurPass>(vt
 EMSCRIPTEN_BINDINGS(vtkSimpleMotionBlurPass_class) {
   emscripten::class_<vtkSimpleMotionBlurPass, emscripten::base<vtkDepthImageProcessingPass>>("vtkSimpleMotionBlurPass")
     .smart_ptr<vtkSmartPointer<vtkSimpleMotionBlurPass>>("vtkSmartPointer<vtkSimpleMotionBlurPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSimpleMotionBlurPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimpleMotionBlurPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimpleMotionBlurPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimpleMotionBlurPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimpleMotionBlurPass::SafeDownCast, emscripten::allow_raw_pointers())

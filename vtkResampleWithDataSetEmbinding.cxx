@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkResampleWithDataSet>(vtk
 EMSCRIPTEN_BINDINGS(vtkResampleWithDataSet_class) {
   emscripten::class_<vtkResampleWithDataSet, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkResampleWithDataSet")
     .smart_ptr<vtkSmartPointer<vtkResampleWithDataSet>>("vtkSmartPointer<vtkResampleWithDataSet>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkResampleWithDataSet>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkResampleWithDataSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkResampleWithDataSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkResampleWithDataSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkResampleWithDataSet::SafeDownCast, emscripten::allow_raw_pointers())

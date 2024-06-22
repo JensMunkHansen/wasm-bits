@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeCutter>(vtkComp
 EMSCRIPTEN_BINDINGS(vtkCompositeCutter_class) {
   emscripten::class_<vtkCompositeCutter, emscripten::base<vtkCutter>>("vtkCompositeCutter")
     .smart_ptr<vtkSmartPointer<vtkCompositeCutter>>("vtkSmartPointer<vtkCompositeCutter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeCutter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeCutter::SafeDownCast, emscripten::allow_raw_pointers())

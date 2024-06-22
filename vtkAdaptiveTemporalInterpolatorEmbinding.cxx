@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAdaptiveTemporalInterpol
 EMSCRIPTEN_BINDINGS(vtkAdaptiveTemporalInterpolator_class) {
   emscripten::class_<vtkAdaptiveTemporalInterpolator, emscripten::base<vtkTemporalInterpolator>>("vtkAdaptiveTemporalInterpolator")
     .smart_ptr<vtkSmartPointer<vtkAdaptiveTemporalInterpolator>>("vtkSmartPointer<vtkAdaptiveTemporalInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAdaptiveTemporalInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAdaptiveTemporalInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAdaptiveTemporalInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAdaptiveTemporalInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAdaptiveTemporalInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotFunctionalBag>(vtkPl
 EMSCRIPTEN_BINDINGS(vtkPlotFunctionalBag_class) {
   emscripten::class_<vtkPlotFunctionalBag, emscripten::base<vtkPlot>>("vtkPlotFunctionalBag")
     .smart_ptr<vtkSmartPointer<vtkPlotFunctionalBag>>("vtkSmartPointer<vtkPlotFunctionalBag>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotFunctionalBag>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotFunctionalBag>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotFunctionalBag::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotFunctionalBag& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotFunctionalBag::SafeDownCast, emscripten::allow_raw_pointers())

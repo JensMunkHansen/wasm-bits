@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPhyloXMLTreeWriter>(vtkP
 EMSCRIPTEN_BINDINGS(vtkPhyloXMLTreeWriter_class) {
   emscripten::class_<vtkPhyloXMLTreeWriter, emscripten::base<vtkXMLWriter>>("vtkPhyloXMLTreeWriter")
     .smart_ptr<vtkSmartPointer<vtkPhyloXMLTreeWriter>>("vtkSmartPointer<vtkPhyloXMLTreeWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPhyloXMLTreeWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPhyloXMLTreeWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPhyloXMLTreeWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPhyloXMLTreeWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPhyloXMLTreeWriter::SafeDownCast, emscripten::allow_raw_pointers())

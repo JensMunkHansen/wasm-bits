@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridBunykRay
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridBunykRayCastFunction_class) {
   emscripten::class_<vtkUnstructuredGridBunykRayCastFunction, emscripten::base<vtkUnstructuredGridVolumeRayCastFunction>>("vtkUnstructuredGridBunykRayCastFunction")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridBunykRayCastFunction>>("vtkSmartPointer<vtkUnstructuredGridBunykRayCastFunction>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridBunykRayCastFunction>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridBunykRayCastFunction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridBunykRayCastFunction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridBunykRayCastFunction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridBunykRayCastFunction::SafeDownCast, emscripten::allow_raw_pointers())

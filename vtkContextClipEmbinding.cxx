@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkContextClip>(vtkContextC
 EMSCRIPTEN_BINDINGS(vtkContextClip_class) {
   emscripten::class_<vtkContextClip, emscripten::base<vtkAbstractContextItem>>("vtkContextClip")
     .smart_ptr<vtkSmartPointer<vtkContextClip>>("vtkSmartPointer<vtkContextClip>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContextClip>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextClip>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextClip::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextClip& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextClip::SafeDownCast, emscripten::allow_raw_pointers())

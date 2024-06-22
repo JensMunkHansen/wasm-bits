@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellTypeSource>(vtkCellT
 EMSCRIPTEN_BINDINGS(vtkCellTypeSource_class) {
   emscripten::class_<vtkCellTypeSource, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkCellTypeSource")
     .smart_ptr<vtkSmartPointer<vtkCellTypeSource>>("vtkSmartPointer<vtkCellTypeSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellTypeSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellTypeSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellTypeSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellTypeSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellTypeSource::SafeDownCast, emscripten::allow_raw_pointers())

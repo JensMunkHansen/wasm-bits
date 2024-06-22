@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractStructuredGridHel
 EMSCRIPTEN_BINDINGS(vtkExtractStructuredGridHelper_class) {
   emscripten::class_<vtkExtractStructuredGridHelper, emscripten::base<vtkObject>>("vtkExtractStructuredGridHelper")
     .smart_ptr<vtkSmartPointer<vtkExtractStructuredGridHelper>>("vtkSmartPointer<vtkExtractStructuredGridHelper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractStructuredGridHelper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractStructuredGridHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractStructuredGridHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractStructuredGridHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractStructuredGridHelper::SafeDownCast, emscripten::allow_raw_pointers())

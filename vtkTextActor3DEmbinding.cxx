@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextActor3D>(vtkTextActo
 EMSCRIPTEN_BINDINGS(vtkTextActor3D_class) {
   emscripten::class_<vtkTextActor3D, emscripten::base<vtkProp3D>>("vtkTextActor3D")
     .smart_ptr<vtkSmartPointer<vtkTextActor3D>>("vtkSmartPointer<vtkTextActor3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextActor3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextActor3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextActor3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextActor3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextActor3D::SafeDownCast, emscripten::allow_raw_pointers())

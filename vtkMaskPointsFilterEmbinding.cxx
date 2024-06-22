@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMaskPointsFilter>(vtkMas
 EMSCRIPTEN_BINDINGS(vtkMaskPointsFilter_class) {
   emscripten::class_<vtkMaskPointsFilter, emscripten::base<vtkPointCloudFilter>>("vtkMaskPointsFilter")
     .smart_ptr<vtkSmartPointer<vtkMaskPointsFilter>>("vtkSmartPointer<vtkMaskPointsFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMaskPointsFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMaskPointsFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMaskPointsFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMaskPointsFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMaskPointsFilter::SafeDownCast, emscripten::allow_raw_pointers())

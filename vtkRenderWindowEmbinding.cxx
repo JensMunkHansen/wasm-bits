@@ -62,7 +62,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderWindow>(vtkRenderW
 EMSCRIPTEN_BINDINGS(vtkRenderWindow_class) {
   emscripten::class_<vtkRenderWindow, emscripten::base<vtkWindow>>("vtkRenderWindow")
     .smart_ptr<vtkSmartPointer<vtkRenderWindow>>("vtkSmartPointer<vtkRenderWindow>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderWindow>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderWindow>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderWindow::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderWindow& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderWindow::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkResliceCursorPolyDataAlg
 EMSCRIPTEN_BINDINGS(vtkResliceCursorPolyDataAlgorithm_class) {
   emscripten::class_<vtkResliceCursorPolyDataAlgorithm, emscripten::base<vtkPolyDataAlgorithm>>("vtkResliceCursorPolyDataAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkResliceCursorPolyDataAlgorithm>>("vtkSmartPointer<vtkResliceCursorPolyDataAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkResliceCursorPolyDataAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkResliceCursorPolyDataAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkResliceCursorPolyDataAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkResliceCursorPolyDataAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkResliceCursorPolyDataAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

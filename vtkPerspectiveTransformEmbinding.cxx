@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPerspectiveTransform>(vt
 EMSCRIPTEN_BINDINGS(vtkPerspectiveTransform_class) {
   emscripten::class_<vtkPerspectiveTransform, emscripten::base<vtkHomogeneousTransform>>("vtkPerspectiveTransform")
     .smart_ptr<vtkSmartPointer<vtkPerspectiveTransform>>("vtkSmartPointer<vtkPerspectiveTransform>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPerspectiveTransform>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPerspectiveTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPerspectiveTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPerspectiveTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPerspectiveTransform::SafeDownCast, emscripten::allow_raw_pointers())

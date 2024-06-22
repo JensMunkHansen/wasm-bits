@@ -41,7 +41,7 @@ EMSCRIPTEN_BINDINGS(vtkStreamingDemandDrivenPipeline_class) {
   using NO_PRIOR_TEMPORAL_ACCESS_STATES=vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS_STATES;
   emscripten::class_<vtkStreamingDemandDrivenPipeline, emscripten::base<vtkDemandDrivenPipeline>>("vtkStreamingDemandDrivenPipeline")
     .smart_ptr<vtkSmartPointer<vtkStreamingDemandDrivenPipeline>>("vtkSmartPointer<vtkStreamingDemandDrivenPipeline>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStreamingDemandDrivenPipeline>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreamingDemandDrivenPipeline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreamingDemandDrivenPipeline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreamingDemandDrivenPipeline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreamingDemandDrivenPipeline::SafeDownCast, emscripten::allow_raw_pointers())

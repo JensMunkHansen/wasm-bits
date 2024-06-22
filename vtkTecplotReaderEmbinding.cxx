@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTecplotReader>(vtkTecplo
 EMSCRIPTEN_BINDINGS(vtkTecplotReader_class) {
   emscripten::class_<vtkTecplotReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkTecplotReader")
     .smart_ptr<vtkSmartPointer<vtkTecplotReader>>("vtkSmartPointer<vtkTecplotReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTecplotReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTecplotReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTecplotReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTecplotReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTecplotReader::SafeDownCast, emscripten::allow_raw_pointers())

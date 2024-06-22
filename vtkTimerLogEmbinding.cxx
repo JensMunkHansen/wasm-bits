@@ -43,7 +43,7 @@ template<> void emscripten::internal::raw_destructor<vtkTimerLog>(vtkTimerLog * 
 EMSCRIPTEN_BINDINGS(vtkTimerLog_class) {
   emscripten::class_<vtkTimerLog, emscripten::base<vtkObject>>("vtkTimerLog")
     .smart_ptr<vtkSmartPointer<vtkTimerLog>>("vtkSmartPointer<vtkTimerLog>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTimerLog>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTimerLog>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTimerLog::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTimerLog& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTimerLog::SafeDownCast, emscripten::allow_raw_pointers())

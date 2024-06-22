@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridMapper>(vtkCellG
 EMSCRIPTEN_BINDINGS(vtkCellGridMapper_class) {
   emscripten::class_<vtkCellGridMapper, emscripten::base<vtkMapper>>("vtkCellGridMapper")
     .smart_ptr<vtkSmartPointer<vtkCellGridMapper>>("vtkSmartPointer<vtkCellGridMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridMapper::SafeDownCast, emscripten::allow_raw_pointers())

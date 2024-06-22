@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRIBLight>(vtkRIBLight * 
 EMSCRIPTEN_BINDINGS(vtkRIBLight_class) {
   emscripten::class_<vtkRIBLight, emscripten::base<vtkLight>>("vtkRIBLight")
     .smart_ptr<vtkSmartPointer<vtkRIBLight>>("vtkSmartPointer<vtkRIBLight>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRIBLight>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRIBLight>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRIBLight::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRIBLight& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRIBLight::SafeDownCast, emscripten::allow_raw_pointers())

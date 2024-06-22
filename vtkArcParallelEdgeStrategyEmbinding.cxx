@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkArcParallelEdgeStrategy>
 EMSCRIPTEN_BINDINGS(vtkArcParallelEdgeStrategy_class) {
   emscripten::class_<vtkArcParallelEdgeStrategy, emscripten::base<vtkEdgeLayoutStrategy>>("vtkArcParallelEdgeStrategy")
     .smart_ptr<vtkSmartPointer<vtkArcParallelEdgeStrategy>>("vtkSmartPointer<vtkArcParallelEdgeStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkArcParallelEdgeStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkArcParallelEdgeStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArcParallelEdgeStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArcParallelEdgeStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArcParallelEdgeStrategy::SafeDownCast, emscripten::allow_raw_pointers())

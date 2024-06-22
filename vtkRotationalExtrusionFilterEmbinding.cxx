@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRotationalExtrusionFilte
 EMSCRIPTEN_BINDINGS(vtkRotationalExtrusionFilter_class) {
   emscripten::class_<vtkRotationalExtrusionFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkRotationalExtrusionFilter")
     .smart_ptr<vtkSmartPointer<vtkRotationalExtrusionFilter>>("vtkSmartPointer<vtkRotationalExtrusionFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRotationalExtrusionFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRotationalExtrusionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRotationalExtrusionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRotationalExtrusionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRotationalExtrusionFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeFieldAggregator>(vtk
 EMSCRIPTEN_BINDINGS(vtkTreeFieldAggregator_class) {
   emscripten::class_<vtkTreeFieldAggregator, emscripten::base<vtkTreeAlgorithm>>("vtkTreeFieldAggregator")
     .smart_ptr<vtkSmartPointer<vtkTreeFieldAggregator>>("vtkSmartPointer<vtkTreeFieldAggregator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeFieldAggregator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeFieldAggregator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeFieldAggregator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeFieldAggregator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeFieldAggregator::SafeDownCast, emscripten::allow_raw_pointers())

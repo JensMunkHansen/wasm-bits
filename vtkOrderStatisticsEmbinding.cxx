@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkOrderStatistics_class) {
   using QuantileDefinitionType=vtkOrderStatistics::QuantileDefinitionType;
   emscripten::class_<vtkOrderStatistics, emscripten::base<vtkStatisticsAlgorithm>>("vtkOrderStatistics")
     .smart_ptr<vtkSmartPointer<vtkOrderStatistics>>("vtkSmartPointer<vtkOrderStatistics>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOrderStatistics>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrderStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrderStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrderStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrderStatistics::SafeDownCast, emscripten::allow_raw_pointers())

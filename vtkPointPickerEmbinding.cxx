@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointPicker>(vtkPointPic
 EMSCRIPTEN_BINDINGS(vtkPointPicker_class) {
   emscripten::class_<vtkPointPicker, emscripten::base<vtkPicker>>("vtkPointPicker")
     .smart_ptr<vtkSmartPointer<vtkPointPicker>>("vtkSmartPointer<vtkPointPicker>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointPicker>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointPicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointPicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointPicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointPicker::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleTreeMapHo
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleTreeMapHover_class) {
   emscripten::class_<vtkInteractorStyleTreeMapHover, emscripten::base<vtkInteractorStyleImage>>("vtkInteractorStyleTreeMapHover")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleTreeMapHover>>("vtkSmartPointer<vtkInteractorStyleTreeMapHover>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleTreeMapHover>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleTreeMapHover>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleTreeMapHover::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleTreeMapHover& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleTreeMapHover::SafeDownCast, emscripten::allow_raw_pointers())

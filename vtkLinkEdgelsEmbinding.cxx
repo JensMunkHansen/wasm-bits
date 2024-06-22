@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinkEdgels>(vtkLinkEdgel
 EMSCRIPTEN_BINDINGS(vtkLinkEdgels_class) {
   emscripten::class_<vtkLinkEdgels, emscripten::base<vtkPolyDataAlgorithm>>("vtkLinkEdgels")
     .smart_ptr<vtkSmartPointer<vtkLinkEdgels>>("vtkSmartPointer<vtkLinkEdgels>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLinkEdgels>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinkEdgels>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinkEdgels::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinkEdgels& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinkEdgels::SafeDownCast, emscripten::allow_raw_pointers())

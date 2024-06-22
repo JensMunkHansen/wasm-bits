@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTableToTreeFilter>(vtkTa
 EMSCRIPTEN_BINDINGS(vtkTableToTreeFilter_class) {
   emscripten::class_<vtkTableToTreeFilter, emscripten::base<vtkTreeAlgorithm>>("vtkTableToTreeFilter")
     .smart_ptr<vtkSmartPointer<vtkTableToTreeFilter>>("vtkSmartPointer<vtkTableToTreeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTableToTreeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTableToTreeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTableToTreeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTableToTreeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTableToTreeFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOBBDicer>(vtkOBBDicer * 
 EMSCRIPTEN_BINDINGS(vtkOBBDicer_class) {
   emscripten::class_<vtkOBBDicer, emscripten::base<vtkDicer>>("vtkOBBDicer")
     .smart_ptr<vtkSmartPointer<vtkOBBDicer>>("vtkSmartPointer<vtkOBBDicer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOBBDicer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOBBDicer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOBBDicer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOBBDicer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOBBDicer::SafeDownCast, emscripten::allow_raw_pointers())

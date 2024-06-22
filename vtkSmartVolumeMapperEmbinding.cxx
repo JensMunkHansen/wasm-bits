@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkSmartVolumeMapper_class) {
   using LowResModeType=vtkSmartVolumeMapper::LowResModeType;
   emscripten::class_<vtkSmartVolumeMapper, emscripten::base<vtkVolumeMapper>>("vtkSmartVolumeMapper")
     .smart_ptr<vtkSmartPointer<vtkSmartVolumeMapper>>("vtkSmartPointer<vtkSmartVolumeMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSmartVolumeMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSmartVolumeMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSmartVolumeMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSmartVolumeMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSmartVolumeMapper::SafeDownCast, emscripten::allow_raw_pointers())

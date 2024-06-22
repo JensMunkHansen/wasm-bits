@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricConicSpiral>(v
 EMSCRIPTEN_BINDINGS(vtkParametricConicSpiral_class) {
   emscripten::class_<vtkParametricConicSpiral, emscripten::base<vtkParametricFunction>>("vtkParametricConicSpiral")
     .smart_ptr<vtkSmartPointer<vtkParametricConicSpiral>>("vtkSmartPointer<vtkParametricConicSpiral>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricConicSpiral>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricConicSpiral>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricConicSpiral::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricConicSpiral& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricConicSpiral::SafeDownCast, emscripten::allow_raw_pointers())

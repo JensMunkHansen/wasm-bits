@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkShadowMapBakerPass>(vtkS
 EMSCRIPTEN_BINDINGS(vtkShadowMapBakerPass_class) {
   emscripten::class_<vtkShadowMapBakerPass, emscripten::base<vtkOpenGLRenderPass>>("vtkShadowMapBakerPass")
     .smart_ptr<vtkSmartPointer<vtkShadowMapBakerPass>>("vtkSmartPointer<vtkShadowMapBakerPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkShadowMapBakerPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkShadowMapBakerPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkShadowMapBakerPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkShadowMapBakerPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkShadowMapBakerPass::SafeDownCast, emscripten::allow_raw_pointers())

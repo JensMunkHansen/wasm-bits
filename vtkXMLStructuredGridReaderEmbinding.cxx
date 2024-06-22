@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLStructuredGridReader>
 EMSCRIPTEN_BINDINGS(vtkXMLStructuredGridReader_class) {
   emscripten::class_<vtkXMLStructuredGridReader, emscripten::base<vtkXMLStructuredDataReader>>("vtkXMLStructuredGridReader")
     .smart_ptr<vtkSmartPointer<vtkXMLStructuredGridReader>>("vtkSmartPointer<vtkXMLStructuredGridReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLStructuredGridReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLStructuredGridReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLStructuredGridReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLStructuredGridReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLStructuredGridReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkPixel>(vtkPixel * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkPixel_class) {
   emscripten::class_<vtkPixel, emscripten::base<vtkCell>>("vtkPixel")
     .smart_ptr<vtkSmartPointer<vtkPixel>>("vtkSmartPointer<vtkPixel>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPixel>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPixel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPixel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPixel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPixel::SafeDownCast, emscripten::allow_raw_pointers())

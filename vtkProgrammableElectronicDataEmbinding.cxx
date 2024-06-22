@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgrammableElectronicDa
 EMSCRIPTEN_BINDINGS(vtkProgrammableElectronicData_class) {
   emscripten::class_<vtkProgrammableElectronicData, emscripten::base<vtkAbstractElectronicData>>("vtkProgrammableElectronicData")
     .smart_ptr<vtkSmartPointer<vtkProgrammableElectronicData>>("vtkSmartPointer<vtkProgrammableElectronicData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProgrammableElectronicData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgrammableElectronicData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgrammableElectronicData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgrammableElectronicData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgrammableElectronicData::SafeDownCast, emscripten::allow_raw_pointers())

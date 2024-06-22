@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkVectorFieldTopology>(vtk
 EMSCRIPTEN_BINDINGS(vtkVectorFieldTopology_class) {
   emscripten::class_<vtkVectorFieldTopology, emscripten::base<vtkPolyDataAlgorithm>>("vtkVectorFieldTopology")
     .smart_ptr<vtkSmartPointer<vtkVectorFieldTopology>>("vtkSmartPointer<vtkVectorFieldTopology>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVectorFieldTopology>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVectorFieldTopology>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVectorFieldTopology::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVectorFieldTopology& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVectorFieldTopology::SafeDownCast, emscripten::allow_raw_pointers())

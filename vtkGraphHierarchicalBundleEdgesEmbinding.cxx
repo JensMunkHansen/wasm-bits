@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphHierarchicalBundleE
 EMSCRIPTEN_BINDINGS(vtkGraphHierarchicalBundleEdges_class) {
   emscripten::class_<vtkGraphHierarchicalBundleEdges, emscripten::base<vtkGraphAlgorithm>>("vtkGraphHierarchicalBundleEdges")
     .smart_ptr<vtkSmartPointer<vtkGraphHierarchicalBundleEdges>>("vtkSmartPointer<vtkGraphHierarchicalBundleEdges>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphHierarchicalBundleEdges>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphHierarchicalBundleEdges>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphHierarchicalBundleEdges::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphHierarchicalBundleEdges& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphHierarchicalBundleEdges::SafeDownCast, emscripten::allow_raw_pointers())

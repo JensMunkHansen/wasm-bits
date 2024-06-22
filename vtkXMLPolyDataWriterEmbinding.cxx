@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPolyDataWriter>(vtkXM
 EMSCRIPTEN_BINDINGS(vtkXMLPolyDataWriter_class) {
   emscripten::class_<vtkXMLPolyDataWriter, emscripten::base<vtkXMLUnstructuredDataWriter>>("vtkXMLPolyDataWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLPolyDataWriter>>("vtkSmartPointer<vtkXMLPolyDataWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPolyDataWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPolyDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPolyDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPolyDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPolyDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

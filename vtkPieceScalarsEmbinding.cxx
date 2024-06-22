@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPieceScalars>(vtkPieceSc
 EMSCRIPTEN_BINDINGS(vtkPieceScalars_class) {
   emscripten::class_<vtkPieceScalars, emscripten::base<vtkDataSetAlgorithm>>("vtkPieceScalars")
     .smart_ptr<vtkSmartPointer<vtkPieceScalars>>("vtkSmartPointer<vtkPieceScalars>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPieceScalars>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPieceScalars>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPieceScalars::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPieceScalars& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPieceScalars::SafeDownCast, emscripten::allow_raw_pointers())

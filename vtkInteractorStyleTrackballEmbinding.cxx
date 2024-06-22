@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleTrackball
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleTrackball_class) {
   emscripten::class_<vtkInteractorStyleTrackball, emscripten::base<vtkInteractorStyleSwitch>>("vtkInteractorStyleTrackball")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleTrackball>>("vtkSmartPointer<vtkInteractorStyleTrackball>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleTrackball>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleTrackball>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleTrackball::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleTrackball& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleTrackball::SafeDownCast, emscripten::allow_raw_pointers())

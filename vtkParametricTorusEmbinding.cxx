@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricTorus>(vtkPara
 EMSCRIPTEN_BINDINGS(vtkParametricTorus_class) {
   emscripten::class_<vtkParametricTorus, emscripten::base<vtkParametricFunction>>("vtkParametricTorus")
     .smart_ptr<vtkSmartPointer<vtkParametricTorus>>("vtkSmartPointer<vtkParametricTorus>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricTorus>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricTorus>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricTorus::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricTorus& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricTorus::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiBlockVolumeMapper>(
 EMSCRIPTEN_BINDINGS(vtkMultiBlockVolumeMapper_class) {
   emscripten::class_<vtkMultiBlockVolumeMapper, emscripten::base<vtkVolumeMapper>>("vtkMultiBlockVolumeMapper")
     .smart_ptr<vtkSmartPointer<vtkMultiBlockVolumeMapper>>("vtkSmartPointer<vtkMultiBlockVolumeMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiBlockVolumeMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiBlockVolumeMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiBlockVolumeMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiBlockVolumeMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiBlockVolumeMapper::SafeDownCast, emscripten::allow_raw_pointers())

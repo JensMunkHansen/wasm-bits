@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkContour3DLinearGrid>(vtk
 EMSCRIPTEN_BINDINGS(vtkContour3DLinearGrid_class) {
   emscripten::class_<vtkContour3DLinearGrid, emscripten::base<vtkDataObjectAlgorithm>>("vtkContour3DLinearGrid")
     .smart_ptr<vtkSmartPointer<vtkContour3DLinearGrid>>("vtkSmartPointer<vtkContour3DLinearGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContour3DLinearGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContour3DLinearGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContour3DLinearGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContour3DLinearGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContour3DLinearGrid::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkKCoreLayout>(vtkKCoreLay
 EMSCRIPTEN_BINDINGS(vtkKCoreLayout_class) {
   emscripten::class_<vtkKCoreLayout, emscripten::base<vtkGraphAlgorithm>>("vtkKCoreLayout")
     .smart_ptr<vtkSmartPointer<vtkKCoreLayout>>("vtkSmartPointer<vtkKCoreLayout>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkKCoreLayout>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkKCoreLayout>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkKCoreLayout::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkKCoreLayout& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkKCoreLayout::SafeDownCast, emscripten::allow_raw_pointers())

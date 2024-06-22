@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpanTreeLayoutStrategy>(
 EMSCRIPTEN_BINDINGS(vtkSpanTreeLayoutStrategy_class) {
   emscripten::class_<vtkSpanTreeLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkSpanTreeLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkSpanTreeLayoutStrategy>>("vtkSmartPointer<vtkSpanTreeLayoutStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSpanTreeLayoutStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpanTreeLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpanTreeLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpanTreeLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpanTreeLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

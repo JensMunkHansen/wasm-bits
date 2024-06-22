@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkNIFTIImageHeader_class) {
   using HeaderSizeEnum=vtkNIFTIImageHeader::HeaderSizeEnum;
   emscripten::class_<vtkNIFTIImageHeader, emscripten::base<vtkObject>>("vtkNIFTIImageHeader")
     .smart_ptr<vtkSmartPointer<vtkNIFTIImageHeader>>("vtkSmartPointer<vtkNIFTIImageHeader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNIFTIImageHeader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNIFTIImageHeader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNIFTIImageHeader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNIFTIImageHeader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNIFTIImageHeader::SafeDownCast, emscripten::allow_raw_pointers())

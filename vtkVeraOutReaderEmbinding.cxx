@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVeraOutReader>(vtkVeraOu
 EMSCRIPTEN_BINDINGS(vtkVeraOutReader_class) {
   emscripten::class_<vtkVeraOutReader, emscripten::base<vtkRectilinearGridAlgorithm>>("vtkVeraOutReader")
     .smart_ptr<vtkSmartPointer<vtkVeraOutReader>>("vtkSmartPointer<vtkVeraOutReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVeraOutReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVeraOutReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVeraOutReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVeraOutReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVeraOutReader::SafeDownCast, emscripten::allow_raw_pointers())

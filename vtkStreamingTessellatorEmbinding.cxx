@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkStreamingTessellator>(vt
 EMSCRIPTEN_BINDINGS(vtkStreamingTessellator_class) {
   emscripten::class_<vtkStreamingTessellator, emscripten::base<vtkObject>>("vtkStreamingTessellator")
     .smart_ptr<vtkSmartPointer<vtkStreamingTessellator>>("vtkSmartPointer<vtkStreamingTessellator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStreamingTessellator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreamingTessellator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreamingTessellator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreamingTessellator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreamingTessellator::SafeDownCast, emscripten::allow_raw_pointers())

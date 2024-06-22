@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkHDFReader>(vtkHDFReader 
 EMSCRIPTEN_BINDINGS(vtkHDFReader_class) {
   emscripten::class_<vtkHDFReader, emscripten::base<vtkDataObjectAlgorithm>>("vtkHDFReader")
     .smart_ptr<vtkSmartPointer<vtkHDFReader>>("vtkSmartPointer<vtkHDFReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHDFReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHDFReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHDFReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHDFReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHDFReader::SafeDownCast, emscripten::allow_raw_pointers())

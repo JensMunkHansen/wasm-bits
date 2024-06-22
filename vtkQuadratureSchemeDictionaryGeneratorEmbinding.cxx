@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadratureSchemeDictiona
 EMSCRIPTEN_BINDINGS(vtkQuadratureSchemeDictionaryGenerator_class) {
   emscripten::class_<vtkQuadratureSchemeDictionaryGenerator, emscripten::base<vtkDataSetAlgorithm>>("vtkQuadratureSchemeDictionaryGenerator")
     .smart_ptr<vtkSmartPointer<vtkQuadratureSchemeDictionaryGenerator>>("vtkSmartPointer<vtkQuadratureSchemeDictionaryGenerator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadratureSchemeDictionaryGenerator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadratureSchemeDictionaryGenerator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadratureSchemeDictionaryGenerator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadratureSchemeDictionaryGenerator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadratureSchemeDictionaryGenerator::SafeDownCast, emscripten::allow_raw_pointers())

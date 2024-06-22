@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkCutter>(vtkCutter * ptr)
 EMSCRIPTEN_BINDINGS(vtkCutter_class) {
   emscripten::class_<vtkCutter, emscripten::base<vtkPolyDataAlgorithm>>("vtkCutter")
     .smart_ptr<vtkSmartPointer<vtkCutter>>("vtkSmartPointer<vtkCutter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCutter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCutter::SafeDownCast, emscripten::allow_raw_pointers())

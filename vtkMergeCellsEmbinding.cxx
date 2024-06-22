@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeCells>(vtkMergeCell
 EMSCRIPTEN_BINDINGS(vtkMergeCells_class) {
   emscripten::class_<vtkMergeCells, emscripten::base<vtkObject>>("vtkMergeCells")
     .smart_ptr<vtkSmartPointer<vtkMergeCells>>("vtkSmartPointer<vtkMergeCells>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeCells>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeCells>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeCells::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeCells& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeCells::SafeDownCast, emscripten::allow_raw_pointers())

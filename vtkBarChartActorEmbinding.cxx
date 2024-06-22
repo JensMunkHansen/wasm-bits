@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkBarChartActor>(vtkBarCha
 EMSCRIPTEN_BINDINGS(vtkBarChartActor_class) {
   emscripten::class_<vtkBarChartActor, emscripten::base<vtkActor2D>>("vtkBarChartActor")
     .smart_ptr<vtkSmartPointer<vtkBarChartActor>>("vtkSmartPointer<vtkBarChartActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBarChartActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBarChartActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBarChartActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBarChartActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBarChartActor::SafeDownCast, emscripten::allow_raw_pointers())

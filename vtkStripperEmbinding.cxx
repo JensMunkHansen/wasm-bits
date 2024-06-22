@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStripper>(vtkStripper * 
 EMSCRIPTEN_BINDINGS(vtkStripper_class) {
   emscripten::class_<vtkStripper, emscripten::base<vtkPolyDataAlgorithm>>("vtkStripper")
     .smart_ptr<vtkSmartPointer<vtkStripper>>("vtkSmartPointer<vtkStripper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStripper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStripper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStripper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStripper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStripper::SafeDownCast, emscripten::allow_raw_pointers())

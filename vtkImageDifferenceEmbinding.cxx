@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDifference>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageDifference_class) {
   emscripten::class_<vtkImageDifference, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageDifference")
     .smart_ptr<vtkSmartPointer<vtkImageDifference>>("vtkSmartPointer<vtkImageDifference>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDifference>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDifference>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDifference::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDifference& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDifference::SafeDownCast, emscripten::allow_raw_pointers())

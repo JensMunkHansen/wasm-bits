@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractFunctionalBagPlot
 EMSCRIPTEN_BINDINGS(vtkExtractFunctionalBagPlot_class) {
   emscripten::class_<vtkExtractFunctionalBagPlot, emscripten::base<vtkTableAlgorithm>>("vtkExtractFunctionalBagPlot")
     .smart_ptr<vtkSmartPointer<vtkExtractFunctionalBagPlot>>("vtkSmartPointer<vtkExtractFunctionalBagPlot>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractFunctionalBagPlot>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractFunctionalBagPlot>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractFunctionalBagPlot::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractFunctionalBagPlot& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractFunctionalBagPlot::SafeDownCast, emscripten::allow_raw_pointers())

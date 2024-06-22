@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageThreshold>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageThreshold_class) {
   emscripten::class_<vtkImageThreshold, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageThreshold")
     .smart_ptr<vtkSmartPointer<vtkImageThreshold>>("vtkSmartPointer<vtkImageThreshold>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageThreshold>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageThreshold>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageThreshold::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageThreshold& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageThreshold::SafeDownCast, emscripten::allow_raw_pointers())

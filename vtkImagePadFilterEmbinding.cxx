@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImagePadFilter>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImagePadFilter_class) {
   emscripten::class_<vtkImagePadFilter, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImagePadFilter")
     .smart_ptr<vtkSmartPointer<vtkImagePadFilter>>("vtkSmartPointer<vtkImagePadFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImagePadFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImagePadFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImagePadFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImagePadFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImagePadFilter::SafeDownCast, emscripten::allow_raw_pointers())

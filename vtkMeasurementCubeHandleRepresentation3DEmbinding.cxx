@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkMeasurementCubeHandleRep
 EMSCRIPTEN_BINDINGS(vtkMeasurementCubeHandleRepresentation3D_class) {
   emscripten::class_<vtkMeasurementCubeHandleRepresentation3D, emscripten::base<vtkHandleRepresentation>>("vtkMeasurementCubeHandleRepresentation3D")
     .smart_ptr<vtkSmartPointer<vtkMeasurementCubeHandleRepresentation3D>>("vtkSmartPointer<vtkMeasurementCubeHandleRepresentation3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMeasurementCubeHandleRepresentation3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMeasurementCubeHandleRepresentation3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMeasurementCubeHandleRepresentation3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMeasurementCubeHandleRepresentation3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMeasurementCubeHandleRepresentation3D::SafeDownCast, emscripten::allow_raw_pointers())

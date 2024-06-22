@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkPCAAnalysisFilter>(vtkPC
 EMSCRIPTEN_BINDINGS(vtkPCAAnalysisFilter_class) {
   emscripten::class_<vtkPCAAnalysisFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkPCAAnalysisFilter")
     .smart_ptr<vtkSmartPointer<vtkPCAAnalysisFilter>>("vtkSmartPointer<vtkPCAAnalysisFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPCAAnalysisFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPCAAnalysisFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPCAAnalysisFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPCAAnalysisFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPCAAnalysisFilter::SafeDownCast, emscripten::allow_raw_pointers())

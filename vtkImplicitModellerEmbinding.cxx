@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitModeller>(vtkImp
 EMSCRIPTEN_BINDINGS(vtkImplicitModeller_class) {
   emscripten::class_<vtkImplicitModeller, emscripten::base<vtkImageAlgorithm>>("vtkImplicitModeller")
     .smart_ptr<vtkSmartPointer<vtkImplicitModeller>>("vtkSmartPointer<vtkImplicitModeller>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitModeller>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitModeller>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitModeller::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitModeller& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitModeller::SafeDownCast, emscripten::allow_raw_pointers())

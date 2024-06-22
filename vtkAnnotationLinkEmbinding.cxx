@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkAnnotationLink>(vtkAnnot
 EMSCRIPTEN_BINDINGS(vtkAnnotationLink_class) {
   emscripten::class_<vtkAnnotationLink, emscripten::base<vtkAnnotationLayersAlgorithm>>("vtkAnnotationLink")
     .smart_ptr<vtkSmartPointer<vtkAnnotationLink>>("vtkSmartPointer<vtkAnnotationLink>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAnnotationLink>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnnotationLink>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnnotationLink::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnnotationLink& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnnotationLink::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearGridPartition
 EMSCRIPTEN_BINDINGS(vtkRectilinearGridPartitioner_class) {
   emscripten::class_<vtkRectilinearGridPartitioner, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkRectilinearGridPartitioner")
     .smart_ptr<vtkSmartPointer<vtkRectilinearGridPartitioner>>("vtkSmartPointer<vtkRectilinearGridPartitioner>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearGridPartitioner>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearGridPartitioner>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearGridPartitioner::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearGridPartitioner& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearGridPartitioner::SafeDownCast, emscripten::allow_raw_pointers())

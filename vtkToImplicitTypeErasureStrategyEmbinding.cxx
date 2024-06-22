@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkToImplicitTypeErasureStr
 EMSCRIPTEN_BINDINGS(vtkToImplicitTypeErasureStrategy_class) {
   emscripten::class_<vtkToImplicitTypeErasureStrategy, emscripten::base<vtkToImplicitStrategy>>("vtkToImplicitTypeErasureStrategy")
     .smart_ptr<vtkSmartPointer<vtkToImplicitTypeErasureStrategy>>("vtkSmartPointer<vtkToImplicitTypeErasureStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkToImplicitTypeErasureStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkToImplicitTypeErasureStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkToImplicitTypeErasureStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkToImplicitTypeErasureStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkToImplicitTypeErasureStrategy::SafeDownCast, emscripten::allow_raw_pointers())

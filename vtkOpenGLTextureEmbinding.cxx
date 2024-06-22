@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLTexture>(vtkOpenGL
 EMSCRIPTEN_BINDINGS(vtkOpenGLTexture_class) {
   emscripten::class_<vtkOpenGLTexture, emscripten::base<vtkTexture>>("vtkOpenGLTexture")
     .smart_ptr<vtkSmartPointer<vtkOpenGLTexture>>("vtkSmartPointer<vtkOpenGLTexture>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLTexture>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLTexture::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericDataObjectWriter>
 EMSCRIPTEN_BINDINGS(vtkGenericDataObjectWriter_class) {
   emscripten::class_<vtkGenericDataObjectWriter, emscripten::base<vtkDataWriter>>("vtkGenericDataObjectWriter")
     .smart_ptr<vtkSmartPointer<vtkGenericDataObjectWriter>>("vtkSmartPointer<vtkGenericDataObjectWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericDataObjectWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericDataObjectWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericDataObjectWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericDataObjectWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericDataObjectWriter::SafeDownCast, emscripten::allow_raw_pointers())

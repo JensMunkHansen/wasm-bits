@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFrustumSource>(vtkFrustu
 EMSCRIPTEN_BINDINGS(vtkFrustumSource_class) {
   emscripten::class_<vtkFrustumSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkFrustumSource")
     .smart_ptr<vtkSmartPointer<vtkFrustumSource>>("vtkSmartPointer<vtkFrustumSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFrustumSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFrustumSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFrustumSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFrustumSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFrustumSource::SafeDownCast, emscripten::allow_raw_pointers())

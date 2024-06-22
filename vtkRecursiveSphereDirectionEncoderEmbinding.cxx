@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRecursiveSphereDirection
 EMSCRIPTEN_BINDINGS(vtkRecursiveSphereDirectionEncoder_class) {
   emscripten::class_<vtkRecursiveSphereDirectionEncoder, emscripten::base<vtkDirectionEncoder>>("vtkRecursiveSphereDirectionEncoder")
     .smart_ptr<vtkSmartPointer<vtkRecursiveSphereDirectionEncoder>>("vtkSmartPointer<vtkRecursiveSphereDirectionEncoder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRecursiveSphereDirectionEncoder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRecursiveSphereDirectionEncoder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRecursiveSphereDirectionEncoder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRecursiveSphereDirectionEncoder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRecursiveSphereDirectionEncoder::SafeDownCast, emscripten::allow_raw_pointers())

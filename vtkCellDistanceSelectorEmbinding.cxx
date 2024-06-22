@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkCellDistanceSelector_class) {
   using InputPorts=vtkCellDistanceSelector::InputPorts;
   emscripten::class_<vtkCellDistanceSelector, emscripten::base<vtkSelectionAlgorithm>>("vtkCellDistanceSelector")
     .smart_ptr<vtkSmartPointer<vtkCellDistanceSelector>>("vtkSmartPointer<vtkCellDistanceSelector>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellDistanceSelector>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellDistanceSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellDistanceSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellDistanceSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellDistanceSelector::SafeDownCast, emscripten::allow_raw_pointers())

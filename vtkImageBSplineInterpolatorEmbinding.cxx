@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageBSplineInterpolator
 EMSCRIPTEN_BINDINGS(vtkImageBSplineInterpolator_class) {
   emscripten::class_<vtkImageBSplineInterpolator, emscripten::base<vtkAbstractImageInterpolator>>("vtkImageBSplineInterpolator")
     .smart_ptr<vtkSmartPointer<vtkImageBSplineInterpolator>>("vtkSmartPointer<vtkImageBSplineInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageBSplineInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageBSplineInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageBSplineInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageBSplineInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageBSplineInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

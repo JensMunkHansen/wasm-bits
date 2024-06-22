@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkDepthPeelingPass>(vtkDep
 EMSCRIPTEN_BINDINGS(vtkDepthPeelingPass_class) {
   emscripten::class_<vtkDepthPeelingPass, emscripten::base<vtkOpenGLRenderPass>>("vtkDepthPeelingPass")
     .smart_ptr<vtkSmartPointer<vtkDepthPeelingPass>>("vtkSmartPointer<vtkDepthPeelingPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDepthPeelingPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDepthPeelingPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDepthPeelingPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDepthPeelingPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDepthPeelingPass::SafeDownCast, emscripten::allow_raw_pointers())

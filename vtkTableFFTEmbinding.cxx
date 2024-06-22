@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTableFFT>(vtkTableFFT * 
 EMSCRIPTEN_BINDINGS(vtkTableFFT_class) {
   emscripten::class_<vtkTableFFT, emscripten::base<vtkTableAlgorithm>>("vtkTableFFT")
     .smart_ptr<vtkSmartPointer<vtkTableFFT>>("vtkSmartPointer<vtkTableFFT>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTableFFT>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTableFFT>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTableFFT::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTableFFT& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTableFFT::SafeDownCast, emscripten::allow_raw_pointers())

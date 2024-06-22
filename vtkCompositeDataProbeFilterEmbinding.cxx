@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeDataProbeFilter
 EMSCRIPTEN_BINDINGS(vtkCompositeDataProbeFilter_class) {
   emscripten::class_<vtkCompositeDataProbeFilter, emscripten::base<vtkProbeFilter>>("vtkCompositeDataProbeFilter")
     .smart_ptr<vtkSmartPointer<vtkCompositeDataProbeFilter>>("vtkSmartPointer<vtkCompositeDataProbeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeDataProbeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeDataProbeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeDataProbeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeDataProbeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeDataProbeFilter::SafeDownCast, emscripten::allow_raw_pointers())

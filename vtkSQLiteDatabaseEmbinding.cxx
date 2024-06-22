@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkSQLiteDatabase>(vtkSQLit
 EMSCRIPTEN_BINDINGS(vtkSQLiteDatabase_class) {
   emscripten::class_<vtkSQLiteDatabase, emscripten::base<vtkSQLDatabase>>("vtkSQLiteDatabase")
     .smart_ptr<vtkSmartPointer<vtkSQLiteDatabase>>("vtkSmartPointer<vtkSQLiteDatabase>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSQLiteDatabase>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSQLiteDatabase>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSQLiteDatabase::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSQLiteDatabase& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSQLiteDatabase::SafeDownCast, emscripten::allow_raw_pointers())

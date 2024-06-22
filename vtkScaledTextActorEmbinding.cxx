@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkScaledTextActor>(vtkScal
 EMSCRIPTEN_BINDINGS(vtkScaledTextActor_class) {
   emscripten::class_<vtkScaledTextActor, emscripten::base<vtkTextActor>>("vtkScaledTextActor")
     .smart_ptr<vtkSmartPointer<vtkScaledTextActor>>("vtkSmartPointer<vtkScaledTextActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkScaledTextActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkScaledTextActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScaledTextActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScaledTextActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScaledTextActor::SafeDownCast, emscripten::allow_raw_pointers())

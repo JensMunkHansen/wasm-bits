@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkBalloonWidget>(vtkBalloo
 EMSCRIPTEN_BINDINGS(vtkBalloonWidget_class) {
   emscripten::class_<vtkBalloonWidget, emscripten::base<vtkHoverWidget>>("vtkBalloonWidget")
     .smart_ptr<vtkSmartPointer<vtkBalloonWidget>>("vtkSmartPointer<vtkBalloonWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBalloonWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBalloonWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBalloonWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBalloonWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBalloonWidget::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeHeatmapItem>(vtkTree
 EMSCRIPTEN_BINDINGS(vtkTreeHeatmapItem_class) {
   emscripten::class_<vtkTreeHeatmapItem, emscripten::base<vtkContextItem>>("vtkTreeHeatmapItem")
     .smart_ptr<vtkSmartPointer<vtkTreeHeatmapItem>>("vtkSmartPointer<vtkTreeHeatmapItem>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeHeatmapItem>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeHeatmapItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeHeatmapItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeHeatmapItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeHeatmapItem::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphToPolyData>(vtkGrap
 EMSCRIPTEN_BINDINGS(vtkGraphToPolyData_class) {
   emscripten::class_<vtkGraphToPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkGraphToPolyData")
     .smart_ptr<vtkSmartPointer<vtkGraphToPolyData>>("vtkSmartPointer<vtkGraphToPolyData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphToPolyData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphToPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphToPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphToPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphToPolyData::SafeDownCast, emscripten::allow_raw_pointers())

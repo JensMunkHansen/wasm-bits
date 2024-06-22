@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkOutputWindow_class) {
   using DisplayModes=vtkOutputWindow::DisplayModes;
   emscripten::class_<vtkOutputWindow, emscripten::base<vtkObject>>("vtkOutputWindow")
     .smart_ptr<vtkSmartPointer<vtkOutputWindow>>("vtkSmartPointer<vtkOutputWindow>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOutputWindow>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOutputWindow>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOutputWindow::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOutputWindow& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOutputWindow::SafeDownCast, emscripten::allow_raw_pointers())

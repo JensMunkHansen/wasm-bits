@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkRayCastImageDisplayHelpe
 EMSCRIPTEN_BINDINGS(vtkRayCastImageDisplayHelper_class) {
   emscripten::class_<vtkRayCastImageDisplayHelper, emscripten::base<vtkObject>>("vtkRayCastImageDisplayHelper")
     .smart_ptr<vtkSmartPointer<vtkRayCastImageDisplayHelper>>("vtkSmartPointer<vtkRayCastImageDisplayHelper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRayCastImageDisplayHelper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRayCastImageDisplayHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRayCastImageDisplayHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRayCastImageDisplayHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRayCastImageDisplayHelper::SafeDownCast, emscripten::allow_raw_pointers())

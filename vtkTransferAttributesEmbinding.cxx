@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransferAttributes>(vtkT
 EMSCRIPTEN_BINDINGS(vtkTransferAttributes_class) {
   emscripten::class_<vtkTransferAttributes, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkTransferAttributes")
     .smart_ptr<vtkSmartPointer<vtkTransferAttributes>>("vtkSmartPointer<vtkTransferAttributes>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTransferAttributes>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransferAttributes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransferAttributes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransferAttributes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransferAttributes::SafeDownCast, emscripten::allow_raw_pointers())

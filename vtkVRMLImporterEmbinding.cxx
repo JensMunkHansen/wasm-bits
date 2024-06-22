@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkVRMLImporter>(vtkVRMLImp
 EMSCRIPTEN_BINDINGS(vtkVRMLImporter_class) {
   emscripten::class_<vtkVRMLImporter, emscripten::base<vtkImporter>>("vtkVRMLImporter")
     .smart_ptr<vtkSmartPointer<vtkVRMLImporter>>("vtkSmartPointer<vtkVRMLImporter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVRMLImporter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVRMLImporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVRMLImporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVRMLImporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVRMLImporter::SafeDownCast, emscripten::allow_raw_pointers())

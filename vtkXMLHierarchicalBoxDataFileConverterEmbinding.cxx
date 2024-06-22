@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLHierarchicalBoxDataFi
 EMSCRIPTEN_BINDINGS(vtkXMLHierarchicalBoxDataFileConverter_class) {
   emscripten::class_<vtkXMLHierarchicalBoxDataFileConverter, emscripten::base<vtkObject>>("vtkXMLHierarchicalBoxDataFileConverter")
     .smart_ptr<vtkSmartPointer<vtkXMLHierarchicalBoxDataFileConverter>>("vtkSmartPointer<vtkXMLHierarchicalBoxDataFileConverter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLHierarchicalBoxDataFileConverter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLHierarchicalBoxDataFileConverter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLHierarchicalBoxDataFileConverter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLHierarchicalBoxDataFileConverter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLHierarchicalBoxDataFileConverter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageNonMaximumSuppressi
 EMSCRIPTEN_BINDINGS(vtkImageNonMaximumSuppression_class) {
   emscripten::class_<vtkImageNonMaximumSuppression, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageNonMaximumSuppression")
     .smart_ptr<vtkSmartPointer<vtkImageNonMaximumSuppression>>("vtkSmartPointer<vtkImageNonMaximumSuppression>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageNonMaximumSuppression>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageNonMaximumSuppression>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageNonMaximumSuppression::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageNonMaximumSuppression& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageNonMaximumSuppression::SafeDownCast, emscripten::allow_raw_pointers())

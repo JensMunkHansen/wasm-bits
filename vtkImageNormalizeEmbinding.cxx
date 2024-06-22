@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageNormalize>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageNormalize_class) {
   emscripten::class_<vtkImageNormalize, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageNormalize")
     .smart_ptr<vtkSmartPointer<vtkImageNormalize>>("vtkSmartPointer<vtkImageNormalize>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageNormalize>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageNormalize>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageNormalize::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageNormalize& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageNormalize::SafeDownCast, emscripten::allow_raw_pointers())

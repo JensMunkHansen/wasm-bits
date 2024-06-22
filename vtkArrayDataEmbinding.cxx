@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkArrayData>(vtkArrayData 
 EMSCRIPTEN_BINDINGS(vtkArrayData_class) {
   emscripten::class_<vtkArrayData, emscripten::base<vtkDataObject>>("vtkArrayData")
     .smart_ptr<vtkSmartPointer<vtkArrayData>>("vtkSmartPointer<vtkArrayData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkArrayData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkArrayData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArrayData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArrayData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArrayData::SafeDownCast, emscripten::allow_raw_pointers())

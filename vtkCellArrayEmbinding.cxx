@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellArray>(vtkCellArray 
 EMSCRIPTEN_BINDINGS(vtkCellArray_class) {
   emscripten::class_<vtkCellArray, emscripten::base<vtkAbstractCellArray>>("vtkCellArray")
     .smart_ptr<vtkSmartPointer<vtkCellArray>>("vtkSmartPointer<vtkCellArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellArray::SafeDownCast, emscripten::allow_raw_pointers())

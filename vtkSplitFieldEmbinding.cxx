@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkSplitField_class) {
   using FieldLocations=vtkSplitField::FieldLocations;
   emscripten::class_<vtkSplitField, emscripten::base<vtkDataSetAlgorithm>>("vtkSplitField")
     .smart_ptr<vtkSmartPointer<vtkSplitField>>("vtkSmartPointer<vtkSplitField>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSplitField>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplitField>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplitField::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplitField& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplitField::SafeDownCast, emscripten::allow_raw_pointers())

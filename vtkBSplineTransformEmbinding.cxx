@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkBSplineTransform>(vtkBSp
 EMSCRIPTEN_BINDINGS(vtkBSplineTransform_class) {
   emscripten::class_<vtkBSplineTransform, emscripten::base<vtkWarpTransform>>("vtkBSplineTransform")
     .smart_ptr<vtkSmartPointer<vtkBSplineTransform>>("vtkSmartPointer<vtkBSplineTransform>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBSplineTransform>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBSplineTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBSplineTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBSplineTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBSplineTransform::SafeDownCast, emscripten::allow_raw_pointers())

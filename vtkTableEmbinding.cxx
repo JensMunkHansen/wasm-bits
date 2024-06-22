@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkTable>(vtkTable * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkTable_class) {
   emscripten::class_<vtkTable, emscripten::base<vtkDataObject>>("vtkTable")
     .smart_ptr<vtkSmartPointer<vtkTable>>("vtkSmartPointer<vtkTable>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTable>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTable>)
     .class_function("ExtendedNew", &vtkTable::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

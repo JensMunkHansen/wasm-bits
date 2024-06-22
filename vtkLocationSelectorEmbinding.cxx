@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkLocationSelector>(vtkLoc
 EMSCRIPTEN_BINDINGS(vtkLocationSelector_class) {
   emscripten::class_<vtkLocationSelector, emscripten::base<vtkSelector>>("vtkLocationSelector")
     .smart_ptr<vtkSmartPointer<vtkLocationSelector>>("vtkSmartPointer<vtkLocationSelector>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLocationSelector>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLocationSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLocationSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLocationSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLocationSelector::SafeDownCast, emscripten::allow_raw_pointers())

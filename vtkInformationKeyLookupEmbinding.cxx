@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkInformationKeyLookup>(vt
 EMSCRIPTEN_BINDINGS(vtkInformationKeyLookup_class) {
   emscripten::class_<vtkInformationKeyLookup, emscripten::base<vtkObject>>("vtkInformationKeyLookup")
     .smart_ptr<vtkSmartPointer<vtkInformationKeyLookup>>("vtkSmartPointer<vtkInformationKeyLookup>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInformationKeyLookup>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInformationKeyLookup>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInformationKeyLookup::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInformationKeyLookup& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInformationKeyLookup::SafeDownCast, emscripten::allow_raw_pointers())

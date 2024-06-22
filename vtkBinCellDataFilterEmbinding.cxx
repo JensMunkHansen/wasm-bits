@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkBinCellDataFilter_class) {
   using CellOverlapCriterion=vtkBinCellDataFilter::CellOverlapCriterion;
   emscripten::class_<vtkBinCellDataFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkBinCellDataFilter")
     .smart_ptr<vtkSmartPointer<vtkBinCellDataFilter>>("vtkSmartPointer<vtkBinCellDataFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBinCellDataFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBinCellDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBinCellDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBinCellDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBinCellDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

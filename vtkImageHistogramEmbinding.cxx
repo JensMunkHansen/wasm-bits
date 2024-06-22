@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageHistogram>(vtkImage
 EMSCRIPTEN_BINDINGS(vtkImageHistogram_class) {
   emscripten::class_<vtkImageHistogram, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageHistogram")
     .smart_ptr<vtkSmartPointer<vtkImageHistogram>>("vtkSmartPointer<vtkImageHistogram>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageHistogram>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageHistogram>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageHistogram::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageHistogram& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageHistogram::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGeoProjection>(vtkGeoPro
 EMSCRIPTEN_BINDINGS(vtkGeoProjection_class) {
   emscripten::class_<vtkGeoProjection, emscripten::base<vtkObject>>("vtkGeoProjection")
     .smart_ptr<vtkSmartPointer<vtkGeoProjection>>("vtkSmartPointer<vtkGeoProjection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGeoProjection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGeoProjection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGeoProjection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGeoProjection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGeoProjection::SafeDownCast, emscripten::allow_raw_pointers())

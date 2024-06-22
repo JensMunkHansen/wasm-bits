@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridToDualGrid>
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridToDualGrid_class) {
   emscripten::class_<vtkHyperTreeGridToDualGrid, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridToDualGrid")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridToDualGrid>>("vtkSmartPointer<vtkHyperTreeGridToDualGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridToDualGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridToDualGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridToDualGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridToDualGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridToDualGrid::SafeDownCast, emscripten::allow_raw_pointers())

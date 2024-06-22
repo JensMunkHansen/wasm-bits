@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageContinuousDilate3D>
 EMSCRIPTEN_BINDINGS(vtkImageContinuousDilate3D_class) {
   emscripten::class_<vtkImageContinuousDilate3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageContinuousDilate3D")
     .smart_ptr<vtkSmartPointer<vtkImageContinuousDilate3D>>("vtkSmartPointer<vtkImageContinuousDilate3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageContinuousDilate3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageContinuousDilate3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageContinuousDilate3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageContinuousDilate3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageContinuousDilate3D::SafeDownCast, emscripten::allow_raw_pointers())

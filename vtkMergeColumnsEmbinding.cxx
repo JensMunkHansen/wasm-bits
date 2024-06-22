@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeColumns>(vtkMergeCo
 EMSCRIPTEN_BINDINGS(vtkMergeColumns_class) {
   emscripten::class_<vtkMergeColumns, emscripten::base<vtkTableAlgorithm>>("vtkMergeColumns")
     .smart_ptr<vtkSmartPointer<vtkMergeColumns>>("vtkSmartPointer<vtkMergeColumns>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeColumns>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeColumns>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeColumns::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeColumns& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeColumns::SafeDownCast, emscripten::allow_raw_pointers())

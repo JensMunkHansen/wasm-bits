@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDilateErode3D>(vtkI
 EMSCRIPTEN_BINDINGS(vtkImageDilateErode3D_class) {
   emscripten::class_<vtkImageDilateErode3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageDilateErode3D")
     .smart_ptr<vtkSmartPointer<vtkImageDilateErode3D>>("vtkSmartPointer<vtkImageDilateErode3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDilateErode3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDilateErode3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDilateErode3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDilateErode3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDilateErode3D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphInternals>(vtkGraph
 EMSCRIPTEN_BINDINGS(vtkGraphInternals_class) {
   emscripten::class_<vtkGraphInternals, emscripten::base<vtkObject>>("vtkGraphInternals")
     .smart_ptr<vtkSmartPointer<vtkGraphInternals>>("vtkSmartPointer<vtkGraphInternals>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphInternals>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphInternals>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphInternals::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphInternals& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphInternals::SafeDownCast, emscripten::allow_raw_pointers())

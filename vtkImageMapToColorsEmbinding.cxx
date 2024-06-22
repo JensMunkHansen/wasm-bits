@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMapToColors>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageMapToColors_class) {
   emscripten::class_<vtkImageMapToColors, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageMapToColors")
     .smart_ptr<vtkSmartPointer<vtkImageMapToColors>>("vtkSmartPointer<vtkImageMapToColors>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMapToColors>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMapToColors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMapToColors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMapToColors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMapToColors::SafeDownCast, emscripten::allow_raw_pointers())

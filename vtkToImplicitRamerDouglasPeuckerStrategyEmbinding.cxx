@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkToImplicitRamerDouglasPe
 EMSCRIPTEN_BINDINGS(vtkToImplicitRamerDouglasPeuckerStrategy_class) {
   emscripten::class_<vtkToImplicitRamerDouglasPeuckerStrategy, emscripten::base<vtkToImplicitStrategy>>("vtkToImplicitRamerDouglasPeuckerStrategy")
     .smart_ptr<vtkSmartPointer<vtkToImplicitRamerDouglasPeuckerStrategy>>("vtkSmartPointer<vtkToImplicitRamerDouglasPeuckerStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkToImplicitRamerDouglasPeuckerStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkToImplicitRamerDouglasPeuckerStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkToImplicitRamerDouglasPeuckerStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkToImplicitRamerDouglasPeuckerStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkToImplicitRamerDouglasPeuckerStrategy::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearWipeWidget>(v
 EMSCRIPTEN_BINDINGS(vtkRectilinearWipeWidget_class) {
   emscripten::class_<vtkRectilinearWipeWidget, emscripten::base<vtkAbstractWidget>>("vtkRectilinearWipeWidget")
     .smart_ptr<vtkSmartPointer<vtkRectilinearWipeWidget>>("vtkSmartPointer<vtkRectilinearWipeWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearWipeWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearWipeWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearWipeWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearWipeWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearWipeWidget::SafeDownCast, emscripten::allow_raw_pointers())

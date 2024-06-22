@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFixedWidthTextReader>(vt
 EMSCRIPTEN_BINDINGS(vtkFixedWidthTextReader_class) {
   emscripten::class_<vtkFixedWidthTextReader, emscripten::base<vtkTableAlgorithm>>("vtkFixedWidthTextReader")
     .smart_ptr<vtkSmartPointer<vtkFixedWidthTextReader>>("vtkSmartPointer<vtkFixedWidthTextReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFixedWidthTextReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFixedWidthTextReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFixedWidthTextReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFixedWidthTextReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFixedWidthTextReader::SafeDownCast, emscripten::allow_raw_pointers())

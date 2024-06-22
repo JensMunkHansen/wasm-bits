@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRungeKutta45>(vtkRungeKu
 EMSCRIPTEN_BINDINGS(vtkRungeKutta45_class) {
   emscripten::class_<vtkRungeKutta45, emscripten::base<vtkInitialValueProblemSolver>>("vtkRungeKutta45")
     .smart_ptr<vtkSmartPointer<vtkRungeKutta45>>("vtkSmartPointer<vtkRungeKutta45>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRungeKutta45>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRungeKutta45>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRungeKutta45::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRungeKutta45& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRungeKutta45::SafeDownCast, emscripten::allow_raw_pointers())

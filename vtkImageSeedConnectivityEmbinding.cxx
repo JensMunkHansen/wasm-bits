@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSeedConnectivity>(v
 EMSCRIPTEN_BINDINGS(vtkImageSeedConnectivity_class) {
   emscripten::class_<vtkImageSeedConnectivity, emscripten::base<vtkImageAlgorithm>>("vtkImageSeedConnectivity")
     .smart_ptr<vtkSmartPointer<vtkImageSeedConnectivity>>("vtkSmartPointer<vtkImageSeedConnectivity>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSeedConnectivity>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSeedConnectivity>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSeedConnectivity::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSeedConnectivity& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSeedConnectivity::SafeDownCast, emscripten::allow_raw_pointers())

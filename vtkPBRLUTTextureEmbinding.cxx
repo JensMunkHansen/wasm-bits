@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPBRLUTTexture>(vtkPBRLUT
 EMSCRIPTEN_BINDINGS(vtkPBRLUTTexture_class) {
   emscripten::class_<vtkPBRLUTTexture, emscripten::base<vtkOpenGLTexture>>("vtkPBRLUTTexture")
     .smart_ptr<vtkSmartPointer<vtkPBRLUTTexture>>("vtkSmartPointer<vtkPBRLUTTexture>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPBRLUTTexture>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPBRLUTTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPBRLUTTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPBRLUTTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPBRLUTTexture::SafeDownCast, emscripten::allow_raw_pointers())

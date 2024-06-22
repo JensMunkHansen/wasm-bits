@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkHull>(vtkHull * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkHull_class) {
   emscripten::class_<vtkHull, emscripten::base<vtkPointSetAlgorithm>>("vtkHull")
     .smart_ptr<vtkSmartPointer<vtkHull>>("vtkSmartPointer<vtkHull>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHull>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHull>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHull::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHull& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHull::SafeDownCast, emscripten::allow_raw_pointers())

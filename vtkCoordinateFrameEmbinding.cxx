@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCoordinateFrame>(vtkCoor
 EMSCRIPTEN_BINDINGS(vtkCoordinateFrame_class) {
   emscripten::class_<vtkCoordinateFrame, emscripten::base<vtkImplicitFunction>>("vtkCoordinateFrame")
     .smart_ptr<vtkSmartPointer<vtkCoordinateFrame>>("vtkSmartPointer<vtkCoordinateFrame>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCoordinateFrame>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCoordinateFrame>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCoordinateFrame::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCoordinateFrame& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCoordinateFrame::SafeDownCast, emscripten::allow_raw_pointers())

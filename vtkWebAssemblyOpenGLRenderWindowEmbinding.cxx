@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebAssemblyOpenGLRenderW
 EMSCRIPTEN_BINDINGS(vtkWebAssemblyOpenGLRenderWindow_class) {
   emscripten::class_<vtkWebAssemblyOpenGLRenderWindow, emscripten::base<vtkOpenGLRenderWindow>>("vtkWebAssemblyOpenGLRenderWindow")
     .smart_ptr<vtkSmartPointer<vtkWebAssemblyOpenGLRenderWindow>>("vtkSmartPointer<vtkWebAssemblyOpenGLRenderWindow>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebAssemblyOpenGLRenderWindow>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebAssemblyOpenGLRenderWindow>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebAssemblyOpenGLRenderWindow::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebAssemblyOpenGLRenderWindow& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebAssemblyOpenGLRenderWindow::SafeDownCast, emscripten::allow_raw_pointers())

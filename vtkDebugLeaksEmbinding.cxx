@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDebugLeaks>(vtkDebugLeak
 EMSCRIPTEN_BINDINGS(vtkDebugLeaks_class) {
   emscripten::class_<vtkDebugLeaks, emscripten::base<vtkObject>>("vtkDebugLeaks")
     .smart_ptr<vtkSmartPointer<vtkDebugLeaks>>("vtkSmartPointer<vtkDebugLeaks>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDebugLeaks>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDebugLeaks>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDebugLeaks::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDebugLeaks& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDebugLeaks::SafeDownCast, emscripten::allow_raw_pointers())

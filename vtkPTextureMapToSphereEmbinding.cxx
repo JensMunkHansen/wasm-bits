@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPTextureMapToSphere>(vtk
 EMSCRIPTEN_BINDINGS(vtkPTextureMapToSphere_class) {
   emscripten::class_<vtkPTextureMapToSphere, emscripten::base<vtkTextureMapToSphere>>("vtkPTextureMapToSphere")
     .smart_ptr<vtkSmartPointer<vtkPTextureMapToSphere>>("vtkSmartPointer<vtkPTextureMapToSphere>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPTextureMapToSphere>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPTextureMapToSphere>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPTextureMapToSphere::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPTextureMapToSphere& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPTextureMapToSphere::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkTetra>(vtkTetra * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkTetra_class) {
   emscripten::class_<vtkTetra, emscripten::base<vtkCell3D>>("vtkTetra")
     .smart_ptr<vtkSmartPointer<vtkTetra>>("vtkSmartPointer<vtkTetra>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTetra>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTetra>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTetra::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTetra& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTetra::SafeDownCast, emscripten::allow_raw_pointers())

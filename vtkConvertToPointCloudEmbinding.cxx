@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkConvertToPointCloud_class) {
   using CellGeneration=vtkConvertToPointCloud::CellGeneration;
   emscripten::class_<vtkConvertToPointCloud, emscripten::base<vtkPolyDataAlgorithm>>("vtkConvertToPointCloud")
     .smart_ptr<vtkSmartPointer<vtkConvertToPointCloud>>("vtkSmartPointer<vtkConvertToPointCloud>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkConvertToPointCloud>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkConvertToPointCloud>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConvertToPointCloud::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConvertToPointCloud& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConvertToPointCloud::SafeDownCast, emscripten::allow_raw_pointers())

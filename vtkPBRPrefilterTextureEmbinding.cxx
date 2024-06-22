@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPBRPrefilterTexture>(vtk
 EMSCRIPTEN_BINDINGS(vtkPBRPrefilterTexture_class) {
   emscripten::class_<vtkPBRPrefilterTexture, emscripten::base<vtkOpenGLTexture>>("vtkPBRPrefilterTexture")
     .smart_ptr<vtkSmartPointer<vtkPBRPrefilterTexture>>("vtkSmartPointer<vtkPBRPrefilterTexture>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPBRPrefilterTexture>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPBRPrefilterTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPBRPrefilterTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPBRPrefilterTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPBRPrefilterTexture::SafeDownCast, emscripten::allow_raw_pointers())

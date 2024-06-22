@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWindowedSincPolyDataFilt
 EMSCRIPTEN_BINDINGS(vtkWindowedSincPolyDataFilter_class) {
   emscripten::class_<vtkWindowedSincPolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkWindowedSincPolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkWindowedSincPolyDataFilter>>("vtkSmartPointer<vtkWindowedSincPolyDataFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWindowedSincPolyDataFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWindowedSincPolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWindowedSincPolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWindowedSincPolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWindowedSincPolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

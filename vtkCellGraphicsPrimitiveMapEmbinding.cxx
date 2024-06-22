@@ -19,9 +19,13 @@ node /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/bin/vtkWra
 
 template<> void emscripten::internal::raw_destructor<vtkCellGraphicsPrimitiveMap>(vtkCellGraphicsPrimitiveMap * ptr){ ptr->Delete(); }
 EMSCRIPTEN_BINDINGS(vtkCellGraphicsPrimitiveMap_class) {
-  emscripten::class_<vtkCellGraphicsPrimitiveMap>("vtkCellGraphicsPrimitiveMap")
+  emscripten::class_<vtkCellGraphicsPrimitiveMap, emscripten::base<vtkObject>>("vtkCellGraphicsPrimitiveMap")
+    .smart_ptr<vtkSmartPointer<vtkCellGraphicsPrimitiveMap>>("vtkSmartPointer<vtkCellGraphicsPrimitiveMap>")
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGraphicsPrimitiveMap>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGraphicsPrimitiveMap::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGraphicsPrimitiveMap& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
+    .class_function("SafeDownCast", &vtkCellGraphicsPrimitiveMap::SafeDownCast, emscripten::allow_raw_pointers())
+    .function("NewInstance", &vtkCellGraphicsPrimitiveMap::NewInstance, emscripten::allow_raw_pointers())
     .class_function("GetNumberOfGenerationsFromBaseType", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGraphicsPrimitiveMap::GetNumberOfGenerationsFromBaseType( arg_0.c_str());}))
     .function("GetNumberOfGenerationsFromBase", emscripten::optional_override([](vtkCellGraphicsPrimitiveMap& self, const std::string & arg_0) -> int {  return self.GetNumberOfGenerationsFromBase( arg_0.c_str());}));
 }

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangianMatidaIntegrat
 EMSCRIPTEN_BINDINGS(vtkLagrangianMatidaIntegrationModel_class) {
   emscripten::class_<vtkLagrangianMatidaIntegrationModel, emscripten::base<vtkLagrangianBasicIntegrationModel>>("vtkLagrangianMatidaIntegrationModel")
     .smart_ptr<vtkSmartPointer<vtkLagrangianMatidaIntegrationModel>>("vtkSmartPointer<vtkLagrangianMatidaIntegrationModel>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangianMatidaIntegrationModel>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangianMatidaIntegrationModel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangianMatidaIntegrationModel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangianMatidaIntegrationModel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangianMatidaIntegrationModel::SafeDownCast, emscripten::allow_raw_pointers())

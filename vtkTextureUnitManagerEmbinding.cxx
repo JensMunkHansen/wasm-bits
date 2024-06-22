@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextureUnitManager>(vtkT
 EMSCRIPTEN_BINDINGS(vtkTextureUnitManager_class) {
   emscripten::class_<vtkTextureUnitManager, emscripten::base<vtkObject>>("vtkTextureUnitManager")
     .smart_ptr<vtkSmartPointer<vtkTextureUnitManager>>("vtkSmartPointer<vtkTextureUnitManager>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextureUnitManager>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextureUnitManager>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextureUnitManager::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextureUnitManager& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextureUnitManager::SafeDownCast, emscripten::allow_raw_pointers())

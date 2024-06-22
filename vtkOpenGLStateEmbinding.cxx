@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLState>(vtkOpenGLSt
 EMSCRIPTEN_BINDINGS(vtkOpenGLState_class) {
   emscripten::class_<vtkOpenGLState, emscripten::base<vtkObject>>("vtkOpenGLState")
     .smart_ptr<vtkSmartPointer<vtkOpenGLState>>("vtkSmartPointer<vtkOpenGLState>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLState>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLState>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLState::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLState& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLState::SafeDownCast, emscripten::allow_raw_pointers())

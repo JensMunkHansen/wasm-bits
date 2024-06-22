@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTimePointUtility>(vtkTim
 EMSCRIPTEN_BINDINGS(vtkTimePointUtility_class) {
   emscripten::class_<vtkTimePointUtility, emscripten::base<vtkObject>>("vtkTimePointUtility")
     .smart_ptr<vtkSmartPointer<vtkTimePointUtility>>("vtkSmartPointer<vtkTimePointUtility>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTimePointUtility>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTimePointUtility>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTimePointUtility::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTimePointUtility& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTimePointUtility::SafeDownCast, emscripten::allow_raw_pointers())

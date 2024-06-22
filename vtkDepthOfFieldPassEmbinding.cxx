@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDepthOfFieldPass>(vtkDep
 EMSCRIPTEN_BINDINGS(vtkDepthOfFieldPass_class) {
   emscripten::class_<vtkDepthOfFieldPass, emscripten::base<vtkDepthImageProcessingPass>>("vtkDepthOfFieldPass")
     .smart_ptr<vtkSmartPointer<vtkDepthOfFieldPass>>("vtkSmartPointer<vtkDepthOfFieldPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDepthOfFieldPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDepthOfFieldPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDepthOfFieldPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDepthOfFieldPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDepthOfFieldPass::SafeDownCast, emscripten::allow_raw_pointers())

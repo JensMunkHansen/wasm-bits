@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridGeometry
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridGeometryFilter_class) {
   emscripten::class_<vtkUnstructuredGridGeometryFilter, emscripten::base<vtkUnstructuredGridBaseAlgorithm>>("vtkUnstructuredGridGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridGeometryFilter>>("vtkSmartPointer<vtkUnstructuredGridGeometryFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridGeometryFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

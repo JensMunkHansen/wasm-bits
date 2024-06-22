@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkDendrogramItem>(vtkDendr
 EMSCRIPTEN_BINDINGS(vtkDendrogramItem_class) {
   emscripten::class_<vtkDendrogramItem, emscripten::base<vtkContextItem>>("vtkDendrogramItem")
     .smart_ptr<vtkSmartPointer<vtkDendrogramItem>>("vtkSmartPointer<vtkDendrogramItem>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDendrogramItem>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDendrogramItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDendrogramItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDendrogramItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDendrogramItem::SafeDownCast, emscripten::allow_raw_pointers())

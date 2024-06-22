@@ -37,7 +37,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataConnectivityFilt
 EMSCRIPTEN_BINDINGS(vtkPolyDataConnectivityFilter_class) {
   emscripten::class_<vtkPolyDataConnectivityFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataConnectivityFilter")
     .smart_ptr<vtkSmartPointer<vtkPolyDataConnectivityFilter>>("vtkSmartPointer<vtkPolyDataConnectivityFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataConnectivityFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataConnectivityFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataConnectivityFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataConnectivityFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataConnectivityFilter::SafeDownCast, emscripten::allow_raw_pointers())

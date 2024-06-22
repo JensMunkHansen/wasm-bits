@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkUniformGridPartitioner>(
 EMSCRIPTEN_BINDINGS(vtkUniformGridPartitioner_class) {
   emscripten::class_<vtkUniformGridPartitioner, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkUniformGridPartitioner")
     .smart_ptr<vtkSmartPointer<vtkUniformGridPartitioner>>("vtkSmartPointer<vtkUniformGridPartitioner>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUniformGridPartitioner>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUniformGridPartitioner>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUniformGridPartitioner::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUniformGridPartitioner& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUniformGridPartitioner::SafeDownCast, emscripten::allow_raw_pointers())

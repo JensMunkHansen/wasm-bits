@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkResliceCursorLineReprese
 EMSCRIPTEN_BINDINGS(vtkResliceCursorLineRepresentation_class) {
   emscripten::class_<vtkResliceCursorLineRepresentation, emscripten::base<vtkResliceCursorRepresentation>>("vtkResliceCursorLineRepresentation")
     .smart_ptr<vtkSmartPointer<vtkResliceCursorLineRepresentation>>("vtkSmartPointer<vtkResliceCursorLineRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkResliceCursorLineRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkResliceCursorLineRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkResliceCursorLineRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkResliceCursorLineRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkResliceCursorLineRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

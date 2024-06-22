@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkAxesActor>(vtkAxesActor 
 EMSCRIPTEN_BINDINGS(vtkAxesActor_class) {
   emscripten::class_<vtkAxesActor, emscripten::base<vtkProp3D>>("vtkAxesActor")
     .smart_ptr<vtkSmartPointer<vtkAxesActor>>("vtkSmartPointer<vtkAxesActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAxesActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxesActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxesActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxesActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxesActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleRubberBan
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleRubberBand2D_class) {
   emscripten::class_<vtkInteractorStyleRubberBand2D, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleRubberBand2D")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleRubberBand2D>>("vtkSmartPointer<vtkInteractorStyleRubberBand2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleRubberBand2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleRubberBand2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleRubberBand2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleRubberBand2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleRubberBand2D::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkImageCroppingRegionsWidget_class) {
   using WidgetEventIds=vtkImageCroppingRegionsWidget::WidgetEventIds;
   emscripten::class_<vtkImageCroppingRegionsWidget, emscripten::base<vtk3DWidget>>("vtkImageCroppingRegionsWidget")
     .smart_ptr<vtkSmartPointer<vtkImageCroppingRegionsWidget>>("vtkSmartPointer<vtkImageCroppingRegionsWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCroppingRegionsWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCroppingRegionsWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCroppingRegionsWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCroppingRegionsWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCroppingRegionsWidget::SafeDownCast, emscripten::allow_raw_pointers())

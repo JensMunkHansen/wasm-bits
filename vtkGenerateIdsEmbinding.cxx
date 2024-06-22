@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenerateIds>(vtkGenerate
 EMSCRIPTEN_BINDINGS(vtkGenerateIds_class) {
   emscripten::class_<vtkGenerateIds, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkGenerateIds")
     .smart_ptr<vtkSmartPointer<vtkGenerateIds>>("vtkSmartPointer<vtkGenerateIds>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGenerateIds>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenerateIds>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenerateIds::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenerateIds& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenerateIds::SafeDownCast, emscripten::allow_raw_pointers())

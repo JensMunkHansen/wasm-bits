@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinearTransformCellLocat
 EMSCRIPTEN_BINDINGS(vtkLinearTransformCellLocator_class) {
   emscripten::class_<vtkLinearTransformCellLocator, emscripten::base<vtkAbstractCellLocator>>("vtkLinearTransformCellLocator")
     .smart_ptr<vtkSmartPointer<vtkLinearTransformCellLocator>>("vtkSmartPointer<vtkLinearTransformCellLocator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLinearTransformCellLocator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinearTransformCellLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinearTransformCellLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinearTransformCellLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinearTransformCellLocator::SafeDownCast, emscripten::allow_raw_pointers())

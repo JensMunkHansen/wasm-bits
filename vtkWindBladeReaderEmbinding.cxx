@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkWindBladeReader>(vtkWind
 EMSCRIPTEN_BINDINGS(vtkWindBladeReader_class) {
   emscripten::class_<vtkWindBladeReader, emscripten::base<vtkStructuredGridAlgorithm>>("vtkWindBladeReader")
     .smart_ptr<vtkSmartPointer<vtkWindBladeReader>>("vtkSmartPointer<vtkWindBladeReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWindBladeReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWindBladeReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWindBladeReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWindBladeReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWindBladeReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -43,7 +43,7 @@ template<> void emscripten::internal::raw_destructor<vtkGlyphSource2D>(vtkGlyphS
 EMSCRIPTEN_BINDINGS(vtkGlyphSource2D_class) {
   emscripten::class_<vtkGlyphSource2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkGlyphSource2D")
     .smart_ptr<vtkSmartPointer<vtkGlyphSource2D>>("vtkSmartPointer<vtkGlyphSource2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGlyphSource2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGlyphSource2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGlyphSource2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGlyphSource2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGlyphSource2D::SafeDownCast, emscripten::allow_raw_pointers())

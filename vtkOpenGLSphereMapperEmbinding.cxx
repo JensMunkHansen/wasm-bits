@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLSphereMapper>(vtkO
 EMSCRIPTEN_BINDINGS(vtkOpenGLSphereMapper_class) {
   emscripten::class_<vtkOpenGLSphereMapper, emscripten::base<vtkOpenGLPolyDataMapper>>("vtkOpenGLSphereMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLSphereMapper>>("vtkSmartPointer<vtkOpenGLSphereMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLSphereMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLSphereMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLSphereMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLSphereMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLSphereMapper::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageFlip>(vtkImageFlip 
 EMSCRIPTEN_BINDINGS(vtkImageFlip_class) {
   emscripten::class_<vtkImageFlip, emscripten::base<vtkImageReslice>>("vtkImageFlip")
     .smart_ptr<vtkSmartPointer<vtkImageFlip>>("vtkSmartPointer<vtkImageFlip>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageFlip>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageFlip>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageFlip::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageFlip& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageFlip::SafeDownCast, emscripten::allow_raw_pointers())

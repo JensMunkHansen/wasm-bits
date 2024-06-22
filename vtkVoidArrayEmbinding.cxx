@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVoidArray>(vtkVoidArray 
 EMSCRIPTEN_BINDINGS(vtkVoidArray_class) {
   emscripten::class_<vtkVoidArray, emscripten::base<vtkObject>>("vtkVoidArray")
     .smart_ptr<vtkSmartPointer<vtkVoidArray>>("vtkSmartPointer<vtkVoidArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVoidArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVoidArray>)
     .class_function("ExtendedNew", &vtkVoidArray::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVoidArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVoidArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

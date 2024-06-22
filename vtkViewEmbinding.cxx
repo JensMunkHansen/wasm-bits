@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkView>(vtkView * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkView_class) {
   emscripten::class_<vtkView, emscripten::base<vtkObject>>("vtkView")
     .smart_ptr<vtkSmartPointer<vtkView>>("vtkSmartPointer<vtkView>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkView>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkView>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkView::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkView& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkView::SafeDownCast, emscripten::allow_raw_pointers())

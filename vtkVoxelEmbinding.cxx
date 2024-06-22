@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkVoxel>(vtkVoxel * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkVoxel_class) {
   emscripten::class_<vtkVoxel, emscripten::base<vtkCell3D>>("vtkVoxel")
     .smart_ptr<vtkSmartPointer<vtkVoxel>>("vtkSmartPointer<vtkVoxel>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVoxel>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVoxel>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVoxel::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVoxel& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVoxel::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOverrideInformation>(vtk
 EMSCRIPTEN_BINDINGS(vtkOverrideInformation_class) {
   emscripten::class_<vtkOverrideInformation, emscripten::base<vtkObject>>("vtkOverrideInformation")
     .smart_ptr<vtkSmartPointer<vtkOverrideInformation>>("vtkSmartPointer<vtkOverrideInformation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOverrideInformation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOverrideInformation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOverrideInformation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOverrideInformation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOverrideInformation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDSPFilterGroup>(vtkDSPFi
 EMSCRIPTEN_BINDINGS(vtkDSPFilterGroup_class) {
   emscripten::class_<vtkDSPFilterGroup, emscripten::base<vtkObject>>("vtkDSPFilterGroup")
     .smart_ptr<vtkSmartPointer<vtkDSPFilterGroup>>("vtkSmartPointer<vtkDSPFilterGroup>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDSPFilterGroup>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDSPFilterGroup>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDSPFilterGroup::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDSPFilterGroup& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDSPFilterGroup::SafeDownCast, emscripten::allow_raw_pointers())

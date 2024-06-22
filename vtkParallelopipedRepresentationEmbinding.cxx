@@ -30,7 +30,7 @@ EMSCRIPTEN_BINDINGS(vtkParallelopipedRepresentation_class) {
   using InteractionStateType=vtkParallelopipedRepresentation::InteractionStateType;
   emscripten::class_<vtkParallelopipedRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkParallelopipedRepresentation")
     .smart_ptr<vtkSmartPointer<vtkParallelopipedRepresentation>>("vtkSmartPointer<vtkParallelopipedRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelopipedRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelopipedRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelopipedRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelopipedRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelopipedRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMReXParticlesReader>(vt
 EMSCRIPTEN_BINDINGS(vtkAMReXParticlesReader_class) {
   emscripten::class_<vtkAMReXParticlesReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkAMReXParticlesReader")
     .smart_ptr<vtkSmartPointer<vtkAMReXParticlesReader>>("vtkSmartPointer<vtkAMReXParticlesReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMReXParticlesReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMReXParticlesReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMReXParticlesReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMReXParticlesReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMReXParticlesReader::SafeDownCast, emscripten::allow_raw_pointers())

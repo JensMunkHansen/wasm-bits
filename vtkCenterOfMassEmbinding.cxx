@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCenterOfMass>(vtkCenterO
 EMSCRIPTEN_BINDINGS(vtkCenterOfMass_class) {
   emscripten::class_<vtkCenterOfMass, emscripten::base<vtkPointSetAlgorithm>>("vtkCenterOfMass")
     .smart_ptr<vtkSmartPointer<vtkCenterOfMass>>("vtkSmartPointer<vtkCenterOfMass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCenterOfMass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCenterOfMass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCenterOfMass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCenterOfMass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCenterOfMass::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMedicalImageProperties>(
 EMSCRIPTEN_BINDINGS(vtkMedicalImageProperties_class) {
   emscripten::class_<vtkMedicalImageProperties, emscripten::base<vtkObject>>("vtkMedicalImageProperties")
     .smart_ptr<vtkSmartPointer<vtkMedicalImageProperties>>("vtkSmartPointer<vtkMedicalImageProperties>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMedicalImageProperties>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMedicalImageProperties>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMedicalImageProperties::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMedicalImageProperties& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMedicalImageProperties::SafeDownCast, emscripten::allow_raw_pointers())

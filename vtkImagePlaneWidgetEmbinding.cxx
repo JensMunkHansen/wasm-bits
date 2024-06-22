@@ -47,7 +47,7 @@ template<> void emscripten::internal::raw_destructor<vtkImagePlaneWidget>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImagePlaneWidget_class) {
   emscripten::class_<vtkImagePlaneWidget, emscripten::base<vtkPolyDataSourceWidget>>("vtkImagePlaneWidget")
     .smart_ptr<vtkSmartPointer<vtkImagePlaneWidget>>("vtkSmartPointer<vtkImagePlaneWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImagePlaneWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImagePlaneWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImagePlaneWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImagePlaneWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImagePlaneWidget::SafeDownCast, emscripten::allow_raw_pointers())

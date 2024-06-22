@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSphericalHarmonics>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSphericalHarmonics_class) {
   emscripten::class_<vtkSphericalHarmonics, emscripten::base<vtkImageAlgorithm>>("vtkSphericalHarmonics")
     .smart_ptr<vtkSmartPointer<vtkSphericalHarmonics>>("vtkSmartPointer<vtkSphericalHarmonics>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSphericalHarmonics>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSphericalHarmonics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSphericalHarmonics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSphericalHarmonics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSphericalHarmonics::SafeDownCast, emscripten::allow_raw_pointers())

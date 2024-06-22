@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTableWriter>(vtkTableWri
 EMSCRIPTEN_BINDINGS(vtkTableWriter_class) {
   emscripten::class_<vtkTableWriter, emscripten::base<vtkDataWriter>>("vtkTableWriter")
     .smart_ptr<vtkSmartPointer<vtkTableWriter>>("vtkSmartPointer<vtkTableWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTableWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTableWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTableWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTableWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTableWriter::SafeDownCast, emscripten::allow_raw_pointers())

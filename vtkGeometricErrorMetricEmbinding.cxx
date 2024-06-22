@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGeometricErrorMetric>(vt
 EMSCRIPTEN_BINDINGS(vtkGeometricErrorMetric_class) {
   emscripten::class_<vtkGeometricErrorMetric, emscripten::base<vtkGenericSubdivisionErrorMetric>>("vtkGeometricErrorMetric")
     .smart_ptr<vtkSmartPointer<vtkGeometricErrorMetric>>("vtkSmartPointer<vtkGeometricErrorMetric>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGeometricErrorMetric>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGeometricErrorMetric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGeometricErrorMetric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGeometricErrorMetric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGeometricErrorMetric::SafeDownCast, emscripten::allow_raw_pointers())

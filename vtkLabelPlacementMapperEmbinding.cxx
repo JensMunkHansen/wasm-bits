@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkLabelPlacementMapper_class) {
   using LabelStyle=vtkLabelPlacementMapper::LabelStyle;
   emscripten::class_<vtkLabelPlacementMapper, emscripten::base<vtkMapper2D>>("vtkLabelPlacementMapper")
     .smart_ptr<vtkSmartPointer<vtkLabelPlacementMapper>>("vtkSmartPointer<vtkLabelPlacementMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLabelPlacementMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabelPlacementMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabelPlacementMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabelPlacementMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabelPlacementMapper::SafeDownCast, emscripten::allow_raw_pointers())

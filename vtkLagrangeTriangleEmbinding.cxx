@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeTriangle>(vtkLag
 EMSCRIPTEN_BINDINGS(vtkLagrangeTriangle_class) {
   emscripten::class_<vtkLagrangeTriangle, emscripten::base<vtkHigherOrderTriangle>>("vtkLagrangeTriangle")
     .smart_ptr<vtkSmartPointer<vtkLagrangeTriangle>>("vtkSmartPointer<vtkLagrangeTriangle>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeTriangle>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeTriangle>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeTriangle::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeTriangle& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeTriangle::SafeDownCast, emscripten::allow_raw_pointers())

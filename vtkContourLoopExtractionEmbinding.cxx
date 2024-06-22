@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkContourLoopExtraction>(v
 EMSCRIPTEN_BINDINGS(vtkContourLoopExtraction_class) {
   emscripten::class_<vtkContourLoopExtraction, emscripten::base<vtkPolyDataAlgorithm>>("vtkContourLoopExtraction")
     .smart_ptr<vtkSmartPointer<vtkContourLoopExtraction>>("vtkSmartPointer<vtkContourLoopExtraction>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContourLoopExtraction>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContourLoopExtraction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContourLoopExtraction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContourLoopExtraction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContourLoopExtraction::SafeDownCast, emscripten::allow_raw_pointers())

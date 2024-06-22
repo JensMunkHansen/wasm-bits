@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractiveArea>(vtkInte
 EMSCRIPTEN_BINDINGS(vtkInteractiveArea_class) {
   emscripten::class_<vtkInteractiveArea, emscripten::base<vtkContextArea>>("vtkInteractiveArea")
     .smart_ptr<vtkSmartPointer<vtkInteractiveArea>>("vtkSmartPointer<vtkInteractiveArea>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractiveArea>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractiveArea>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractiveArea::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractiveArea& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractiveArea::SafeDownCast, emscripten::allow_raw_pointers())

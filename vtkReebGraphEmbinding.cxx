@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkReebGraph>(vtkReebGraph 
 EMSCRIPTEN_BINDINGS(vtkReebGraph_class) {
   emscripten::class_<vtkReebGraph, emscripten::base<vtkMutableDirectedGraph>>("vtkReebGraph")
     .smart_ptr<vtkSmartPointer<vtkReebGraph>>("vtkSmartPointer<vtkReebGraph>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkReebGraph>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkReebGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkReebGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkReebGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkReebGraph::SafeDownCast, emscripten::allow_raw_pointers())

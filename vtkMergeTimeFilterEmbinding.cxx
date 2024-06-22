@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMergeTimeFilter>(vtkMerg
 EMSCRIPTEN_BINDINGS(vtkMergeTimeFilter_class) {
   emscripten::class_<vtkMergeTimeFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkMergeTimeFilter")
     .smart_ptr<vtkSmartPointer<vtkMergeTimeFilter>>("vtkSmartPointer<vtkMergeTimeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMergeTimeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMergeTimeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMergeTimeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMergeTimeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMergeTimeFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkGreedyTerrainDecimation>
 EMSCRIPTEN_BINDINGS(vtkGreedyTerrainDecimation_class) {
   emscripten::class_<vtkGreedyTerrainDecimation, emscripten::base<vtkPolyDataAlgorithm>>("vtkGreedyTerrainDecimation")
     .smart_ptr<vtkSmartPointer<vtkGreedyTerrainDecimation>>("vtkSmartPointer<vtkGreedyTerrainDecimation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGreedyTerrainDecimation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGreedyTerrainDecimation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGreedyTerrainDecimation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGreedyTerrainDecimation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGreedyTerrainDecimation::SafeDownCast, emscripten::allow_raw_pointers())

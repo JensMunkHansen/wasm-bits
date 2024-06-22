@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredGridClip>(vtkS
 EMSCRIPTEN_BINDINGS(vtkStructuredGridClip_class) {
   emscripten::class_<vtkStructuredGridClip, emscripten::base<vtkStructuredGridAlgorithm>>("vtkStructuredGridClip")
     .smart_ptr<vtkSmartPointer<vtkStructuredGridClip>>("vtkSmartPointer<vtkStructuredGridClip>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredGridClip>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredGridClip>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredGridClip::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredGridClip& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredGridClip::SafeDownCast, emscripten::allow_raw_pointers())

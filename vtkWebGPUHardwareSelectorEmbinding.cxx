@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPUHardwareSelector>(
 EMSCRIPTEN_BINDINGS(vtkWebGPUHardwareSelector_class) {
   emscripten::class_<vtkWebGPUHardwareSelector, emscripten::base<vtkHardwareSelector>>("vtkWebGPUHardwareSelector")
     .smart_ptr<vtkSmartPointer<vtkWebGPUHardwareSelector>>("vtkSmartPointer<vtkWebGPUHardwareSelector>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUHardwareSelector>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUHardwareSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUHardwareSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUHardwareSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUHardwareSelector::SafeDownCast, emscripten::allow_raw_pointers())

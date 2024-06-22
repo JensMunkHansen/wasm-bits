@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBooleanTexture>(vtkBoole
 EMSCRIPTEN_BINDINGS(vtkBooleanTexture_class) {
   emscripten::class_<vtkBooleanTexture, emscripten::base<vtkImageAlgorithm>>("vtkBooleanTexture")
     .smart_ptr<vtkSmartPointer<vtkBooleanTexture>>("vtkSmartPointer<vtkBooleanTexture>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBooleanTexture>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBooleanTexture>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBooleanTexture::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBooleanTexture& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBooleanTexture::SafeDownCast, emscripten::allow_raw_pointers())

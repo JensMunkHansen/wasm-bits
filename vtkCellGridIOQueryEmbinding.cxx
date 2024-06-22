@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridIOQuery>(vtkCell
 EMSCRIPTEN_BINDINGS(vtkCellGridIOQuery_class) {
   emscripten::class_<vtkCellGridIOQuery, emscripten::base<vtkCellGridQuery>>("vtkCellGridIOQuery")
     .smart_ptr<vtkSmartPointer<vtkCellGridIOQuery>>("vtkSmartPointer<vtkCellGridIOQuery>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridIOQuery>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridIOQuery>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridIOQuery::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridIOQuery& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridIOQuery::SafeDownCast, emscripten::allow_raw_pointers())

@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplineFilter>(vtkSplineF
 EMSCRIPTEN_BINDINGS(vtkSplineFilter_class) {
   emscripten::class_<vtkSplineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkSplineFilter")
     .smart_ptr<vtkSmartPointer<vtkSplineFilter>>("vtkSmartPointer<vtkSplineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSplineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplineFilter::SafeDownCast, emscripten::allow_raw_pointers())

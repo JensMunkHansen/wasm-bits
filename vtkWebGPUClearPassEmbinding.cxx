@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPUClearPass>(vtkWebG
 EMSCRIPTEN_BINDINGS(vtkWebGPUClearPass_class) {
   emscripten::class_<vtkWebGPUClearPass, emscripten::base<vtkWebGPURenderPass>>("vtkWebGPUClearPass")
     .smart_ptr<vtkSmartPointer<vtkWebGPUClearPass>>("vtkSmartPointer<vtkWebGPUClearPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUClearPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUClearPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUClearPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUClearPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUClearPass::SafeDownCast, emscripten::allow_raw_pointers())

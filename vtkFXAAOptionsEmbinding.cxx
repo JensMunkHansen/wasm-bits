@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkFXAAOptions_class) {
   using DebugOption=vtkFXAAOptions::DebugOption;
   emscripten::class_<vtkFXAAOptions, emscripten::base<vtkObject>>("vtkFXAAOptions")
     .smart_ptr<vtkSmartPointer<vtkFXAAOptions>>("vtkSmartPointer<vtkFXAAOptions>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFXAAOptions>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFXAAOptions>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFXAAOptions::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFXAAOptions& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFXAAOptions::SafeDownCast, emscripten::allow_raw_pointers())

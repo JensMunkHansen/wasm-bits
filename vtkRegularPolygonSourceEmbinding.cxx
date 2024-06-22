@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRegularPolygonSource>(vt
 EMSCRIPTEN_BINDINGS(vtkRegularPolygonSource_class) {
   emscripten::class_<vtkRegularPolygonSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkRegularPolygonSource")
     .smart_ptr<vtkSmartPointer<vtkRegularPolygonSource>>("vtkSmartPointer<vtkRegularPolygonSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRegularPolygonSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRegularPolygonSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRegularPolygonSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRegularPolygonSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRegularPolygonSource::SafeDownCast, emscripten::allow_raw_pointers())

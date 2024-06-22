@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkGroupDataSetsFilter>(vtk
 EMSCRIPTEN_BINDINGS(vtkGroupDataSetsFilter_class) {
   emscripten::class_<vtkGroupDataSetsFilter, emscripten::base<vtkDataObjectAlgorithm>>("vtkGroupDataSetsFilter")
     .smart_ptr<vtkSmartPointer<vtkGroupDataSetsFilter>>("vtkSmartPointer<vtkGroupDataSetsFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGroupDataSetsFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGroupDataSetsFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGroupDataSetsFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGroupDataSetsFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGroupDataSetsFilter::SafeDownCast, emscripten::allow_raw_pointers())

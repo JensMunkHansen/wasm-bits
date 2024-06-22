@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPruneTreeFilter>(vtkPrun
 EMSCRIPTEN_BINDINGS(vtkPruneTreeFilter_class) {
   emscripten::class_<vtkPruneTreeFilter, emscripten::base<vtkTreeAlgorithm>>("vtkPruneTreeFilter")
     .smart_ptr<vtkSmartPointer<vtkPruneTreeFilter>>("vtkSmartPointer<vtkPruneTreeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPruneTreeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPruneTreeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPruneTreeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPruneTreeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPruneTreeFilter::SafeDownCast, emscripten::allow_raw_pointers())

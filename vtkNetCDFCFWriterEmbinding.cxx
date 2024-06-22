@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkNetCDFCFWriter>(vtkNetCD
 EMSCRIPTEN_BINDINGS(vtkNetCDFCFWriter_class) {
   emscripten::class_<vtkNetCDFCFWriter, emscripten::base<vtkWriter>>("vtkNetCDFCFWriter")
     .smart_ptr<vtkSmartPointer<vtkNetCDFCFWriter>>("vtkSmartPointer<vtkNetCDFCFWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNetCDFCFWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNetCDFCFWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNetCDFCFWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNetCDFCFWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNetCDFCFWriter::SafeDownCast, emscripten::allow_raw_pointers())

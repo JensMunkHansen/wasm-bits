@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkLSDynaReader>(vtkLSDynaR
 EMSCRIPTEN_BINDINGS(vtkLSDynaReader_class) {
   emscripten::class_<vtkLSDynaReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkLSDynaReader")
     .smart_ptr<vtkSmartPointer<vtkLSDynaReader>>("vtkSmartPointer<vtkLSDynaReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLSDynaReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLSDynaReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLSDynaReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLSDynaReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLSDynaReader::SafeDownCast, emscripten::allow_raw_pointers())

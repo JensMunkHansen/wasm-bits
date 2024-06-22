@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkGraphAnnotationLayersFil
 EMSCRIPTEN_BINDINGS(vtkGraphAnnotationLayersFilter_class) {
   emscripten::class_<vtkGraphAnnotationLayersFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGraphAnnotationLayersFilter")
     .smart_ptr<vtkSmartPointer<vtkGraphAnnotationLayersFilter>>("vtkSmartPointer<vtkGraphAnnotationLayersFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGraphAnnotationLayersFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGraphAnnotationLayersFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGraphAnnotationLayersFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGraphAnnotationLayersFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGraphAnnotationLayersFilter::SafeDownCast, emscripten::allow_raw_pointers())

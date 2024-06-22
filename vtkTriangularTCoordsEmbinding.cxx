@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTriangularTCoords>(vtkTr
 EMSCRIPTEN_BINDINGS(vtkTriangularTCoords_class) {
   emscripten::class_<vtkTriangularTCoords, emscripten::base<vtkPolyDataAlgorithm>>("vtkTriangularTCoords")
     .smart_ptr<vtkSmartPointer<vtkTriangularTCoords>>("vtkSmartPointer<vtkTriangularTCoords>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTriangularTCoords>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTriangularTCoords>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTriangularTCoords::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTriangularTCoords& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTriangularTCoords::SafeDownCast, emscripten::allow_raw_pointers())

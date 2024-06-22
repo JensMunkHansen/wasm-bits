@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractHistogram>(vtkExt
 EMSCRIPTEN_BINDINGS(vtkExtractHistogram_class) {
   emscripten::class_<vtkExtractHistogram, emscripten::base<vtkTableAlgorithm>>("vtkExtractHistogram")
     .smart_ptr<vtkSmartPointer<vtkExtractHistogram>>("vtkSmartPointer<vtkExtractHistogram>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractHistogram>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractHistogram>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractHistogram::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractHistogram& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractHistogram::SafeDownCast, emscripten::allow_raw_pointers())

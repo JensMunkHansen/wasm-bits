@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitPolyDataDistance
 EMSCRIPTEN_BINDINGS(vtkImplicitPolyDataDistance_class) {
   emscripten::class_<vtkImplicitPolyDataDistance, emscripten::base<vtkImplicitFunction>>("vtkImplicitPolyDataDistance")
     .smart_ptr<vtkSmartPointer<vtkImplicitPolyDataDistance>>("vtkSmartPointer<vtkImplicitPolyDataDistance>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitPolyDataDistance>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitPolyDataDistance>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitPolyDataDistance::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitPolyDataDistance& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitPolyDataDistance::SafeDownCast, emscripten::allow_raw_pointers())

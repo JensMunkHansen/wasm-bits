@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDiscreteFlyingEdges2D>(v
 EMSCRIPTEN_BINDINGS(vtkDiscreteFlyingEdges2D_class) {
   emscripten::class_<vtkDiscreteFlyingEdges2D, emscripten::base<vtkPolyDataAlgorithm>>("vtkDiscreteFlyingEdges2D")
     .smart_ptr<vtkSmartPointer<vtkDiscreteFlyingEdges2D>>("vtkSmartPointer<vtkDiscreteFlyingEdges2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDiscreteFlyingEdges2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDiscreteFlyingEdges2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDiscreteFlyingEdges2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDiscreteFlyingEdges2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDiscreteFlyingEdges2D::SafeDownCast, emscripten::allow_raw_pointers())

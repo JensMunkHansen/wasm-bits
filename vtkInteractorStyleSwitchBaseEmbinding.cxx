@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleSwitchBas
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleSwitchBase_class) {
   emscripten::class_<vtkInteractorStyleSwitchBase, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleSwitchBase")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleSwitchBase>>("vtkSmartPointer<vtkInteractorStyleSwitchBase>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleSwitchBase>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleSwitchBase>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleSwitchBase::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleSwitchBase& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleSwitchBase::SafeDownCast, emscripten::allow_raw_pointers())

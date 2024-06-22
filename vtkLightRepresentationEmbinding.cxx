@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkLightRepresentation>(vtk
 EMSCRIPTEN_BINDINGS(vtkLightRepresentation_class) {
   emscripten::class_<vtkLightRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkLightRepresentation")
     .smart_ptr<vtkSmartPointer<vtkLightRepresentation>>("vtkSmartPointer<vtkLightRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLightRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLightRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLightRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLightRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLightRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageOrthoPlanes>(vtkIma
 EMSCRIPTEN_BINDINGS(vtkImageOrthoPlanes_class) {
   emscripten::class_<vtkImageOrthoPlanes, emscripten::base<vtkObject>>("vtkImageOrthoPlanes")
     .smart_ptr<vtkSmartPointer<vtkImageOrthoPlanes>>("vtkSmartPointer<vtkImageOrthoPlanes>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageOrthoPlanes>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageOrthoPlanes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageOrthoPlanes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageOrthoPlanes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageOrthoPlanes::SafeDownCast, emscripten::allow_raw_pointers())

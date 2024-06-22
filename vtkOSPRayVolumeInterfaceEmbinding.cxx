@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOSPRayVolumeInterface>(v
 EMSCRIPTEN_BINDINGS(vtkOSPRayVolumeInterface_class) {
   emscripten::class_<vtkOSPRayVolumeInterface, emscripten::base<vtkVolumeMapper>>("vtkOSPRayVolumeInterface")
     .smart_ptr<vtkSmartPointer<vtkOSPRayVolumeInterface>>("vtkSmartPointer<vtkOSPRayVolumeInterface>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOSPRayVolumeInterface>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOSPRayVolumeInterface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOSPRayVolumeInterface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOSPRayVolumeInterface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOSPRayVolumeInterface::SafeDownCast, emscripten::allow_raw_pointers())

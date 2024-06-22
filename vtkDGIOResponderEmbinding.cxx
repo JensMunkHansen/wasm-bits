@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGIOResponder>(vtkDGIORe
 EMSCRIPTEN_BINDINGS(vtkDGIOResponder_class) {
   emscripten::class_<vtkDGIOResponder, emscripten::base<vtkCellGridResponder<vtkCellGridIOQuery>>>("vtkDGIOResponder")
     .smart_ptr<vtkSmartPointer<vtkDGIOResponder>>("vtkSmartPointer<vtkDGIOResponder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDGIOResponder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGIOResponder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGIOResponder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGIOResponder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGIOResponder::SafeDownCast, emscripten::allow_raw_pointers())

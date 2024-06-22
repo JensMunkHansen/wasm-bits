@@ -40,7 +40,7 @@ template<> void emscripten::internal::raw_destructor<vtkScalarBarActor>(vtkScala
 EMSCRIPTEN_BINDINGS(vtkScalarBarActor_class) {
   emscripten::class_<vtkScalarBarActor, emscripten::base<vtkActor2D>>("vtkScalarBarActor")
     .smart_ptr<vtkSmartPointer<vtkScalarBarActor>>("vtkSmartPointer<vtkScalarBarActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkScalarBarActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkScalarBarActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScalarBarActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScalarBarActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScalarBarActor::SafeDownCast, emscripten::allow_raw_pointers())

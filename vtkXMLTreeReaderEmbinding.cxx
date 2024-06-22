@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLTreeReader>(vtkXMLTre
 EMSCRIPTEN_BINDINGS(vtkXMLTreeReader_class) {
   emscripten::class_<vtkXMLTreeReader, emscripten::base<vtkTreeAlgorithm>>("vtkXMLTreeReader")
     .smart_ptr<vtkSmartPointer<vtkXMLTreeReader>>("vtkSmartPointer<vtkXMLTreeReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLTreeReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLTreeReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLTreeReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLTreeReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLTreeReader::SafeDownCast, emscripten::allow_raw_pointers())

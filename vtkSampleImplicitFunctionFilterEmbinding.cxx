@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSampleImplicitFunctionFi
 EMSCRIPTEN_BINDINGS(vtkSampleImplicitFunctionFilter_class) {
   emscripten::class_<vtkSampleImplicitFunctionFilter, emscripten::base<vtkDataSetAlgorithm>>("vtkSampleImplicitFunctionFilter")
     .smart_ptr<vtkSmartPointer<vtkSampleImplicitFunctionFilter>>("vtkSmartPointer<vtkSampleImplicitFunctionFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSampleImplicitFunctionFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSampleImplicitFunctionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSampleImplicitFunctionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSampleImplicitFunctionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSampleImplicitFunctionFilter::SafeDownCast, emscripten::allow_raw_pointers())

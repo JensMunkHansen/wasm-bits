@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkVariantArray_class) {
   using DeleteMethod=vtkVariantArray::DeleteMethod;
   emscripten::class_<vtkVariantArray, emscripten::base<vtkAbstractArray>>("vtkVariantArray")
     .smart_ptr<vtkSmartPointer<vtkVariantArray>>("vtkSmartPointer<vtkVariantArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVariantArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVariantArray>)
     .class_function("ExtendedNew", &vtkVariantArray::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVariantArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVariantArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

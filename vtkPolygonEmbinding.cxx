@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkPolygon_class) {
   using EarCutMeasureTypes=vtkPolygon::EarCutMeasureTypes;
   emscripten::class_<vtkPolygon, emscripten::base<vtkCell>>("vtkPolygon")
     .smart_ptr<vtkSmartPointer<vtkPolygon>>("vtkSmartPointer<vtkPolygon>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolygon>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolygon>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolygon::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolygon& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolygon::SafeDownCast, emscripten::allow_raw_pointers())

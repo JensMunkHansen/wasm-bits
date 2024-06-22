@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDataOutlineFilter>(
 EMSCRIPTEN_BINDINGS(vtkImageDataOutlineFilter_class) {
   emscripten::class_<vtkImageDataOutlineFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkImageDataOutlineFilter")
     .smart_ptr<vtkSmartPointer<vtkImageDataOutlineFilter>>("vtkSmartPointer<vtkImageDataOutlineFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDataOutlineFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDataOutlineFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDataOutlineFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDataOutlineFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDataOutlineFilter::SafeDownCast, emscripten::allow_raw_pointers())

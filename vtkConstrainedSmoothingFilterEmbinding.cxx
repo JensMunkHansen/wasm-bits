@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkConstrainedSmoothingFilter_class) {
   using ConstraintStrategyType=vtkConstrainedSmoothingFilter::ConstraintStrategyType;
   emscripten::class_<vtkConstrainedSmoothingFilter, emscripten::base<vtkPointSetAlgorithm>>("vtkConstrainedSmoothingFilter")
     .smart_ptr<vtkSmartPointer<vtkConstrainedSmoothingFilter>>("vtkSmartPointer<vtkConstrainedSmoothingFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkConstrainedSmoothingFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkConstrainedSmoothingFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConstrainedSmoothingFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConstrainedSmoothingFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConstrainedSmoothingFilter::SafeDownCast, emscripten::allow_raw_pointers())

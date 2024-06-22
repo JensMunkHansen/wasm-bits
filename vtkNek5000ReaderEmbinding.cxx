@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkNek5000Reader>(vtkNek500
 EMSCRIPTEN_BINDINGS(vtkNek5000Reader_class) {
   emscripten::class_<vtkNek5000Reader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkNek5000Reader")
     .smart_ptr<vtkSmartPointer<vtkNek5000Reader>>("vtkSmartPointer<vtkNek5000Reader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNek5000Reader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNek5000Reader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNek5000Reader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNek5000Reader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNek5000Reader::SafeDownCast, emscripten::allow_raw_pointers())

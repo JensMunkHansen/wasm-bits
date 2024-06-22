@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageImport>(vtkImageImp
 EMSCRIPTEN_BINDINGS(vtkImageImport_class) {
   emscripten::class_<vtkImageImport, emscripten::base<vtkImageAlgorithm>>("vtkImageImport")
     .smart_ptr<vtkSmartPointer<vtkImageImport>>("vtkSmartPointer<vtkImageImport>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageImport>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageImport>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageImport::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageImport& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageImport::SafeDownCast, emscripten::allow_raw_pointers())

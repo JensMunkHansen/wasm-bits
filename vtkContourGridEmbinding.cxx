@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkContourGrid>(vtkContourG
 EMSCRIPTEN_BINDINGS(vtkContourGrid_class) {
   emscripten::class_<vtkContourGrid, emscripten::base<vtkPolyDataAlgorithm>>("vtkContourGrid")
     .smart_ptr<vtkSmartPointer<vtkContourGrid>>("vtkSmartPointer<vtkContourGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContourGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContourGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContourGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContourGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContourGrid::SafeDownCast, emscripten::allow_raw_pointers())

@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkArrowSource_class) {
   using ArrowOrigins=vtkArrowSource::ArrowOrigins;
   emscripten::class_<vtkArrowSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkArrowSource")
     .smart_ptr<vtkSmartPointer<vtkArrowSource>>("vtkSmartPointer<vtkArrowSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkArrowSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkArrowSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArrowSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArrowSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArrowSource::SafeDownCast, emscripten::allow_raw_pointers())

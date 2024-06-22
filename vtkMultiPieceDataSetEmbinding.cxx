@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiPieceDataSet>(vtkMu
 EMSCRIPTEN_BINDINGS(vtkMultiPieceDataSet_class) {
   emscripten::class_<vtkMultiPieceDataSet, emscripten::base<vtkPartitionedDataSet>>("vtkMultiPieceDataSet")
     .smart_ptr<vtkSmartPointer<vtkMultiPieceDataSet>>("vtkSmartPointer<vtkMultiPieceDataSet>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiPieceDataSet>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiPieceDataSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiPieceDataSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiPieceDataSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiPieceDataSet::SafeDownCast, emscripten::allow_raw_pointers())

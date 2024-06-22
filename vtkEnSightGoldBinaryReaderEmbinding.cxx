@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEnSightGoldBinaryReader>
 EMSCRIPTEN_BINDINGS(vtkEnSightGoldBinaryReader_class) {
   emscripten::class_<vtkEnSightGoldBinaryReader, emscripten::base<vtkEnSightReader>>("vtkEnSightGoldBinaryReader")
     .smart_ptr<vtkSmartPointer<vtkEnSightGoldBinaryReader>>("vtkSmartPointer<vtkEnSightGoldBinaryReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEnSightGoldBinaryReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEnSightGoldBinaryReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEnSightGoldBinaryReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEnSightGoldBinaryReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEnSightGoldBinaryReader::SafeDownCast, emscripten::allow_raw_pointers())

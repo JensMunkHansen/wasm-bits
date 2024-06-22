@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearGrid>(vtkRect
 EMSCRIPTEN_BINDINGS(vtkRectilinearGrid_class) {
   emscripten::class_<vtkRectilinearGrid, emscripten::base<vtkDataSet>>("vtkRectilinearGrid")
     .smart_ptr<vtkSmartPointer<vtkRectilinearGrid>>("vtkSmartPointer<vtkRectilinearGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearGrid>)
     .class_function("ExtendedNew", &vtkRectilinearGrid::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkImplicitCylinderRepresentation_class) {
   using InteractionStateType=vtkImplicitCylinderRepresentation::InteractionStateType;
   emscripten::class_<vtkImplicitCylinderRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkImplicitCylinderRepresentation")
     .smart_ptr<vtkSmartPointer<vtkImplicitCylinderRepresentation>>("vtkSmartPointer<vtkImplicitCylinderRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitCylinderRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitCylinderRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitCylinderRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitCylinderRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitCylinderRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

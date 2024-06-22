@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkOrientedGlyphFocalPlaneC
 EMSCRIPTEN_BINDINGS(vtkOrientedGlyphFocalPlaneContourRepresentation_class) {
   emscripten::class_<vtkOrientedGlyphFocalPlaneContourRepresentation, emscripten::base<vtkFocalPlaneContourRepresentation>>("vtkOrientedGlyphFocalPlaneContourRepresentation")
     .smart_ptr<vtkSmartPointer<vtkOrientedGlyphFocalPlaneContourRepresentation>>("vtkSmartPointer<vtkOrientedGlyphFocalPlaneContourRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOrientedGlyphFocalPlaneContourRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrientedGlyphFocalPlaneContourRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrientedGlyphFocalPlaneContourRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrientedGlyphFocalPlaneContourRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrientedGlyphFocalPlaneContourRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

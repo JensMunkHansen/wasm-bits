@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkEncodedGradientShader>(v
 EMSCRIPTEN_BINDINGS(vtkEncodedGradientShader_class) {
   emscripten::class_<vtkEncodedGradientShader, emscripten::base<vtkObject>>("vtkEncodedGradientShader")
     .smart_ptr<vtkSmartPointer<vtkEncodedGradientShader>>("vtkSmartPointer<vtkEncodedGradientShader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEncodedGradientShader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEncodedGradientShader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEncodedGradientShader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEncodedGradientShader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEncodedGradientShader::SafeDownCast, emscripten::allow_raw_pointers())

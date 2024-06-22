@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkStaticPointLocator_class) {
   using TraversalOrderType=vtkStaticPointLocator::TraversalOrderType;
   emscripten::class_<vtkStaticPointLocator, emscripten::base<vtkAbstractPointLocator>>("vtkStaticPointLocator")
     .smart_ptr<vtkSmartPointer<vtkStaticPointLocator>>("vtkSmartPointer<vtkStaticPointLocator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStaticPointLocator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStaticPointLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStaticPointLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStaticPointLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStaticPointLocator::SafeDownCast, emscripten::allow_raw_pointers())

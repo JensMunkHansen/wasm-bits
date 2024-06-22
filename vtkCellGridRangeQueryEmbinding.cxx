@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridRangeQuery>(vtkC
 EMSCRIPTEN_BINDINGS(vtkCellGridRangeQuery_class) {
   emscripten::class_<vtkCellGridRangeQuery, emscripten::base<vtkCellGridQuery>>("vtkCellGridRangeQuery")
     .smart_ptr<vtkSmartPointer<vtkCellGridRangeQuery>>("vtkSmartPointer<vtkCellGridRangeQuery>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridRangeQuery>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridRangeQuery>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridRangeQuery::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridRangeQuery& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridRangeQuery::SafeDownCast, emscripten::allow_raw_pointers())

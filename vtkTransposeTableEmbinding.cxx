@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransposeTable>(vtkTrans
 EMSCRIPTEN_BINDINGS(vtkTransposeTable_class) {
   emscripten::class_<vtkTransposeTable, emscripten::base<vtkTableAlgorithm>>("vtkTransposeTable")
     .smart_ptr<vtkSmartPointer<vtkTransposeTable>>("vtkSmartPointer<vtkTransposeTable>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTransposeTable>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransposeTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransposeTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransposeTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransposeTable::SafeDownCast, emscripten::allow_raw_pointers())

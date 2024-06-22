@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkMultiThreshold_class) {
   using SetOperation=vtkMultiThreshold::SetOperation;
   emscripten::class_<vtkMultiThreshold, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkMultiThreshold")
     .smart_ptr<vtkSmartPointer<vtkMultiThreshold>>("vtkSmartPointer<vtkMultiThreshold>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiThreshold>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiThreshold>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiThreshold::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiThreshold& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiThreshold::SafeDownCast, emscripten::allow_raw_pointers())

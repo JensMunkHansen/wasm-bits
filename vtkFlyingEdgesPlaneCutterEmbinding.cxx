@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkFlyingEdgesPlaneCutter>(
 EMSCRIPTEN_BINDINGS(vtkFlyingEdgesPlaneCutter_class) {
   emscripten::class_<vtkFlyingEdgesPlaneCutter, emscripten::base<vtkPolyDataAlgorithm>>("vtkFlyingEdgesPlaneCutter")
     .smart_ptr<vtkSmartPointer<vtkFlyingEdgesPlaneCutter>>("vtkSmartPointer<vtkFlyingEdgesPlaneCutter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFlyingEdgesPlaneCutter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFlyingEdgesPlaneCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFlyingEdgesPlaneCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFlyingEdgesPlaneCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFlyingEdgesPlaneCutter::SafeDownCast, emscripten::allow_raw_pointers())

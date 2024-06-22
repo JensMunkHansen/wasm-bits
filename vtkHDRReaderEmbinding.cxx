@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkHDRReader_class) {
   using FormatType=vtkHDRReader::FormatType;
   emscripten::class_<vtkHDRReader, emscripten::base<vtkImageReader>>("vtkHDRReader")
     .smart_ptr<vtkSmartPointer<vtkHDRReader>>("vtkSmartPointer<vtkHDRReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHDRReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHDRReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHDRReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHDRReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHDRReader::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkAddMembershipArray>(vtkA
 EMSCRIPTEN_BINDINGS(vtkAddMembershipArray_class) {
   emscripten::class_<vtkAddMembershipArray, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkAddMembershipArray")
     .smart_ptr<vtkSmartPointer<vtkAddMembershipArray>>("vtkSmartPointer<vtkAddMembershipArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAddMembershipArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAddMembershipArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAddMembershipArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAddMembershipArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAddMembershipArray::SafeDownCast, emscripten::allow_raw_pointers())

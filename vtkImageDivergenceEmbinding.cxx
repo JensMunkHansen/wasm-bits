@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDivergence>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageDivergence_class) {
   emscripten::class_<vtkImageDivergence, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageDivergence")
     .smart_ptr<vtkSmartPointer<vtkImageDivergence>>("vtkSmartPointer<vtkImageDivergence>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDivergence>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDivergence>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDivergence::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDivergence& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDivergence::SafeDownCast, emscripten::allow_raw_pointers())

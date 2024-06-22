@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAppendPolyData>(vtkAppen
 EMSCRIPTEN_BINDINGS(vtkAppendPolyData_class) {
   emscripten::class_<vtkAppendPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkAppendPolyData")
     .smart_ptr<vtkSmartPointer<vtkAppendPolyData>>("vtkSmartPointer<vtkAppendPolyData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendPolyData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendPolyData::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeAlgorithm>(vtkTreeAl
 EMSCRIPTEN_BINDINGS(vtkTreeAlgorithm_class) {
   emscripten::class_<vtkTreeAlgorithm, emscripten::base<vtkAlgorithm>>("vtkTreeAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkTreeAlgorithm>>("vtkSmartPointer<vtkTreeAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

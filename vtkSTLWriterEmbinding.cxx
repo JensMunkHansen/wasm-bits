@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSTLWriter>(vtkSTLWriter 
 EMSCRIPTEN_BINDINGS(vtkSTLWriter_class) {
   emscripten::class_<vtkSTLWriter, emscripten::base<vtkWriter>>("vtkSTLWriter")
     .smart_ptr<vtkSmartPointer<vtkSTLWriter>>("vtkSmartPointer<vtkSTLWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSTLWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSTLWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSTLWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSTLWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSTLWriter::SafeDownCast, emscripten::allow_raw_pointers())

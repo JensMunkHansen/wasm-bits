@@ -19,7 +19,7 @@ template<> void emscripten::internal::raw_destructor<vtkObjectBase>(vtkObjectBas
 EMSCRIPTEN_BINDINGS(vtkObjectBase_class) {
   emscripten::class_<vtkObjectBase>("vtkObjectBase")
     .smart_ptr<vtkSmartPointer<vtkObjectBase>>("vtkSmartPointer<vtkObjectBase>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkObjectBase>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkObjectBase>)
     .function("GetClassName", emscripten::optional_override([](vtkObjectBase& self) -> std::string {  return self.GetClassName();}))
     .function("GetObjectDescription", &vtkObjectBase::GetObjectDescription)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkObjectBase::IsTypeOf( arg_0.c_str());}))

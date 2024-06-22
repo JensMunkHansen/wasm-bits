@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkByteSwap>(vtkByteSwap * 
 EMSCRIPTEN_BINDINGS(vtkByteSwap_class) {
   emscripten::class_<vtkByteSwap, emscripten::base<vtkObject>>("vtkByteSwap")
     .smart_ptr<vtkSmartPointer<vtkByteSwap>>("vtkSmartPointer<vtkByteSwap>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkByteSwap>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkByteSwap>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkByteSwap::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkByteSwap& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkByteSwap::SafeDownCast, emscripten::allow_raw_pointers())

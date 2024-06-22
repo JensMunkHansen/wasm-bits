@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkStringArray_class) {
   using DeleteMethod=vtkStringArray::DeleteMethod;
   emscripten::class_<vtkStringArray, emscripten::base<vtkAbstractArray>>("vtkStringArray")
     .smart_ptr<vtkSmartPointer<vtkStringArray>>("vtkSmartPointer<vtkStringArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStringArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStringArray>)
     .class_function("ExtendedNew", &vtkStringArray::ExtendedNew, emscripten::allow_raw_pointers())
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStringArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStringArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

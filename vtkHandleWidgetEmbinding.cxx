@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkHandleWidget_class) {
   using WidgetStateType=vtkHandleWidget::WidgetStateType;
   emscripten::class_<vtkHandleWidget, emscripten::base<vtkAbstractWidget>>("vtkHandleWidget")
     .smart_ptr<vtkSmartPointer<vtkHandleWidget>>("vtkSmartPointer<vtkHandleWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHandleWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHandleWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHandleWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHandleWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHandleWidget::SafeDownCast, emscripten::allow_raw_pointers())

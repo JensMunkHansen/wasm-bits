@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkTree>(vtkTree * ptr){ pt
 EMSCRIPTEN_BINDINGS(vtkTree_class) {
   emscripten::class_<vtkTree, emscripten::base<vtkDirectedAcyclicGraph>>("vtkTree")
     .smart_ptr<vtkSmartPointer<vtkTree>>("vtkSmartPointer<vtkTree>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTree>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTree::SafeDownCast, emscripten::allow_raw_pointers())

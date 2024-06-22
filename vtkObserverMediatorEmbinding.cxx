@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkObserverMediator>(vtkObs
 EMSCRIPTEN_BINDINGS(vtkObserverMediator_class) {
   emscripten::class_<vtkObserverMediator, emscripten::base<vtkObject>>("vtkObserverMediator")
     .smart_ptr<vtkSmartPointer<vtkObserverMediator>>("vtkSmartPointer<vtkObserverMediator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkObserverMediator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkObserverMediator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkObserverMediator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkObserverMediator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkObserverMediator::SafeDownCast, emscripten::allow_raw_pointers())

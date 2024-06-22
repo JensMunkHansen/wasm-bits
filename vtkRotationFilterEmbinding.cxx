@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkRotationFilter_class) {
   using RotationAxis=vtkRotationFilter::RotationAxis;
   emscripten::class_<vtkRotationFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkRotationFilter")
     .smart_ptr<vtkSmartPointer<vtkRotationFilter>>("vtkSmartPointer<vtkRotationFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRotationFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRotationFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRotationFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRotationFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRotationFilter::SafeDownCast, emscripten::allow_raw_pointers())

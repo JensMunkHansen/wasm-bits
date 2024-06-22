@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkTerrainContourLineInterp
 EMSCRIPTEN_BINDINGS(vtkTerrainContourLineInterpolator_class) {
   emscripten::class_<vtkTerrainContourLineInterpolator, emscripten::base<vtkContourLineInterpolator>>("vtkTerrainContourLineInterpolator")
     .smart_ptr<vtkSmartPointer<vtkTerrainContourLineInterpolator>>("vtkSmartPointer<vtkTerrainContourLineInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTerrainContourLineInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTerrainContourLineInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTerrainContourLineInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTerrainContourLineInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTerrainContourLineInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCoincidentPoints>(vtkCoi
 EMSCRIPTEN_BINDINGS(vtkCoincidentPoints_class) {
   emscripten::class_<vtkCoincidentPoints, emscripten::base<vtkObject>>("vtkCoincidentPoints")
     .smart_ptr<vtkSmartPointer<vtkCoincidentPoints>>("vtkSmartPointer<vtkCoincidentPoints>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCoincidentPoints>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCoincidentPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCoincidentPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCoincidentPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCoincidentPoints::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLActor>(vtkOpenGLAc
 EMSCRIPTEN_BINDINGS(vtkOpenGLActor_class) {
   emscripten::class_<vtkOpenGLActor, emscripten::base<vtkActor>>("vtkOpenGLActor")
     .smart_ptr<vtkSmartPointer<vtkOpenGLActor>>("vtkSmartPointer<vtkOpenGLActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLActor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkLSDynaSummaryParser>(vtk
 EMSCRIPTEN_BINDINGS(vtkLSDynaSummaryParser_class) {
   emscripten::class_<vtkLSDynaSummaryParser, emscripten::base<vtkXMLParser>>("vtkLSDynaSummaryParser")
     .smart_ptr<vtkSmartPointer<vtkLSDynaSummaryParser>>("vtkSmartPointer<vtkLSDynaSummaryParser>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLSDynaSummaryParser>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLSDynaSummaryParser>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLSDynaSummaryParser::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLSDynaSummaryParser& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLSDynaSummaryParser::SafeDownCast, emscripten::allow_raw_pointers())

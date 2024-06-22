@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkIncrementalOctreePointLo
 EMSCRIPTEN_BINDINGS(vtkIncrementalOctreePointLocator_class) {
   emscripten::class_<vtkIncrementalOctreePointLocator, emscripten::base<vtkIncrementalPointLocator>>("vtkIncrementalOctreePointLocator")
     .smart_ptr<vtkSmartPointer<vtkIncrementalOctreePointLocator>>("vtkSmartPointer<vtkIncrementalOctreePointLocator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkIncrementalOctreePointLocator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkIncrementalOctreePointLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIncrementalOctreePointLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIncrementalOctreePointLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIncrementalOctreePointLocator::SafeDownCast, emscripten::allow_raw_pointers())
@@ -45,7 +45,7 @@ EMSCRIPTEN_BINDINGS(vtkIncrementalOctreePointLocator_class) {
     .function("GetNumberOfPoints", &vtkIncrementalOctreePointLocator::GetNumberOfPoints)
     .function("GetNumberOfNodes", &vtkIncrementalOctreePointLocator::GetNumberOfNodes)
     .function("GenerateRepresentation", emscripten::select_overload<void(vtkIncrementalOctreePointLocator&, int, vtkPolyData*)>([](vtkIncrementalOctreePointLocator& self, int arg_0, vtkPolyData* arg_1) -> void { return self.GenerateRepresentation( arg_0, arg_1); }), emscripten::allow_raw_pointers())
-    .function("GenerateRepresentation", emscripten::select_overload<void(vtkIncrementalOctreePointLocator&, int, vtkPolyData*, emscripten::val, std::uintptr_t)>([](vtkIncrementalOctreePointLocator& self, int arg_0, vtkPolyData* arg_1, emscripten::val arg_2, std::uintptr_t arg_3) -> void { return self.GenerateRepresentation( arg_0, arg_1, reinterpret_cast<bool(*)( void*, vtkIncrementalOctreeNode*, double*)>(emscripten::val::module_property("addFunction")(arg_2, std::string("xiii")).as<int>()),reinterpret_cast<void*>(arg_3)); }), emscripten::allow_raw_pointers())
+    .function("GenerateRepresentation", emscripten::select_overload<void(vtkIncrementalOctreePointLocator&, int, vtkPolyData*, emscripten::val, std::uintptr_t)>([](vtkIncrementalOctreePointLocator& self, int arg_0, vtkPolyData* arg_1, emscripten::val arg_2, std::uintptr_t arg_3) -> void { return self.GenerateRepresentation( arg_0, arg_1, reinterpret_cast<bool(*)( void*, vtkIncrementalOctreeNode*, double*)>(emscripten::val::module_property("addFunction")(arg_2, std::string("Ðiii")).as<int>()),reinterpret_cast<void*>(arg_3)); }), emscripten::allow_raw_pointers())
     .function("BuildLocator", &vtkIncrementalOctreePointLocator::BuildLocator)
     .function("ForceBuildLocator", &vtkIncrementalOctreePointLocator::ForceBuildLocator)
     .function("FindClosestPoint", emscripten::select_overload<int(vtkIncrementalOctreePointLocator&, double, double, double)>([](vtkIncrementalOctreePointLocator& self, double arg_0, double arg_1, double arg_2) -> int { return self.FindClosestPoint( arg_0, arg_1, arg_2); }))

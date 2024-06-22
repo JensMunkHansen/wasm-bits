@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkConvertToPolyhedra>(vtkC
 EMSCRIPTEN_BINDINGS(vtkConvertToPolyhedra_class) {
   emscripten::class_<vtkConvertToPolyhedra, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkConvertToPolyhedra")
     .smart_ptr<vtkSmartPointer<vtkConvertToPolyhedra>>("vtkSmartPointer<vtkConvertToPolyhedra>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkConvertToPolyhedra>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkConvertToPolyhedra>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConvertToPolyhedra::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConvertToPolyhedra& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConvertToPolyhedra::SafeDownCast, emscripten::allow_raw_pointers())

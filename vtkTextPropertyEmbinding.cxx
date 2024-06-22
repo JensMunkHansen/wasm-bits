@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextProperty>(vtkTextPro
 EMSCRIPTEN_BINDINGS(vtkTextProperty_class) {
   emscripten::class_<vtkTextProperty, emscripten::base<vtkObject>>("vtkTextProperty")
     .smart_ptr<vtkSmartPointer<vtkTextProperty>>("vtkSmartPointer<vtkTextProperty>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextProperty>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextProperty>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextProperty::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextProperty& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextProperty::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSmoothErrorMetric>(vtkSm
 EMSCRIPTEN_BINDINGS(vtkSmoothErrorMetric_class) {
   emscripten::class_<vtkSmoothErrorMetric, emscripten::base<vtkGenericSubdivisionErrorMetric>>("vtkSmoothErrorMetric")
     .smart_ptr<vtkSmartPointer<vtkSmoothErrorMetric>>("vtkSmartPointer<vtkSmoothErrorMetric>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSmoothErrorMetric>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSmoothErrorMetric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSmoothErrorMetric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSmoothErrorMetric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSmoothErrorMetric::SafeDownCast, emscripten::allow_raw_pointers())

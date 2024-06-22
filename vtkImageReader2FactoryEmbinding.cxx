@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageReader2Factory>(vtk
 EMSCRIPTEN_BINDINGS(vtkImageReader2Factory_class) {
   emscripten::class_<vtkImageReader2Factory, emscripten::base<vtkObject>>("vtkImageReader2Factory")
     .smart_ptr<vtkSmartPointer<vtkImageReader2Factory>>("vtkSmartPointer<vtkImageReader2Factory>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageReader2Factory>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageReader2Factory>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageReader2Factory::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageReader2Factory& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageReader2Factory::SafeDownCast, emscripten::allow_raw_pointers())

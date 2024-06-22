@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFileResourceStream>(vtkF
 EMSCRIPTEN_BINDINGS(vtkFileResourceStream_class) {
   emscripten::class_<vtkFileResourceStream, emscripten::base<vtkResourceStream>>("vtkFileResourceStream")
     .smart_ptr<vtkSmartPointer<vtkFileResourceStream>>("vtkSmartPointer<vtkFileResourceStream>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFileResourceStream>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFileResourceStream>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFileResourceStream::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFileResourceStream& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFileResourceStream::SafeDownCast, emscripten::allow_raw_pointers())

@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkLODActor>(vtkLODActor * 
 EMSCRIPTEN_BINDINGS(vtkLODActor_class) {
   emscripten::class_<vtkLODActor, emscripten::base<vtkActor>>("vtkLODActor")
     .smart_ptr<vtkSmartPointer<vtkLODActor>>("vtkSmartPointer<vtkLODActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLODActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLODActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLODActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLODActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLODActor::SafeDownCast, emscripten::allow_raw_pointers())

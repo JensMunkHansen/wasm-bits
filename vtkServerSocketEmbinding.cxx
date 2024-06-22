@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkServerSocket>(vtkServerS
 EMSCRIPTEN_BINDINGS(vtkServerSocket_class) {
   emscripten::class_<vtkServerSocket, emscripten::base<vtkSocket>>("vtkServerSocket")
     .smart_ptr<vtkSmartPointer<vtkServerSocket>>("vtkSmartPointer<vtkServerSocket>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkServerSocket>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkServerSocket>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkServerSocket::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkServerSocket& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkServerSocket::SafeDownCast, emscripten::allow_raw_pointers())

@@ -36,7 +36,7 @@ template<> void emscripten::internal::raw_destructor<vtkParallelCoordinatesActor
 EMSCRIPTEN_BINDINGS(vtkParallelCoordinatesActor_class) {
   emscripten::class_<vtkParallelCoordinatesActor, emscripten::base<vtkActor2D>>("vtkParallelCoordinatesActor")
     .smart_ptr<vtkSmartPointer<vtkParallelCoordinatesActor>>("vtkSmartPointer<vtkParallelCoordinatesActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelCoordinatesActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelCoordinatesActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelCoordinatesActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelCoordinatesActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelCoordinatesActor::SafeDownCast, emscripten::allow_raw_pointers())

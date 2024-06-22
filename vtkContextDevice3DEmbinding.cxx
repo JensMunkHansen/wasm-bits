@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkContextDevice3D>(vtkCont
 EMSCRIPTEN_BINDINGS(vtkContextDevice3D_class) {
   emscripten::class_<vtkContextDevice3D, emscripten::base<vtkObject>>("vtkContextDevice3D")
     .smart_ptr<vtkSmartPointer<vtkContextDevice3D>>("vtkSmartPointer<vtkContextDevice3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContextDevice3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextDevice3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextDevice3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextDevice3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextDevice3D::SafeDownCast, emscripten::allow_raw_pointers())

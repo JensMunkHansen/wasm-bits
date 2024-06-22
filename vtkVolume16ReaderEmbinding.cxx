@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolume16Reader>(vtkVolum
 EMSCRIPTEN_BINDINGS(vtkVolume16Reader_class) {
   emscripten::class_<vtkVolume16Reader, emscripten::base<vtkVolumeReader>>("vtkVolume16Reader")
     .smart_ptr<vtkSmartPointer<vtkVolume16Reader>>("vtkSmartPointer<vtkVolume16Reader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVolume16Reader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolume16Reader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolume16Reader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolume16Reader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolume16Reader::SafeDownCast, emscripten::allow_raw_pointers())

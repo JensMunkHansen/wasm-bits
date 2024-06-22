@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkPolyDataMapper_class) {
   using ShiftScaleMethodType=vtkPolyDataMapper::ShiftScaleMethodType;
   emscripten::class_<vtkPolyDataMapper, emscripten::base<vtkMapper>>("vtkPolyDataMapper")
     .smart_ptr<vtkSmartPointer<vtkPolyDataMapper>>("vtkSmartPointer<vtkPolyDataMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataMapper::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkBoundedPlanePointPlacer>
 EMSCRIPTEN_BINDINGS(vtkBoundedPlanePointPlacer_class) {
   emscripten::class_<vtkBoundedPlanePointPlacer, emscripten::base<vtkPointPlacer>>("vtkBoundedPlanePointPlacer")
     .smart_ptr<vtkSmartPointer<vtkBoundedPlanePointPlacer>>("vtkSmartPointer<vtkBoundedPlanePointPlacer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBoundedPlanePointPlacer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBoundedPlanePointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBoundedPlanePointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBoundedPlanePointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBoundedPlanePointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

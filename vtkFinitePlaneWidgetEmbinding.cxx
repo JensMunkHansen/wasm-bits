@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkFinitePlaneWidget>(vtkFi
 EMSCRIPTEN_BINDINGS(vtkFinitePlaneWidget_class) {
   emscripten::class_<vtkFinitePlaneWidget, emscripten::base<vtkAbstractWidget>>("vtkFinitePlaneWidget")
     .smart_ptr<vtkSmartPointer<vtkFinitePlaneWidget>>("vtkSmartPointer<vtkFinitePlaneWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFinitePlaneWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFinitePlaneWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFinitePlaneWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFinitePlaneWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFinitePlaneWidget::SafeDownCast, emscripten::allow_raw_pointers())

@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkLabelPlacer_class) {
   using OutputCoordinates=vtkLabelPlacer::OutputCoordinates;
   emscripten::class_<vtkLabelPlacer, emscripten::base<vtkPolyDataAlgorithm>>("vtkLabelPlacer")
     .smart_ptr<vtkSmartPointer<vtkLabelPlacer>>("vtkSmartPointer<vtkLabelPlacer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLabelPlacer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLabelPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLabelPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLabelPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLabelPlacer::SafeDownCast, emscripten::allow_raw_pointers())

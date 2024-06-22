@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointLoad>(vtkPointLoad 
 EMSCRIPTEN_BINDINGS(vtkPointLoad_class) {
   emscripten::class_<vtkPointLoad, emscripten::base<vtkImageAlgorithm>>("vtkPointLoad")
     .smart_ptr<vtkSmartPointer<vtkPointLoad>>("vtkSmartPointer<vtkPointLoad>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointLoad>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointLoad>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointLoad::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointLoad& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointLoad::SafeDownCast, emscripten::allow_raw_pointers())

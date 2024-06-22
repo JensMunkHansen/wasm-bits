@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkViewTheme>(vtkViewTheme 
 EMSCRIPTEN_BINDINGS(vtkViewTheme_class) {
   emscripten::class_<vtkViewTheme, emscripten::base<vtkObject>>("vtkViewTheme")
     .smart_ptr<vtkSmartPointer<vtkViewTheme>>("vtkSmartPointer<vtkViewTheme>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkViewTheme>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkViewTheme>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkViewTheme::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkViewTheme& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkViewTheme::SafeDownCast, emscripten::allow_raw_pointers())

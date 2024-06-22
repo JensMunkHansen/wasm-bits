@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkBezierTriangle>(vtkBezie
 EMSCRIPTEN_BINDINGS(vtkBezierTriangle_class) {
   emscripten::class_<vtkBezierTriangle, emscripten::base<vtkHigherOrderTriangle>>("vtkBezierTriangle")
     .smart_ptr<vtkSmartPointer<vtkBezierTriangle>>("vtkSmartPointer<vtkBezierTriangle>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBezierTriangle>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBezierTriangle>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBezierTriangle::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBezierTriangle& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBezierTriangle::SafeDownCast, emscripten::allow_raw_pointers())

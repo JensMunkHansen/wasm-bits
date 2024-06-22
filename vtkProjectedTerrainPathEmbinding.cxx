@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkProjectedTerrainPath>(vt
 EMSCRIPTEN_BINDINGS(vtkProjectedTerrainPath_class) {
   emscripten::class_<vtkProjectedTerrainPath, emscripten::base<vtkPolyDataAlgorithm>>("vtkProjectedTerrainPath")
     .smart_ptr<vtkSmartPointer<vtkProjectedTerrainPath>>("vtkSmartPointer<vtkProjectedTerrainPath>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProjectedTerrainPath>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProjectedTerrainPath>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProjectedTerrainPath::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProjectedTerrainPath& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProjectedTerrainPath::SafeDownCast, emscripten::allow_raw_pointers())

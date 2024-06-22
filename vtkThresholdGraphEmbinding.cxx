@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkThresholdGraph>(vtkThres
 EMSCRIPTEN_BINDINGS(vtkThresholdGraph_class) {
   emscripten::class_<vtkThresholdGraph, emscripten::base<vtkGraphAlgorithm>>("vtkThresholdGraph")
     .smart_ptr<vtkSmartPointer<vtkThresholdGraph>>("vtkSmartPointer<vtkThresholdGraph>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkThresholdGraph>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkThresholdGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThresholdGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThresholdGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThresholdGraph::SafeDownCast, emscripten::allow_raw_pointers())

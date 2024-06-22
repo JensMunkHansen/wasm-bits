@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridToCellGr
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridToCellGrid_class) {
   emscripten::class_<vtkUnstructuredGridToCellGrid, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkUnstructuredGridToCellGrid")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridToCellGrid>>("vtkSmartPointer<vtkUnstructuredGridToCellGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridToCellGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridToCellGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridToCellGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridToCellGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridToCellGrid::SafeDownCast, emscripten::allow_raw_pointers())

@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataSetSurfaceFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkDataSetSurfaceFilter_class) {
   emscripten::class_<vtkDataSetSurfaceFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkDataSetSurfaceFilter")
     .smart_ptr<vtkSmartPointer<vtkDataSetSurfaceFilter>>("vtkSmartPointer<vtkDataSetSurfaceFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetSurfaceFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetSurfaceFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetSurfaceFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetSurfaceFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataSetSurfaceFilter::SafeDownCast, emscripten::allow_raw_pointers())

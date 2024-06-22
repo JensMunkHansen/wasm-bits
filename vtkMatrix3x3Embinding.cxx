@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkMatrix3x3>(vtkMatrix3x3 
 EMSCRIPTEN_BINDINGS(vtkMatrix3x3_class) {
   emscripten::class_<vtkMatrix3x3, emscripten::base<vtkObject>>("vtkMatrix3x3")
     .smart_ptr<vtkSmartPointer<vtkMatrix3x3>>("vtkSmartPointer<vtkMatrix3x3>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMatrix3x3>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMatrix3x3>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMatrix3x3::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMatrix3x3& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMatrix3x3::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParticleTracer>(vtkParti
 EMSCRIPTEN_BINDINGS(vtkParticleTracer_class) {
   emscripten::class_<vtkParticleTracer, emscripten::base<vtkParticleTracerBase>>("vtkParticleTracer")
     .smart_ptr<vtkSmartPointer<vtkParticleTracer>>("vtkSmartPointer<vtkParticleTracer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParticleTracer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParticleTracer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParticleTracer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParticleTracer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParticleTracer::SafeDownCast, emscripten::allow_raw_pointers())

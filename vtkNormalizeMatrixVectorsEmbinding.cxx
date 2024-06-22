@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkNormalizeMatrixVectors>(
 EMSCRIPTEN_BINDINGS(vtkNormalizeMatrixVectors_class) {
   emscripten::class_<vtkNormalizeMatrixVectors, emscripten::base<vtkArrayDataAlgorithm>>("vtkNormalizeMatrixVectors")
     .smart_ptr<vtkSmartPointer<vtkNormalizeMatrixVectors>>("vtkSmartPointer<vtkNormalizeMatrixVectors>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNormalizeMatrixVectors>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNormalizeMatrixVectors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNormalizeMatrixVectors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNormalizeMatrixVectors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNormalizeMatrixVectors::SafeDownCast, emscripten::allow_raw_pointers())

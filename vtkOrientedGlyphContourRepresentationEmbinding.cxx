@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkOrientedGlyphContourRepr
 EMSCRIPTEN_BINDINGS(vtkOrientedGlyphContourRepresentation_class) {
   emscripten::class_<vtkOrientedGlyphContourRepresentation, emscripten::base<vtkContourRepresentation>>("vtkOrientedGlyphContourRepresentation")
     .smart_ptr<vtkSmartPointer<vtkOrientedGlyphContourRepresentation>>("vtkSmartPointer<vtkOrientedGlyphContourRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOrientedGlyphContourRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrientedGlyphContourRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrientedGlyphContourRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrientedGlyphContourRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrientedGlyphContourRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

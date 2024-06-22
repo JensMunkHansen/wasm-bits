@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkContourWidget>(vtkContou
 EMSCRIPTEN_BINDINGS(vtkContourWidget_class) {
   emscripten::class_<vtkContourWidget, emscripten::base<vtkAbstractWidget>>("vtkContourWidget")
     .smart_ptr<vtkSmartPointer<vtkContourWidget>>("vtkSmartPointer<vtkContourWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContourWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContourWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContourWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContourWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContourWidget::SafeDownCast, emscripten::allow_raw_pointers())

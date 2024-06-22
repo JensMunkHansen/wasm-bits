@@ -38,7 +38,7 @@ EMSCRIPTEN_BINDINGS(vtkSQLDatabaseSchema_class) {
   using VarargTokens=vtkSQLDatabaseSchema::VarargTokens;
   emscripten::class_<vtkSQLDatabaseSchema, emscripten::base<vtkObject>>("vtkSQLDatabaseSchema")
     .smart_ptr<vtkSmartPointer<vtkSQLDatabaseSchema>>("vtkSmartPointer<vtkSQLDatabaseSchema>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSQLDatabaseSchema>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSQLDatabaseSchema>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSQLDatabaseSchema::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSQLDatabaseSchema& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSQLDatabaseSchema::SafeDownCast, emscripten::allow_raw_pointers())

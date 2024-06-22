@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractBlock>(vtkExtract
 EMSCRIPTEN_BINDINGS(vtkExtractBlock_class) {
   emscripten::class_<vtkExtractBlock, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkExtractBlock")
     .smart_ptr<vtkSmartPointer<vtkExtractBlock>>("vtkSmartPointer<vtkExtractBlock>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractBlock>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractBlock>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractBlock::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractBlock& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractBlock::SafeDownCast, emscripten::allow_raw_pointers())

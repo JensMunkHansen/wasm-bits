@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpatialRepresentationFil
 EMSCRIPTEN_BINDINGS(vtkSpatialRepresentationFilter_class) {
   emscripten::class_<vtkSpatialRepresentationFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkSpatialRepresentationFilter")
     .smart_ptr<vtkSmartPointer<vtkSpatialRepresentationFilter>>("vtkSmartPointer<vtkSpatialRepresentationFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSpatialRepresentationFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpatialRepresentationFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpatialRepresentationFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpatialRepresentationFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpatialRepresentationFilter::SafeDownCast, emscripten::allow_raw_pointers())

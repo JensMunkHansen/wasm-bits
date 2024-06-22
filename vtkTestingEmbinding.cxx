@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkTesting_class) {
   using ReturnValue=vtkTesting::ReturnValue;
   emscripten::class_<vtkTesting, emscripten::base<vtkObject>>("vtkTesting")
     .smart_ptr<vtkSmartPointer<vtkTesting>>("vtkSmartPointer<vtkTesting>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTesting>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTesting>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTesting::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTesting& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTesting::SafeDownCast, emscripten::allow_raw_pointers())

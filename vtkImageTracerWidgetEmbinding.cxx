@@ -41,7 +41,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageTracerWidget>(vtkIm
 EMSCRIPTEN_BINDINGS(vtkImageTracerWidget_class) {
   emscripten::class_<vtkImageTracerWidget, emscripten::base<vtk3DWidget>>("vtkImageTracerWidget")
     .smart_ptr<vtkSmartPointer<vtkImageTracerWidget>>("vtkSmartPointer<vtkImageTracerWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageTracerWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageTracerWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageTracerWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageTracerWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageTracerWidget::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkResliceCursor>(vtkReslic
 EMSCRIPTEN_BINDINGS(vtkResliceCursor_class) {
   emscripten::class_<vtkResliceCursor, emscripten::base<vtkObject>>("vtkResliceCursor")
     .smart_ptr<vtkSmartPointer<vtkResliceCursor>>("vtkSmartPointer<vtkResliceCursor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkResliceCursor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkResliceCursor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkResliceCursor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkResliceCursor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkResliceCursor::SafeDownCast, emscripten::allow_raw_pointers())

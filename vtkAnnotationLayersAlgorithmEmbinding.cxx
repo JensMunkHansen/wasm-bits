@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkAnnotationLayersAlgorith
 EMSCRIPTEN_BINDINGS(vtkAnnotationLayersAlgorithm_class) {
   emscripten::class_<vtkAnnotationLayersAlgorithm, emscripten::base<vtkAlgorithm>>("vtkAnnotationLayersAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkAnnotationLayersAlgorithm>>("vtkSmartPointer<vtkAnnotationLayersAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAnnotationLayersAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnnotationLayersAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnnotationLayersAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnnotationLayersAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnnotationLayersAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

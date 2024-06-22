@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeCharArray>(vtkC
 EMSCRIPTEN_BINDINGS(vtkCompositeCharArray_class) {
   emscripten::class_<vtkCompositeCharArray, emscripten::base<vtkDataArray>>("vtkCompositeCharArray")
     .smart_ptr<vtkSmartPointer<vtkCompositeCharArray>>("vtkSmartPointer<vtkCompositeCharArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeCharArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeCharArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeCharArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeCharArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeCharArray::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGEvaluator>(vtkDGEvalua
 EMSCRIPTEN_BINDINGS(vtkDGEvaluator_class) {
   emscripten::class_<vtkDGEvaluator, emscripten::base<vtkCellGridResponder<vtkCellGridEvaluator>>>("vtkDGEvaluator")
     .smart_ptr<vtkSmartPointer<vtkDGEvaluator>>("vtkSmartPointer<vtkDGEvaluator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDGEvaluator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGEvaluator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGEvaluator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGEvaluator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGEvaluator::SafeDownCast, emscripten::allow_raw_pointers())

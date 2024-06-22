@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkForceDirectedLayoutStrat
 EMSCRIPTEN_BINDINGS(vtkForceDirectedLayoutStrategy_class) {
   emscripten::class_<vtkForceDirectedLayoutStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkForceDirectedLayoutStrategy")
     .smart_ptr<vtkSmartPointer<vtkForceDirectedLayoutStrategy>>("vtkSmartPointer<vtkForceDirectedLayoutStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkForceDirectedLayoutStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkForceDirectedLayoutStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkForceDirectedLayoutStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkForceDirectedLayoutStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkForceDirectedLayoutStrategy::SafeDownCast, emscripten::allow_raw_pointers())

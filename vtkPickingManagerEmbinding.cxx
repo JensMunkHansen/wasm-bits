@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkPickingManager>(vtkPicki
 EMSCRIPTEN_BINDINGS(vtkPickingManager_class) {
   emscripten::class_<vtkPickingManager, emscripten::base<vtkObject>>("vtkPickingManager")
     .smart_ptr<vtkSmartPointer<vtkPickingManager>>("vtkSmartPointer<vtkPickingManager>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPickingManager>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPickingManager>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPickingManager::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPickingManager& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPickingManager::SafeDownCast, emscripten::allow_raw_pointers())

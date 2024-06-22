@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkWorldPointPicker>(vtkWor
 EMSCRIPTEN_BINDINGS(vtkWorldPointPicker_class) {
   emscripten::class_<vtkWorldPointPicker, emscripten::base<vtkAbstractPicker>>("vtkWorldPointPicker")
     .smart_ptr<vtkSmartPointer<vtkWorldPointPicker>>("vtkSmartPointer<vtkWorldPointPicker>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWorldPointPicker>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWorldPointPicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWorldPointPicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWorldPointPicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWorldPointPicker::SafeDownCast, emscripten::allow_raw_pointers())

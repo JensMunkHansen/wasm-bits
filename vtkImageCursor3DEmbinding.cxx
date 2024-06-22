@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageCursor3D>(vtkImageC
 EMSCRIPTEN_BINDINGS(vtkImageCursor3D_class) {
   emscripten::class_<vtkImageCursor3D, emscripten::base<vtkImageInPlaceFilter>>("vtkImageCursor3D")
     .smart_ptr<vtkSmartPointer<vtkImageCursor3D>>("vtkSmartPointer<vtkImageCursor3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageCursor3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageCursor3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageCursor3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageCursor3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageCursor3D::SafeDownCast, emscripten::allow_raw_pointers())

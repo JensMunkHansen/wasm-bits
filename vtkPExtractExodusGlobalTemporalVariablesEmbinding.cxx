@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPExtractExodusGlobalTemp
 EMSCRIPTEN_BINDINGS(vtkPExtractExodusGlobalTemporalVariables_class) {
   emscripten::class_<vtkPExtractExodusGlobalTemporalVariables, emscripten::base<vtkExtractExodusGlobalTemporalVariables>>("vtkPExtractExodusGlobalTemporalVariables")
     .smart_ptr<vtkSmartPointer<vtkPExtractExodusGlobalTemporalVariables>>("vtkSmartPointer<vtkPExtractExodusGlobalTemporalVariables>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPExtractExodusGlobalTemporalVariables>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPExtractExodusGlobalTemporalVariables>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPExtractExodusGlobalTemporalVariables::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPExtractExodusGlobalTemporalVariables& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPExtractExodusGlobalTemporalVariables::SafeDownCast, emscripten::allow_raw_pointers())

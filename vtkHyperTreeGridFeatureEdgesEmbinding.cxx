@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridFeatureEdge
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridFeatureEdges_class) {
   emscripten::class_<vtkHyperTreeGridFeatureEdges, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridFeatureEdges")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridFeatureEdges>>("vtkSmartPointer<vtkHyperTreeGridFeatureEdges>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridFeatureEdges>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridFeatureEdges>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridFeatureEdges::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridFeatureEdges& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridFeatureEdges::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractGrid>(vtkExtractG
 EMSCRIPTEN_BINDINGS(vtkExtractGrid_class) {
   emscripten::class_<vtkExtractGrid, emscripten::base<vtkStructuredGridAlgorithm>>("vtkExtractGrid")
     .smart_ptr<vtkSmartPointer<vtkExtractGrid>>("vtkSmartPointer<vtkExtractGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractGrid::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkSPHInterpolator_class) {
   using NullStrategy=vtkSPHInterpolator::NullStrategy;
   emscripten::class_<vtkSPHInterpolator, emscripten::base<vtkDataSetAlgorithm>>("vtkSPHInterpolator")
     .smart_ptr<vtkSmartPointer<vtkSPHInterpolator>>("vtkSmartPointer<vtkSPHInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSPHInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSPHInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSPHInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSPHInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSPHInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

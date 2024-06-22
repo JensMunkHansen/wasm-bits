@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkSSAOPass>(vtkSSAOPass * 
 EMSCRIPTEN_BINDINGS(vtkSSAOPass_class) {
   emscripten::class_<vtkSSAOPass, emscripten::base<vtkImageProcessingPass>>("vtkSSAOPass")
     .smart_ptr<vtkSmartPointer<vtkSSAOPass>>("vtkSmartPointer<vtkSSAOPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSSAOPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSSAOPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSSAOPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSSAOPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSSAOPass::SafeDownCast, emscripten::allow_raw_pointers())

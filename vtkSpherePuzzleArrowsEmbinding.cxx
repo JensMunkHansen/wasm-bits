@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpherePuzzleArrows>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSpherePuzzleArrows_class) {
   emscripten::class_<vtkSpherePuzzleArrows, emscripten::base<vtkPolyDataAlgorithm>>("vtkSpherePuzzleArrows")
     .smart_ptr<vtkSmartPointer<vtkSpherePuzzleArrows>>("vtkSmartPointer<vtkSpherePuzzleArrows>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSpherePuzzleArrows>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpherePuzzleArrows>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpherePuzzleArrows::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpherePuzzleArrows& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpherePuzzleArrows::SafeDownCast, emscripten::allow_raw_pointers())

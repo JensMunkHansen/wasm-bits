@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkChartLegend>(vtkChartLeg
 EMSCRIPTEN_BINDINGS(vtkChartLegend_class) {
   emscripten::class_<vtkChartLegend, emscripten::base<vtkContextItem>>("vtkChartLegend")
     .smart_ptr<vtkSmartPointer<vtkChartLegend>>("vtkSmartPointer<vtkChartLegend>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkChartLegend>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkChartLegend>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkChartLegend::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkChartLegend& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkChartLegend::SafeDownCast, emscripten::allow_raw_pointers())

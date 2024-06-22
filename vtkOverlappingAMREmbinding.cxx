@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkOverlappingAMR>(vtkOverl
 EMSCRIPTEN_BINDINGS(vtkOverlappingAMR_class) {
   emscripten::class_<vtkOverlappingAMR, emscripten::base<vtkUniformGridAMR>>("vtkOverlappingAMR")
     .smart_ptr<vtkSmartPointer<vtkOverlappingAMR>>("vtkSmartPointer<vtkOverlappingAMR>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOverlappingAMR>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOverlappingAMR>)
     .function("GetDataObjectType", &vtkOverlappingAMR::GetDataObjectType)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOverlappingAMR::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOverlappingAMR& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))

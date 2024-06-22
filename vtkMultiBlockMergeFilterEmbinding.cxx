@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiBlockMergeFilter>(v
 EMSCRIPTEN_BINDINGS(vtkMultiBlockMergeFilter_class) {
   emscripten::class_<vtkMultiBlockMergeFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkMultiBlockMergeFilter")
     .smart_ptr<vtkSmartPointer<vtkMultiBlockMergeFilter>>("vtkSmartPointer<vtkMultiBlockMergeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiBlockMergeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiBlockMergeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiBlockMergeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiBlockMergeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiBlockMergeFilter::SafeDownCast, emscripten::allow_raw_pointers())

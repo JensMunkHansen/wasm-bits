@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFillHolesFilter>(vtkFill
 EMSCRIPTEN_BINDINGS(vtkFillHolesFilter_class) {
   emscripten::class_<vtkFillHolesFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkFillHolesFilter")
     .smart_ptr<vtkSmartPointer<vtkFillHolesFilter>>("vtkSmartPointer<vtkFillHolesFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFillHolesFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFillHolesFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFillHolesFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFillHolesFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFillHolesFilter::SafeDownCast, emscripten::allow_raw_pointers())

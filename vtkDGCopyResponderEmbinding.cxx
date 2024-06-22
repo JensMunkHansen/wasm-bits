@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGCopyResponder>(vtkDGCo
 EMSCRIPTEN_BINDINGS(vtkDGCopyResponder_class) {
   emscripten::class_<vtkDGCopyResponder, emscripten::base<vtkCellGridResponder<vtkCellGridCopyQuery>>>("vtkDGCopyResponder")
     .smart_ptr<vtkSmartPointer<vtkDGCopyResponder>>("vtkSmartPointer<vtkDGCopyResponder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDGCopyResponder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGCopyResponder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGCopyResponder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGCopyResponder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGCopyResponder::SafeDownCast, emscripten::allow_raw_pointers())

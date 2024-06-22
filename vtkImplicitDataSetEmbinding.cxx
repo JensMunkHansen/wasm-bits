@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitDataSet>(vtkImpl
 EMSCRIPTEN_BINDINGS(vtkImplicitDataSet_class) {
   emscripten::class_<vtkImplicitDataSet, emscripten::base<vtkImplicitFunction>>("vtkImplicitDataSet")
     .smart_ptr<vtkSmartPointer<vtkImplicitDataSet>>("vtkSmartPointer<vtkImplicitDataSet>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitDataSet>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitDataSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitDataSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitDataSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitDataSet::SafeDownCast, emscripten::allow_raw_pointers())

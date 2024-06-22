@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkCriticalTime_class) {
   using ComponentModeType=vtkCriticalTime::ComponentModeType;
   emscripten::class_<vtkCriticalTime, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkCriticalTime")
     .smart_ptr<vtkSmartPointer<vtkCriticalTime>>("vtkSmartPointer<vtkCriticalTime>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCriticalTime>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCriticalTime>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCriticalTime::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCriticalTime& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCriticalTime::SafeDownCast, emscripten::allow_raw_pointers())

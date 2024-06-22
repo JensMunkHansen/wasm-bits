@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkPolyDataSilhouette_class) {
   using Directions=vtkPolyDataSilhouette::Directions;
   emscripten::class_<vtkPolyDataSilhouette, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataSilhouette")
     .smart_ptr<vtkSmartPointer<vtkPolyDataSilhouette>>("vtkSmartPointer<vtkPolyDataSilhouette>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataSilhouette>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataSilhouette>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataSilhouette::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataSilhouette& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataSilhouette::SafeDownCast, emscripten::allow_raw_pointers())

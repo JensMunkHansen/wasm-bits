@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkParallelopipedWidget>(vt
 EMSCRIPTEN_BINDINGS(vtkParallelopipedWidget_class) {
   emscripten::class_<vtkParallelopipedWidget, emscripten::base<vtkAbstractWidget>>("vtkParallelopipedWidget")
     .smart_ptr<vtkSmartPointer<vtkParallelopipedWidget>>("vtkSmartPointer<vtkParallelopipedWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelopipedWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelopipedWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelopipedWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelopipedWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelopipedWidget::SafeDownCast, emscripten::allow_raw_pointers())

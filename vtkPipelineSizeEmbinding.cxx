@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPipelineSize>(vtkPipelin
 EMSCRIPTEN_BINDINGS(vtkPipelineSize_class) {
   emscripten::class_<vtkPipelineSize, emscripten::base<vtkObject>>("vtkPipelineSize")
     .smart_ptr<vtkSmartPointer<vtkPipelineSize>>("vtkSmartPointer<vtkPipelineSize>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPipelineSize>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPipelineSize>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPipelineSize::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPipelineSize& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPipelineSize::SafeDownCast, emscripten::allow_raw_pointers())

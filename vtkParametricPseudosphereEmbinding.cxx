@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricPseudosphere>(
 EMSCRIPTEN_BINDINGS(vtkParametricPseudosphere_class) {
   emscripten::class_<vtkParametricPseudosphere, emscripten::base<vtkParametricFunction>>("vtkParametricPseudosphere")
     .smart_ptr<vtkSmartPointer<vtkParametricPseudosphere>>("vtkSmartPointer<vtkParametricPseudosphere>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricPseudosphere>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricPseudosphere>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricPseudosphere::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricPseudosphere& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricPseudosphere::SafeDownCast, emscripten::allow_raw_pointers())

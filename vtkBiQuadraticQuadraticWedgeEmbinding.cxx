@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkBiQuadraticQuadraticWedg
 EMSCRIPTEN_BINDINGS(vtkBiQuadraticQuadraticWedge_class) {
   emscripten::class_<vtkBiQuadraticQuadraticWedge, emscripten::base<vtkNonLinearCell>>("vtkBiQuadraticQuadraticWedge")
     .smart_ptr<vtkSmartPointer<vtkBiQuadraticQuadraticWedge>>("vtkSmartPointer<vtkBiQuadraticQuadraticWedge>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBiQuadraticQuadraticWedge>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBiQuadraticQuadraticWedge>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBiQuadraticQuadraticWedge::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBiQuadraticQuadraticWedge& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBiQuadraticQuadraticWedge::SafeDownCast, emscripten::allow_raw_pointers())

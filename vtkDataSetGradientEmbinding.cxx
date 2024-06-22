@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataSetGradient>(vtkData
 EMSCRIPTEN_BINDINGS(vtkDataSetGradient_class) {
   emscripten::class_<vtkDataSetGradient, emscripten::base<vtkDataSetAlgorithm>>("vtkDataSetGradient")
     .smart_ptr<vtkSmartPointer<vtkDataSetGradient>>("vtkSmartPointer<vtkDataSetGradient>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetGradient>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetGradient>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetGradient::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetGradient& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataSetGradient::SafeDownCast, emscripten::allow_raw_pointers())

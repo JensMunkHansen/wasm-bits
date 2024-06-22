@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractSelectedRows>(vtk
 EMSCRIPTEN_BINDINGS(vtkExtractSelectedRows_class) {
   emscripten::class_<vtkExtractSelectedRows, emscripten::base<vtkTableAlgorithm>>("vtkExtractSelectedRows")
     .smart_ptr<vtkSmartPointer<vtkExtractSelectedRows>>("vtkSmartPointer<vtkExtractSelectedRows>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractSelectedRows>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractSelectedRows>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractSelectedRows::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractSelectedRows& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractSelectedRows::SafeDownCast, emscripten::allow_raw_pointers())

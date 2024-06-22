@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkBlueObeliskDataParser>(v
 EMSCRIPTEN_BINDINGS(vtkBlueObeliskDataParser_class) {
   emscripten::class_<vtkBlueObeliskDataParser, emscripten::base<vtkXMLParser>>("vtkBlueObeliskDataParser")
     .smart_ptr<vtkSmartPointer<vtkBlueObeliskDataParser>>("vtkSmartPointer<vtkBlueObeliskDataParser>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBlueObeliskDataParser>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBlueObeliskDataParser>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBlueObeliskDataParser::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBlueObeliskDataParser& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBlueObeliskDataParser::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOutputStream>(vtkOutputS
 EMSCRIPTEN_BINDINGS(vtkOutputStream_class) {
   emscripten::class_<vtkOutputStream, emscripten::base<vtkObject>>("vtkOutputStream")
     .smart_ptr<vtkSmartPointer<vtkOutputStream>>("vtkSmartPointer<vtkOutputStream>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOutputStream>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOutputStream>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOutputStream::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOutputStream& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOutputStream::SafeDownCast, emscripten::allow_raw_pointers())

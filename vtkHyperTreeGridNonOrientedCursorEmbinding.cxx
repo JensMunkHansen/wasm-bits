@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridNonOriented
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridNonOrientedCursor_class) {
   emscripten::class_<vtkHyperTreeGridNonOrientedCursor, emscripten::base<vtkObject>>("vtkHyperTreeGridNonOrientedCursor")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridNonOrientedCursor>>("vtkSmartPointer<vtkHyperTreeGridNonOrientedCursor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridNonOrientedCursor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridNonOrientedCursor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridNonOrientedCursor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridNonOrientedCursor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridNonOrientedCursor::SafeDownCast, emscripten::allow_raw_pointers())

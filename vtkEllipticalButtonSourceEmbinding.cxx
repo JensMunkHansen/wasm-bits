@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEllipticalButtonSource>(
 EMSCRIPTEN_BINDINGS(vtkEllipticalButtonSource_class) {
   emscripten::class_<vtkEllipticalButtonSource, emscripten::base<vtkButtonSource>>("vtkEllipticalButtonSource")
     .smart_ptr<vtkSmartPointer<vtkEllipticalButtonSource>>("vtkSmartPointer<vtkEllipticalButtonSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEllipticalButtonSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEllipticalButtonSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEllipticalButtonSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEllipticalButtonSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEllipticalButtonSource::SafeDownCast, emscripten::allow_raw_pointers())

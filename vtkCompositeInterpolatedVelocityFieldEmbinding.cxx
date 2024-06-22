@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositeInterpolatedVel
 EMSCRIPTEN_BINDINGS(vtkCompositeInterpolatedVelocityField_class) {
   emscripten::class_<vtkCompositeInterpolatedVelocityField, emscripten::base<vtkAbstractInterpolatedVelocityField>>("vtkCompositeInterpolatedVelocityField")
     .smart_ptr<vtkSmartPointer<vtkCompositeInterpolatedVelocityField>>("vtkSmartPointer<vtkCompositeInterpolatedVelocityField>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositeInterpolatedVelocityField>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositeInterpolatedVelocityField>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositeInterpolatedVelocityField::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositeInterpolatedVelocityField& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositeInterpolatedVelocityField::SafeDownCast, emscripten::allow_raw_pointers())

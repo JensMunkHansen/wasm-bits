@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMandelbrotSource>(v
 EMSCRIPTEN_BINDINGS(vtkImageMandelbrotSource_class) {
   emscripten::class_<vtkImageMandelbrotSource, emscripten::base<vtkImageAlgorithm>>("vtkImageMandelbrotSource")
     .smart_ptr<vtkSmartPointer<vtkImageMandelbrotSource>>("vtkSmartPointer<vtkImageMandelbrotSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMandelbrotSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMandelbrotSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMandelbrotSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMandelbrotSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMandelbrotSource::SafeDownCast, emscripten::allow_raw_pointers())

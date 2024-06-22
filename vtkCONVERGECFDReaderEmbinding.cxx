@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCONVERGECFDReader>(vtkCO
 EMSCRIPTEN_BINDINGS(vtkCONVERGECFDReader_class) {
   emscripten::class_<vtkCONVERGECFDReader, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkCONVERGECFDReader")
     .smart_ptr<vtkSmartPointer<vtkCONVERGECFDReader>>("vtkSmartPointer<vtkCONVERGECFDReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCONVERGECFDReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCONVERGECFDReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCONVERGECFDReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCONVERGECFDReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCONVERGECFDReader::SafeDownCast, emscripten::allow_raw_pointers())

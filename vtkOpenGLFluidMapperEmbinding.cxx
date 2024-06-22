@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLFluidMapper_class) {
   using FluidDisplayMode=vtkOpenGLFluidMapper::FluidDisplayMode;
   emscripten::class_<vtkOpenGLFluidMapper, emscripten::base<vtkAbstractVolumeMapper>>("vtkOpenGLFluidMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLFluidMapper>>("vtkSmartPointer<vtkOpenGLFluidMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLFluidMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLFluidMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLFluidMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLFluidMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLFluidMapper::SafeDownCast, emscripten::allow_raw_pointers())

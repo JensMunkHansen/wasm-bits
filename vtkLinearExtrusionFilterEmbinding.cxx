@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinearExtrusionFilter>(v
 EMSCRIPTEN_BINDINGS(vtkLinearExtrusionFilter_class) {
   emscripten::class_<vtkLinearExtrusionFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkLinearExtrusionFilter")
     .smart_ptr<vtkSmartPointer<vtkLinearExtrusionFilter>>("vtkSmartPointer<vtkLinearExtrusionFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLinearExtrusionFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinearExtrusionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinearExtrusionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinearExtrusionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinearExtrusionFilter::SafeDownCast, emscripten::allow_raw_pointers())

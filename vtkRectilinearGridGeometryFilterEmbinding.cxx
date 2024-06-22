@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectilinearGridGeometryF
 EMSCRIPTEN_BINDINGS(vtkRectilinearGridGeometryFilter_class) {
   emscripten::class_<vtkRectilinearGridGeometryFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkRectilinearGridGeometryFilter")
     .smart_ptr<vtkSmartPointer<vtkRectilinearGridGeometryFilter>>("vtkSmartPointer<vtkRectilinearGridGeometryFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRectilinearGridGeometryFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectilinearGridGeometryFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectilinearGridGeometryFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectilinearGridGeometryFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectilinearGridGeometryFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkRadiusOutlierRemoval>(vt
 EMSCRIPTEN_BINDINGS(vtkRadiusOutlierRemoval_class) {
   emscripten::class_<vtkRadiusOutlierRemoval, emscripten::base<vtkPointCloudFilter>>("vtkRadiusOutlierRemoval")
     .smart_ptr<vtkSmartPointer<vtkRadiusOutlierRemoval>>("vtkSmartPointer<vtkRadiusOutlierRemoval>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRadiusOutlierRemoval>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRadiusOutlierRemoval>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRadiusOutlierRemoval::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRadiusOutlierRemoval& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRadiusOutlierRemoval::SafeDownCast, emscripten::allow_raw_pointers())

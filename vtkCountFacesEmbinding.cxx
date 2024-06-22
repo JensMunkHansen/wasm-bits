@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCountFaces>(vtkCountFace
 EMSCRIPTEN_BINDINGS(vtkCountFaces_class) {
   emscripten::class_<vtkCountFaces, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkCountFaces")
     .smart_ptr<vtkSmartPointer<vtkCountFaces>>("vtkSmartPointer<vtkCountFaces>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCountFaces>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCountFaces>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCountFaces::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCountFaces& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCountFaces::SafeDownCast, emscripten::allow_raw_pointers())

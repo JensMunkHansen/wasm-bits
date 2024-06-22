@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVRMLExporter>(vtkVRMLExp
 EMSCRIPTEN_BINDINGS(vtkVRMLExporter_class) {
   emscripten::class_<vtkVRMLExporter, emscripten::base<vtkExporter>>("vtkVRMLExporter")
     .smart_ptr<vtkSmartPointer<vtkVRMLExporter>>("vtkSmartPointer<vtkVRMLExporter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVRMLExporter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVRMLExporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVRMLExporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVRMLExporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVRMLExporter::SafeDownCast, emscripten::allow_raw_pointers())

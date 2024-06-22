@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAbstractInteractionDevic
 EMSCRIPTEN_BINDINGS(vtkAbstractInteractionDevice_class) {
   emscripten::class_<vtkAbstractInteractionDevice, emscripten::base<vtkObject>>("vtkAbstractInteractionDevice")
     .smart_ptr<vtkSmartPointer<vtkAbstractInteractionDevice>>("vtkSmartPointer<vtkAbstractInteractionDevice>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAbstractInteractionDevice>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAbstractInteractionDevice>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAbstractInteractionDevice::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAbstractInteractionDevice& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAbstractInteractionDevice::SafeDownCast, emscripten::allow_raw_pointers())

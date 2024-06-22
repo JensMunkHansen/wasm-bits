@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEnSight6BinaryReader>(vt
 EMSCRIPTEN_BINDINGS(vtkEnSight6BinaryReader_class) {
   emscripten::class_<vtkEnSight6BinaryReader, emscripten::base<vtkEnSightReader>>("vtkEnSight6BinaryReader")
     .smart_ptr<vtkSmartPointer<vtkEnSight6BinaryReader>>("vtkSmartPointer<vtkEnSight6BinaryReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEnSight6BinaryReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEnSight6BinaryReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEnSight6BinaryReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEnSight6BinaryReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEnSight6BinaryReader::SafeDownCast, emscripten::allow_raw_pointers())

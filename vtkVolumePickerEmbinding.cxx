@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumePicker>(vtkVolumeP
 EMSCRIPTEN_BINDINGS(vtkVolumePicker_class) {
   emscripten::class_<vtkVolumePicker, emscripten::base<vtkCellPicker>>("vtkVolumePicker")
     .smart_ptr<vtkSmartPointer<vtkVolumePicker>>("vtkSmartPointer<vtkVolumePicker>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumePicker>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumePicker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumePicker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumePicker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumePicker::SafeDownCast, emscripten::allow_raw_pointers())

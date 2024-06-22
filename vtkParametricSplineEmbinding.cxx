@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricSpline>(vtkPar
 EMSCRIPTEN_BINDINGS(vtkParametricSpline_class) {
   emscripten::class_<vtkParametricSpline, emscripten::base<vtkParametricFunction>>("vtkParametricSpline")
     .smart_ptr<vtkSmartPointer<vtkParametricSpline>>("vtkSmartPointer<vtkParametricSpline>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricSpline>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricSpline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricSpline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricSpline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricSpline::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricRoman>(vtkPara
 EMSCRIPTEN_BINDINGS(vtkParametricRoman_class) {
   emscripten::class_<vtkParametricRoman, emscripten::base<vtkParametricFunction>>("vtkParametricRoman")
     .smart_ptr<vtkSmartPointer<vtkParametricRoman>>("vtkSmartPointer<vtkParametricRoman>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricRoman>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricRoman>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricRoman::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricRoman& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricRoman::SafeDownCast, emscripten::allow_raw_pointers())

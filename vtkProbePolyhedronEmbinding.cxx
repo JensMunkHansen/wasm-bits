@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkProbePolyhedron>(vtkProb
 EMSCRIPTEN_BINDINGS(vtkProbePolyhedron_class) {
   emscripten::class_<vtkProbePolyhedron, emscripten::base<vtkDataSetAlgorithm>>("vtkProbePolyhedron")
     .smart_ptr<vtkSmartPointer<vtkProbePolyhedron>>("vtkSmartPointer<vtkProbePolyhedron>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProbePolyhedron>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProbePolyhedron>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProbePolyhedron::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProbePolyhedron& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProbePolyhedron::SafeDownCast, emscripten::allow_raw_pointers())

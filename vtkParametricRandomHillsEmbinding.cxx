@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricRandomHills>(v
 EMSCRIPTEN_BINDINGS(vtkParametricRandomHills_class) {
   emscripten::class_<vtkParametricRandomHills, emscripten::base<vtkParametricFunction>>("vtkParametricRandomHills")
     .smart_ptr<vtkSmartPointer<vtkParametricRandomHills>>("vtkSmartPointer<vtkParametricRandomHills>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricRandomHills>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricRandomHills>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricRandomHills::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricRandomHills& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricRandomHills::SafeDownCast, emscripten::allow_raw_pointers())

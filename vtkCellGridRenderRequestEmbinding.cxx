@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkCellGridRenderRequest_class) {
   using RenderableGeometry=vtkCellGridRenderRequest::RenderableGeometry;
   emscripten::class_<vtkCellGridRenderRequest, emscripten::base<vtkCellGridQuery>>("vtkCellGridRenderRequest")
     .smart_ptr<vtkSmartPointer<vtkCellGridRenderRequest>>("vtkSmartPointer<vtkCellGridRenderRequest>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridRenderRequest>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridRenderRequest>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridRenderRequest::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridRenderRequest& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridRenderRequest::SafeDownCast, emscripten::allow_raw_pointers())

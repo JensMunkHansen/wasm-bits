@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkGLSLModLight>(vtkGLSLMod
 EMSCRIPTEN_BINDINGS(vtkGLSLModLight_class) {
   emscripten::class_<vtkGLSLModLight, emscripten::base<vtkGLSLModifierBase>>("vtkGLSLModLight")
     .smart_ptr<vtkSmartPointer<vtkGLSLModLight>>("vtkSmartPointer<vtkGLSLModLight>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGLSLModLight>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGLSLModLight>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGLSLModLight::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGLSLModLight& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGLSLModLight::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLUniformGridAMRWriter>
 EMSCRIPTEN_BINDINGS(vtkXMLUniformGridAMRWriter_class) {
   emscripten::class_<vtkXMLUniformGridAMRWriter, emscripten::base<vtkXMLCompositeDataWriter>>("vtkXMLUniformGridAMRWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLUniformGridAMRWriter>>("vtkSmartPointer<vtkXMLUniformGridAMRWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLUniformGridAMRWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLUniformGridAMRWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLUniformGridAMRWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLUniformGridAMRWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLUniformGridAMRWriter::SafeDownCast, emscripten::allow_raw_pointers())

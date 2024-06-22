@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkAMRToMultiBlockFilter>(v
 EMSCRIPTEN_BINDINGS(vtkAMRToMultiBlockFilter_class) {
   emscripten::class_<vtkAMRToMultiBlockFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkAMRToMultiBlockFilter")
     .smart_ptr<vtkSmartPointer<vtkAMRToMultiBlockFilter>>("vtkSmartPointer<vtkAMRToMultiBlockFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAMRToMultiBlockFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAMRToMultiBlockFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAMRToMultiBlockFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAMRToMultiBlockFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAMRToMultiBlockFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellCentersPointPlacer>(
 EMSCRIPTEN_BINDINGS(vtkCellCentersPointPlacer_class) {
   emscripten::class_<vtkCellCentersPointPlacer, emscripten::base<vtkPointPlacer>>("vtkCellCentersPointPlacer")
     .smart_ptr<vtkSmartPointer<vtkCellCentersPointPlacer>>("vtkSmartPointer<vtkCellCentersPointPlacer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellCentersPointPlacer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellCentersPointPlacer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellCentersPointPlacer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellCentersPointPlacer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellCentersPointPlacer::SafeDownCast, emscripten::allow_raw_pointers())

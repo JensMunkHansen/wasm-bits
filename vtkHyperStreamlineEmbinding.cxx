@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperStreamline>(vtkHype
 EMSCRIPTEN_BINDINGS(vtkHyperStreamline_class) {
   emscripten::class_<vtkHyperStreamline, emscripten::base<vtkPolyDataAlgorithm>>("vtkHyperStreamline")
     .smart_ptr<vtkSmartPointer<vtkHyperStreamline>>("vtkSmartPointer<vtkHyperStreamline>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperStreamline>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperStreamline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperStreamline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperStreamline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperStreamline::SafeDownCast, emscripten::allow_raw_pointers())

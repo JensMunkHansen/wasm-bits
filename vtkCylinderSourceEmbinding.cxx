@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkCylinderSource>(vtkCylin
 EMSCRIPTEN_BINDINGS(vtkCylinderSource_class) {
   emscripten::class_<vtkCylinderSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkCylinderSource")
     .smart_ptr<vtkSmartPointer<vtkCylinderSource>>("vtkSmartPointer<vtkCylinderSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCylinderSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCylinderSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCylinderSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCylinderSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCylinderSource::SafeDownCast, emscripten::allow_raw_pointers())

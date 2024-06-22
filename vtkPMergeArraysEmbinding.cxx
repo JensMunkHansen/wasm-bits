@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPMergeArrays>(vtkPMergeA
 EMSCRIPTEN_BINDINGS(vtkPMergeArrays_class) {
   emscripten::class_<vtkPMergeArrays, emscripten::base<vtkMergeArrays>>("vtkPMergeArrays")
     .smart_ptr<vtkSmartPointer<vtkPMergeArrays>>("vtkSmartPointer<vtkPMergeArrays>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPMergeArrays>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPMergeArrays>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPMergeArrays::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPMergeArrays& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPMergeArrays::SafeDownCast, emscripten::allow_raw_pointers())

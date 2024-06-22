@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkExodusIICache>(vtkExodus
 EMSCRIPTEN_BINDINGS(vtkExodusIICache_class) {
   emscripten::class_<vtkExodusIICache, emscripten::base<vtkObject>>("vtkExodusIICache")
     .smart_ptr<vtkSmartPointer<vtkExodusIICache>>("vtkSmartPointer<vtkExodusIICache>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExodusIICache>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExodusIICache>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExodusIICache::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExodusIICache& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExodusIICache::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDirectory>(vtkDirectory 
 EMSCRIPTEN_BINDINGS(vtkDirectory_class) {
   emscripten::class_<vtkDirectory, emscripten::base<vtkObject>>("vtkDirectory")
     .smart_ptr<vtkSmartPointer<vtkDirectory>>("vtkSmartPointer<vtkDirectory>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDirectory>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDirectory>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDirectory::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDirectory& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDirectory::SafeDownCast, emscripten::allow_raw_pointers())

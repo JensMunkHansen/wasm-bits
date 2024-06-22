@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkDataWriter_class) {
   using VTKFileVersion=vtkDataWriter::VTKFileVersion;
   emscripten::class_<vtkDataWriter, emscripten::base<vtkWriter>>("vtkDataWriter")
     .smart_ptr<vtkSmartPointer<vtkDataWriter>>("vtkSmartPointer<vtkDataWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

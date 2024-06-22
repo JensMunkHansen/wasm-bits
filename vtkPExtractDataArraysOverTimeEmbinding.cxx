@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPExtractDataArraysOverTi
 EMSCRIPTEN_BINDINGS(vtkPExtractDataArraysOverTime_class) {
   emscripten::class_<vtkPExtractDataArraysOverTime, emscripten::base<vtkExtractDataArraysOverTime>>("vtkPExtractDataArraysOverTime")
     .smart_ptr<vtkSmartPointer<vtkPExtractDataArraysOverTime>>("vtkSmartPointer<vtkPExtractDataArraysOverTime>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPExtractDataArraysOverTime>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPExtractDataArraysOverTime>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPExtractDataArraysOverTime::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPExtractDataArraysOverTime& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPExtractDataArraysOverTime::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkVolumeOfRevolutionFilter
 EMSCRIPTEN_BINDINGS(vtkVolumeOfRevolutionFilter_class) {
   emscripten::class_<vtkVolumeOfRevolutionFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkVolumeOfRevolutionFilter")
     .smart_ptr<vtkSmartPointer<vtkVolumeOfRevolutionFilter>>("vtkSmartPointer<vtkVolumeOfRevolutionFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumeOfRevolutionFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumeOfRevolutionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumeOfRevolutionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumeOfRevolutionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumeOfRevolutionFilter::SafeDownCast, emscripten::allow_raw_pointers())

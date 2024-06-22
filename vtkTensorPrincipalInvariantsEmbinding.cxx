@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTensorPrincipalInvariant
 EMSCRIPTEN_BINDINGS(vtkTensorPrincipalInvariants_class) {
   emscripten::class_<vtkTensorPrincipalInvariants, emscripten::base<vtkDataSetAlgorithm>>("vtkTensorPrincipalInvariants")
     .smart_ptr<vtkSmartPointer<vtkTensorPrincipalInvariants>>("vtkSmartPointer<vtkTensorPrincipalInvariants>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTensorPrincipalInvariants>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTensorPrincipalInvariants>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTensorPrincipalInvariants::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTensorPrincipalInvariants& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTensorPrincipalInvariants::SafeDownCast, emscripten::allow_raw_pointers())

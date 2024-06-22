@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkOpenGLGL2PSHelper_class) {
   using State=vtkOpenGLGL2PSHelper::State;
   emscripten::class_<vtkOpenGLGL2PSHelper, emscripten::base<vtkObject>>("vtkOpenGLGL2PSHelper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLGL2PSHelper>>("vtkSmartPointer<vtkOpenGLGL2PSHelper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLGL2PSHelper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLGL2PSHelper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLGL2PSHelper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLGL2PSHelper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLGL2PSHelper::SafeDownCast, emscripten::allow_raw_pointers())

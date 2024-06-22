@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkClearRGBPass>(vtkClearRG
 EMSCRIPTEN_BINDINGS(vtkClearRGBPass_class) {
   emscripten::class_<vtkClearRGBPass, emscripten::base<vtkRenderPass>>("vtkClearRGBPass")
     .smart_ptr<vtkSmartPointer<vtkClearRGBPass>>("vtkSmartPointer<vtkClearRGBPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkClearRGBPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkClearRGBPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClearRGBPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClearRGBPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClearRGBPass::SafeDownCast, emscripten::allow_raw_pointers())

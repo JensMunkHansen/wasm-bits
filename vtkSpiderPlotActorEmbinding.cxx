@@ -37,7 +37,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpiderPlotActor>(vtkSpid
 EMSCRIPTEN_BINDINGS(vtkSpiderPlotActor_class) {
   emscripten::class_<vtkSpiderPlotActor, emscripten::base<vtkActor2D>>("vtkSpiderPlotActor")
     .smart_ptr<vtkSmartPointer<vtkSpiderPlotActor>>("vtkSmartPointer<vtkSpiderPlotActor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSpiderPlotActor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpiderPlotActor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpiderPlotActor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpiderPlotActor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpiderPlotActor::SafeDownCast, emscripten::allow_raw_pointers())

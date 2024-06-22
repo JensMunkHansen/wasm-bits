@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOverlappingAMRLevelIdSca
 EMSCRIPTEN_BINDINGS(vtkOverlappingAMRLevelIdScalars_class) {
   emscripten::class_<vtkOverlappingAMRLevelIdScalars, emscripten::base<vtkOverlappingAMRAlgorithm>>("vtkOverlappingAMRLevelIdScalars")
     .smart_ptr<vtkSmartPointer<vtkOverlappingAMRLevelIdScalars>>("vtkSmartPointer<vtkOverlappingAMRLevelIdScalars>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOverlappingAMRLevelIdScalars>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOverlappingAMRLevelIdScalars>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOverlappingAMRLevelIdScalars::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOverlappingAMRLevelIdScalars& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOverlappingAMRLevelIdScalars::SafeDownCast, emscripten::allow_raw_pointers())

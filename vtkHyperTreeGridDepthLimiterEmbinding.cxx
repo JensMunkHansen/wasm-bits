@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridDepthLimite
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridDepthLimiter_class) {
   emscripten::class_<vtkHyperTreeGridDepthLimiter, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridDepthLimiter")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridDepthLimiter>>("vtkSmartPointer<vtkHyperTreeGridDepthLimiter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridDepthLimiter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridDepthLimiter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridDepthLimiter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridDepthLimiter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridDepthLimiter::SafeDownCast, emscripten::allow_raw_pointers())

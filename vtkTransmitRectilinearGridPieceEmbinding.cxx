@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransmitRectilinearGridP
 EMSCRIPTEN_BINDINGS(vtkTransmitRectilinearGridPiece_class) {
   emscripten::class_<vtkTransmitRectilinearGridPiece, emscripten::base<vtkTransmitStructuredDataPiece>>("vtkTransmitRectilinearGridPiece")
     .smart_ptr<vtkSmartPointer<vtkTransmitRectilinearGridPiece>>("vtkSmartPointer<vtkTransmitRectilinearGridPiece>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTransmitRectilinearGridPiece>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransmitRectilinearGridPiece>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransmitRectilinearGridPiece::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransmitRectilinearGridPiece& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransmitRectilinearGridPiece::SafeDownCast, emscripten::allow_raw_pointers())

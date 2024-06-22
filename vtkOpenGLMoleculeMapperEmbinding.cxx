@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLMoleculeMapper>(vt
 EMSCRIPTEN_BINDINGS(vtkOpenGLMoleculeMapper_class) {
   emscripten::class_<vtkOpenGLMoleculeMapper, emscripten::base<vtkMoleculeMapper>>("vtkOpenGLMoleculeMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLMoleculeMapper>>("vtkSmartPointer<vtkOpenGLMoleculeMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLMoleculeMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLMoleculeMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLMoleculeMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLMoleculeMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLMoleculeMapper::SafeDownCast, emscripten::allow_raw_pointers())

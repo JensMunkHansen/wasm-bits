@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredPointsCollecti
 EMSCRIPTEN_BINDINGS(vtkStructuredPointsCollection_class) {
   emscripten::class_<vtkStructuredPointsCollection, emscripten::base<vtkCollection>>("vtkStructuredPointsCollection")
     .smart_ptr<vtkSmartPointer<vtkStructuredPointsCollection>>("vtkSmartPointer<vtkStructuredPointsCollection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredPointsCollection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredPointsCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredPointsCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredPointsCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredPointsCollection::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridQuadricD
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridQuadricDecimation_class) {
   emscripten::class_<vtkUnstructuredGridQuadricDecimation, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkUnstructuredGridQuadricDecimation")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridQuadricDecimation>>("vtkSmartPointer<vtkUnstructuredGridQuadricDecimation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridQuadricDecimation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridQuadricDecimation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridQuadricDecimation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridQuadricDecimation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridQuadricDecimation::SafeDownCast, emscripten::allow_raw_pointers())

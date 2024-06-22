@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPULight>(vtkWebGPULi
 EMSCRIPTEN_BINDINGS(vtkWebGPULight_class) {
   emscripten::class_<vtkWebGPULight, emscripten::base<vtkLight>>("vtkWebGPULight")
     .smart_ptr<vtkSmartPointer<vtkWebGPULight>>("vtkSmartPointer<vtkWebGPULight>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPULight>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPULight>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPULight::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPULight& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPULight::SafeDownCast, emscripten::allow_raw_pointers())

@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkExtentTranslator_class) {
   using Modes=vtkExtentTranslator::Modes;
   emscripten::class_<vtkExtentTranslator, emscripten::base<vtkObject>>("vtkExtentTranslator")
     .smart_ptr<vtkSmartPointer<vtkExtentTranslator>>("vtkSmartPointer<vtkExtentTranslator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtentTranslator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtentTranslator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtentTranslator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtentTranslator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtentTranslator::SafeDownCast, emscripten::allow_raw_pointers())

@@ -47,7 +47,7 @@ template<> void emscripten::internal::raw_destructor<vtkGlyph3D>(vtkGlyph3D * pt
 EMSCRIPTEN_BINDINGS(vtkGlyph3D_class) {
   emscripten::class_<vtkGlyph3D, emscripten::base<vtkPolyDataAlgorithm>>("vtkGlyph3D")
     .smart_ptr<vtkSmartPointer<vtkGlyph3D>>("vtkSmartPointer<vtkGlyph3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGlyph3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGlyph3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGlyph3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGlyph3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGlyph3D::SafeDownCast, emscripten::allow_raw_pointers())

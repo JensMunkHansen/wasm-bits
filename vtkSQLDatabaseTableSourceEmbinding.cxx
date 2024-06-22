@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSQLDatabaseTableSource>(
 EMSCRIPTEN_BINDINGS(vtkSQLDatabaseTableSource_class) {
   emscripten::class_<vtkSQLDatabaseTableSource, emscripten::base<vtkTableAlgorithm>>("vtkSQLDatabaseTableSource")
     .smart_ptr<vtkSmartPointer<vtkSQLDatabaseTableSource>>("vtkSmartPointer<vtkSQLDatabaseTableSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSQLDatabaseTableSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSQLDatabaseTableSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSQLDatabaseTableSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSQLDatabaseTableSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSQLDatabaseTableSource::SafeDownCast, emscripten::allow_raw_pointers())

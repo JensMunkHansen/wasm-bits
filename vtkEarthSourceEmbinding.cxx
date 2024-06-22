@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEarthSource>(vtkEarthSou
 EMSCRIPTEN_BINDINGS(vtkEarthSource_class) {
   emscripten::class_<vtkEarthSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkEarthSource")
     .smart_ptr<vtkSmartPointer<vtkEarthSource>>("vtkSmartPointer<vtkEarthSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEarthSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEarthSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEarthSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEarthSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEarthSource::SafeDownCast, emscripten::allow_raw_pointers())

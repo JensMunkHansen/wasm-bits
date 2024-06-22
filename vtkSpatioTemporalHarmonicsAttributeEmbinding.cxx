@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSpatioTemporalHarmonicsA
 EMSCRIPTEN_BINDINGS(vtkSpatioTemporalHarmonicsAttribute_class) {
   emscripten::class_<vtkSpatioTemporalHarmonicsAttribute, emscripten::base<vtkDataSetAlgorithm>>("vtkSpatioTemporalHarmonicsAttribute")
     .smart_ptr<vtkSmartPointer<vtkSpatioTemporalHarmonicsAttribute>>("vtkSmartPointer<vtkSpatioTemporalHarmonicsAttribute>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSpatioTemporalHarmonicsAttribute>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSpatioTemporalHarmonicsAttribute>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSpatioTemporalHarmonicsAttribute::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSpatioTemporalHarmonicsAttribute& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSpatioTemporalHarmonicsAttribute::SafeDownCast, emscripten::allow_raw_pointers())

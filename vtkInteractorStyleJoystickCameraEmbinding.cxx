@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleJoystickC
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleJoystickCamera_class) {
   emscripten::class_<vtkInteractorStyleJoystickCamera, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleJoystickCamera")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleJoystickCamera>>("vtkSmartPointer<vtkInteractorStyleJoystickCamera>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleJoystickCamera>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleJoystickCamera>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleJoystickCamera::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleJoystickCamera& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleJoystickCamera::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageLogarithmicScale>(v
 EMSCRIPTEN_BINDINGS(vtkImageLogarithmicScale_class) {
   emscripten::class_<vtkImageLogarithmicScale, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageLogarithmicScale")
     .smart_ptr<vtkSmartPointer<vtkImageLogarithmicScale>>("vtkSmartPointer<vtkImageLogarithmicScale>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageLogarithmicScale>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageLogarithmicScale>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageLogarithmicScale::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageLogarithmicScale& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageLogarithmicScale::SafeDownCast, emscripten::allow_raw_pointers())

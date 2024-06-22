@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridGeometricLo
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridGeometricLocator_class) {
   emscripten::class_<vtkHyperTreeGridGeometricLocator, emscripten::base<vtkHyperTreeGridLocator>>("vtkHyperTreeGridGeometricLocator")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridGeometricLocator>>("vtkSmartPointer<vtkHyperTreeGridGeometricLocator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridGeometricLocator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridGeometricLocator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridGeometricLocator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridGeometricLocator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridGeometricLocator::SafeDownCast, emscripten::allow_raw_pointers())

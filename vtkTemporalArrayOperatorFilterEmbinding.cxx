@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkTemporalArrayOperatorFilter_class) {
   using OperatorType=vtkTemporalArrayOperatorFilter::OperatorType;
   emscripten::class_<vtkTemporalArrayOperatorFilter, emscripten::base<vtkMultiTimeStepAlgorithm>>("vtkTemporalArrayOperatorFilter")
     .smart_ptr<vtkSmartPointer<vtkTemporalArrayOperatorFilter>>("vtkSmartPointer<vtkTemporalArrayOperatorFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalArrayOperatorFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalArrayOperatorFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalArrayOperatorFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalArrayOperatorFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalArrayOperatorFilter::SafeDownCast, emscripten::allow_raw_pointers())

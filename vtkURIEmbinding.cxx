@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkURI>(vtkURI * ptr){ ptr-
 EMSCRIPTEN_BINDINGS(vtkURI_class) {
   emscripten::class_<vtkURI, emscripten::base<vtkObject>>("vtkURI")
     .smart_ptr<vtkSmartPointer<vtkURI>>("vtkSmartPointer<vtkURI>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkURI>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkURI>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkURI::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkURI& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkURI::SafeDownCast, emscripten::allow_raw_pointers())

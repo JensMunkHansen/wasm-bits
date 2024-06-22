@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDateToNumeric>(vtkDateTo
 EMSCRIPTEN_BINDINGS(vtkDateToNumeric_class) {
   emscripten::class_<vtkDateToNumeric, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkDateToNumeric")
     .smart_ptr<vtkSmartPointer<vtkDateToNumeric>>("vtkSmartPointer<vtkDateToNumeric>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDateToNumeric>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDateToNumeric>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDateToNumeric::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDateToNumeric& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDateToNumeric::SafeDownCast, emscripten::allow_raw_pointers())

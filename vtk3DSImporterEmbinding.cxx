@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtk3DSImporter>(vtk3DSImpor
 EMSCRIPTEN_BINDINGS(vtk3DSImporter_class) {
   emscripten::class_<vtk3DSImporter, emscripten::base<vtkImporter>>("vtk3DSImporter")
     .smart_ptr<vtkSmartPointer<vtk3DSImporter>>("vtkSmartPointer<vtk3DSImporter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtk3DSImporter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtk3DSImporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtk3DSImporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtk3DSImporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtk3DSImporter::SafeDownCast, emscripten::allow_raw_pointers())

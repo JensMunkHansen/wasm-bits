@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDGRangeResponder>(vtkDGR
 EMSCRIPTEN_BINDINGS(vtkDGRangeResponder_class) {
   emscripten::class_<vtkDGRangeResponder, emscripten::base<vtkCellGridResponder<vtkCellGridRangeQuery>>>("vtkDGRangeResponder")
     .smart_ptr<vtkSmartPointer<vtkDGRangeResponder>>("vtkSmartPointer<vtkDGRangeResponder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDGRangeResponder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDGRangeResponder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDGRangeResponder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDGRangeResponder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDGRangeResponder::SafeDownCast, emscripten::allow_raw_pointers())

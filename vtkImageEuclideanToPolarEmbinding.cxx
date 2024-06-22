@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageEuclideanToPolar>(v
 EMSCRIPTEN_BINDINGS(vtkImageEuclideanToPolar_class) {
   emscripten::class_<vtkImageEuclideanToPolar, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageEuclideanToPolar")
     .smart_ptr<vtkSmartPointer<vtkImageEuclideanToPolar>>("vtkSmartPointer<vtkImageEuclideanToPolar>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageEuclideanToPolar>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageEuclideanToPolar>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageEuclideanToPolar::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageEuclideanToPolar& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageEuclideanToPolar::SafeDownCast, emscripten::allow_raw_pointers())

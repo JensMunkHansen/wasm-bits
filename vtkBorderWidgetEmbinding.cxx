@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkBorderWidget>(vtkBorderW
 EMSCRIPTEN_BINDINGS(vtkBorderWidget_class) {
   emscripten::class_<vtkBorderWidget, emscripten::base<vtkAbstractWidget>>("vtkBorderWidget")
     .smart_ptr<vtkSmartPointer<vtkBorderWidget>>("vtkSmartPointer<vtkBorderWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBorderWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBorderWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBorderWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBorderWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBorderWidget::SafeDownCast, emscripten::allow_raw_pointers())

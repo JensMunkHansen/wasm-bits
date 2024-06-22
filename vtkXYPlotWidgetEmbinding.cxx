@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkXYPlotWidget>(vtkXYPlotW
 EMSCRIPTEN_BINDINGS(vtkXYPlotWidget_class) {
   emscripten::class_<vtkXYPlotWidget, emscripten::base<vtkInteractorObserver>>("vtkXYPlotWidget")
     .smart_ptr<vtkSmartPointer<vtkXYPlotWidget>>("vtkSmartPointer<vtkXYPlotWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXYPlotWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXYPlotWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXYPlotWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXYPlotWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXYPlotWidget::SafeDownCast, emscripten::allow_raw_pointers())

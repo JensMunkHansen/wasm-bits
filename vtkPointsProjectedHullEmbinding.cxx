@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointsProjectedHull>(vtk
 EMSCRIPTEN_BINDINGS(vtkPointsProjectedHull_class) {
   emscripten::class_<vtkPointsProjectedHull, emscripten::base<vtkPoints>>("vtkPointsProjectedHull")
     .smart_ptr<vtkSmartPointer<vtkPointsProjectedHull>>("vtkSmartPointer<vtkPointsProjectedHull>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointsProjectedHull>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointsProjectedHull>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointsProjectedHull::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointsProjectedHull& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointsProjectedHull::SafeDownCast, emscripten::allow_raw_pointers())

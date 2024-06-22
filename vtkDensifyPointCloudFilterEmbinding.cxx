@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDensifyPointCloudFilter>
 EMSCRIPTEN_BINDINGS(vtkDensifyPointCloudFilter_class) {
   emscripten::class_<vtkDensifyPointCloudFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkDensifyPointCloudFilter")
     .smart_ptr<vtkSmartPointer<vtkDensifyPointCloudFilter>>("vtkSmartPointer<vtkDensifyPointCloudFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDensifyPointCloudFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDensifyPointCloudFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDensifyPointCloudFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDensifyPointCloudFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDensifyPointCloudFilter::SafeDownCast, emscripten::allow_raw_pointers())

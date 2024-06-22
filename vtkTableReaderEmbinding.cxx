@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkTableReader>(vtkTableRea
 EMSCRIPTEN_BINDINGS(vtkTableReader_class) {
   emscripten::class_<vtkTableReader, emscripten::base<vtkDataReader>>("vtkTableReader")
     .smart_ptr<vtkSmartPointer<vtkTableReader>>("vtkSmartPointer<vtkTableReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTableReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTableReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTableReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTableReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTableReader::SafeDownCast, emscripten::allow_raw_pointers())

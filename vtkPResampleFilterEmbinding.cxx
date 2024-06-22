@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPResampleFilter>(vtkPRes
 EMSCRIPTEN_BINDINGS(vtkPResampleFilter_class) {
   emscripten::class_<vtkPResampleFilter, emscripten::base<vtkImageAlgorithm>>("vtkPResampleFilter")
     .smart_ptr<vtkSmartPointer<vtkPResampleFilter>>("vtkSmartPointer<vtkPResampleFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPResampleFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPResampleFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPResampleFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPResampleFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPResampleFilter::SafeDownCast, emscripten::allow_raw_pointers())

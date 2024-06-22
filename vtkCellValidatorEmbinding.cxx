@@ -73,7 +73,7 @@ EMSCRIPTEN_BINDINGS(vtkCellValidator_class) {
   using State=vtkCellValidator::State;
   emscripten::class_<vtkCellValidator, emscripten::base<vtkDataSetAlgorithm>>("vtkCellValidator")
     .smart_ptr<vtkSmartPointer<vtkCellValidator>>("vtkSmartPointer<vtkCellValidator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellValidator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellValidator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellValidator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellValidator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellValidator::SafeDownCast, emscripten::allow_raw_pointers())

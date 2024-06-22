@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPriorityQueue>(vtkPriori
 EMSCRIPTEN_BINDINGS(vtkPriorityQueue_class) {
   emscripten::class_<vtkPriorityQueue, emscripten::base<vtkObject>>("vtkPriorityQueue")
     .smart_ptr<vtkSmartPointer<vtkPriorityQueue>>("vtkSmartPointer<vtkPriorityQueue>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPriorityQueue>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPriorityQueue>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPriorityQueue::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPriorityQueue& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPriorityQueue::SafeDownCast, emscripten::allow_raw_pointers())

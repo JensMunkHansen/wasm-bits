@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageRange3D>(vtkImageRa
 EMSCRIPTEN_BINDINGS(vtkImageRange3D_class) {
   emscripten::class_<vtkImageRange3D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageRange3D")
     .smart_ptr<vtkSmartPointer<vtkImageRange3D>>("vtkSmartPointer<vtkImageRange3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageRange3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageRange3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageRange3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageRange3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageRange3D::SafeDownCast, emscripten::allow_raw_pointers())

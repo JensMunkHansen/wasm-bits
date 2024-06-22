@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkSuperquadricSource>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSuperquadricSource_class) {
   emscripten::class_<vtkSuperquadricSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkSuperquadricSource")
     .smart_ptr<vtkSmartPointer<vtkSuperquadricSource>>("vtkSmartPointer<vtkSuperquadricSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSuperquadricSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSuperquadricSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSuperquadricSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSuperquadricSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSuperquadricSource::SafeDownCast, emscripten::allow_raw_pointers())

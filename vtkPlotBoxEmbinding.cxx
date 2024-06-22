@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotBox>(vtkPlotBox * pt
 EMSCRIPTEN_BINDINGS(vtkPlotBox_class) {
   emscripten::class_<vtkPlotBox, emscripten::base<vtkPlot>>("vtkPlotBox")
     .smart_ptr<vtkSmartPointer<vtkPlotBox>>("vtkSmartPointer<vtkPlotBox>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotBox>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotBox>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotBox::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotBox& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotBox::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractPolyDataGeometry>
 EMSCRIPTEN_BINDINGS(vtkExtractPolyDataGeometry_class) {
   emscripten::class_<vtkExtractPolyDataGeometry, emscripten::base<vtkPolyDataAlgorithm>>("vtkExtractPolyDataGeometry")
     .smart_ptr<vtkSmartPointer<vtkExtractPolyDataGeometry>>("vtkSmartPointer<vtkExtractPolyDataGeometry>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractPolyDataGeometry>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractPolyDataGeometry>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractPolyDataGeometry::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractPolyDataGeometry& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractPolyDataGeometry::SafeDownCast, emscripten::allow_raw_pointers())

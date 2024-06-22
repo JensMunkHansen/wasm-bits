@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkIntegrateAttributes_class) {
   using CommunicationIds=vtkIntegrateAttributes::CommunicationIds;
   emscripten::class_<vtkIntegrateAttributes, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkIntegrateAttributes")
     .smart_ptr<vtkSmartPointer<vtkIntegrateAttributes>>("vtkSmartPointer<vtkIntegrateAttributes>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkIntegrateAttributes>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkIntegrateAttributes>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIntegrateAttributes::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIntegrateAttributes& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIntegrateAttributes::SafeDownCast, emscripten::allow_raw_pointers())

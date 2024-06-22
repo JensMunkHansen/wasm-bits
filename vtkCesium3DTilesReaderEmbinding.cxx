@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCesium3DTilesReader>(vtk
 EMSCRIPTEN_BINDINGS(vtkCesium3DTilesReader_class) {
   emscripten::class_<vtkCesium3DTilesReader, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkCesium3DTilesReader")
     .smart_ptr<vtkSmartPointer<vtkCesium3DTilesReader>>("vtkSmartPointer<vtkCesium3DTilesReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCesium3DTilesReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCesium3DTilesReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCesium3DTilesReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCesium3DTilesReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCesium3DTilesReader::SafeDownCast, emscripten::allow_raw_pointers())

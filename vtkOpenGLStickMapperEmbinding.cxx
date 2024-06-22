@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLStickMapper>(vtkOp
 EMSCRIPTEN_BINDINGS(vtkOpenGLStickMapper_class) {
   emscripten::class_<vtkOpenGLStickMapper, emscripten::base<vtkOpenGLPolyDataMapper>>("vtkOpenGLStickMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLStickMapper>>("vtkSmartPointer<vtkOpenGLStickMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLStickMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLStickMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLStickMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLStickMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLStickMapper::SafeDownCast, emscripten::allow_raw_pointers())

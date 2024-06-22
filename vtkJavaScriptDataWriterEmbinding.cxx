@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkJavaScriptDataWriter>(vt
 EMSCRIPTEN_BINDINGS(vtkJavaScriptDataWriter_class) {
   emscripten::class_<vtkJavaScriptDataWriter, emscripten::base<vtkWriter>>("vtkJavaScriptDataWriter")
     .smart_ptr<vtkSmartPointer<vtkJavaScriptDataWriter>>("vtkSmartPointer<vtkJavaScriptDataWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkJavaScriptDataWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkJavaScriptDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkJavaScriptDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkJavaScriptDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkJavaScriptDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

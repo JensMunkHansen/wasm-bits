@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolynomialSolversUnivari
 EMSCRIPTEN_BINDINGS(vtkPolynomialSolversUnivariate_class) {
   emscripten::class_<vtkPolynomialSolversUnivariate, emscripten::base<vtkObject>>("vtkPolynomialSolversUnivariate")
     .smart_ptr<vtkSmartPointer<vtkPolynomialSolversUnivariate>>("vtkSmartPointer<vtkPolynomialSolversUnivariate>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolynomialSolversUnivariate>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolynomialSolversUnivariate>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolynomialSolversUnivariate::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolynomialSolversUnivariate& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolynomialSolversUnivariate::SafeDownCast, emscripten::allow_raw_pointers())

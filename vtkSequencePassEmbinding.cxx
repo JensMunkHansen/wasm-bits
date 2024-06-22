@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkSequencePass>(vtkSequenc
 EMSCRIPTEN_BINDINGS(vtkSequencePass_class) {
   emscripten::class_<vtkSequencePass, emscripten::base<vtkRenderPass>>("vtkSequencePass")
     .smart_ptr<vtkSmartPointer<vtkSequencePass>>("vtkSmartPointer<vtkSequencePass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSequencePass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSequencePass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSequencePass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSequencePass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSequencePass::SafeDownCast, emscripten::allow_raw_pointers())

@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkConnectedPointsFilter>(v
 EMSCRIPTEN_BINDINGS(vtkConnectedPointsFilter_class) {
   emscripten::class_<vtkConnectedPointsFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkConnectedPointsFilter")
     .smart_ptr<vtkSmartPointer<vtkConnectedPointsFilter>>("vtkSmartPointer<vtkConnectedPointsFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkConnectedPointsFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkConnectedPointsFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkConnectedPointsFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkConnectedPointsFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkConnectedPointsFilter::SafeDownCast, emscripten::allow_raw_pointers())

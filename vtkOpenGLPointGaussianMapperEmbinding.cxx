@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLPointGaussianMappe
 EMSCRIPTEN_BINDINGS(vtkOpenGLPointGaussianMapper_class) {
   emscripten::class_<vtkOpenGLPointGaussianMapper, emscripten::base<vtkPointGaussianMapper>>("vtkOpenGLPointGaussianMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLPointGaussianMapper>>("vtkSmartPointer<vtkOpenGLPointGaussianMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLPointGaussianMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLPointGaussianMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLPointGaussianMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLPointGaussianMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLPointGaussianMapper::SafeDownCast, emscripten::allow_raw_pointers())

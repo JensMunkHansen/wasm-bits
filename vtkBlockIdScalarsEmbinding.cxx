@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBlockIdScalars>(vtkBlock
 EMSCRIPTEN_BINDINGS(vtkBlockIdScalars_class) {
   emscripten::class_<vtkBlockIdScalars, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkBlockIdScalars")
     .smart_ptr<vtkSmartPointer<vtkBlockIdScalars>>("vtkSmartPointer<vtkBlockIdScalars>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBlockIdScalars>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBlockIdScalars>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBlockIdScalars::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBlockIdScalars& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBlockIdScalars::SafeDownCast, emscripten::allow_raw_pointers())

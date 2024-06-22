@@ -31,7 +31,7 @@ template<> void emscripten::internal::raw_destructor<vtkOutlineSource>(vtkOutlin
 EMSCRIPTEN_BINDINGS(vtkOutlineSource_class) {
   emscripten::class_<vtkOutlineSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkOutlineSource")
     .smart_ptr<vtkSmartPointer<vtkOutlineSource>>("vtkSmartPointer<vtkOutlineSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOutlineSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOutlineSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOutlineSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOutlineSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOutlineSource::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHyperTreeGridPlaneCutter
 EMSCRIPTEN_BINDINGS(vtkHyperTreeGridPlaneCutter_class) {
   emscripten::class_<vtkHyperTreeGridPlaneCutter, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridPlaneCutter")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridPlaneCutter>>("vtkSmartPointer<vtkHyperTreeGridPlaneCutter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridPlaneCutter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridPlaneCutter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridPlaneCutter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridPlaneCutter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridPlaneCutter::SafeDownCast, emscripten::allow_raw_pointers())

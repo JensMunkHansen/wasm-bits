@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkAxis_class) {
   using Location=vtkAxis::Location;
   emscripten::class_<vtkAxis, emscripten::base<vtkContextItem>>("vtkAxis")
     .smart_ptr<vtkSmartPointer<vtkAxis>>("vtkSmartPointer<vtkAxis>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAxis>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAxis>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAxis::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAxis& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAxis::SafeDownCast, emscripten::allow_raw_pointers())

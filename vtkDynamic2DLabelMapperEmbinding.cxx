@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDynamic2DLabelMapper>(vt
 EMSCRIPTEN_BINDINGS(vtkDynamic2DLabelMapper_class) {
   emscripten::class_<vtkDynamic2DLabelMapper, emscripten::base<vtkLabeledDataMapper>>("vtkDynamic2DLabelMapper")
     .smart_ptr<vtkSmartPointer<vtkDynamic2DLabelMapper>>("vtkSmartPointer<vtkDynamic2DLabelMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDynamic2DLabelMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDynamic2DLabelMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDynamic2DLabelMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDynamic2DLabelMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDynamic2DLabelMapper::SafeDownCast, emscripten::allow_raw_pointers())

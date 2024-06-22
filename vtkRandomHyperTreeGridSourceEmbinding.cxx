@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRandomHyperTreeGridSourc
 EMSCRIPTEN_BINDINGS(vtkRandomHyperTreeGridSource_class) {
   emscripten::class_<vtkRandomHyperTreeGridSource, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkRandomHyperTreeGridSource")
     .smart_ptr<vtkSmartPointer<vtkRandomHyperTreeGridSource>>("vtkSmartPointer<vtkRandomHyperTreeGridSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRandomHyperTreeGridSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRandomHyperTreeGridSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRandomHyperTreeGridSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRandomHyperTreeGridSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRandomHyperTreeGridSource::SafeDownCast, emscripten::allow_raw_pointers())

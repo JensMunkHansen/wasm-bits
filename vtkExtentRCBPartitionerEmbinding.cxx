@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtentRCBPartitioner>(vt
 EMSCRIPTEN_BINDINGS(vtkExtentRCBPartitioner_class) {
   emscripten::class_<vtkExtentRCBPartitioner, emscripten::base<vtkObject>>("vtkExtentRCBPartitioner")
     .smart_ptr<vtkSmartPointer<vtkExtentRCBPartitioner>>("vtkSmartPointer<vtkExtentRCBPartitioner>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtentRCBPartitioner>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtentRCBPartitioner>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtentRCBPartitioner::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtentRCBPartitioner& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtentRCBPartitioner::SafeDownCast, emscripten::allow_raw_pointers())

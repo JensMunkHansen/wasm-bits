@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkSubdivideTetra>(vtkSubdi
 EMSCRIPTEN_BINDINGS(vtkSubdivideTetra_class) {
   emscripten::class_<vtkSubdivideTetra, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkSubdivideTetra")
     .smart_ptr<vtkSmartPointer<vtkSubdivideTetra>>("vtkSmartPointer<vtkSubdivideTetra>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSubdivideTetra>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSubdivideTetra>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSubdivideTetra::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSubdivideTetra& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSubdivideTetra::SafeDownCast, emscripten::allow_raw_pointers())

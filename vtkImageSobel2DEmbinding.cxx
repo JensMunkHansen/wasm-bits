@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSobel2D>(vtkImageSo
 EMSCRIPTEN_BINDINGS(vtkImageSobel2D_class) {
   emscripten::class_<vtkImageSobel2D, emscripten::base<vtkImageSpatialAlgorithm>>("vtkImageSobel2D")
     .smart_ptr<vtkSmartPointer<vtkImageSobel2D>>("vtkSmartPointer<vtkImageSobel2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSobel2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSobel2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSobel2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSobel2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSobel2D::SafeDownCast, emscripten::allow_raw_pointers())

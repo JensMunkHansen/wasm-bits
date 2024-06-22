@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitWindowFunction>(
 EMSCRIPTEN_BINDINGS(vtkImplicitWindowFunction_class) {
   emscripten::class_<vtkImplicitWindowFunction, emscripten::base<vtkImplicitFunction>>("vtkImplicitWindowFunction")
     .smart_ptr<vtkSmartPointer<vtkImplicitWindowFunction>>("vtkSmartPointer<vtkImplicitWindowFunction>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitWindowFunction>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitWindowFunction>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitWindowFunction::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitWindowFunction& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitWindowFunction::SafeDownCast, emscripten::allow_raw_pointers())

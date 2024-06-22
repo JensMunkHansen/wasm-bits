@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRecoverGeometryWireframe
 EMSCRIPTEN_BINDINGS(vtkRecoverGeometryWireframe_class) {
   emscripten::class_<vtkRecoverGeometryWireframe, emscripten::base<vtkPolyDataAlgorithm>>("vtkRecoverGeometryWireframe")
     .smart_ptr<vtkSmartPointer<vtkRecoverGeometryWireframe>>("vtkSmartPointer<vtkRecoverGeometryWireframe>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRecoverGeometryWireframe>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRecoverGeometryWireframe>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRecoverGeometryWireframe::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRecoverGeometryWireframe& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRecoverGeometryWireframe::SafeDownCast, emscripten::allow_raw_pointers())

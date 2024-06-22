@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkCompositePolyDataMapperD
 EMSCRIPTEN_BINDINGS(vtkCompositePolyDataMapperDelegator_class) {
   emscripten::class_<vtkCompositePolyDataMapperDelegator, emscripten::base<vtkObject>>("vtkCompositePolyDataMapperDelegator")
     .smart_ptr<vtkSmartPointer<vtkCompositePolyDataMapperDelegator>>("vtkSmartPointer<vtkCompositePolyDataMapperDelegator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCompositePolyDataMapperDelegator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCompositePolyDataMapperDelegator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCompositePolyDataMapperDelegator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCompositePolyDataMapperDelegator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCompositePolyDataMapperDelegator::SafeDownCast, emscripten::allow_raw_pointers())

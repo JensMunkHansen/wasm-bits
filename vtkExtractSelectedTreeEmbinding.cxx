@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractSelectedTree>(vtk
 EMSCRIPTEN_BINDINGS(vtkExtractSelectedTree_class) {
   emscripten::class_<vtkExtractSelectedTree, emscripten::base<vtkTreeAlgorithm>>("vtkExtractSelectedTree")
     .smart_ptr<vtkSmartPointer<vtkExtractSelectedTree>>("vtkSmartPointer<vtkExtractSelectedTree>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractSelectedTree>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractSelectedTree>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractSelectedTree::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractSelectedTree& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractSelectedTree::SafeDownCast, emscripten::allow_raw_pointers())

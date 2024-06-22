@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkVolumeProperty_class) {
   using TransferMode=vtkVolumeProperty::TransferMode;
   emscripten::class_<vtkVolumeProperty, emscripten::base<vtkObject>>("vtkVolumeProperty")
     .smart_ptr<vtkSmartPointer<vtkVolumeProperty>>("vtkSmartPointer<vtkVolumeProperty>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkVolumeProperty>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkVolumeProperty>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkVolumeProperty::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkVolumeProperty& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkVolumeProperty::SafeDownCast, emscripten::allow_raw_pointers())

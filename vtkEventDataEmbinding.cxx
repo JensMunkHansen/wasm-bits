@@ -71,7 +71,7 @@ template<> void emscripten::internal::raw_destructor<vtkEventDataForDevice>(vtkE
 EMSCRIPTEN_BINDINGS(vtkEventDataForDevice_class) {
   emscripten::class_<vtkEventDataForDevice, emscripten::base<vtkEventData>>("vtkEventDataForDevice")
     .smart_ptr<vtkSmartPointer<vtkEventDataForDevice>>("vtkSmartPointer<vtkEventDataForDevice>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEventDataForDevice>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEventDataForDevice>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEventDataForDevice::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEventDataForDevice& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEventDataForDevice::SafeDownCast, emscripten::allow_raw_pointers())
@@ -91,7 +91,7 @@ template<> void emscripten::internal::raw_destructor<vtkEventDataDevice3D>(vtkEv
 EMSCRIPTEN_BINDINGS(vtkEventDataDevice3D_class) {
   emscripten::class_<vtkEventDataDevice3D, emscripten::base<vtkEventDataForDevice>>("vtkEventDataDevice3D")
     .smart_ptr<vtkSmartPointer<vtkEventDataDevice3D>>("vtkSmartPointer<vtkEventDataDevice3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEventDataDevice3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEventDataDevice3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEventDataDevice3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEventDataDevice3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEventDataDevice3D::SafeDownCast, emscripten::allow_raw_pointers())

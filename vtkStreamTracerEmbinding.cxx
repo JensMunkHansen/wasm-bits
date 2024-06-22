@@ -37,7 +37,7 @@ EMSCRIPTEN_BINDINGS(vtkStreamTracer_class) {
   using ReasonForTermination=vtkStreamTracer::ReasonForTermination;
   emscripten::class_<vtkStreamTracer, emscripten::base<vtkPolyDataAlgorithm>>("vtkStreamTracer")
     .smart_ptr<vtkSmartPointer<vtkStreamTracer>>("vtkSmartPointer<vtkStreamTracer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStreamTracer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStreamTracer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStreamTracer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStreamTracer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStreamTracer::SafeDownCast, emscripten::allow_raw_pointers())

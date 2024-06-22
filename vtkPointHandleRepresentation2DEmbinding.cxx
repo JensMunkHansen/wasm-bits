@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkPointHandleRepresentatio
 EMSCRIPTEN_BINDINGS(vtkPointHandleRepresentation2D_class) {
   emscripten::class_<vtkPointHandleRepresentation2D, emscripten::base<vtkHandleRepresentation>>("vtkPointHandleRepresentation2D")
     .smart_ptr<vtkSmartPointer<vtkPointHandleRepresentation2D>>("vtkSmartPointer<vtkPointHandleRepresentation2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPointHandleRepresentation2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPointHandleRepresentation2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPointHandleRepresentation2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPointHandleRepresentation2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPointHandleRepresentation2D::SafeDownCast, emscripten::allow_raw_pointers())

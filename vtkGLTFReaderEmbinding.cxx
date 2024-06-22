@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkGLTFReader>(vtkGLTFReade
 EMSCRIPTEN_BINDINGS(vtkGLTFReader_class) {
   emscripten::class_<vtkGLTFReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkGLTFReader")
     .smart_ptr<vtkSmartPointer<vtkGLTFReader>>("vtkSmartPointer<vtkGLTFReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGLTFReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGLTFReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGLTFReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGLTFReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGLTFReader::SafeDownCast, emscripten::allow_raw_pointers())

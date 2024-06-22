@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkImageConnectivityFilter_class) {
   using ExtractionModeEnum=vtkImageConnectivityFilter::ExtractionModeEnum;
   emscripten::class_<vtkImageConnectivityFilter, emscripten::base<vtkImageAlgorithm>>("vtkImageConnectivityFilter")
     .smart_ptr<vtkSmartPointer<vtkImageConnectivityFilter>>("vtkSmartPointer<vtkImageConnectivityFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageConnectivityFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageConnectivityFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageConnectivityFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageConnectivityFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageConnectivityFilter::SafeDownCast, emscripten::allow_raw_pointers())

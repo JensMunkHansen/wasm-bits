@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPen>(vtkPen * ptr){ ptr-
 EMSCRIPTEN_BINDINGS(vtkPen_class) {
   emscripten::class_<vtkPen, emscripten::base<vtkObject>>("vtkPen")
     .smart_ptr<vtkSmartPointer<vtkPen>>("vtkSmartPointer<vtkPen>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPen>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPen>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPen::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPen& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPen::SafeDownCast, emscripten::allow_raw_pointers())

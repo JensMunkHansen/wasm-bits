@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMarshalContext>(vtkMarsh
 EMSCRIPTEN_BINDINGS(vtkMarshalContext_class) {
   emscripten::class_<vtkMarshalContext, emscripten::base<vtkObject>>("vtkMarshalContext")
     .smart_ptr<vtkSmartPointer<vtkMarshalContext>>("vtkSmartPointer<vtkMarshalContext>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMarshalContext>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMarshalContext>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMarshalContext::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMarshalContext& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMarshalContext::SafeDownCast, emscripten::allow_raw_pointers())

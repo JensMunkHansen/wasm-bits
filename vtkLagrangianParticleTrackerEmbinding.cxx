@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkLagrangianParticleTracker_class) {
   using CellLengthComputation=vtkLagrangianParticleTracker::CellLengthComputation;
   emscripten::class_<vtkLagrangianParticleTracker, emscripten::base<vtkDataObjectAlgorithm>>("vtkLagrangianParticleTracker")
     .smart_ptr<vtkSmartPointer<vtkLagrangianParticleTracker>>("vtkSmartPointer<vtkLagrangianParticleTracker>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangianParticleTracker>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangianParticleTracker>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangianParticleTracker::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangianParticleTracker& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangianParticleTracker::SafeDownCast, emscripten::allow_raw_pointers())

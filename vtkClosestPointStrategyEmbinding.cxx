@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkClosestPointStrategy>(vt
 EMSCRIPTEN_BINDINGS(vtkClosestPointStrategy_class) {
   emscripten::class_<vtkClosestPointStrategy, emscripten::base<vtkFindCellStrategy>>("vtkClosestPointStrategy")
     .smart_ptr<vtkSmartPointer<vtkClosestPointStrategy>>("vtkSmartPointer<vtkClosestPointStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkClosestPointStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkClosestPointStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClosestPointStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClosestPointStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClosestPointStrategy::SafeDownCast, emscripten::allow_raw_pointers())

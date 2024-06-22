@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeHexahedron>(vtkL
 EMSCRIPTEN_BINDINGS(vtkLagrangeHexahedron_class) {
   emscripten::class_<vtkLagrangeHexahedron, emscripten::base<vtkHigherOrderHexahedron>>("vtkLagrangeHexahedron")
     .smart_ptr<vtkSmartPointer<vtkLagrangeHexahedron>>("vtkSmartPointer<vtkLagrangeHexahedron>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeHexahedron>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeHexahedron>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeHexahedron::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeHexahedron& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeHexahedron::SafeDownCast, emscripten::allow_raw_pointers())

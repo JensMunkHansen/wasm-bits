@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgrammableGlyphFilter>
 EMSCRIPTEN_BINDINGS(vtkProgrammableGlyphFilter_class) {
   emscripten::class_<vtkProgrammableGlyphFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkProgrammableGlyphFilter")
     .smart_ptr<vtkSmartPointer<vtkProgrammableGlyphFilter>>("vtkSmartPointer<vtkProgrammableGlyphFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProgrammableGlyphFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgrammableGlyphFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgrammableGlyphFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgrammableGlyphFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgrammableGlyphFilter::SafeDownCast, emscripten::allow_raw_pointers())

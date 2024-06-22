@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkWarpTo>(vtkWarpTo * ptr)
 EMSCRIPTEN_BINDINGS(vtkWarpTo_class) {
   emscripten::class_<vtkWarpTo, emscripten::base<vtkPointSetAlgorithm>>("vtkWarpTo")
     .smart_ptr<vtkSmartPointer<vtkWarpTo>>("vtkSmartPointer<vtkWarpTo>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWarpTo>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWarpTo>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWarpTo::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWarpTo& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWarpTo::SafeDownCast, emscripten::allow_raw_pointers())

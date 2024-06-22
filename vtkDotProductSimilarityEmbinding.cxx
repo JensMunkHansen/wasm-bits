@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDotProductSimilarity>(vt
 EMSCRIPTEN_BINDINGS(vtkDotProductSimilarity_class) {
   emscripten::class_<vtkDotProductSimilarity, emscripten::base<vtkTableAlgorithm>>("vtkDotProductSimilarity")
     .smart_ptr<vtkSmartPointer<vtkDotProductSimilarity>>("vtkSmartPointer<vtkDotProductSimilarity>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDotProductSimilarity>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDotProductSimilarity>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDotProductSimilarity::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDotProductSimilarity& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDotProductSimilarity::SafeDownCast, emscripten::allow_raw_pointers())

@@ -27,7 +27,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLVertexBufferObject
 EMSCRIPTEN_BINDINGS(vtkOpenGLVertexBufferObjectGroup_class) {
   emscripten::class_<vtkOpenGLVertexBufferObjectGroup, emscripten::base<vtkObject>>("vtkOpenGLVertexBufferObjectGroup")
     .smart_ptr<vtkSmartPointer<vtkOpenGLVertexBufferObjectGroup>>("vtkSmartPointer<vtkOpenGLVertexBufferObjectGroup>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLVertexBufferObjectGroup>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLVertexBufferObjectGroup>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLVertexBufferObjectGroup::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLVertexBufferObjectGroup& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLVertexBufferObjectGroup::SafeDownCast, emscripten::allow_raw_pointers())

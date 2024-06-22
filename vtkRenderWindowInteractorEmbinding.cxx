@@ -41,7 +41,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderWindowInteractor>(
 EMSCRIPTEN_BINDINGS(vtkRenderWindowInteractor_class) {
   emscripten::class_<vtkRenderWindowInteractor, emscripten::base<vtkObject>>("vtkRenderWindowInteractor")
     .smart_ptr<vtkSmartPointer<vtkRenderWindowInteractor>>("vtkSmartPointer<vtkRenderWindowInteractor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderWindowInteractor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderWindowInteractor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderWindowInteractor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderWindowInteractor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderWindowInteractor::SafeDownCast, emscripten::allow_raw_pointers())

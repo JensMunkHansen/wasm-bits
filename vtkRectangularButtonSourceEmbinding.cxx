@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRectangularButtonSource>
 EMSCRIPTEN_BINDINGS(vtkRectangularButtonSource_class) {
   emscripten::class_<vtkRectangularButtonSource, emscripten::base<vtkButtonSource>>("vtkRectangularButtonSource")
     .smart_ptr<vtkSmartPointer<vtkRectangularButtonSource>>("vtkSmartPointer<vtkRectangularButtonSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRectangularButtonSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRectangularButtonSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRectangularButtonSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRectangularButtonSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRectangularButtonSource::SafeDownCast, emscripten::allow_raw_pointers())

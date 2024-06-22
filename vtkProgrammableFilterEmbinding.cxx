@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkProgrammableFilter>(vtkP
 EMSCRIPTEN_BINDINGS(vtkProgrammableFilter_class) {
   emscripten::class_<vtkProgrammableFilter, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkProgrammableFilter")
     .smart_ptr<vtkSmartPointer<vtkProgrammableFilter>>("vtkSmartPointer<vtkProgrammableFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkProgrammableFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkProgrammableFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkProgrammableFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkProgrammableFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkProgrammableFilter::SafeDownCast, emscripten::allow_raw_pointers())

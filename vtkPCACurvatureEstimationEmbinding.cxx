@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPCACurvatureEstimation>(
 EMSCRIPTEN_BINDINGS(vtkPCACurvatureEstimation_class) {
   emscripten::class_<vtkPCACurvatureEstimation, emscripten::base<vtkPolyDataAlgorithm>>("vtkPCACurvatureEstimation")
     .smart_ptr<vtkSmartPointer<vtkPCACurvatureEstimation>>("vtkSmartPointer<vtkPCACurvatureEstimation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPCACurvatureEstimation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPCACurvatureEstimation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPCACurvatureEstimation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPCACurvatureEstimation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPCACurvatureEstimation::SafeDownCast, emscripten::allow_raw_pointers())

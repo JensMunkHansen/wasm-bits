@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkSplitColumnComponents>(v
 EMSCRIPTEN_BINDINGS(vtkSplitColumnComponents_class) {
   emscripten::class_<vtkSplitColumnComponents, emscripten::base<vtkTableAlgorithm>>("vtkSplitColumnComponents")
     .smart_ptr<vtkSmartPointer<vtkSplitColumnComponents>>("vtkSmartPointer<vtkSplitColumnComponents>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSplitColumnComponents>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSplitColumnComponents>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSplitColumnComponents::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSplitColumnComponents& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSplitColumnComponents::SafeDownCast, emscripten::allow_raw_pointers())

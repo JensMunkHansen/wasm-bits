@@ -24,7 +24,7 @@ EMSCRIPTEN_BINDINGS(vtkHyperTreeGridPreConfiguredSource_class) {
   using HTGArchitecture=vtkHyperTreeGridPreConfiguredSource::HTGArchitecture;
   emscripten::class_<vtkHyperTreeGridPreConfiguredSource, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkHyperTreeGridPreConfiguredSource")
     .smart_ptr<vtkSmartPointer<vtkHyperTreeGridPreConfiguredSource>>("vtkSmartPointer<vtkHyperTreeGridPreConfiguredSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHyperTreeGridPreConfiguredSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHyperTreeGridPreConfiguredSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHyperTreeGridPreConfiguredSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHyperTreeGridPreConfiguredSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHyperTreeGridPreConfiguredSource::SafeDownCast, emscripten::allow_raw_pointers())

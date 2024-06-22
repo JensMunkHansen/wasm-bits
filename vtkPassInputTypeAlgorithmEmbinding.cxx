@@ -33,7 +33,7 @@ template<> void emscripten::internal::raw_destructor<vtkPassInputTypeAlgorithm>(
 EMSCRIPTEN_BINDINGS(vtkPassInputTypeAlgorithm_class) {
   emscripten::class_<vtkPassInputTypeAlgorithm, emscripten::base<vtkAlgorithm>>("vtkPassInputTypeAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkPassInputTypeAlgorithm>>("vtkSmartPointer<vtkPassInputTypeAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPassInputTypeAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPassInputTypeAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPassInputTypeAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPassInputTypeAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPassInputTypeAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

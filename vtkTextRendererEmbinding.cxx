@@ -33,7 +33,7 @@ EMSCRIPTEN_BINDINGS(vtkTextRenderer_class) {
   using Backend=vtkTextRenderer::Backend;
   emscripten::class_<vtkTextRenderer, emscripten::base<vtkObject>>("vtkTextRenderer")
     .smart_ptr<vtkSmartPointer<vtkTextRenderer>>("vtkSmartPointer<vtkTextRenderer>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextRenderer>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextRenderer>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextRenderer::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextRenderer& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextRenderer::SafeDownCast, emscripten::allow_raw_pointers())

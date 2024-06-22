@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLIndexBufferObject>
 EMSCRIPTEN_BINDINGS(vtkOpenGLIndexBufferObject_class) {
   emscripten::class_<vtkOpenGLIndexBufferObject, emscripten::base<vtkOpenGLBufferObject>>("vtkOpenGLIndexBufferObject")
     .smart_ptr<vtkSmartPointer<vtkOpenGLIndexBufferObject>>("vtkSmartPointer<vtkOpenGLIndexBufferObject>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLIndexBufferObject>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLIndexBufferObject>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLIndexBufferObject::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLIndexBufferObject& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLIndexBufferObject::SafeDownCast, emscripten::allow_raw_pointers())

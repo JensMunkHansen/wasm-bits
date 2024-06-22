@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkLagrangeInterpolation>(v
 EMSCRIPTEN_BINDINGS(vtkLagrangeInterpolation_class) {
   emscripten::class_<vtkLagrangeInterpolation, emscripten::base<vtkHigherOrderInterpolation>>("vtkLagrangeInterpolation")
     .smart_ptr<vtkSmartPointer<vtkLagrangeInterpolation>>("vtkSmartPointer<vtkLagrangeInterpolation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLagrangeInterpolation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLagrangeInterpolation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLagrangeInterpolation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLagrangeInterpolation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLagrangeInterpolation::SafeDownCast, emscripten::allow_raw_pointers())

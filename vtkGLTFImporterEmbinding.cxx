@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkGLTFImporter>(vtkGLTFImp
 EMSCRIPTEN_BINDINGS(vtkGLTFImporter_class) {
   emscripten::class_<vtkGLTFImporter, emscripten::base<vtkImporter>>("vtkGLTFImporter")
     .smart_ptr<vtkSmartPointer<vtkGLTFImporter>>("vtkSmartPointer<vtkGLTFImporter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGLTFImporter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGLTFImporter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGLTFImporter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGLTFImporter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGLTFImporter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkContextView>(vtkContextV
 EMSCRIPTEN_BINDINGS(vtkContextView_class) {
   emscripten::class_<vtkContextView, emscripten::base<vtkRenderViewBase>>("vtkContextView")
     .smart_ptr<vtkSmartPointer<vtkContextView>>("vtkSmartPointer<vtkContextView>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContextView>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContextView>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContextView::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContextView& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContextView::SafeDownCast, emscripten::allow_raw_pointers())

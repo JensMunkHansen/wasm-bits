@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPlotLine3D>(vtkPlotLine3
 EMSCRIPTEN_BINDINGS(vtkPlotLine3D_class) {
   emscripten::class_<vtkPlotLine3D, emscripten::base<vtkPlotPoints3D>>("vtkPlotLine3D")
     .smart_ptr<vtkSmartPointer<vtkPlotLine3D>>("vtkSmartPointer<vtkPlotLine3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPlotLine3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPlotLine3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPlotLine3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPlotLine3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPlotLine3D::SafeDownCast, emscripten::allow_raw_pointers())

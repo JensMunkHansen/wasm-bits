@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageDataToHyperTreeGrid
 EMSCRIPTEN_BINDINGS(vtkImageDataToHyperTreeGrid_class) {
   emscripten::class_<vtkImageDataToHyperTreeGrid, emscripten::base<vtkHyperTreeGridAlgorithm>>("vtkImageDataToHyperTreeGrid")
     .smart_ptr<vtkSmartPointer<vtkImageDataToHyperTreeGrid>>("vtkSmartPointer<vtkImageDataToHyperTreeGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageDataToHyperTreeGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageDataToHyperTreeGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageDataToHyperTreeGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageDataToHyperTreeGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageDataToHyperTreeGrid::SafeDownCast, emscripten::allow_raw_pointers())

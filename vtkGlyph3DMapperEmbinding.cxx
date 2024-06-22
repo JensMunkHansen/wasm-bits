@@ -32,7 +32,7 @@ EMSCRIPTEN_BINDINGS(vtkGlyph3DMapper_class) {
   using OrientationModes=vtkGlyph3DMapper::OrientationModes;
   emscripten::class_<vtkGlyph3DMapper, emscripten::base<vtkMapper>>("vtkGlyph3DMapper")
     .smart_ptr<vtkSmartPointer<vtkGlyph3DMapper>>("vtkSmartPointer<vtkGlyph3DMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGlyph3DMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGlyph3DMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGlyph3DMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGlyph3DMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGlyph3DMapper::SafeDownCast, emscripten::allow_raw_pointers())

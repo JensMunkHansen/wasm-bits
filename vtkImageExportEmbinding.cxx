@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageExport>(vtkImageExp
 EMSCRIPTEN_BINDINGS(vtkImageExport_class) {
   emscripten::class_<vtkImageExport, emscripten::base<vtkImageAlgorithm>>("vtkImageExport")
     .smart_ptr<vtkSmartPointer<vtkImageExport>>("vtkSmartPointer<vtkImageExport>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageExport>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageExport>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageExport::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageExport& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageExport::SafeDownCast, emscripten::allow_raw_pointers())

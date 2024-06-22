@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkDepthImageToPointCloud>(
 EMSCRIPTEN_BINDINGS(vtkDepthImageToPointCloud_class) {
   emscripten::class_<vtkDepthImageToPointCloud, emscripten::base<vtkPolyDataAlgorithm>>("vtkDepthImageToPointCloud")
     .smart_ptr<vtkSmartPointer<vtkDepthImageToPointCloud>>("vtkSmartPointer<vtkDepthImageToPointCloud>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDepthImageToPointCloud>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDepthImageToPointCloud>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDepthImageToPointCloud::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDepthImageToPointCloud& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDepthImageToPointCloud::SafeDownCast, emscripten::allow_raw_pointers())

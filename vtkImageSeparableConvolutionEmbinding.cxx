@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSeparableConvolutio
 EMSCRIPTEN_BINDINGS(vtkImageSeparableConvolution_class) {
   emscripten::class_<vtkImageSeparableConvolution, emscripten::base<vtkImageDecomposeFilter>>("vtkImageSeparableConvolution")
     .smart_ptr<vtkSmartPointer<vtkImageSeparableConvolution>>("vtkSmartPointer<vtkImageSeparableConvolution>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSeparableConvolution>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSeparableConvolution>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSeparableConvolution::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSeparableConvolution& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSeparableConvolution::SafeDownCast, emscripten::allow_raw_pointers())

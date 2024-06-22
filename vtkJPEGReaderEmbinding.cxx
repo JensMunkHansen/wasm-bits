@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkJPEGReader>(vtkJPEGReade
 EMSCRIPTEN_BINDINGS(vtkJPEGReader_class) {
   emscripten::class_<vtkJPEGReader, emscripten::base<vtkImageReader2>>("vtkJPEGReader")
     .smart_ptr<vtkSmartPointer<vtkJPEGReader>>("vtkSmartPointer<vtkJPEGReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkJPEGReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkJPEGReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkJPEGReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkJPEGReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkJPEGReader::SafeDownCast, emscripten::allow_raw_pointers())

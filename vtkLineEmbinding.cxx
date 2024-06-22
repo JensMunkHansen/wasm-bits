@@ -31,7 +31,7 @@ EMSCRIPTEN_BINDINGS(vtkLine_class) {
   using ToleranceType=vtkLine::ToleranceType;
   emscripten::class_<vtkLine, emscripten::base<vtkCell>>("vtkLine")
     .smart_ptr<vtkSmartPointer<vtkLine>>("vtkSmartPointer<vtkLine>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLine>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLine>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLine::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLine& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLine::SafeDownCast, emscripten::allow_raw_pointers())

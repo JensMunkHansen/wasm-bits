@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkContourValues>(vtkContou
 EMSCRIPTEN_BINDINGS(vtkContourValues_class) {
   emscripten::class_<vtkContourValues, emscripten::base<vtkObject>>("vtkContourValues")
     .smart_ptr<vtkSmartPointer<vtkContourValues>>("vtkSmartPointer<vtkContourValues>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContourValues>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContourValues>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContourValues::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContourValues& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContourValues::SafeDownCast, emscripten::allow_raw_pointers())

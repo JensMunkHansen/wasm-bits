@@ -29,7 +29,7 @@ template<> void emscripten::internal::raw_destructor<vtkAnnotation>(vtkAnnotatio
 EMSCRIPTEN_BINDINGS(vtkAnnotation_class) {
   emscripten::class_<vtkAnnotation, emscripten::base<vtkDataObject>>("vtkAnnotation")
     .smart_ptr<vtkSmartPointer<vtkAnnotation>>("vtkSmartPointer<vtkAnnotation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAnnotation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnnotation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnnotation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnnotation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnnotation::SafeDownCast, emscripten::allow_raw_pointers())

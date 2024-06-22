@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridCopyQuery>(vtkCe
 EMSCRIPTEN_BINDINGS(vtkCellGridCopyQuery_class) {
   emscripten::class_<vtkCellGridCopyQuery, emscripten::base<vtkCellGridQuery>>("vtkCellGridCopyQuery")
     .smart_ptr<vtkSmartPointer<vtkCellGridCopyQuery>>("vtkSmartPointer<vtkCellGridCopyQuery>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridCopyQuery>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridCopyQuery>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridCopyQuery::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridCopyQuery& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridCopyQuery::SafeDownCast, emscripten::allow_raw_pointers())

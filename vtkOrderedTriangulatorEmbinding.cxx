@@ -30,7 +30,7 @@ template<> void emscripten::internal::raw_destructor<vtkOrderedTriangulator>(vtk
 EMSCRIPTEN_BINDINGS(vtkOrderedTriangulator_class) {
   emscripten::class_<vtkOrderedTriangulator, emscripten::base<vtkObject>>("vtkOrderedTriangulator")
     .smart_ptr<vtkSmartPointer<vtkOrderedTriangulator>>("vtkSmartPointer<vtkOrderedTriangulator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOrderedTriangulator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrderedTriangulator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrderedTriangulator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrderedTriangulator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrderedTriangulator::SafeDownCast, emscripten::allow_raw_pointers())

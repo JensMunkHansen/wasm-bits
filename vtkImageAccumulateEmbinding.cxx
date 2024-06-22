@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageAccumulate>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageAccumulate_class) {
   emscripten::class_<vtkImageAccumulate, emscripten::base<vtkImageAlgorithm>>("vtkImageAccumulate")
     .smart_ptr<vtkSmartPointer<vtkImageAccumulate>>("vtkSmartPointer<vtkImageAccumulate>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageAccumulate>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageAccumulate>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageAccumulate::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageAccumulate& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageAccumulate::SafeDownCast, emscripten::allow_raw_pointers())

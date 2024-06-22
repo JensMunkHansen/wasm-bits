@@ -32,7 +32,7 @@ template<> void emscripten::internal::raw_destructor<vtkBandedPolyDataContourFil
 EMSCRIPTEN_BINDINGS(vtkBandedPolyDataContourFilter_class) {
   emscripten::class_<vtkBandedPolyDataContourFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkBandedPolyDataContourFilter")
     .smart_ptr<vtkSmartPointer<vtkBandedPolyDataContourFilter>>("vtkSmartPointer<vtkBandedPolyDataContourFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBandedPolyDataContourFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBandedPolyDataContourFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBandedPolyDataContourFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBandedPolyDataContourFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBandedPolyDataContourFilter::SafeDownCast, emscripten::allow_raw_pointers())

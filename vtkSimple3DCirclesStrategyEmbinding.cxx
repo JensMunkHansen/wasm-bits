@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkSimple3DCirclesStrategy>
 EMSCRIPTEN_BINDINGS(vtkSimple3DCirclesStrategy_class) {
   emscripten::class_<vtkSimple3DCirclesStrategy, emscripten::base<vtkGraphLayoutStrategy>>("vtkSimple3DCirclesStrategy")
     .smart_ptr<vtkSmartPointer<vtkSimple3DCirclesStrategy>>("vtkSmartPointer<vtkSimple3DCirclesStrategy>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSimple3DCirclesStrategy>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSimple3DCirclesStrategy>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSimple3DCirclesStrategy::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSimple3DCirclesStrategy& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSimple3DCirclesStrategy::SafeDownCast, emscripten::allow_raw_pointers())

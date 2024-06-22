@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataCollection>(vtkP
 EMSCRIPTEN_BINDINGS(vtkPolyDataCollection_class) {
   emscripten::class_<vtkPolyDataCollection, emscripten::base<vtkCollection>>("vtkPolyDataCollection")
     .smart_ptr<vtkSmartPointer<vtkPolyDataCollection>>("vtkSmartPointer<vtkPolyDataCollection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataCollection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataCollection::SafeDownCast, emscripten::allow_raw_pointers())

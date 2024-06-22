@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkSelectEnclosedPoints>(vt
 EMSCRIPTEN_BINDINGS(vtkSelectEnclosedPoints_class) {
   emscripten::class_<vtkSelectEnclosedPoints, emscripten::base<vtkDataSetAlgorithm>>("vtkSelectEnclosedPoints")
     .smart_ptr<vtkSmartPointer<vtkSelectEnclosedPoints>>("vtkSmartPointer<vtkSelectEnclosedPoints>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSelectEnclosedPoints>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSelectEnclosedPoints>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSelectEnclosedPoints::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSelectEnclosedPoints& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSelectEnclosedPoints::SafeDownCast, emscripten::allow_raw_pointers())

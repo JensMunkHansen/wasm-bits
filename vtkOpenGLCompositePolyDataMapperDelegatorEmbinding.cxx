@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLCompositePolyDataM
 EMSCRIPTEN_BINDINGS(vtkOpenGLCompositePolyDataMapperDelegator_class) {
   emscripten::class_<vtkOpenGLCompositePolyDataMapperDelegator, emscripten::base<vtkCompositePolyDataMapperDelegator>>("vtkOpenGLCompositePolyDataMapperDelegator")
     .smart_ptr<vtkSmartPointer<vtkOpenGLCompositePolyDataMapperDelegator>>("vtkSmartPointer<vtkOpenGLCompositePolyDataMapperDelegator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLCompositePolyDataMapperDelegator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLCompositePolyDataMapperDelegator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLCompositePolyDataMapperDelegator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLCompositePolyDataMapperDelegator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLCompositePolyDataMapperDelegator::SafeDownCast, emscripten::allow_raw_pointers())

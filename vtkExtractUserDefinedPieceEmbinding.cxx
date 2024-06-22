@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractUserDefinedPiece>
 EMSCRIPTEN_BINDINGS(vtkExtractUserDefinedPiece_class) {
   emscripten::class_<vtkExtractUserDefinedPiece, emscripten::base<vtkExtractUnstructuredGridPiece>>("vtkExtractUserDefinedPiece")
     .smart_ptr<vtkSmartPointer<vtkExtractUserDefinedPiece>>("vtkSmartPointer<vtkExtractUserDefinedPiece>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractUserDefinedPiece>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractUserDefinedPiece>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractUserDefinedPiece::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractUserDefinedPiece& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractUserDefinedPiece::SafeDownCast, emscripten::allow_raw_pointers())

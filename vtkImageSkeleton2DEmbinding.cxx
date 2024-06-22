@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageSkeleton2D>(vtkImag
 EMSCRIPTEN_BINDINGS(vtkImageSkeleton2D_class) {
   emscripten::class_<vtkImageSkeleton2D, emscripten::base<vtkImageIterateFilter>>("vtkImageSkeleton2D")
     .smart_ptr<vtkSmartPointer<vtkImageSkeleton2D>>("vtkSmartPointer<vtkImageSkeleton2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageSkeleton2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageSkeleton2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageSkeleton2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageSkeleton2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageSkeleton2D::SafeDownCast, emscripten::allow_raw_pointers())

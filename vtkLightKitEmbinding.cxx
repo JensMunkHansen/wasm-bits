@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkLightKit_class) {
   using LightKitSubType=vtkLightKit::LightKitSubType;
   emscripten::class_<vtkLightKit, emscripten::base<vtkObject>>("vtkLightKit")
     .smart_ptr<vtkSmartPointer<vtkLightKit>>("vtkSmartPointer<vtkLightKit>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLightKit>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLightKit>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLightKit::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLightKit& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLightKit::SafeDownCast, emscripten::allow_raw_pointers())

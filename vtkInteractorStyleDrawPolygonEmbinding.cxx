@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleDrawPolyg
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleDrawPolygon_class) {
   emscripten::class_<vtkInteractorStyleDrawPolygon, emscripten::base<vtkInteractorStyle>>("vtkInteractorStyleDrawPolygon")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleDrawPolygon>>("vtkSmartPointer<vtkInteractorStyleDrawPolygon>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleDrawPolygon>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleDrawPolygon>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleDrawPolygon::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleDrawPolygon& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleDrawPolygon::SafeDownCast, emscripten::allow_raw_pointers())

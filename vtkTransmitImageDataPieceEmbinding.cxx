@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTransmitImageDataPiece>(
 EMSCRIPTEN_BINDINGS(vtkTransmitImageDataPiece_class) {
   emscripten::class_<vtkTransmitImageDataPiece, emscripten::base<vtkTransmitStructuredDataPiece>>("vtkTransmitImageDataPiece")
     .smart_ptr<vtkSmartPointer<vtkTransmitImageDataPiece>>("vtkSmartPointer<vtkTransmitImageDataPiece>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTransmitImageDataPiece>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTransmitImageDataPiece>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTransmitImageDataPiece::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTransmitImageDataPiece& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTransmitImageDataPiece::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellLinks>(vtkCellLinks 
 EMSCRIPTEN_BINDINGS(vtkCellLinks_class) {
   emscripten::class_<vtkCellLinks, emscripten::base<vtkAbstractCellLinks>>("vtkCellLinks")
     .smart_ptr<vtkSmartPointer<vtkCellLinks>>("vtkSmartPointer<vtkCellLinks>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellLinks>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellLinks>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellLinks::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellLinks& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellLinks::SafeDownCast, emscripten::allow_raw_pointers())

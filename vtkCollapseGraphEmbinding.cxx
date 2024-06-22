@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCollapseGraph>(vtkCollap
 EMSCRIPTEN_BINDINGS(vtkCollapseGraph_class) {
   emscripten::class_<vtkCollapseGraph, emscripten::base<vtkGraphAlgorithm>>("vtkCollapseGraph")
     .smart_ptr<vtkSmartPointer<vtkCollapseGraph>>("vtkSmartPointer<vtkCollapseGraph>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCollapseGraph>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCollapseGraph>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCollapseGraph::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCollapseGraph& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCollapseGraph::SafeDownCast, emscripten::allow_raw_pointers())

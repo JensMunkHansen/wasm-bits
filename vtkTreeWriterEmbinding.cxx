@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTreeWriter>(vtkTreeWrite
 EMSCRIPTEN_BINDINGS(vtkTreeWriter_class) {
   emscripten::class_<vtkTreeWriter, emscripten::base<vtkDataWriter>>("vtkTreeWriter")
     .smart_ptr<vtkSmartPointer<vtkTreeWriter>>("vtkSmartPointer<vtkTreeWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTreeWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTreeWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTreeWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTreeWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTreeWriter::SafeDownCast, emscripten::allow_raw_pointers())

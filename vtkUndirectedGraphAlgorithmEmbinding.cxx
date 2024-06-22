@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkUndirectedGraphAlgorithm
 EMSCRIPTEN_BINDINGS(vtkUndirectedGraphAlgorithm_class) {
   emscripten::class_<vtkUndirectedGraphAlgorithm, emscripten::base<vtkAlgorithm>>("vtkUndirectedGraphAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkUndirectedGraphAlgorithm>>("vtkSmartPointer<vtkUndirectedGraphAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUndirectedGraphAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUndirectedGraphAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUndirectedGraphAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUndirectedGraphAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUndirectedGraphAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

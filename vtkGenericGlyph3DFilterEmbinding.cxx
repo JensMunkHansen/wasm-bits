@@ -43,7 +43,7 @@ template<> void emscripten::internal::raw_destructor<vtkGenericGlyph3DFilter>(vt
 EMSCRIPTEN_BINDINGS(vtkGenericGlyph3DFilter_class) {
   emscripten::class_<vtkGenericGlyph3DFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkGenericGlyph3DFilter")
     .smart_ptr<vtkSmartPointer<vtkGenericGlyph3DFilter>>("vtkSmartPointer<vtkGenericGlyph3DFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGenericGlyph3DFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGenericGlyph3DFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGenericGlyph3DFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGenericGlyph3DFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGenericGlyph3DFilter::SafeDownCast, emscripten::allow_raw_pointers())

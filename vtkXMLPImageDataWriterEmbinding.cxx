@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPImageDataWriter>(vtk
 EMSCRIPTEN_BINDINGS(vtkXMLPImageDataWriter_class) {
   emscripten::class_<vtkXMLPImageDataWriter, emscripten::base<vtkXMLPStructuredDataWriter>>("vtkXMLPImageDataWriter")
     .smart_ptr<vtkSmartPointer<vtkXMLPImageDataWriter>>("vtkSmartPointer<vtkXMLPImageDataWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPImageDataWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPImageDataWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPImageDataWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPImageDataWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPImageDataWriter::SafeDownCast, emscripten::allow_raw_pointers())

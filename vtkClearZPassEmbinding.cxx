@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkClearZPass>(vtkClearZPas
 EMSCRIPTEN_BINDINGS(vtkClearZPass_class) {
   emscripten::class_<vtkClearZPass, emscripten::base<vtkRenderPass>>("vtkClearZPass")
     .smart_ptr<vtkSmartPointer<vtkClearZPass>>("vtkSmartPointer<vtkClearZPass>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkClearZPass>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkClearZPass>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkClearZPass::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkClearZPass& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkClearZPass::SafeDownCast, emscripten::allow_raw_pointers())

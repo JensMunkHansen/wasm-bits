@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLPImageDataReader>(vtk
 EMSCRIPTEN_BINDINGS(vtkXMLPImageDataReader_class) {
   emscripten::class_<vtkXMLPImageDataReader, emscripten::base<vtkXMLPStructuredDataReader>>("vtkXMLPImageDataReader")
     .smart_ptr<vtkSmartPointer<vtkXMLPImageDataReader>>("vtkSmartPointer<vtkXMLPImageDataReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLPImageDataReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLPImageDataReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLPImageDataReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLPImageDataReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLPImageDataReader::SafeDownCast, emscripten::allow_raw_pointers())

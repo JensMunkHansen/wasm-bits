@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkEdgeLayout>(vtkEdgeLayou
 EMSCRIPTEN_BINDINGS(vtkEdgeLayout_class) {
   emscripten::class_<vtkEdgeLayout, emscripten::base<vtkGraphAlgorithm>>("vtkEdgeLayout")
     .smart_ptr<vtkSmartPointer<vtkEdgeLayout>>("vtkSmartPointer<vtkEdgeLayout>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEdgeLayout>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEdgeLayout>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEdgeLayout::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEdgeLayout& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEdgeLayout::SafeDownCast, emscripten::allow_raw_pointers())

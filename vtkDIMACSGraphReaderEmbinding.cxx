@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkDIMACSGraphReader>(vtkDI
 EMSCRIPTEN_BINDINGS(vtkDIMACSGraphReader_class) {
   emscripten::class_<vtkDIMACSGraphReader, emscripten::base<vtkGraphAlgorithm>>("vtkDIMACSGraphReader")
     .smart_ptr<vtkSmartPointer<vtkDIMACSGraphReader>>("vtkSmartPointer<vtkDIMACSGraphReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDIMACSGraphReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDIMACSGraphReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDIMACSGraphReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDIMACSGraphReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDIMACSGraphReader::SafeDownCast, emscripten::allow_raw_pointers())

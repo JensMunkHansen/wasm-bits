@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkTestingInteractor>(vtkTe
 EMSCRIPTEN_BINDINGS(vtkTestingInteractor_class) {
   emscripten::class_<vtkTestingInteractor, emscripten::base<vtkRenderWindowInteractor>>("vtkTestingInteractor")
     .smart_ptr<vtkSmartPointer<vtkTestingInteractor>>("vtkSmartPointer<vtkTestingInteractor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTestingInteractor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTestingInteractor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTestingInteractor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTestingInteractor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTestingInteractor::SafeDownCast, emscripten::allow_raw_pointers())

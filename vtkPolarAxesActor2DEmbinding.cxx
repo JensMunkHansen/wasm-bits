@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolarAxesActor2D>(vtkPol
 EMSCRIPTEN_BINDINGS(vtkPolarAxesActor2D_class) {
   emscripten::class_<vtkPolarAxesActor2D, emscripten::base<vtkActor2D>>("vtkPolarAxesActor2D")
     .smart_ptr<vtkSmartPointer<vtkPolarAxesActor2D>>("vtkSmartPointer<vtkPolarAxesActor2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolarAxesActor2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolarAxesActor2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolarAxesActor2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolarAxesActor2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolarAxesActor2D::SafeDownCast, emscripten::allow_raw_pointers())

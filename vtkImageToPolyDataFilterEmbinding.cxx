@@ -35,7 +35,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageToPolyDataFilter>(v
 EMSCRIPTEN_BINDINGS(vtkImageToPolyDataFilter_class) {
   emscripten::class_<vtkImageToPolyDataFilter, emscripten::base<vtkPolyDataAlgorithm>>("vtkImageToPolyDataFilter")
     .smart_ptr<vtkSmartPointer<vtkImageToPolyDataFilter>>("vtkSmartPointer<vtkImageToPolyDataFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageToPolyDataFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageToPolyDataFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageToPolyDataFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageToPolyDataFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageToPolyDataFilter::SafeDownCast, emscripten::allow_raw_pointers())

@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkGeoTransform>(vtkGeoTran
 EMSCRIPTEN_BINDINGS(vtkGeoTransform_class) {
   emscripten::class_<vtkGeoTransform, emscripten::base<vtkAbstractTransform>>("vtkGeoTransform")
     .smart_ptr<vtkSmartPointer<vtkGeoTransform>>("vtkSmartPointer<vtkGeoTransform>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkGeoTransform>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkGeoTransform>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkGeoTransform::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkGeoTransform& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkGeoTransform::SafeDownCast, emscripten::allow_raw_pointers())

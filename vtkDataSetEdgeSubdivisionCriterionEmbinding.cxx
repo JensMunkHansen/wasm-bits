@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataSetEdgeSubdivisionCr
 EMSCRIPTEN_BINDINGS(vtkDataSetEdgeSubdivisionCriterion_class) {
   emscripten::class_<vtkDataSetEdgeSubdivisionCriterion, emscripten::base<vtkEdgeSubdivisionCriterion>>("vtkDataSetEdgeSubdivisionCriterion")
     .smart_ptr<vtkSmartPointer<vtkDataSetEdgeSubdivisionCriterion>>("vtkSmartPointer<vtkDataSetEdgeSubdivisionCriterion>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataSetEdgeSubdivisionCriterion>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataSetEdgeSubdivisionCriterion>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataSetEdgeSubdivisionCriterion::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataSetEdgeSubdivisionCriterion& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataSetEdgeSubdivisionCriterion::SafeDownCast, emscripten::allow_raw_pointers())

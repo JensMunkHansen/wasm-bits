@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkHierarchicalGraphPipelin
 EMSCRIPTEN_BINDINGS(vtkHierarchicalGraphPipeline_class) {
   emscripten::class_<vtkHierarchicalGraphPipeline, emscripten::base<vtkObject>>("vtkHierarchicalGraphPipeline")
     .smart_ptr<vtkSmartPointer<vtkHierarchicalGraphPipeline>>("vtkSmartPointer<vtkHierarchicalGraphPipeline>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHierarchicalGraphPipeline>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHierarchicalGraphPipeline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHierarchicalGraphPipeline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHierarchicalGraphPipeline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHierarchicalGraphPipeline::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageImportExecutive>(vt
 EMSCRIPTEN_BINDINGS(vtkImageImportExecutive_class) {
   emscripten::class_<vtkImageImportExecutive, emscripten::base<vtkStreamingDemandDrivenPipeline>>("vtkImageImportExecutive")
     .smart_ptr<vtkSmartPointer<vtkImageImportExecutive>>("vtkSmartPointer<vtkImageImportExecutive>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageImportExecutive>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageImportExecutive>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageImportExecutive::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageImportExecutive& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageImportExecutive::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExodusIIWriter>(vtkExodu
 EMSCRIPTEN_BINDINGS(vtkExodusIIWriter_class) {
   emscripten::class_<vtkExodusIIWriter, emscripten::base<vtkWriter>>("vtkExodusIIWriter")
     .smart_ptr<vtkSmartPointer<vtkExodusIIWriter>>("vtkSmartPointer<vtkExodusIIWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExodusIIWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExodusIIWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExodusIIWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExodusIIWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExodusIIWriter::SafeDownCast, emscripten::allow_raw_pointers())

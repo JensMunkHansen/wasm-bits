@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkNetCDFUGRIDReader>(vtkNe
 EMSCRIPTEN_BINDINGS(vtkNetCDFUGRIDReader_class) {
   emscripten::class_<vtkNetCDFUGRIDReader, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkNetCDFUGRIDReader")
     .smart_ptr<vtkSmartPointer<vtkNetCDFUGRIDReader>>("vtkSmartPointer<vtkNetCDFUGRIDReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNetCDFUGRIDReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNetCDFUGRIDReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNetCDFUGRIDReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNetCDFUGRIDReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNetCDFUGRIDReader::SafeDownCast, emscripten::allow_raw_pointers())

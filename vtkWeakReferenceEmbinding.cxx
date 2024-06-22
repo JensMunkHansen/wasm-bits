@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkWeakReference>(vtkWeakRe
 EMSCRIPTEN_BINDINGS(vtkWeakReference_class) {
   emscripten::class_<vtkWeakReference, emscripten::base<vtkObject>>("vtkWeakReference")
     .smart_ptr<vtkSmartPointer<vtkWeakReference>>("vtkSmartPointer<vtkWeakReference>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWeakReference>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWeakReference>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWeakReference::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWeakReference& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWeakReference::SafeDownCast, emscripten::allow_raw_pointers())

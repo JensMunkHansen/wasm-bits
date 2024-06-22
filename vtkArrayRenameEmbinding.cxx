@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkArrayRename>(vtkArrayRen
 EMSCRIPTEN_BINDINGS(vtkArrayRename_class) {
   emscripten::class_<vtkArrayRename, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkArrayRename")
     .smart_ptr<vtkSmartPointer<vtkArrayRename>>("vtkSmartPointer<vtkArrayRename>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkArrayRename>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkArrayRename>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArrayRename::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArrayRename& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArrayRename::SafeDownCast, emscripten::allow_raw_pointers())

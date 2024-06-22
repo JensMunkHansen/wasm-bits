@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyhedron>(vtkPolyhedro
 EMSCRIPTEN_BINDINGS(vtkPolyhedron_class) {
   emscripten::class_<vtkPolyhedron, emscripten::base<vtkCell3D>>("vtkPolyhedron")
     .smart_ptr<vtkSmartPointer<vtkPolyhedron>>("vtkSmartPointer<vtkPolyhedron>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyhedron>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyhedron>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyhedron::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyhedron& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyhedron::SafeDownCast, emscripten::allow_raw_pointers())

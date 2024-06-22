@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSynchronizeTimeFilter>(v
 EMSCRIPTEN_BINDINGS(vtkSynchronizeTimeFilter_class) {
   emscripten::class_<vtkSynchronizeTimeFilter, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkSynchronizeTimeFilter")
     .smart_ptr<vtkSmartPointer<vtkSynchronizeTimeFilter>>("vtkSmartPointer<vtkSynchronizeTimeFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSynchronizeTimeFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSynchronizeTimeFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSynchronizeTimeFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSynchronizeTimeFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSynchronizeTimeFilter::SafeDownCast, emscripten::allow_raw_pointers())

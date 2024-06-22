@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkQuadraturePointInterpola
 EMSCRIPTEN_BINDINGS(vtkQuadraturePointInterpolator_class) {
   emscripten::class_<vtkQuadraturePointInterpolator, emscripten::base<vtkDataSetAlgorithm>>("vtkQuadraturePointInterpolator")
     .smart_ptr<vtkSmartPointer<vtkQuadraturePointInterpolator>>("vtkSmartPointer<vtkQuadraturePointInterpolator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadraturePointInterpolator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadraturePointInterpolator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadraturePointInterpolator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadraturePointInterpolator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadraturePointInterpolator::SafeDownCast, emscripten::allow_raw_pointers())

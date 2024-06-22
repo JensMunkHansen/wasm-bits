@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkRadialGridActor2D>(vtkRa
 EMSCRIPTEN_BINDINGS(vtkRadialGridActor2D_class) {
   emscripten::class_<vtkRadialGridActor2D, emscripten::base<vtkActor2D>>("vtkRadialGridActor2D")
     .smart_ptr<vtkSmartPointer<vtkRadialGridActor2D>>("vtkSmartPointer<vtkRadialGridActor2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRadialGridActor2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRadialGridActor2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRadialGridActor2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRadialGridActor2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRadialGridActor2D::SafeDownCast, emscripten::allow_raw_pointers())

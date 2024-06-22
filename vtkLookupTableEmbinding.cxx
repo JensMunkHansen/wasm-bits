@@ -37,7 +37,7 @@ template<> void emscripten::internal::raw_destructor<vtkLookupTable>(vtkLookupTa
 EMSCRIPTEN_BINDINGS(vtkLookupTable_class) {
   emscripten::class_<vtkLookupTable, emscripten::base<vtkScalarsToColors>>("vtkLookupTable")
     .smart_ptr<vtkSmartPointer<vtkLookupTable>>("vtkSmartPointer<vtkLookupTable>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLookupTable>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLookupTable>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLookupTable::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLookupTable& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLookupTable::SafeDownCast, emscripten::allow_raw_pointers())

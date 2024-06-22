@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkERFReader>(vtkERFReader 
 EMSCRIPTEN_BINDINGS(vtkERFReader_class) {
   emscripten::class_<vtkERFReader, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkERFReader")
     .smart_ptr<vtkSmartPointer<vtkERFReader>>("vtkSmartPointer<vtkERFReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkERFReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkERFReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkERFReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkERFReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkERFReader::SafeDownCast, emscripten::allow_raw_pointers())

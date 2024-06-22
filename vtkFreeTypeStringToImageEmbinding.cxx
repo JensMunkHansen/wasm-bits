@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkFreeTypeStringToImage>(v
 EMSCRIPTEN_BINDINGS(vtkFreeTypeStringToImage_class) {
   emscripten::class_<vtkFreeTypeStringToImage, emscripten::base<vtkStringToImage>>("vtkFreeTypeStringToImage")
     .smart_ptr<vtkSmartPointer<vtkFreeTypeStringToImage>>("vtkSmartPointer<vtkFreeTypeStringToImage>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFreeTypeStringToImage>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFreeTypeStringToImage>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFreeTypeStringToImage::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFreeTypeStringToImage& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFreeTypeStringToImage::SafeDownCast, emscripten::allow_raw_pointers())

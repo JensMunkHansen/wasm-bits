@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkBoundedPointSource>(vtkB
 EMSCRIPTEN_BINDINGS(vtkBoundedPointSource_class) {
   emscripten::class_<vtkBoundedPointSource, emscripten::base<vtkPolyDataAlgorithm>>("vtkBoundedPointSource")
     .smart_ptr<vtkSmartPointer<vtkBoundedPointSource>>("vtkSmartPointer<vtkBoundedPointSource>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBoundedPointSource>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBoundedPointSource>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBoundedPointSource::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBoundedPointSource& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBoundedPointSource::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImagePermute>(vtkImagePe
 EMSCRIPTEN_BINDINGS(vtkImagePermute_class) {
   emscripten::class_<vtkImagePermute, emscripten::base<vtkImageReslice>>("vtkImagePermute")
     .smart_ptr<vtkSmartPointer<vtkImagePermute>>("vtkSmartPointer<vtkImagePermute>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImagePermute>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImagePermute>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImagePermute::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImagePermute& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImagePermute::SafeDownCast, emscripten::allow_raw_pointers())

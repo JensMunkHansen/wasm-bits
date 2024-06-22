@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkImplicitFunctionToImageS
 EMSCRIPTEN_BINDINGS(vtkImplicitFunctionToImageStencil_class) {
   emscripten::class_<vtkImplicitFunctionToImageStencil, emscripten::base<vtkImageStencilSource>>("vtkImplicitFunctionToImageStencil")
     .smart_ptr<vtkSmartPointer<vtkImplicitFunctionToImageStencil>>("vtkSmartPointer<vtkImplicitFunctionToImageStencil>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitFunctionToImageStencil>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitFunctionToImageStencil>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitFunctionToImageStencil::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitFunctionToImageStencil& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitFunctionToImageStencil::SafeDownCast, emscripten::allow_raw_pointers())

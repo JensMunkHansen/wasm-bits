@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkXMLDataParser>(vtkXMLDat
 EMSCRIPTEN_BINDINGS(vtkXMLDataParser_class) {
   emscripten::class_<vtkXMLDataParser, emscripten::base<vtkXMLParser>>("vtkXMLDataParser")
     .smart_ptr<vtkSmartPointer<vtkXMLDataParser>>("vtkSmartPointer<vtkXMLDataParser>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkXMLDataParser>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkXMLDataParser>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkXMLDataParser::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkXMLDataParser& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkXMLDataParser::SafeDownCast, emscripten::allow_raw_pointers())

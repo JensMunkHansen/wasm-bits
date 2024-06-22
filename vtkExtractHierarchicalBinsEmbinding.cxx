@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractHierarchicalBins>
 EMSCRIPTEN_BINDINGS(vtkExtractHierarchicalBins_class) {
   emscripten::class_<vtkExtractHierarchicalBins, emscripten::base<vtkPointCloudFilter>>("vtkExtractHierarchicalBins")
     .smart_ptr<vtkSmartPointer<vtkExtractHierarchicalBins>>("vtkSmartPointer<vtkExtractHierarchicalBins>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractHierarchicalBins>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractHierarchicalBins>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractHierarchicalBins::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractHierarchicalBins& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractHierarchicalBins::SafeDownCast, emscripten::allow_raw_pointers())

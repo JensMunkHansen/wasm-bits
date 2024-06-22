@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkAttributeDataToTableFilt
 EMSCRIPTEN_BINDINGS(vtkAttributeDataToTableFilter_class) {
   emscripten::class_<vtkAttributeDataToTableFilter, emscripten::base<vtkTableAlgorithm>>("vtkAttributeDataToTableFilter")
     .smart_ptr<vtkSmartPointer<vtkAttributeDataToTableFilter>>("vtkSmartPointer<vtkAttributeDataToTableFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAttributeDataToTableFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAttributeDataToTableFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAttributeDataToTableFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAttributeDataToTableFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAttributeDataToTableFilter::SafeDownCast, emscripten::allow_raw_pointers())

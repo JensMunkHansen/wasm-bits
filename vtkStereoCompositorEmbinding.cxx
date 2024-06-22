@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkStereoCompositor>(vtkSte
 EMSCRIPTEN_BINDINGS(vtkStereoCompositor_class) {
   emscripten::class_<vtkStereoCompositor, emscripten::base<vtkObject>>("vtkStereoCompositor")
     .smart_ptr<vtkSmartPointer<vtkStereoCompositor>>("vtkSmartPointer<vtkStereoCompositor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStereoCompositor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStereoCompositor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStereoCompositor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStereoCompositor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStereoCompositor::SafeDownCast, emscripten::allow_raw_pointers())

@@ -28,7 +28,7 @@ EMSCRIPTEN_BINDINGS(vtkScalarsToColors_class) {
   using VectorModes=vtkScalarsToColors::VectorModes;
   emscripten::class_<vtkScalarsToColors, emscripten::base<vtkObject>>("vtkScalarsToColors")
     .smart_ptr<vtkSmartPointer<vtkScalarsToColors>>("vtkSmartPointer<vtkScalarsToColors>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkScalarsToColors>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkScalarsToColors>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkScalarsToColors::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkScalarsToColors& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkScalarsToColors::SafeDownCast, emscripten::allow_raw_pointers())

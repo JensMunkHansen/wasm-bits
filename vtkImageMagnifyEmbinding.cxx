@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageMagnify>(vtkImageMa
 EMSCRIPTEN_BINDINGS(vtkImageMagnify_class) {
   emscripten::class_<vtkImageMagnify, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageMagnify")
     .smart_ptr<vtkSmartPointer<vtkImageMagnify>>("vtkSmartPointer<vtkImageMagnify>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageMagnify>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageMagnify>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageMagnify::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageMagnify& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageMagnify::SafeDownCast, emscripten::allow_raw_pointers())

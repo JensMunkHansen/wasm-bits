@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkBiDimensionalRepresentat
 EMSCRIPTEN_BINDINGS(vtkBiDimensionalRepresentation2D_class) {
   emscripten::class_<vtkBiDimensionalRepresentation2D, emscripten::base<vtkBiDimensionalRepresentation>>("vtkBiDimensionalRepresentation2D")
     .smart_ptr<vtkSmartPointer<vtkBiDimensionalRepresentation2D>>("vtkSmartPointer<vtkBiDimensionalRepresentation2D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBiDimensionalRepresentation2D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBiDimensionalRepresentation2D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBiDimensionalRepresentation2D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBiDimensionalRepresentation2D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBiDimensionalRepresentation2D::SafeDownCast, emscripten::allow_raw_pointers())

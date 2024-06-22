@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractBlockUsingDataAss
 EMSCRIPTEN_BINDINGS(vtkExtractBlockUsingDataAssembly_class) {
   emscripten::class_<vtkExtractBlockUsingDataAssembly, emscripten::base<vtkCompositeDataSetAlgorithm>>("vtkExtractBlockUsingDataAssembly")
     .smart_ptr<vtkSmartPointer<vtkExtractBlockUsingDataAssembly>>("vtkSmartPointer<vtkExtractBlockUsingDataAssembly>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractBlockUsingDataAssembly>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractBlockUsingDataAssembly>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractBlockUsingDataAssembly::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractBlockUsingDataAssembly& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractBlockUsingDataAssembly::SafeDownCast, emscripten::allow_raw_pointers())

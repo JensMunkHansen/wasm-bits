@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkThreadedCompositeDataPip
 EMSCRIPTEN_BINDINGS(vtkThreadedCompositeDataPipeline_class) {
   emscripten::class_<vtkThreadedCompositeDataPipeline, emscripten::base<vtkCompositeDataPipeline>>("vtkThreadedCompositeDataPipeline")
     .smart_ptr<vtkSmartPointer<vtkThreadedCompositeDataPipeline>>("vtkSmartPointer<vtkThreadedCompositeDataPipeline>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkThreadedCompositeDataPipeline>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkThreadedCompositeDataPipeline>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkThreadedCompositeDataPipeline::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkThreadedCompositeDataPipeline& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkThreadedCompositeDataPipeline::SafeDownCast, emscripten::allow_raw_pointers())

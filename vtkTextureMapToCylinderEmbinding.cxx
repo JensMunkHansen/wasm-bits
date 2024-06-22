@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTextureMapToCylinder>(vt
 EMSCRIPTEN_BINDINGS(vtkTextureMapToCylinder_class) {
   emscripten::class_<vtkTextureMapToCylinder, emscripten::base<vtkDataSetAlgorithm>>("vtkTextureMapToCylinder")
     .smart_ptr<vtkSmartPointer<vtkTextureMapToCylinder>>("vtkSmartPointer<vtkTextureMapToCylinder>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTextureMapToCylinder>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTextureMapToCylinder>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTextureMapToCylinder::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTextureMapToCylinder& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTextureMapToCylinder::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkOrientPolyData>(vtkOrien
 EMSCRIPTEN_BINDINGS(vtkOrientPolyData_class) {
   emscripten::class_<vtkOrientPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkOrientPolyData")
     .smart_ptr<vtkSmartPointer<vtkOrientPolyData>>("vtkSmartPointer<vtkOrientPolyData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOrientPolyData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOrientPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOrientPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOrientPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOrientPolyData::SafeDownCast, emscripten::allow_raw_pointers())

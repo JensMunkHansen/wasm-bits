@@ -31,7 +31,7 @@ template<> void emscripten::internal::raw_destructor<vtkAngularPeriodicFilter>(v
 EMSCRIPTEN_BINDINGS(vtkAngularPeriodicFilter_class) {
   emscripten::class_<vtkAngularPeriodicFilter, emscripten::base<vtkPeriodicFilter>>("vtkAngularPeriodicFilter")
     .smart_ptr<vtkSmartPointer<vtkAngularPeriodicFilter>>("vtkSmartPointer<vtkAngularPeriodicFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAngularPeriodicFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAngularPeriodicFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAngularPeriodicFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAngularPeriodicFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAngularPeriodicFilter::SafeDownCast, emscripten::allow_raw_pointers())

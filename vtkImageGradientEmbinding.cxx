@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageGradient>(vtkImageG
 EMSCRIPTEN_BINDINGS(vtkImageGradient_class) {
   emscripten::class_<vtkImageGradient, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageGradient")
     .smart_ptr<vtkSmartPointer<vtkImageGradient>>("vtkSmartPointer<vtkImageGradient>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageGradient>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageGradient>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageGradient::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageGradient& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageGradient::SafeDownCast, emscripten::allow_raw_pointers())

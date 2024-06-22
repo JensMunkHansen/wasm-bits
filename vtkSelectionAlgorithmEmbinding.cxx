@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkSelectionAlgorithm>(vtkS
 EMSCRIPTEN_BINDINGS(vtkSelectionAlgorithm_class) {
   emscripten::class_<vtkSelectionAlgorithm, emscripten::base<vtkAlgorithm>>("vtkSelectionAlgorithm")
     .smart_ptr<vtkSmartPointer<vtkSelectionAlgorithm>>("vtkSmartPointer<vtkSelectionAlgorithm>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSelectionAlgorithm>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSelectionAlgorithm>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSelectionAlgorithm::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSelectionAlgorithm& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSelectionAlgorithm::SafeDownCast, emscripten::allow_raw_pointers())

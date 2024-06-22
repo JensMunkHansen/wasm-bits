@@ -25,7 +25,7 @@ template<> void emscripten::internal::raw_destructor<vtkUnstructuredGridVolumeRa
 EMSCRIPTEN_BINDINGS(vtkUnstructuredGridVolumeRayCastMapper_class) {
   emscripten::class_<vtkUnstructuredGridVolumeRayCastMapper, emscripten::base<vtkUnstructuredGridVolumeMapper>>("vtkUnstructuredGridVolumeRayCastMapper")
     .smart_ptr<vtkSmartPointer<vtkUnstructuredGridVolumeRayCastMapper>>("vtkSmartPointer<vtkUnstructuredGridVolumeRayCastMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkUnstructuredGridVolumeRayCastMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkUnstructuredGridVolumeRayCastMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkUnstructuredGridVolumeRayCastMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkUnstructuredGridVolumeRayCastMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkUnstructuredGridVolumeRayCastMapper::SafeDownCast, emscripten::allow_raw_pointers())

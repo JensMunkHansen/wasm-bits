@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkPNMReader>(vtkPNMReader 
 EMSCRIPTEN_BINDINGS(vtkPNMReader_class) {
   emscripten::class_<vtkPNMReader, emscripten::base<vtkImageReader>>("vtkPNMReader")
     .smart_ptr<vtkSmartPointer<vtkPNMReader>>("vtkSmartPointer<vtkPNMReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPNMReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPNMReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPNMReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPNMReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPNMReader::SafeDownCast, emscripten::allow_raw_pointers())

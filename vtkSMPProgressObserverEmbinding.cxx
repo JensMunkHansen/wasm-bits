@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkSMPProgressObserver>(vtk
 EMSCRIPTEN_BINDINGS(vtkSMPProgressObserver_class) {
   emscripten::class_<vtkSMPProgressObserver, emscripten::base<vtkProgressObserver>>("vtkSMPProgressObserver")
     .smart_ptr<vtkSmartPointer<vtkSMPProgressObserver>>("vtkSmartPointer<vtkSMPProgressObserver>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkSMPProgressObserver>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkSMPProgressObserver>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkSMPProgressObserver::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkSMPProgressObserver& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkSMPProgressObserver::SafeDownCast, emscripten::allow_raw_pointers())

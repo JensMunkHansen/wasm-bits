@@ -26,7 +26,7 @@ EMSCRIPTEN_BINDINGS(vtkHardwareSelector_class) {
   using PassTypes=vtkHardwareSelector::PassTypes;
   emscripten::class_<vtkHardwareSelector, emscripten::base<vtkObject>>("vtkHardwareSelector")
     .smart_ptr<vtkSmartPointer<vtkHardwareSelector>>("vtkSmartPointer<vtkHardwareSelector>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHardwareSelector>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHardwareSelector>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHardwareSelector::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHardwareSelector& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHardwareSelector::SafeDownCast, emscripten::allow_raw_pointers())

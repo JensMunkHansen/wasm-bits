@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalSnapToTimeStep>(
 EMSCRIPTEN_BINDINGS(vtkTemporalSnapToTimeStep_class) {
   emscripten::class_<vtkTemporalSnapToTimeStep, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkTemporalSnapToTimeStep")
     .smart_ptr<vtkSmartPointer<vtkTemporalSnapToTimeStep>>("vtkSmartPointer<vtkTemporalSnapToTimeStep>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalSnapToTimeStep>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalSnapToTimeStep>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalSnapToTimeStep::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalSnapToTimeStep& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalSnapToTimeStep::SafeDownCast, emscripten::allow_raw_pointers())

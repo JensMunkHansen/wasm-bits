@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyLine>(vtkPolyLine * 
 EMSCRIPTEN_BINDINGS(vtkPolyLine_class) {
   emscripten::class_<vtkPolyLine, emscripten::base<vtkCell>>("vtkPolyLine")
     .smart_ptr<vtkSmartPointer<vtkPolyLine>>("vtkSmartPointer<vtkPolyLine>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyLine>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyLine>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyLine::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyLine& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyLine::SafeDownCast, emscripten::allow_raw_pointers())

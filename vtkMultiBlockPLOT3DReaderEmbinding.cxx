@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkMultiBlockPLOT3DReader>(
 EMSCRIPTEN_BINDINGS(vtkMultiBlockPLOT3DReader_class) {
   emscripten::class_<vtkMultiBlockPLOT3DReader, emscripten::base<vtkParallelReader>>("vtkMultiBlockPLOT3DReader")
     .smart_ptr<vtkSmartPointer<vtkMultiBlockPLOT3DReader>>("vtkSmartPointer<vtkMultiBlockPLOT3DReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMultiBlockPLOT3DReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMultiBlockPLOT3DReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMultiBlockPLOT3DReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMultiBlockPLOT3DReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMultiBlockPLOT3DReader::SafeDownCast, emscripten::allow_raw_pointers())

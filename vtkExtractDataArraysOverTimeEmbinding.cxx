@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkExtractDataArraysOverTim
 EMSCRIPTEN_BINDINGS(vtkExtractDataArraysOverTime_class) {
   emscripten::class_<vtkExtractDataArraysOverTime, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkExtractDataArraysOverTime")
     .smart_ptr<vtkSmartPointer<vtkExtractDataArraysOverTime>>("vtkSmartPointer<vtkExtractDataArraysOverTime>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkExtractDataArraysOverTime>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkExtractDataArraysOverTime>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkExtractDataArraysOverTime::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkExtractDataArraysOverTime& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkExtractDataArraysOverTime::SafeDownCast, emscripten::allow_raw_pointers())

@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkEnSightGoldReader>(vtkEn
 EMSCRIPTEN_BINDINGS(vtkEnSightGoldReader_class) {
   emscripten::class_<vtkEnSightGoldReader, emscripten::base<vtkEnSightReader>>("vtkEnSightGoldReader")
     .smart_ptr<vtkSmartPointer<vtkEnSightGoldReader>>("vtkSmartPointer<vtkEnSightGoldReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkEnSightGoldReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkEnSightGoldReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkEnSightGoldReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkEnSightGoldReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkEnSightGoldReader::SafeDownCast, emscripten::allow_raw_pointers())

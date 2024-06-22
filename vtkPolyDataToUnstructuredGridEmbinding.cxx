@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataToUnstructuredGr
 EMSCRIPTEN_BINDINGS(vtkPolyDataToUnstructuredGrid_class) {
   emscripten::class_<vtkPolyDataToUnstructuredGrid, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkPolyDataToUnstructuredGrid")
     .smart_ptr<vtkSmartPointer<vtkPolyDataToUnstructuredGrid>>("vtkSmartPointer<vtkPolyDataToUnstructuredGrid>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataToUnstructuredGrid>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataToUnstructuredGrid>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataToUnstructuredGrid::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataToUnstructuredGrid& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataToUnstructuredGrid::SafeDownCast, emscripten::allow_raw_pointers())

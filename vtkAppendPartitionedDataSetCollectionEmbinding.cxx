@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkAppendPartitionedDataSetCollection_class) {
   using AppendModes=vtkAppendPartitionedDataSetCollection::AppendModes;
   emscripten::class_<vtkAppendPartitionedDataSetCollection, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkAppendPartitionedDataSetCollection")
     .smart_ptr<vtkSmartPointer<vtkAppendPartitionedDataSetCollection>>("vtkSmartPointer<vtkAppendPartitionedDataSetCollection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAppendPartitionedDataSetCollection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAppendPartitionedDataSetCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAppendPartitionedDataSetCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAppendPartitionedDataSetCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAppendPartitionedDataSetCollection::SafeDownCast, emscripten::allow_raw_pointers())

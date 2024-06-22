@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkInteractorStyleRubberBan
 EMSCRIPTEN_BINDINGS(vtkInteractorStyleRubberBand3D_class) {
   emscripten::class_<vtkInteractorStyleRubberBand3D, emscripten::base<vtkInteractorStyleTrackballCamera>>("vtkInteractorStyleRubberBand3D")
     .smart_ptr<vtkSmartPointer<vtkInteractorStyleRubberBand3D>>("vtkSmartPointer<vtkInteractorStyleRubberBand3D>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkInteractorStyleRubberBand3D>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkInteractorStyleRubberBand3D>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkInteractorStyleRubberBand3D::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkInteractorStyleRubberBand3D& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkInteractorStyleRubberBand3D::SafeDownCast, emscripten::allow_raw_pointers())

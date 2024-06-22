@@ -23,7 +23,7 @@ EMSCRIPTEN_BINDINGS(vtkQuadRotationalExtrusionFilter_class) {
   using RotationAxis=vtkQuadRotationalExtrusionFilter::RotationAxis;
   emscripten::class_<vtkQuadRotationalExtrusionFilter, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkQuadRotationalExtrusionFilter")
     .smart_ptr<vtkSmartPointer<vtkQuadRotationalExtrusionFilter>>("vtkSmartPointer<vtkQuadRotationalExtrusionFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkQuadRotationalExtrusionFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkQuadRotationalExtrusionFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkQuadRotationalExtrusionFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkQuadRotationalExtrusionFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkQuadRotationalExtrusionFilter::SafeDownCast, emscripten::allow_raw_pointers())

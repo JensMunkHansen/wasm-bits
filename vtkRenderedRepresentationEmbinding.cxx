@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRenderedRepresentation>(
 EMSCRIPTEN_BINDINGS(vtkRenderedRepresentation_class) {
   emscripten::class_<vtkRenderedRepresentation, emscripten::base<vtkDataRepresentation>>("vtkRenderedRepresentation")
     .smart_ptr<vtkSmartPointer<vtkRenderedRepresentation>>("vtkSmartPointer<vtkRenderedRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRenderedRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRenderedRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRenderedRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRenderedRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRenderedRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLTextMapper>(vtkOpe
 EMSCRIPTEN_BINDINGS(vtkOpenGLTextMapper_class) {
   emscripten::class_<vtkOpenGLTextMapper, emscripten::base<vtkTextMapper>>("vtkOpenGLTextMapper")
     .smart_ptr<vtkSmartPointer<vtkOpenGLTextMapper>>("vtkSmartPointer<vtkOpenGLTextMapper>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLTextMapper>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLTextMapper>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLTextMapper::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLTextMapper& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLTextMapper::SafeDownCast, emscripten::allow_raw_pointers())

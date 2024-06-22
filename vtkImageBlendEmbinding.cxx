@@ -34,7 +34,7 @@ template<> void emscripten::internal::raw_destructor<vtkImageBlend>(vtkImageBlen
 EMSCRIPTEN_BINDINGS(vtkImageBlend_class) {
   emscripten::class_<vtkImageBlend, emscripten::base<vtkThreadedImageAlgorithm>>("vtkImageBlend")
     .smart_ptr<vtkSmartPointer<vtkImageBlend>>("vtkSmartPointer<vtkImageBlend>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImageBlend>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImageBlend>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImageBlend::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImageBlend& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImageBlend::SafeDownCast, emscripten::allow_raw_pointers())

@@ -25,7 +25,7 @@ EMSCRIPTEN_BINDINGS(vtkArrayCalculator_class) {
   using FunctionParserTypes=vtkArrayCalculator::FunctionParserTypes;
   emscripten::class_<vtkArrayCalculator, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkArrayCalculator")
     .smart_ptr<vtkSmartPointer<vtkArrayCalculator>>("vtkSmartPointer<vtkArrayCalculator>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkArrayCalculator>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkArrayCalculator>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkArrayCalculator::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkArrayCalculator& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkArrayCalculator::SafeDownCast, emscripten::allow_raw_pointers())

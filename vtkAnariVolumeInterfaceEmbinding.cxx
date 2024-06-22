@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkAnariVolumeInterface>(vt
 EMSCRIPTEN_BINDINGS(vtkAnariVolumeInterface_class) {
   emscripten::class_<vtkAnariVolumeInterface, emscripten::base<vtkVolumeMapper>>("vtkAnariVolumeInterface")
     .smart_ptr<vtkSmartPointer<vtkAnariVolumeInterface>>("vtkSmartPointer<vtkAnariVolumeInterface>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkAnariVolumeInterface>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkAnariVolumeInterface>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkAnariVolumeInterface::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkAnariVolumeInterface& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkAnariVolumeInterface::SafeDownCast, emscripten::allow_raw_pointers())

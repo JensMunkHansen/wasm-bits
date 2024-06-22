@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkParallelCoordinatesHisto
 EMSCRIPTEN_BINDINGS(vtkParallelCoordinatesHistogramRepresentation_class) {
   emscripten::class_<vtkParallelCoordinatesHistogramRepresentation, emscripten::base<vtkParallelCoordinatesRepresentation>>("vtkParallelCoordinatesHistogramRepresentation")
     .smart_ptr<vtkSmartPointer<vtkParallelCoordinatesHistogramRepresentation>>("vtkSmartPointer<vtkParallelCoordinatesHistogramRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParallelCoordinatesHistogramRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParallelCoordinatesHistogramRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParallelCoordinatesHistogramRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParallelCoordinatesHistogramRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParallelCoordinatesHistogramRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

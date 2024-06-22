@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkFiniteElementFieldDistri
 EMSCRIPTEN_BINDINGS(vtkFiniteElementFieldDistributor_class) {
   emscripten::class_<vtkFiniteElementFieldDistributor, emscripten::base<vtkPartitionedDataSetCollectionAlgorithm>>("vtkFiniteElementFieldDistributor")
     .smart_ptr<vtkSmartPointer<vtkFiniteElementFieldDistributor>>("vtkSmartPointer<vtkFiniteElementFieldDistributor>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkFiniteElementFieldDistributor>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkFiniteElementFieldDistributor>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkFiniteElementFieldDistributor::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkFiniteElementFieldDistributor& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkFiniteElementFieldDistributor::SafeDownCast, emscripten::allow_raw_pointers())

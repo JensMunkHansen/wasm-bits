@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkIncrementalOctreeNode>(v
 EMSCRIPTEN_BINDINGS(vtkIncrementalOctreeNode_class) {
   emscripten::class_<vtkIncrementalOctreeNode, emscripten::base<vtkObject>>("vtkIncrementalOctreeNode")
     .smart_ptr<vtkSmartPointer<vtkIncrementalOctreeNode>>("vtkSmartPointer<vtkIncrementalOctreeNode>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkIncrementalOctreeNode>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkIncrementalOctreeNode>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkIncrementalOctreeNode::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkIncrementalOctreeNode& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkIncrementalOctreeNode::SafeDownCast, emscripten::allow_raw_pointers())

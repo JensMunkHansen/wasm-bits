@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkParametricCatalanMinimal
 EMSCRIPTEN_BINDINGS(vtkParametricCatalanMinimal_class) {
   emscripten::class_<vtkParametricCatalanMinimal, emscripten::base<vtkParametricFunction>>("vtkParametricCatalanMinimal")
     .smart_ptr<vtkSmartPointer<vtkParametricCatalanMinimal>>("vtkSmartPointer<vtkParametricCatalanMinimal>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkParametricCatalanMinimal>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkParametricCatalanMinimal>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkParametricCatalanMinimal::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkParametricCatalanMinimal& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkParametricCatalanMinimal::SafeDownCast, emscripten::allow_raw_pointers())

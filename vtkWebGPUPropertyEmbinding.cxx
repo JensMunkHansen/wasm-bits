@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkWebGPUProperty>(vtkWebGP
 EMSCRIPTEN_BINDINGS(vtkWebGPUProperty_class) {
   emscripten::class_<vtkWebGPUProperty, emscripten::base<vtkProperty>>("vtkWebGPUProperty")
     .smart_ptr<vtkSmartPointer<vtkWebGPUProperty>>("vtkSmartPointer<vtkWebGPUProperty>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWebGPUProperty>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWebGPUProperty>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWebGPUProperty::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWebGPUProperty& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWebGPUProperty::SafeDownCast, emscripten::allow_raw_pointers())

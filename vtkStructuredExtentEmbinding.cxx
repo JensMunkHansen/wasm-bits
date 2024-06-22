@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkStructuredExtent>(vtkStr
 EMSCRIPTEN_BINDINGS(vtkStructuredExtent_class) {
   emscripten::class_<vtkStructuredExtent, emscripten::base<vtkObject>>("vtkStructuredExtent")
     .smart_ptr<vtkSmartPointer<vtkStructuredExtent>>("vtkSmartPointer<vtkStructuredExtent>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkStructuredExtent>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkStructuredExtent>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkStructuredExtent::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkStructuredExtent& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkStructuredExtent::SafeDownCast, emscripten::allow_raw_pointers())

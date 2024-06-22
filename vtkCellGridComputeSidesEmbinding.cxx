@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkCellGridComputeSides>(vt
 EMSCRIPTEN_BINDINGS(vtkCellGridComputeSides_class) {
   emscripten::class_<vtkCellGridComputeSides, emscripten::base<vtkCellGridAlgorithm>>("vtkCellGridComputeSides")
     .smart_ptr<vtkSmartPointer<vtkCellGridComputeSides>>("vtkSmartPointer<vtkCellGridComputeSides>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCellGridComputeSides>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCellGridComputeSides>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCellGridComputeSides::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCellGridComputeSides& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCellGridComputeSides::SafeDownCast, emscripten::allow_raw_pointers())

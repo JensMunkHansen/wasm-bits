@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDataObjectMeshCache>(vtk
 EMSCRIPTEN_BINDINGS(vtkDataObjectMeshCache_class) {
   emscripten::class_<vtkDataObjectMeshCache, emscripten::base<vtkObject>>("vtkDataObjectMeshCache")
     .smart_ptr<vtkSmartPointer<vtkDataObjectMeshCache>>("vtkSmartPointer<vtkDataObjectMeshCache>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDataObjectMeshCache>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDataObjectMeshCache>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDataObjectMeshCache::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDataObjectMeshCache& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDataObjectMeshCache::SafeDownCast, emscripten::allow_raw_pointers())

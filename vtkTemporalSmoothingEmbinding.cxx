@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkTemporalSmoothing>(vtkTe
 EMSCRIPTEN_BINDINGS(vtkTemporalSmoothing_class) {
   emscripten::class_<vtkTemporalSmoothing, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkTemporalSmoothing")
     .smart_ptr<vtkSmartPointer<vtkTemporalSmoothing>>("vtkSmartPointer<vtkTemporalSmoothing>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkTemporalSmoothing>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkTemporalSmoothing>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkTemporalSmoothing::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkTemporalSmoothing& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkTemporalSmoothing::SafeDownCast, emscripten::allow_raw_pointers())

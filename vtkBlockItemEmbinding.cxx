@@ -26,7 +26,7 @@ template<> void emscripten::internal::raw_destructor<vtkBlockItem>(vtkBlockItem 
 EMSCRIPTEN_BINDINGS(vtkBlockItem_class) {
   emscripten::class_<vtkBlockItem, emscripten::base<vtkContextItem>>("vtkBlockItem")
     .smart_ptr<vtkSmartPointer<vtkBlockItem>>("vtkSmartPointer<vtkBlockItem>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBlockItem>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBlockItem>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBlockItem::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBlockItem& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBlockItem::SafeDownCast, emscripten::allow_raw_pointers())

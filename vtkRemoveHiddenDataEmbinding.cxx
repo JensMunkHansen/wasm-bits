@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkRemoveHiddenData>(vtkRem
 EMSCRIPTEN_BINDINGS(vtkRemoveHiddenData_class) {
   emscripten::class_<vtkRemoveHiddenData, emscripten::base<vtkPassInputTypeAlgorithm>>("vtkRemoveHiddenData")
     .smart_ptr<vtkSmartPointer<vtkRemoveHiddenData>>("vtkSmartPointer<vtkRemoveHiddenData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkRemoveHiddenData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkRemoveHiddenData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkRemoveHiddenData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkRemoveHiddenData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkRemoveHiddenData::SafeDownCast, emscripten::allow_raw_pointers())

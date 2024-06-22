@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkLineRepresentation>(vtkL
 EMSCRIPTEN_BINDINGS(vtkLineRepresentation_class) {
   emscripten::class_<vtkLineRepresentation, emscripten::base<vtkWidgetRepresentation>>("vtkLineRepresentation")
     .smart_ptr<vtkSmartPointer<vtkLineRepresentation>>("vtkSmartPointer<vtkLineRepresentation>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLineRepresentation>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLineRepresentation>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLineRepresentation::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLineRepresentation& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLineRepresentation::SafeDownCast, emscripten::allow_raw_pointers())

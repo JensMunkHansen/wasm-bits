@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkMapperCollection>(vtkMap
 EMSCRIPTEN_BINDINGS(vtkMapperCollection_class) {
   emscripten::class_<vtkMapperCollection, emscripten::base<vtkCollection>>("vtkMapperCollection")
     .smart_ptr<vtkSmartPointer<vtkMapperCollection>>("vtkSmartPointer<vtkMapperCollection>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkMapperCollection>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkMapperCollection>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkMapperCollection::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkMapperCollection& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkMapperCollection::SafeDownCast, emscripten::allow_raw_pointers())

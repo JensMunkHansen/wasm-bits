@@ -27,7 +27,7 @@ EMSCRIPTEN_BINDINGS(vtkBitArray_class) {
   using DeleteMethod=vtkBitArray::DeleteMethod;
   emscripten::class_<vtkBitArray, emscripten::base<vtkDataArray>>("vtkBitArray")
     .smart_ptr<vtkSmartPointer<vtkBitArray>>("vtkSmartPointer<vtkBitArray>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkBitArray>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkBitArray>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkBitArray::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkBitArray& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkBitArray::SafeDownCast, emscripten::allow_raw_pointers())

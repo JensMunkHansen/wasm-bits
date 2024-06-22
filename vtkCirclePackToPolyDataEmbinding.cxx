@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCirclePackToPolyData>(vt
 EMSCRIPTEN_BINDINGS(vtkCirclePackToPolyData_class) {
   emscripten::class_<vtkCirclePackToPolyData, emscripten::base<vtkPolyDataAlgorithm>>("vtkCirclePackToPolyData")
     .smart_ptr<vtkSmartPointer<vtkCirclePackToPolyData>>("vtkSmartPointer<vtkCirclePackToPolyData>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCirclePackToPolyData>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCirclePackToPolyData>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCirclePackToPolyData::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCirclePackToPolyData& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCirclePackToPolyData::SafeDownCast, emscripten::allow_raw_pointers())

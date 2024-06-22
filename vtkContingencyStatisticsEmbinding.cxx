@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkContingencyStatistics>(v
 EMSCRIPTEN_BINDINGS(vtkContingencyStatistics_class) {
   emscripten::class_<vtkContingencyStatistics, emscripten::base<vtkStatisticsAlgorithm>>("vtkContingencyStatistics")
     .smart_ptr<vtkSmartPointer<vtkContingencyStatistics>>("vtkSmartPointer<vtkContingencyStatistics>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkContingencyStatistics>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkContingencyStatistics>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkContingencyStatistics::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkContingencyStatistics& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkContingencyStatistics::SafeDownCast, emscripten::allow_raw_pointers())

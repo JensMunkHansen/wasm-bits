@@ -29,7 +29,7 @@ EMSCRIPTEN_BINDINGS(vtkImplicitProjectOnPlaneDistance_class) {
   using NormType=vtkImplicitProjectOnPlaneDistance::NormType;
   emscripten::class_<vtkImplicitProjectOnPlaneDistance, emscripten::base<vtkImplicitFunction>>("vtkImplicitProjectOnPlaneDistance")
     .smart_ptr<vtkSmartPointer<vtkImplicitProjectOnPlaneDistance>>("vtkSmartPointer<vtkImplicitProjectOnPlaneDistance>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkImplicitProjectOnPlaneDistance>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkImplicitProjectOnPlaneDistance>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkImplicitProjectOnPlaneDistance::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkImplicitProjectOnPlaneDistance& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkImplicitProjectOnPlaneDistance::SafeDownCast, emscripten::allow_raw_pointers())

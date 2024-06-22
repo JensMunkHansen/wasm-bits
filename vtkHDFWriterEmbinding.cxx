@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkHDFWriter>(vtkHDFWriter 
 EMSCRIPTEN_BINDINGS(vtkHDFWriter_class) {
   emscripten::class_<vtkHDFWriter, emscripten::base<vtkWriter>>("vtkHDFWriter")
     .smart_ptr<vtkSmartPointer<vtkHDFWriter>>("vtkSmartPointer<vtkHDFWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkHDFWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkHDFWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkHDFWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkHDFWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkHDFWriter::SafeDownCast, emscripten::allow_raw_pointers())

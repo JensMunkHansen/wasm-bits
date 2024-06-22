@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkCheckerboardWidget>(vtkC
 EMSCRIPTEN_BINDINGS(vtkCheckerboardWidget_class) {
   emscripten::class_<vtkCheckerboardWidget, emscripten::base<vtkAbstractWidget>>("vtkCheckerboardWidget")
     .smart_ptr<vtkSmartPointer<vtkCheckerboardWidget>>("vtkSmartPointer<vtkCheckerboardWidget>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkCheckerboardWidget>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkCheckerboardWidget>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkCheckerboardWidget::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkCheckerboardWidget& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkCheckerboardWidget::SafeDownCast, emscripten::allow_raw_pointers())

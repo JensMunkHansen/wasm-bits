@@ -23,7 +23,7 @@ template<> void emscripten::internal::raw_destructor<vtkPolyDataNormals>(vtkPoly
 EMSCRIPTEN_BINDINGS(vtkPolyDataNormals_class) {
   emscripten::class_<vtkPolyDataNormals, emscripten::base<vtkPolyDataAlgorithm>>("vtkPolyDataNormals")
     .smart_ptr<vtkSmartPointer<vtkPolyDataNormals>>("vtkSmartPointer<vtkPolyDataNormals>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPolyDataNormals>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPolyDataNormals>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPolyDataNormals::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPolyDataNormals& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPolyDataNormals::SafeDownCast, emscripten::allow_raw_pointers())

@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkPComputeHistogram2DOutli
 EMSCRIPTEN_BINDINGS(vtkPComputeHistogram2DOutliers_class) {
   emscripten::class_<vtkPComputeHistogram2DOutliers, emscripten::base<vtkComputeHistogram2DOutliers>>("vtkPComputeHistogram2DOutliers")
     .smart_ptr<vtkSmartPointer<vtkPComputeHistogram2DOutliers>>("vtkSmartPointer<vtkPComputeHistogram2DOutliers>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkPComputeHistogram2DOutliers>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkPComputeHistogram2DOutliers>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkPComputeHistogram2DOutliers::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkPComputeHistogram2DOutliers& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkPComputeHistogram2DOutliers::SafeDownCast, emscripten::allow_raw_pointers())

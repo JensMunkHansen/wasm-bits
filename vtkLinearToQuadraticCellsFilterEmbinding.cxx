@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkLinearToQuadraticCellsFi
 EMSCRIPTEN_BINDINGS(vtkLinearToQuadraticCellsFilter_class) {
   emscripten::class_<vtkLinearToQuadraticCellsFilter, emscripten::base<vtkUnstructuredGridAlgorithm>>("vtkLinearToQuadraticCellsFilter")
     .smart_ptr<vtkSmartPointer<vtkLinearToQuadraticCellsFilter>>("vtkSmartPointer<vtkLinearToQuadraticCellsFilter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkLinearToQuadraticCellsFilter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkLinearToQuadraticCellsFilter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkLinearToQuadraticCellsFilter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkLinearToQuadraticCellsFilter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkLinearToQuadraticCellsFilter::SafeDownCast, emscripten::allow_raw_pointers())

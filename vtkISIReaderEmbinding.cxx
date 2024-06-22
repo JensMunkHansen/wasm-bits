@@ -20,7 +20,7 @@ template<> void emscripten::internal::raw_destructor<vtkISIReader>(vtkISIReader 
 EMSCRIPTEN_BINDINGS(vtkISIReader_class) {
   emscripten::class_<vtkISIReader, emscripten::base<vtkTableAlgorithm>>("vtkISIReader")
     .smart_ptr<vtkSmartPointer<vtkISIReader>>("vtkSmartPointer<vtkISIReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkISIReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkISIReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkISIReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkISIReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkISIReader::SafeDownCast, emscripten::allow_raw_pointers())

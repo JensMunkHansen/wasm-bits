@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkNIFTIImageWriter>(vtkNIF
 EMSCRIPTEN_BINDINGS(vtkNIFTIImageWriter_class) {
   emscripten::class_<vtkNIFTIImageWriter, emscripten::base<vtkImageWriter>>("vtkNIFTIImageWriter")
     .smart_ptr<vtkSmartPointer<vtkNIFTIImageWriter>>("vtkSmartPointer<vtkNIFTIImageWriter>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkNIFTIImageWriter>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkNIFTIImageWriter>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkNIFTIImageWriter::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkNIFTIImageWriter& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkNIFTIImageWriter::SafeDownCast, emscripten::allow_raw_pointers())

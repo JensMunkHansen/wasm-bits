@@ -28,7 +28,7 @@ template<> void emscripten::internal::raw_destructor<vtkWedge>(vtkWedge * ptr){ 
 EMSCRIPTEN_BINDINGS(vtkWedge_class) {
   emscripten::class_<vtkWedge, emscripten::base<vtkCell3D>>("vtkWedge")
     .smart_ptr<vtkSmartPointer<vtkWedge>>("vtkSmartPointer<vtkWedge>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkWedge>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkWedge>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkWedge::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkWedge& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkWedge::SafeDownCast, emscripten::allow_raw_pointers())

@@ -22,7 +22,7 @@ template<> void emscripten::internal::raw_destructor<vtkDeformPointSet>(vtkDefor
 EMSCRIPTEN_BINDINGS(vtkDeformPointSet_class) {
   emscripten::class_<vtkDeformPointSet, emscripten::base<vtkPointSetAlgorithm>>("vtkDeformPointSet")
     .smart_ptr<vtkSmartPointer<vtkDeformPointSet>>("vtkSmartPointer<vtkDeformPointSet>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkDeformPointSet>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkDeformPointSet>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkDeformPointSet::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkDeformPointSet& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkDeformPointSet::SafeDownCast, emscripten::allow_raw_pointers())

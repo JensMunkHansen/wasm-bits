@@ -21,7 +21,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenGLLight>(vtkOpenGLLi
 EMSCRIPTEN_BINDINGS(vtkOpenGLLight_class) {
   emscripten::class_<vtkOpenGLLight, emscripten::base<vtkLight>>("vtkOpenGLLight")
     .smart_ptr<vtkSmartPointer<vtkOpenGLLight>>("vtkSmartPointer<vtkOpenGLLight>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenGLLight>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenGLLight>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenGLLight::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenGLLight& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenGLLight::SafeDownCast, emscripten::allow_raw_pointers())

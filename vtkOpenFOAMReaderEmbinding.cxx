@@ -24,7 +24,7 @@ template<> void emscripten::internal::raw_destructor<vtkOpenFOAMReader>(vtkOpenF
 EMSCRIPTEN_BINDINGS(vtkOpenFOAMReader_class) {
   emscripten::class_<vtkOpenFOAMReader, emscripten::base<vtkMultiBlockDataSetAlgorithm>>("vtkOpenFOAMReader")
     .smart_ptr<vtkSmartPointer<vtkOpenFOAMReader>>("vtkSmartPointer<vtkOpenFOAMReader>")
-    .constructor(&vtk::MakeVTKSmartPtr<vtkOpenFOAMReader>)
+    .constructor(&vtk::MakeAvtkSmartPointer<vtkOpenFOAMReader>)
     .class_function("IsTypeOf", emscripten::optional_override([]( const std::string & arg_0) -> int {  return vtkOpenFOAMReader::IsTypeOf( arg_0.c_str());}))
     .function("IsA", emscripten::optional_override([](vtkOpenFOAMReader& self, const std::string & arg_0) -> int {  return self.IsA( arg_0.c_str());}))
     .class_function("SafeDownCast", &vtkOpenFOAMReader::SafeDownCast, emscripten::allow_raw_pointers())
