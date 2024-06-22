@@ -1,2 +1,2 @@
 add_subdirectory(Core)
-message("CORE")
+add_subdirectory(ExecutionModel)

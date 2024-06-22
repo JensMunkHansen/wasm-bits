@@ -22,6 +22,8 @@ target_include_directories(${TARGET_LIBRARY_NAME}
 
 # Selected content that we need from hierarchy
 add_subdirectory(Common)
+add_subdirectory(Filters)
+add_subdirectory(Interaction)
 
 # Testing
 add_subdirectory(Common/Core/Testing)
