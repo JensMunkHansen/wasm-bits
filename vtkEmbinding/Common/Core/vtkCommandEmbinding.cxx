@@ -8,7 +8,7 @@ node /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/bin/vtkWra
  /home/jmh/github/VTKCMake/build/library/VTK-prefix/src/VTK-build/CMakeFiles/vtkCommonCore.js/vtkCommandEmbinding.cxx \
  /home/jmh/github/vtk/Common/Core/vtkCommand.h
 */
-#include "vtkEmbindSmartPointerTrait.h"
+#include "vtkEmbindSmartPointerTraits.h"
 #include "vtkEmbindUtils.h"
 #include <emscripten.h>
 #include <string>
