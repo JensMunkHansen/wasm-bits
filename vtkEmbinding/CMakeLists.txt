@@ -12,11 +12,13 @@ COMPONENTS
 
 set(ENABLE_THREADING OFF)
 
-add_library(vtkEmbindingUtils vtkEmbindSmartPointerTraits.h)
-target_link_libraries(vtkEmbindingUtils PRIVATE VTK::CommonCore)
+add_library(vtkEmbindingUtils INTERFACE)
+target_sources(vtkEmbindingUtils PUBLIC
+  vtkEmbindSmartPointerTraits.h)
+target_link_libraries(vtkEmbindingUtils INTERFACE VTK::CommonCore)
 
 target_include_directories(vtkEmbindingUtils
-  PUBLIC
+  INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<INSTALL_INTERFACE:include>)
 
