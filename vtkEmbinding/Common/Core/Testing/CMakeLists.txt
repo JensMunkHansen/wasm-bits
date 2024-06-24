@@ -23,12 +23,11 @@ target_link_options(SmartPointerTest PRIVATE
   "${emscripten_optimization_flags}")
 
 target_compile_options(SmartPointerTest PRIVATE ${emscripten_optimization_flags})
-target_link_libraries(SmartPointerTest PUBLIC pthread)
 
 
 add_executable(CallbackTest CallbackTest.cpp)
 target_link_libraries(CallbackTest PRIVATE VTK::CommonCore)
-target_link_libraries(CallbackTest PUBLIC vtkEmbinding)
+target_link_libraries(CallbackTest PRIVATE vtkEmbinding)
 target_link_options(CallbackTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
@@ -37,10 +36,7 @@ target_link_options(CallbackTest PRIVATE
   "${emscripten_optimization_flags}")
 
 target_compile_options(CallbackTest PRIVATE ${emscripten_optimization_flags})
-
-
-
-
+add_dependencies(CallbackTest SmartPointerTest)
 
 
 # Copy Node/JavaScript to build directory

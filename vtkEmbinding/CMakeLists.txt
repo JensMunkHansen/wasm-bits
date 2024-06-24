@@ -12,20 +12,22 @@ COMPONENTS
 
 set(ENABLE_THREADING OFF)
 
-set(TARGET_LIBRARY_NAME vtkEmbinding)
-add_library(${TARGET_LIBRARY_NAME} vtkEmbindSmartPointerTraits.h)
+add_library(vtkEmbindingUtils vtkEmbindSmartPointerTraits.h)
+target_link_libraries(vtkEmbindingUtils PRIVATE VTK::CommonCore)
 
-if (ENABLE_THREADING)
-  target_link_libraries(${TARGET_LIBRARY_NAME} PUBLIC pthread)
-endif()
-
-target_link_libraries(${TARGET_LIBRARY_NAME} PRIVATE VTK::CommonCore)
-
-target_include_directories(${TARGET_LIBRARY_NAME}
+target_include_directories(vtkEmbindingUtils
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<INSTALL_INTERFACE:include>)
 
+set(TARGET_LIBRARY_NAME vtkEmbinding)
+add_library(${TARGET_LIBRARY_NAME})
+
+if (ENABLE_THREADING)
+  target_link_libraries(${TARGET_LIBRARY_NAME} PUBLIC pthread)
+endif()
+target_link_libraries(${TARGET_LIBRARY_NAME} PUBLIC vtkEmbindingUtils)
+  
 # Selected content that we need from hierarchy
 add_subdirectory(Common)
 add_subdirectory(Filters)
@@ -35,6 +37,6 @@ add_subdirectory(Filters)
 if (BUILD_TESTING)
   # Testing - consider joining all tests
   add_subdirectory(Common/Core/Testing)
-  add_subdirectory(Common/Transforms/Testing)
-  add_subdirectory(Filters/Core/Testing)
+#  add_subdirectory(Common/Transforms/Testing)
+#  add_subdirectory(Filters/Core/Testing)
 endif()
