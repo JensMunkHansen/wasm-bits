@@ -19,7 +19,7 @@ target_link_options(main PRIVATE
   "-sEXPORT_NAME=loadvtkCallbackCommandWasmModule"
 #  "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\", \"addFunction\""
   "-sEXPORTED_FUNCTIONS=['_free', '_malloc']"
-  "-sINCLUDE_FULL_LIBRARY=1"
+  "-sINCLUDE_FULL_LIBRARY=1" # For add function
   "-sALLOW_TABLE_GROWTH=1"  
 #  "-sDEFAULT_LIBRARY_FUNCS_TO_INCLUDE='$addFunction'"  # Check if needed if full
   "${emscripten_optimization_flags}")
