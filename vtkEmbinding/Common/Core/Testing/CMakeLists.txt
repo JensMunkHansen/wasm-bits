@@ -85,13 +85,13 @@ add_custom_command(
     
 add_test(NAME GarbageCollector_LeakVTKSmartPointer_ObjectsDeleted
   COMMAND
-    npm run smartpointer
+    npx node run_SmartPointerTest.js
   WORKING_DIRECTORY
     ${CMAKE_CURRENT_BINARY_DIR})
 
 add_test(NAME CallbackCommand_InvokeEvent_CallbackExecuted
   COMMAND
-    npm run callback
+    npx node run_CallbackTest.js
   WORKING_DIRECTORY
     ${CMAKE_CURRENT_BINARY_DIR})
   
