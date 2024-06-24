@@ -34,9 +34,10 @@ target_link_options(CallbackTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"  
-  "-sINCLUDE_FULL_LIBRARY=1"  
-  "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\", \"addFunction\""
+  "-sINCLUDE_FULL_LIBRARY" # for addFunction  
+  "-sEXPORTED_RUNTIME_METHODS=['ENV', 'FS', 'ccall', 'stringToNewUTF8', 'addFunction']"
   "-sALLOW_TABLE_GROWTH=1"  
+  "-sALLOW_MEMORY_GROWTH=1"
   "-sEXPORT_NAME=loadvtkCallbackWasmModule"
   "${emscripten_optimization_flags}")
 
