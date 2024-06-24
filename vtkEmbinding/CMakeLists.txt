@@ -6,8 +6,8 @@ include(CTest)
 enable_testing()
 
 find_package(VTK 
-COMPONENTS
-  CommonCore
+  COMPONENTS
+    CommonCore
 )
 
 set(ENABLE_THREADING OFF)
