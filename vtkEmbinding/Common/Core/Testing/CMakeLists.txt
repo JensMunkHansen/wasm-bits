@@ -18,7 +18,9 @@ target_link_options(SmartPointerTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"
-#  "-sMAX_WEBGL_VERSION=2"
+  #  "-sMAX_WEBGL_VERSION=2"
+  "-sINCLUDE_FULL_LIBRARY=1"  
+  "-sALLOW_TABLE_GROWTH=1"  
   "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
   "${emscripten_optimization_flags}")
 
@@ -32,6 +34,9 @@ target_link_options(CallbackTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"  
+  "-sINCLUDE_FULL_LIBRARY=1"  
+  "-sEXPORTED_RUNTIME_METHODS=\"ccall\", \"cwrap\", \"addFunction\""
+  "-sALLOW_TABLE_GROWTH=1"  
   "-sEXPORT_NAME=loadvtkCallbackWasmModule"
   "${emscripten_optimization_flags}")
 
