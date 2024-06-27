@@ -2,25 +2,33 @@ cmake_minimum_required(VERSION 3.15)
 
 project(webgl)
 
-add_executable(webgl_create_context webgl_create_context.cpp)
-
+if (0)
+add_executable(main webgl_create_context.cpp)
+else()
+add_executable(main webgl_create_context2.cpp)
+endif()
 set(emscripten_optimization_flags -g3 -O0)
-target_link_options(webgl_create_context PRIVATE
- "-sUSE_GLFW=3"
- "-sFULL_ES3=1"
+target_link_options(main PRIVATE
  "-sOFFSCREEN_FRAMEBUFFER=1"
  "-sOFFSCREENCANVAS_SUPPORT=1"
  "-sUSE_WEBGL2=1"
-#  "-sMODULARIZE=1"
-#  "-sEXPORT_ES6=1"  
-#  "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
-  "${emscripten_optimization_flags}")
+ "-sALLOW_MEMORY_GROWTH=1"
+ "-sMAXIMUM_MEMORY=4GB"
+ "--memoryprofiler"
+ "-sMODULARIZE=1"
+ "-sEXPORT_ES6=1"   # Needed for js script, but remove for index.htnl
+ "-sEXPORT_NAME=loadWebGLWasmModule"
+ "-sEXPORTED_FUNCTIONS=['_main', '_malloc', '_free']"
+ "-sENVIRONMENT=web"
+  "-sEXPORTED_RUNTIME_METHODS=['ENV', 'UTF8ToString']" 
+ "${emscripten_optimization_flags}")
 
-add_executable(webgl_create_context2 webgl_create_context2.cpp)
-set(emscripten_optimization_flags -g3 -O0)
-target_link_options(webgl_create_context2 PRIVATE
-#  "-lembind"
-#  "-sMODULARIZE=1"
-#  "-sEXPORT_ES6=1"  
-#  "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
-  "${emscripten_optimization_flags}")
+add_custom_command(
+  TARGET main
+  POST_BUILD
+  COMMAND
+    ${CMAKE_COMMAND} -E copy_if_different
+      "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
+      $<TARGET_FILE_DIR:main>
+)
+
