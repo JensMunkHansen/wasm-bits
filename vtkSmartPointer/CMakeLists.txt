@@ -15,7 +15,7 @@ target_link_libraries(main PRIVATE VTK::CommonCore)
 target_link_options(main PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
-  "-sEXPORT_ES6=1"  
+  "-sEXPORT_ES6=1"   # Needed for js script, but remove for index.htnl
   "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
   "${emscripten_optimization_flags}")
 
@@ -41,6 +41,15 @@ add_custom_command(
   COMMAND
     ${CMAKE_COMMAND} -E copy_if_different
       "${CMAKE_CURRENT_SOURCE_DIR}/run.js"
+      $<TARGET_FILE_DIR:main>
+)
+
+add_custom_command(
+  TARGET main
+  POST_BUILD
+  COMMAND
+    ${CMAKE_COMMAND} -E copy_if_different
+      "${CMAKE_CURRENT_SOURCE_DIR}/index.html"
       $<TARGET_FILE_DIR:main>
 )
 
