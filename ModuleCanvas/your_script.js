@@ -13,12 +13,30 @@ if (typeof window === 'undefined') {
         return document.createElement(type);
     };
 
+
+// // Override createElement to handle 'canvas' specifically
+// global.document.createElement = (type) => {
+//     if (type === 'canvas') {
+//         const canvas = createCanvas(800, 600);
+//         canvas.id = 'myCanvas'; // Set ID for the canvas
+//         return canvas;
+//     }
+//     return document.createElement(type);
+// };
+    
     const createModule = require('./your_code.js');
 
     createModule().then(Module => {
         Module._addCanvasesToModule();
         const canvases = Module.canvases;
         console.log('Canvases added to Module:', canvases);
+
+	// Set IDs for the canvases
+	canvases[0].id = 'myCanvas1';
+	canvases[1].id = 'myCanvas2';
+
+	console.log('Canvas 1 ID:', canvases[0].id); // Output: myCanvas1
+	console.log('Canvas 2 ID:', canvases[1].id); // Output: myCanvas2
 
         const gl1 = canvases[0].getContext('webgl');
         const gl2 = canvases[1].getContext('webgl');
@@ -47,6 +65,13 @@ if (typeof window === 'undefined') {
         const canvases = Module.canvases;
         console.log('Canvases added to Module:', canvases);
 
+	// Set IDs for the canvases
+	canvases[0].id = 'myCanvas1';
+	canvases[1].id = 'myCanvas2';
+
+	console.log('Canvas 1 ID:', canvases[0].id); // Output: myCanvas1
+	console.log('Canvas 2 ID:', canvases[1].id); // Output: myCanvas2
+	
         const gl1 = canvases[0].getContext('webgl');
         const gl2 = canvases[1].getContext('webgl');
 

@@ -20,6 +20,8 @@ void addCanvasesToModule() {
         canvases.push(canvas1);
         canvases.push(canvas2);
 
+	// Bracket notation, Module['canvas smart'] can handle spaces
+	
         // Assign the array to Module.canvases
         Module.canvases = canvases;
     });
