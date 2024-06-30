@@ -48,10 +48,10 @@ if (typeof window === 'undefined') {
 
         console.log('WebGL contexts created successfully');
 
-        gl1.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl1.clearColor(1.0, 0.0, 0.0, 0.5);
         gl1.clear(gl1.COLOR_BUFFER_BIT);
 
-        gl2.clearColor(0.2, 0.2, 0.2, 1.0);
+        gl2.clearColor(1.0, 1.0, 0.0, 0.5);
         gl2.clear(gl2.COLOR_BUFFER_BIT);
     }).catch(error => {
         console.error('Error initializing module:', error);
@@ -82,10 +82,10 @@ if (typeof window === 'undefined') {
 
         console.log('WebGL contexts created successfully');
 
-        gl1.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl1.clearColor(1.0, 0.0, 0.0, 0.5);
         gl1.clear(gl1.COLOR_BUFFER_BIT);
 
-        gl2.clearColor(0.2, 0.2, 0.2, 1.0);
+        gl2.clearColor(1.0, 1.0, 0.0, 0.5);
         gl2.clear(gl2.COLOR_BUFFER_BIT);
     }).catch(error => {
         console.error('Error initializing module:', error);
