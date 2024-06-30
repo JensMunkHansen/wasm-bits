@@ -61,7 +61,7 @@ if (typeof window === 'undefined') {
     //const createModule = require('./your_code.js');
 
     createModule().then(Module => {
-        Module._addCanvasesToModule();
+        const promise = Module._addCanvasesToModule();
         const canvases = Module.canvases;
         console.log('Canvases added to Module:', canvases);
 
