@@ -2,31 +2,61 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
+<meta charset="utf-8" />
+  <title>WASM Viewer</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
 </head>
 <body>
-  <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
+  <canvas id="canvas"></canvas>
   <script type="module">
     import createViewerModule from './Viewer.js';
-    var options = {
-      print: (function () {
-        return function (text) {
-          text = Array.prototype.slice.call(arguments).join(' ');
-          console.info(text);
-        };
-      })(),
-      printErr: function (text) {
-        text = Array.prototype.slice.call(arguments).join(' ');
-        console.error(text);
-      },
-    };
-    let wasmModule = await createViewerModule(options);
-    var viewer = new wasmModule.vtkViewer();
-    viewer.initialize("canvas");
-    viewer.resetView();
-    viewer.render();
-    viewer.run();
+    (async function() {
+      // Define options for the WASM module
+      const options = {
+        print: function(...args) {
+          console.info(...args);
+        },
+        printErr: function(...args) {
+          console.error(...args);
+        },
+      };
+
+      // Load the WebAssembly module
+      let wasmModule = await createViewerModule(options);
+
+      // Initialize the viewer
+      //const canvas = document.getElementById('canvas');
+      const viewer = new wasmModule.vtkViewer();
+
+      viewer.initialize("canvas");
+      viewer.addData();
+      viewer.setSize(300, 300);
+      viewer.resetView();
+      viewer.render();
+      viewer.run();
+      // Function to update the canvas
+      function animate() {
+        viewer.render(); // Ensure your viewer has a render function
+        requestAnimationFrame(animate);
+      }
+
+      // Start the animation loop
+      animate();
+    })();
   </script>
 </body>
-
 </html>
