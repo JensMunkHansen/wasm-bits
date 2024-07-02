@@ -17,10 +17,13 @@
 
 vtkStandardNewMacro(vtkViewer);
 
+int vtkViewer::Count = 0;
+
 vtkViewer::vtkViewer() {
   Initialized = false;
 
-  vtkRenderWindowInteractor::InteractorManagesTheEventLoop = false;
+  // When disabling this, JavaScript must have a propert message loop
+  //vtkRenderWindowInteractor::InteractorManagesTheEventLoop = false;
   
 }
 
@@ -28,23 +31,22 @@ vtkViewer::~vtkViewer() {}
 
 void vtkViewer::Initialize(const std::string& canvasId) {
   if (!Initialized) {
+    
+    auto* p = vtkWebAssemblyOpenGLRenderWindow::SafeDownCast(this->Window);
+    auto _canvasId = "#" + canvasId;
+    if (p) {
+      p->SetCanvasId(_canvasId.c_str());
+    }
+    auto* q = vtkWebAssemblyRenderWindowInteractor::SafeDownCast(this->Interactor);
+    if (q) {
+      q->SetCanvasId(_canvasId.c_str());
+    }
 
-  auto* p = vtkWebAssemblyOpenGLRenderWindow::SafeDownCast(this->Window);
-  auto _canvasId = "#" + canvasId;
-  if (p) {
-    p->SetCanvasId(_canvasId.c_str());
-  }
-  auto* q = vtkWebAssemblyRenderWindowInteractor::SafeDownCast(this->Interactor);
-  if (q) {
-    q->SetCanvasId(_canvasId.c_str());
-  }
-    
-    
     this->Window->AddRenderer(this->Renderer);
     this->Window->SetInteractor(this->Interactor);
     // set the current style to TrackBallCamera. Default is joystick
-    if (auto iStyle = vtkInteractorStyle::SafeDownCast(
-						       this->Interactor->GetInteractorStyle())) {
+    if (auto iStyle =
+	vtkInteractorStyle::SafeDownCast(this->Interactor->GetInteractorStyle())) {
       if (auto switchStyle = vtkInteractorStyleSwitch::SafeDownCast(iStyle)) {
 	switchStyle->SetCurrentStyleToTrackballCamera();
       }
@@ -68,6 +70,13 @@ void vtkViewer::AddData() {
   vtkNew<vtkActor> actor;
   actor->SetMapper(mapper);
   actor->GetProperty()->SetEdgeVisibility(1);
+  if (vtkViewer::Count == 0) {
+    actor->GetProperty()->SetColor(1,0,0);
+    vtkViewer::Count++;
+  } else {
+    actor->GetProperty()->SetColor(0,1,0);
+  }
+				 
   mapper->Update();
   this->Renderer->AddActor(actor);
 }
@@ -158,11 +167,11 @@ EMSCRIPTEN_BINDINGS(ViewerJSBindings) {
     .smart_ptr<vtkSmartPointer<vtkViewer>>("vtkSmartPointer<vtkViewer>")
     .constructor(&MakeVTKSmartPtr<vtkViewer>)
     .function("initialize", &vtkViewer::Initialize)
-    .function("render", &vtkViewer::Render)
+    .function("addData", &vtkViewer::AddData)
     .function("resetView", &vtkViewer::ResetView)
     .function("setSize", &vtkViewer::SetSize)
     .function("run", &vtkViewer::Run)
-    .function("addData", &vtkViewer::AddData);
+    .function("render", &vtkViewer::Render);
 }
 #endif
 

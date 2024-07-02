@@ -5,7 +5,6 @@ include(GenerateExportHeader)
 
 option(ENABLE_WEBGPU "Enable WebGPU" OFF)
 
-configure_file(config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 configure_file(Viewer.html ${CMAKE_CURRENT_BINARY_DIR}/index.html)
 # -----------------------------------------------------------------------------
 # EMSCRIPTEN only
@@ -49,10 +48,14 @@ endif ()
 # -----------------------------------------------------------------------------
 
 add_executable(Viewer
-  Viewer.h
-  Viewer.cxx
-  vtkRenderWindowInteractorEmbinding.cxx
-  vtkWebAssemblyRenderWindowInteractorEmbinding.cxx  
+  vtkObjectBaseEmbinding.cxx
+  vtkObjectEmbinding.cxx
+  vtkRenderWindowEmbinding.cxx
+#  vtkRendererEmbinding.cxx
+#  vtkRenderWindowInteractorEmbinding.cxx
+#  vtkRenderWindowInteractorEmbinding.cxx
+#  vtkWebAssemblyRenderWindowInteractorEmbinding.cxx
+  vtkWebAssemblyOpenGLRenderWindowEmbinding.cxx
 )
 
 target_include_directories(Viewer

@@ -10,6 +10,7 @@ class vtkViewer : public vtkObject {
 public:
   vtkTypeMacro(vtkViewer, vtkObject);
   void PrintSelf(ostream &os, vtkIndent indent) override;
+  static int Count;
   static vtkViewer *New();
   void Initialize(const std::string& canvasId);
 
