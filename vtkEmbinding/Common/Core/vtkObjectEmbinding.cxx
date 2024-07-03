@@ -51,5 +51,6 @@ EMSCRIPTEN_BINDINGS(vtkObject_class) {
     .function("InvokeEvent", emscripten::select_overload<int(vtkObject&, const std::string &)>([](vtkObject& self, const std::string & arg_0) -> int { return self.InvokeEvent( arg_0.c_str()); }))
     .function("SetObjectName", &vtkObject::SetObjectName)
     .function("GetObjectName", &vtkObject::GetObjectName)
+    .class_function("IntToPointer", emscripten::optional_override([]( const std::intptr_t& arg_0) -> vtkObject* {  return reinterpret_cast<vtkObject*>(arg_0);}), emscripten::allow_raw_pointers())
     .function("GetObjectDescription", &vtkObject::GetObjectDescription);
 }

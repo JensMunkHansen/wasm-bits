@@ -23,7 +23,7 @@ vtkViewer::vtkViewer() {
   Initialized = false;
 
   // When disabling this, JavaScript must have a propert message loop
-  //vtkRenderWindowInteractor::InteractorManagesTheEventLoop = false;
+  vtkRenderWindowInteractor::InteractorManagesTheEventLoop = false;
   
 }
 
