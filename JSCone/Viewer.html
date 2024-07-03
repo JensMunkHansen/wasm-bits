@@ -31,6 +31,12 @@
 	  let renderer = new wasmModule.vtkRenderer();
 	  let myCallback = new wasmModule.vtkCallbackCommand();
 	  let iren = new wasmModule.vtkRenderWindowInteractor();
+	  let sphere = new wasmModule.vtkSphereSource();
+	  let mapper = new wasmModule.vtkPolyDataMapper();
+	  mapper.SetInputConnection(sphere.GetOutputPort());
+	  let actor = new wasmModule.vtkActor();
+	  actor.SetMapper(mapper);
+	  renderer.AddActor(actor);
 	  renderWindow.AddRenderer(renderer);
 	  renderWindow.SetInteractor(iren);
 	  // myCallback.SetCallback((caller, evId, clientData, callData) => {

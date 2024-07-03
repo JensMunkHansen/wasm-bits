@@ -48,6 +48,17 @@ endif ()
 # -----------------------------------------------------------------------------
 
 add_executable(Viewer
+  vtkActorEmbinding.cxx
+  vtkSphereSourceEmbinding.cxx
+  vtkAlgorithmEmbinding.cxx
+  vtkMapperEmbinding.cxx
+  vtkAlgorithmOutputEmbinding.cxx
+  vtkProp3DEmbinding.cxx
+  vtkPropEmbinding.cxx
+  vtkAbstractMapperEmbinding.cxx
+  vtkAbstractMapper3DEmbinding.cxx
+  vtkPolyDataAlgorithmEmbinding.cxx
+  vtkPolyDataMapperEmbinding.cxx
   vtkObjectBaseEmbinding.cxx
   vtkObjectEmbinding.cxx
   vtkCallbackCommandEmbinding.cxx
