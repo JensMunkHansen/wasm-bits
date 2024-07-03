@@ -27,10 +27,12 @@
 
 	  wasmModule.vtkRenderWindowInteractor.InteractorManagesTheEventLoop = 0;
           // Initialize the viewer
-	  let renderWindow = new wasmModule.vtkRenderWindow();
+	  let renderWindow = new wasmModule.vtkWebAssemblyOpenGLRenderWindow();//RenderWindow();
+	  console.log(renderWindow.GetCanvasId());
 	  let renderer = new wasmModule.vtkRenderer();
 	  let myCallback = new wasmModule.vtkCallbackCommand();
-	  let iren = new wasmModule.vtkRenderWindowInteractor();
+	  let iren = new wasmModule.vtkWebAssemblyRenderWindowInteractor();
+	  console.log(iren.GetCanvasId());
 	  let sphere = new wasmModule.vtkSphereSource();
 	  let mapper = new wasmModule.vtkPolyDataMapper();
 	  mapper.SetInputConnection(sphere.GetOutputPort());
