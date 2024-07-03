@@ -1,48 +1,68 @@
 <!doctype html>
 <html>
 
-<head>
-<meta charset="utf-8" />
-  <title>WASM Viewer</title>
-</head>
-<body>
-  <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
-  <script type="module">
-    import createViewerModule from './Viewer.js';
-    (async function() {
-	// Define options for the WASM module
-	const options = {
-            print: function(...args) {
-		console.info(...args);
-            },
-            printErr: function(...args) {
-		console.error(...args);
-            },
-	};
+  <head>
+    <meta charset="utf-8" />
+    <title>WASM Viewer</title>
+  </head>
+  <body>
+    <canvas id="canvas" style="position: absolute; left: 0; top: 0;"></canvas>
+    <script type="module">
+      import createViewerModule from './Viewer.js';
+      (async function() {
+	  // Define options for the WASM module
+	  const options = {
+              print: function(...args) {
+		  console.info(...args);
+              },
+              printErr: function(...args) {
+		  console.error(...args);
+              },
+	  };
 
-        // Load the WebAssembly module
-        let wasmModule = await createViewerModule(options);
-        
-        // Initialize the viewer
-	let renderWindow = new wasmModule.vtkRenderWindow();
-	
-        // Function to update the canvas
-        function animate() {
-          //viewer.render(); // Ensure your viewer has a render function
-          requestAnimationFrame(animate);
-        }
+          const canvas = document.getElementById('canvas');
+	  
+          // Load the WebAssembly module
+          let wasmModule = await createViewerModule(options);
 
-	setTimeout(() => {
-          window.dispatchEvent(new Event('resize'));
-        }, 0);
+	  wasmModule.vtkRenderWindowInteractor.InteractorManagesTheEventLoop = 1;
+          // Initialize the viewer
+	  let renderWindow = new wasmModule.vtkRenderWindow();
+	  let renderer = new wasmModule.vtkRenderer();
+	  let myCallback = new wasmModule.vtkCallbackCommand();
+	  let iren = new wasmModule.vtkRenderWindowInteractor();
+	  renderWindow.AddRenderer(renderer);
+	  renderWindow.SetInteractor(iren);
+	  // myCallback.SetCallback((caller, evId, clientData, callData) => {
+	  //     console.log(evId);
+	  //     if (evId == 12) {
+	  // 	  // Left-button press event
+	  // 	  console.log(renderer.GetClassName());
+	  //     }
+	  // });
+	  //iren.AddObserver('LeftButtonPressEvent', myCallback, 0.0);
+	  iren.UpdateSize(300, 300);
+	  renderer.ResetCamera();
+	  renderWindow.Render();
+	  iren.Start();
+	  
+          // Function to update the canvas
+          function animate() {
+              renderWindow.Render(); // Ensure your viewer has a render function
+              requestAnimationFrame(animate);
+          }
 
-        canvas.setAttribute('tabindex', '0');
-        // grab focus when the render window region receives mouse clicks.
-        canvas.addEventListener('click', () => canvas.focus());
-	
-	// Start the animation loop
-	animate();
-    })();
-  </script>
-</body>
+	  setTimeout(() => {
+              window.dispatchEvent(new Event('resize'));
+          }, 0);
+
+          canvas.setAttribute('tabindex', '0');
+          // grab focus when the render window region receives mouse clicks.
+          canvas.addEventListener('click', () => canvas.focus());
+	  
+	  // Start the animation loop
+	  animate();
+      })();
+    </script>
+  </body>
 </html>

@@ -22,7 +22,7 @@ endif ()
 if (ENABLE_WEBGPU)
 find_package(VTK
   COMPONENTS
-    FiltersSources      # VTK pipeline
+    CommonCore
     InteractionStyle    # Mouse handling
     RenderingOpenGL2    # For Rendering with OpenGL
     RenderingWebGPU     # For Rendering with WebGPU
@@ -31,7 +31,7 @@ find_package(VTK
 else()
 find_package(VTK
   COMPONENTS
-    FiltersSources      # VTK pipeline
+    CommonCore
     InteractionStyle    # Mouse handling
     RenderingOpenGL2    # For Rendering with OpenGL
     RenderingUI         # For SDL2 Window
@@ -50,12 +50,17 @@ endif ()
 add_executable(Viewer
   vtkObjectBaseEmbinding.cxx
   vtkObjectEmbinding.cxx
+  vtkCallbackCommandEmbinding.cxx
+  vtkCommandEmbinding.cxx
+  vtkRendererEmbinding.cxx
+  vtkRenderWindowInteractorEmbinding.cxx
   vtkRenderWindowEmbinding.cxx
-#  vtkRendererEmbinding.cxx
-#  vtkRenderWindowInteractorEmbinding.cxx
-#  vtkRenderWindowInteractorEmbinding.cxx
-#  vtkWebAssemblyRenderWindowInteractorEmbinding.cxx
+  vtkWebAssemblyRenderWindowInteractorEmbinding.cxx
   vtkWebAssemblyOpenGLRenderWindowEmbinding.cxx
+  vtkOpenGLRendererEmbinding.cxx
+  vtkWindowEmbinding.cxx
+  vtkViewportEmbinding.cxx
+  vtkWindowsEmbinding.cxx
 )
 
 target_include_directories(Viewer
@@ -78,14 +83,15 @@ list(APPEND emscripten_link_options
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"
   "-sEXPORT_NAME=createViewerModule"
-  "-sALLOW_MEMORY_GROWTH=1"
   "-sMAXIMUM_MEMORY=4GB"
   "-sSINGLE_FILE=1"
   "--memoryprofiler"
   #"--cpuprofiler"
   #"--threadprofiler"
   "-sEXPORTED_FUNCTIONS=['_malloc', '_free']" # Required if library
-  "-sEXPORTED_RUNTIME_METHODS=['ENV', 'UTF8ToString']" # UTF8ToString required if library
+  "-sEXPORTED_RUNTIME_METHODS=['ENV', 'FS', 'ccall', 'stringToNewUTF8', 'addFunction']"
+  "-sALLOW_TABLE_GROWTH=1"  
+  "-sALLOW_MEMORY_GROWTH=1"  
 )
 
 if (ENABLE_THREADING)
