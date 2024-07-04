@@ -9,7 +9,7 @@
 #include <vtkProperty.h>
 #include <vtkInteractorStyleSwitch.h>
 #include <vtkActor.h>
-#include <vtkConeSource.h>
+#include <vtkSphereSource.h>
 #include <vtkWebAssemblyOpenGLRenderWindow.h>
 #include <vtkWebAssemblyRenderWindowInteractor.h>
 
@@ -59,13 +59,12 @@ void vtkViewer::AddData() {
   // clear previous actors.
   this->Renderer->RemoveAllViewProps();
 
-  vtkNew<vtkConeSource> coneSrc;
-  coneSrc->SetResolution(10);
-  coneSrc->Update();
-  vtkPolyData *cone = coneSrc->GetOutput();
+  vtkNew<vtkSphereSource> sphereSrc;
+  sphereSrc->Update();
+  vtkPolyData *sphere = sphereSrc->GetOutput();
 
   vtkNew<vtkPolyDataMapper> mapper;
-  mapper->SetInputData(cone);
+  mapper->SetInputData(sphere);
 
   vtkNew<vtkActor> actor;
   actor->SetMapper(mapper);
