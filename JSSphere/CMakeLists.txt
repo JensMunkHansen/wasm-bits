@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 project(JSSphere)
 
+include(CTest)
+
 include(GenerateExportHeader)
 
 option(ENABLE_WEBGPU "Enable WebGPU" OFF)

@@ -3,5 +3,3 @@ project(Sphere)
 
 set(OPTIMIZE STREQUAL "SMALLEST")
 
-add_subdirectory(JSSphere)
-add_subdirectory(JSSphereNative)
