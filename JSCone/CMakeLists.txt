@@ -56,6 +56,7 @@ add_executable(Viewer
   vtkProp3DEmbinding.cxx
   vtkPropEmbinding.cxx
   vtkPropertyEmbinding.cxx
+  vtkOpenGLRenderWindowEmbinding.cxx
   vtkAbstractMapperEmbinding.cxx
   vtkAbstractMapper3DEmbinding.cxx
   vtkPolyDataAlgorithmEmbinding.cxx
