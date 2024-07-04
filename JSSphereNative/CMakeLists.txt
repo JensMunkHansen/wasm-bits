@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(Viewer)
+project(JSSphereNative)
 
 include(GenerateExportHeader)
 
@@ -46,41 +46,18 @@ endif ()
 # -----------------------------------------------------------------------------
 # Compile example code
 # -----------------------------------------------------------------------------
+set(TARGET_NAME JSSphereNative)
 
-add_executable(Viewer
-  vtkActorEmbinding.cxx
-  vtkSphereSourceEmbinding.cxx
-  vtkAlgorithmEmbinding.cxx
-  vtkMapperEmbinding.cxx
-  vtkAlgorithmOutputEmbinding.cxx
-  vtkProp3DEmbinding.cxx
-  vtkPropEmbinding.cxx
-  vtkPropertyEmbinding.cxx
-  vtkOpenGLRenderWindowEmbinding.cxx
-  vtkAbstractMapperEmbinding.cxx
-  vtkAbstractMapper3DEmbinding.cxx
-  vtkPolyDataAlgorithmEmbinding.cxx
-  vtkPolyDataMapperEmbinding.cxx
-  vtkObjectBaseEmbinding.cxx
-  vtkObjectEmbinding.cxx
-  vtkCallbackCommandEmbinding.cxx
-  vtkCommandEmbinding.cxx
-  vtkRendererEmbinding.cxx
-  vtkRenderWindowInteractorEmbinding.cxx
-  vtkRenderWindowEmbinding.cxx
-  vtkWebAssemblyRenderWindowInteractorEmbinding.cxx
-  vtkWebAssemblyOpenGLRenderWindowEmbinding.cxx
-  vtkOpenGLRendererEmbinding.cxx
-  vtkWindowEmbinding.cxx
-  vtkViewportEmbinding.cxx
-  vtkWindowsEmbinding.cxx
+add_executable(${TARGET_NAME}
+  Viewer.cxx
+  Viewer.h
 )
 
-target_include_directories(Viewer
+target_include_directories(${TARGET_NAME}
   PRIVATE
   ${CMAKE_CURRENT_BINARY_DIR})
 
-target_link_libraries(Viewer
+target_link_libraries(${TARGET_NAME}
   PRIVATE
     ${VTK_LIBRARIES}
 )
@@ -97,7 +74,8 @@ list(APPEND emscripten_link_options
   "-sEXPORT_ES6=1"
   "-sEXPORT_NAME=createViewerModule"
   "-sMAXIMUM_MEMORY=4GB"
-  "-sSINGLE_FILE=1"
+  "-emit-tsd Viewer.d.ts" 
+  "-sSINGLE_FILE=0"
   "--memoryprofiler"
   #"--cpuprofiler"
   #"--threadprofiler"
@@ -187,14 +165,14 @@ elseif(OPTIMIZE STREQUAL "SMALLEST_WITH_CLOSURE")
   )
 endif()
 
-target_compile_options(Viewer
+target_compile_options(${TARGET_NAME}
   PUBLIC
     ${emscripten_compile_options}
     ${emscripten_optimizations}
     ${emscripten_debug_options}
 )
 
-target_link_options(Viewer
+target_link_options(${TARGET_NAME}
   PUBLIC
     ${emscripten_link_options}
     ${emscripten_optimizations}
@@ -206,11 +184,7 @@ target_link_options(Viewer
 # -----------------------------------------------------------------------------
 
 vtk_module_autoinit(
-  TARGETS  Viewer
+  TARGETS  ${TARGET_NAME}
   MODULES  ${VTK_LIBRARIES}
 )
 
-#set_target_properties(Viewer
-#PROPERTIES
-#  RUNTIME_OUTPUT_DIRECTORY "${VUE_COMPONENTS_DIR}/Viewer"
-#)
