@@ -3,6 +3,7 @@ project(Sphere)
 
 enable_testing()
 
+message(${VTK_DIR})
 execute_process(COMMAND
   ${CMAKE_CTEST_COMMAND}
     --build-generator
@@ -14,6 +15,7 @@ execute_process(COMMAND
      -A "${CMAKE_GENERATOR_PLATFORM}"
      -T "${CMAKE_GENERATOR_TOOLSET}"
      -DOPTIMIZE:STRING="SMALLEST"
+     -DVTK_DIR=${VTK_DIR}
   RESULT_VARIABLE res)
 
 execute_process(COMMAND
@@ -27,6 +29,7 @@ execute_process(COMMAND
      -A "${CMAKE_GENERATOR_PLATFORM}"
      -T "${CMAKE_GENERATOR_TOOLSET}"
      -DOPTIMIZE:STRING="SMALLEST"
+     -DVTK_DIR=${VTK_DIR}
   RESULT_VARIABLE res)
 
 add_test(NAME CheckBinarySize
