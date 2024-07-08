@@ -26,9 +26,10 @@ EMSCRIPTEN_BINDINGS(my_module) {
     emscripten::class_<BaseClass>("BaseClass")
       .constructor<>()      
         .function("baseMethod", &BaseClass::baseMethod)
-      .function("callBaseMethod", &BaseClass::callBaseMethod);
+      .function("callBaseMethod", &BaseClass::callBaseMethod); // Works
 
     emscripten::class_<DerivedClass, emscripten::base<BaseClass>>("DerivedClass")
       .constructor<>()      
-        .function("baseMethod", &DerivedClass::baseMethod);
+      .function("baseMethod", &DerivedClass::baseMethod)
+      .function("trueBaseMethod", emscripten::select_overload<void()>(&BaseClass::baseMethod)); // Not working
 }
