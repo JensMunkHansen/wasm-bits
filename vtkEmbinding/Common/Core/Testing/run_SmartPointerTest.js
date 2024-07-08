@@ -60,6 +60,10 @@ async function main() {
 // Execute the main function
 await main();
 
+var nDerivedObjects = wasmModule.vtkDerivedObject.ObjectCount();
+
+console.log(nDerivedObjects);
+
 // Run the garbage collector
 setFlagsFromString('--expose_gc');
 const gc = runInNewContext('gc');
@@ -71,7 +75,7 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 // Number of objects after garbage collection
 var nObjects = wasmModule.vtkCustomObject.ObjectCount();
 
-var nDerivedObjects = wasmModule.vtkDerivedObject.ObjectCount();
+nDerivedObjects = wasmModule.vtkDerivedObject.ObjectCount();
 
 console.log(nObjects);
 console.log(nDerivedObjects);
