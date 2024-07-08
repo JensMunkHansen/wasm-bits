@@ -40,6 +40,41 @@ vtkStandardNewMacro(vtkCustomObject);
 
 vtkAddDestructor(vtkCustomObject);
 
+
+class vtkDerivedObject : public vtkCustomObject {
+public:
+  static int objectCount;
+  vtkTypeMacro(vtkDerivedObject, vtkCustomObject);
+  void PrintSelf(ostream &os, vtkIndent indent) override {}
+  static vtkDerivedObject *New();
+
+  static int GetObjectCount() {
+    return objectCount;
+  }
+protected:
+  vtkDerivedObject(){
+    vtkLog(INFO, << "Constructed " << vtkLogIdentifier(this));
+    objectCount++;
+  };
+  ~vtkDerivedObject() {
+    vtkLog(INFO, << "Destroyed " << vtkLogIdentifier(this));
+    objectCount--;
+  }
+
+private:
+  vtkDerivedObject(const vtkDerivedObject &) = delete;
+  void operator=(const vtkDerivedObject &) = delete;
+};
+
+int vtkDerivedObject::objectCount = 0;
+
+vtkStandardNewMacro(vtkDerivedObject);
+
+vtkAddDestructor(vtkDerivedObject);
+
+
+
+
 // Binding code
 EMSCRIPTEN_BINDINGS(vtksmartptr_prototype) {
   emscripten::class_<vtkCustomObject, emscripten::base<vtkObject>>(
@@ -47,5 +82,10 @@ EMSCRIPTEN_BINDINGS(vtksmartptr_prototype) {
       .smart_ptr<vtkSmartPointer<vtkCustomObject>>("vtkSmartPointer<vtkCustomObject>")
     .constructor(&vtk::MakeVTKSmartPtr<vtkCustomObject>)
       .class_function("ObjectCount", &vtkCustomObject::GetObjectCount);
+  emscripten::class_<vtkDerivedObject, emscripten::base<vtkCustomObject>>(
+      "vtkDerivedObject")
+      .smart_ptr<vtkSmartPointer<vtkDerivedObject>>("vtkSmartPointer<vtkDerivedObject>")
+    .constructor(&vtk::MakeVTKSmartPtr<vtkDerivedObject>)
+      .class_function("ObjectCount", &vtkDerivedObject::GetObjectCount);
 }
 

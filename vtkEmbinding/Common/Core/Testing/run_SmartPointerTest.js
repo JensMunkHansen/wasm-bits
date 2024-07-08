@@ -50,6 +50,7 @@ async function main() {
         await myLongRunningProcess(instance.clone(), 300);
         logRefCounts(instance); // JS=3, CPP=1
 
+	const derived = new wasmModule.vtkDerivedObject();
     } catch (error) {
         console.error("An error occurred:", error);
 	nErrors = 1;
@@ -70,5 +71,9 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 // Number of objects after garbage collection
 var nObjects = wasmModule.vtkCustomObject.ObjectCount();
 
+var nDerivedObjects = wasmModule.vtkDerivedObject.ObjectCount();
+
+console.log(nObjects);
+console.log(nDerivedObjects);
 // Can be captured with $?
 process.exit(((nObjects == 0) && (nErrors == 0)) ? 0 : 1);
