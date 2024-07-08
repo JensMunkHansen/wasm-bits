@@ -213,3 +213,9 @@ vtk_module_autoinit(
   MODULES  ${VTK_LIBRARIES}
 )
 
+if (WIN32)
+  add_test(NAME AlwaysPass COMMAND cmd /c "exit 0")
+else()
+  add_test(NAME AlwaysPass
+    COMMAND true)
+endif()
