@@ -32,6 +32,21 @@ async function main() {
 	const a = new A();
 	a.invoke();
 	a.invokeWithArg(k);
+
+	var obj = new wasmModule.Object();
+	obj.Delete();
+	delete obj;
+
+
+	const CustomObject = wasmModule.Object.extend("Object", {
+            GetClassName: () => {
+		console.log("Hello from JS");
+		return "CustomObject";
+            }
+	});
+
+	const customObject = new CustomObject();
+	console.log(customObject.GetClassName());
     } catch (error) {
         console.error("An error occurred:", error);
     }

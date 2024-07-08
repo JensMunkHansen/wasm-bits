@@ -34,6 +34,10 @@ async function main() {
 	rotElement = matrix.GetElement(1,1);
 	// The x-coordinate is untouched, so it should be 1.0
 	transElement = matrix.GetElement(0,3);
+
+	console.log(transform1.IsA("vtkTransform"));
+	const _parent = wasmModule.vtkTransform.prototype;
+	console.log(_parent);
     } catch (error) {
         console.error("An error occurred:", error);
     }
