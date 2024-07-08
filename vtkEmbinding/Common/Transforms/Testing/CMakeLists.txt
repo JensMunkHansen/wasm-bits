@@ -57,7 +57,7 @@ add_custom_command(
     
 add_test(NAME ChainOfTransforms_Update_ResultOkay
   COMMAND
-    npm run test
+    npx node run.js
   WORKING_DIRECTORY
     ${CMAKE_CURRENT_BINARY_DIR})
     

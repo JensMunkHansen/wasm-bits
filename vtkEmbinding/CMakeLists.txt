@@ -39,6 +39,6 @@ add_subdirectory(Filters)
 if (BUILD_TESTING)
   # Testing - consider joining all tests
   add_subdirectory(Common/Core/Testing)
-#  add_subdirectory(Common/Transforms/Testing)
-#  add_subdirectory(Filters/Core/Testing)
+  add_subdirectory(Common/Transforms/Testing)
+  add_subdirectory(Filters/Core/Testing)
 endif()

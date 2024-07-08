@@ -18,12 +18,9 @@
 class vtkCallerObject : public vtkObject
 {
   public:
-    static int objectCount;
     vtkTypeMacro(vtkCallerObject, vtkObject);
     void PrintSelf(ostream &os, vtkIndent indent) override {}
     static vtkCallerObject *New();
-
-    static int GetObjectCount() { return objectCount; }
 
   void TestInvokeEvent() {
     this->InvokeEvent(vtkCommand::InteractionEvent);
@@ -31,23 +28,14 @@ class vtkCallerObject : public vtkObject
   int  HelpMe() {return 42;}
   
   protected:
-    vtkCallerObject()
-    {
-        vtkLog(INFO, << "Constructed " << vtkLogIdentifier(this));
-        objectCount++;
-    };
-    ~vtkCallerObject()
-    {
-        vtkLog(INFO, << "Destroyed " << vtkLogIdentifier(this));
-        objectCount--;
-    }
+  vtkCallerObject() = default;
+  ~vtkCallerObject() = default;
 
   private:
     vtkCallerObject(const vtkCallerObject &) = delete;
     void operator=(const vtkCallerObject &) = delete;
 };
 
-int vtkCallerObject::objectCount = 0;
 
 vtkStandardNewMacro(vtkCallerObject);
 
@@ -61,6 +49,6 @@ EMSCRIPTEN_BINDINGS(vtkCaller_class)
       .smart_ptr<vtkSmartPointer<vtkCallerObject>>("vtkSmartPointer<vtkCallerObject>")
       .constructor(&vtk::MakeVTKSmartPtr<vtkCallerObject>)
       .function("TestInvokeEvent", &vtkCallerObject::TestInvokeEvent)
-      .function("HelpMe", &vtkCallerObject::HelpMe)
-      .class_function("ObjectCount", &vtkCallerObject::GetObjectCount);
+      .function("HelpMe", &vtkCallerObject::HelpMe);
+
 }

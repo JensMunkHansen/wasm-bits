@@ -20,6 +20,7 @@ const options = {
 };
 var wasmModule
 
+var nErrors = 0;
 // Main function to load and use the WASM module
 async function main() {
     try {
@@ -31,7 +32,7 @@ async function main() {
         const logRefCounts = (x) => {
             console.log(`RefCounts JS=${x.$$.count.value}, CPP=${x.GetReferenceCount()}`);
         };
-
+	
         // Asynchronous function to simulate a long-running process
         async function myLongRunningProcess(x, milliseconds) {
             await new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -51,6 +52,7 @@ async function main() {
 
     } catch (error) {
         console.error("An error occurred:", error);
+	nErrors = 1;
     }
 }
 
@@ -69,4 +71,4 @@ await new Promise(resolve => setTimeout(resolve, 1000));
 var nObjects = wasmModule.vtkCustomObject.ObjectCount();
 
 // Can be captured with $?
-process.exit(nObjects == 0 ? 0 : 1);
+process.exit(((nObjects == 0) && (nErrors == 0)) ? 0 : 1);

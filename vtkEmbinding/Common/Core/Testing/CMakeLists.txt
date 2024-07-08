@@ -8,6 +8,7 @@ COMPONENTS
   CommonCore
 )
 
+# Readable JS and no optimization
 set(emscripten_optimization_flags -g3 -O0)
 
 # https://gitlab.kitware.com/vtk/vtk/-/issues/19008
@@ -18,14 +19,12 @@ target_link_options(SmartPointerTest PRIVATE
   "-lembind"
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"
-  #  "-sMAX_WEBGL_VERSION=2"
   "-sINCLUDE_FULL_LIBRARY=1"  
   "-sALLOW_TABLE_GROWTH=1"  
   "-sEXPORT_NAME=loadvtkSmartPointerWasmModule"
   "${emscripten_optimization_flags}")
 
 target_compile_options(SmartPointerTest PRIVATE ${emscripten_optimization_flags})
-
 
 add_executable(CallbackTest CallbackTest.cpp)
 target_link_libraries(CallbackTest PRIVATE VTK::CommonCore)
@@ -44,37 +43,21 @@ target_link_options(CallbackTest PRIVATE
 target_compile_options(CallbackTest PRIVATE ${emscripten_optimization_flags})
 add_dependencies(CallbackTest SmartPointerTest)
 
-
 # Copy Node/JavaScript to build directory
-add_custom_command(
-  TARGET SmartPointerTest
-  COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "${CMAKE_CURRENT_SOURCE_DIR}/package.json"
-      $<TARGET_FILE_DIR:SmartPointerTest>)
+set(node_and_javascript_files
+  package.json
+  package-lock.json
+  run_SmartPointerTest.js
+  run_CallbackTest.js)
 
-add_custom_command(
-  TARGET SmartPointerTest
-  COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "${CMAKE_CURRENT_SOURCE_DIR}/package-lock.json"
-      $<TARGET_FILE_DIR:SmartPointerTest>)
-    
-add_custom_command(
-  TARGET SmartPointerTest
-  COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "${CMAKE_CURRENT_SOURCE_DIR}/run_SmartPointerTest.js"
-      $<TARGET_FILE_DIR:SmartPointerTest>
-)
-
-add_custom_command(
-  TARGET CallbackTest
-  COMMAND
-    ${CMAKE_COMMAND} -E copy_if_different
-      "${CMAKE_CURRENT_SOURCE_DIR}/run_CallbackTest.js"
-      $<TARGET_FILE_DIR:CallbackTest>
-)
+foreach(node_and_javascript_file ${node_and_javascript_files})
+  add_custom_command(
+    TARGET SmartPointerTest
+    COMMAND
+      ${CMAKE_COMMAND} -E copy_if_different
+        "${CMAKE_CURRENT_SOURCE_DIR}/${node_and_javascript_file}"
+        $<TARGET_FILE_DIR:SmartPointerTest>)
+endforeach()
 
 add_custom_command(
   TARGET SmartPointerTest
