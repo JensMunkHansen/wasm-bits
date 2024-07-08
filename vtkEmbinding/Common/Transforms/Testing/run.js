@@ -38,6 +38,11 @@ async function main() {
 	console.log(transform1.IsA("vtkTransform"));
 	const _parent = wasmModule.vtkTransform.prototype;
 	console.log(_parent);
+	let parentName = wasmModule.vtkLinearTransform.prototype.GetClassName.call(transform1);
+	console.log(parentName);
+
+	Object.setPrototypeOf(transform1, _parent);
+	console.log(transform1.GetClassName());
     } catch (error) {
         console.error("An error occurred:", error);
     }

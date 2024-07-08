@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="mymodule.js"></script>
+</head>
+<body>
+    <script>
+        // Load the Emscripten module
+        createModule().then(Module => {
+            // Create an instance of the derived class
+            let derivedInstance = new Module.DerivedClass();
+
+            // Call the overridden method
+            derivedInstance.baseMethod(); // Output: Method overridden in DerivedClass
+
+            // Call the base class method explicitly
+            Module.BaseClass.prototype.baseMethod.call(derivedInstance); // Output: Method from BaseClass
+	    derivedInstance.callBaseMethod();
+	    derivedInstance.delete();
+        });
+    </script>
+</body>
+</html>
