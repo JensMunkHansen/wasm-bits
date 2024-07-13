@@ -14,6 +14,6 @@ static int runCallback(emscripten::val arg) {
 }
 
 
-EMSCRIPTEN_BINDINGS(fptr_bindings) {
+EMSCRIPTEN_BINDINGS(fptr_bindings) {  
     emscripten::function("runCallback", &runCallback);
 }
