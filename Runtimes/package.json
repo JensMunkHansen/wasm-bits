@@ -1,0 +1,13 @@
+{
+  "name": "runtimes",
+    "version": "1.0.0",
+    "type": "module",
+  "main": "main.mjs",
+  "scripts": {
+      "start": "node main.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
