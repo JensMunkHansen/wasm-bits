@@ -1,12 +1,11 @@
 {
-  "name": "runtimes",
-    "version": "1.0.0",
-    "type": "module",
-  "main": "main.mjs",
+  "type": "module",
+  "name": "build",
+  "version": "1.0.0",
+  "main": "run.js",
   "scripts": {
-      "start": "node main.mjs"
+      "start": "node run.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
