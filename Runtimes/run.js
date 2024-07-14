@@ -1,5 +1,11 @@
-import loadModule1 from './Module1.js';
-import loadModule2 from './Module2.js';
+async function loadModule(modulePath, moduleName) {
+  // Dynamic import for both browser and Node.js
+  const module = await import(modulePath);
+  return module.default();
+}
+
+//import loadModule1 from './Module1.js';
+//import loadModule2 from './Module2.js';
 
 // Define the options object
 const options = {
@@ -19,9 +25,11 @@ var nErrors = 0;
 async function main() {
     try {
 	const a = 3, b = 4;
-    
-	wasmModule1 = await loadModule1(options);
-	wasmModule2 = await loadModule2(options);
+	// Works
+	const wasmModule1 = await loadModule('./Module1.js', 'Module1');
+	const wasmModule2 = await loadModule('./Module2.js', 'Module2');
+	//wasmModule1 = await loadModule1(options); // ERROR
+	//wasmModule2 = await loadModule2(options); // ERROR
 	const sum = wasmModule1._add(a, b);
 	console.log(`Result from module1 (add): ${a} + ${b} = ${sum}`);
 	const product = wasmModule2._multiply(a, b);

@@ -7,7 +7,7 @@ add_executable(Module1 module1.cpp)
 target_link_options(Module1 PRIVATE
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"
-  "-sEXPORT_NAME=loadModule1"
+  "-sEXPORT_NAME=Module1"
   "${emscripten_optimization_flags}")
 
 target_compile_options(Module1 PRIVATE ${emscripten_optimization_flags})
@@ -16,7 +16,7 @@ add_executable(Module2 module2.cpp)
 target_link_options(Module2 PRIVATE
   "-sMODULARIZE=1"
   "-sEXPORT_ES6=1"
-  "-sEXPORT_NAME=loadModule2"
+  "-sEXPORT_NAME=Module2"
   "${emscripten_optimization_flags}")
 
 target_compile_options(Module2 PRIVATE ${emscripten_optimization_flags})

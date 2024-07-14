@@ -1,1 +1,4 @@
+./make.sh
+node main.mjs works
+
 --library-js overwrite Module['thisprogram']
